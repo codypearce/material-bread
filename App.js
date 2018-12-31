@@ -6,6 +6,7 @@ import HeadingTwo from './src/Components/Typography/HeadingTwo';
 import HeadingThree from './src/Components/Typography/HeadingThree';
 import HeadingFour from './src/Components/Typography/HeadingFour';
 import HeadingFive from './src/Components/Typography/HeadingFive';
+import HeadingSix from './src/Components/Typography/HeadingSix';
 
 export default class App extends React.Component {
   render() {
@@ -16,6 +17,7 @@ export default class App extends React.Component {
         <HeadingThree>h3</HeadingThree>
         <HeadingFour>h4</HeadingFour>
         <HeadingFive>h5</HeadingFive>
+        <HeadingSix>h6</HeadingSix>
       </View>
     );
   }
