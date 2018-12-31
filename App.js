@@ -4,6 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import HeadingOne from './src/Components/Typography/HeadingOne';
 import HeadingTwo from './src/Components/Typography/HeadingTwo';
 import HeadingThree from './src/Components/Typography/HeadingThree';
+import HeadingFour from './src/Components/Typography/HeadingFour';
 
 export default class App extends React.Component {
   render() {
@@ -12,6 +13,7 @@ export default class App extends React.Component {
         <HeadingOne>h1</HeadingOne>
         <HeadingTwo>h2</HeadingTwo>
         <HeadingThree>h3</HeadingThree>
+        <HeadingFour>h4</HeadingFour>
       </View>
     );
   }

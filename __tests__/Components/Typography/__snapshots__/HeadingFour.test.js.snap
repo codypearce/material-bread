@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Text
+  style={
+    Object {
+      "color": "rgba(0, 0, 0, 0.87)",
+      "fontSize": 34,
+      "lineHeight": 34,
+    }
+  }
+  typographyStyles={
+    Object {
+      "fontSize": 34,
+      "lineHeight": 34,
+    }
+  }
+/>
+`;

@@ -5,12 +5,12 @@ import BaseText from './BaseText';
 
 const styles = StyleSheet.create({
   headingThree: {
-    fontSize: 48,
-    lineHeight: 48,
+    fontSize: 34,
+    lineHeight: 34,
   },
 });
 
-export default class HeadingThree extends Component {
+export default class HeadingFour extends Component {
   static propTypes = {
     children: PropTypes.node,
   };
