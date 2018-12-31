@@ -4,21 +4,20 @@ import { StyleSheet } from 'react-native';
 import BaseText from './BaseText';
 
 const styles = StyleSheet.create({
-  headingFour: {
-    fontSize: 34,
-    lineHeight: 34,
-    letterSpacing: 0.25,
+  headingFive: {
+    fontSize: 24,
+    lineHeight: 24,
   },
 });
 
-export default class HeadingFour extends Component {
+export default class HeadingFive extends Component {
   static propTypes = {
     children: PropTypes.node,
   };
 
   render() {
     return (
-      <BaseText typographyStyles={styles.headingFour} {...this.props}>
+      <BaseText typographyStyles={styles.headingFive} {...this.props}>
         {this.props.children}
       </BaseText>
     );
