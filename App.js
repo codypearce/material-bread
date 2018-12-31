@@ -3,6 +3,7 @@ import { StyleSheet, View } from 'react-native';
 
 import HeadingOne from './src/Components/Typography/HeadingOne';
 import HeadingTwo from './src/Components/Typography/HeadingTwo';
+import HeadingThree from './src/Components/Typography/HeadingThree';
 
 export default class App extends React.Component {
   render() {
@@ -10,6 +11,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <HeadingOne>h1</HeadingOne>
         <HeadingTwo>h2</HeadingTwo>
+        <HeadingThree>h3</HeadingThree>
       </View>
     );
   }
