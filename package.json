@@ -20,7 +20,18 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
-    "prettier": "^1.16.0"
+    "jest": "^23.6.0",
+    "prettier": "^1.16.0",
+    "react-test-renderer": "^16.7.0"
+  },
+  "jest": {
+    "preset": "react-native",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    }
   },
   "private": true
 }
