@@ -1,27 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet } from 'react-native';
 import BaseText from './BaseText';
+import withTheme from '../../Theme/withTheme';
 
-const styles = StyleSheet.create({
-  overline: {
-    fontSize: 10,
-    lineHeight: 10,
-    letterSpacing: 1.5,
-    textTransform: 'uppercase',
-  },
-});
-
-export default class Overline extends Component {
+class Overline extends Component {
   static propTypes = {
     children: PropTypes.node,
+    theme: PropTypes.object,
   };
 
   render() {
+    const { theme } = this.props;
     return (
-      <BaseText typographyStyles={styles.overline} {...this.props}>
+      <BaseText typographyStyles={theme.overline} {...this.props}>
         {this.props.children}
       </BaseText>
     );
   }
 }
+
+export default withTheme(Overline);

@@ -4,10 +4,83 @@ exports[`it renders BodyText One 1`] = `
 <Text
   style={
     Object {
-      "color": "rgba(0, 0, 0, 0.87)",
+      "color": "rgba(0,0,0, 87)",
       "fontSize": 16,
       "letterSpacing": 0.5,
       "lineHeight": 16,
+      "marginBottom": 0,
+      "textAlign": "left",
+    }
+  }
+  theme={
+    Object {
+      "bodyText": Object {
+        "fontSize": 16,
+        "letterSpacing": 0.5,
+        "lineHeight": 16,
+      },
+      "bodyTextTwo": Object {
+        "fontSize": 14,
+        "letterSpacing": 0.25,
+        "lineHeight": 14,
+      },
+      "button": Object {
+        "color": "#2196f3",
+        "padding": 10,
+      },
+      "caption": Object {
+        "fontSize": 12,
+        "letterSpacing": 0.4,
+        "lineHeight": 12,
+      },
+      "headingFive": Object {
+        "fontSize": 24,
+        "lineHeight": 24,
+      },
+      "headingFour": Object {
+        "fontSize": 34,
+        "letterSpacing": 0.25,
+        "lineHeight": 34,
+      },
+      "headingOne": Object {
+        "fontSize": 96,
+        "fontWeight": "300",
+        "letterSpacing": -1.5,
+        "lineHeight": 96,
+      },
+      "headingSix": Object {
+        "fontSize": 20,
+        "fontWeight": "500",
+        "letterSpacing": 0.15,
+        "lineHeight": 20,
+      },
+      "headingThree": Object {
+        "fontSize": 48,
+        "lineHeight": 48,
+      },
+      "headingTwo": Object {
+        "fontSize": 60,
+        "fontWeight": "300",
+        "letterSpacing": -0.5,
+        "lineHeight": 60,
+      },
+      "overline": Object {
+        "fontSize": 10,
+        "letterSpacing": 1.5,
+        "lineHeight": 10,
+        "textTransform": "uppercase",
+      },
+      "subtitleOne": Object {
+        "fontSize": 16,
+        "letterSpacing": 0.15,
+        "lineHeight": 16,
+      },
+      "subtitleTwo": Object {
+        "fontSize": 14,
+        "fontWeight": "500",
+        "letterSpacing": 0.1,
+        "lineHeight": 14,
+      },
     }
   }
   type={1}
@@ -27,10 +100,181 @@ exports[`it renders BodyText One when a value isnt 1 or 2 1`] = `
 <Text
   style={
     Object {
-      "color": "rgba(0, 0, 0, 0.87)",
+      "color": "rgba(0,0,0, 87)",
       "fontSize": 16,
       "letterSpacing": 0.5,
       "lineHeight": 16,
+      "marginBottom": 0,
+      "textAlign": "left",
+    }
+  }
+  theme={
+    Object {
+      "bodyText": Object {
+        "fontSize": 16,
+        "letterSpacing": 0.5,
+        "lineHeight": 16,
+      },
+      "bodyTextTwo": Object {
+        "fontSize": 14,
+        "letterSpacing": 0.25,
+        "lineHeight": 14,
+      },
+      "button": Object {
+        "color": "#2196f3",
+        "padding": 10,
+      },
+      "caption": Object {
+        "fontSize": 12,
+        "letterSpacing": 0.4,
+        "lineHeight": 12,
+      },
+      "headingFive": Object {
+        "fontSize": 24,
+        "lineHeight": 24,
+      },
+      "headingFour": Object {
+        "fontSize": 34,
+        "letterSpacing": 0.25,
+        "lineHeight": 34,
+      },
+      "headingOne": Object {
+        "fontSize": 96,
+        "fontWeight": "300",
+        "letterSpacing": -1.5,
+        "lineHeight": 96,
+      },
+      "headingSix": Object {
+        "fontSize": 20,
+        "fontWeight": "500",
+        "letterSpacing": 0.15,
+        "lineHeight": 20,
+      },
+      "headingThree": Object {
+        "fontSize": 48,
+        "lineHeight": 48,
+      },
+      "headingTwo": Object {
+        "fontSize": 60,
+        "fontWeight": "300",
+        "letterSpacing": -0.5,
+        "lineHeight": 60,
+      },
+      "overline": Object {
+        "fontSize": 10,
+        "letterSpacing": 1.5,
+        "lineHeight": 10,
+        "textTransform": "uppercase",
+      },
+      "subtitleOne": Object {
+        "fontSize": 16,
+        "letterSpacing": 0.15,
+        "lineHeight": 16,
+      },
+      "subtitleTwo": Object {
+        "fontSize": 14,
+        "fontWeight": "500",
+        "letterSpacing": 0.1,
+        "lineHeight": 14,
+      },
+    }
+  }
+  type={3}
+  typographyStyles={
+    Object {
+      "fontSize": 16,
+      "letterSpacing": 0.5,
+      "lineHeight": 16,
+    }
+  }
+>
+  BodyText
+</Text>
+`;
+
+exports[`it renders BodyText One with other props 1`] = `
+<Text
+  align="center"
+  gutterBottom={true}
+  style={
+    Object {
+      "color": "rgba(0,0,0, 87)",
+      "fontSize": 16,
+      "letterSpacing": 0.5,
+      "lineHeight": 16,
+      "marginBottom": 10,
+      "textAlign": "center",
+    }
+  }
+  theme={
+    Object {
+      "bodyText": Object {
+        "fontSize": 16,
+        "letterSpacing": 0.5,
+        "lineHeight": 16,
+      },
+      "bodyTextTwo": Object {
+        "fontSize": 14,
+        "letterSpacing": 0.25,
+        "lineHeight": 14,
+      },
+      "button": Object {
+        "color": "#2196f3",
+        "padding": 10,
+      },
+      "caption": Object {
+        "fontSize": 12,
+        "letterSpacing": 0.4,
+        "lineHeight": 12,
+      },
+      "headingFive": Object {
+        "fontSize": 24,
+        "lineHeight": 24,
+      },
+      "headingFour": Object {
+        "fontSize": 34,
+        "letterSpacing": 0.25,
+        "lineHeight": 34,
+      },
+      "headingOne": Object {
+        "fontSize": 96,
+        "fontWeight": "300",
+        "letterSpacing": -1.5,
+        "lineHeight": 96,
+      },
+      "headingSix": Object {
+        "fontSize": 20,
+        "fontWeight": "500",
+        "letterSpacing": 0.15,
+        "lineHeight": 20,
+      },
+      "headingThree": Object {
+        "fontSize": 48,
+        "lineHeight": 48,
+      },
+      "headingTwo": Object {
+        "fontSize": 60,
+        "fontWeight": "300",
+        "letterSpacing": -0.5,
+        "lineHeight": 60,
+      },
+      "overline": Object {
+        "fontSize": 10,
+        "letterSpacing": 1.5,
+        "lineHeight": 10,
+        "textTransform": "uppercase",
+      },
+      "subtitleOne": Object {
+        "fontSize": 16,
+        "letterSpacing": 0.15,
+        "lineHeight": 16,
+      },
+      "subtitleTwo": Object {
+        "fontSize": 14,
+        "fontWeight": "500",
+        "letterSpacing": 0.1,
+        "lineHeight": 14,
+      },
     }
   }
   type={3}
@@ -50,10 +294,83 @@ exports[`it renders BodyText Two 1`] = `
 <Text
   style={
     Object {
-      "color": "rgba(0, 0, 0, 0.87)",
+      "color": "rgba(0,0,0, 87)",
       "fontSize": 14,
       "letterSpacing": 0.25,
       "lineHeight": 14,
+      "marginBottom": 0,
+      "textAlign": "left",
+    }
+  }
+  theme={
+    Object {
+      "bodyText": Object {
+        "fontSize": 16,
+        "letterSpacing": 0.5,
+        "lineHeight": 16,
+      },
+      "bodyTextTwo": Object {
+        "fontSize": 14,
+        "letterSpacing": 0.25,
+        "lineHeight": 14,
+      },
+      "button": Object {
+        "color": "#2196f3",
+        "padding": 10,
+      },
+      "caption": Object {
+        "fontSize": 12,
+        "letterSpacing": 0.4,
+        "lineHeight": 12,
+      },
+      "headingFive": Object {
+        "fontSize": 24,
+        "lineHeight": 24,
+      },
+      "headingFour": Object {
+        "fontSize": 34,
+        "letterSpacing": 0.25,
+        "lineHeight": 34,
+      },
+      "headingOne": Object {
+        "fontSize": 96,
+        "fontWeight": "300",
+        "letterSpacing": -1.5,
+        "lineHeight": 96,
+      },
+      "headingSix": Object {
+        "fontSize": 20,
+        "fontWeight": "500",
+        "letterSpacing": 0.15,
+        "lineHeight": 20,
+      },
+      "headingThree": Object {
+        "fontSize": 48,
+        "lineHeight": 48,
+      },
+      "headingTwo": Object {
+        "fontSize": 60,
+        "fontWeight": "300",
+        "letterSpacing": -0.5,
+        "lineHeight": 60,
+      },
+      "overline": Object {
+        "fontSize": 10,
+        "letterSpacing": 1.5,
+        "lineHeight": 10,
+        "textTransform": "uppercase",
+      },
+      "subtitleOne": Object {
+        "fontSize": 16,
+        "letterSpacing": 0.15,
+        "lineHeight": 16,
+      },
+      "subtitleTwo": Object {
+        "fontSize": 14,
+        "fontWeight": "500",
+        "letterSpacing": 0.1,
+        "lineHeight": 14,
+      },
     }
   }
   type={2}

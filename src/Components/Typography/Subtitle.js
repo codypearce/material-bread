@@ -1,35 +1,28 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet } from 'react-native';
 import BaseText from './BaseText';
+import withTheme from '../../Theme/withTheme';
 
-const styles = StyleSheet.create({
-  subtitleOne: {
-    fontSize: 16,
-    lineHeight: 16,
-    letterSpacing: 0.15,
-  },
-  subtitleTwo: {
-    fontSize: 14,
-    lineHeight: 14,
-    letterSpacing: 0.1,
-    fontWeight: '500',
-  },
-});
-
-export default class SubtitleOne extends Component {
+class Subtitle extends Component {
   static propTypes = {
     type: PropTypes.number,
     children: PropTypes.node,
+    theme: PropTypes.object,
   };
 
+  numberToStyle(num) {
+    const { theme } = this.props;
+    const numArray = [theme.subtitleOne, theme.subtitleTwo];
+    return numArray[num - 1];
+  }
+
   render() {
-    const { type } = this.props;
+    const { type, theme } = this.props;
     let textStyle;
     if (type < 1 && type > 2) {
-      textStyle = styles.subtitleOne;
+      textStyle = theme.subtitleOne;
     }
-    textStyle = numberToStyle(type);
+    textStyle = this.numberToStyle(type);
 
     return (
       <BaseText typographyStyles={textStyle} {...this.props}>
@@ -39,7 +32,4 @@ export default class SubtitleOne extends Component {
   }
 }
 
-function numberToStyle(num) {
-  const numArray = [styles.subtitleOne, styles.subtitleTwo];
-  return numArray[num - 1];
-}
+export default withTheme(Subtitle);
