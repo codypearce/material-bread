@@ -1,3 +1,5 @@
+import { StyleSheet } from 'react-native';
+
 export default {
   button: {
     padding: 10,
@@ -69,5 +71,12 @@ export default {
   paper: {
     backgroundColor: 'white',
     borderRadius: 2,
+  },
+  divider: {
+    height: StyleSheet.hairlineWidth,
+    width: '100%',
+    opacity: 0.12,
+    backgroundColor: 'black',
+    marginVertical: 16,
   },
 };

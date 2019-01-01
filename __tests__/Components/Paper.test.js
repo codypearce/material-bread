@@ -1,6 +1,6 @@
 import React from 'react';
-import Paper from '../../../src/Components/Paper';
-import Caption from '../../../src/Components/Caption';
+import Paper from '../../src/Components/Paper';
+import Caption from '../../src/Components/Typography/Caption';
 
 import renderer from 'react-test-renderer';
 

@@ -9,6 +9,7 @@ import {
   Overline,
   ThemeContext,
   Paper,
+  Divider,
 } from './src';
 
 export default class App extends React.Component {
@@ -28,12 +29,14 @@ export default class App extends React.Component {
           <BodyText type={2}>Body 2</BodyText>
           <Caption>Caption</Caption>
           <Overline>Overline</Overline>
+          <Divider />
           <Paper style={{ padding: 10 }}>
             <Heading type={6}>Paper</Heading>
           </Paper>
           <Paper style={{ padding: 10 }} elevation={8} radius={8}>
             <Heading type={6}>Paper 2</Heading>
           </Paper>
+          <Divider />
         </View>
       </ThemeContext.Provider>
     );

@@ -33,6 +33,13 @@ exports[`it renders BodyText One 1`] = `
         "letterSpacing": 0.4,
         "lineHeight": 12,
       },
+      "divider": Object {
+        "backgroundColor": "black",
+        "height": 0.5,
+        "marginVertical": 16,
+        "opacity": 0.12,
+        "width": "100%",
+      },
       "headingFive": Object {
         "fontSize": 24,
         "lineHeight": 24,
@@ -69,6 +76,10 @@ exports[`it renders BodyText One 1`] = `
         "letterSpacing": 1.5,
         "lineHeight": 10,
         "textTransform": "uppercase",
+      },
+      "paper": Object {
+        "backgroundColor": "white",
+        "borderRadius": 2,
       },
       "subtitleOne": Object {
         "fontSize": 16,
@@ -129,6 +140,13 @@ exports[`it renders BodyText One when a value isnt 1 or 2 1`] = `
         "letterSpacing": 0.4,
         "lineHeight": 12,
       },
+      "divider": Object {
+        "backgroundColor": "black",
+        "height": 0.5,
+        "marginVertical": 16,
+        "opacity": 0.12,
+        "width": "100%",
+      },
       "headingFive": Object {
         "fontSize": 24,
         "lineHeight": 24,
@@ -165,6 +183,10 @@ exports[`it renders BodyText One when a value isnt 1 or 2 1`] = `
         "letterSpacing": 1.5,
         "lineHeight": 10,
         "textTransform": "uppercase",
+      },
+      "paper": Object {
+        "backgroundColor": "white",
+        "borderRadius": 2,
       },
       "subtitleOne": Object {
         "fontSize": 16,
@@ -227,6 +249,13 @@ exports[`it renders BodyText One with other props 1`] = `
         "letterSpacing": 0.4,
         "lineHeight": 12,
       },
+      "divider": Object {
+        "backgroundColor": "black",
+        "height": 0.5,
+        "marginVertical": 16,
+        "opacity": 0.12,
+        "width": "100%",
+      },
       "headingFive": Object {
         "fontSize": 24,
         "lineHeight": 24,
@@ -263,6 +292,10 @@ exports[`it renders BodyText One with other props 1`] = `
         "letterSpacing": 1.5,
         "lineHeight": 10,
         "textTransform": "uppercase",
+      },
+      "paper": Object {
+        "backgroundColor": "white",
+        "borderRadius": 2,
       },
       "subtitleOne": Object {
         "fontSize": 16,
@@ -323,6 +356,13 @@ exports[`it renders BodyText Two 1`] = `
         "letterSpacing": 0.4,
         "lineHeight": 12,
       },
+      "divider": Object {
+        "backgroundColor": "black",
+        "height": 0.5,
+        "marginVertical": 16,
+        "opacity": 0.12,
+        "width": "100%",
+      },
       "headingFive": Object {
         "fontSize": 24,
         "lineHeight": 24,
@@ -359,6 +399,10 @@ exports[`it renders BodyText Two 1`] = `
         "letterSpacing": 1.5,
         "lineHeight": 10,
         "textTransform": "uppercase",
+      },
+      "paper": Object {
+        "backgroundColor": "white",
+        "borderRadius": 2,
       },
       "subtitleOne": Object {
         "fontSize": 16,
