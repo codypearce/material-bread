@@ -1,27 +1,24 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import HeadingOne from './src/Components/Typography/HeadingOne';
-import HeadingTwo from './src/Components/Typography/HeadingTwo';
-import HeadingThree from './src/Components/Typography/HeadingThree';
-import HeadingFour from './src/Components/Typography/HeadingFour';
-import HeadingFive from './src/Components/Typography/HeadingFive';
-import HeadingSix from './src/Components/Typography/HeadingSix';
-import SubtitleOne from './src/Components/Typography/SubtitleOne';
-import SubtitleTwo from './src/Components/Typography/SubtitleTwo';
+import Heading from './src/Components/Typography/Heading';
+import Subtitle from './src/Components/Typography/Subtitle';
+import BodyText from './src/Components/Typography/BodyText';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <HeadingOne>h1</HeadingOne>
-        <HeadingTwo>h2</HeadingTwo>
-        <HeadingThree>h3</HeadingThree>
-        <HeadingFour>h4</HeadingFour>
-        <HeadingFive>h5</HeadingFive>
-        <HeadingSix>h6</HeadingSix>
-        <SubtitleOne>Subtitle One</SubtitleOne>
-        <SubtitleTwo>Subtitle Two</SubtitleTwo>
+        <Heading type={1}>h1</Heading>
+        <Heading type={2}>h2</Heading>
+        <Heading type={3}>h3</Heading>
+        <Heading type={4}>h4</Heading>
+        <Heading type={5}>h5</Heading>
+        <Heading type={6}>h6</Heading>
+        <Subtitle type={1}>Subtitle One</Subtitle>
+        <Subtitle type={2}>Subtitle Two</Subtitle>
+        <BodyText type={1}>Body 1</BodyText>
+        <BodyText type={2}>Body 2</BodyText>
       </View>
     );
   }
