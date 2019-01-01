@@ -1,4 +1,5 @@
 // ==== Components ====
+export { default as Paper } from './Components/Paper';
 export {
   Heading,
   Subtitle,

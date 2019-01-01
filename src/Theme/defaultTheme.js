@@ -66,4 +66,8 @@ export default {
     letterSpacing: 0.1,
     fontWeight: '500',
   },
+  paper: {
+    backgroundColor: 'white',
+    borderRadius: 2,
+  },
 };
