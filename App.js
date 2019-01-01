@@ -5,6 +5,7 @@ import Heading from './src/Components/Typography/Heading';
 import Subtitle from './src/Components/Typography/Subtitle';
 import BodyText from './src/Components/Typography/BodyText';
 import Caption from './src/Components/Typography/Caption';
+import Overline from './src/Components/Typography/Overline';
 
 export default class App extends React.Component {
   render() {
@@ -21,6 +22,7 @@ export default class App extends React.Component {
         <BodyText type={1}>Body 1</BodyText>
         <BodyText type={2}>Body 2</BodyText>
         <Caption>Caption</Caption>
+        <Overline>Overline</Overline>
       </View>
     );
   }
