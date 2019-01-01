@@ -7,6 +7,8 @@ import HeadingThree from './src/Components/Typography/HeadingThree';
 import HeadingFour from './src/Components/Typography/HeadingFour';
 import HeadingFive from './src/Components/Typography/HeadingFive';
 import HeadingSix from './src/Components/Typography/HeadingSix';
+import SubtitleOne from './src/Components/Typography/SubtitleOne';
+import SubtitleTwo from './src/Components/Typography/SubtitleTwo';
 
 export default class App extends React.Component {
   render() {
@@ -18,6 +20,8 @@ export default class App extends React.Component {
         <HeadingFour>h4</HeadingFour>
         <HeadingFive>h5</HeadingFive>
         <HeadingSix>h6</HeadingSix>
+        <SubtitleOne>Subtitle One</SubtitleOne>
+        <SubtitleTwo>Subtitle Two</SubtitleTwo>
       </View>
     );
   }

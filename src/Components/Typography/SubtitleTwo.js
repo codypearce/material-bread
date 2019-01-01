@@ -4,22 +4,22 @@ import { StyleSheet } from 'react-native';
 import BaseText from './BaseText';
 
 const styles = StyleSheet.create({
-  headingSix: {
-    fontSize: 20,
-    lineHeight: 20,
-    letterSpacing: 0.15,
+  subtitleTwo: {
+    fontSize: 14,
+    lineHeight: 14,
+    letterSpacing: 0.1,
     fontWeight: '500',
   },
 });
 
-export default class HeadingSix extends Component {
+export default class SubtitleTwo extends Component {
   static propTypes = {
     children: PropTypes.node,
   };
 
   render() {
     return (
-      <BaseText typographyStyles={styles.headingSix} {...this.props}>
+      <BaseText typographyStyles={styles.subtitleTwo} {...this.props}>
         {this.props.children}
       </BaseText>
     );
