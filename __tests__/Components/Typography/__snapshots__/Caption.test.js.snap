@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it renders Caption 1`] = `
+<Text
+  style={
+    Object {
+      "color": "rgba(0, 0, 0, 0.87)",
+      "fontSize": 12,
+      "letterSpacing": 0.4,
+      "lineHeight": 12,
+    }
+  }
+  typographyStyles={
+    Object {
+      "fontSize": 12,
+      "letterSpacing": 0.4,
+      "lineHeight": 12,
+    }
+  }
+>
+  Caption
+</Text>
+`;
