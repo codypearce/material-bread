@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
 import BaseText from './BaseText';
+import withTheme from '../../Theme/withTheme';
 
 const styles = StyleSheet.create({
   bodyText: {
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class SubtitleOne extends Component {
+class BodyText extends Component {
   static propTypes = {
     type: PropTypes.number,
     children: PropTypes.node,
@@ -24,7 +25,6 @@ export default class SubtitleOne extends Component {
 
   render() {
     const { type } = this.props;
-
     const textStyle = type == 2 ? styles.bodyTextTwo : styles.bodyText;
 
     return (
@@ -34,3 +34,5 @@ export default class SubtitleOne extends Component {
     );
   }
 }
+
+export default withTheme(BodyText);
