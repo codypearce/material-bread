@@ -1,11 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import Heading from './src/Components/Typography/Heading';
-import Subtitle from './src/Components/Typography/Subtitle';
-import BodyText from './src/Components/Typography/BodyText';
-import Caption from './src/Components/Typography/Caption';
-import Overline from './src/Components/Typography/Overline';
+import { Heading, Subtitle, BodyText, Caption, Overline } from './src';
 
 export default class App extends React.Component {
   render() {
