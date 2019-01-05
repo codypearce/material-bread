@@ -1,7 +1,7 @@
 import { Platform } from 'react-native';
 
 function shadow(elevation) {
-  return Platform.OS ? shadowConversion[elevation - 1] : { elevation };
+  return Platform.OS ? shadowConversion[elevation] : { elevation };
 }
 
 export default shadow;

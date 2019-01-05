@@ -13,8 +13,12 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/plugin-transform-flow-strip-types": "^7.2.3",
+    "@storybook/react-native": "^4.1.7",
     "babel-eslint": "^10.0.1",
     "babel-preset-expo": "^5.0.0",
+    "core-js": "^2.6.1",
     "eslint": "^5.12.1",
     "eslint-config-prettier": "^3.6.0",
     "eslint-plugin-import": "^2.14.0",
