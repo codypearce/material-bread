@@ -1,4 +1,5 @@
 // ==== Abstract ====
+export { default as Ripple } from './Abstract/Ripple';
 export { default as shadow } from './Abstract/shadow';
 
 // ==== Components ====

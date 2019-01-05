@@ -1,17 +1,42 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
-import { shadow, Heading, Subtitle } from '../../src';
+import { shadow, Heading, Subtitle, Ripple } from '../../src';
 
 import { ThemeContext } from '../../src/index';
 
 storiesOf('Abstract', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
+  .add('Ripple', () => (
+    <ThemeContext.Provider value={{}}>
+      <View style={{ marginBottom: 60 }}>
+        <Heading align="center" type={4}>
+          Ripple
+        </Heading>
+        <Subtitle type={1} style={{ marginTop: 40 }}>
+          Add a touchable ripple to anything
+        </Subtitle>
+      </View>
+      <Ripple
+        rippleColor={'blue'}
+        style={{
+          width: 180,
+          height: 250,
+          justifyContent: 'center',
+          alignItems: 'center',
+          borderWidth: 1,
+          borderColor: 'black',
+          borderRadius: 5,
+        }}>
+        <Text>Click Me</Text>
+      </Ripple>
+    </ThemeContext.Provider>
+  ))
   .add('Shadows', () => (
     <ThemeContext.Provider value={{}}>
       <View style={{ marginBottom: 60 }}>
-        <Heading align="center" type={24}>
+        <Heading align="center" type={4}>
           Shadows
         </Heading>
         <Subtitle type={1} style={{ marginTop: 40 }}>

@@ -8,11 +8,11 @@ exports[`it renders Paper 1`] = `
       "borderRadius": 2,
       "shadowColor": "#000",
       "shadowOffset": Object {
-        "height": 4,
+        "height": 5,
         "width": 0,
       },
-      "shadowOpacity": 0.32,
-      "shadowRadius": 5.46,
+      "shadowOpacity": 0.34,
+      "shadowRadius": 6.27,
     }
   }
 >
@@ -130,11 +130,11 @@ exports[`it renders Paper with different border radius 1`] = `
       "borderRadius": 8,
       "shadowColor": "#000",
       "shadowOffset": Object {
-        "height": 1,
+        "height": 2,
         "width": 0,
       },
-      "shadowOpacity": 0.22,
-      "shadowRadius": 2.22,
+      "shadowOpacity": 0.23,
+      "shadowRadius": 2.62,
     }
   }
 >
@@ -252,11 +252,11 @@ exports[`it renders Paper with different elevation 1`] = `
       "borderRadius": 2,
       "shadowColor": "#000",
       "shadowOffset": Object {
-        "height": 11,
+        "height": 12,
         "width": 0,
       },
-      "shadowOpacity": 0.57,
-      "shadowRadius": 15.19,
+      "shadowOpacity": 0.58,
+      "shadowRadius": 16,
     }
   }
 >
