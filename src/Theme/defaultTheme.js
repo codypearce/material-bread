@@ -2,8 +2,15 @@ import { StyleSheet } from 'react-native';
 
 export default {
   button: {
-    padding: 10,
+    padding: 8,
     color: '#2196f3',
+    minWidth: 64,
+    height: 36,
+  },
+  buttonText: {
+    fontSize: 14,
+    fontWeight: '500',
+    letterSpacing: 1.25,
   },
   bodyText: {
     fontSize: 16,

@@ -3,6 +3,7 @@ export { default as Ripple } from './Abstract/Ripple';
 export { default as shadow } from './Abstract/shadow';
 
 // ==== Components ====
+export { default as Button } from './Components/Button';
 export { default as Divider } from './Components/Divider';
 export { default as Paper } from './Components/Paper';
 export {

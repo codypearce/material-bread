@@ -26,7 +26,14 @@ exports[`it renders BodyText One 1`] = `
       },
       "button": Object {
         "color": "#2196f3",
-        "padding": 10,
+        "height": 36,
+        "minWidth": 64,
+        "padding": 8,
+      },
+      "buttonText": Object {
+        "fontSize": 14,
+        "fontWeight": "500",
+        "letterSpacing": 1.25,
       },
       "caption": Object {
         "fontSize": 12,
@@ -133,7 +140,14 @@ exports[`it renders BodyText One when a value isnt 1 or 2 1`] = `
       },
       "button": Object {
         "color": "#2196f3",
-        "padding": 10,
+        "height": 36,
+        "minWidth": 64,
+        "padding": 8,
+      },
+      "buttonText": Object {
+        "fontSize": 14,
+        "fontWeight": "500",
+        "letterSpacing": 1.25,
       },
       "caption": Object {
         "fontSize": 12,
@@ -242,7 +256,14 @@ exports[`it renders BodyText One with other props 1`] = `
       },
       "button": Object {
         "color": "#2196f3",
-        "padding": 10,
+        "height": 36,
+        "minWidth": 64,
+        "padding": 8,
+      },
+      "buttonText": Object {
+        "fontSize": 14,
+        "fontWeight": "500",
+        "letterSpacing": 1.25,
       },
       "caption": Object {
         "fontSize": 12,
@@ -349,7 +370,14 @@ exports[`it renders BodyText Two 1`] = `
       },
       "button": Object {
         "color": "#2196f3",
-        "padding": 10,
+        "height": 36,
+        "minWidth": 64,
+        "padding": 8,
+      },
+      "buttonText": Object {
+        "fontSize": 14,
+        "fontWeight": "500",
+        "letterSpacing": 1.25,
       },
       "caption": Object {
         "fontSize": 12,

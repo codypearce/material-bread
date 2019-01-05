@@ -41,7 +41,14 @@ exports[`it renders Paper 1`] = `
         },
         "button": Object {
           "color": "#2196f3",
-          "padding": 10,
+          "height": 36,
+          "minWidth": 64,
+          "padding": 8,
+        },
+        "buttonText": Object {
+          "fontSize": 14,
+          "fontWeight": "500",
+          "letterSpacing": 1.25,
         },
         "caption": Object {
           "fontSize": 12,
@@ -163,7 +170,14 @@ exports[`it renders Paper with different border radius 1`] = `
         },
         "button": Object {
           "color": "#2196f3",
-          "padding": 10,
+          "height": 36,
+          "minWidth": 64,
+          "padding": 8,
+        },
+        "buttonText": Object {
+          "fontSize": 14,
+          "fontWeight": "500",
+          "letterSpacing": 1.25,
         },
         "caption": Object {
           "fontSize": 12,
@@ -285,7 +299,14 @@ exports[`it renders Paper with different elevation 1`] = `
         },
         "button": Object {
           "color": "#2196f3",
-          "padding": 10,
+          "height": 36,
+          "minWidth": 64,
+          "padding": 8,
+        },
+        "buttonText": Object {
+          "fontSize": 14,
+          "fontWeight": "500",
+          "letterSpacing": 1.25,
         },
         "caption": Object {
           "fontSize": 12,
