@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Animated } from 'react-native';
 import withTheme from '../Theme/withTheme';
-import shadow from '../Abstract/shadow';
+// import shadow from '../Abstract/shadow';
+import { shadow } from '../index';
 
 class Paper extends Component {
   static propTypes = {
