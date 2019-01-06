@@ -41,9 +41,10 @@ exports[`it renders Ripple 1`] = `
           "lineHeight": 14,
         },
         "button": Object {
+          "borderRadius": 4,
           "color": "#2196f3",
           "height": 36,
-          "minWidth": 64,
+          "minHeight": 36,
           "padding": 8,
         },
         "buttonText": Object {

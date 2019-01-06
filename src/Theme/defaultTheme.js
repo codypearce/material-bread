@@ -4,8 +4,9 @@ export default {
   button: {
     padding: 8,
     color: '#2196f3',
-    minWidth: 64,
     height: 36,
+    minHeight: 36,
+    borderRadius: 4,
   },
   buttonText: {
     fontSize: 14,

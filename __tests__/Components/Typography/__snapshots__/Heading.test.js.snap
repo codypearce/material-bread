@@ -26,9 +26,10 @@ exports[`it renders H1 correctly 1`] = `
         "lineHeight": 14,
       },
       "button": Object {
+        "borderRadius": 4,
         "color": "#2196f3",
         "height": 36,
-        "minWidth": 64,
+        "minHeight": 36,
         "padding": 8,
       },
       "buttonText": Object {
@@ -138,9 +139,10 @@ exports[`it renders H1 when a value for anything 1`] = `
         "lineHeight": 14,
       },
       "button": Object {
+        "borderRadius": 4,
         "color": "#2196f3",
         "height": 36,
-        "minWidth": 64,
+        "minHeight": 36,
         "padding": 8,
       },
       "buttonText": Object {
@@ -242,9 +244,10 @@ exports[`it renders H1 when a value for anything 2`] = `
         "lineHeight": 14,
       },
       "button": Object {
+        "borderRadius": 4,
         "color": "#2196f3",
         "height": 36,
-        "minWidth": 64,
+        "minHeight": 36,
         "padding": 8,
       },
       "buttonText": Object {
@@ -350,9 +353,10 @@ exports[`it renders H2 correctly 1`] = `
         "lineHeight": 14,
       },
       "button": Object {
+        "borderRadius": 4,
         "color": "#2196f3",
         "height": 36,
-        "minWidth": 64,
+        "minHeight": 36,
         "padding": 8,
       },
       "buttonText": Object {
@@ -464,9 +468,10 @@ exports[`it renders H3 correctly 1`] = `
         "lineHeight": 14,
       },
       "button": Object {
+        "borderRadius": 4,
         "color": "#2196f3",
         "height": 36,
-        "minWidth": 64,
+        "minHeight": 36,
         "padding": 8,
       },
       "buttonText": Object {
@@ -577,9 +582,10 @@ exports[`it renders H4 correctly 1`] = `
         "lineHeight": 14,
       },
       "button": Object {
+        "borderRadius": 4,
         "color": "#2196f3",
         "height": 36,
-        "minWidth": 64,
+        "minHeight": 36,
         "padding": 8,
       },
       "buttonText": Object {
@@ -690,9 +696,10 @@ exports[`it renders H5 correctly 1`] = `
         "lineHeight": 14,
       },
       "button": Object {
+        "borderRadius": 4,
         "color": "#2196f3",
         "height": 36,
-        "minWidth": 64,
+        "minHeight": 36,
         "padding": 8,
       },
       "buttonText": Object {
@@ -804,9 +811,10 @@ exports[`it renders H6 correctly 1`] = `
         "lineHeight": 14,
       },
       "button": Object {
+        "borderRadius": 4,
         "color": "#2196f3",
         "height": 36,
-        "minWidth": 64,
+        "minHeight": 36,
         "padding": 8,
       },
       "buttonText": Object {

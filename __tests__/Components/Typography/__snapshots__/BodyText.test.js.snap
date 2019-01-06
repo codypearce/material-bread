@@ -25,9 +25,10 @@ exports[`it renders BodyText One 1`] = `
         "lineHeight": 14,
       },
       "button": Object {
+        "borderRadius": 4,
         "color": "#2196f3",
         "height": 36,
-        "minWidth": 64,
+        "minHeight": 36,
         "padding": 8,
       },
       "buttonText": Object {
@@ -139,9 +140,10 @@ exports[`it renders BodyText One when a value isnt 1 or 2 1`] = `
         "lineHeight": 14,
       },
       "button": Object {
+        "borderRadius": 4,
         "color": "#2196f3",
         "height": 36,
-        "minWidth": 64,
+        "minHeight": 36,
         "padding": 8,
       },
       "buttonText": Object {
@@ -255,9 +257,10 @@ exports[`it renders BodyText One with other props 1`] = `
         "lineHeight": 14,
       },
       "button": Object {
+        "borderRadius": 4,
         "color": "#2196f3",
         "height": 36,
-        "minWidth": 64,
+        "minHeight": 36,
         "padding": 8,
       },
       "buttonText": Object {
@@ -369,9 +372,10 @@ exports[`it renders BodyText Two 1`] = `
         "lineHeight": 14,
       },
       "button": Object {
+        "borderRadius": 4,
         "color": "#2196f3",
         "height": 36,
-        "minWidth": 64,
+        "minHeight": 36,
         "padding": 8,
       },
       "buttonText": Object {

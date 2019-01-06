@@ -40,9 +40,10 @@ exports[`it renders Paper 1`] = `
           "lineHeight": 14,
         },
         "button": Object {
+          "borderRadius": 4,
           "color": "#2196f3",
           "height": 36,
-          "minWidth": 64,
+          "minHeight": 36,
           "padding": 8,
         },
         "buttonText": Object {
@@ -169,9 +170,10 @@ exports[`it renders Paper with different border radius 1`] = `
           "lineHeight": 14,
         },
         "button": Object {
+          "borderRadius": 4,
           "color": "#2196f3",
           "height": 36,
-          "minWidth": 64,
+          "minHeight": 36,
           "padding": 8,
         },
         "buttonText": Object {
@@ -298,9 +300,10 @@ exports[`it renders Paper with different elevation 1`] = `
           "lineHeight": 14,
         },
         "button": Object {
+          "borderRadius": 4,
           "color": "#2196f3",
           "height": 36,
-          "minWidth": 64,
+          "minHeight": 36,
           "padding": 8,
         },
         "buttonText": Object {
