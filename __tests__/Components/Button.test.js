@@ -21,3 +21,10 @@ test('it renders loading Button', () => {
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+test('it renders outlined Button', () => {
+  const tree = renderer
+    .create(<Button type={'outlined'}>Click Me</Button>)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+});

@@ -79,6 +79,10 @@ exports[`it renders Subtitle One 1`] = `
         "letterSpacing": -0.5,
         "lineHeight": 60,
       },
+      "outlinedButton": Object {
+        "borderColor": "rgba(0,0,0,.29)",
+        "borderWidth": 0.5,
+      },
       "overline": Object {
         "fontSize": 10,
         "letterSpacing": 1.5,
@@ -191,6 +195,10 @@ exports[`it renders Subtitle One when a value isnt 1 or 2 1`] = `
         "letterSpacing": -0.5,
         "lineHeight": 60,
       },
+      "outlinedButton": Object {
+        "borderColor": "rgba(0,0,0,.29)",
+        "borderWidth": 0.5,
+      },
       "overline": Object {
         "fontSize": 10,
         "letterSpacing": 1.5,
@@ -299,6 +307,10 @@ exports[`it renders Subtitle Two 1`] = `
         "fontWeight": "300",
         "letterSpacing": -0.5,
         "lineHeight": 60,
+      },
+      "outlinedButton": Object {
+        "borderColor": "rgba(0,0,0,.29)",
+        "borderWidth": 0.5,
       },
       "overline": Object {
         "fontSize": 10,

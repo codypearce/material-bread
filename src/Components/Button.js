@@ -32,15 +32,25 @@ class Button extends Component {
       textColor,
       fullWidth,
       compact,
+      type,
     } = this.props;
 
     let buttonTextColor = textColor ? textColor : theme.button.color;
     buttonTextColor = disabled ? 'rgba(0, 0, 0, 0.26)' : buttonTextColor;
 
     const rippleColor = textColor ? textColor : theme.button.color;
+
+    let buttonType = {};
+    if (type == 'outlined') {
+      buttonType = theme.outlinedButton;
+    } else if (type == 'contained') {
+      buttonType = theme.containedButton;
+    }
+
     const styles = StyleSheet.create({
       button: {
         ...theme.button,
+        ...buttonType,
         flex: 1,
         alignSelf: 'center',
         alignItems: 'center',

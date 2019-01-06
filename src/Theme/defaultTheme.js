@@ -13,6 +13,10 @@ export default {
     fontWeight: '500',
     letterSpacing: 1.25,
   },
+  outlinedButton: {
+    borderColor: 'rgba(0,0,0,.29)',
+    borderWidth: StyleSheet.hairlineWidth,
+  },
   bodyText: {
     fontSize: 16,
     lineHeight: 16,

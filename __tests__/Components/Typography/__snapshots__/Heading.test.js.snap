@@ -80,6 +80,10 @@ exports[`it renders H1 correctly 1`] = `
         "letterSpacing": -0.5,
         "lineHeight": 60,
       },
+      "outlinedButton": Object {
+        "borderColor": "rgba(0,0,0,.29)",
+        "borderWidth": 0.5,
+      },
       "overline": Object {
         "fontSize": 10,
         "letterSpacing": 1.5,
@@ -193,6 +197,10 @@ exports[`it renders H1 when a value for anything 1`] = `
         "letterSpacing": -0.5,
         "lineHeight": 60,
       },
+      "outlinedButton": Object {
+        "borderColor": "rgba(0,0,0,.29)",
+        "borderWidth": 0.5,
+      },
       "overline": Object {
         "fontSize": 10,
         "letterSpacing": 1.5,
@@ -297,6 +305,10 @@ exports[`it renders H1 when a value for anything 2`] = `
         "fontWeight": "300",
         "letterSpacing": -0.5,
         "lineHeight": 60,
+      },
+      "outlinedButton": Object {
+        "borderColor": "rgba(0,0,0,.29)",
+        "borderWidth": 0.5,
       },
       "overline": Object {
         "fontSize": 10,
@@ -406,6 +418,10 @@ exports[`it renders H2 correctly 1`] = `
         "fontWeight": "300",
         "letterSpacing": -0.5,
         "lineHeight": 60,
+      },
+      "outlinedButton": Object {
+        "borderColor": "rgba(0,0,0,.29)",
+        "borderWidth": 0.5,
       },
       "overline": Object {
         "fontSize": 10,
@@ -522,6 +538,10 @@ exports[`it renders H3 correctly 1`] = `
         "letterSpacing": -0.5,
         "lineHeight": 60,
       },
+      "outlinedButton": Object {
+        "borderColor": "rgba(0,0,0,.29)",
+        "borderWidth": 0.5,
+      },
       "overline": Object {
         "fontSize": 10,
         "letterSpacing": 1.5,
@@ -635,6 +655,10 @@ exports[`it renders H4 correctly 1`] = `
         "fontWeight": "300",
         "letterSpacing": -0.5,
         "lineHeight": 60,
+      },
+      "outlinedButton": Object {
+        "borderColor": "rgba(0,0,0,.29)",
+        "borderWidth": 0.5,
       },
       "overline": Object {
         "fontSize": 10,
@@ -750,6 +774,10 @@ exports[`it renders H5 correctly 1`] = `
         "letterSpacing": -0.5,
         "lineHeight": 60,
       },
+      "outlinedButton": Object {
+        "borderColor": "rgba(0,0,0,.29)",
+        "borderWidth": 0.5,
+      },
       "overline": Object {
         "fontSize": 10,
         "letterSpacing": 1.5,
@@ -864,6 +892,10 @@ exports[`it renders H6 correctly 1`] = `
         "fontWeight": "300",
         "letterSpacing": -0.5,
         "lineHeight": 60,
+      },
+      "outlinedButton": Object {
+        "borderColor": "rgba(0,0,0,.29)",
+        "borderWidth": 0.5,
       },
       "overline": Object {
         "fontSize": 10,
