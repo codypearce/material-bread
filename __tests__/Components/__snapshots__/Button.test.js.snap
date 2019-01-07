@@ -23,6 +23,7 @@ exports[`it renders Button 1`] = `
     Object {
       "alignItems": "center",
       "alignSelf": "center",
+      "backgroundColor": "transparent",
       "borderRadius": 4,
       "color": "#2196f3",
       "flex": 1,
@@ -92,6 +93,7 @@ exports[`it renders Button fullwidth 1`] = `
     Object {
       "alignItems": "center",
       "alignSelf": "center",
+      "backgroundColor": "transparent",
       "borderRadius": 4,
       "color": "#2196f3",
       "flex": 1,
@@ -161,6 +163,7 @@ exports[`it renders loading Button 1`] = `
     Object {
       "alignItems": "center",
       "alignSelf": "center",
+      "backgroundColor": "transparent",
       "borderRadius": 4,
       "color": "#2196f3",
       "flex": 1,
@@ -175,7 +178,7 @@ exports[`it renders loading Button 1`] = `
 >
   <ActivityIndicator
     animating={true}
-    color="#999999"
+    color="#2196f3"
     hidesWhenStopped={true}
     size="small"
     style={
@@ -233,6 +236,7 @@ exports[`it renders outlined Button 1`] = `
     Object {
       "alignItems": "center",
       "alignSelf": "center",
+      "backgroundColor": "transparent",
       "borderColor": "rgba(0,0,0,.29)",
       "borderRadius": 4,
       "borderWidth": 0.5,
@@ -243,6 +247,7 @@ exports[`it renders outlined Button 1`] = `
       "minHeight": 36,
       "minWidth": 64,
       "padding": 8,
+      "paddingHorizontal": 16,
       "width": "auto",
     }
   }

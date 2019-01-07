@@ -13,11 +13,13 @@ class Button extends Component {
     onPress: PropTypes.func,
     textStyle: PropTypes.object,
     textColor: PropTypes.string,
+    color: PropTypes.string,
     theme: PropTypes.object,
     style: PropTypes.object,
     children: PropTypes.node,
     fullWidth: PropTypes.bool,
     compact: PropTypes.bool,
+    type: PropTypes.string,
   };
   render() {
     const {
@@ -30,21 +32,32 @@ class Button extends Component {
       theme,
       textStyle,
       textColor,
+      color,
       fullWidth,
       compact,
       type,
     } = this.props;
 
-    let buttonTextColor = textColor ? textColor : theme.button.color;
-    buttonTextColor = disabled ? 'rgba(0, 0, 0, 0.26)' : buttonTextColor;
-
-    const rippleColor = textColor ? textColor : theme.button.color;
-
     let buttonType = {};
+    let rippleColor = textColor ? textColor : theme.button.color;
+    let buttonTextColor = textColor ? textColor : theme.button.color;
+    let backgroundColor = color ? color : 'transparent';
+
     if (type == 'outlined') {
       buttonType = theme.outlinedButton;
+      backgroundColor = 'transparent';
     } else if (type == 'contained') {
       buttonType = theme.containedButton;
+      buttonTextColor = 'white';
+      backgroundColor = '#2196f3';
+      rippleColor = 'rgba(255,255,255, .32)';
+      if (disabled) {
+        backgroundColor = disabled ? 'rgba(0, 0, 0, 0.12)' : backgroundColor;
+      }
+    }
+
+    if (disabled) {
+      buttonTextColor = disabled ? 'rgba(0, 0, 0, 0.26)' : buttonTextColor;
     }
 
     const styles = StyleSheet.create({
@@ -57,6 +70,7 @@ class Button extends Component {
         justifyContent: 'center',
         width: fullWidth ? '100%' : 'auto',
         minWidth: compact ? 'auto' : 64,
+        backgroundColor,
         ...style,
       },
       text: {
@@ -84,7 +98,7 @@ class Button extends Component {
         {loading ? (
           <ActivityIndicator
             size="small"
-            color={textColor}
+            color={buttonTextColor}
             style={styles.icon}
           />
         ) : (

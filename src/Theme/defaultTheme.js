@@ -16,6 +16,11 @@ export default {
   outlinedButton: {
     borderColor: 'rgba(0,0,0,.29)',
     borderWidth: StyleSheet.hairlineWidth,
+    paddingHorizontal: 16,
+  },
+  containedButton: {
+    paddingHorizontal: 16,
+    backgroundColor: '#2196f3',
   },
   bodyText: {
     fontSize: 16,

@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { View, Text } from 'react-native';
 
-import { ThemeContext, Button, Caption, Divider } from '../../src/index';
+import { ThemeContext, Button } from '../../src/index';
 
 storiesOf('Buttons', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
@@ -38,11 +38,35 @@ storiesOf('Buttons', module)
       <Button type="outlined" fullWidth={true}>
         Full Width
       </Button>
-
       <Button type="outlined" compact={true}>
         SM
       </Button>
       <Button type="outlined" loading={true}>
+        SM
+      </Button>
+    </ThemeContext.Provider>
+  ))
+  .add('Contained Button', () => (
+    <ThemeContext.Provider value={{}}>
+      <View style={{ marginBottom: 60 }}>
+        <Text style={{ fontSize: 28, textAlign: 'center' }}>
+          Contained Button
+        </Text>
+      </View>
+      <Button type="contained">Button</Button>
+      <Button type="contained" disabled={true}>
+        Disabled
+      </Button>
+      <Button type="contained" disableRipple={true}>
+        Disable Ripple
+      </Button>
+      <Button type="contained" fullWidth={true}>
+        Full Width
+      </Button>
+      <Button type="contained" compact={true}>
+        SM
+      </Button>
+      <Button type="contained" loading={true}>
         SM
       </Button>
     </ThemeContext.Provider>
