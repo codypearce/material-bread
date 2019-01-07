@@ -18,7 +18,7 @@ storiesOf('Icons', module)
       <Text style={{ fontSize: 14, textAlign: 'left' }}>
         Icons can be added by using the name prop that matches the material icon
         name from here https://material.io/tools/icons/?style=baseline. For
-        example, Arrow_back -> arrow-back
+        example, arrow-back
       </Text>
     </ThemeContext.Provider>
   ))
