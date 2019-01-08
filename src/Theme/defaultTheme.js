@@ -1,6 +1,11 @@
 import { StyleSheet } from 'react-native';
 
 export default {
+  base: {
+    primary: '#1e88e5',
+    primaryDark: '#005cb2',
+    primaryLight: '#6ab7ff',
+  },
   button: {
     padding: 8,
     color: '#2196f3',

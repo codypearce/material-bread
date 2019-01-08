@@ -16,9 +16,10 @@ class Avatar extends Component {
     image: PropTypes.node,
     icon: PropTypes.string,
     text: PropTypes.string,
-    iconSize: PropTypes.size,
+    iconSize: PropTypes.number,
     iconColor: PropTypes.string,
     fontSize: PropTypes.string,
+    styles: PropTypes.object,
   };
 
   _renderImage() {
@@ -45,13 +46,14 @@ class Avatar extends Component {
   }
 
   _renderText() {
-    const { text, textColor, fontSize, size } = this.props;
+    const { text, textColor, fontSize, size, styles } = this.props;
 
     return (
       <Text
         style={{
           color: textColor ? textColor : 'white',
           fontSize: fontSize ? fontSize : size / 2,
+          ...styles,
         }}>
         {text}
       </Text>
