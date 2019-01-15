@@ -65,7 +65,7 @@ class Button extends Component {
         ...theme.button,
         ...buttonType,
         flex: 1,
-        alignSelf: 'center',
+        alignSelf: 'flex-start',
         alignItems: 'center',
         justifyContent: 'center',
         width: fullWidth ? '100%' : 'auto',

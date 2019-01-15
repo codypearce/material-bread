@@ -11,6 +11,6 @@ storiesOf('Appbar', module)
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>Appbar</Text>
       </View>
-      <Appbar size={64}>4</Appbar>
+      <Appbar size={64} title={'Page Title'} />
     </ThemeContext.Provider>
   ));

@@ -10,9 +10,11 @@ class Appbar extends Component {
     backgroundColor: PropTypes.string,
     style: PropTypes.object,
     theme: PropTypes.object,
+    title: PropTypes.string,
   };
+
   render() {
-    const { backgroundColor, theme, ...rest } = this.props;
+    const { backgroundColor, title, theme, ...rest } = this.props;
 
     return (
       <Paper
@@ -25,7 +27,7 @@ class Appbar extends Component {
         {...rest}>
         <View style={{ ...styles.left }}>
           <Icon name="menu" size={24} color={'white'} />
-          <Text style={styles.pageTitle}>Page Title</Text>
+          <Text style={styles.pageTitle}>{title}</Text>
         </View>
         <View style={{ ...styles.right }}>
           <Icon

@@ -11,6 +11,8 @@ export { default as Button } from './Components/Button';
 export { default as Chip } from './Components/Chip';
 export { default as Divider } from './Components/Divider';
 export { default as Icon } from './Components/Icon';
+export { default as Menu } from './Components/Menu';
+export { default as MenuItem } from './Components/MenuItem';
 export { default as Paper } from './Components/Paper';
 export {
   Heading,
