@@ -6,13 +6,14 @@ import withTheme from '../Theme/withTheme';
 
 class MenuItem extends Component {
   static propTypes = {
-    children: PropTypes.string,
+    children: PropTypes.node,
     disabled: PropTypes.bool,
     disabledTextColor: PropTypes.string,
     onPress: PropTypes.func,
     style: PropTypes.object,
     textStyle: PropTypes.object,
     underlayColor: PropTypes.string,
+    content: PropTypes.node,
   };
   static defaultProps = {
     disabled: false,
@@ -31,6 +32,7 @@ class MenuItem extends Component {
       underlayColor,
       ...props
     } = this.props;
+
     return (
       <TouchableHighlight
         {...props}
@@ -57,8 +59,9 @@ const styles = StyleSheet.create({
   container: {
     height: 48,
     justifyContent: 'center',
-    maxWidth: 248,
+    width: '100%',
     minWidth: 124,
+    flex: 1,
   },
   title: {
     fontSize: 14,

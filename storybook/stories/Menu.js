@@ -23,13 +23,11 @@ storiesOf('Menu', module)
         {state => (
           <View>
             <Menu
-              ref={this.setMenuRef}
               visible={state.visibleOne}
-              onHidden={() => store.set({ visibleOne: false })}
               button={
                 <Button
                   onPress={() => {
-                    store.set({ visibleOne: true });
+                    store.set({ visibleOne: !state.visibleOne });
                   }}
                   type="contained">
                   Show menu
@@ -47,7 +45,7 @@ storiesOf('Menu', module)
                 Menu item 3
               </MenuItem>
               <MenuItem onPress={() => store.set({ visibleOne: false })}>
-                Menu item 4
+                Menu item 2
               </MenuItem>
             </Menu>
           </View>

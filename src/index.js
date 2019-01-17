@@ -9,6 +9,7 @@ export { default as Badge } from './Components/Badge';
 export { default as Banner } from './Components/Banner';
 export { default as Button } from './Components/Button';
 export { default as Chip } from './Components/Chip';
+export { default as Dropdown } from './Components/Dropdown';
 export { default as Divider } from './Components/Divider';
 export { default as Icon } from './Components/Icon';
 export { default as Menu } from './Components/Menu';

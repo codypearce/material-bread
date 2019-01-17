@@ -36,6 +36,7 @@ class Button extends Component {
       fullWidth,
       compact,
       type,
+      ...props
     } = this.props;
 
     let buttonType = {};
@@ -94,7 +95,8 @@ class Button extends Component {
         disabled={disabled || disableRipple || loading}
         rippleColor={rippleColor}
         rippleContainerBorderRadius={theme.button.borderRadius}
-        style={styles.button}>
+        style={styles.button}
+        {...props}>
         {loading ? (
           <ActivityIndicator
             size="small"
