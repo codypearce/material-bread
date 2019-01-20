@@ -15,6 +15,12 @@ export { default as CardHeader } from './Components/Card/CardHeader';
 export { default as CardMedia } from './Components/Card/CardMedia';
 export { default as Checkbox } from './Components/Checkbox';
 export { default as Chip } from './Components/Chip';
+export { default as Dialog } from './Components/Dialog/Dialog';
+export { default as DialogActions } from './Components/Dialog/DialogActions';
+export {
+  default as DialogContentText,
+} from './Components/Dialog/DialogContentText';
+export { default as DialogTitle } from './Components/Dialog/DialogTitle';
 export { default as Dropdown } from './Components/Dropdown';
 export { default as Divider } from './Components/Divider';
 export { default as Icon } from './Components/Icon';
