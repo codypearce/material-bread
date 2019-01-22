@@ -23,6 +23,7 @@ export {
 export { default as DialogTitle } from './Components/Dialog/DialogTitle';
 export { default as Dropdown } from './Components/Dropdown';
 export { default as Divider } from './Components/Divider';
+export { default as Fab } from './Components/Fab';
 export { default as Icon } from './Components/Icon';
 export { default as Menu } from './Components/Menu';
 export { default as MenuItem } from './Components/MenuItem';

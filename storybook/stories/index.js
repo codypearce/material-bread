@@ -10,6 +10,7 @@ export { default as Chip } from './Chip';
 export { default as Dialog } from './Dialog';
 export { default as Dropdown } from './Dropdown';
 export { default as Divider } from './Divider';
+export { default as Fab } from './Fab';
 export { default as Icons } from './Icons';
 export { default as Menu } from './Menu';
 export { default as Paper } from './Paper';
