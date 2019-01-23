@@ -39,7 +39,7 @@ class Fab extends Component {
           ...style,
         }}
         {...props}>
-        <Icon name={icon ? icon : 'plus'} size={24} color={'white'} />
+        <Icon name={icon ? icon : 'add'} size={24} color={'white'} />
       </Ripple>
     );
   }

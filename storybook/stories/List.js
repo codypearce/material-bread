@@ -1,0 +1,27 @@
+import React from 'react';
+import { storiesOf } from '@storybook/react-native';
+import { View, Text } from 'react-native';
+
+import {
+  ThemeContext,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+} from '../../src/index';
+
+storiesOf('List', module)
+  .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
+  .add('List', () => (
+    <ThemeContext.Provider value={{}}>
+      <View style={{ marginBottom: 60 }}>
+        <Text style={{ fontSize: 28, textAlign: 'center' }}>List</Text>
+      </View>
+      <List>
+        <ListItem>
+          <ListItemIcon icon={'alarm'} />
+          <ListItemText primary={'This is a list Item'} />
+        </ListItem>
+      </List>
+    </ThemeContext.Provider>
+  ));

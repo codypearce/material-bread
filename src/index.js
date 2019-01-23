@@ -25,6 +25,15 @@ export { default as Dropdown } from './Components/Dropdown';
 export { default as Divider } from './Components/Divider';
 export { default as Fab } from './Components/Fab';
 export { default as Icon } from './Components/Icon';
+export { default as List } from './Components/List/List';
+export { default as ListItem } from './Components/List/ListItem';
+export { default as ListItemAvatar } from './Components/List/ListItemAvatar';
+export { default as ListItemIcon } from './Components/List/ListItemIcon';
+export { default as ListItemText } from './Components/List/ListItemText';
+export {
+  default as ListSecondaryAction,
+} from './Components/List/ListSecondaryAction';
+export { default as ListSubheader } from './Components/List/ListSubheader';
 export { default as Menu } from './Components/Menu';
 export { default as MenuItem } from './Components/MenuItem';
 export { default as Paper } from './Components/Paper';

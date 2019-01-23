@@ -12,6 +12,7 @@ export { default as Dropdown } from './Dropdown';
 export { default as Divider } from './Divider';
 export { default as Fab } from './Fab';
 export { default as Icons } from './Icons';
+export { default as List } from './List';
 export { default as Menu } from './Menu';
 export { default as Paper } from './Paper';
 export { default as Typography } from './Typography';
