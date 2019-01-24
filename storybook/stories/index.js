@@ -15,4 +15,5 @@ export { default as Icons } from './Icons';
 export { default as List } from './List';
 export { default as Menu } from './Menu';
 export { default as Paper } from './Paper';
+export { default as RadioButton } from './RadioButton';
 export { default as Typography } from './Typography';

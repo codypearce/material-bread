@@ -37,6 +37,8 @@ export { default as ListSubheader } from './Components/List/ListSubheader';
 export { default as Menu } from './Components/Menu';
 export { default as MenuItem } from './Components/MenuItem';
 export { default as Paper } from './Components/Paper';
+export { default as RadioButton } from './Components/RadioButton';
+
 export {
   Heading,
   Subtitle,
