@@ -28,7 +28,7 @@ storiesOf('Snackbar', module)
               visible={state.show}
               onButtonPress={() => store.set({ show: false })}
               buttonLabel={'Ok'}>
-              {"Hey there! I'm a Snackbar."}
+              {'This is a snackbar component'}
             </Snackbar>
           </View>
         )}

@@ -39,7 +39,7 @@ export { default as MenuItem } from './Components/MenuItem';
 export { default as Paper } from './Components/Paper';
 export { default as RadioButton } from './Components/RadioButton';
 export { default as Snackbar } from './Components/Snackbar';
-
+export { default as TextField } from './Components/TextField/TextField';
 export {
   Heading,
   Subtitle,
