@@ -1,4 +1,5 @@
 export { default as Appbar } from './Appbar';
+export { default as AppbarBottom } from './AppbarBottom';
 export { default as Abstract } from './Abstract';
 export { default as Avatar } from './Avatar';
 export { default as Badge } from './Badge';

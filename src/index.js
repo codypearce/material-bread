@@ -4,6 +4,7 @@ export { default as shadow } from './Abstract/shadow';
 
 // ==== Components ====
 export { default as Appbar } from './Components/Appbar';
+export { default as AppbarBottom } from './Components/AppbarBottom';
 export { default as Avatar } from './Components/Avatar';
 export { default as Badge } from './Components/Badge';
 export { default as Banner } from './Components/Banner';

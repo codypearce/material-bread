@@ -4,6 +4,7 @@ import { StyleSheet } from 'react-native';
 import withTheme from '../Theme/withTheme';
 import Ripple from '../Abstract/Ripple';
 import Icon from './Icon';
+import shadow from '../Abstract/shadow';
 
 class Fab extends Component {
   static propTypes = {
@@ -36,6 +37,7 @@ class Fab extends Component {
           backgroundColor: backgroundColor
             ? backgroundColor
             : 'rgba(33, 150, 243, 1)',
+          ...shadow(6),
           ...style,
         }}
         {...props}>
