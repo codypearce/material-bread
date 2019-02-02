@@ -38,6 +38,10 @@ export { default as ListSubheader } from './Components/List/ListSubheader';
 export { default as Menu } from './Components/Menu';
 export { default as MenuItem } from './Components/MenuItem';
 export { default as Paper } from './Components/Paper';
+export { default as ProgressBar } from './Components/Progress/ProgressBar';
+export {
+  default as ProgressCircle,
+} from './Components/Progress/ProgressCircle';
 export { default as RadioButton } from './Components/RadioButton';
 export { default as Snackbar } from './Components/Snackbar';
 export { default as TextField } from './Components/TextField/TextField';
