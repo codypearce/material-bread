@@ -8,6 +8,12 @@ export { default as AppbarBottom } from './Components/AppbarBottom';
 export { default as Avatar } from './Components/Avatar';
 export { default as Badge } from './Components/Badge';
 export { default as Banner } from './Components/Banner';
+export {
+  default as BottomNavigation,
+} from './Components/BottomNavigation/BottomNavigation';
+export {
+  default as BottomNavigationItem,
+} from './Components/BottomNavigation/BottomNavigationItem';
 export { default as Button } from './Components/Button';
 export { default as Card } from './Components/Card/Card';
 export { default as CardActions } from './Components/Card/CardActions';
