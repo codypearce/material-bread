@@ -13,6 +13,7 @@ class Checkbox extends Component {
     rippleColor: PropTypes.string,
     checkboxColor: PropTypes.string,
     checkboxBorderColor: PropTypes.string,
+    style: PropTypes.object,
   };
 
   render() {
@@ -23,6 +24,7 @@ class Checkbox extends Component {
       rippleColor,
       checkboxColor,
       checkboxBorderColor,
+      style,
     } = this.props;
 
     const rippleColorApplied = rippleColor ? rippleColor : 'rgba(0,0,0,.8)';
@@ -42,7 +44,7 @@ class Checkbox extends Component {
       <Ripple
         onPress={onPress}
         disabled={disabled}
-        style={styles.container}
+        style={{ ...styles.container, ...style }}
         rippleCentered={true}
         rippleColor={rippleColorApplied}
         rippleContainerBorderRadius={18}>

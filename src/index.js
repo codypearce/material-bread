@@ -22,6 +22,19 @@ export { default as CardHeader } from './Components/Card/CardHeader';
 export { default as CardMedia } from './Components/Card/CardMedia';
 export { default as Checkbox } from './Components/Checkbox';
 export { default as Chip } from './Components/Chip';
+export { default as DataTable } from './Components/DataTable/DataTable';
+export {
+  default as DataTableHeader,
+} from './Components/DataTable/DataTableHeader';
+export {
+  default as DataTableHeaderItem,
+} from './Components/DataTable/DataTableHeaderItem';
+export { default as DataTableItem } from './Components/DataTable/DataTableItem';
+export {
+  default as DataTablePagination,
+} from './Components/DataTable/DataTablePagination';
+export { default as DataTableRow } from './Components/DataTable/DataTableRow';
+
 export { default as Dialog } from './Components/Dialog/Dialog';
 export { default as DialogActions } from './Components/Dialog/DialogActions';
 export {
