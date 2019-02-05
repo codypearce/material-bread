@@ -42,6 +42,10 @@ export {
 } from './Components/Dialog/DialogContentText';
 export { default as DialogTitle } from './Components/Dialog/DialogTitle';
 export { default as Dropdown } from './Components/Dropdown';
+export { default as Drawer } from './Components/Drawer/Drawer';
+export { default as DrawerHeader } from './Components/Drawer/DrawerHeader';
+export { default as DrawerItem } from './Components/Drawer/DrawerItem';
+export { default as DrawerSection } from './Components/Drawer/DrawerSection';
 export { default as Divider } from './Components/Divider';
 export { default as Fab } from './Components/Fab';
 export { default as Icon } from './Components/Icon';

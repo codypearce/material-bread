@@ -15,6 +15,7 @@
     "no-useless-constructor": 0,
     "import/no-extraneous-dependencies": 0,
     "import/named": 1,
+    "import/no-unresolved": 1,
     "react/display-name": 0
   },
   "plugins": ["prettier", "react", "import"]

@@ -11,6 +11,7 @@ export { default as Checkbox } from './Checkbox';
 export { default as Chip } from './Chip';
 export { default as DataTable } from './DataTable';
 export { default as Dialog } from './Dialog';
+export { default as Drawer } from './Drawer';
 export { default as Dropdown } from './Dropdown';
 export { default as Divider } from './Divider';
 export { default as Fab } from './Fab';
