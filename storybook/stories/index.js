@@ -15,6 +15,7 @@ export { default as Drawer } from './Drawer';
 export { default as Dropdown } from './Dropdown';
 export { default as Divider } from './Divider';
 export { default as Fab } from './Fab';
+export { default as FabSpeedDial } from './FabSpeedDial';
 export { default as Icons } from './Icons';
 export { default as List } from './List';
 export { default as Menu } from './Menu';
