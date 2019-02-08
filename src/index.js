@@ -70,6 +70,9 @@ export { default as RadioButton } from './Components/RadioButton';
 export { default as Snackbar } from './Components/Snackbar';
 export { default as TextField } from './Components/TextField/TextField';
 export {
+  default as TextFieldHelperText,
+} from './Components/TextField/TextFieldHelperText';
+export {
   Heading,
   Subtitle,
   BodyText,

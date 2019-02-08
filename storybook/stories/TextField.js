@@ -47,6 +47,7 @@ storiesOf('TextField', module)
               error={true}
               value={state.flatThree}
               onChangeText={value => store.set({ flatThree: value })}
+              helperText={'There is an error'}
             />
           </View>
         )}
@@ -85,6 +86,7 @@ storiesOf('TextField', module)
               error={true}
               value={state.filledThree}
               onChangeText={value => store.set({ filledThree: value })}
+              helperText={'There is an error'}
             />
           </View>
         )}
@@ -123,6 +125,7 @@ storiesOf('TextField', module)
               error={true}
               value={state.outlinedhree}
               onChangeText={value => store.set({ outlinedhree: value })}
+              helperText={'There is an error'}
             />
           </View>
         )}

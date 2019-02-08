@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { View, TextInput, StyleSheet } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import TextFieldLabel from './TextFieldLabel';
-
+import TextFieldHelperText from './TextFieldHelperText';
 class TextFieldOutlined extends Component {
   constructor(props) {
     super(props);
@@ -17,6 +17,8 @@ class TextFieldOutlined extends Component {
     handleFocus: PropTypes.func,
     handleBlur: PropTypes.func,
     focused: PropTypes.bool,
+    helperText: PropTypes.string,
+    helperVisible: PropTypes.bool,
   };
 
   render() {
@@ -28,6 +30,8 @@ class TextFieldOutlined extends Component {
       handleFocus,
       handleBlur,
       focused,
+      helperText,
+      helperVisible,
       ...rest
     } = this.props;
 
@@ -58,6 +62,9 @@ class TextFieldOutlined extends Component {
           onBlur={handleBlur}
           {...rest}
         />
+        <TextFieldHelperText error={error} visible={helperVisible || error}>
+          {helperText}
+        </TextFieldHelperText>
       </View>
     );
   }

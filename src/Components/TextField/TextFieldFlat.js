@@ -4,6 +4,7 @@ import { View, TextInput, StyleSheet } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import TextFieldUnderline from './TextFieldUnderline';
 import TextFieldLabel from './TextFieldLabel';
+import TextFieldHelperText from './TextFieldHelperText';
 
 class TextFieldFlat extends Component {
   constructor(props) {
@@ -18,6 +19,8 @@ class TextFieldFlat extends Component {
     handleFocus: PropTypes.func,
     handleBlur: PropTypes.func,
     focused: PropTypes.bool,
+    helperText: PropTypes.string,
+    helperVisible: PropTypes.bool,
   };
 
   render() {
@@ -29,6 +32,8 @@ class TextFieldFlat extends Component {
       handleFocus,
       handleBlur,
       focused,
+      helperText,
+      helperVisible,
       ...rest
     } = this.props;
 
@@ -57,6 +62,9 @@ class TextFieldFlat extends Component {
         />
 
         <TextFieldUnderline focused={focused} error={error} />
+        <TextFieldHelperText error={error} visible={helperVisible || error}>
+          {helperText}
+        </TextFieldHelperText>
       </View>
     );
   }
