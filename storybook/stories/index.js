@@ -17,6 +17,7 @@ export { default as Divider } from './Divider';
 export { default as Fab } from './Fab';
 export { default as FabSpeedDial } from './FabSpeedDial';
 export { default as Icons } from './Icons';
+export { default as IconButton } from './IconButton';
 export { default as List } from './List';
 export { default as Menu } from './Menu';
 export { default as Paper } from './Paper';
