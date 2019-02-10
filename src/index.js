@@ -52,6 +52,7 @@ export { default as FabSpeedDial } from './Components/FabSpeedDial';
 export { default as Icon } from './Components/Icon';
 export { default as IconButton } from './Components/IconButton';
 export { default as List } from './Components/List/List';
+export { default as ListExpanded } from './Components/List/ListExpanded';
 export { default as ListItem } from './Components/List/ListItem';
 export { default as ListItemAvatar } from './Components/List/ListItemAvatar';
 export { default as ListItemIcon } from './Components/List/ListItemIcon';

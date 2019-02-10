@@ -8,6 +8,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  ListExpanded,
 } from '../../src/index';
 
 storiesOf('List', module)
@@ -22,6 +23,14 @@ storiesOf('List', module)
           <ListItemIcon icon={'alarm'} />
           <ListItemText primary={'This is a list Item'} />
         </ListItem>
+        <ListExpanded title="Expanded">
+          <ListItem>
+            <ListItemText primary={'This is a list Item'} />
+          </ListItem>
+          <ListItem>
+            <ListItemText primary={'This is a list Item'} />
+          </ListItem>
+        </ListExpanded>
       </List>
     </ThemeContext.Provider>
   ));

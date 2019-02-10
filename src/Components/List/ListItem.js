@@ -23,6 +23,7 @@ class ListItem extends Component {
           alignItems: 'center',
           paddingHorizontal: 16,
           paddingVertical: 12,
+          width: '100%',
           ...style,
         }}>
         {this.props.children}
