@@ -2,12 +2,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { View, Text } from 'react-native';
 
-import { ThemeContext, Icon } from '../../src/index';
+import { BreadProvider, Icon } from '../../src/index';
 
 storiesOf('Icons', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Installing', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>Installing</Text>
       </View>
@@ -20,10 +20,10 @@ storiesOf('Icons', module)
         name from here https://material.io/tools/icons/?style=baseline. For
         example, arrow-back
       </Text>
-    </ThemeContext.Provider>
+    </BreadProvider>
   ))
   .add('Component', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>
           Icon Component
@@ -32,5 +32,5 @@ storiesOf('Icons', module)
       <Icon name="alarm" size={32} />
       <Icon name="face" size={32} />
       <Icon name="arrow-back" size={32} />
-    </ThemeContext.Provider>
+    </BreadProvider>
   ));

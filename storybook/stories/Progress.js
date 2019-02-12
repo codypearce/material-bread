@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react-native';
 import { View, Text } from 'react-native';
 
 import {
-  ThemeContext,
+  BreadProvider,
   ProgressCircle,
   ProgressBar,
   Button,
@@ -19,7 +19,7 @@ const store = new Store({
 storiesOf('Progress', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Progress Bar', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>Progress Bar</Text>
       </View>
@@ -68,10 +68,10 @@ storiesOf('Progress', module)
           </View>
         )}
       </State>
-    </ThemeContext.Provider>
+    </BreadProvider>
   ))
   .add('Progress Circle', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>
           Progress Circle
@@ -97,5 +97,5 @@ storiesOf('Progress', module)
           </View>
         )}
       </State>
-    </ThemeContext.Provider>
+    </BreadProvider>
   ));

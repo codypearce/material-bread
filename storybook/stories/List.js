@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react-native';
 import { View, Text } from 'react-native';
 
 import {
-  ThemeContext,
+  BreadProvider,
   List,
   ListItem,
   ListItemIcon,
@@ -14,7 +14,7 @@ import {
 storiesOf('List', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('List', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>List</Text>
       </View>
@@ -32,5 +32,5 @@ storiesOf('List', module)
           </ListItem>
         </ListExpanded>
       </List>
-    </ThemeContext.Provider>
+    </BreadProvider>
   ));

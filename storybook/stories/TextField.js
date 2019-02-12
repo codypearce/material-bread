@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { View, Text } from 'react-native';
 
-import { ThemeContext, TextField } from '../../src/index';
+import { BreadProvider, TextField } from '../../src/index';
 import { State, Store } from '@sambego/storybook-state';
 
 const store = new Store({
@@ -20,7 +20,7 @@ const store = new Store({
 storiesOf('TextField', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Flat', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>
           Flat TextField
@@ -52,10 +52,10 @@ storiesOf('TextField', module)
           </View>
         )}
       </State>
-    </ThemeContext.Provider>
+    </BreadProvider>
   ))
   .add('Filled', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>
           Filled TextField
@@ -91,10 +91,10 @@ storiesOf('TextField', module)
           </View>
         )}
       </State>
-    </ThemeContext.Provider>
+    </BreadProvider>
   ))
   .add('Outlined', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>
           Outlined TextField
@@ -130,5 +130,5 @@ storiesOf('TextField', module)
           </View>
         )}
       </State>
-    </ThemeContext.Provider>
+    </BreadProvider>
   ));

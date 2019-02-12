@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react-native';
 import { View, Text } from 'react-native';
 
 import {
-  ThemeContext,
+  BreadProvider,
   BottomNavigation,
   BottomNavigationItem,
 } from '../../src/index';
@@ -11,7 +11,7 @@ import {
 storiesOf('Bottom Navigation', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Simple', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>
           BottomNavigation
@@ -37,5 +37,5 @@ storiesOf('Bottom Navigation', module)
         <BottomNavigationItem icon={'info'} title="Info" active />
         <BottomNavigationItem icon={'settings'} title={'Settings'} />
       </BottomNavigation>
-    </ThemeContext.Provider>
+    </BreadProvider>
   ));

@@ -2,12 +2,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { View, Text } from 'react-native';
 
-import { ThemeContext, Button } from '../../src/index';
+import { BreadProvider, Button } from '../../src/index';
 
 storiesOf('Buttons', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Text Button', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>Text Button</Text>
       </View>
@@ -19,10 +19,10 @@ storiesOf('Buttons', module)
       <Button compact={true}>SM</Button>
 
       <Button loading={true}>SM</Button>
-    </ThemeContext.Provider>
+    </BreadProvider>
   ))
   .add('Outlined Button', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>
           Outlined Button
@@ -44,10 +44,10 @@ storiesOf('Buttons', module)
       <Button type="outlined" loading={true}>
         SM
       </Button>
-    </ThemeContext.Provider>
+    </BreadProvider>
   ))
   .add('Contained Button', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>
           Contained Button
@@ -69,5 +69,5 @@ storiesOf('Buttons', module)
       <Button type="contained" loading={true}>
         SM
       </Button>
-    </ThemeContext.Provider>
+    </BreadProvider>
   ));

@@ -68,6 +68,7 @@ export { default as ProgressBar } from './Components/Progress/ProgressBar';
 export {
   default as ProgressCircle,
 } from './Components/Progress/ProgressCircle';
+export { default as Portal } from './Components/Portal';
 export { default as RadioButton } from './Components/RadioButton';
 export { default as Snackbar } from './Components/Snackbar';
 export { default as TextField } from './Components/TextField/TextField';
@@ -85,3 +86,6 @@ export {
 // ==== Theme ====
 export { default as ThemeContext } from './Theme/ThemeContext';
 export { default as withTheme } from './Theme/withTheme';
+
+// ==== Core ====
+export { default as BreadProvider } from './Core/BreadProvider';

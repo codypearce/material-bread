@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react-native';
 import { View, Text } from 'react-native';
 
 import {
-  ThemeContext,
+  BreadProvider,
   Drawer,
   DrawerItem,
   DrawerHeader,
@@ -13,7 +13,7 @@ import {
 storiesOf('Drawer', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Simple', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>Drawer</Text>
       </View>
@@ -25,5 +25,5 @@ storiesOf('Drawer', module)
           <DrawerItem text={'Favorites'} icon={'favorite'} />
         </DrawerSection>
       </Drawer>
-    </ThemeContext.Provider>
+    </BreadProvider>
   ));

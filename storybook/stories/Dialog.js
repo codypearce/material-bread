@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react-native';
 import { View, Text } from 'react-native';
 
 import {
-  ThemeContext,
+  BreadProvider,
   Dialog,
   DialogActions,
   DialogContentText,
@@ -21,7 +21,7 @@ const store = new Store({
 storiesOf('Dialog', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Simple', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>Dialog</Text>
       </View>
@@ -53,5 +53,5 @@ storiesOf('Dialog', module)
           </View>
         )}
       </State>
-    </ThemeContext.Provider>
+    </BreadProvider>
   ));

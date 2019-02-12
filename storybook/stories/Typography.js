@@ -8,7 +8,7 @@ import {
   BodyText,
   Caption,
   Overline,
-  ThemeContext,
+  BreadProvider,
 } from '../../src/index';
 
 storiesOf('Typography', module)
@@ -21,7 +21,7 @@ storiesOf('Typography', module)
     </View>
   ))
   .add('Components', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginTop: 50 }}>
         <Heading type={1}>h1</Heading>
         <Heading type={2}>h2</Heading>
@@ -36,5 +36,5 @@ storiesOf('Typography', module)
         <Caption>Caption</Caption>
         <Overline>Overline</Overline>
       </View>
-    </ThemeContext.Provider>
+    </BreadProvider>
   ));

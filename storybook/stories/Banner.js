@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { View, Text } from 'react-native';
 
-import { ThemeContext, Banner, Avatar } from '../../src/index';
+import { BreadProvider, Banner, Avatar } from '../../src/index';
 import { State, Store } from '@sambego/storybook-state';
 
 const store = new Store({
@@ -14,7 +14,7 @@ const store = new Store({
 storiesOf('Banner', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Component', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>Banner</Text>
       </View>
@@ -76,5 +76,5 @@ storiesOf('Banner', module)
           />
         )}
       </State>
-    </ThemeContext.Provider>
+    </BreadProvider>
   ));

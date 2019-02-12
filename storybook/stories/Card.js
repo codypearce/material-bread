@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react-native';
 import { View, Text, Image } from 'react-native';
 
 import {
-  ThemeContext,
+  BreadProvider,
   Card,
   CardHeader,
   CardMedia,
@@ -16,7 +16,7 @@ import {
 storiesOf('Card', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Card', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>Card</Text>
       </View>
@@ -25,10 +25,10 @@ storiesOf('Card', module)
           Just some text
         </Text>
       </Card>
-    </ThemeContext.Provider>
+    </BreadProvider>
   ))
   .add('CardActions', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>Card Actions</Text>
       </View>
@@ -66,10 +66,10 @@ storiesOf('Card', module)
           rightButtonLabel={'Learn More'}
         />
       </Card>
-    </ThemeContext.Provider>
+    </BreadProvider>
   ))
   .add('CardHeader', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>Card Header</Text>
       </View>
@@ -104,11 +104,11 @@ storiesOf('Card', module)
           action={<Icon name="more-vert" size={24} />}
         />
       </Card>
-    </ThemeContext.Provider>
+    </BreadProvider>
   ))
 
   .add('CardMedia', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>Card Media</Text>
       </View>
@@ -137,10 +137,10 @@ storiesOf('Card', module)
           }
         />
       </Card>
-    </ThemeContext.Provider>
+    </BreadProvider>
   ))
   .add('CardContent', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>Card Content</Text>
       </View>
@@ -174,5 +174,5 @@ storiesOf('Card', module)
           </Text>
         </CardContent>
       </Card>
-    </ThemeContext.Provider>
+    </BreadProvider>
   ));

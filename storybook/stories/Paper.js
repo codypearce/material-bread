@@ -2,12 +2,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { View, Text } from 'react-native';
 
-import { ThemeContext, Paper } from '../../src/index';
+import { BreadProvider, Paper } from '../../src/index';
 
 storiesOf('Paper', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Elevation', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>
           Paper Elevation
@@ -44,10 +44,10 @@ storiesOf('Paper', module)
         }}
         elevation={8}
       />
-    </ThemeContext.Provider>
+    </BreadProvider>
   ))
   .add('Roundness', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>
           Paper Roundness
@@ -75,5 +75,5 @@ storiesOf('Paper', module)
         elevation={4}
         radius={8}
       />
-    </ThemeContext.Provider>
+    </BreadProvider>
   ));

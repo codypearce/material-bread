@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { View, Text } from 'react-native';
 
-import { ThemeContext, RadioButton } from '../../src/index';
+import { BreadProvider, RadioButton } from '../../src/index';
 import { State, Store } from '@sambego/storybook-state';
 
 const store = new Store({
@@ -12,7 +12,7 @@ const store = new Store({
 storiesOf('Radio Button', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Radio', () => (
-    <ThemeContext.Provider value={{}}>
+    <BreadProvider value={{}}>
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>Radio Button</Text>
       </View>
@@ -35,5 +35,5 @@ storiesOf('Radio Button', module)
           </View>
         )}
       </State>
-    </ThemeContext.Provider>
+    </BreadProvider>
   ));
