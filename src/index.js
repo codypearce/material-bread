@@ -70,6 +70,7 @@ export {
 } from './Components/Progress/ProgressCircle';
 export { default as Portal } from './Components/Portal';
 export { default as RadioButton } from './Components/RadioButton';
+export { default as Searchbar } from './Components/Searchbar';
 export { default as Snackbar } from './Components/Snackbar';
 export { default as TextField } from './Components/TextField/TextField';
 export {

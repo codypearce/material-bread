@@ -24,6 +24,7 @@ export { default as Paper } from './Paper';
 export { default as Portal } from './Portal';
 export { default as Progress } from './Progress';
 export { default as RadioButton } from './RadioButton';
+export { default as Searchbar } from './Searchbar';
 export { default as Snackbar } from './Snackbar';
 export { default as TextField } from './TextField';
 export { default as Typography } from './Typography';
