@@ -26,5 +26,6 @@ export { default as Progress } from './Progress';
 export { default as RadioButton } from './RadioButton';
 export { default as Searchbar } from './Searchbar';
 export { default as Snackbar } from './Snackbar';
+export { default as Switch } from './Switch';
 export { default as TextField } from './TextField';
 export { default as Typography } from './Typography';
