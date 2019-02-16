@@ -28,4 +28,5 @@ export { default as Searchbar } from './Searchbar';
 export { default as Snackbar } from './Snackbar';
 export { default as Switch } from './Switch';
 export { default as TextField } from './TextField';
+export { default as ToggleButton } from './ToggleButton';
 export { default as Typography } from './Typography';

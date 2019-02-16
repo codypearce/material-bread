@@ -77,6 +77,9 @@ export { default as TextField } from './Components/TextField/TextField';
 export {
   default as TextFieldHelperText,
 } from './Components/TextField/TextFieldHelperText';
+export { default as ToggleButton } from './Components/ToggleButton';
+export { default as ToggleButtonGroup } from './Components/ToggleButtonGroup';
+
 export {
   Heading,
   Subtitle,
