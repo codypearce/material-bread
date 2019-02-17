@@ -13,6 +13,7 @@ export { default as CardActions } from './Components/Card/CardActions';
 export { default as CardContent } from './Components/Card/CardContent';
 export { default as CardHeader } from './Components/Card/CardHeader';
 export { default as CardMedia } from './Components/Card/CardMedia';
+export { default as Checkbox } from './Components/Checkbox';
 export { default as Chip } from './Components/Chip';
 export { default as Dropdown } from './Components/Dropdown';
 export { default as Divider } from './Components/Divider';
