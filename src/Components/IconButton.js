@@ -22,8 +22,8 @@ class IconButton extends Component {
         rippleColor={color ? color : 'rgb(0, 0, 0)'}
         onPress={onPress}
         style={{
-          height: size * 1.2,
-          width: size * 1.2,
+          height: size * 1.3,
+          width: size * 1.3,
           justifyContent: 'center',
           alignItems: 'center',
         }}>

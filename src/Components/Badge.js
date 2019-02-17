@@ -12,6 +12,7 @@ class Badge extends Component {
     style: PropTypes.object,
     theme: PropTypes.object,
     text: PropTypes.string,
+    badgeContent: PropTypes.string,
   };
   render() {
     const {
@@ -21,35 +22,42 @@ class Badge extends Component {
       style,
       theme,
       children,
+      badgeContent,
       ...rest
     } = this.props;
     const realSize = size ? size : 16;
 
     return (
-      <View
-        style={{
-          height: realSize,
-          width: realSize,
-          borderRadius: realSize,
-          backgroundColor: backgroundColor
-            ? backgroundColor
-            : theme.base.primary,
-          alignItems: 'center',
-          justifyContent: 'center',
-          ...style,
-        }}
-        numberOfLines={1}
-        {...rest}>
-        <Text
+      <View style={{ position: 'relative', alignSelf: 'flex-start' }}>
+        {children}
+        <View
           style={{
-            fontSize: realSize * 0.5,
-            color: textColor ? textColor : 'white',
-            alignSelf: 'center',
+            height: realSize,
+            width: realSize,
+            borderRadius: realSize,
+            backgroundColor: backgroundColor
+              ? backgroundColor
+              : theme.base.primary,
             alignItems: 'center',
             justifyContent: 'center',
-          }}>
-          {children}
-        </Text>
+            position: children ? 'absolute' : 'relative',
+            top: children ? 0 : 'auto',
+            right: children ? 0 : 'auto',
+            ...style,
+          }}
+          numberOfLines={1}
+          {...rest}>
+          <Text
+            style={{
+              fontSize: realSize * 0.5,
+              color: textColor ? textColor : 'white',
+              alignSelf: 'center',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            {badgeContent}
+          </Text>
+        </View>
       </View>
     );
   }
