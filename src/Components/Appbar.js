@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TextInput } from 'react-native';
 import withTheme from '../Theme/withTheme';
 import Paper from './Paper';
-import Icon from './Icon';
+import IconButton from './IconButton';
 
 class Appbar extends Component {
   static propTypes = {
@@ -11,39 +11,93 @@ class Appbar extends Component {
     style: PropTypes.object,
     theme: PropTypes.object,
     title: PropTypes.string,
+    renderRight: PropTypes.node,
+    hasMenuButton: PropTypes.bool,
+    isSearch: PropTypes.bool,
   };
 
+  static defaultProps = {
+    hasMenuButton: true,
+  };
+
+  _renderRight() {
+    return (
+      <Fragment>
+        <IconButton
+          name="favorite"
+          size={24}
+          color={'white'}
+          style={{ marginRight: 16 }}
+        />
+        <IconButton
+          name="search"
+          size={24}
+          color={'white'}
+          style={{ marginRight: 16 }}
+        />
+        <IconButton name="more-vert" size={24} color={'white'} />
+      </Fragment>
+    );
+  }
+
+  _renderNormal() {
+    const {
+      title,
+
+      renderRight,
+      hasMenuButton,
+    } = this.props;
+    return (
+      <Fragment>
+        <View style={{ ...styles.left }}>
+          {hasMenuButton ? (
+            <IconButton name="menu" size={24} color={'white'} />
+          ) : null}
+          <Text
+            style={{
+              ...styles.pageTitle,
+              marginLeft: hasMenuButton ? 32 : 0,
+            }}>
+            {title}
+          </Text>
+        </View>
+        <View style={{ ...styles.right }}>
+          {renderRight ? renderRight() : this._renderRight()}
+        </View>
+      </Fragment>
+    );
+  }
+
+  _renderSearch() {
+    return (
+      <Fragment>
+        <IconButton name="arrow-back" size={24} color={'black'} />
+        <TextInput style={{ flex: 1, marginLeft: 8 }} placeholder={'Search'} />
+        <IconButton name="close" size={24} color={'black'} />
+      </Fragment>
+    );
+  }
+
   render() {
-    const { backgroundColor, title, theme, ...rest } = this.props;
+    const { backgroundColor, theme, style, isSearch, ...rest } = this.props;
+
+    let actualBackgroundColor = backgroundColor
+      ? backgroundColor
+      : theme.base.primary;
+
+    if (isSearch) {
+      actualBackgroundColor = 'white';
+    }
 
     return (
       <Paper
         style={{
           ...styles.appbar,
-          backgroundColor: backgroundColor
-            ? backgroundColor
-            : theme.base.primary,
+          backgroundColor: actualBackgroundColor,
+          ...style,
         }}
         {...rest}>
-        <View style={{ ...styles.left }}>
-          <Icon name="menu" size={24} color={'white'} />
-          <Text style={styles.pageTitle}>{title}</Text>
-        </View>
-        <View style={{ ...styles.right }}>
-          <Icon
-            name="favorite"
-            size={24}
-            color={'white'}
-            style={{ marginRight: 24 }}
-          />
-          <Icon
-            name="search"
-            size={24}
-            color={'white'}
-            style={{ marginRight: 24 }}
-          />
-          <Icon name="more-vert" size={24} color={'white'} />
-        </View>
+        {isSearch ? this._renderSearch() : this._renderNormal()}
       </Paper>
     );
   }

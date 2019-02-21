@@ -11,6 +11,12 @@ storiesOf('Appbar', module)
       <View style={{ marginBottom: 60 }}>
         <Text style={{ fontSize: 28, textAlign: 'center' }}>Appbar</Text>
       </View>
-      <Appbar size={64} title={'Page Title'} />
+      <Appbar title={'Page Title'} />
+      <Appbar
+        title={'Page Title'}
+        style={{ marginTop: 20 }}
+        hasMenuButton={false}
+      />
+      <Appbar title={'Page Title'} style={{ marginTop: 20 }} isSearch={true} />
     </BreadProvider>
   ));

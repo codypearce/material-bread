@@ -22,10 +22,11 @@ class IconButton extends Component {
         rippleColor={color ? color : 'rgb(0, 0, 0)'}
         onPress={onPress}
         style={{
-          height: size * 1.3,
-          width: size * 1.3,
+          height: size + 8,
+          width: size + 8,
           justifyContent: 'center',
           alignItems: 'center',
+          ...style,
         }}>
         <Icon
           name={name}
@@ -33,7 +34,6 @@ class IconButton extends Component {
           size={size}
           style={{
             backgroundColor: 'transparent',
-            ...style,
           }}
         />
       </Ripple>
