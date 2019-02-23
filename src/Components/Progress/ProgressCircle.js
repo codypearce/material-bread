@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import { View, Animated, Easing } from 'react-native';
 import withTheme from '../../Theme/withTheme';
+import ProgressCircleDeterminate from './ProgressCircleDeterminate';
 
 class ProgressCircle extends PureComponent {
   static defaultProps = {
@@ -169,7 +170,7 @@ class ProgressCircle extends PureComponent {
       borderRadius: size / 2,
     };
 
-    if (determinate) return null;
+    if (determinate) return <ProgressCircleDeterminate {...this.props} />;
 
     return (
       <View style={{ ...style }}>

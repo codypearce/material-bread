@@ -14,7 +14,7 @@ import Header from '../components/Header';
 const store = new Store({
   value3: 30,
   visible2: true,
-  circleValue3: 0.3,
+  circleValue3: 40,
 });
 
 storiesOf('Progress', module)
@@ -78,6 +78,18 @@ storiesOf('Progress', module)
           <View>
             <ProgressCircle />
             <ProgressCircle color={'blue'} style={{ marginTop: 40 }} />
+
+            <ProgressCircle
+              value={state.circleValue3}
+              size={48}
+              thickness={4}
+              color="#2b80ff"
+              unfilledColor="#f2f2f2"
+              animationMethod="timing"
+              animationConfig={{ speed: 1 }}
+              shouldAnimateFirstValue
+              determinate
+            />
 
             <Button
               type="outlined"
