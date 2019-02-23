@@ -1,16 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 import { BreadProvider, Button } from '../../src/index';
+import Header from '../components/Header';
 
 storiesOf('Buttons', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Text Button', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>Text Button</Text>
-      </View>
+      <Header>Text Button</Header>
+
       <Button>Button</Button>
       <Button disabled={true}>Disabled</Button>
       <Button disableRipple={true}>Disable Ripple</Button>
@@ -23,11 +23,7 @@ storiesOf('Buttons', module)
   ))
   .add('Outlined Button', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>
-          Outlined Button
-        </Text>
-      </View>
+      <Header>Outlined Button</Header>
       <Button type="outlined">Button</Button>
       <Button type="outlined" disabled={true}>
         Disabled
@@ -48,11 +44,7 @@ storiesOf('Buttons', module)
   ))
   .add('Contained Button', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>
-          Contained Button
-        </Text>
-      </View>
+      <Header>Contained Button</Header>
       <Button type="contained">Button</Button>
       <Button type="contained" disabled={true}>
         Disabled

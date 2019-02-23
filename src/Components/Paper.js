@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Animated } from 'react-native';
 import withTheme from '../Theme/withTheme';
 import { shadow } from '../index';
 
-class Paper extends Component {
+class Paper extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     style: PropTypes.object,

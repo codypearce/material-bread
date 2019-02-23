@@ -1,16 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 import { BreadProvider, Avatar } from '../../src/index';
+import Header from '../components/Header';
 
 storiesOf('Avatars', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Image', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>Image Avatar</Text>
-      </View>
+      <Header>Image Avatar</Header>
+
       <Avatar type="image" image={require('../assets/avatar.png')} size={64} />
       <Avatar type="image" image={require('../assets/avatar.png')} size={48} />
       <Avatar type="image" image={require('../assets/avatar.png')} size={24} />
@@ -18,9 +18,7 @@ storiesOf('Avatars', module)
   ))
   .add('Icon', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>Icon Avatars</Text>
-      </View>
+      <Header>Icon Avatar</Header>
 
       <Avatar
         type="icon"
@@ -47,9 +45,7 @@ storiesOf('Avatars', module)
   ))
   .add('Text', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>Text Avatar</Text>
-      </View>
+      <Header>Text Avatar</Header>
 
       <Avatar type="text" text={'CP'} size={64} backgroundColor={'#42a5f5'} />
       <Avatar type="text" text={'NP'} size={48} backgroundColor={'#c2185b'} />

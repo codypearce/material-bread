@@ -1,9 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 import { BreadProvider, Dropdown } from '../../src/index';
 import { State, Store } from '@sambego/storybook-state';
+import Header from '../components/Header';
 
 const store = new Store({
   selectedItem: '',
@@ -19,11 +20,7 @@ storiesOf('Dropdown', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Outlined', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>
-          Outlined Dropdown
-        </Text>
-      </View>
+      <Header>Outlined Dropdown</Header>
 
       <State store={store} style={{ flex: 1 }}>
         {state => (

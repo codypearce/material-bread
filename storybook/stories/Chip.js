@@ -1,16 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 import { BreadProvider, Chip } from '../../src/index';
+import Header from '../components/Header';
 
 storiesOf('Chip', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Simple', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>Chip</Text>
-      </View>
+      <Header>Chip</Header>
       <Chip size={64} style={{ marginBottom: 20 }}>
         4
       </Chip>

@@ -12,14 +12,13 @@ import {
   Avatar,
   Icon,
 } from '../../src/index';
+import Header from '../components/Header';
 
 storiesOf('Card', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Card', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>Card</Text>
-      </View>
+      <Header>Card</Header>
       <Card>
         <Text style={{ fontSize: 14, textAlign: 'center' }}>
           Just some text
@@ -29,9 +28,7 @@ storiesOf('Card', module)
   ))
   .add('CardActions', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>Card Actions</Text>
-      </View>
+      <Header>Card Actions</Header>
       <Card>
         <CardHeader
           avatar={
@@ -70,9 +67,7 @@ storiesOf('Card', module)
   ))
   .add('CardHeader', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>Card Header</Text>
-      </View>
+      <Header>Card header</Header>
       <Card>
         <CardHeader
           avatar={
@@ -109,9 +104,7 @@ storiesOf('Card', module)
 
   .add('CardMedia', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>Card Media</Text>
-      </View>
+      <Header>Card Media</Header>
       <Card>
         <CardHeader
           avatar={
@@ -141,9 +134,7 @@ storiesOf('Card', module)
   ))
   .add('CardContent', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>Card Content</Text>
-      </View>
+      <Header>Card Content</Header>
       <Card>
         <CardHeader
           avatar={

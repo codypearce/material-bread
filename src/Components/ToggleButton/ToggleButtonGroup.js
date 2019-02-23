@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import withTheme from '../Theme/withTheme';
+import withTheme from '../../Theme/withTheme';
 
 export const ToggleButtonContext = React.createContext();
 

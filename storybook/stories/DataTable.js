@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 import {
   BreadProvider,
@@ -11,14 +11,13 @@ import {
   DataTableHeaderItem,
   DataTableRow,
 } from '../../src/index';
+import Header from '../components/Header';
 
 storiesOf('Data Table', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Data Table', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>Data Table</Text>
-      </View>
+      <Header>DataTable</Header>
       <DataTable>
         <DataTableHeader showcheckBox>
           <DataTableHeaderItem>Header</DataTableHeaderItem>

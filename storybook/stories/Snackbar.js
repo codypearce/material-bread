@@ -1,9 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 import { BreadProvider, Snackbar, Button } from '../../src/index';
 import { State, Store } from '@sambego/storybook-state';
+import Header from '../components/Header';
 
 const store = new Store({
   show: false,
@@ -15,9 +16,7 @@ storiesOf('Snackbar', module)
   ))
   .add('Snackbar', () => (
     <BreadProvider value={{ flex: 1 }}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>Snackbar</Text>
-      </View>
+      <Header>Snackbar</Header>
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <View style={{ flex: 1 }}>

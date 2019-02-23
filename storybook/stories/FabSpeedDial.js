@@ -1,8 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 import { BreadProvider, FabSpeedDial } from '../../src/index';
+import Header from '../components/Header';
+
 const actions = [
   {
     text: 'Favorites',
@@ -24,9 +26,7 @@ storiesOf('FabSpeedDial', module)
   ))
   .add('Simple', () => (
     <BreadProvider value={{}} style={{ flex: 1 }}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>Fab SpeedDial</Text>
-      </View>
+      <Header>Fab SpeedDial</Header>
       <View style={{ flex: 1, position: 'relative' }}>
         <FabSpeedDial actions={actions} />
       </View>

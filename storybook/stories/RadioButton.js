@@ -1,9 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 import { BreadProvider, RadioButton } from '../../src/index';
 import { State, Store } from '@sambego/storybook-state';
+import Header from '../components/Header';
 
 const store = new Store({
   checked: 0,
@@ -13,9 +14,7 @@ storiesOf('Radio Button', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Radio', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>Radio Button</Text>
-      </View>
+      <Header>Radio Button</Header>
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <View>

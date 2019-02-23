@@ -4,6 +4,7 @@ import { View, Text } from 'react-native';
 
 import { BreadProvider, Banner, Avatar } from '../../src/index';
 import { State, Store } from '@sambego/storybook-state';
+import Header from '../components/Header';
 
 const store = new Store({
   visibleOne: true,
@@ -15,9 +16,7 @@ storiesOf('Banner', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Component', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>Banner</Text>
-      </View>
+      <Header>Banner</Header>
 
       <Text style={{ fontSize: 16, marginBottom: 4 }}>Single line Banner</Text>
       <State store={store}>

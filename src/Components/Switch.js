@@ -31,7 +31,6 @@ class Switch extends Component {
   }
 
   render() {
-    const { active } = this.props;
     const { thumbTranslateX, isActive } = this.state;
 
     return (

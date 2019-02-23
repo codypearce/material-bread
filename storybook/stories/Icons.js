@@ -3,14 +3,13 @@ import { storiesOf } from '@storybook/react-native';
 import { View, Text } from 'react-native';
 
 import { BreadProvider, Icon, Badge } from '../../src/index';
+import Header from '../components/Header';
 
 storiesOf('Icons', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Installing', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>Installing</Text>
-      </View>
+      <Header>Installing</Header>
       <Text style={{ fontSize: 14, textAlign: 'left' }}>
         Icons are provided by react-native-vector-icons, this package is
         required for many components.
@@ -24,11 +23,7 @@ storiesOf('Icons', module)
   ))
   .add('Component', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>
-          Icon Component
-        </Text>
-      </View>
+      <Header>Icon Component</Header>
       <Icon name="alarm" size={32} />
       <Icon name="face" size={32} />
       <Icon name="arrow-back" size={32} />

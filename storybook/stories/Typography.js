@@ -10,18 +10,13 @@ import {
   Overline,
   BreadProvider,
 } from '../../src/index';
+import Header from '../components/Header';
 
 storiesOf('Typography', module)
-  .addDecorator(story => (
-    <View style={{ padding: 16 }}>
-      <View>
-        <Heading type={2}>Typography</Heading>
-      </View>
-      {story()}
-    </View>
-  ))
+  .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Components', () => (
     <BreadProvider value={{}}>
+      <Header>Typography</Header>
       <View style={{ marginTop: 50 }}>
         <Heading type={1}>h1</Heading>
         <Heading type={2}>h2</Heading>

@@ -2,22 +2,19 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { View, Text } from 'react-native';
 
-import { shadow, Heading, Subtitle, Ripple } from '../../src';
+import { shadow, Ripple } from '../../src';
 
 import { BreadProvider } from '../../src/index';
+import Header from '../components/Header';
 
 storiesOf('Abstract', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Ripple', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Heading align="center" type={4}>
-          Ripple
-        </Heading>
-        <Subtitle type={1} style={{ marginTop: 40 }}>
-          Add a touchable ripple to anything
-        </Subtitle>
-      </View>
+      <Header
+        title={'Ripple'}
+        subtitle={'Add a touchable ripple to anything'}
+      />
       <Ripple
         rippleColor={'blue'}
         style={{
@@ -35,15 +32,13 @@ storiesOf('Abstract', module)
   ))
   .add('Shadows', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Heading align="center" type={4}>
-          Shadows
-        </Heading>
-        <Subtitle type={1} style={{ marginTop: 40 }}>
-          Use the shadow() function to add platform shadow to the style of any
-          component
-        </Subtitle>
-      </View>
+      <Header
+        title={'Shadows'}
+        subtitle={
+          'Use the shadow() function to add platform shadow to the style of any component'
+        }
+      />
+
       <View
         style={{
           padding: 8,

@@ -1,16 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 import { BreadProvider, Badge, Icon, IconButton } from '../../src/index';
+import Header from '../components/Header';
 
 storiesOf('Badge', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Simple', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>Badge</Text>
-      </View>
+      <Header>Badge</Header>
+
       <Badge size={64} badgeContent={4} />
       <Badge size={24} badgeContent={24} />
       <Badge size={16} badgeContent={99} />

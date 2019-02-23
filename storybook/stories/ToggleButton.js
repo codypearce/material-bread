@@ -1,21 +1,20 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 import {
   BreadProvider,
   ToggleButton,
   ToggleButtonGroup,
 } from '../../src/index';
+import Header from '../components/Header';
 
 storiesOf('Toggle Button', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
 
   .add('Single', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>Toggle Button</Text>
-      </View>
+      <Header>Toggle Button</Header>
       <ToggleButton icon="alarm" size={32} />
       <ToggleButton icon="face" size={32} color={'purple'} />
       <ToggleButton icon="arrow-back" size={32} color={'orange'} />
@@ -23,11 +22,7 @@ storiesOf('Toggle Button', module)
   ))
   .add('Group', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>
-          Toggle Button Group
-        </Text>
-      </View>
+      <Header>Toggle Button Group</Header>
       <ToggleButtonGroup>
         <ToggleButton icon="alarm" size={32} value={'alarm'} />
         <ToggleButton icon="face" size={32} color={'purple'} value={'face'} />

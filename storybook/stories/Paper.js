@@ -3,16 +3,13 @@ import { storiesOf } from '@storybook/react-native';
 import { View, Text } from 'react-native';
 
 import { BreadProvider, Paper } from '../../src/index';
+import Header from '../components/Header';
 
 storiesOf('Paper', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Elevation', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>
-          Paper Elevation
-        </Text>
-      </View>
+      <Header>Paper</Header>
       <Paper
         style={{
           padding: 8,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 import {
   BreadProvider,
@@ -10,14 +10,13 @@ import {
   ListItemText,
   ListExpanded,
 } from '../../src/index';
+import Header from '../components/Header';
 
 storiesOf('List', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('List', () => (
     <BreadProvider value={{}}>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>List</Text>
-      </View>
+      <Header>List</Header>
       <List>
         <ListItem>
           <ListItemIcon icon={'alarm'} />

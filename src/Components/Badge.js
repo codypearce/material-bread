@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Text, View } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import withTheme from '../Theme/withTheme';
 
 class Badge extends Component {
@@ -49,11 +49,9 @@ class Badge extends Component {
           {...rest}>
           <Text
             style={{
+              ...styles.content,
               fontSize: realSize * 0.5,
               color: textColor ? textColor : 'white',
-              alignSelf: 'center',
-              alignItems: 'center',
-              justifyContent: 'center',
             }}>
             {badgeContent}
           </Text>
@@ -62,5 +60,13 @@ class Badge extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  content: {
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
 
 export default withTheme(Badge);
