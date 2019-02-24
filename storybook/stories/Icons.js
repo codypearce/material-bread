@@ -1,14 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import { View, Text } from 'react-native';
+import { Text } from 'react-native';
 
-import { BreadProvider, Icon, Badge } from '../../src/index';
+import { Icon, Badge } from '../../src/index';
 import Header from '../components/Header';
+import Container from '../components/Container';
 
 storiesOf('Icons', module)
-  .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Installing', () => (
-    <BreadProvider value={{}}>
+    <Container>
       <Header>Installing</Header>
       <Text style={{ fontSize: 14, textAlign: 'left' }}>
         Icons are provided by react-native-vector-icons, this package is
@@ -19,10 +19,10 @@ storiesOf('Icons', module)
         name from here https://material.io/tools/icons/?style=baseline. For
         example, arrow-back
       </Text>
-    </BreadProvider>
+    </Container>
   ))
   .add('Component', () => (
-    <BreadProvider value={{}}>
+    <Container>
       <Header>Icon Component</Header>
       <Icon name="alarm" size={32} />
       <Icon name="face" size={32} />
@@ -33,5 +33,5 @@ storiesOf('Icons', module)
         badgeContent={4}>
         <Icon name="favorite" size={32} />
       </Badge>
-    </BreadProvider>
+    </Container>
   ));

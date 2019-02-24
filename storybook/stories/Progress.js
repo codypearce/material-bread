@@ -2,14 +2,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { View } from 'react-native';
 
-import {
-  BreadProvider,
-  ProgressCircle,
-  ProgressBar,
-  Button,
-} from '../../src/index';
+import { ProgressCircle, ProgressBar, Button } from '../../src/index';
 import { State, Store } from '@sambego/storybook-state';
 import Header from '../components/Header';
+import Container from '../components/Container';
 
 const store = new Store({
   value3: 30,
@@ -18,9 +14,8 @@ const store = new Store({
 });
 
 storiesOf('Progress', module)
-  .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Progress Bar', () => (
-    <BreadProvider value={{}}>
+    <Container>
       <Header>Progress Bar</Header>
 
       <ProgressBar visible />
@@ -68,10 +63,10 @@ storiesOf('Progress', module)
           </View>
         )}
       </State>
-    </BreadProvider>
+    </Container>
   ))
   .add('Progress Circle', () => (
-    <BreadProvider value={{}}>
+    <Container>
       <Header>Progress Circle</Header>
       <State store={store} style={{ flex: 1 }}>
         {state => (
@@ -105,5 +100,5 @@ storiesOf('Progress', module)
           </View>
         )}
       </State>
-    </BreadProvider>
+    </Container>
   ));

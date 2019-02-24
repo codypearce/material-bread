@@ -4,13 +4,12 @@ import { View, Text } from 'react-native';
 
 import { shadow, Ripple } from '../../src';
 
-import { BreadProvider } from '../../src/index';
 import Header from '../components/Header';
+import Container from '../components/Container';
 
 storiesOf('Abstract', module)
-  .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Ripple', () => (
-    <BreadProvider value={{}}>
+    <Container>
       <Header
         title={'Ripple'}
         subtitle={'Add a touchable ripple to anything'}
@@ -28,10 +27,10 @@ storiesOf('Abstract', module)
         }}>
         <Text>Click Me</Text>
       </Ripple>
-    </BreadProvider>
+    </Container>
   ))
   .add('Shadows', () => (
-    <BreadProvider value={{}}>
+    <Container>
       <Header
         title={'Shadows'}
         subtitle={
@@ -52,5 +51,5 @@ storiesOf('Abstract', module)
           ...shadow(4),
         }}
       />
-    </BreadProvider>
+    </Container>
   ));

@@ -2,8 +2,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { View } from 'react-native';
 
-import { BreadProvider, FabSpeedDial } from '../../src/index';
+import { FabSpeedDial } from '../../src/index';
 import Header from '../components/Header';
+import Container from '../components/Container';
 
 const actions = [
   {
@@ -20,15 +21,11 @@ const actions = [
   },
 ];
 
-storiesOf('FabSpeedDial', module)
-  .addDecorator(story => (
-    <View style={{ padding: 16, flex: 1 }}>{story()}</View>
-  ))
-  .add('Simple', () => (
-    <BreadProvider value={{}} style={{ flex: 1 }}>
-      <Header>Fab SpeedDial</Header>
-      <View style={{ flex: 1, position: 'relative' }}>
-        <FabSpeedDial actions={actions} />
-      </View>
-    </BreadProvider>
-  ));
+storiesOf('FabSpeedDial', module).add('Simple', () => (
+  <Container>
+    <Header>Fab SpeedDial</Header>
+    <View style={{ flex: 1, position: 'relative' }}>
+      <FabSpeedDial actions={actions} />
+    </View>
+  </Container>
+));

@@ -1,9 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import { View } from 'react-native';
 
 import {
-  BreadProvider,
   List,
   ListItem,
   ListItemIcon,
@@ -11,25 +9,24 @@ import {
   ListExpanded,
 } from '../../src/index';
 import Header from '../components/Header';
+import Container from '../components/Container';
 
-storiesOf('List', module)
-  .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
-  .add('List', () => (
-    <BreadProvider value={{}}>
-      <Header>List</Header>
-      <List>
+storiesOf('List', module).add('List', () => (
+  <Container>
+    <Header>List</Header>
+    <List>
+      <ListItem>
+        <ListItemIcon icon={'alarm'} />
+        <ListItemText primary={'This is a list Item'} />
+      </ListItem>
+      <ListExpanded title="Expanded">
         <ListItem>
-          <ListItemIcon icon={'alarm'} />
           <ListItemText primary={'This is a list Item'} />
         </ListItem>
-        <ListExpanded title="Expanded">
-          <ListItem>
-            <ListItemText primary={'This is a list Item'} />
-          </ListItem>
-          <ListItem>
-            <ListItemText primary={'This is a list Item'} />
-          </ListItem>
-        </ListExpanded>
-      </List>
-    </BreadProvider>
-  ));
+        <ListItem>
+          <ListItemText primary={'This is a list Item'} />
+        </ListItem>
+      </ListExpanded>
+    </List>
+  </Container>
+));

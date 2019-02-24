@@ -1,9 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import { View, Text, Image } from 'react-native';
+import { Text, Image } from 'react-native';
 
 import {
-  BreadProvider,
   Card,
   CardHeader,
   CardMedia,
@@ -13,21 +12,21 @@ import {
   Icon,
 } from '../../src/index';
 import Header from '../components/Header';
+import Container from '../components/Container';
 
 storiesOf('Card', module)
-  .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
   .add('Card', () => (
-    <BreadProvider value={{}}>
+    <Container>
       <Header>Card</Header>
       <Card>
         <Text style={{ fontSize: 14, textAlign: 'center' }}>
           Just some text
         </Text>
       </Card>
-    </BreadProvider>
+    </Container>
   ))
   .add('CardActions', () => (
-    <BreadProvider value={{}}>
+    <Container>
       <Header>Card Actions</Header>
       <Card>
         <CardHeader
@@ -63,10 +62,10 @@ storiesOf('Card', module)
           rightButtonLabel={'Learn More'}
         />
       </Card>
-    </BreadProvider>
+    </Container>
   ))
   .add('CardHeader', () => (
-    <BreadProvider value={{}}>
+    <Container>
       <Header>Card header</Header>
       <Card>
         <CardHeader
@@ -99,11 +98,11 @@ storiesOf('Card', module)
           action={<Icon name="more-vert" size={24} />}
         />
       </Card>
-    </BreadProvider>
+    </Container>
   ))
 
   .add('CardMedia', () => (
-    <BreadProvider value={{}}>
+    <Container>
       <Header>Card Media</Header>
       <Card>
         <CardHeader
@@ -130,10 +129,10 @@ storiesOf('Card', module)
           }
         />
       </Card>
-    </BreadProvider>
+    </Container>
   ))
   .add('CardContent', () => (
-    <BreadProvider value={{}}>
+    <Container>
       <Header>Card Content</Header>
       <Card>
         <CardHeader
@@ -165,5 +164,5 @@ storiesOf('Card', module)
           </Text>
         </CardContent>
       </Card>
-    </BreadProvider>
+    </Container>
   ));
