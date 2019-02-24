@@ -22,7 +22,7 @@ const store = new Store({
 storiesOf('TextField', module)
   .add('Flat', () => (
     <Container>
-      <Header>Flat TextField</Header>
+      <Header title={'Flat TextField'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <View>
@@ -53,7 +53,7 @@ storiesOf('TextField', module)
   ))
   .add('Filled', () => (
     <Container>
-      <Header>Filled TextField</Header>
+      <Header title={'Filled TextField'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <View>
@@ -88,7 +88,7 @@ storiesOf('TextField', module)
   ))
   .add('Outlined', () => (
     <Container>
-      <Header>Outlined Textfield</Header>
+      <Header title={'Outlined TextField'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <View>

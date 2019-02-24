@@ -15,7 +15,7 @@ const store = new Store({
 
 storiesOf('Banner', module).add('Component', () => (
   <Container>
-    <Header>Banner</Header>
+    <Header title={'Banner'} />
 
     <Text style={{ fontSize: 16, marginBottom: 4 }}>Single line Banner</Text>
     <State store={store}>

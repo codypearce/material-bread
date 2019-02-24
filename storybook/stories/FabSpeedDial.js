@@ -23,7 +23,8 @@ const actions = [
 
 storiesOf('FabSpeedDial', module).add('Simple', () => (
   <Container>
-    <Header>Fab SpeedDial</Header>
+    <Header title={'Fab SpeedDial'} />
+
     <View style={{ flex: 1, position: 'relative' }}>
       <FabSpeedDial actions={actions} />
     </View>

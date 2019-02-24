@@ -16,7 +16,7 @@ const store = new Store({
 storiesOf('Progress', module)
   .add('Progress Bar', () => (
     <Container>
-      <Header>Progress Bar</Header>
+      <Header title={'Progress Bar'} />
 
       <ProgressBar visible />
 
@@ -67,7 +67,7 @@ storiesOf('Progress', module)
   ))
   .add('Progress Circle', () => (
     <Container>
-      <Header>Progress Circle</Header>
+      <Header title={'Progress Circle'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <View>

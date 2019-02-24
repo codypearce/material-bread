@@ -13,7 +13,7 @@ const store = new Store({
 
 storiesOf('Radio Button', module).add('Radio', () => (
   <Container>
-    <Header>Radio Button</Header>
+    <Header title={'Radio Button'} />
     <State store={store} style={{ flex: 1 }}>
       {state => (
         <View>

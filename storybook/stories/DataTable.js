@@ -14,7 +14,8 @@ import Container from '../components/Container';
 
 storiesOf('Data Table', module).add('Data Table', () => (
   <Container>
-    <Header>DataTable</Header>
+    <Header title={'DataTable'} />
+
     <DataTable>
       <DataTableHeader showcheckBox>
         <DataTableHeaderItem>Header</DataTableHeaderItem>

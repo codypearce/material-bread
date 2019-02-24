@@ -17,7 +17,8 @@ import Container from '../components/Container';
 storiesOf('Card', module)
   .add('Card', () => (
     <Container>
-      <Header>Card</Header>
+      <Header title={'Card'} />
+
       <Card>
         <Text style={{ fontSize: 14, textAlign: 'center' }}>
           Just some text
@@ -27,7 +28,8 @@ storiesOf('Card', module)
   ))
   .add('CardActions', () => (
     <Container>
-      <Header>Card Actions</Header>
+      <Header title={'Card Actions'} />
+
       <Card>
         <CardHeader
           avatar={
@@ -66,7 +68,8 @@ storiesOf('Card', module)
   ))
   .add('CardHeader', () => (
     <Container>
-      <Header>Card header</Header>
+      <Header title={'Card header'} />
+
       <Card>
         <CardHeader
           avatar={
@@ -103,7 +106,8 @@ storiesOf('Card', module)
 
   .add('CardMedia', () => (
     <Container>
-      <Header>Card Media</Header>
+      <Header title={'Card Media'} />
+
       <Card>
         <CardHeader
           avatar={
@@ -133,7 +137,8 @@ storiesOf('Card', module)
   ))
   .add('CardContent', () => (
     <Container>
-      <Header>Card Content</Header>
+      <Header title={'Card Content'} />
+
       <Card>
         <CardHeader
           avatar={

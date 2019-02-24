@@ -9,7 +9,7 @@ import Container from '../components/Container';
 storiesOf('Paper', module)
   .add('Elevation', () => (
     <Container>
-      <Header>Paper</Header>
+      <Header title={'Paper'} />
       <Paper
         style={{
           padding: 8,
@@ -45,11 +45,7 @@ storiesOf('Paper', module)
   ))
   .add('Roundness', () => (
     <Container>
-      <View style={{ marginBottom: 60 }}>
-        <Text style={{ fontSize: 28, textAlign: 'center' }}>
-          Paper Roundness
-        </Text>
-      </View>
+      <Header title={'Roudness'} />
       <Paper
         style={{
           padding: 8,

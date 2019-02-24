@@ -7,7 +7,8 @@ import Container from '../components/Container';
 
 storiesOf('Fab', module).add('Fab', () => (
   <Container>
-    <Header>Fab</Header>
+    <Header title={'Fab'} />
+
     <Fab />
   </Container>
 ));

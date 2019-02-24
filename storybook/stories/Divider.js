@@ -7,7 +7,8 @@ import Container from '../components/Container';
 
 storiesOf('Divider', module).add('Simple', () => (
   <Container>
-    <Header>Divider</Header>
+    <Header title={'Divider'} />
+
     <Divider />
     <Divider />
     <Divider marginVertical={24} />

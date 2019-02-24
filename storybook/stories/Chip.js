@@ -7,7 +7,8 @@ import Container from '../components/Container';
 
 storiesOf('Chip', module).add('Simple', () => (
   <Container>
-    <Header>Chip</Header>
+    <Header title={'Chip'} />
+
     <Chip size={64} style={{ marginBottom: 20 }}>
       4
     </Chip>

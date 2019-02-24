@@ -8,7 +8,7 @@ import Container from '../components/Container';
 storiesOf('Avatars', module)
   .add('Image', () => (
     <Container>
-      <Header>Image Avatar</Header>
+      <Header title={'Image Avatar'} />
 
       <Avatar type="image" image={require('../assets/avatar.png')} size={64} />
       <Avatar type="image" image={require('../assets/avatar.png')} size={48} />
@@ -17,7 +17,7 @@ storiesOf('Avatars', module)
   ))
   .add('Icon', () => (
     <Container>
-      <Header>Icon Avatar</Header>
+      <Header title={'Icon Avatar'} />
 
       <Avatar
         type="icon"
@@ -44,7 +44,7 @@ storiesOf('Avatars', module)
   ))
   .add('Text', () => (
     <Container>
-      <Header>Text Avatar</Header>
+      <Header title={'Text Avatar'} />
 
       <Avatar type="text" text={'CP'} size={64} backgroundColor={'#42a5f5'} />
       <Avatar type="text" text={'NP'} size={48} backgroundColor={'#c2185b'} />

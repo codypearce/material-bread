@@ -8,7 +8,7 @@ import Container from '../components/Container';
 storiesOf('Buttons', module)
   .add('Text Button', () => (
     <Container>
-      <Header>Text Button</Header>
+      <Header title={'Text Button'} />
 
       <Button>Button</Button>
       <Button disabled={true}>Disabled</Button>
@@ -22,7 +22,8 @@ storiesOf('Buttons', module)
   ))
   .add('Outlined Button', () => (
     <Container>
-      <Header>Outlined Button</Header>
+      <Header title={'Outlined Button'} />
+
       <Button type="outlined">Button</Button>
       <Button type="outlined" disabled={true}>
         Disabled
@@ -43,7 +44,8 @@ storiesOf('Buttons', module)
   ))
   .add('Contained Button', () => (
     <Container>
-      <Header>Contained Button</Header>
+      <Header title={'Contained Button'} />
+
       <Button type="contained">Button</Button>
       <Button type="contained" disabled={true}>
         Disabled

@@ -13,7 +13,8 @@ const store = new Store({
 
 storiesOf('Checkbox', module).add('Material', () => (
   <Container>
-    <Header>Checkbox</Header>
+    <Header title={'Checkbox'} />
+
     <State store={store} style={{ flex: 1 }}>
       {state => (
         <View>

@@ -7,7 +7,7 @@ import Container from '../components/Container';
 
 storiesOf('Switch', module).add('Simple', () => (
   <Container>
-    <Header>Switch</Header>
+    <Header title={'Switch'} />
     <Switch />
   </Container>
 ));

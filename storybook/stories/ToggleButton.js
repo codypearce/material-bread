@@ -8,7 +8,7 @@ import Container from '../components/Container';
 storiesOf('Toggle Button', module)
   .add('Single', () => (
     <Container>
-      <Header>Toggle Button</Header>
+      <Header title={'Toggle Button'} />
       <ToggleButton icon="alarm" size={32} />
       <ToggleButton icon="face" size={32} color={'purple'} />
       <ToggleButton icon="arrow-back" size={32} color={'orange'} />
@@ -16,7 +16,7 @@ storiesOf('Toggle Button', module)
   ))
   .add('Group', () => (
     <Container>
-      <Header>Toggle Button Group</Header>
+      <Header title={'Toggle Button Group'} />
       <ToggleButtonGroup>
         <ToggleButton icon="alarm" size={32} value={'alarm'} />
         <ToggleButton icon="face" size={32} color={'purple'} value={'face'} />

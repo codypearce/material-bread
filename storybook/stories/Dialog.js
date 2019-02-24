@@ -21,7 +21,8 @@ const store = new Store({
 
 storiesOf('Dialog', module).add('Simple', () => (
   <Container>
-    <Header>Dialog</Header>
+    <Header title={'Dialog'} />
+
     <State store={store} style={{ flex: 1 }}>
       {state => (
         <View>

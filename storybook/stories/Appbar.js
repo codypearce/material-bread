@@ -7,7 +7,7 @@ import Container from '../components/Container';
 
 storiesOf('Appbar', module).add('Appbar', () => (
   <Container>
-    <Header>Appbar</Header>
+    <Header title={'Appbar'} />
     <Appbar title={'Page Title'} />
     <Appbar
       title={'Page Title'}

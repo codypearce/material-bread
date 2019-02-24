@@ -7,7 +7,7 @@ import Container from '../components/Container';
 
 storiesOf('Bottom Navigation', module).add('Simple', () => (
   <Container>
-    <Header>Bottom Navigation</Header>
+    <Header title={'Bottom Navigation'} />
 
     <BottomNavigation backgroundColor={'white'}>
       <BottomNavigationItem icon={'favorite'} />

@@ -9,7 +9,8 @@ import Container from '../components/Container';
 storiesOf('Icons', module)
   .add('Installing', () => (
     <Container>
-      <Header>Installing</Header>
+      <Header title={'Installing'} />
+
       <Text style={{ fontSize: 14, textAlign: 'left' }}>
         Icons are provided by react-native-vector-icons, this package is
         required for many components.
@@ -23,7 +24,8 @@ storiesOf('Icons', module)
   ))
   .add('Component', () => (
     <Container>
-      <Header>Icon Component</Header>
+      <Header title={'Icon Component'} />
+
       <Icon name="alarm" size={32} />
       <Icon name="face" size={32} />
       <Icon name="arrow-back" size={32} />

@@ -13,7 +13,8 @@ import Container from '../components/Container';
 
 storiesOf('List', module).add('List', () => (
   <Container>
-    <Header>List</Header>
+    <Header title={'List'} />
+
     <List>
       <ListItem>
         <ListItemIcon icon={'alarm'} />

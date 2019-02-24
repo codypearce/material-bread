@@ -7,7 +7,7 @@ import Container from '../components/Container';
 
 storiesOf('Badge', module).add('Simple', () => (
   <Container>
-    <Header>Badge</Header>
+    <Header title={'Badge'} />
 
     <Badge size={64} badgeContent={4} />
     <Badge size={24} badgeContent={24} />

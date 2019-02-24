@@ -12,7 +12,8 @@ import Container from '../components/Container';
 
 storiesOf('Drawer', module).add('Simple', () => (
   <Container>
-    <Header>Drawer</Header>
+    <Header title={'Drawer'} />
+
     <Drawer containerStyle={{ height: 400 }}>
       <DrawerHeader title={'Jon Snow'} subtitle={'Knows nothing'} />
       <DrawerSection bottomDivider>

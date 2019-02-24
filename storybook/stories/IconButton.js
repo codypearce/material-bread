@@ -11,7 +11,8 @@ storiesOf('Icon Button', module)
 
   .add('Component', () => (
     <Container>
-      <Header>Icon Button</Header>
+      <Header title={'Icon Button'} />
+
       <IconButton name="alarm" size={32} />
       <IconButton name="face" size={32} color={'purple'} />
       <IconButton name="arrow-back" size={32} color={'orange'} />

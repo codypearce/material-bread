@@ -18,7 +18,7 @@ const data = [
 
 storiesOf('Dropdown', module).add('Outlined', () => (
   <Container>
-    <Header>Outlined Dropdown</Header>
+    <Header title={'Outlined Dropdown'} />
 
     <State store={store} style={{ flex: 1 }}>
       {state => (

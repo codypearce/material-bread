@@ -8,7 +8,7 @@ import Container from '../components/Container';
 
 storiesOf('Portal', module).add('Portal', () => (
   <Container>
-    <Header>Portal</Header>
+    <Header title={'Portal'} />
     <Portal.Consumer>
       {context => (
         <View

@@ -14,7 +14,7 @@ import Container from '../components/Container';
 
 storiesOf('Typography', module).add('Components', () => (
   <Container>
-    <Header>Typography</Header>
+    <Header title={'Typography'} />
     <View style={{ marginTop: 50 }}>
       <Heading type={1}>h1</Heading>
       <Heading type={2}>h2</Heading>

@@ -15,7 +15,7 @@ const store = new Store({
 
 storiesOf('Menu', module).add('Menu', () => (
   <Container>
-    <Header>Menu</Header>
+    <Header title={'Menu'} />
 
     <State store={store} style={{ flex: 1 }}>
       {state => (
