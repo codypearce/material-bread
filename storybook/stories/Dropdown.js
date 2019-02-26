@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
+import { storiesOf } from '../helpers/storiesOf';
 
 import { Dropdown } from '../../src/index';
 import { State, Store } from '@sambego/storybook-state';

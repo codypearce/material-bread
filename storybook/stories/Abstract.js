@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
+import { storiesOf } from '../helpers/storiesOf';
 import { View, Text } from 'react-native';
 
 import { shadow, Ripple } from '../../src';
