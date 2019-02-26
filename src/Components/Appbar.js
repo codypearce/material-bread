@@ -49,7 +49,12 @@ class Appbar extends Component {
     } = this.props;
     return (
       <Fragment>
-        <View style={{ ...styles.left }}>
+        <View
+          style={{
+            ...styles.left,
+            flexDirection: 'row',
+            alignItems: 'center',
+          }}>
           {hasMenuButton ? (
             <IconButton name="menu" size={24} color={'white'} />
           ) : null}
@@ -61,7 +66,12 @@ class Appbar extends Component {
             {title}
           </Text>
         </View>
-        <View style={{ ...styles.right }}>
+        <View
+          style={{
+            ...styles.right,
+            flexDirection: 'row',
+            alignItems: 'center',
+          }}>
           {renderRight ? renderRight() : this._renderRight()}
         </View>
       </Fragment>
@@ -89,14 +99,15 @@ class Appbar extends Component {
       actualBackgroundColor = 'white';
     }
 
+    const appBarStyles = StyleSheet.flatten([
+      styles.appbar,
+
+      { backgroundColor: actualBackgroundColor },
+      style,
+    ]);
+
     return (
-      <Paper
-        style={{
-          ...styles.appbar,
-          backgroundColor: actualBackgroundColor,
-          ...style,
-        }}
-        {...rest}>
+      <Paper style={appBarStyles} {...rest}>
         {isSearch ? this._renderSearch() : this._renderNormal()}
       </Paper>
     );
@@ -117,6 +128,7 @@ const styles = StyleSheet.create({
     marginLeft: 32,
   },
   left: {
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
   },
