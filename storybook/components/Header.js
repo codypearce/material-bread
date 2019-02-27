@@ -17,7 +17,7 @@ export default class Header extends Component {
           {title}
         </Heading>
         {subtitle ? (
-          <Subtitle type={1} style={{ ...styles.subtitle }}>
+          <Subtitle type={1} style={[styles.subtitle]}>
             {subtitle}
           </Subtitle>
         ) : null}

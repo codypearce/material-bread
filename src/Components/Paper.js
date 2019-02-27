@@ -1,10 +1,10 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Animated } from 'react-native';
 import withTheme from '../Theme/withTheme';
 import { shadow } from '../index';
 
-class Paper extends PureComponent {
+class Paper extends Component {
   static propTypes = {
     children: PropTypes.node,
     style: PropTypes.object,
@@ -22,14 +22,16 @@ class Paper extends PureComponent {
 
     const borderRadius = radius ? radius : 2;
 
+    // const appBarStyles = StyleSheet.flatten([
+    //   theme.paper,
+    //   shadows,
+    //   { borderRadius },
+    //   ...style,
+    // ]);
+
     return (
       <Animated.View
-        style={{
-          ...theme.paper,
-          ...shadows,
-          borderRadius,
-          ...style,
-        }}
+        style={[theme.paper, shadows, { borderRadius }, style]}
         {...rest}>
         {children}
       </Animated.View>

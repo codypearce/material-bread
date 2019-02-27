@@ -1,10 +1,11 @@
 import React from 'react';
 import { storiesOf } from '../helpers/storiesOf';
-import { Text } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 
 import { Icon, Badge } from '../../src/index';
 import Header from '../components/Header';
 import Container from '../components/Container';
+import { linkTo } from '@storybook/addon-links';
 
 storiesOf('Icons', module)
   .add('Installing', () => (
@@ -20,6 +21,16 @@ storiesOf('Icons', module)
         name from here https://material.io/tools/icons/?style=baseline. For
         example, arrow-back
       </Text>
+      <View style={{ flexDirection: 'row' }}>
+        <Text style={{ fontSize: 14, textAlign: 'left' }}>
+          Then you can use the{' '}
+        </Text>
+        <TouchableOpacity onPress={linkTo('Icons', 'Component')}>
+          <Text style={{ fontSize: 14, textAlign: 'left', color: 'blue' }}>
+            Icon component
+          </Text>
+        </TouchableOpacity>
+      </View>
     </Container>
   ))
   .add('Component', () => (

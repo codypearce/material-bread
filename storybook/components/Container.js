@@ -12,7 +12,7 @@ export default class Container extends Component {
   render() {
     const { style, children } = this.props;
     return (
-      <View style={{ ...styles.container, ...style }}>
+      <View style={[styles.container, style]}>
         <BreadProvider value={{}}>{children}</BreadProvider>
       </View>
     );
