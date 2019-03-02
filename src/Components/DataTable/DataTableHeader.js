@@ -28,7 +28,7 @@ class DataTableHeader extends Component {
 
     return (
       <Ripple
-        style={{ ...styles.dataTableHeader, borderBottomColor, ...style }}
+        style={[styles.dataTableHeader, { borderBottomColor }, style]}
         onPress={onPress}>
         {showcheckBox ? (
           <Checkbox

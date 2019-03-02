@@ -30,14 +30,16 @@ export default class BaseText extends Component {
 
     return (
       <Text
-        style={{
-          ...styles.default,
-          ...typographyStyles,
-          textAlign: align ? align : 'left',
-          color: color ? color : 'rgba(0,0,0, 87)',
-          marginBottom: gutterBottom ? 10 : 0,
-          ...style,
-        }}
+        style={[
+          styles.default,
+          typographyStyles,
+          {
+            textAlign: align ? align : 'left',
+            color: color ? color : 'rgba(0,0,0, 87)',
+            marginBottom: gutterBottom ? 10 : 0,
+          },
+          style,
+        ]}
         {...this.props}>
         {children}
       </Text>

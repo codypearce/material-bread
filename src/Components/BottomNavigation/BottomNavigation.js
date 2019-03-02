@@ -24,12 +24,12 @@ class BottomNavigation extends Component {
 
     return (
       <View
-        style={{
-          ...styles.bottomNavigation,
-          ...shadow(8),
-          backgroundColor: backgroundColorActual,
-          ...style,
-        }}>
+        style={[
+          styles.bottomNavigation,
+          shadow(8),
+          { backgroundColor: backgroundColorActual },
+          style,
+        ]}>
         <BottomNavContext.Provider
           value={{ backgroundColor: backgroundColorActual }}>
           {children}

@@ -46,13 +46,15 @@ class Chip extends Component {
 
     return (
       <Paper
-        style={{
-          ...styles.container,
-          backgroundColor: displayBackgroundColor,
-          borderColor,
-          borderWidth,
-          ...style,
-        }}
+        style={[
+          styles.container,
+          {
+            backgroundColor: displayBackgroundColor,
+            borderColor,
+            borderWidth,
+          },
+          style,
+        ]}
         {...rest}>
         <Ripple
           rippleContainerBorderRadius={16}
@@ -61,10 +63,7 @@ class Chip extends Component {
           <View style={styles.content}>
             <Text
               numberOfLines={1}
-              style={{
-                ...styles.text,
-                color: displayTextColor,
-              }}>
+              style={[styles.text, { color: displayTextColor }]}>
               {children}
             </Text>
             {onDelete ? (

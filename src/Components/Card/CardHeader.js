@@ -16,7 +16,7 @@ class CardHeader extends Component {
   render() {
     const { avatar, action, title, subheader, style } = this.props;
     return (
-      <View style={{ ...styles.container, ...style }}>
+      <View style={[styles.container, style]}>
         <View style={styles.left}>
           {avatar}
           <View style={styles.textContainer}>

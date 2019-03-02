@@ -20,10 +20,7 @@ class Icon extends Component {
         name={name}
         color={color}
         size={size}
-        style={{
-          backgroundColor: 'transparent',
-          ...style,
-        }}
+        style={[{ backgroundColor: 'transparent' }, style]}
         {...rest}
       />
     );

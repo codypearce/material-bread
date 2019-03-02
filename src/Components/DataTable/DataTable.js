@@ -11,7 +11,7 @@ class DataTable extends Component {
   render() {
     const { children, style } = this.props;
 
-    return <View style={{ width: '100%', ...style }}>{children}</View>;
+    return <View style={[{ width: '100%' }, style]}>{children}</View>;
   }
 }
 

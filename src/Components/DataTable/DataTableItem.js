@@ -16,11 +16,11 @@ class DataTableHeader extends Component {
 
     return (
       <Ripple
-        style={{
-          ...styles.dataTableItem,
-          justifyContent: right ? 'flex-end' : 'flex-start',
-          ...style,
-        }}
+        style={[
+          styles.dataTableItem,
+          { justifyContent: right ? 'flex-end' : 'flex-start' },
+          style,
+        ]}
         disabled={!!onPress}
         onPress={onPress}>
         <Text style={styles.text}>{children}</Text>

@@ -62,17 +62,21 @@ class TextFieldUnderline extends Component {
 
     return (
       <Animated.View
-        style={{
-          ...styles.underline,
-          backgroundColor: underlineColor,
-          transform: [{ scaleY: baseUnderlineScale }],
-        }}>
+        style={[
+          styles.underline,
+          {
+            backgroundColor: underlineColor,
+            transform: [{ scaleY: baseUnderlineScale }],
+          },
+        ]}>
         <Animated.View
-          style={{
-            ...styles.underline,
-            backgroundColor: underlineActiveColor,
-            transform: [{ scaleX: underLineXAnimation }, { scaleY: 2 }],
-          }}
+          style={[
+            styles.underline,
+            {
+              backgroundColor: underlineActiveColor,
+              transform: [{ scaleX: underLineXAnimation }, { scaleY: 2 }],
+            },
+          ]}
         />
       </Animated.View>
     );

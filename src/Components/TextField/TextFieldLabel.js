@@ -109,17 +109,19 @@ class TextFieldLabel extends Component {
 
     return (
       <Animated.Text
-        style={{
-          ...styles.label,
-          color: labelColor,
-          backgroundColor: type == 'outlined' ? 'white' : 'transparent',
-          paddingHorizontal: type == 'outlined' ? 4 : 0,
-          transform: [
-            { scale: scaleAnimation },
-            { translateY: translateYAnimation },
-            { translateX: translateX },
-          ],
-        }}>
+        style={[
+          styles.label,
+          {
+            color: labelColor,
+            backgroundColor: type == 'outlined' ? 'white' : 'transparent',
+            paddingHorizontal: type == 'outlined' ? 4 : 0,
+            transform: [
+              { scale: scaleAnimation },
+              { translateY: translateYAnimation },
+              { translateX: translateX },
+            ],
+          },
+        ]}>
         {label}
       </Animated.Text>
     );

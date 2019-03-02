@@ -41,16 +41,18 @@ class RadioButton extends Component {
         rippleCentered={true}
         disabled={disabled}>
         <Animated.View
-          style={{
-            ...styles.radio,
-            borderColor: checked ? radioButtonColorApplied : 'rgba(0,0,0,.5)',
-          }}>
+          style={[
+            styles.radio,
+            {
+              borderColor: checked ? radioButtonColorApplied : 'rgba(0,0,0,.5)',
+            },
+          ]}>
           {checked ? (
             <Animated.View
-              style={{
-                ...styles.radioDot,
-                backgroundColor: radioButtonColorApplied,
-              }}
+              style={[
+                styles.radioDot,
+                { backgroundColor: radioButtonColorApplied },
+              ]}
             />
           ) : null}
         </Animated.View>

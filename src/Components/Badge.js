@@ -31,28 +31,33 @@ class Badge extends Component {
       <View style={{ position: 'relative', alignSelf: 'flex-start' }}>
         {children}
         <View
-          style={{
-            height: realSize,
-            width: realSize,
-            borderRadius: realSize,
-            backgroundColor: backgroundColor
-              ? backgroundColor
-              : theme.base.primary,
-            alignItems: 'center',
-            justifyContent: 'center',
-            position: children ? 'absolute' : 'relative',
-            top: children ? 0 : 'auto',
-            right: children ? 0 : 'auto',
-            ...style,
-          }}
+          style={[
+            {
+              height: realSize,
+              width: realSize,
+              borderRadius: realSize,
+              backgroundColor: backgroundColor
+                ? backgroundColor
+                : theme.base.primary,
+
+              alignItems: 'center',
+              justifyContent: 'center',
+              position: children ? 'absolute' : 'relative',
+              top: children ? 0 : 'auto',
+              right: children ? 0 : 'auto',
+            },
+            style,
+          ]}
           numberOfLines={1}
           {...rest}>
           <Text
-            style={{
-              ...styles.content,
-              fontSize: realSize * 0.5,
-              color: textColor ? textColor : 'white',
-            }}>
+            style={[
+              styles.content,
+              {
+                fontSize: realSize * 0.5,
+                color: textColor ? textColor : 'white',
+              },
+            ]}>
             {badgeContent}
           </Text>
         </View>

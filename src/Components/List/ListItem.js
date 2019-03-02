@@ -17,15 +17,17 @@ class ListItem extends Component {
         onPress={onPress}
         disabled={disabled}
         rippleColor={'rgba(0,0,0,.8)'}
-        style={{
-          backgroundColor: '#fff',
-          flexDirection: 'row',
-          alignItems: 'center',
-          paddingHorizontal: 16,
-          paddingVertical: 12,
-          width: '100%',
-          ...style,
-        }}>
+        style={[
+          {
+            backgroundColor: '#fff',
+            flexDirection: 'row',
+            alignItems: 'center',
+            paddingHorizontal: 16,
+            paddingVertical: 12,
+            width: '100%',
+          },
+          style,
+        ]}>
         {this.props.children}
       </Ripple>
     );

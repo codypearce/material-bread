@@ -41,10 +41,10 @@ class BottomNavigationItem extends Component {
       <BottomNavContext.Consumer>
         {context => (
           <Ripple
-            style={{
-              ...styles.bottomNavigationItem,
-              opacity: active ? 1 : 0.6,
-            }}>
+            style={[
+              styles.bottomNavigationItem,
+              { opacity: active ? 1 : 0.6 },
+            ]}>
             <Icon
               name={icon}
               size={24}

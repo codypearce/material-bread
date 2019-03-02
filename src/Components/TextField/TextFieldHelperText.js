@@ -16,10 +16,10 @@ class TextFieldHelperText extends Component {
 
     return (
       <Text
-        style={{
-          ...styles.helper,
-          color: error ? '#E53935' : 'rgba(0,0,0,0.6)',
-        }}>
+        style={[
+          styles.helper,
+          { color: error ? '#E53935' : 'rgba(0,0,0,0.6)' },
+        ]}>
         {children}
       </Text>
     );

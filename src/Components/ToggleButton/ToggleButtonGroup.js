@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
 
-export const ToggleButtonContext = React.createContext();
+export const ToggleButtonContext = React.createContext({
+  updateActive: '',
+  active: '',
+});
 
-class ToggleButton extends Component {
+class ToggleButtonGroup extends Component {
   static propTypes = {
     onPress: PropTypes.func,
     children: PropTypes.node,
@@ -28,4 +31,4 @@ class ToggleButton extends Component {
   }
 }
 
-export default withTheme(ToggleButton);
+export default withTheme(ToggleButtonGroup);

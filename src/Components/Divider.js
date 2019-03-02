@@ -14,11 +14,11 @@ class Divider extends Component {
 
     return (
       <View
-        style={{
-          ...theme.divider,
-          marginVertical: marginVertical ? marginVertical : 8,
-          ...style,
-        }}
+        style={[
+          theme.divider,
+          { marginVertical: marginVertical ? marginVertical : 8 },
+          style,
+        ]}
         {...rest}
       />
     );

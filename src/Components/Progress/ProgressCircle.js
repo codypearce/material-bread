@@ -173,9 +173,9 @@ class ProgressCircle extends PureComponent {
     if (determinate) return <ProgressCircleDeterminate {...this.props} />;
 
     return (
-      <View style={{ ...style }}>
+      <View style={style}>
         <Animated.View style={layerStyle}>
-          <Animated.View style={{ ...containerStyle }} collapsable={false}>
+          <Animated.View style={containerStyle} collapsable={false}>
             <Animated.View style={viewportStyle}>
               <Animated.View style={containerStyle} collapsable={false}>
                 <Animated.View style={lineStyle} />

@@ -84,9 +84,7 @@ class ListExpanded extends Component {
 
     return (
       <View>
-        <Ripple
-          style={{ ...styles.container, ...style }}
-          onPress={this.toggleMenu}>
+        <Ripple style={[styles.container, style]} onPress={this.toggleMenu}>
           <Text style={styles.title}>{title}</Text>
           <Icon
             name={isOpen ? 'keyboard-arrow-up' : 'keyboard-arrow-down'}

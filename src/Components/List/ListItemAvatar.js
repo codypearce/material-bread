@@ -18,7 +18,7 @@ class ListItemAvatar extends Component {
         size={24}
         iconColor={'white'}
         backgroundColor={'#42a5f5'}
-        style={{ marginRight: 16, ...style }}
+        style={[{ marginRight: 16 }, style]}
       />
     );
   }

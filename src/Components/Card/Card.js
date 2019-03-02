@@ -16,11 +16,13 @@ class Card extends Component {
       <Paper
         elevation={elevation ? elevation : 1}
         radius={4}
-        style={{
-          ...style,
-          borderWidth: outlined ? StyleSheet.hairlineWidth : 0,
-          borderBottomColor: 'rgba(0,0,0,.4)',
-        }}>
+        style={[
+          style,
+          {
+            borderWidth: outlined ? StyleSheet.hairlineWidth : 0,
+            borderBottomColor: 'rgba(0,0,0,.4)',
+          },
+        ]}>
         {this.props.children}
       </Paper>
     );

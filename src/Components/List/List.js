@@ -14,10 +14,7 @@ class List extends Component {
     return (
       <Paper
         elevation={elevation ? elevation : 0}
-        style={{
-          backgroundColor: '#fff',
-          ...style,
-        }}>
+        style={[{ backgroundColor: '#fff' }, style]}>
         {this.props.children}
       </Paper>
     );

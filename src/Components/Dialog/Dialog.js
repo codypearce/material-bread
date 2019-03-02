@@ -32,13 +32,7 @@ class Dialog extends Component {
         onRequestClose={onRequestClose}
         onShow={onShow}
         onTouchOutside={onTouchOutside}>
-        <View
-          style={{
-            ...styles.container,
-            dialogStyle,
-          }}>
-          {children}
-        </View>
+        <View style={[styles.container, dialogStyle]}>{children}</View>
       </Modal>
     );
   }

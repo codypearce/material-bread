@@ -35,7 +35,7 @@ class Banner extends Component {
     const buttonMarginTop = media ? 20 : 12;
 
     return (
-      <View style={{ ...styles.buttons, marginTop: buttonMarginTop }}>
+      <View style={[styles.buttons, { marginTop: buttonMarginTop }]}>
         <Button
           compact={true}
           type="text"
@@ -66,16 +66,18 @@ class Banner extends Component {
     } = this.props;
 
     return (
-      <Paper style={{ ...styles.container, ...style }} elevation={1} {...rest}>
-        <View style={{ ...styles.innerContainer }}>
+      <Paper style={[styles.container, style]} elevation={1} {...rest}>
+        <View style={styles.innerContainer}>
           <View
-            style={{
-              ...styles.content,
-              alignItems: singleLine ? 'center' : 'flex-start',
-              justifyContent: singleLine ? 'space-between' : 'flex-start',
-              marginTop: singleLine ? 10 : 24,
-              marginBottom: singleLine ? 8 : 0,
-            }}>
+            style={[
+              styles.content,
+              {
+                alignItems: singleLine ? 'center' : 'flex-start',
+                justifyContent: singleLine ? 'space-between' : 'flex-start',
+                marginTop: singleLine ? 10 : 24,
+                marginBottom: singleLine ? 8 : 0,
+              },
+            ]}>
             {media ? <View style={styles.image}>{media}</View> : null}
             <BodyText type={2} style={styles.message}>
               {message}

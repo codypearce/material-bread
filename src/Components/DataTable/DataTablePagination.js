@@ -19,9 +19,9 @@ class DataTablePagination extends Component {
     const { perPage, page, numberOfPages, onPageChange, style } = this.props;
 
     return (
-      <View style={{ ...styles.container, ...style }}>
-        <View style={{ ...styles.rowsPerPage }}>
-          <Text style={{ ...styles.rowsPerPageText }} numberOfLines={1}>
+      <View style={[styles.container, style]}>
+        <View style={styles.rowsPerPage}>
+          <Text style={styles.rowsPerPageText} numberOfLines={1}>
             {'Rows per page:'}
           </Text>
 
@@ -30,9 +30,9 @@ class DataTablePagination extends Component {
         </View>
 
         <Text
-          style={{
-            ...styles.currentNumber,
-          }}>{`1-${perPage} of ${numberOfPages} `}</Text>
+          style={
+            styles.currentNumber
+          }>{`1-${perPage} of ${numberOfPages} `}</Text>
         <Icon
           name={'chevron-left'}
           disabled={page === 0}

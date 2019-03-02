@@ -44,7 +44,7 @@ class Checkbox extends Component {
       <Ripple
         onPress={onPress}
         disabled={disabled}
-        style={{ ...styles.container, ...style }}
+        style={[styles.container, style]}
         rippleCentered={true}
         rippleColor={rippleColorApplied}
         rippleContainerBorderRadius={18}>

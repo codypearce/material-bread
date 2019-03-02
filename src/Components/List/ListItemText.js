@@ -14,10 +14,8 @@ class ListItemText extends Component {
     const { primary, secondary } = this.props;
     return (
       <View>
-        <Text style={{ ...styles.primary }}>{primary}</Text>
-        {secondary ? (
-          <Text style={{ ...styles.secondary }}>{secondary}</Text>
-        ) : null}
+        <Text style={styles.primary}>{primary}</Text>
+        {secondary ? <Text style={styles.secondary}>{secondary}</Text> : null}
       </View>
     );
   }

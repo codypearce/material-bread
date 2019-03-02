@@ -50,11 +50,13 @@ class Avatar extends Component {
 
     return (
       <Text
-        style={{
-          color: textColor ? textColor : 'white',
-          fontSize: fontSize ? fontSize : size / 2,
-          ...styles,
-        }}>
+        style={[
+          {
+            color: textColor ? textColor : 'white',
+            fontSize: fontSize ? fontSize : size / 2,
+          },
+          styles,
+        ]}>
         {text}
       </Text>
     );

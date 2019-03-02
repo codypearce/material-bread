@@ -16,7 +16,7 @@ class ListItemIcon extends Component {
         name={icon}
         size={16}
         color={'blue'}
-        style={{ marginRight: 32, ...style }}
+        style={[{ marginRight: 32 }, style]}
       />
     );
   }

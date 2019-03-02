@@ -26,48 +26,32 @@ class AppbarBottom extends Component {
     } = this.props;
 
     return (
-      <View style={{ ...style }}>
+      <View style={style}>
         {centerCut ? (
           <View
-            style={{
-              position: 'absolute',
-              zIndex: 10,
-              backgroundColor: 'white',
-              borderBottomRightRadius: 100,
-              borderBottomLeftRadius: 100,
-              width: 56 * 1.25,
-              height: 28 * 1.25,
-              alignSelf: 'center',
-              transform: [{ translateY: 0 }],
-            }}
+            style={[styles.centerCut, { width: 56 * 1.25, height: 56 * 1.25 }]}
+            pointerEvents="none"
           />
         ) : null}
 
-        <Fab
-          backgroundColor={'black'}
-          elevation={6}
-          style={{
-            position: 'absolute',
-            zIndex: 10,
-            transform: [{ translateY: -28 }],
-          }}
-        />
+        <Fab backgroundColor={'black'} elevation={6} style={styles.fabPos} />
 
         <Paper
-          style={{
-            ...styles.appbar,
-            position: 'relative',
-            backgroundColor: backgroundColor
-              ? backgroundColor
-              : theme.base.primary,
-          }}
+          style={[
+            styles.appbar,
+            {
+              backgroundColor: backgroundColor
+                ? backgroundColor
+                : theme.base.primary,
+            },
+          ]}
           {...rest}>
-          <View style={{ ...styles.left }}>
+          <View style={styles.left}>
             <Icon name="menu" size={24} color={'white'} />
             <Text style={styles.pageTitle}>{title}</Text>
           </View>
 
-          <View style={{ ...styles.right }}>
+          <View style={styles.right}>
             <Icon
               name="search"
               size={24}
@@ -89,6 +73,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    position: 'relative',
   },
   pageTitle: {
     fontSize: 18,
@@ -102,6 +87,20 @@ const styles = StyleSheet.create({
   right: {
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  fabPos: {
+    position: 'absolute',
+    zIndex: 10,
+    transform: [{ translateY: -28 }],
+  },
+  centerCut: {
+    position: 'absolute',
+    zIndex: 10,
+    backgroundColor: 'white',
+    borderBottomRightRadius: 500,
+    borderBottomLeftRadius: 500,
+    alignSelf: 'center',
+    transform: [{ translateY: -28 * 1.25 }],
   },
 });
 

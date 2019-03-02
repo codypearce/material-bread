@@ -12,7 +12,7 @@ class CardMedia extends Component {
 
   render() {
     const { image, style } = this.props;
-    return <View style={{ ...styles.container, ...style }}>{image}</View>;
+    return <View style={[styles.container, style]}>{image}</View>;
   }
 }
 

@@ -11,7 +11,7 @@ class CardMedia extends Component {
 
   render() {
     const { children, style } = this.props;
-    return <View style={{ ...styles.container, ...style }}>{children}</View>;
+    return <View style={[styles.container, style]}>{children}</View>;
   }
 }
 

@@ -70,10 +70,7 @@ class ToggleButton extends Component {
               name={icon}
               color={color}
               size={size}
-              style={{
-                backgroundColor: 'transparent',
-                ...style,
-              }}
+              style={[{ backgroundColor: 'transparent' }, style]}
             />
           </Ripple>
         )}

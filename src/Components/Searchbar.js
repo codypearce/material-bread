@@ -17,15 +17,11 @@ class Searchbar extends Component {
   render() {
     const { style, onChangeText, onCloseIcon, value } = this.props;
     return (
-      <Paper
-        style={{
-          ...styles.container,
-          ...style,
-        }}>
+      <Paper style={[styles.container, style]}>
         <IconButton name={'search'} size={20} />
 
         <TextInput
-          style={{ ...styles.searchInput }}
+          style={styles.searchInput}
           placeholder={'Search'}
           value={value}
           onChangeText={onChangeText}

@@ -19,11 +19,11 @@ class DataTableHeaderItem extends Component {
       <Ripple
         disabled={!!onPress}
         onPress={onPress}
-        style={{
-          ...styles.item,
-          justifyContent: right ? 'flex-end' : 'flex-start',
-          ...style,
-        }}>
+        style={[
+          styles.item,
+          { justifyContent: right ? 'flex-end' : 'flex-start' },
+          style,
+        ]}>
         <Text style={{ ...styles.text }} numberOfLines={1}>
           {children}
         </Text>

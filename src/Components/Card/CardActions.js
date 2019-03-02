@@ -24,8 +24,8 @@ class CardActions extends Component {
       style,
     } = this.props;
     return (
-      <View style={{ ...styles.container, ...style }}>
-        <View style={{ ...styles.actions }}>
+      <View style={[styles.container, style]}>
+        <View style={styles.actions}>
           <Button onPress={leftOnPress}>{leftButtonLabel}</Button>
           <Button onPress={rightOnPress} style={styles.rightButton}>
             {rightButtonLabel}

@@ -103,21 +103,19 @@ class Snackbar extends Component {
     return (
       <View style={styles.container}>
         <Paper
-          style={{
-            ...styles.card,
-            opacity: opacity,
-            transform: [
-              {
-                scale: scaleAnimation,
-              },
-            ],
-            ...style,
-          }}>
-          <Text
-            style={{
-              ...styles.text,
-              marginRight: buttonLabel ? 0 : 16,
-            }}>
+          style={[
+            styles.card,
+            {
+              opacity: opacity,
+              transform: [
+                {
+                  scale: scaleAnimation,
+                },
+              ],
+            },
+            style,
+          ]}>
+          <Text style={[styles.text, { marginRight: buttonLabel ? 0 : 16 }]}>
             {children}
           </Text>
           {this._renderButton()}

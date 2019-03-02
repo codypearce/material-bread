@@ -113,10 +113,10 @@ class ProgressCircleDeterminate extends Component {
     return (
       <View
         pointerEvents="none"
-        style={{
-          ...this.getHalfCircleContainerStyle(),
-          transform: [{ scaleX: isFlipped ? -1 : 1 }],
-        }}>
+        style={[
+          this.getHalfCircleContainerStyle(),
+          { transform: [{ scaleX: isFlipped ? -1 : 1 }] },
+        ]}>
         <Animated.View
           style={{
             width: size,
@@ -133,13 +133,12 @@ class ProgressCircleDeterminate extends Component {
               },
             ],
           }}>
-          <View style={{ ...this.getHalfCircleContainerStyle() }}>
+          <View style={this.getHalfCircleContainerStyle()}>
             <View
-              style={{
-                ...this.getFullCircleStyle(),
-                borderWidth: thickness,
-                borderColor: color,
-              }}
+              style={[
+                this.getFullCircleStyle(),
+                { borderWidth: thickness, borderColor: color },
+              ]}
             />
           </View>
         </Animated.View>
@@ -157,20 +156,17 @@ class ProgressCircleDeterminate extends Component {
     } = this.props;
 
     return (
-      <View
-        style={{
-          ...this.getFullCircleStyle(),
-          ...styles.mainContainer,
-          ...style,
-        }}>
+      <View style={[this.getFullCircleStyle(), styles.mainContainer, style]}>
         <View
           pointerEvents="box-none"
-          style={{
-            ...this.getFullCircleStyle(),
-            borderWidth: noTrackColor ? 0 : thickness,
-            borderColor: unfilledColor,
-            ...styles.innerCircleContainer,
-          }}>
+          style={[
+            this.getFullCircleStyle(),
+            {
+              borderWidth: noTrackColor ? 0 : thickness,
+              borderColor: unfilledColor,
+            },
+            styles.innerCircleContainer,
+          ]}>
           {children}
         </View>
         {this.renderHalfCircle()}

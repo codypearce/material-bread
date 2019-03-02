@@ -32,14 +32,16 @@ class Fab extends Component {
         disabled={disabled}
         rippleColor={rippleColor ? rippleColor : 'rgba(0,0,0,.8)'}
         rippleContainerBorderRadius={100}
-        style={{
-          ...styles.button,
-          backgroundColor: backgroundColor
-            ? backgroundColor
-            : 'rgba(33, 150, 243, 1)',
-          ...shadow(6),
-          ...style,
-        }}
+        style={[
+          styles.button,
+          {
+            backgroundColor: backgroundColor
+              ? backgroundColor
+              : 'rgba(33, 150, 243, 1)',
+          },
+          shadow(6),
+          style,
+        ]}
         {...props}>
         <Icon name={icon ? icon : 'add'} size={24} color={'white'} />
       </Ripple>

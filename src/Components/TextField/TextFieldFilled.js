@@ -46,15 +46,17 @@ class TextFieldFilled extends Component {
           value={rest.value}
         />
         <TextInput
-          style={{
-            ...styles.textField,
-            ...styles.filledInput,
-            minHeight: rest.dense ? 40 : 56,
-            height: rest.multiline || rest.numberOfLines > 1 ? 'auto' : 56,
-            paddingBottom: rest.multiline ? 8 : 0,
-            paddingTop: rest.multiline ? 24 : 16,
-            ...style,
-          }}
+          style={[
+            styles.textField,
+            styles.filledInput,
+            {
+              minHeight: rest.dense ? 40 : 56,
+              height: rest.multiline || rest.numberOfLines > 1 ? 'auto' : 56,
+              paddingBottom: rest.multiline ? 8 : 0,
+              paddingTop: rest.multiline ? 24 : 16,
+            },
+            style,
+          ]}
           onFocus={handleFocus}
           onBlur={handleBlur}
           {...rest}

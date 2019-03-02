@@ -100,18 +100,16 @@ class Menu extends Component {
         <View onLayout={this.onButtonLayout}>{button}</View>
 
         <Animated.View
-          style={{
-            ...styles.menuContainer,
-            height: menuHeight,
-            width: menuWidth,
-            opacity: opacity,
-          }}>
+          style={[
+            styles.menuContainer,
+            { height: menuHeight, width: menuWidth, opacity: opacity },
+          ]}>
           <View
-            style={{
-              ...styles.menu,
-              ...menuStyle,
-              width: menuSameWidthAsButton ? buttonWidth : 'auto',
-            }}
+            style={[
+              styles.menu,
+              menuStyle,
+              { width: menuSameWidthAsButton ? buttonWidth : 'auto' },
+            ]}
             onLayout={this.onMenuLayout}>
             {children}
           </View>

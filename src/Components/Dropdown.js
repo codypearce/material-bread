@@ -58,35 +58,28 @@ class Dropdown extends Component {
     const { visible } = this.state;
     return (
       <Menu
-        style={{
-          ...styles.menu,
-          flex: 1,
-        }}
+        style={[styles.menu, { flex: 1 }]}
         menuSameWidthAsButton
         visible={visible}
         button={
           <TouchableHighlight
             onPress={() => this.showMenu()}
-            style={{
-              ...styles.button,
-              marginBottom,
-              ...buttonStyle,
-            }}
+            style={[styles.button, { marginBottom }, buttonStyle]}
             underlayColor={'transparent'}>
             <View style={styles.innerView}>
               <Text
-                style={{
-                  ...styles.textSelected,
-                  opacity: selectedItem ? 1 : 0,
-                }}>
+                style={[
+                  styles.textSelected,
+                  { opacity: selectedItem ? 1 : 0 },
+                ]}>
                 {label}
               </Text>
 
               <Text
-                style={{
-                  ...styles.buttonText,
-                  color: selectedItem ? 'black' : 'rgba(0,0,0,0.6)',
-                }}>
+                style={[
+                  styles.buttonText,
+                  { color: selectedItem ? 'black' : 'rgba(0,0,0,0.6)' },
+                ]}>
                 {selectedItem ? selectedItem : label}
               </Text>
 

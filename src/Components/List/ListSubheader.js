@@ -11,7 +11,7 @@ class ListItemText extends Component {
   };
   render() {
     const { primary } = this.props;
-    return <Text style={{ ...styles.primary }}>{primary}</Text>;
+    return <Text style={styles.primary}>{primary}</Text>;
   }
 }
 

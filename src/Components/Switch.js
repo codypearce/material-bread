@@ -35,25 +35,27 @@ class Switch extends Component {
 
     return (
       <Animated.View
-        style={{
-          ...styles.track,
-          backgroundColor: isActive
-            ? 'rgba(30, 136, 229, .54)'
-            : 'rgba(0,0,0,.38)',
-        }}
+        style={[
+          styles.track,
+          {
+            backgroundColor: isActive
+              ? 'rgba(30, 136, 229, .54)'
+              : 'rgba(0,0,0,.38)',
+          },
+        ]}
         onPress={() => this.handleSwitch()}>
         <Ripple
           rippleContainerBorderRadius={100}
-          style={{
-            ...styles.thumbRipple,
-            transform: [{ translateX: thumbTranslateX }],
-          }}
+          style={[
+            styles.thumbRipple,
+            { transform: [{ translateX: thumbTranslateX }] },
+          ]}
           onPress={() => this.handleSwitch()}>
           <Animated.View
-            style={{
-              ...styles.thumb,
-              backgroundColor: isActive ? '#1e88e5' : 'white',
-            }}
+            style={[
+              styles.thumb,
+              { backgroundColor: isActive ? '#1e88e5' : 'white' },
+            ]}
           />
         </Ripple>
       </Animated.View>

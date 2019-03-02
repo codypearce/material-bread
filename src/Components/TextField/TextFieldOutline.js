@@ -48,16 +48,18 @@ class TextFieldOutlined extends Component {
           type={'outlined'}
         />
         <TextInput
-          style={{
-            ...styles.textField,
-            ...styles.outlinedInput,
-            borderColor,
-            minHeight: rest.dense ? 40 : 56,
-            height: rest.multiline || rest.numberOfLines > 1 ? 'auto' : 56,
-            paddingBottom: rest.multiline ? 8 : 0,
-            paddingTop: rest.multiline ? 20 : 0,
-            ...style,
-          }}
+          style={[
+            styles.textField,
+            styles.outlinedInput,
+            {
+              borderColor,
+              minHeight: rest.dense ? 40 : 56,
+              height: rest.multiline || rest.numberOfLines > 1 ? 'auto' : 56,
+              paddingBottom: rest.multiline ? 8 : 0,
+              paddingTop: rest.multiline ? 20 : 0,
+            },
+            style,
+          ]}
           onFocus={handleFocus}
           onBlur={handleBlur}
           {...rest}

@@ -22,13 +22,6 @@ class Paper extends Component {
 
     const borderRadius = radius ? radius : 2;
 
-    // const appBarStyles = StyleSheet.flatten([
-    //   theme.paper,
-    //   shadows,
-    //   { borderRadius },
-    //   ...style,
-    // ]);
-
     return (
       <Animated.View
         style={[theme.paper, shadows, { borderRadius }, style]}

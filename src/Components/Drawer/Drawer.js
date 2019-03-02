@@ -21,7 +21,7 @@ class Drawer extends Component {
     } = this.props;
 
     return (
-      <View style={{ ...styles.container, ...containerStyle }}>
+      <View style={[styles.container, containerStyle]}>
         <ScrollView contentContainerStyle={contentContainerStyle} style={style}>
           {children}
         </ScrollView>

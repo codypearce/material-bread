@@ -21,13 +21,15 @@ class IconButton extends Component {
         rippleContainerBorderRadius={100}
         rippleColor={color ? color : 'rgb(0, 0, 0)'}
         onPress={onPress}
-        style={{
-          height: size + 8,
-          width: size + 8,
-          justifyContent: 'center',
-          alignItems: 'center',
-          ...style,
-        }}>
+        style={[
+          {
+            height: size + 8,
+            width: size + 8,
+            justifyContent: 'center',
+            alignItems: 'center',
+          },
+          style,
+        ]}>
         <Icon
           name={name}
           color={color}

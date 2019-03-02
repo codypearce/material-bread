@@ -137,25 +137,29 @@ class ProgressBar extends PureComponent {
     return (
       <Animated.View
         onLayout={this.onTrackLayout}
-        style={{
-          ...styles.track,
-          backgroundColor: trackColor,
-          height: height ? height : 4,
-          opacity: trackOpacity,
-          transform: [{ scaleY: trackScaleY }],
-          ...trackStyle,
-        }}>
-        <Animated.View
-          style={{
-            ...styles.indicator,
-            backgroundColor: indicatorColor,
+        style={[
+          styles.track,
+          {
+            backgroundColor: trackColor,
             height: height ? height : 4,
-            width: determinate ? indicatorWidth : 112,
-            transform: [
-              { translateX: indicatorPosition },
-              { scaleX: indicatorScaleX },
-            ],
-          }}
+            opacity: trackOpacity,
+            transform: [{ scaleY: trackScaleY }],
+          },
+          trackStyle,
+        ]}>
+        <Animated.View
+          style={[
+            styles.indicator,
+            {
+              backgroundColor: indicatorColor,
+              height: height ? height : 4,
+              width: determinate ? indicatorWidth : 112,
+              transform: [
+                { translateX: indicatorPosition },
+                { scaleX: indicatorScaleX },
+              ],
+            },
+          ]}
         />
       </Animated.View>
     );

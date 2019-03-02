@@ -31,7 +31,7 @@ class DataTableRow extends Component {
 
     return (
       <Ripple
-        style={{ ...styles.container, borderBottomColor, ...style }}
+        style={[styles.container, { borderBottomColor }, style]}
         onPress={onPress}>
         {showcheckBox ? (
           <Checkbox
