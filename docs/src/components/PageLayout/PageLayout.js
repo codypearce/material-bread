@@ -24,7 +24,7 @@ class PageLayout extends Component {
 
   render() {
     const { classes, children } = this.props;
-
+    console.log(this.props);
     return (
       <div className={classes.root}>
         <Helmet>

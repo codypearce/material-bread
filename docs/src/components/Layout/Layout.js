@@ -18,10 +18,8 @@ export default ({ children }) => {
                 frontmatter {
                   title
                   description
-                  status
-                  path
-                  layout
                 }
+                html
               }
             }
           }

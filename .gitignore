@@ -63,3 +63,4 @@ npm-debug.*
 ios/Index
 docs/public
 docs/node_modules
+docs/.cache

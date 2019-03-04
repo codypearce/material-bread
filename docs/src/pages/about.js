@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import Image from '../components/image';
 
-const IndexPage = ({ data }) => {
+const About = ({ data }) => {
   console.log(data);
   const { markdownRemark } = data;
   const { title } = markdownRemark.frontmatter;
@@ -33,4 +33,4 @@ export const query = graphql`
   }
 `;
 
-export default IndexPage;
+export default About;
