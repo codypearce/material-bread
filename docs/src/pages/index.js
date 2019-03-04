@@ -1,36 +1,34 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout/Layout';
-import Image from '../components/image';
+import { Button } from '@material-ui/core';
 
 const IndexPage = ({ data }) => {
-  console.log(data);
-  const { markdownRemark } = data;
-  const { title } = markdownRemark.frontmatter;
   return (
     <Layout>
-      <h1>{title}</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
+      <h1 className="Home__Title">Material Bread</h1>
+      <h4 className="Home__subtitle">
+        React Native Material Design Components
+      </h4>
 
-      <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
+      <div className="row center-xs" style={{ marginTop: 40 }}>
+        <Button variant="outlined" color="primary">
+          Get Started
+        </Button>
+
+        <Button
+          variant="outlined"
+          color="secondary"
+          style={{ marginLeft: 16, marginRight: 16 }}>
+          Playground
+        </Button>
+
+        <Button variant="outlined" color="default">
+          Github
+        </Button>
+      </div>
     </Layout>
   );
 };
-
-export const query = graphql`
-  query {
-    markdownRemark {
-      id
-      frontmatter {
-        title
-      }
-      excerpt
-      html
-    }
-  }
-`;
 
 export default IndexPage;

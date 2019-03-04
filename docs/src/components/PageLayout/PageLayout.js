@@ -6,6 +6,7 @@ import Helmet from 'react-helmet';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { withStyles } from '@material-ui/core/styles';
 import '../../../node_modules/flexboxgrid/css/flexboxgrid.min.css';
+import Drawer from '../Drawer/Drawer';
 
 class PageLayout extends Component {
   static propTypes = {
@@ -24,7 +25,7 @@ class PageLayout extends Component {
 
   render() {
     const { classes, children } = this.props;
-    console.log(this.props);
+
     return (
       <div className={classes.root}>
         <Helmet>
@@ -48,7 +49,7 @@ class PageLayout extends Component {
         </Helmet>
 
         <CssBaseline />
-
+        <Drawer />
         <main className={classes.content}>{children}</main>
       </div>
     );
