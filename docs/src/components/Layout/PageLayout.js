@@ -6,7 +6,8 @@ import Helmet from 'react-helmet';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { withStyles } from '@material-ui/core/styles';
 import '../../../node_modules/flexboxgrid/css/flexboxgrid.min.css';
-import Drawer from '../Drawer/Drawer';
+import Drawer from './Drawer/Drawer';
+import Header from './Header';
 
 class PageLayout extends Component {
   static propTypes = {
@@ -50,7 +51,11 @@ class PageLayout extends Component {
 
         <CssBaseline />
         <Drawer />
-        <main className={classes.content}>{children}</main>
+        <Header handleDrawerToggle={this.handleDrawerToggle} />
+        <main className={classes.content}>
+          <div className={classes.toolbar} />
+          {children}
+        </main>
       </div>
     );
   }
@@ -60,7 +65,7 @@ const styles = theme => ({
   root: {
     display: 'flex',
   },
-
+  toolbar: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
     padding: theme.spacing.unit * 3,

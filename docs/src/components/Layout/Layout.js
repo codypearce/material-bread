@@ -1,7 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-import PageLayout from '../PageLayout/PageLayout';
+import PageLayout from './PageLayout';
 
 export default ({ children }) => {
   return (
@@ -17,7 +17,6 @@ export default ({ children }) => {
                 id
                 frontmatter {
                   title
-                  description
                 }
                 html
               }
