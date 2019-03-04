@@ -60,5 +60,5 @@ npm-debug.*
 *.p12
 *.key
 *.mobileprovision
-node_modules
 ios/Index
+docs/public
