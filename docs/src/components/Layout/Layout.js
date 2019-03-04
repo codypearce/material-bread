@@ -1,9 +1,7 @@
-import React from "react"
-import { StaticQuery, graphql } from "gatsby"
+import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 
-import PageLayout from "./PageLayout"
-
-require("prismjs/themes/prism.css")
+import PageLayout from '../PageLayout/PageLayout';
 
 export default ({ children }) => {
   return (
@@ -33,5 +31,5 @@ export default ({ children }) => {
         <PageLayout posts={posts}>{children}</PageLayout>
       )}
     />
-  )
-}
+  );
+};

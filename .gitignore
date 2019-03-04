@@ -62,3 +62,4 @@ npm-debug.*
 *.mobileprovision
 ios/Index
 docs/public
+docs/node_modules

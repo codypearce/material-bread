@@ -1,5 +1,5 @@
 {
-  "name": "ReactNativeBread",
+  "name": "material-bread",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -17,7 +17,6 @@
     "@storybook/react": "^4.1.13",
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-preset-react-app": "^7.0.1",
-    "gatsby-transformer-remark": "^2.3.0",
     "react": "16.6.3",
     "react-art": "^16.8.3",
     "react-native": "0.58.5",
