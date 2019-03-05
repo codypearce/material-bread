@@ -16,13 +16,21 @@ export class DrawerItem extends Component {
     classes: PropTypes.object,
     label: PropTypes.string,
     link: PropTypes.string,
+    selectItem: PropTypes.func,
+    selected: PropTypes.bool,
+  };
+
+  handleClick = () => {
+    const { selectItem, label, link } = this.props;
+    selectItem(label.toLowerCase());
+    navigate(link);
   };
 
   render() {
-    const { link, label } = this.props;
+    const { label, selected } = this.props;
 
     return (
-      <ListItem button onClick={() => navigate(link)}>
+      <ListItem button onClick={this.handleClick} selected={selected}>
         <ListItemText primary={label} />
       </ListItem>
     );

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import Layout from '../components/Layout/Layout';
 import { Button } from '@material-ui/core';
 import styles from '../styles/pages/index.module.css';
 import Prism from 'prismjs';
@@ -11,7 +10,7 @@ class IndexPage extends Component {
   }
   render() {
     return (
-      <Layout>
+      <div>
         <div className="col center-xs" style={{ marginTop: 40 }}>
           <h1 className={styles.title}>Material Bread</h1>
           <h4 className={styles.subtitle}>
@@ -51,7 +50,7 @@ class IndexPage extends Component {
             Playground
           </Button>
         </div>
-      </Layout>
+      </div>
     );
   }
 }

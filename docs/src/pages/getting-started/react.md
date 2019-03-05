@@ -7,3 +7,7 @@ status: complete
 ---
 
 # React
+
+```javascript
+npm i material-bread
+```

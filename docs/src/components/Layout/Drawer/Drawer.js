@@ -25,6 +25,7 @@ class Drawer extends Component {
     handleDrawerToggle: PropTypes.func,
     posts: PropTypes.array,
   };
+
   render() {
     const { classes, theme, open, handleDrawerToggle, posts } = this.props;
 

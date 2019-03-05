@@ -18,15 +18,41 @@ export class DrawerItemExpand extends Component {
     landingMenuItems: PropTypes.array,
     pageMenuItems: PropTypes.array,
     label: PropTypes.string,
+    selectItem: PropTypes.func,
+    itemSelected: PropTypes.string,
+    sectionExpanded: PropTypes.bool,
   };
   state = {
     open: false,
   };
+
+  componentDidMount() {
+    if (this.props.sectionExpanded) {
+      this.setState({ open: true });
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.sectionExpanded && !prevProps.sectionExpanded) {
+      this.setState({ open: true });
+    }
+  }
   handleClick = () => {
     this.setState(state => ({ open: !state.open }));
   };
+  handleSubItemClick = (path, name) => {
+    const { selectItem } = this.props;
+    selectItem(name);
+    navigate(path);
+  };
   render() {
-    const { pageMenuItems, landingMenuItems, label } = this.props;
+    const {
+      pageMenuItems,
+      landingMenuItems,
+      label,
+      itemSelected,
+      sectionExpanded,
+    } = this.props;
 
     return (
       <Fragment>
@@ -42,7 +68,13 @@ export class DrawerItemExpand extends Component {
                     <ListItem
                       button
                       key={post.id}
-                      onClick={() => navigate(post.frontmatter.path)}>
+                      onClick={
+                        (() => this.handleSubItemClick(post.frontmatter.path),
+                        post.frontmatter.title.toLowerCase())
+                      }
+                      selected={
+                        post.frontmatter.title.toLowerCase() == itemSelected
+                      }>
                       <ListItemText
                         style={{ marginLeft: 16 }}
                         primary={'Overview'}
@@ -57,7 +89,15 @@ export class DrawerItemExpand extends Component {
                   button
                   inset={true}
                   key={post.id}
-                  onClick={() => navigate(`${post.frontmatter.path}`)}>
+                  onClick={() =>
+                    this.handleSubItemClick(
+                      post.frontmatter.path,
+                      post.frontmatter.title.toLowerCase(),
+                    )
+                  }
+                  selected={
+                    post.frontmatter.title.toLowerCase() == itemSelected
+                  }>
                   <ListItemText
                     style={{ marginLeft: 16 }}
                     primary={post.frontmatter.title}

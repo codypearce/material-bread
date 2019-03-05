@@ -12,14 +12,62 @@ const styles = theme => ({
   },
 });
 
-class DrawerContent extends React.Component {
+class DrawerContent extends React.PureComponent {
   static propTypes = {
     posts: PropTypes.array,
   };
 
+  state = {
+    itemSelected: '',
+    sectionExpanded: '',
+  };
+
+  componentDidMount() {
+    const pathName = window.location.pathname;
+    const pathArray = pathName.split('/');
+
+    this.handleSectionExanded(pathArray);
+    this.handleSelectedItem(pathArray, pathName);
+  }
+
+  handleSectionExanded(pathArray) {
+    let sectionExpanded = '';
+    let arrayOfExpandedSections = ['getting-started', 'style'];
+
+    for (let i = 0; i < arrayOfExpandedSections.length; i++) {
+      if (pathArray.includes(arrayOfExpandedSections[i])) {
+        sectionExpanded = arrayOfExpandedSections[i];
+      }
+    }
+
+    this.selectSection(sectionExpanded);
+  }
+
+  handleSelectedItem(pathArray, pathName) {
+    let name = 'home';
+    if (pathName !== '/') {
+      name = pathArray.pop();
+    }
+    const formatString = name.replace(/-/g, ' ');
+    this.selectItem(formatString);
+  }
+
+  selectItem = name => {
+    this.setState({
+      itemSelected: name,
+    });
+  };
+
+  selectSection = name => {
+    this.setState({
+      sectionExpanded: name,
+    });
+  };
+
   render() {
     const { posts } = this.props;
-    console.log(posts);
+    const { itemSelected, sectionExpanded } = this.state;
+
     return (
       <div>
         <div style={{ padding: '10px 20px' }}>
@@ -28,7 +76,12 @@ class DrawerContent extends React.Component {
         </div>
         <Divider />
         <List>
-          <DrawerItem label="Home" link="/" />
+          <DrawerItem
+            label="Home"
+            link="/"
+            selected={itemSelected == 'home'}
+            selectItem={this.selectItem}
+          />
 
           <DrawerItemExpand
             label="Getting Started"
@@ -36,10 +89,35 @@ class DrawerContent extends React.Component {
               .filter(post => post.node.frontmatter.group === 'getting-started')
               .filter(post => post.node.frontmatter.layout === 'page')
               .filter(post => post.node.frontmatter.status === 'complete')}
+            itemSelected={itemSelected}
+            selectItem={this.selectItem}
+            selectSection={this.selectSection}
+            sectionExpanded={sectionExpanded == 'getting-started'}
+          />
+          <DrawerItemExpand
+            label="Style"
+            pageMenuItems={posts
+              .filter(post => post.node.frontmatter.group === 'style')
+              .filter(post => post.node.frontmatter.layout === 'page')
+              .filter(post => post.node.frontmatter.status === 'complete')}
+            selectItem={this.selectItem}
+            itemSelected={itemSelected}
+            selectSection={this.selectSection}
+            sectionExpanded={sectionExpanded == 'style'}
           />
           <DrawerItem label="Playground" link="/playground" />
-          <DrawerItem label="Contributing" link="/contributing" />
-          <DrawerItem label="About" link="/about" />
+          <DrawerItem
+            label="Contributing"
+            link="/contributing"
+            selectItem={this.selectItem}
+            selected={itemSelected == 'contributing'}
+          />
+          <DrawerItem
+            label="About"
+            link="/about"
+            selectItem={this.selectItem}
+            selected={itemSelected == 'about'}
+          />
         </List>
       </div>
     );
