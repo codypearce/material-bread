@@ -19,6 +19,10 @@ export default ({ children }) => {
                 id
                 frontmatter {
                   title
+                  group
+                  layout
+                  status
+                  path
                 }
                 html
               }

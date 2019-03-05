@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { List, Divider } from '@material-ui/core';
 import DrawerItem from './DrawerItem';
+import DrawerItemExpand from './DrawerItemExpand';
 
 const styles = theme => ({
   content: {
@@ -18,7 +19,7 @@ class DrawerContent extends React.Component {
 
   render() {
     const { posts } = this.props;
-
+    console.log(posts);
     return (
       <div>
         <div style={{ padding: '10px 20px' }}>
@@ -28,8 +29,14 @@ class DrawerContent extends React.Component {
         <Divider />
         <List>
           <DrawerItem label="Home" link="/" />
-          <DrawerItem label="Getting Started" link="/getting-started" />
 
+          <DrawerItemExpand
+            label="Getting Started"
+            pageMenuItems={posts
+              .filter(post => post.node.frontmatter.group === 'getting-started')
+              .filter(post => post.node.frontmatter.layout === 'page')
+              .filter(post => post.node.frontmatter.status === 'complete')}
+          />
           <DrawerItem label="Playground" link="/playground" />
           <DrawerItem label="Contributing" link="/contributing" />
           <DrawerItem label="About" link="/about" />

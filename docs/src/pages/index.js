@@ -37,18 +37,18 @@ class IndexPage extends Component {
         </div>
         <div className="row center-xs" style={{ marginTop: 40 }}>
           <Button variant="outlined" color="primary">
-            Get Started
+            React Native
           </Button>
 
           <Button
             variant="outlined"
             color="secondary"
             style={{ marginLeft: 16, marginRight: 16 }}>
-            Playground
+            React
           </Button>
 
           <Button variant="outlined" color="default">
-            Github
+            Playground
           </Button>
         </div>
       </Layout>

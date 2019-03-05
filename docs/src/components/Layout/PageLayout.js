@@ -25,7 +25,7 @@ class PageLayout extends Component {
   };
 
   render() {
-    const { classes, children } = this.props;
+    const { classes, posts, children } = this.props;
 
     return (
       <div className={classes.root}>
@@ -53,6 +53,7 @@ class PageLayout extends Component {
         <Drawer
           open={this.state.mobileOpen}
           handleDrawerToggle={this.handleDrawerToggle}
+          posts={posts}
         />
         <Header handleDrawerToggle={this.handleDrawerToggle} />
         <main className={classes.content}>
