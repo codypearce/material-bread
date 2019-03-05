@@ -50,7 +50,10 @@ class PageLayout extends Component {
         </Helmet>
 
         <CssBaseline />
-        <Drawer />
+        <Drawer
+          open={this.state.mobileOpen}
+          handleDrawerToggle={this.handleDrawerToggle}
+        />
         <Header handleDrawerToggle={this.handleDrawerToggle} />
         <main className={classes.content}>
           <div className={classes.toolbar} />

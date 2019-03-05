@@ -2,6 +2,8 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
 import PageLayout from './PageLayout';
+require('prismjs/themes/prism-okaidia.css');
+require('prismjs/plugins/line-numbers/prism-line-numbers.css');
 
 export default ({ children }) => {
   return (
