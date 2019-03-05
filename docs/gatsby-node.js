@@ -38,11 +38,18 @@ exports.createPages = ({ graphql, actions }) => {
     }
   `).then(result => {
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      console.log(node);
       if (node.frontmatter.layout == 'page') {
         createPage({
           path: node.frontmatter.path,
           component: path.resolve(`./src/templates/page.js`),
+          context: {
+            slug: node.fields.slug,
+          },
+        });
+      } else if (node.frontmatter.layout == 'component') {
+        createPage({
+          path: node.frontmatter.path,
+          component: path.resolve(`./src/templates/component.js`),
           context: {
             slug: node.fields.slug,
           },

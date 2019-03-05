@@ -32,7 +32,7 @@ class DrawerContent extends React.PureComponent {
 
   handleSectionExanded(pathArray) {
     let sectionExpanded = '';
-    let arrayOfExpandedSections = ['getting-started', 'style'];
+    let arrayOfExpandedSections = ['getting-started', 'style', 'components'];
 
     for (let i = 0; i < arrayOfExpandedSections.length; i++) {
       if (pathArray.includes(arrayOfExpandedSections[i])) {
@@ -105,7 +105,22 @@ class DrawerContent extends React.PureComponent {
             selectSection={this.selectSection}
             sectionExpanded={sectionExpanded == 'style'}
           />
-          <DrawerItem label="Playground" link="/playground" />
+          <DrawerItemExpand
+            label="Components"
+            pageMenuItems={posts
+              .filter(post => post.node.frontmatter.group === 'components')
+              .filter(post => post.node.frontmatter.layout === 'component')
+              .filter(post => post.node.frontmatter.status === 'complete')}
+            selectItem={this.selectItem}
+            itemSelected={itemSelected}
+            selectSection={this.selectSection}
+            sectionExpanded={sectionExpanded == 'components'}
+          />
+          <DrawerItem
+            label="Playground"
+            link="/http://localhost:9009/?selectedKind=Appbar&selectedStory=Appbar&full=0&addons=1&stories=1&panelRight=1&addonPanel=storybook-addon-viewport%2Faddon-panel"
+            selectItem={this.selectItem}
+          />
           <DrawerItem
             label="Contributing"
             link="/contributing"

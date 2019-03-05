@@ -46,13 +46,7 @@ export class DrawerItemExpand extends Component {
     navigate(path);
   };
   render() {
-    const {
-      pageMenuItems,
-      landingMenuItems,
-      label,
-      itemSelected,
-      sectionExpanded,
-    } = this.props;
+    const { pageMenuItems, landingMenuItems, label, itemSelected } = this.props;
 
     return (
       <Fragment>
