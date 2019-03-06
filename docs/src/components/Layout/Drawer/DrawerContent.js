@@ -67,7 +67,7 @@ class DrawerContent extends React.PureComponent {
   render() {
     const { posts } = this.props;
     const { itemSelected, sectionExpanded } = this.state;
-
+    const components = [{ title: 'Appbar', id: 1, path: '/components/appbar' }];
     return (
       <div>
         <div style={{ padding: '10px 20px' }}>
@@ -85,7 +85,7 @@ class DrawerContent extends React.PureComponent {
 
           <DrawerItemExpand
             label="Getting Started"
-            pageMenuItems={posts
+            markdownMenuItems={posts
               .filter(post => post.node.frontmatter.group === 'getting-started')
               .filter(post => post.node.frontmatter.layout === 'page')
               .filter(post => post.node.frontmatter.status === 'complete')}
@@ -96,7 +96,7 @@ class DrawerContent extends React.PureComponent {
           />
           <DrawerItemExpand
             label="Style"
-            pageMenuItems={posts
+            markdownMenuItems={posts
               .filter(post => post.node.frontmatter.group === 'style')
               .filter(post => post.node.frontmatter.layout === 'page')
               .filter(post => post.node.frontmatter.status === 'complete')}
@@ -107,10 +107,7 @@ class DrawerContent extends React.PureComponent {
           />
           <DrawerItemExpand
             label="Components"
-            pageMenuItems={posts
-              .filter(post => post.node.frontmatter.group === 'components')
-              .filter(post => post.node.frontmatter.layout === 'component')
-              .filter(post => post.node.frontmatter.status === 'complete')}
+            reactPageMenuItems={components}
             selectItem={this.selectItem}
             itemSelected={itemSelected}
             selectSection={this.selectSection}

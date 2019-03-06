@@ -46,7 +46,13 @@ export class DrawerItemExpand extends Component {
     navigate(path);
   };
   render() {
-    const { pageMenuItems, landingMenuItems, label, itemSelected } = this.props;
+    const {
+      markdownMenuItems,
+      reactPageMenuItems,
+      landingMenuItems,
+      label,
+      itemSelected,
+    } = this.props;
 
     return (
       <Fragment>
@@ -56,49 +62,70 @@ export class DrawerItemExpand extends Component {
         </ListItem>
         <Collapse in={this.state.open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            {landingMenuItems
-              ? landingMenuItems.map(({ node: post }) => {
-                  return (
-                    <ListItem
-                      button
-                      key={post.id}
-                      onClick={
-                        (() => this.handleSubItemClick(post.frontmatter.path),
-                        post.frontmatter.title.toLowerCase())
-                      }
-                      selected={
-                        post.frontmatter.title.toLowerCase() == itemSelected
-                      }>
-                      <ListItemText
-                        style={{ marginLeft: 16 }}
-                        primary={'Overview'}
-                      />
-                    </ListItem>
-                  );
-                })
-              : null}
-            {pageMenuItems.map(({ node: post }) => {
-              return (
-                <ListItem
-                  button
-                  inset={true}
-                  key={post.id}
-                  onClick={() =>
-                    this.handleSubItemClick(
-                      post.frontmatter.path,
-                      post.frontmatter.title.toLowerCase(),
-                    )
-                  }
-                  selected={
-                    post.frontmatter.title.toLowerCase() == itemSelected
-                  }>
-                  <ListItemText
-                    style={{ marginLeft: 16 }}
-                    primary={post.frontmatter.title}
-                  />
-                </ListItem>
-              );
-            })}
+            {landingMenuItems &&
+              landingMenuItems.map(({ node: post }) => {
+                return (
+                  <ListItem
+                    button
+                    key={post.id}
+                    onClick={
+                      (() => this.handleSubItemClick(post.frontmatter.path),
+                      post.frontmatter.title.toLowerCase())
+                    }
+                    selected={
+                      post.frontmatter.title.toLowerCase() == itemSelected
+                    }>
+                    <ListItemText
+                      style={{ marginLeft: 16 }}
+                      primary={'Overview'}
+                    />
+                  </ListItem>
+                );
+              })}
+            {markdownMenuItems &&
+              markdownMenuItems.map(({ node: post }) => {
+                return (
+                  <ListItem
+                    button
+                    inset={true}
+                    key={post.id}
+                    onClick={() =>
+                      this.handleSubItemClick(
+                        post.frontmatter.path,
+                        post.frontmatter.title.toLowerCase(),
+                      )
+                    }
+                    selected={
+                      post.frontmatter.title.toLowerCase() == itemSelected
+                    }>
+                    <ListItemText
+                      style={{ marginLeft: 16 }}
+                      primary={post.frontmatter.title}
+                    />
+                  </ListItem>
+                );
+              })}
+            {reactPageMenuItems &&
+              reactPageMenuItems.map(post => {
+                return (
+                  <ListItem
+                    button
+                    inset={true}
+                    key={post.id}
+                    onClick={() =>
+                      this.handleSubItemClick(
+                        post.path,
+                        post.title.toLowerCase(),
+                      )
+                    }
+                    selected={post.title.toLowerCase() == itemSelected}>
+                    <ListItemText
+                      style={{ marginLeft: 16 }}
+                      primary={post.title}
+                    />
+                  </ListItem>
+                );
+              })}
           </List>
         </Collapse>
       </Fragment>

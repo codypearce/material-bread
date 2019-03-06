@@ -8,7 +8,8 @@ import { withStyles } from '@material-ui/core/styles';
 import '../../../node_modules/flexboxgrid/css/flexboxgrid.min.css';
 import Drawer from './Drawer/Drawer';
 import Header from './Header';
-
+import Prism from 'prismjs';
+Prism.highlightAll();
 class PageLayout extends Component {
   static propTypes = {
     classes: PropTypes.object,
@@ -19,6 +20,10 @@ class PageLayout extends Component {
   state = {
     mobileOpen: false,
   };
+
+  componentDidMount() {
+    Prism.highlightAll();
+  }
 
   handleDrawerToggle = () => {
     this.setState(state => ({ mobileOpen: !state.mobileOpen }));
@@ -56,10 +61,7 @@ class PageLayout extends Component {
           posts={posts}
         />
         <Header handleDrawerToggle={this.handleDrawerToggle} />
-        <main className={classes.content}>
-          <div className={classes.toolbar} />
-          {children}
-        </main>
+        <main className={classes.content}>{children}</main>
       </div>
     );
   }
@@ -76,6 +78,7 @@ const styles = theme => ({
     maxWidth: 1048,
     marginLeft: 40,
     marginRight: 40,
+    paddingTop: 40,
   },
 });
 

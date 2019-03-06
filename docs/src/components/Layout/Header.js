@@ -16,7 +16,7 @@ const styles = theme => ({
       width: `calc(100% - ${drawerWidth}px)`,
     },
     boxShadow: 'none',
-    backgroundColor: '#fafafa',
+    backgroundColor: 'transparent',
   },
   menuButton: {
     marginRight: 20,
