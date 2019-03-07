@@ -37,6 +37,6 @@ React Native provides a unique challenge for customization since you cannot sele
 
 #### Comprehensive Documentation
 
-Detailed documenation is necessary to take full advantage of the package,but it's also important to provide examples of common use cases. For React Native it's common to simply show a picture or link to Snack.io to show off components, but this doesn't really give the developer a good idea of how a component looks and functions. Therefore it is a high priority of this library to provide both detailed documetation and copious live examples.
+Detailed documentation is necessary to take full advantage of the package,but it's also important to provide examples of common use cases. For React Native it's common to simply show a picture or link to Snack.io to show off components, but this doesn't really give the developer a good idea of how a component looks and functions. Therefore it is a high priority of this library to provide both detailed documentation and copious live demos.
 
 </section>
