@@ -6,8 +6,6 @@ group: getting-started
 status: complete
 ---
 
-# React
-
 ```javascript
 npm i material-bread
 ```

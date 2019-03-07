@@ -27,11 +27,24 @@ class IndexPage extends Component {
               paddingBottom: 8,
             }}>
             <code
-              className="language-javascript"
               style={{
                 width: 'auto',
                 fontSize: 14,
-              }}>{`npm i material-bread`}</code>
+                backgroundColor: '#272822',
+                padding: 12,
+                paddingRight: 48,
+                borderRadius: 4.8,
+                color: 'white',
+                textShadow: '0 1px rgba(0, 0, 0, 0.3)',
+                fontFamily:
+                  "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
+                position: 'relative',
+              }}>
+              <span style={{ color: '#66d9ef' }}>$ </span>npm i material-bread
+              <button style={{ position: 'absolute', top: 0, right: 0 }}>
+                Copy
+              </button>
+            </code>
           </pre>
         </div>
         <div className="row center-xs" style={{ marginTop: 40 }}>

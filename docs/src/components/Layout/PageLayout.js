@@ -9,7 +9,7 @@ import '../../../node_modules/flexboxgrid/css/flexboxgrid.min.css';
 import Drawer from './Drawer/Drawer';
 import Header from './Header';
 import Prism from 'prismjs';
-Prism.highlightAll();
+
 class PageLayout extends Component {
   static propTypes = {
     classes: PropTypes.object,
@@ -75,7 +75,7 @@ const styles = theme => ({
   content: {
     flexGrow: 1,
     padding: theme.spacing.unit * 3,
-    maxWidth: 1048,
+    maxWidth: 900,
     marginLeft: 40,
     marginRight: 40,
     paddingTop: 40,

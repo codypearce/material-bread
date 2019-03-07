@@ -1,0 +1,35 @@
+.Page p {
+  color: rgba(0, 0, 0, 0.9);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.Page h1 {
+  font-size: 42px;
+  letter-spacing: 1.2px;
+}
+.Page h2 {
+  margin: 10px 0;
+  font-size: 28px;
+}
+
+.Page h4 {
+  margin: 10px 0;
+}
+
+.Page section {
+  margin: 40px 0;
+}
+
+.Page ol {
+  margin-left: 0;
+  padding-left: 18px;
+}
+.Page li {
+  font-size: 14px;
+}
+
+.Page li p {
+  font-size: 14px;
+  margin: 0;
+}
