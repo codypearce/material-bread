@@ -57,7 +57,14 @@ export class DrawerItemExpand extends Component {
     return (
       <Fragment>
         <ListItem button onClick={this.handleClick}>
-          <ListItemText primary={label} />
+          <ListItemText
+            primary={label}
+            style={{
+              fontSize: 14,
+              color: '#000',
+            }}
+            disableTypography
+          />
           {this.state.open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Collapse in={this.state.open} timeout="auto" unmountOnExit>
@@ -76,8 +83,13 @@ export class DrawerItemExpand extends Component {
                       post.frontmatter.title.toLowerCase() == itemSelected
                     }>
                     <ListItemText
-                      style={{ marginLeft: 16 }}
+                      style={{
+                        marginLeft: 16,
+                        fontSize: 14,
+                        color: '#000',
+                      }}
                       primary={'Overview'}
+                      disableTypography
                     />
                   </ListItem>
                 );
@@ -99,8 +111,14 @@ export class DrawerItemExpand extends Component {
                       post.frontmatter.title.toLowerCase() == itemSelected
                     }>
                     <ListItemText
-                      style={{ marginLeft: 16 }}
+                      style={{
+                        marginLeft: 16,
+                        fontSize: 14,
+
+                        color: '#000',
+                      }}
                       primary={post.frontmatter.title}
+                      disableTypography
                     />
                   </ListItem>
                 );
@@ -120,8 +138,13 @@ export class DrawerItemExpand extends Component {
                     }
                     selected={post.title.toLowerCase() == itemSelected}>
                     <ListItemText
-                      style={{ marginLeft: 16 }}
+                      style={{
+                        marginLeft: 16,
+                        fontSize: 14,
+                        color: '#000',
+                      }}
                       primary={post.title}
+                      disableTypography
                     />
                   </ListItem>
                 );

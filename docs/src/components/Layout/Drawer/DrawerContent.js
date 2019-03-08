@@ -67,12 +67,46 @@ class DrawerContent extends React.PureComponent {
   render() {
     const { posts } = this.props;
     const { itemSelected, sectionExpanded } = this.state;
-    const components = [{ title: 'Appbar', id: 1, path: '/components/appbar' }];
+    const components = [
+      {
+        title: 'Appbar',
+        id: 1,
+        path: '/components/appbar',
+      },
+    ];
     return (
       <div>
-        <div style={{ padding: '10px 20px' }}>
-          <h3>Material Bread</h3>
-          <p>Beta</p>
+        <div
+          style={{
+            padding: '25px 20px',
+
+            backgroundColor: '#263238',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <h3
+            style={{
+              fontSize: 20,
+              color: 'white',
+              margin: 0,
+              fontWeight: 400,
+              display: 'block',
+              letterSpacing: 1.2,
+            }}>
+            Material Bread
+          </h3>
+          <span
+            style={{
+              margin: 0,
+              color: 'rgba(255,255,255,.7)',
+              fontSize: 12,
+              marginLeft: 10,
+              marginTop: 8,
+              display: 'inline-block',
+            }}>
+            Beta
+          </span>
         </div>
         <Divider />
         <List>

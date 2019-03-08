@@ -27,7 +27,7 @@ Having almost complete control over the styling of every component is a crucial 
 
 2. Having more control over the component allows the developer to possibly fix edge cases or issues themselves rather than wait for a new release of the package.
 
-3. More customization allows developers to build their own components with package components as a starting point.
+3. More customization allows developers to build their own components on top package components.
 
 React Native provides a unique challenge for customization since you cannot select any element you want with CSS and override all the styles. This means that it’s important to design and build customization into each component from the ground up.
 

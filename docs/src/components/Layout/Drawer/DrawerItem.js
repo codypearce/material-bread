@@ -31,7 +31,15 @@ export class DrawerItem extends Component {
 
     return (
       <ListItem button onClick={this.handleClick} selected={selected}>
-        <ListItemText primary={label} />
+        <ListItemText
+          primary={label}
+          style={{
+            fontSize: 14,
+
+            color: '#000',
+          }}
+          disableTypography
+        />
       </ListItem>
     );
   }
