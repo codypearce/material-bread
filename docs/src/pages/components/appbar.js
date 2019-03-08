@@ -12,21 +12,31 @@ export default class AppbarPage extends Component {
         <Scrollspy
           items={['Example', 'Usage', 'Props', 'Demos', 'Appbar-with-search']}
           currentClassName="is-current"
-          style={{ position: 'fixed', right: 80 }}>
-          <li>
-            <a href="#Example">Example</a>
+          style={{ position: 'fixed', right: 50 }}>
+          <li className="SideMenu__ListItem">
+            <a className="SideMenu__Link" href="#Example">
+              Example
+            </a>
           </li>
-          <li>
-            <a href="#Usage">Usage</a>
+          <li className="SideMenu__ListItem">
+            <a className="SideMenu__Link" href="#Usage">
+              Usage
+            </a>
           </li>
-          <li>
-            <a href="#Props">Props</a>
+          <li className="SideMenu__ListItem">
+            <a className="SideMenu__Link" href="#Props">
+              Props
+            </a>
           </li>
-          <li>
-            <a href="#Demos">Demos</a>
+          <li className="SideMenu__ListItem">
+            <a className="SideMenu__Link" href="#Demos">
+              Demos
+            </a>
           </li>
-          <li>
-            <a href="#Appbar-with-search">with search</a>
+          <li className="SideMenu__ListItem SideMenu__ListItem--sub">
+            <a className="SideMenu__Link " href="#Appbar-with-search">
+              with search
+            </a>
           </li>
         </Scrollspy>
         <h1 style={{ fontSize: 42, letterSpacing: 1.2, marginBottom: 0 }}>

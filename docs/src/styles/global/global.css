@@ -7,6 +7,26 @@ body {
   margin-right: 0 !important;
 }
 
-.is-current {
-  color: red;
+.is-current .SideMenu__Link {
+  color: #222;
+}
+
+.SideMenu__ListItem {
+  list-style: none;
+}
+.SideMenu__Link {
+  text-decoration: none;
+  color: rgba(20, 20, 20, 0.5);
+  font-size: 16px;
+}
+.SideMenu__Link:hover {
+  color: rgba(20, 20, 20, 0.8);
+}
+
+.SideMenu__ListItem--sub {
+  margin-left: 8px;
+}
+
+.SideMenu__ListItem--sub .SideMenu__Link {
+  font-size: 14px;
 }

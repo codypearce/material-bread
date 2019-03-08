@@ -9,6 +9,31 @@ const styles = theme => ({
     flexGrow: 1,
     padding: theme.spacing.unit * 3,
   },
+  // root: {
+  //   '&$selected': {
+  //     backgroundColor: '#263238',
+  //     color: 'white',
+  //   },
+  //   '&&:hover': {
+  //     backgroundColor: '#263238',
+  //     '& *': {
+  //       color: 'white !important',
+  //     },
+  //   },
+  //   '&&:active': {
+  //     backgroundColor: '#263238',
+  //     '& *': {
+  //       color: 'white !important',
+  //     },
+  //   },
+  //   '&&:focus': {
+  //     backgroundColor: '#263238',
+  //     '& *': {
+  //       color: 'white !important',
+  //     },
+  //   },
+  // },
+  // selected: {},
 });
 
 export class DrawerItem extends Component {
@@ -27,10 +52,15 @@ export class DrawerItem extends Component {
   };
 
   render() {
-    const { label, selected } = this.props;
+    const { label, selected, classes } = this.props;
 
     return (
-      <ListItem button onClick={this.handleClick} selected={selected}>
+      <ListItem
+        button
+        onClick={this.handleClick}
+        selected={selected}
+        style={{}}
+        classes={classes}>
         <ListItemText
           primary={label}
           style={{

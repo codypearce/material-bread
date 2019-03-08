@@ -102,14 +102,14 @@ class DrawerContent extends React.PureComponent {
               color: 'rgba(255,255,255,.7)',
               fontSize: 12,
               marginLeft: 10,
-              marginTop: 8,
+              marginTop: 6,
               display: 'inline-block',
             }}>
             Beta
           </span>
         </div>
         <Divider />
-        <List>
+        <List style={{}}>
           <DrawerItem
             label="Home"
             link="/"

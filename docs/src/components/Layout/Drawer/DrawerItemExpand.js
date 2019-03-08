@@ -10,6 +10,33 @@ const styles = theme => ({
     flexGrow: 1,
     padding: theme.spacing.unit * 3,
   },
+  // root: {
+  //   '&$selected': {
+  //     backgroundColor: '#263238',
+  //     '& *': {
+  //       color: 'white !important',
+  //     },
+  //   },
+  //   '&&:hover': {
+  //     backgroundColor: '#263238',
+  //     '& *': {
+  //       color: 'white !important',
+  //     },
+  //   },
+  //   '&&:active': {
+  //     backgroundColor: '#263238',
+  //     '& *': {
+  //       color: 'white !important',
+  //     },
+  //   },
+  //   '&&:focus': {
+  //     backgroundColor: '#263238',
+  //     '& *': {
+  //       color: 'white !important',
+  //     },
+  //   },
+  // },
+  // selected: {},
 });
 
 export class DrawerItemExpand extends Component {
@@ -52,11 +79,16 @@ export class DrawerItemExpand extends Component {
       landingMenuItems,
       label,
       itemSelected,
+      classes,
     } = this.props;
 
     return (
       <Fragment>
-        <ListItem button onClick={this.handleClick}>
+        <ListItem
+          button
+          onClick={this.handleClick}
+          style={{}}
+          classes={classes}>
           <ListItemText
             primary={label}
             style={{
@@ -67,7 +99,7 @@ export class DrawerItemExpand extends Component {
           />
           {this.state.open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
-        <Collapse in={this.state.open} timeout="auto" unmountOnExit>
+        <Collapse in={this.state.open} timeout="auto" unmountOnExit style={{}}>
           <List component="div" disablePadding>
             {landingMenuItems &&
               landingMenuItems.map(({ node: post }) => {
@@ -75,6 +107,8 @@ export class DrawerItemExpand extends Component {
                   <ListItem
                     button
                     key={post.id}
+                    classes={classes}
+                    style={{}}
                     onClick={
                       (() => this.handleSubItemClick(post.frontmatter.path),
                       post.frontmatter.title.toLowerCase())
@@ -84,9 +118,9 @@ export class DrawerItemExpand extends Component {
                     }>
                     <ListItemText
                       style={{
-                        marginLeft: 16,
                         fontSize: 14,
                         color: '#000',
+                        paddingLeft: 16,
                       }}
                       primary={'Overview'}
                       disableTypography
@@ -99,8 +133,9 @@ export class DrawerItemExpand extends Component {
                 return (
                   <ListItem
                     button
-                    inset={true}
                     key={post.id}
+                    style={{}}
+                    classes={classes}
                     onClick={() =>
                       this.handleSubItemClick(
                         post.frontmatter.path,
@@ -112,13 +147,13 @@ export class DrawerItemExpand extends Component {
                     }>
                     <ListItemText
                       style={{
-                        marginLeft: 16,
                         fontSize: 14,
-
+                        paddingLeft: 16,
                         color: '#000',
                       }}
                       primary={post.frontmatter.title}
                       disableTypography
+                      classes={classes}
                     />
                   </ListItem>
                 );
@@ -128,8 +163,9 @@ export class DrawerItemExpand extends Component {
                 return (
                   <ListItem
                     button
-                    inset={true}
                     key={post.id}
+                    style={{ paddingLeft: 12 }}
+                    classes={classes}
                     onClick={() =>
                       this.handleSubItemClick(
                         post.path,
@@ -139,9 +175,9 @@ export class DrawerItemExpand extends Component {
                     selected={post.title.toLowerCase() == itemSelected}>
                     <ListItemText
                       style={{
-                        marginLeft: 16,
                         fontSize: 14,
                         color: '#000',
+                        paddingLeft: 16,
                       }}
                       primary={post.title}
                       disableTypography

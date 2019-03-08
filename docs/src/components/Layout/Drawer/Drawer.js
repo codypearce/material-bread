@@ -16,6 +16,7 @@ const styles = theme => ({
   drawerPaper: {
     width: drawerWidth,
     backgroundColor: '#e3e5e7',
+    border: 'none',
   },
 });
 class Drawer extends Component {

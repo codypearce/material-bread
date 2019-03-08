@@ -5,5 +5,3 @@ title: Color
 group: style
 status: complete
 ---
-
-# Colors
