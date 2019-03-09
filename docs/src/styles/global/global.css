@@ -30,3 +30,8 @@ body {
 .SideMenu__ListItem--sub .SideMenu__Link {
   font-size: 14px;
 }
+
+@font-face {
+  src: url(../../../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf);
+  font-family: MaterialIcons;
+}

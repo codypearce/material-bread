@@ -30,7 +30,7 @@ class ListExpanded extends Component {
   componentDidUpdate(prevProps) {
     const { expanded } = this.props;
 
-    if (expanded != prevProps.expanded) {
+    if (expanded !== prevProps.expanded) {
       this.setState({ isOpen: expanded });
     }
   }
@@ -42,7 +42,9 @@ class ListExpanded extends Component {
     let height = initialHeight;
     if (isOpen) height = 0;
 
-    if (onPress) onPress;
+    if (onPress) {
+      onPress();
+    }
 
     Animated.timing(menuHeight, {
       toValue: height,

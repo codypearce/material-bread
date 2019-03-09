@@ -15,6 +15,13 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-native-web`,
+    {
+      resolve: `gatsby-plugin-compile-es6-packages`,
+      options: {
+        modules: [`react-native-vector-icons`],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

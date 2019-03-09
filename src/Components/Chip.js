@@ -12,8 +12,8 @@ class Chip extends Component {
     backgroundColor: PropTypes.string,
     textColor: PropTypes.string,
     borderColor: PropTypes.string,
-    onPress: PropTypes.function,
-    onDelete: PropTypes.function,
+    onPress: PropTypes.func,
+    onDelete: PropTypes.func,
     children: PropTypes.node,
     style: PropTypes.object,
     theme: PropTypes.object,
@@ -38,7 +38,7 @@ class Chip extends Component {
     let displayBackgroundColor = backgroundColor ? backgroundColor : '#1e88e5';
     let displayTextColor = textColor ? textColor : 'white';
 
-    if (type == 'outlined') {
+    if (type === 'outlined') {
       borderWidth = StyleSheet.hairlineWidth;
       displayBackgroundColor = 'transparent';
       displayTextColor = '#1e88e5';
