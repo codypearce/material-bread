@@ -64,8 +64,8 @@ export class DrawerItem extends Component {
         <ListItemText
           primary={label}
           style={{
-            fontSize: 14,
-
+            fontSize: 13,
+            fontWeight: 500,
             color: '#000',
           }}
           disableTypography

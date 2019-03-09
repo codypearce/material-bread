@@ -33,6 +33,7 @@ const styles = theme => ({
   table: {
     width: '100%',
     overflowX: 'auto',
+    borderRadius: 6,
   },
   row: {
     '&:nth-of-type(odd)': {
@@ -65,39 +66,37 @@ class AppbarPage extends Component {
     return (
       <div>
         <Scrollspy
-          items={['Component', 'Usage', 'Props', 'Demos', 'Appbar-with-search']}
+          items={['component', 'usage', 'props', 'demos', 'with-search']}
           currentClassName="is-current"
           style={{ position: 'fixed', right: 50 }}
           className="SideMenu">
           <li className="SideMenu__ListItem">
-            <a className="SideMenu__Link" href="#Component">
+            <a className="SideMenu__Link" href="#component">
               Component
             </a>
           </li>
           <li className="SideMenu__ListItem">
-            <a className="SideMenu__Link" href="#Usage">
+            <a className="SideMenu__Link" href="#usage">
               Usage
             </a>
           </li>
           <li className="SideMenu__ListItem">
-            <a className="SideMenu__Link" href="#Props">
+            <a className="SideMenu__Link" href="#props">
               Props
             </a>
           </li>
           <li className="SideMenu__ListItem">
-            <a className="SideMenu__Link" href="#Demos">
+            <a className="SideMenu__Link" href="#demos">
               Demos
             </a>
           </li>
           <li className="SideMenu__ListItem SideMenu__ListItem--sub">
-            <a className="SideMenu__Link " href="#Appbar-with-search">
+            <a className="SideMenu__Link " href="#with-search">
               with search
             </a>
           </li>
         </Scrollspy>
-        <h1
-          style={{ fontSize: 42, letterSpacing: 1.2, marginBottom: 0 }}
-          id="Example">
+        <h1 style={{ fontSize: 42, letterSpacing: 1.2, marginBottom: 0 }}>
           Appbar top
         </h1>
 
@@ -118,6 +117,8 @@ class AppbarPage extends Component {
               borderRadius: 6,
               position: 'relative',
               paddingRight: 44,
+              boxShadow:
+                '0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23)',
             }}>
             <code
               className="language-javascript"
@@ -143,9 +144,14 @@ class AppbarPage extends Component {
           </pre>
         </div>
 
-        <div style={{ marginTop: 60 }}>
-          <h3 style={{ fontWeight: 400, fontSize: 28, marginBottom: 16 }}>
-            Component
+        <div style={{ marginTop: 60 }} id="component">
+          <h3
+            style={{ fontWeight: 400, fontSize: 28, marginBottom: 16 }}
+            className="Section__header">
+            <span>Component</span>{' '}
+            <a className="HashLink" href="/components/appbar#component">
+              #
+            </a>
           </h3>
 
           <LiveProvider
@@ -175,7 +181,7 @@ class AppbarPage extends Component {
                 placement={'top'}>
                 <span
                   style={{
-                    color: '#00838F',
+                    color: '#00a2b1',
                     position: 'absolute',
                     right: 0,
                     padding: 10,
@@ -212,13 +218,25 @@ class AppbarPage extends Component {
             />
           </LiveProvider>
         </div>
-        <div style={{ marginTop: 60 }} id="Usage">
-          <h3 style={{ fontWeight: 400, fontSize: 28, marginBottom: 16 }}>
-            Usage
+        <div style={{ marginTop: 60 }} id="usage">
+          <h3
+            style={{ fontWeight: 400, fontSize: 28, marginBottom: 16 }}
+            className="Section__header">
+            <span>Usage</span>{' '}
+            <a className="HashLink" href="/components/appbar#usage">
+              #
+            </a>
           </h3>
 
           <div className="row " style={{}}>
-            <pre style={{ width: '100%', borderRadius: 6 }}>
+            <pre
+              style={{
+                width: '100%',
+                borderRadius: 6,
+                boxShadow:
+                  '0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23)',
+                position: 'relative',
+              }}>
               <code
                 className="language-jsx"
                 style={{
@@ -237,21 +255,56 @@ export default class Header extends Component {
     );
   }
 }`}</code>
-              <button>Copy</button>
+              <button
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  right: 0,
+                  fontSize: 14,
+                  border: 'none',
+                  outline: 'none',
+                  color: '#efefef',
+                  padding: 8,
+                  cursor: 'pointer',
+                  backgroundColor: '#1e6caf',
+                  borderBottomLeftRadius: 6,
+                }}>
+                Copy
+              </button>
             </pre>
           </div>
         </div>
         <div style={{ marginTop: 60 }} id="Props">
-          <h3 style={{ fontWeight: 400, fontSize: 28 }}>Props</h3>
+          <h3
+            style={{ fontWeight: 400, fontSize: 28, marginBottom: 16 }}
+            className="Section__header">
+            <span>Props</span>{' '}
+            <a className="HashLink" href="/components/appbar#props">
+              #
+            </a>
+          </h3>
           <Table className={classes.table}>
-            <TableHead>
+            <TableHead style={{ borderRadius: 6 }}>
               <TableRow>
-                <CustomTableCell>Name</CustomTableCell>
+                <CustomTableCell
+                  style={{
+                    borderTopLeftRadius: 6,
+                    borderBottomLeftRadius: 6,
+                  }}>
+                  Name
+                </CustomTableCell>
                 <CustomTableCell component="th" scope="row">
                   Description
                 </CustomTableCell>
-                <CustomTableCell align="right">Type</CustomTableCell>
-                <CustomTableCell align="right">Default</CustomTableCell>
+                <CustomTableCell>Type</CustomTableCell>
+                <CustomTableCell
+                  align="right"
+                  style={{
+                    borderTopRightRadius: 6,
+                    borderBottomRightRadius: 6,
+                  }}>
+                  Default
+                </CustomTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -261,7 +314,7 @@ export default class Header extends Component {
                   <CustomTableCell component="th" scope="row">
                     {row.description}
                   </CustomTableCell>
-                  <CustomTableCell align="right">{row.type}</CustomTableCell>
+                  <CustomTableCell>{row.type}</CustomTableCell>
                   <CustomTableCell align="right">
                     {row.defaultValue}
                   </CustomTableCell>
@@ -270,11 +323,25 @@ export default class Header extends Component {
             </TableBody>
           </Table>
         </div>
-        <div style={{ marginTop: 60 }} id="Demos">
-          <h3 style={{ fontWeight: 400, fontSize: 28 }}>Demos</h3>
+        <div style={{ marginTop: 60 }} id="demos">
+          <h3
+            style={{ fontWeight: 400, fontSize: 28, marginBottom: 16 }}
+            className="Section__header">
+            <span>Demos</span>{' '}
+            <a className="HashLink" href="/components/appbar#demos">
+              #
+            </a>
+          </h3>
         </div>
-        <div style={{ marginTop: 60 }} id="Appbar-with-search">
-          <h3 style={{ fontWeight: 400, fontSize: 28 }}>Appbar with search</h3>
+        <div style={{ marginTop: 60 }} id="with-search">
+          <h3
+            style={{ fontWeight: 400, fontSize: 28, marginBottom: 16 }}
+            className="Section__header">
+            <span>Appbar with search</span>{' '}
+            <a className="HashLink" href="/components/appbar#with-search">
+              #
+            </a>
+          </h3>
         </div>
       </div>
     );

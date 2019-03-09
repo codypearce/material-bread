@@ -23,6 +23,16 @@ class PageLayout extends Component {
 
   componentDidMount() {
     Prism.highlightAll();
+    const hash = window && window.location && window.location.hash;
+    if (hash) {
+      const id = hash.split('#')[1];
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({
+          behavior: 'smooth',
+        });
+      }
+    }
   }
 
   handleDrawerToggle = () => {
@@ -62,7 +72,9 @@ class PageLayout extends Component {
           posts={posts}
         />
         <Header handleDrawerToggle={this.handleDrawerToggle} />
-        <main className={classes.content}>{children}</main>
+        <main className={classes.content} style={{ scrollBehavior: 'smooth' }}>
+          {children}
+        </main>
       </div>
     );
   }

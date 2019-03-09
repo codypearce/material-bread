@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: Roboto, sans-serif;
 }
@@ -31,6 +34,20 @@ body {
   font-size: 14px;
 }
 
+.Section__header:hover .HashLink {
+  opacity: 0.6;
+}
+.HashLink {
+  text-decoration: none;
+  color: black;
+  font-size: 18;
+  margin-left: 8;
+  opacity: 0;
+}
+.HashLink:hover {
+  opacity: 1 !important;
+}
+
 .LiveEdit {
   position: relative;
   display: inline-block;
@@ -58,7 +75,7 @@ body {
   }
 }
 
-@media (max-width: 1301px) {
+@media (max-width: 1342px) {
   .SideMenu {
     display: none;
   }

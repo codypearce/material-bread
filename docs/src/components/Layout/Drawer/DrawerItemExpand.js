@@ -92,7 +92,8 @@ export class DrawerItemExpand extends Component {
           <ListItemText
             primary={label}
             style={{
-              fontSize: 14,
+              fontSize: 13,
+              fontWeight: 500,
               color: '#000',
             }}
             disableTypography
@@ -118,7 +119,8 @@ export class DrawerItemExpand extends Component {
                     }>
                     <ListItemText
                       style={{
-                        fontSize: 14,
+                        fontSize: 13,
+                        fontWeight: 500,
                         color: '#000',
                         paddingLeft: 16,
                       }}
@@ -147,7 +149,8 @@ export class DrawerItemExpand extends Component {
                     }>
                     <ListItemText
                       style={{
-                        fontSize: 14,
+                        fontSize: 13,
+                        fontWeight: 500,
                         paddingLeft: 16,
                         color: '#000',
                       }}
@@ -175,8 +178,8 @@ export class DrawerItemExpand extends Component {
                     selected={post.title.toLowerCase() == itemSelected}>
                     <ListItemText
                       style={{
-                        fontSize: 14,
-                        color: '#000',
+                        fontSize: 13,
+                        fontWeight: 500,
                         paddingLeft: 16,
                       }}
                       primary={post.title}
