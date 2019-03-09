@@ -31,6 +31,12 @@ body {
   font-size: 14px;
 }
 
+@media (max-width: 1301px) {
+  .SideMenu {
+    display: none;
+  }
+}
+
 @font-face {
   src: url(../../../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf);
   font-family: MaterialIcons;

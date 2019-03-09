@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Prism from 'prismjs';
 import Scrollspy from 'react-scrollspy';
 
 import {
@@ -10,6 +9,7 @@ import {
   TableRow,
 } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 
 import { Appbar } from '../../../../src/index';
 
@@ -26,11 +26,12 @@ const CustomTableCell = withStyles(theme => ({
 const styles = theme => ({
   root: {
     width: '100%',
-    marginTop: theme.spacing.unit * 3,
+    marginTop: 20,
     overflowX: 'auto',
   },
   table: {
-    minWidth: 700,
+    width: '100%',
+    overflowX: 'auto',
   },
   row: {
     '&:nth-of-type(odd)': {
@@ -52,22 +53,21 @@ const rows = [
     'string',
     'Theme.primaryColor',
   ),
-  createData('Position', 'Adds position as expected', 'string', 'fixed'),
+  createData('position', 'adds position as expected', 'string', 'fixed'),
   createData('style', 'styles the root component', 'object', ''),
 ];
 
 class AppbarPage extends Component {
-  componentDidMount() {
-    Prism.highlightAll();
-  }
   render() {
     const { classes } = this.props;
+
     return (
       <div>
         <Scrollspy
           items={['Component', 'Usage', 'Props', 'Demos', 'Appbar-with-search']}
           currentClassName="is-current"
-          style={{ position: 'fixed', right: 50 }}>
+          style={{ position: 'fixed', right: 50 }}
+          className="SideMenu">
           <li className="SideMenu__ListItem">
             <a className="SideMenu__Link" href="#Component">
               Component
@@ -123,14 +123,24 @@ class AppbarPage extends Component {
         </div>
 
         <div style={{ marginTop: 60 }}>
-          <Appbar title={'Page Title'} />
+          <LiveProvider
+            code=" <Appbar title={'Page Title'} />"
+            scope={{ Appbar }}
+            mountStylesheet={false}>
+            <LivePreview />
+            <LiveEditor
+              className={'language-javascript'}
+              style={{ margin: 0, fontSize: 14 }}
+            />
+            <LiveError />
+          </LiveProvider>
         </div>
         <div style={{ marginTop: 60 }} id="Usage">
           <h3 style={{ fontWeight: 400, fontSize: 28 }}>Usage</h3>
           <div className="row " style={{}}>
             <pre style={{ width: '100%' }}>
               <code
-                className="language-javascript"
+                className="language-jsx"
                 style={{
                   fontSize: 14,
                 }}>{`import react  from 'react';
@@ -185,9 +195,6 @@ export default class Header extends Component {
         </div>
         <div style={{ marginTop: 60 }} id="Appbar-with-search">
           <h3 style={{ fontWeight: 400, fontSize: 28 }}>Appbar with search</h3>
-        </div>
-        <div style={{ marginTop: 60 }} id="Full">
-          <h3 style={{ fontWeight: 400, fontSize: 28 }}>Full Example</h3>
         </div>
       </div>
     );

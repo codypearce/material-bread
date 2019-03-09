@@ -5,8 +5,8 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import PageLayout from './PageLayout';
 
-require('prismjs/themes/prism-okaidia.css');
-require('prismjs/plugins/line-numbers/prism-line-numbers.css');
+require('prismjs/components/prism-jsx.min');
+require('prismjs/themes/prism-tomorrow.css');
 
 export default ({ children }) => {
   return (

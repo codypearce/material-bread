@@ -12,7 +12,7 @@ const drawerWidth = 240;
 const styles = theme => ({
   appBar: {
     marginLeft: drawerWidth,
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       width: `calc(100% - ${drawerWidth}px)`,
     },
     boxShadow: 'none',
@@ -20,7 +20,7 @@ const styles = theme => ({
   },
   menuButton: {
     marginRight: 20,
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       display: 'none',
     },
   },

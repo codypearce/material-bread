@@ -8,9 +8,8 @@ const drawerWidth = 240;
 
 const styles = theme => ({
   drawer: {
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       width: drawerWidth,
-      flexShrink: 0,
     },
   },
   drawerPaper: {
@@ -33,7 +32,7 @@ class Drawer extends Component {
 
     return (
       <nav className={classes.drawer}>
-        <Hidden smUp implementation="css">
+        <Hidden mdUp implementation="css">
           <MaterialDrawer
             variant="temporary"
             anchor={theme.direction === 'rtl' ? 'right' : 'left'}
@@ -45,7 +44,7 @@ class Drawer extends Component {
             <DrawerContent posts={posts} />
           </MaterialDrawer>
         </Hidden>
-        <Hidden xsDown implementation="css">
+        <Hidden smDown implementation="css">
           <MaterialDrawer
             classes={{
               paper: classes.drawerPaper,

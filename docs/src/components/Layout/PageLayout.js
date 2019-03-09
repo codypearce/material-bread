@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { withStyles } from '@material-ui/core/styles';
@@ -52,6 +52,7 @@ class PageLayout extends Component {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
           />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Helmet>
 
         <CssBaseline />
@@ -73,9 +74,8 @@ const styles = theme => ({
   },
   toolbar: theme.mixins.toolbar,
   content: {
-    flexGrow: 1,
-    padding: theme.spacing.unit * 3,
     maxWidth: 900,
+    width: `calc(100% - ${240}px)`,
     marginLeft: 40,
     marginRight: 40,
     paddingTop: 40,
