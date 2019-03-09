@@ -116,13 +116,30 @@ class AppbarPage extends Component {
             style={{
               padding: 12,
               borderRadius: 6,
+              position: 'relative',
+              paddingRight: 44,
             }}>
             <code
               className="language-javascript"
               style={{
                 fontSize: 14,
               }}>{`import { Appbar } from 'material-bread'`}</code>
-            <button>Copy</button>
+            <button
+              style={{
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                fontSize: 11,
+                border: 'none',
+                outline: 'none',
+                color: '#efefef',
+                padding: 5,
+                cursor: 'pointer',
+                backgroundColor: '#1e6caf',
+                borderBottomLeftRadius: 6,
+              }}>
+              Copy
+            </button>
           </pre>
         </div>
 
@@ -158,7 +175,7 @@ class AppbarPage extends Component {
                 placement={'top'}>
                 <span
                   style={{
-                    color: 'white',
+                    color: '#00838F',
                     position: 'absolute',
                     right: 0,
                     padding: 10,
@@ -186,7 +203,7 @@ class AppbarPage extends Component {
 
             <LiveError
               style={{
-                backgroundColor: '#EEEEEE',
+                backgroundColor: '#ffebeb',
                 color: '#EF5350',
                 padding: 24,
                 borderBottomLeftRadius: 6,

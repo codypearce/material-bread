@@ -84,6 +84,8 @@ class DrawerContent extends React.PureComponent {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            borderBottomRightRadius: 30,
+            borderBottomLeftRadius: 30,
           }}>
           <h3
             style={{
@@ -108,7 +110,7 @@ class DrawerContent extends React.PureComponent {
             Beta
           </span>
         </div>
-        <Divider />
+
         <List style={{}}>
           <DrawerItem
             label="Home"
