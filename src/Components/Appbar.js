@@ -41,12 +41,7 @@ class Appbar extends Component {
   }
 
   _renderNormal() {
-    const {
-      title,
-
-      renderRight,
-      hasMenuButton,
-    } = this.props;
+    const { title, renderRight, hasMenuButton } = this.props;
     return (
       <Fragment>
         <View style={[styles.left]}>

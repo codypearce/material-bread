@@ -2,22 +2,75 @@ import React, { Component } from 'react';
 import Prism from 'prismjs';
 import Scrollspy from 'react-scrollspy';
 
-import { Appbar, Data } from '../../../../src/index';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+} from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 
-export default class AppbarPage extends Component {
+import { Appbar } from '../../../../src/index';
+
+const CustomTableCell = withStyles(theme => ({
+  head: {
+    backgroundColor: '#263238',
+    color: theme.palette.common.white,
+  },
+  body: {
+    fontSize: 14,
+  },
+}))(TableCell);
+
+const styles = theme => ({
+  root: {
+    width: '100%',
+    marginTop: theme.spacing.unit * 3,
+    overflowX: 'auto',
+  },
+  table: {
+    minWidth: 700,
+  },
+  row: {
+    '&:nth-of-type(odd)': {
+      backgroundColor: theme.palette.background.default,
+    },
+  },
+});
+
+let id = 0;
+function createData(name, description, type, defaultValue) {
+  id += 1;
+  return { id, name, description, type, defaultValue };
+}
+
+const rows = [
+  createData(
+    'backgroundColor',
+    'styles root backgroundColor',
+    'string',
+    'Theme.primaryColor',
+  ),
+  createData('Position', 'Adds position as expected', 'string', 'fixed'),
+  createData('style', 'styles the root component', 'object', ''),
+];
+
+class AppbarPage extends Component {
   componentDidMount() {
     Prism.highlightAll();
   }
   render() {
+    const { classes } = this.props;
     return (
       <div>
         <Scrollspy
-          items={['Example', 'Usage', 'Props', 'Demos', 'Appbar-with-search']}
+          items={['Component', 'Usage', 'Props', 'Demos', 'Appbar-with-search']}
           currentClassName="is-current"
           style={{ position: 'fixed', right: 50 }}>
           <li className="SideMenu__ListItem">
-            <a className="SideMenu__Link" href="#Example">
-              Example
+            <a className="SideMenu__Link" href="#Component">
+              Component
             </a>
           </li>
           <li className="SideMenu__ListItem">
@@ -41,7 +94,9 @@ export default class AppbarPage extends Component {
             </a>
           </li>
         </Scrollspy>
-        <h1 style={{ fontSize: 42, letterSpacing: 1.2, marginBottom: 0 }}>
+        <h1
+          style={{ fontSize: 42, letterSpacing: 1.2, marginBottom: 0 }}
+          id="Example">
           Appbar top
         </h1>
         <p style={{ color: 'rgba(0, 0, 0, 0.57)', marginTop: 16 }}>
@@ -67,12 +122,11 @@ export default class AppbarPage extends Component {
           </pre>
         </div>
 
-        <div style={{ marginTop: 60 }} id="Example">
-          <h3>Example</h3>
+        <div style={{ marginTop: 60 }}>
           <Appbar title={'Page Title'} />
         </div>
         <div style={{ marginTop: 60 }} id="Usage">
-          <h3>Usage</h3>
+          <h3 style={{ fontWeight: 400, fontSize: 28 }}>Usage</h3>
           <div className="row " style={{}}>
             <pre style={{ width: '100%' }}>
               <code
@@ -98,18 +152,46 @@ export default class Header extends Component {
           </div>
         </div>
         <div style={{ marginTop: 60 }} id="Props">
-          <h3>Props</h3>
+          <h3 style={{ fontWeight: 400, fontSize: 28 }}>Props</h3>
+          <Table className={classes.table}>
+            <TableHead>
+              <TableRow>
+                <CustomTableCell>Name</CustomTableCell>
+                <CustomTableCell component="th" scope="row">
+                  Description
+                </CustomTableCell>
+                <CustomTableCell align="right">Type</CustomTableCell>
+                <CustomTableCell align="right">Default</CustomTableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows.map(row => (
+                <TableRow className={classes.row} key={row.id}>
+                  <CustomTableCell>{row.name}</CustomTableCell>
+                  <CustomTableCell component="th" scope="row">
+                    {row.description}
+                  </CustomTableCell>
+                  <CustomTableCell align="right">{row.type}</CustomTableCell>
+                  <CustomTableCell align="right">
+                    {row.defaultValue}
+                  </CustomTableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
         </div>
         <div style={{ marginTop: 60 }} id="Demos">
-          <h3>Demos</h3>
+          <h3 style={{ fontWeight: 400, fontSize: 28 }}>Demos</h3>
         </div>
         <div style={{ marginTop: 60 }} id="Appbar-with-search">
-          <h3>Appbar with search</h3>
+          <h3 style={{ fontWeight: 400, fontSize: 28 }}>Appbar with search</h3>
         </div>
         <div style={{ marginTop: 60 }} id="Full">
-          <h3>Full Example</h3>
+          <h3 style={{ fontWeight: 400, fontSize: 28 }}>Full Example</h3>
         </div>
       </div>
     );
   }
 }
+
+export default withStyles(styles)(AppbarPage);
