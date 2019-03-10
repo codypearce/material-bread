@@ -1,53 +1,18 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import { List, ListItem, ListItemText, Collapse } from '@material-ui/core';
 import { ExpandLess, ExpandMore } from '@material-ui/icons';
-import { navigate } from '@reach/router';
+import DrawerItem from './DrawerItem';
 
-const styles = theme => ({
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing.unit * 3,
-  },
-  // root: {
-  //   '&$selected': {
-  //     backgroundColor: '#263238',
-  //     '& *': {
-  //       color: 'white !important',
-  //     },
-  //   },
-  //   '&&:hover': {
-  //     backgroundColor: '#263238',
-  //     '& *': {
-  //       color: 'white !important',
-  //     },
-  //   },
-  //   '&&:active': {
-  //     backgroundColor: '#263238',
-  //     '& *': {
-  //       color: 'white !important',
-  //     },
-  //   },
-  //   '&&:focus': {
-  //     backgroundColor: '#263238',
-  //     '& *': {
-  //       color: 'white !important',
-  //     },
-  //   },
-  // },
-  // selected: {},
-});
-
-export class DrawerItemExpand extends Component {
+class DrawerItemExpand extends Component {
   static propTypes = {
     classes: PropTypes.object,
-    landingMenuItems: PropTypes.array,
-    pageMenuItems: PropTypes.array,
     label: PropTypes.string,
     selectItem: PropTypes.func,
     itemSelected: PropTypes.string,
     sectionExpanded: PropTypes.bool,
+    markdownMenuItems: PropTypes.array,
+    reactPageMenuItems: PropTypes.array,
   };
   state = {
     open: false,
@@ -64,31 +29,55 @@ export class DrawerItemExpand extends Component {
       this.setState({ open: true });
     }
   }
+
   handleClick = () => {
     this.setState(state => ({ open: !state.open }));
   };
-  handleSubItemClick = (path, name) => {
+
+  handleSubItemClick = name => {
     const { selectItem } = this.props;
     selectItem(name);
-    navigate(path);
   };
+
+  renderMarkdownMenuItems() {
+    const { markdownMenuItems, itemSelected } = this.props;
+    if (!markdownMenuItems) return null;
+    return markdownMenuItems.map(({ node: post }) => {
+      return (
+        <DrawerItem
+          key={post.id}
+          label={post.frontmatter.title}
+          link={post.frontmatter.path}
+          selected={post.frontmatter.title.toLowerCase() == itemSelected}
+          selectItem={this.handleSubItemClick}
+          subItem
+        />
+      );
+    });
+  }
+  renderReactMenuItems() {
+    const { reactPageMenuItems, itemSelected } = this.props;
+    if (!reactPageMenuItems) return null;
+    return reactPageMenuItems.map(post => {
+      return (
+        <DrawerItem
+          key={post.id}
+          label={post.title}
+          link={post.path}
+          selected={post.title.toLowerCase() == itemSelected}
+          selectItem={() => this.handleSubItemClick}
+          subItem
+        />
+      );
+    });
+  }
   render() {
-    const {
-      markdownMenuItems,
-      reactPageMenuItems,
-      landingMenuItems,
-      label,
-      itemSelected,
-      classes,
-    } = this.props;
+    const { label, classes } = this.props;
+    const { open } = this.state;
 
     return (
       <Fragment>
-        <ListItem
-          button
-          onClick={this.handleClick}
-          style={{}}
-          classes={classes}>
+        <ListItem button onClick={this.handleClick} classes={classes}>
           <ListItemText
             primary={label}
             style={{
@@ -98,96 +87,12 @@ export class DrawerItemExpand extends Component {
             }}
             disableTypography
           />
-          {this.state.open ? <ExpandLess /> : <ExpandMore />}
+          {open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
-        <Collapse in={this.state.open} timeout="auto" unmountOnExit style={{}}>
+        <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            {landingMenuItems &&
-              landingMenuItems.map(({ node: post }) => {
-                return (
-                  <ListItem
-                    button
-                    key={post.id}
-                    classes={classes}
-                    style={{}}
-                    onClick={
-                      (() => this.handleSubItemClick(post.frontmatter.path),
-                      post.frontmatter.title.toLowerCase())
-                    }
-                    selected={
-                      post.frontmatter.title.toLowerCase() == itemSelected
-                    }>
-                    <ListItemText
-                      style={{
-                        fontSize: 13,
-                        fontWeight: 500,
-                        color: '#000',
-                        paddingLeft: 20,
-                      }}
-                      primary={'Overview'}
-                      disableTypography
-                    />
-                  </ListItem>
-                );
-              })}
-            {markdownMenuItems &&
-              markdownMenuItems.map(({ node: post }) => {
-                return (
-                  <ListItem
-                    button
-                    key={post.id}
-                    style={{}}
-                    classes={classes}
-                    onClick={() =>
-                      this.handleSubItemClick(
-                        post.frontmatter.path,
-                        post.frontmatter.title.toLowerCase(),
-                      )
-                    }
-                    selected={
-                      post.frontmatter.title.toLowerCase() == itemSelected
-                    }>
-                    <ListItemText
-                      style={{
-                        fontSize: 13,
-                        fontWeight: 500,
-                        paddingLeft: 20,
-                        color: '#000',
-                      }}
-                      primary={post.frontmatter.title}
-                      disableTypography
-                      classes={classes}
-                    />
-                  </ListItem>
-                );
-              })}
-            {reactPageMenuItems &&
-              reactPageMenuItems.map(post => {
-                return (
-                  <ListItem
-                    button
-                    key={post.id}
-                    style={{ paddingLeft: 12 }}
-                    classes={classes}
-                    onClick={() =>
-                      this.handleSubItemClick(
-                        post.path,
-                        post.title.toLowerCase(),
-                      )
-                    }
-                    selected={post.title.toLowerCase() == itemSelected}>
-                    <ListItemText
-                      style={{
-                        fontSize: 13,
-                        fontWeight: 500,
-                        paddingLeft: 20,
-                      }}
-                      primary={post.title}
-                      disableTypography
-                    />
-                  </ListItem>
-                );
-              })}
+            {this.renderMarkdownMenuItems()}
+            {this.renderReactMenuItems()}
           </List>
         </Collapse>
       </Fragment>
@@ -195,4 +100,4 @@ export class DrawerItemExpand extends Component {
   }
 }
 
-export default withStyles(styles, { withTheme: true })(DrawerItemExpand);
+export default DrawerItemExpand;

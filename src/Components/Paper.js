@@ -7,7 +7,7 @@ import { shadow } from '../index';
 class Paper extends Component {
   static propTypes = {
     children: PropTypes.node,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     theme: PropTypes.object,
     elevation: PropTypes.number,
     radius: PropTypes.number,

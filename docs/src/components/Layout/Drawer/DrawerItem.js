@@ -1,40 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import { ListItem, ListItemText } from '@material-ui/core';
 import { navigate } from '@reach/router';
-
-const styles = theme => ({
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing.unit * 3,
-  },
-  // root: {
-  //   '&$selected': {
-  //     backgroundColor: '#263238',
-  //     color: 'white',
-  //   },
-  //   '&&:hover': {
-  //     backgroundColor: '#263238',
-  //     '& *': {
-  //       color: 'white !important',
-  //     },
-  //   },
-  //   '&&:active': {
-  //     backgroundColor: '#263238',
-  //     '& *': {
-  //       color: 'white !important',
-  //     },
-  //   },
-  //   '&&:focus': {
-  //     backgroundColor: '#263238',
-  //     '& *': {
-  //       color: 'white !important',
-  //     },
-  //   },
-  // },
-  // selected: {},
-});
 
 export class DrawerItem extends Component {
   static propTypes = {
@@ -43,6 +10,7 @@ export class DrawerItem extends Component {
     link: PropTypes.string,
     selectItem: PropTypes.func,
     selected: PropTypes.bool,
+    subItem: PropTypes.bool,
   };
 
   handleClick = () => {
@@ -52,20 +20,16 @@ export class DrawerItem extends Component {
   };
 
   render() {
-    const { label, selected, classes } = this.props;
+    const { label, selected, subItem } = this.props;
 
     return (
-      <ListItem
-        button
-        onClick={this.handleClick}
-        selected={selected}
-        style={{}}
-        classes={classes}>
+      <ListItem button onClick={this.handleClick} selected={selected}>
         <ListItemText
           primary={label}
           style={{
             fontSize: 13,
             fontWeight: 500,
+            paddingLeft: subItem ? 10 : 0,
             color: '#000',
           }}
           disableTypography
@@ -75,4 +39,4 @@ export class DrawerItem extends Component {
   }
 }
 
-export default withStyles(styles, { withTheme: true })(DrawerItem);
+export default DrawerItem;
