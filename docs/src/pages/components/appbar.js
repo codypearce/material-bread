@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Scrollspy from 'react-scrollspy';
 
 import {
   Table,
@@ -11,8 +10,9 @@ import {
 } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
-
+import SideScrollMenu from '../../components/SideScrollMenu';
 import { Appbar } from '../../../../src/index';
+import Prismjs from 'prismjs';
 
 const CustomTableCell = withStyles(theme => ({
   head: {
@@ -60,42 +60,21 @@ const rows = [
 ];
 
 class AppbarPage extends Component {
+  componentDidMount() {
+    Prismjs.highlightAll();
+  }
   render() {
     const { classes } = this.props;
-
+    const sections = [
+      { name: 'Component' },
+      { name: 'Usage' },
+      { name: 'Props' },
+      { name: 'Demos' },
+      { name: 'with search', sub: true },
+    ];
     return (
       <div>
-        <Scrollspy
-          items={['component', 'usage', 'props', 'demos', 'with-search']}
-          currentClassName="is-current"
-          style={{ position: 'fixed', right: 50 }}
-          className="SideMenu">
-          <li className="SideMenu__ListItem">
-            <a className="SideMenu__Link" href="#component">
-              Component
-            </a>
-          </li>
-          <li className="SideMenu__ListItem">
-            <a className="SideMenu__Link" href="#usage">
-              Usage
-            </a>
-          </li>
-          <li className="SideMenu__ListItem">
-            <a className="SideMenu__Link" href="#props">
-              Props
-            </a>
-          </li>
-          <li className="SideMenu__ListItem">
-            <a className="SideMenu__Link" href="#demos">
-              Demos
-            </a>
-          </li>
-          <li className="SideMenu__ListItem SideMenu__ListItem--sub">
-            <a className="SideMenu__Link " href="#with-search">
-              with search
-            </a>
-          </li>
-        </Scrollspy>
+        <SideScrollMenu items={sections} />
         <h1 style={{ fontSize: 42, letterSpacing: 1.2, marginBottom: 0 }}>
           Appbar top
         </h1>
@@ -274,7 +253,7 @@ export default class Header extends Component {
             </pre>
           </div>
         </div>
-        <div style={{ marginTop: 60 }} id="Props">
+        <div style={{ marginTop: 60 }} id="props">
           <h3
             style={{ fontWeight: 400, fontSize: 28, marginBottom: 16 }}
             className="Section__header">

@@ -1,0 +1,23 @@
+{
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "babel-eslint",
+  "rules": {
+    "no-useless-constructor": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/named": 1,
+    "import/no-unresolved": 1,
+    "react/display-name": 0,
+    "react/no-typos": 0
+  },
+  "plugins": ["prettier", "react", "import"]
+}

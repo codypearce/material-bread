@@ -14,6 +14,11 @@ body {
   color: #222;
 }
 
+.SideMenu {
+  position: fixed;
+  right: 50px;
+}
+
 .SideMenu__ListItem {
   list-style: none;
 }
