@@ -6,15 +6,17 @@ import {
   TableCell,
   TableHead,
   TableRow,
-  Tooltip,
 } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
+
 import SideScrollMenu from '../../components/SideScrollMenu';
 import { Appbar } from '../../../../src/index';
 import Prismjs from 'prismjs';
-import PageTitle from '../../components/PageTitle';
+
 import ComponentHeader from '../../components/ComponentPage/ComponentHeader';
+import SectionHeader from '../../components/SectionHeader';
+import LiveEdit from '../../components/LiveEdit/LiveEdit';
+import CodeBlock from '../../components/CodeBlock';
 
 const CustomTableCell = withStyles(theme => ({
   head: {
@@ -90,103 +92,15 @@ class AppbarPage extends Component {
         />
 
         <div style={{ marginTop: 60 }} id="component">
-          <h3
-            style={{ fontWeight: 400, fontSize: 28, marginBottom: 16 }}
-            className="Section__header">
-            <span>Component</span>{' '}
-            <a className="HashLink" href="/components/appbar#component">
-              #
-            </a>
-          </h3>
-
-          <LiveProvider
-            code=" <Appbar title={'Page Title'} />"
-            scope={{ Appbar }}
-            mountStylesheet={false}
-            style={{
-              boxShadow:
-                '0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23)',
-              borderRadius: 6,
-              backgroundColor: '#2d2d2d',
-            }}>
-            <LivePreview
-              style={{
-                padding: 24,
-                backgroundColor: 'white',
-                borderTopRightRadius: 6,
-                borderTopLeftRadius: 6,
-              }}
-            />
-            <div
-              style={{
-                position: 'relative',
-              }}>
-              <Tooltip
-                title="You can edit/add props, elements, or components. Errors will show below."
-                placement={'top'}>
-                <span
-                  style={{
-                    color: '#00a2b1',
-                    position: 'absolute',
-                    right: 0,
-                    padding: 10,
-                    marginRight: 8,
-                    fontSize: 12,
-                    cursor: 'pointer',
-                  }}>
-                  Live Editing
-                </span>
-              </Tooltip>
-
-              <LiveEditor
-                className={'language-javascript'}
-                style={{
-                  margin: 0,
-                  fontSize: 14,
-                  borderBottomLeftRadius: 6,
-                  borderBottomRightRadius: 6,
-                  paddingTop: 20,
-                  paddingBottom: 20,
-                  outline: 'none',
-                }}
-              />
-            </div>
-
-            <LiveError
-              style={{
-                backgroundColor: '#ffebeb',
-                color: '#EF5350',
-                padding: 24,
-                borderBottomLeftRadius: 6,
-                borderBottomRightRadius: 6,
-              }}
-            />
-          </LiveProvider>
+          <SectionHeader name="Component" href="/components/appbar#component" />
+          <LiveEdit code="<Appbar title={'Page Title'} />" scope={{ Appbar }} />
         </div>
         <div style={{ marginTop: 60 }} id="usage">
-          <h3
-            style={{ fontWeight: 400, fontSize: 28, marginBottom: 16 }}
-            className="Section__header">
-            <span>Usage</span>{' '}
-            <a className="HashLink" href="/components/appbar#usage">
-              #
-            </a>
-          </h3>
+          <SectionHeader name="Usage" href="/components/appbar#usage" />
 
-          <div className="row " style={{}}>
-            <pre
-              style={{
-                width: '100%',
-                borderRadius: 6,
-                boxShadow:
-                  '0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23)',
-                position: 'relative',
-              }}>
-              <code
-                className="language-jsx"
-                style={{
-                  fontSize: 14,
-                }}>{`import react  from 'react';
+          <div className="row ">
+            <CodeBlock
+              code={`import react  from 'react';
 import { View } from 'react-native';
 import { Appbar } from 'material-bread';
 
@@ -199,24 +113,9 @@ export default class Header extends Component {
 
     );
   }
-}`}</code>
-              <button
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  right: 0,
-                  fontSize: 14,
-                  border: 'none',
-                  outline: 'none',
-                  color: '#efefef',
-                  padding: 8,
-                  cursor: 'pointer',
-                  backgroundColor: '#1e6caf',
-                  borderBottomLeftRadius: 6,
-                }}>
-                Copy
-              </button>
-            </pre>
+}`}
+              canCopy
+            />
           </div>
         </div>
         <div style={{ marginTop: 60 }} id="props">
