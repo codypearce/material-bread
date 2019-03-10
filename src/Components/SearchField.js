@@ -5,14 +5,15 @@ import withTheme from '../Theme/withTheme';
 import IconButton from './IconButton';
 import { shadow } from '..';
 
-class Searchbar extends Component {
+class Searchfield extends Component {
   static propTypes = {
     value: PropTypes.string,
     style: PropTypes.object,
     onChangeText: PropTypes.func,
     onCloseIcon: PropTypes.func,
     primary: PropTypes.bool,
-    onNavigation: PropTypes.func,
+    onFocus: PropTypes.func,
+    onBlur: PropTypes.func,
   };
 
   render() {
@@ -20,28 +21,31 @@ class Searchbar extends Component {
       style,
       onChangeText,
       onCloseIcon,
-      onNavigation,
       value,
+      onFocus,
+      onBlur,
     } = this.props;
+
     return (
-      <View style={[styles.container, style]}>
-        <IconButton
-          name="arrow-back"
-          size={24}
-          color={'black'}
-          onPress={onNavigation}
-        />
+      <View style={[styles.container, style]} elevation>
+        <IconButton name={'search'} size={20} color={'white'} />
+
         <TextInput
           style={styles.searchInput}
           placeholder={'Search'}
-          onChangeText={onChangeText}
           value={value}
+          onChangeText={onChangeText}
+          placeholderTextColor={'rgba(255,255,255,.57)'}
+          onFocus={onFocus}
+          onBlur={onBlur}
         />
+
         <IconButton
-          name="close"
-          size={24}
-          color={'black'}
+          name={'close'}
+          size={20}
+          style={{ opacity: !value || value.length < 1 ? 0 : 1 }}
           onPress={onCloseIcon}
+          color={'white'}
         />
       </View>
     );
@@ -52,17 +56,19 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    width: '100%',
-    backgroundColor: 'rgba(255,255,255,1)',
+    borderRadius: 4,
+    paddingHorizontal: 8,
+    backgroundColor: 'rgba(255,255,255,.15)',
   },
   searchInput: {
     fontSize: 16,
-    flex: 1,
+    height: 40,
     marginLeft: 8,
-    height: 30,
+    flex: 1,
+    color: 'white',
     outline: 'none',
     ...shadow(0),
   },
 });
 
-export default withTheme(Searchbar);
+export default withTheme(Searchfield);

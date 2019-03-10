@@ -4,6 +4,7 @@ import { View, TextInput, StyleSheet } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import TextFieldLabel from './TextFieldLabel';
 import TextFieldHelperText from './TextFieldHelperText';
+
 class TextFieldOutlined extends Component {
   constructor(props) {
     super(props);

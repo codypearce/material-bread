@@ -7,6 +7,7 @@ import CodeBlock from '../CodeBlock';
 import PropsTable from '../PropsTable';
 import Section from '../Section';
 import SideScrollMenu from '../SideScrollMenu';
+import ComponentDescription from './ComponentDescription';
 
 class ComponentPageLayout extends Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class ComponentPageLayout extends Component {
     liveEditScope: PropTypes.object,
     liveEditCode: PropTypes.string,
     usageCode: PropTypes.string,
+    componentDescription: PropTypes.string,
   };
 
   render() {
@@ -40,6 +42,7 @@ class ComponentPageLayout extends Component {
       liveEditScope,
       liveEditCode,
       usageCode,
+      componentDescription,
     } = this.props;
 
     const scrollItems = [
@@ -49,7 +52,7 @@ class ComponentPageLayout extends Component {
       ...sideScrollMenuItems,
     ];
     return (
-      <div>
+      <div style={{ marginBottom: 24 }}>
         <SideScrollMenu items={scrollItems} />
         <ComponentHeader
           title={title}
@@ -61,6 +64,7 @@ class ComponentPageLayout extends Component {
           name="Component"
           href={`/components/${componentName}#component`}
           id="component">
+          <ComponentDescription text={componentDescription} />
           <LiveEdit code={liveEditCode} scope={liveEditScope} />
         </Section>
 

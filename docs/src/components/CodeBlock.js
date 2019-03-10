@@ -32,7 +32,7 @@ class CodeBlock extends Component {
     textField.remove();
 
     this.setState({ copySuccess: true }, () => {
-      setTimeout(() => this.setState({ copySuccess: false }), 800);
+      setTimeout(() => this.setState({ copySuccess: false }), 1000);
     });
   };
 
@@ -41,13 +41,10 @@ class CodeBlock extends Component {
     const { copySuccess } = this.state;
     return (
       <pre
+        className={'CodeBlock'}
         style={{
           width: small ? 'auto' : '100%',
-          borderRadius: 6,
-          boxShadow: '0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23)',
-          position: 'relative',
           paddingRight: small ? 44 : 0,
-          overflow: 'hidden',
         }}>
         <code
           ref={codeArea => (this.codeArea = codeArea)}
@@ -57,27 +54,13 @@ class CodeBlock extends Component {
           }}>
           {code}
         </code>
-        <div className={`copied ${copySuccess ? 'show' : ''}`}>
-          <h3 className="copied__text">Copied!</h3>
-        </div>
+
         {canCopy ? (
           <button
             onClick={this.copyToClipboard}
-            style={{
-              position: 'absolute',
-              top: 0,
-              right: 0,
-              fontSize: small ? 11 : 14,
-              border: 'none',
-              outline: 'none',
-              color: '#efefef',
-              padding: small ? 5 : 8,
-              cursor: 'pointer',
-              backgroundColor: '#1e6caf',
-              borderBottomLeftRadius: 6,
-              zIndex: 4,
-            }}>
-            Copy
+            className={'copy__button'}
+            style={{ fontSize: small ? 11 : 14, padding: small ? 5 : 8 }}>
+            {copySuccess ? 'Copied' : 'Copy'}
           </button>
         ) : null}
       </pre>

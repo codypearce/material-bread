@@ -60,20 +60,19 @@ class Button extends Component {
     if (disabled) {
       buttonTextColor = disabled ? 'rgba(0, 0, 0, 0.26)' : buttonTextColor;
     }
+    const buttonStyles = [
+      theme.button,
+      buttonType,
 
+      { alignSelf: 'flex-start' },
+      { alignItems: 'center' },
+      { justifyContent: 'center' },
+      { width: fullWidth ? '100%' : 'auto' },
+      { minWidth: compact ? 'auto' : 64 },
+      { backgroundColor },
+      style,
+    ];
     const styles = StyleSheet.create({
-      button: {
-        ...theme.button,
-        ...buttonType,
-
-        alignSelf: 'flex-start',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: fullWidth ? '100%' : 'auto',
-        minWidth: compact ? 'auto' : 64,
-        backgroundColor,
-        ...style,
-      },
       text: {
         ...theme.buttonText,
         color: buttonTextColor,
@@ -95,7 +94,7 @@ class Button extends Component {
         disabled={disabled || disableRipple || loading}
         rippleColor={rippleColor}
         rippleContainerBorderRadius={theme.button.borderRadius}
-        style={styles.button}
+        style={buttonStyles}
         {...props}>
         {loading ? (
           <ActivityIndicator

@@ -13,6 +13,7 @@ class Badge extends Component {
     theme: PropTypes.object,
     text: PropTypes.string,
     badgeContent: PropTypes.string,
+    containerStyle: PropTypes.object,
   };
   render() {
     const {
@@ -23,12 +24,18 @@ class Badge extends Component {
       theme,
       children,
       badgeContent,
+      containerStyle,
       ...rest
     } = this.props;
     const realSize = size ? size : 16;
 
     return (
-      <View style={{ position: 'relative', alignSelf: 'flex-start' }}>
+      <View
+        style={[
+          { position: 'relative' },
+          { alignSelf: 'flex-start' },
+          containerStyle,
+        ]}>
         {children}
         <View
           style={[

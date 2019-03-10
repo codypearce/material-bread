@@ -12,15 +12,17 @@ class LiveEdit extends Component {
     code: PropTypes.string,
     scope: PropTypes.object,
     syntax: PropTypes.string,
+    noInline: PropTypes.bool,
   };
 
   render() {
-    const { scope, code, syntax } = this.props;
+    const { scope, code, syntax, noInline } = this.props;
     return (
       <LiveProvider
         code={code}
         scope={scope}
         mountStylesheet={false}
+        noInline={noInline}
         style={{
           boxShadow: '0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23)',
           borderRadius: 6,
@@ -42,10 +44,11 @@ class LiveEdit extends Component {
               fontSize: 14,
               borderBottomLeftRadius: 6,
               borderBottomRightRadius: 6,
-              paddingTop: 20,
+              paddingTop: 24,
               paddingBottom: 20,
               outline: 'none',
             }}
+            noInline={noInline}
           />
         </LiveEditToolTip>
 

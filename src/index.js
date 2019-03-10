@@ -71,6 +71,7 @@ export {
 export { default as Portal } from './Components/Portal';
 export { default as RadioButton } from './Components/RadioButton';
 export { default as Searchbar } from './Components/Searchbar';
+export { default as SearchField } from './Components/SearchField';
 export { default as Snackbar } from './Components/Snackbar';
 export { default as Switch } from './Components/Switch';
 export { default as TextField } from './Components/TextField/TextField';
