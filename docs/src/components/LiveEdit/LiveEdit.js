@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
-import { Tooltip } from '@material-ui/core';
 import LiveEditToolTip from './LiveEditToolTip';
 
 class LiveEdit extends Component {
