@@ -23,7 +23,6 @@ class PropsTable extends Component {
             <TableCell
               style={{
                 borderTopLeftRadius: 6,
-                borderBottomLeftRadius: 6,
               }}>
               Name
             </TableCell>
@@ -35,21 +34,30 @@ class PropsTable extends Component {
               align="right"
               style={{
                 borderTopRightRadius: 6,
-                borderBottomRightRadius: 6,
               }}>
               Default
             </TableCell>
           </TableRow>
         </TableHead>
-        <TableBody>
+        <TableBody
+          style={{
+            backgroundColor: 'white',
+            boxShadow: '0 1px 2px rgba(0,0,0,0.16), 0 1px 2px rgba(0,0,0,0.23)',
+            borderBottomRightRadius: 6,
+            borderBottomLeftRadius: 6,
+          }}>
           {data.map(row => (
             <TableRow className={classes.row} key={row.id}>
-              <TableCell>{row.name}</TableCell>
+              <TableCell style={{ borderBottomLeftRadius: 6 }}>
+                {row.name}
+              </TableCell>
               <TableCell component="th" scope="row">
                 {row.description}
               </TableCell>
               <TableCell>{row.type}</TableCell>
-              <TableCell align="right">{row.defaultValue}</TableCell>
+              <TableCell style={{ borderBottomRightRadius: 6 }} align="right">
+                {row.defaultValue}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -58,7 +66,7 @@ class PropsTable extends Component {
   }
 }
 
-const styles = theme => ({
+const styles = () => ({
   root: {
     width: '100%',
     marginTop: 20,
@@ -71,7 +79,7 @@ const styles = theme => ({
   },
   row: {
     '&:nth-of-type(odd)': {
-      backgroundColor: theme.palette.background.default,
+      backgroundColor: 'white',
     },
   },
 });

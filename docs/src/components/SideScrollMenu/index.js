@@ -14,7 +14,7 @@ class SideScrollMenu extends Component {
 
   formatLinkFromName(str) {
     str = str.replace(/\s+/g, '-').toLowerCase();
-    return str;
+    return str.toString();
   }
 
   handleLinks() {

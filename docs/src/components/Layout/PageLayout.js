@@ -25,7 +25,7 @@ class PageLayout extends Component {
     Prism.highlightAll();
     const hash = window && window.location && window.location.hash;
     if (hash) {
-      const id = hash.split('#')[1];
+      const id = hash.split('#')[1].toString();
       const el = document.getElementById(id);
       if (el) {
         el.scrollIntoView({

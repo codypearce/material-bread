@@ -122,7 +122,7 @@ export class DrawerItemExpand extends Component {
                         fontSize: 13,
                         fontWeight: 500,
                         color: '#000',
-                        paddingLeft: 16,
+                        paddingLeft: 20,
                       }}
                       primary={'Overview'}
                       disableTypography
@@ -151,7 +151,7 @@ export class DrawerItemExpand extends Component {
                       style={{
                         fontSize: 13,
                         fontWeight: 500,
-                        paddingLeft: 16,
+                        paddingLeft: 20,
                         color: '#000',
                       }}
                       primary={post.frontmatter.title}
@@ -180,7 +180,7 @@ export class DrawerItemExpand extends Component {
                       style={{
                         fontSize: 13,
                         fontWeight: 500,
-                        paddingLeft: 16,
+                        paddingLeft: 20,
                       }}
                       primary={post.title}
                       disableTypography
