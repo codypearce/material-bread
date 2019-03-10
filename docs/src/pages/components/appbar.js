@@ -15,6 +15,7 @@ import { Appbar } from '../../../../src/index';
 import Prismjs from 'prismjs';
 import PageTitle from '../../components/PageTitle';
 import ComponentSubtitle from '../../components/ComponentSubtitle';
+import CodeImport from '../../components/CodeImport';
 
 const CustomTableCell = withStyles(theme => ({
   head: {
@@ -87,38 +88,11 @@ class AppbarPage extends Component {
           docsLink={'https://material.io/design/components/app-bars-top.html'}
         />
 
-        <div className="row " style={{ marginTop: 0 }}>
-          <pre
-            style={{
-              padding: 12,
-              borderRadius: 6,
-              position: 'relative',
-              paddingRight: 44,
-              boxShadow:
-                '0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23)',
-            }}>
-            <code
-              className="language-javascript"
-              style={{
-                fontSize: 14,
-              }}>{`import { Appbar } from 'material-bread'`}</code>
-            <button
-              style={{
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                fontSize: 11,
-                border: 'none',
-                outline: 'none',
-                color: '#efefef',
-                padding: 5,
-                cursor: 'pointer',
-                backgroundColor: '#1e6caf',
-                borderBottomLeftRadius: 6,
-              }}>
-              Copy
-            </button>
-          </pre>
+        <div className="row ">
+          <CodeImport
+            code={`import { Appbar } from 'material-bread'`}
+            canCopy
+          />
         </div>
 
         <div style={{ marginTop: 60 }} id="component">
