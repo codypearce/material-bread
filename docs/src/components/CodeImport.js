@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Prismjs from 'prismjs';
 
 class CodeImport extends Component {
   constructor(props) {
@@ -10,6 +11,10 @@ class CodeImport extends Component {
     code: PropTypes.string,
     canCopy: PropTypes.bool,
   };
+
+  componentDidMount() {
+    Prismjs.highlightAll();
+  }
 
   render() {
     const { code, canCopy } = this.props;

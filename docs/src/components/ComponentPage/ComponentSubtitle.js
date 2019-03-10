@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class PageTitle extends Component {
+class ComponentSubtitle extends Component {
   constructor(props) {
     super(props);
   }
@@ -25,4 +25,4 @@ class PageTitle extends Component {
   }
 }
 
-export default PageTitle;
+export default ComponentSubtitle;

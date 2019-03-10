@@ -14,8 +14,7 @@ import SideScrollMenu from '../../components/SideScrollMenu';
 import { Appbar } from '../../../../src/index';
 import Prismjs from 'prismjs';
 import PageTitle from '../../components/PageTitle';
-import ComponentSubtitle from '../../components/ComponentSubtitle';
-import CodeImport from '../../components/CodeImport';
+import ComponentHeader from '../../components/ComponentPage/ComponentHeader';
 
 const CustomTableCell = withStyles(theme => ({
   head: {
@@ -80,20 +79,15 @@ class AppbarPage extends Component {
     return (
       <div>
         <SideScrollMenu items={sections} />
-        <PageTitle>Appbar Top</PageTitle>
-        <ComponentSubtitle
+
+        <ComponentHeader
+          title={'Appbar Top'}
           description={
             'The top app bar displays information and actions relating to the current screen.'
           }
           docsLink={'https://material.io/design/components/app-bars-top.html'}
+          code={`import { Appbar } from 'material-bread'`}
         />
-
-        <div className="row ">
-          <CodeImport
-            code={`import { Appbar } from 'material-bread'`}
-            canCopy
-          />
-        </div>
 
         <div style={{ marginTop: 60 }} id="component">
           <h3
