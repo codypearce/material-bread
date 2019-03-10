@@ -39,7 +39,7 @@ class SideScrollMenu extends Component {
         items={this.handleLinks()}
         currentClassName="is-current"
         className="SideMenu">
-        {items.map((item, index) => this.renderMenuItems(item, index))}
+        {items && items.map((item, index) => this.renderMenuItems(item, index))}
       </Scrollspy>
     );
   }
