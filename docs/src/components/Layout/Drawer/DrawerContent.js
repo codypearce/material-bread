@@ -69,19 +69,24 @@ class DrawerContent extends React.PureComponent {
     const { itemSelected, sectionExpanded } = this.state;
     const components = [
       {
-        title: 'Appbar',
         id: 1,
+        title: 'Appbar',
         path: '/components/appbar',
       },
       {
-        title: 'Appbar Bottom',
         id: 2,
+        title: 'Appbar Bottom',
         path: '/components/appbar-bottom',
       },
       {
-        title: 'Avatar',
         id: 3,
+        title: 'Avatar',
         path: '/components/avatar',
+      },
+      {
+        id: 4,
+        title: 'Badge',
+        path: '/components/badge',
       },
     ];
     return (

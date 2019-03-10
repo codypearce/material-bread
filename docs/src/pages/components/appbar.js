@@ -122,7 +122,7 @@ const liveEditCode = ` <Appbar
   ]}
 />`;
 
-const usageCode = `import React  from 'react';
+const usageCode = `import React, { Component } from 'react';
 import { View } from 'react-native';
 import { Appbar } from 'material-bread';
 

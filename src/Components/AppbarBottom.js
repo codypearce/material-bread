@@ -72,7 +72,7 @@ class AppbarBottom extends Component {
 
     return (
       <Fab
-        elevation={fabCutout ? 10 : 6}
+        elevation={fabCutout ? 8 : 6}
         style={[styles.fabPos, fabPosStyles, { fabRightStyle }, fabStyles]}
         onPress={onFab}
         icon={fabIcon}

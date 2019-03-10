@@ -2,72 +2,111 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Text, View, StyleSheet } from 'react-native';
 import withTheme from '../Theme/withTheme';
+import Ripple from '../Abstract/Ripple';
 
 class Badge extends Component {
   static propTypes = {
-    backgroundColor: PropTypes.string,
+    color: PropTypes.string,
+    textColor: PropTypes.string,
+    content: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     children: PropTypes.node,
     size: PropTypes.number,
-    textColor: PropTypes.string,
     style: PropTypes.object,
+    position: PropTypes.string,
+    onPress: PropTypes.func,
+
     theme: PropTypes.object,
-    text: PropTypes.string,
-    badgeContent: PropTypes.string,
     containerStyle: PropTypes.object,
   };
-  render() {
+
+  static defaultProps = {
+    position: 'right',
+    size: 16,
+  };
+
+  getFontSize() {
+    const { content, size } = this.props;
+    let scaleFactor = 0.5;
+    if (content && String(content).length > 3) {
+      scaleFactor = 0.3;
+    }
+    return size * scaleFactor;
+  }
+
+  _renderBadge() {
     const {
       size,
       textColor,
-      backgroundColor,
+      color,
       style,
       theme,
       children,
-      badgeContent,
-      containerStyle,
+      content,
+      position,
       ...rest
     } = this.props;
-    const realSize = size ? size : 16;
+
+    let positionStyle = {
+      right: children ? 0 : 'auto',
+    };
+
+    if (position === 'left') {
+      positionStyle = {
+        left: children ? 0 : 'auto',
+      };
+    }
+    return (
+      <View
+        style={[
+          {
+            height: size,
+            width: size,
+            borderRadius: size,
+            backgroundColor: color ? color : theme.base.primary,
+
+            alignItems: 'center',
+            justifyContent: 'center',
+            position: children ? 'absolute' : 'relative',
+          },
+          positionStyle,
+          style,
+        ]}
+        numberOfLines={1}
+        {...rest}>
+        <Text
+          style={[
+            styles.content,
+            {
+              fontSize: this.getFontSize(),
+              color: textColor ? textColor : 'white',
+            },
+          ]}>
+          {content}
+        </Text>
+      </View>
+    );
+  }
+
+  render() {
+    const { children, containerStyle, onPress } = this.props;
 
     return (
       <View
         style={[
-          { position: 'relative' },
-          { alignSelf: 'flex-start' },
+          {
+            position: 'relative',
+            alignSelf: 'flex-start',
+            alignItems: 'flex-start',
+            display: 'inline-flex',
+          },
           containerStyle,
         ]}>
         {children}
-        <View
-          style={[
-            {
-              height: realSize,
-              width: realSize,
-              borderRadius: realSize,
-              backgroundColor: backgroundColor
-                ? backgroundColor
-                : theme.base.primary,
-
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: children ? 'absolute' : 'relative',
-              top: children ? 0 : 'auto',
-              right: children ? 0 : 'auto',
-            },
-            style,
-          ]}
-          numberOfLines={1}
-          {...rest}>
-          <Text
-            style={[
-              styles.content,
-              {
-                fontSize: realSize * 0.5,
-                color: textColor ? textColor : 'white',
-              },
-            ]}>
-            {badgeContent}
-          </Text>
-        </View>
+        {onPress ? (
+          <Ripple onPress>{this._renderBadge()}</Ripple>
+        ) : (
+          this._renderBadge()
+        )}
       </View>
     );
   }

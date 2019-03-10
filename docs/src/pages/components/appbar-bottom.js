@@ -86,7 +86,7 @@ const liveEditCode = `<AppbarBottom
     style={{marginTop: 16}}
 />`;
 
-const usageCode = `import React  from 'react';
+const usageCode = `import React, { Component } from 'react';
 import { View } from 'react-native';
 import { AppbarBottom } from 'material-bread';
 

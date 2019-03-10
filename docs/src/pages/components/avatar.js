@@ -81,20 +81,18 @@ const liveEditCode = `<View style={{flexDirection: 'row', alignItems: 'center'}}
     /> 
 </View>`;
 
-const usageCode = `import React  from 'react';
+const usageCode = `import React, { Component } from 'react';
 import { View } from 'react-native';
 import { Avatar } from 'material-bread';
 
-export default class Page extends Component {
+export default class UserAvatar extends Component {
   render() {
     return (
-      <View>
         <Avatar 
             type="icon"
             content="face"
             contentColor={'white'}
         />
-      <View>
     );
   }
 }`;

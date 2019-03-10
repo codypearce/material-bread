@@ -10,7 +10,7 @@ body {
   margin-right: 0 !important;
 }
 
-.SideMenu__Link.is-current {
+.is-current .SideMenu__Link {
   color: #222;
 }
 
