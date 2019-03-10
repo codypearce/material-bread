@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import PageTitle from '../PageTitle';
 import ComponentSubtitle from './ComponentSubtitle';
-import CodeImport from '../CodeImport';
+import CodeBlock from '../CodeBlock';
 
 class ComponentHeader extends Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class ComponentHeader extends Component {
         <PageTitle>{title}</PageTitle>
         <ComponentSubtitle description={description} docsLink={docsLink} />
         <div className="row">
-          <CodeImport code={code} canCopy />
+          <CodeBlock code={code} canCopy small />
         </div>
       </Fragment>
     );

@@ -18,17 +18,16 @@ const propData = [
   createPropData('style', 'styles the root component', 'object', ''),
 ];
 
-const usageCode = `import react  from 'react';
+const usageCode = `import React  from 'react';
 import { View } from 'react-native';
 import { Appbar } from 'material-bread';
-          
+
 export default class Header extends Component {
   render() {
     return (
       <View style={styles.header}>
         <Appbar title={'Page Title'} />
       <View>
-          
     );
   }
 }`;
@@ -44,7 +43,7 @@ export default class AppbarPage extends Component {
           }
           docsLink={'https://material.io/design/components/app-bars-top.html'}
           sideScrollMenuItems={sections}
-          importCode={`import { Appbar } from 'material-bread'`}
+          importCode={`import { Appbar } from 'material-bread';`}
           liveEditCode="<Appbar title={'Page Title'} />"
           liveEditScope={{ Appbar }}
           usageCode={usageCode}
