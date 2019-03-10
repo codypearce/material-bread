@@ -13,6 +13,8 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import SideScrollMenu from '../../components/SideScrollMenu';
 import { Appbar } from '../../../../src/index';
 import Prismjs from 'prismjs';
+import PageTitle from '../../components/PageTitle';
+import ComponentSubtitle from '../../components/ComponentSubtitle';
 
 const CustomTableCell = withStyles(theme => ({
   head: {
@@ -65,6 +67,7 @@ class AppbarPage extends Component {
   }
   render() {
     const { classes } = this.props;
+
     const sections = [
       { name: 'Component' },
       { name: 'Usage' },
@@ -72,22 +75,17 @@ class AppbarPage extends Component {
       { name: 'Demos' },
       { name: 'with search', sub: true },
     ];
+
     return (
       <div>
         <SideScrollMenu items={sections} />
-        <h1 style={{ fontSize: 42, letterSpacing: 1.2, marginBottom: 0 }}>
-          Appbar top
-        </h1>
-
-        <p style={{ color: 'rgba(0, 0, 0, 0.57)', marginTop: 16 }}>
-          The top app bar displays information and actions relating to the
-          current screen.{' - '}
-          <a
-            href="https://material.io/design/components/app-bars-top.html#"
-            style={{ textDecoration: 'none' }}>
-            Material Docs
-          </a>
-        </p>
+        <PageTitle>Appbar Top</PageTitle>
+        <ComponentSubtitle
+          description={
+            'The top app bar displays information and actions relating to the current screen.'
+          }
+          docsLink={'https://material.io/design/components/app-bars-top.html'}
+        />
 
         <div className="row " style={{ marginTop: 0 }}>
           <pre

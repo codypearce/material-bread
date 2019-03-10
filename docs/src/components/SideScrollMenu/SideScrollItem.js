@@ -9,16 +9,16 @@ class SideScrollItem extends Component {
   static propTypes = {
     link: PropTypes.string,
     name: PropTypes.string,
-    subItem: PropTypes.bool,
+    sub: PropTypes.bool,
   };
 
   render() {
-    const { link, name, subItem } = this.props;
+    const { link, name, sub } = this.props;
 
     return (
       <li
         className={`SideMenu__ListItem ${
-          subItem ? 'SideMenu__ListItem--sub' : ''
+          sub ? 'SideMenu__ListItem--sub' : ''
         }`}>
         <a className="SideMenu__Link" href={`#${link}`}>
           {name}
