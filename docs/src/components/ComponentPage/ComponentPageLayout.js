@@ -27,6 +27,7 @@ class ComponentPageLayout extends Component {
     liveEditCode: PropTypes.string,
     usageCode: PropTypes.string,
     componentDescription: PropTypes.string,
+    usageDescription: PropTypes.string,
   };
 
   render() {
@@ -43,6 +44,7 @@ class ComponentPageLayout extends Component {
       liveEditCode,
       usageCode,
       componentDescription,
+      usageDescription,
     } = this.props;
 
     const scrollItems = [
@@ -72,6 +74,7 @@ class ComponentPageLayout extends Component {
           name="Usage"
           href={`/components/${componentName}#usage`}
           id="usage">
+          <ComponentDescription text={usageDescription} />
           <CodeBlock code={usageCode} canCopy />
         </Section>
         <Section

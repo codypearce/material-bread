@@ -1,19 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import { StyleSheet, Text, View, TouchableWithoutFeedback } from 'react-native';
 import withTheme from '../Theme/withTheme';
 import Paper from './Paper';
 import IconButton from './IconButton';
 
 class Appbar extends Component {
   static propTypes = {
-    backgroundColor: PropTypes.string,
     color: PropTypes.string,
     style: PropTypes.object,
     theme: PropTypes.object,
@@ -195,7 +188,7 @@ class Appbar extends Component {
   render() {
     const {
       barType,
-      backgroundColor,
+      color,
       backgroundImage,
       theme,
       style,
@@ -204,9 +197,7 @@ class Appbar extends Component {
       ...rest
     } = this.props;
 
-    let actualBackgroundColor = backgroundColor
-      ? backgroundColor
-      : theme.base.primary;
+    let backgroundColor = color ? color : theme.base.primary;
 
     return (
       <Paper
@@ -214,7 +205,7 @@ class Appbar extends Component {
           styles.appbar,
 
           {
-            backgroundColor: actualBackgroundColor,
+            backgroundColor: backgroundColor,
             height: this.appbarHeight(),
             position: position || 'relative',
             alignItems:

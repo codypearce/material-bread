@@ -16,10 +16,10 @@ import ComponentDescription from '../../components/ComponentPage/ComponentDescri
 
 const sections = [
   { name: 'Demos' },
-  { name: 'with image', sub: true },
-  { name: 'with search', sub: true },
+  { name: 'bg image', sub: true },
+  { name: 'search field', sub: true },
   { name: 'search bar', sub: true },
-  { name: 'with subtitle', sub: true },
+  { name: 'subtitle', sub: true },
   { name: 'custom', sub: true },
 ];
 
@@ -117,10 +117,8 @@ const liveEditCode = ` <Appbar
       badgeContent={77}>
       <IconButton name="favorite" size={24} color={'white'} />
     </Badge>,
-     
     {name: 'search', onPress: () => console.log('onSearch')},
     {name: 'more-vert'},
-
   ]}
 />`;
 
@@ -154,7 +152,7 @@ const withImage = ` <Appbar
   barType={'prominent'}
   title={'Page Title'} 
   backgroundImage={<Image  source={{uri: 'https://images.pexels.com/photos/355465/pexels-photo-355465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'}} />}
-  navigationType={'close'}
+  navigationType={'menu'}
   actionItems={[
     {name: 'favorite'},
     {name: 'search', onPress: () => console.log('onSearch')},
@@ -277,7 +275,9 @@ export default class AppbarPage extends Component {
           description={
             'The top app bar displays information and actions relating to the current screen.'
           }
-          componentDescription={`Appbars are essentially broken into three parts: navigation, title, and action buttons. Our API abstracts away each component to both ensure all parts match material and provide more prebuilt cobminations for free. But if you need more customization you can replace any component, or all of them. Below is a simple live example you can edit, see demos section for more examples. Try changing "barType" to "prominent" to see how the component changes.`}
+          componentDescription={
+            'Appbars are essentially broken into three parts: navigation, title, and action buttons. Material Bread Appbar abstracts away each component to both ensure all parts match material and provide many prebuilt cobminations. But if you need more customization you can replace any component, or all of them. Below is a simple live example you can edit, try changing some props to see how the component works.'
+          }
           docsLink={'https://material.io/design/components/app-bars-top.html'}
           sideScrollMenuItems={sections}
           importCode={`import { Appbar } from 'material-bread';`}
@@ -290,17 +290,17 @@ export default class AppbarPage extends Component {
           </Section>
 
           <Section
-            name="With image"
-            href="/components/appbar#with-image"
-            id="with-image">
+            name="Background image"
+            href="/components/appbar#bg-image"
+            id="bg-image">
             <ComponentDescription text="You must pass in an <Image> component, please read the React Native docs on Images to get a better idea of how to pass in images. Generally they are only used for prominent bars, but can be used on other types." />
             <LiveEdit code={withImage} scope={{ Appbar, IconButton, Image }} />
           </Section>
 
           <Section
-            name="With search field"
-            href="/components/appbar#with-search"
-            id="with-search">
+            name="Search field"
+            href="/components/appbar#search-field"
+            id="search-field">
             <ComponentDescription text="You can add a search field or any other component directly in the appbar shown below." />
             <LiveEdit
               code={withSearchField}
@@ -311,8 +311,8 @@ export default class AppbarPage extends Component {
           <Section
             name="Full Search bar"
             href="/components/appbar#search-bar"
-            id="search-bard">
-            <ComponentDescription text="The ability to replace components provides many ways to create contextual app bars. The following demonstrates how one might set up a full search bar. Click the back button to return to a regular appbar, click the search icon to open the contextual search appbar." />
+            id="search-bar">
+            <ComponentDescription text="The ability to replace components provides various ways to display contextual app bars. The following demonstrates how one might set up a full search bar. Click the back button to return to a regular appbar, click the search icon to open the contextual search appbar." />
             <LiveEdit
               code={withSearchBar}
               scope={{ Appbar, IconButton, Searchbar }}
@@ -320,9 +320,9 @@ export default class AppbarPage extends Component {
           </Section>
 
           <Section
-            name="With Subtitle"
-            href="/components/appbar#with-subtitle"
-            id="with-subtitle">
+            name="Subtitle"
+            href="/components/appbar#subtitle"
+            id="subtitle">
             <ComponentDescription text="Subtitles can be used on normal and prominent barTypes, but not dense. Try changing 'barType' to 'normal' to see how it will display" />
             <LiveEdit code={withSubtitle} scope={{ Appbar, IconButton }} />
           </Section>

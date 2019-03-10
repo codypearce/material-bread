@@ -73,6 +73,11 @@ class DrawerContent extends React.PureComponent {
         id: 1,
         path: '/components/appbar',
       },
+      {
+        title: 'Appbar Bottom',
+        id: 2,
+        path: '/components/appbar-bottom',
+      },
     ];
     return (
       <div>
@@ -84,8 +89,6 @@ class DrawerContent extends React.PureComponent {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            borderBottomRightRadius: 30,
-            borderBottomLeftRadius: 30,
           }}>
           <h3
             style={{
@@ -111,7 +114,7 @@ class DrawerContent extends React.PureComponent {
           </span>
         </div>
 
-        <List style={{}}>
+        <List>
           <DrawerItem
             label="Home"
             link="/"

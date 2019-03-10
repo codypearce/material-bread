@@ -14,6 +14,7 @@ class Fab extends Component {
     disabled: PropTypes.bool,
     rippleColor: PropTypes.string,
     icon: PropTypes.string,
+    elevation: PropTypes.number,
   };
   render() {
     const {
@@ -23,6 +24,7 @@ class Fab extends Component {
       disabled,
       rippleColor,
       icon,
+      elevation,
       ...props
     } = this.props;
 
@@ -39,7 +41,7 @@ class Fab extends Component {
               ? backgroundColor
               : 'rgba(33, 150, 243, 1)',
           },
-          shadow(6),
+          shadow(elevation),
           style,
         ]}
         {...props}>

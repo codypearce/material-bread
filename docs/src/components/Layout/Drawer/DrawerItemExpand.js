@@ -49,7 +49,7 @@ class DrawerItemExpand extends Component {
           label={post.frontmatter.title}
           link={post.frontmatter.path}
           selected={post.frontmatter.title.toLowerCase() == itemSelected}
-          selectItem={this.handleSubItemClick}
+          selectItem={() => this.handleSubItemClick(post.title.toLowerCase())}
           subItem
         />
       );
@@ -65,7 +65,7 @@ class DrawerItemExpand extends Component {
           label={post.title}
           link={post.path}
           selected={post.title.toLowerCase() == itemSelected}
-          selectItem={() => this.handleSubItemClick}
+          selectItem={() => this.handleSubItemClick(post.title.toLowerCase())}
           subItem
         />
       );
