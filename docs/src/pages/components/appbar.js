@@ -48,7 +48,7 @@ const propData = [
     'color',
     `Component's theme color`,
     'string: primary, secondary, dark, white',
-    'Theme.primaryColor',
+    'primary',
   ),
   createPropData(
     'onNavigation',
@@ -328,7 +328,7 @@ export default class AppbarPage extends Component {
           </Section>
 
           <Section name="Custom" href="/components/appbar#custom" id="custom">
-            <ComponentDescription text="Adding children will replace all internal components with the provided components. This allows for full customization of the appbar." />
+            <ComponentDescription text="Adding children will replace all internal components with the provided components." />
             <LiveEdit
               noInline
               code={custom}

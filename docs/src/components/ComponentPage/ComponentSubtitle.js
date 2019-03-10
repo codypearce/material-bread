@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 class ComponentSubtitle extends Component {
@@ -11,15 +11,24 @@ class ComponentSubtitle extends Component {
     docsLink: PropTypes.string,
   };
 
+  _renderDocsLink() {
+    const { docsLink } = this.props;
+    return (
+      <Fragment>
+        {'  - '}
+        <a href={docsLink} style={{ textDecoration: 'none' }}>
+          Material Docs
+        </a>
+      </Fragment>
+    );
+  }
+
   render() {
     const { description, docsLink } = this.props;
     return (
       <p style={{ color: 'rgba(0, 0, 0, 0.57)', marginTop: 16 }}>
         {description}
-        {' - '}
-        <a href={docsLink} style={{ textDecoration: 'none' }}>
-          Material Docs
-        </a>
+        {docsLink ? this._renderDocsLink() : null}
       </p>
     );
   }

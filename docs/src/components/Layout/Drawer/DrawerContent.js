@@ -78,6 +78,11 @@ class DrawerContent extends React.PureComponent {
         id: 2,
         path: '/components/appbar-bottom',
       },
+      {
+        title: 'Avatar',
+        id: 3,
+        path: '/components/avatar',
+      },
     ];
     return (
       <div>

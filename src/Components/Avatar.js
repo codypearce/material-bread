@@ -1,63 +1,82 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, Image, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import withTheme from '../Theme/withTheme';
 import Icon from './Icon';
+import Ripple from '../Abstract/Ripple';
 
 class Avatar extends Component {
   static propTypes = {
     style: PropTypes.object,
     theme: PropTypes.object,
-    backgroundColor: PropTypes.string,
-    textColor: PropTypes.string,
-    size: PropTypes.number,
-    children: PropTypes.node,
+    color: PropTypes.string,
+
     type: PropTypes.string,
+    size: PropTypes.number,
+
+    contentSize: PropTypes.number,
+    contentColor: PropTypes.string,
+    contentStyles: PropTypes.object,
+    content: PropTypes.string,
+
     image: PropTypes.node,
-    icon: PropTypes.string,
-    text: PropTypes.string,
-    iconSize: PropTypes.number,
-    iconColor: PropTypes.string,
-    fontSize: PropTypes.string,
-    styles: PropTypes.object,
+
+    onPress: PropTypes.func,
+    ripple: PropTypes.bool,
+
+    children: PropTypes.node,
+  };
+
+  static defaultProps = {
+    size: 24,
   };
 
   _renderImage() {
     const { image, size } = this.props;
 
-    return (
-      <Image
-        source={image}
-        style={{ width: size, height: size, borderRadius: size / 2 }}
-      />
-    );
+    return React.cloneElement(image, {
+      style: { width: size, height: size, borderRadius: size / 2 },
+    });
   }
 
   _renderIcon() {
-    const { icon, iconSize, iconColor, size } = this.props;
+    const {
+      content,
+      contentSize,
+      contentStyles,
+      size,
+      contentColor,
+    } = this.props;
 
     return (
       <Icon
-        name={icon}
-        size={iconSize ? iconSize : size / 1.5}
-        color={iconColor}
+        name={content}
+        size={contentSize ? contentSize : size / 1.5}
+        style={contentStyles}
+        color={contentColor}
       />
     );
   }
 
   _renderText() {
-    const { text, textColor, fontSize, size, styles } = this.props;
+    const {
+      content,
+      contentColor,
+      contentSize,
+      contentStyles,
+      size,
+    } = this.props;
 
     return (
       <Text
         style={[
           {
-            color: textColor ? textColor : 'white',
-            fontSize: fontSize ? fontSize : size / 2,
+            color: contentColor ? contentColor : 'white',
+            fontSize: contentSize ? contentSize : size / 2,
           },
-          styles,
+          contentStyles,
         ]}>
-        {text}
+        {content}
       </Text>
     );
   }
@@ -73,32 +92,42 @@ class Avatar extends Component {
     }
   }
 
-  render() {
-    const {
-      style,
-      backgroundColor,
-      textColor,
-      size,
-      children,
-      ...rest
-    } = this.props;
-
+  _renderAvatarContent() {
+    const { style, color, size, children, theme, ...rest } = this.props;
     return (
       <View
-        style={{
-          width: size,
-          height: size,
-          borderRadius: size / 2,
-          backgroundColor: backgroundColor ? backgroundColor : '#bdbdbd',
-          color: textColor,
-          alignItems: 'center',
-          justifyContent: 'center',
-          ...style,
-        }}
+        style={[
+          {
+            width: size,
+            height: size,
+            borderRadius: size / 2,
+            backgroundColor: color ? color : theme.base.primary,
+            alignItems: 'center',
+            justifyContent: 'center',
+          },
+          style,
+        ]}
         {...rest}>
         {children ? children : this._renderItem()}
       </View>
     );
+  }
+
+  render() {
+    const { onPress, ripple } = this.props;
+
+    if (onPress) {
+      return (
+        <Ripple
+          onPress={onPress}
+          disable={!ripple}
+          rippleContainerBorderRadius={100}>
+          {this._renderAvatarContent()}
+        </Ripple>
+      );
+    }
+
+    return this._renderAvatarContent();
   }
 }
 

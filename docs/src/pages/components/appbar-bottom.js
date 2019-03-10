@@ -26,7 +26,7 @@ const propData = [
     'color',
     `Component's theme color`,
     'string: primary, secondary, dark, white',
-    'Theme.primaryColor',
+    'primaryColor',
   ),
 
   createPropData('fab', `Displays fab or not`, 'bool', 'false'),
@@ -188,7 +188,7 @@ export default class AppbarPage extends Component {
             name="Demos"
             href="/components/appbar-bottom#demos"
             id="demos">
-            <ComponentDescription text="" />
+            <ComponentDescription text="Below are a few ways the appbar bottom can be used." />
           </Section>
 
           <Section
