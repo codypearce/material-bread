@@ -174,11 +174,11 @@ export default class AppbarPage extends Component {
           docsLink={
             'https://material.io/design/components/app-bars-bottom.html#'
           }
+          importCode={`import { AppbarBottom } from 'material-bread';`}
           componentDescription={
             'Appbar bottom is made up of three parts: left actions, fab, and right actions. Many combinations can be created with these components, however you can replace any part as needed. Below is a simple live example.'
           }
           sideScrollMenuItems={sections}
-          importCode={`import { AppbarBottom } from 'material-bread';`}
           liveEditCode={liveEditCode}
           liveEditScope={{ AppbarBottom }}
           usageDescription={`To get the appbar to appear on the bottom you need a container component with position relative as shown below.`}

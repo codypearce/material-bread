@@ -28,6 +28,7 @@ class ComponentPageLayout extends Component {
     usageCode: PropTypes.string,
     componentDescription: PropTypes.string,
     usageDescription: PropTypes.string,
+    liveEditNoInline: PropTypes.bool,
   };
 
   render() {
@@ -45,6 +46,7 @@ class ComponentPageLayout extends Component {
       usageCode,
       componentDescription,
       usageDescription,
+      liveEditNoInline,
     } = this.props;
 
     const scrollItems = [
@@ -67,7 +69,11 @@ class ComponentPageLayout extends Component {
           href={`/components/${componentName}#component`}
           id="component">
           <ComponentDescription text={componentDescription} />
-          <LiveEdit code={liveEditCode} scope={liveEditScope} />
+          <LiveEdit
+            code={liveEditCode}
+            scope={liveEditScope}
+            noInline={liveEditNoInline}
+          />
         </Section>
 
         <Section

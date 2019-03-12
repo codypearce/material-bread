@@ -64,12 +64,15 @@ class Button extends Component {
       theme.button,
       buttonType,
 
-      { alignSelf: 'flex-start' },
-      { alignItems: 'center' },
-      { justifyContent: 'center' },
-      { width: fullWidth ? '100%' : 'auto' },
-      { minWidth: compact ? 'auto' : 64 },
-      { backgroundColor },
+      {
+        alignSelf: 'flex-start',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: fullWidth ? '100%' : 'auto',
+        minWidth: compact ? 'auto' : 64,
+        backgroundColor,
+      },
+
       style,
     ];
     const styles = StyleSheet.create({

@@ -88,6 +88,11 @@ class DrawerContent extends React.PureComponent {
         title: 'Badge',
         path: '/components/badge',
       },
+      {
+        id: 5,
+        title: 'Banner',
+        path: '/components/banner',
+      },
     ];
     return (
       <div>

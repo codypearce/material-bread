@@ -48,7 +48,6 @@ class LiveEdit extends Component {
               paddingBottom: 20,
               outline: 'none',
             }}
-            noInline={noInline}
           />
         </LiveEditToolTip>
 
