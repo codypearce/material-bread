@@ -93,6 +93,11 @@ class DrawerContent extends React.PureComponent {
         title: 'Banner',
         path: '/components/banner',
       },
+      {
+        id: 6,
+        title: 'Bottom Navigation',
+        path: '/components/bottom-navigation',
+      },
     ];
     return (
       <div>

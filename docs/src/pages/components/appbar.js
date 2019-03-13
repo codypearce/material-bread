@@ -110,11 +110,11 @@ const liveEditCode = ` <Appbar
   onNavigation={() => console.log('onNavigation!')}
   actionItems={[
     <Badge
-      style={{ position: 'absolute', top: 0, right: 0}}
       containerStyle={{marginRight: 16}}
-      backgroundColor={'#e10050'}
+      color={'#e10050'}
+      textColor={'white'}
       size={14}
-      badgeContent={77}>
+      content={77}>
       <IconButton name="favorite" size={24} color={'white'} />
     </Badge>,
     {name: 'search', onPress: () => console.log('onSearch')},
@@ -284,6 +284,7 @@ export default class AppbarPage extends Component {
           liveEditCode={liveEditCode}
           liveEditScope={{ Appbar, IconButton, Image, Badge }}
           usageCode={usageCode}
+          usageDescription={`Usage depends entirely on what kind of navigation you are using in your app. For example, in react-navigation you can replace the entire header with a custom app bar https://hackernoon.com/how-to-use-a-custom-header-and-custom-bottom-tab-bar-for-react-native-with-react-navigation-969a5d3cabb1`}
           propData={propData}>
           <Section name="Demos" href="/components/appbar#demos" id="demos">
             <ComponentDescription text="Below are demos of various features and common patterns. You can see even more examples in the Storybook playground." />

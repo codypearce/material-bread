@@ -31,9 +31,9 @@ class LiveEdit extends Component {
         <LivePreview
           style={{
             padding: 24,
-            backgroundColor: 'white',
             borderTopRightRadius: 6,
             borderTopLeftRadius: 6,
+            backgroundColor: '#f7f7f7',
           }}
         />
         <LiveEditToolTip>

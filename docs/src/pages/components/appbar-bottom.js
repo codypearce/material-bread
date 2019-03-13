@@ -181,7 +181,7 @@ export default class AppbarPage extends Component {
           sideScrollMenuItems={sections}
           liveEditCode={liveEditCode}
           liveEditScope={{ AppbarBottom }}
-          usageDescription={`To get the appbar to appear on the bottom you need a container component with position relative as shown below.`}
+          usageDescription={`Usage depends on what navigation package you're using. For react-navigation you can follow their guide on TabNavigation https://reactnavigation.org/docs/en/tab-based-navigation.html`}
           usageCode={usageCode}
           propData={propData}>
           <Section

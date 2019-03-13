@@ -216,6 +216,7 @@ class Banner extends Component {
 const styles = StyleSheet.create({
   container: {
     overflow: 'hidden',
+    backgroundColor: 'white',
   },
 
   content: {

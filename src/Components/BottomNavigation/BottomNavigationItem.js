@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Text, StyleSheet } from 'react-native';
+import { StyleSheet, Animated } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import Icon from '../Icon';
 import Ripple from '../../Abstract/Ripple';
@@ -13,8 +13,55 @@ class BottomNavigationItem extends Component {
     children: PropTypes.node,
     active: PropTypes.bool,
     icon: PropTypes.string,
-    title: PropTypes.string,
+    label: PropTypes.string,
+    showLabel: PropTypes.bool,
+    onPress: PropTypes.func,
+    handleChange: PropTypes.func,
+    value: PropTypes.bool,
+    showLabels: PropTypes.bool,
   };
+
+  state = {
+    scaleText: new Animated.Value(0),
+    iconPosition: new Animated.Value(0),
+  };
+
+  componentDidMount() {
+    const { showLabel, showLabels, active } = this.props;
+    if (showLabel || active || showLabels) {
+      this._animateActive(true);
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (!prevProps.active && this.props.active) {
+      this._animateActive(true);
+    } else if (prevProps.active && !this.props.active) {
+      this._animateActive(false);
+    }
+  }
+
+  _animateActive(show) {
+    const { scaleText, iconPosition } = this.state;
+    let scale = show ? 14 : 0;
+    let position = show ? 0 : 0;
+
+    if (this.props.showLabels || this.props.showLabel) {
+      scale = show ? 14 : 12;
+      position = show ? 0 : 2;
+    }
+
+    Animated.parallel([
+      Animated.timing(scaleText, {
+        toValue: scale,
+        duration: 150,
+      }),
+      Animated.timing(iconPosition, {
+        toValue: position,
+        duration: 150,
+      }),
+    ]).start();
+  }
 
   _renderText(containerColor) {
     let color = 'white';
@@ -22,8 +69,17 @@ class BottomNavigationItem extends Component {
     if (containerColor == 'white' || containerColor == '#fff')
       color = '#2196f3';
 
-    const { title } = this.props;
-    return <Text style={{ color: color, fontSize: 12 }}>{title}</Text>;
+    const { label } = this.props;
+    return (
+      <Animated.Text
+        style={{
+          color: color,
+          fontSize: this.state.scaleText,
+          // transform: [{ scaleX: this.state.scaleText }],
+        }}>
+        {label}
+      </Animated.Text>
+    );
   }
 
   _handleIconColor(containerColor) {
@@ -34,23 +90,33 @@ class BottomNavigationItem extends Component {
     }
   }
 
+  onChange = () => {
+    const { handleChange, onPress, value } = this.props;
+
+    handleChange(value);
+    if (onPress) onPress();
+  };
+
   render() {
-    const { active, icon, title } = this.props;
+    const { active, icon, label } = this.props;
+    const { iconPosition } = this.state;
 
     return (
       <BottomNavContext.Consumer>
         {context => (
           <Ripple
-            style={[
-              styles.bottomNavigationItem,
-              { opacity: active ? 1 : 0.6 },
-            ]}>
-            <Icon
-              name={icon}
-              size={24}
-              color={this._handleIconColor(context.backgroundColor)}
-            />
-            {title ? this._renderText(context.backgroundColor) : null}
+            style={[styles.bottomNavigationItem, { opacity: active ? 1 : 0.6 }]}
+            onPress={this.onChange}>
+            <Animated.View
+              style={{ transform: [{ translateY: iconPosition }] }}>
+              <Icon
+                name={icon}
+                size={24}
+                color={this._handleIconColor(context.backgroundColor)}
+              />
+            </Animated.View>
+
+            {label ? this._renderText(context.backgroundColor) : null}
           </Ripple>
         )}
       </BottomNavContext.Consumer>

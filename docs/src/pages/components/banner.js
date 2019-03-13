@@ -74,7 +74,7 @@ class Header extends React.Component {
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
             }
         />
-        <Button type={'outlined'} onPress={() => this.setState({visible: !this.state.visible})} style={{marginTop: 16}}>Toggle</Button>
+        <Button type={'contained'} onPress={() => this.setState({visible: !this.state.visible})} style={{marginTop: 16}}>Toggle</Button>
       </View>
     );
   }
