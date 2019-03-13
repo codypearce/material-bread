@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, Animated } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import Icon from '../Icon';
 import Ripple from '../../Abstract/Ripple';
+import Badge from '../Badge';
 
 import { BottomNavContext } from './BottomNavigation';
 
 class BottomNavigationItem extends Component {
   static propTypes = {
-    backgroundColor: PropTypes.string,
     children: PropTypes.node,
     active: PropTypes.bool,
     icon: PropTypes.string,
@@ -17,13 +17,14 @@ class BottomNavigationItem extends Component {
     showLabel: PropTypes.bool,
     onPress: PropTypes.func,
     handleChange: PropTypes.func,
-    value: PropTypes.bool,
+    value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     showLabels: PropTypes.bool,
+    style: PropTypes.object,
+    badgeProps: PropTypes.object,
   };
 
   state = {
     scaleText: new Animated.Value(0),
-    iconPosition: new Animated.Value(0),
   };
 
   componentDidMount() {
@@ -42,22 +43,16 @@ class BottomNavigationItem extends Component {
   }
 
   _animateActive(show) {
-    const { scaleText, iconPosition } = this.state;
+    const { scaleText } = this.state;
     let scale = show ? 14 : 0;
-    let position = show ? 0 : 0;
 
     if (this.props.showLabels || this.props.showLabel) {
       scale = show ? 14 : 12;
-      position = show ? 0 : 2;
     }
 
     Animated.parallel([
       Animated.timing(scaleText, {
         toValue: scale,
-        duration: 150,
-      }),
-      Animated.timing(iconPosition, {
-        toValue: position,
         duration: 150,
       }),
     ]).start();
@@ -75,7 +70,6 @@ class BottomNavigationItem extends Component {
         style={{
           color: color,
           fontSize: this.state.scaleText,
-          // transform: [{ scaleX: this.state.scaleText }],
         }}>
         {label}
       </Animated.Text>
@@ -93,32 +87,73 @@ class BottomNavigationItem extends Component {
   onChange = () => {
     const { handleChange, onPress, value } = this.props;
 
-    handleChange(value);
+    if (handleChange) handleChange(value);
     if (onPress) onPress();
   };
 
-  render() {
-    const { active, icon, label } = this.props;
-    const { iconPosition } = this.state;
+  _renderWrapper(context) {
+    const { active, children, style } = this.props;
 
     return (
-      <BottomNavContext.Consumer>
-        {context => (
-          <Ripple
-            style={[styles.bottomNavigationItem, { opacity: active ? 1 : 0.6 }]}
-            onPress={this.onChange}>
-            <Animated.View
-              style={{ transform: [{ translateY: iconPosition }] }}>
-              <Icon
-                name={icon}
-                size={24}
-                color={this._handleIconColor(context.backgroundColor)}
-              />
-            </Animated.View>
+      <Ripple
+        style={[
+          styles.bottomNavigationItem,
+          { opacity: active ? 1 : 0.6 },
+          style,
+        ]}
+        onPress={this.onChange}>
+        {children ? children : this._renderContent(context)}
+      </Ripple>
+    );
+  }
 
-            {label ? this._renderText(context.backgroundColor) : null}
-          </Ripple>
-        )}
+  _renderContent(context) {
+    const { label, badgeProps } = this.props;
+    let icon = this._renderIcon(context);
+
+    if (badgeProps) {
+      icon = (
+        <Badge
+          containerStyle={{
+            alignItems: 'center',
+            justifyContent: 'center',
+            alignSelf: 'center',
+            display: 'flex',
+          }}
+          style={[
+            {
+              right: badgeProps.right ? badgeProps.right : -5,
+              top: badgeProps.top ? badgeProps.top : -5,
+            },
+          ]}
+          {...badgeProps}>
+          {this._renderIcon(context)}
+        </Badge>
+      );
+    }
+    return (
+      <Fragment>
+        {icon}
+        {label ? this._renderText(context.backgroundColor) : null}
+      </Fragment>
+    );
+  }
+
+  _renderIcon(context) {
+    const { icon } = this.props;
+    return (
+      <Icon
+        name={icon}
+        size={24}
+        color={this._handleIconColor(context.backgroundColor)}
+      />
+    );
+  }
+
+  render() {
+    return (
+      <BottomNavContext.Consumer>
+        {context => this._renderWrapper(context)}
       </BottomNavContext.Consumer>
     );
   }
@@ -133,6 +168,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
+    position: 'relative',
   },
 });
 

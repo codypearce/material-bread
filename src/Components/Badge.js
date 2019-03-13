@@ -17,11 +17,16 @@ class Badge extends Component {
 
     theme: PropTypes.object,
     containerStyle: PropTypes.object,
+    right: PropTypes.number,
+    left: PropTypes.number,
+    top: PropTypes.number,
   };
 
   static defaultProps = {
     position: 'right',
     size: 16,
+    right: 0,
+    left: 'auto',
   };
 
   getFontSize() {
@@ -43,6 +48,9 @@ class Badge extends Component {
       children,
       content,
       position,
+      right,
+      left,
+      top,
       ...rest
     } = this.props;
 
@@ -55,6 +63,10 @@ class Badge extends Component {
         left: children ? 0 : 'auto',
       };
     }
+
+    if (right) positionStyle.right = right;
+    if (left) positionStyle.left = left;
+
     return (
       <View
         style={[
@@ -67,6 +79,7 @@ class Badge extends Component {
             alignItems: 'center',
             justifyContent: 'center',
             position: children ? 'absolute' : 'relative',
+            top: top ? top : 0,
           },
           positionStyle,
           style,

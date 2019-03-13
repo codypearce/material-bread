@@ -23,7 +23,7 @@ class BottomNavigation extends Component {
 
   handleChange = (value, backgroundColor) => {
     const { handleChange } = this.props;
-    handleChange(value);
+    if (handleChange) handleChange(value);
     this.setState({ backgroundColor: backgroundColor });
   };
 
@@ -50,33 +50,17 @@ class BottomNavigation extends Component {
             );
           } else {
             return React.cloneElement(item, {
-              handleChange: this.handleChange,
-              value: index,
+              handleChange: item.props.handleChange
+                ? item.props.handleChange
+                : this.handleChange,
+              value: item.props.value ? item.props.value : index,
               showLabels: this.props.showLabels,
-              active: index === this.props.value,
+              active: item.props.active
+                ? item.props.active
+                : index === this.props.value,
             });
           }
         })}
-      </BottomNavContext.Provider>
-    );
-  }
-
-  _renderChilren() {
-    const { children, backgroundColor } = this.props;
-    const backgroundColorActual = backgroundColor ? backgroundColor : '#2196f3';
-    const childrenProp = React.Children.map(children, (child, childIndex) => {
-      return React.cloneElement(child, {
-        handleChange: this.handleChange,
-        value: childIndex,
-        showLabels: this.props.showLabels,
-        active: childIndex === this.props.value,
-      });
-    });
-
-    return (
-      <BottomNavContext.Provider
-        value={{ backgroundColor: backgroundColorActual }}>
-        {childrenProp}
       </BottomNavContext.Provider>
     );
   }
@@ -95,7 +79,7 @@ class BottomNavigation extends Component {
           },
           style,
         ]}>
-        {children ? this._renderChilren() : this._renderActionItems()}
+        {children ? children : this._renderActionItems()}
       </View>
     );
   }

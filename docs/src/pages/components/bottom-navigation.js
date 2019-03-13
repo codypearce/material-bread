@@ -7,7 +7,11 @@ import { BottomNavigation, BottomNavigationItem } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 import LiveEdit from '../../components/LiveEdit/LiveEdit';
 
-const sections = [{ name: 'Demos' }, { name: 'labels', sub: true }];
+const sections = [
+  { name: 'Demos' },
+  { name: 'labels', sub: true },
+  { name: 'colored', sub: true },
+];
 
 const propData = [
   createPropData(
@@ -139,6 +143,38 @@ class BottomTabs extends React.Component {
         </View>
       );
     }
+}`;
+const colored = `
+class BottomTabs extends React.Component {
+    constructor(props) {
+      super(props)
+      this.state = {
+        value: 0
+      }
+    }
+  
+    handleChange(value) {
+        this.setState({value});
+    }
+   
+    render() {
+      return (
+        <View style={{alignItems: 'center'}}>
+          <BottomNavigation 
+              style={{width: 672 }}
+              value={this.state.value}
+              backgroundColor={'#673AB7'}
+              handleChange={(value) => this.handleChange(value)}
+              actionItems={[
+                  {icon: 'home', label: 'Home'},
+                  {icon: 'favorite', label: 'Favorite'},
+                  {icon: 'info', label: 'Info'},
+                  <BottomNavigationItem icon={'settings'} label={'Settings'} />, 
+              ]}
+          />
+        </View>
+      );
+    }
   }`;
 
 export default class BadgePage extends Component {
@@ -181,6 +217,16 @@ export default class BadgePage extends Component {
             <ComponentDescription text="You can set all labels to show or set them individually on the BottomNavigationItem" />
             <LiveEdit
               code={labels}
+              scope={{ View, BottomNavigation, BottomNavigationItem }}
+            />
+          </Section>
+          <Section
+            name="Colored Background"
+            href="/components/appbar-bottom#colored"
+            id="colored">
+            <ComponentDescription text="Changing the backgroundColor will change the icons to display as white." />
+            <LiveEdit
+              code={colored}
               scope={{ View, BottomNavigation, BottomNavigationItem }}
             />
           </Section>

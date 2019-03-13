@@ -20,6 +20,8 @@ const propData = [
     '',
   ),
 
+  createPropData('left', 'Left position', 'number', 'auto'),
+
   createPropData('onPress', 'Onpress callback', 'func', ''),
 
   createPropData(
@@ -28,6 +30,7 @@ const propData = [
     'string: left, right',
     'right',
   ),
+  createPropData('right', 'Right position', 'number', '0'),
 
   createPropData(
     'size',
@@ -37,6 +40,7 @@ const propData = [
   ),
 
   createPropData('textColor', 'Text color for badge', 'string', 'white'),
+  createPropData('top', 'Top position', 'number', '0'),
 
   createPropData('style', 'Styles badge element', 'object', ''),
 ];
