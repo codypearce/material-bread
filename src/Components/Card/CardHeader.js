@@ -6,25 +6,51 @@ import withTheme from '../../Theme/withTheme';
 class CardHeader extends Component {
   static propTypes = {
     children: PropTypes.node,
-    avatar: PropTypes.node,
+    thumbnail: PropTypes.node,
     action: PropTypes.node,
     title: PropTypes.string,
-    subheader: PropTypes.string,
+    titleStyles: PropTypes.object,
+    subtitle: PropTypes.string,
+    subtitleStyles: PropTypes.string,
     style: PropTypes.object,
   };
 
+  _renderAction() {
+    const { action } = this.props;
+    if (!action) return null;
+    return <View style={styles.right}>{action}</View>;
+  }
+
+  _renderText() {
+    return (
+      <View style={styles.textContainer}>
+        {this._renderTitle()}
+        {this._renderSubtitle()}
+      </View>
+    );
+  }
+
+  _renderTitle() {
+    const { title, titleStyles } = this.props;
+    if (!title) return null;
+    return <Text style={[styles.title, titleStyles]}>{title}</Text>;
+  }
+
+  _renderSubtitle() {
+    const { subtitle, subtitleStyles } = this.props;
+    if (!subtitle) return null;
+    return <Text style={[styles.subtitle, subtitleStyles]}>{subtitle}</Text>;
+  }
+
   render() {
-    const { avatar, action, title, subheader, style } = this.props;
+    const { thumbnail, children, style } = this.props;
     return (
       <View style={[styles.container, style]}>
         <View style={styles.left}>
-          {avatar}
-          <View style={styles.textContainer}>
-            <Text style={styles.title}>{title}</Text>
-            <Text style={styles.subheader}>{subheader}</Text>
-          </View>
+          {thumbnail ? thumbnail : null}
+          {children ? children : this._renderText()}
         </View>
-        <View style={styles.right}>{action}</View>
+        {this._renderAction()}
       </View>
     );
   }
@@ -52,7 +78,7 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     color: 'rgba(0,0,0,.87)',
   },
-  subheader: {
+  subtitle: {
     fontSize: 14,
     lineHeight: 20,
     color: 'rgba(0,0,0,.6)',

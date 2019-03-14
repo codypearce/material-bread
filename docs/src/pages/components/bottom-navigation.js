@@ -40,7 +40,7 @@ const propData = [
     '',
   ),
 
-  createPropData('style', 'Styles root banner element', 'object', ''),
+  createPropData('style', 'Styles root element', 'object', ''),
 
   createPropData('value', 'Index of currently active Item', 'number', ''),
 ];
@@ -206,13 +206,13 @@ export default class BadgePage extends Component {
           propData={propData}>
           <Section
             name="Demos"
-            href="/components/appbar-bottom#demos"
+            href="/components/bottom-navigation#demos"
             id="demos">
             <ComponentDescription text="Please see the BottomNavigationItem page to learn how to customize each item more fully." />
           </Section>
           <Section
             name="Labels"
-            href="/components/appbar-bottom#labels"
+            href="/components/bottom-navigation#labels"
             id="labels">
             <ComponentDescription text="You can set all labels to show or set them individually on the BottomNavigationItem" />
             <LiveEdit
@@ -222,7 +222,7 @@ export default class BadgePage extends Component {
           </Section>
           <Section
             name="Colored Background"
-            href="/components/appbar-bottom#colored"
+            href="/components/bottom-navigation#colored"
             id="colored">
             <ComponentDescription text="Changing the backgroundColor will change the icons to display as white." />
             <LiveEdit

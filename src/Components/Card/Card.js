@@ -1,21 +1,40 @@
 import React, { Component } from 'react';
+import { StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
 import Paper from '../Paper';
+import Ripple from '../../Abstract/Ripple';
 
 class Card extends Component {
   static propTypes = {
     children: PropTypes.node,
     style: PropTypes.object,
     outlined: PropTypes.bool,
-    elevation: PropTypes.number,
+    shadow: PropTypes.number,
+    radius: PropTypes.numbeer,
+    onPress: PropTypes.func,
   };
+
+  static defaultProps = {
+    radius: 4,
+    shadow: 1,
+  };
+
+  _renderRipple() {
+    const { style, children, onPress, ...rippleProps } = this.props;
+    return (
+      <Ripple style={[{ flex: 1 }, style]} onPress={onPress} {...rippleProps}>
+        {children}
+      </Ripple>
+    );
+  }
+
   render() {
-    const { style, outlined, elevation } = this.props;
+    const { style, outlined, radius, onPress, shadow, children } = this.props;
     return (
       <Paper
-        elevation={elevation ? elevation : 1}
-        radius={4}
+        shadow={shadow}
+        radius={radius}
         style={[
           style,
           {
@@ -23,7 +42,7 @@ class Card extends Component {
             borderBottomColor: 'rgba(0,0,0,.4)',
           },
         ]}>
-        {this.props.children}
+        {onPress ? this._renderRipple() : children}
       </Paper>
     );
   }

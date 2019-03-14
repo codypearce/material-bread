@@ -83,7 +83,7 @@ const propData = [
     'string',
     'varies',
   ),
-  createPropData('style', 'Styles badge element', 'object', ''),
+  createPropData('style', 'Styles root element', 'object', ''),
   createPropData('text', 'Button Text', 'string', ''),
   createPropData(
     'textColor',
@@ -214,52 +214,42 @@ export default class ButtonPage extends Component {
           propsDescription={
             'You can add any of the TouchableProps or Ripple Props to the root component and they will be spread onto the Ripple component, please see the Ripple page to see full list of props.'
           }>
-          <Section
-            name="Demos"
-            href="/components/appbar-bottom#demos"
-            id="demos"
-          />
+          <Section name="Demos" href="/components/button#demos" id="demos" />
 
           <Section
             name="Contained"
-            href="/components/appbar-bottom#contained"
+            href="/components/button#contained"
             id="contained">
             <ComponentDescription text="Contained buttons are raised buttons and raise higher when pressed. Because of the shadow, you need to use containerStyle to style the root component to add spacing. The style prop will still style the inner Ripple component." />
             <LiveEdit code={contained} scope={{ Button, View, Icon }} />
           </Section>
-          <Section name="Flat" href="/components/appbar-bottom#flat" id="flat">
+          <Section name="Flat" href="/components/button#flat" id="flat">
             <ComponentDescription text="Flat buttons are normal buttons without a shadow." />
             <LiveEdit code={flat} scope={{ Button, View, Icon }} />
           </Section>
           <Section
             name="Outlined"
-            href="/components/appbar-bottom#outlined"
+            href="/components/button#outlined"
             id="outlined">
             <ComponentDescription text="Outlined buttons are similiar to Text Buttons but with a border. The border color will match the text color, changing the textColor will change both. Change the background color by using color prop. The default border width is StyleSheet.hairlineWidth, but you can customize this with the borderSize prop." />
             <LiveEdit code={outlined} scope={{ Button, View, Icon }} />
           </Section>
-          <Section name="Text" href="/components/appbar-bottom#text" id="text">
+          <Section name="Text" href="/components/button#text" id="text">
             <ComponentDescription text="" />
             <LiveEdit code={textButton} scope={{ Button, View, Icon }} />
           </Section>
-          <Section
-            name="Icons"
-            href="/components/appbar-bottom#icons"
-            id="icons">
+          <Section name="Icons" href="/components/button#icons" id="icons">
             <ComponentDescription text="Icons can appear on the left or right. Icons match the color of the text provided. Icons hide when loading." />
             <LiveEdit code={icons} scope={{ Button, Icon, View }} />
           </Section>
           <Section
             name="Full Width Buttons"
-            href="/components/appbar-bottom#full-width"
+            href="/components/button#full-width"
             id="full-width">
             <ComponentDescription text="Adding full width will force the component to take up available space." />
             <LiveEdit code={fullwidth} scope={{ Button, Icon, View }} />
           </Section>
-          <Section
-            name="Custom"
-            href="/components/appbar-bottom#custom"
-            id="custom">
+          <Section name="Custom" href="/components/button#custom" id="custom">
             <ComponentDescription text="Adding children will replace the text node, but not icon or loader. This allows for a more customization." />
             <LiveEdit code={custom} scope={{ Button, Icon, View, Text }} />
           </Section>

@@ -61,7 +61,7 @@ const propData = [
     '',
   ),
 
-  createPropData('style', 'Styles root banner element', 'object', ''),
+  createPropData('style', 'Styles root element', 'object', ''),
 
   createPropData(
     'value',
@@ -344,14 +344,14 @@ export default class BadgePage extends Component {
           propData={propData}>
           <Section
             name="Demos"
-            href="/components/appbar-bottom#demos"
+            href="/components/bottom-navigation-item#demos"
             id="demos">
             <ComponentDescription text="You can customize each item however you want or replace them completely." />
           </Section>
 
           <Section
             name="Badges"
-            href="/components/appbar-bottom#badges"
+            href="/components/bottom-navigation-item#badges"
             id="badges">
             <ComponentDescription text="Adding a key:value to the badgeProp will display a prop over the icon. See the Badge Component Page for more props." />
             <LiveEdit
@@ -362,7 +362,7 @@ export default class BadgePage extends Component {
 
           <Section
             name="Styled"
-            href="/components/appbar-bottom#styled"
+            href="/components/bottom-navigation-item#styled"
             id="styled">
             <ComponentDescription text="Styling the component directly can be done with the style prop." />
             <LiveEdit
@@ -372,7 +372,7 @@ export default class BadgePage extends Component {
           </Section>
           <Section
             name="Custom"
-            href="/components/appbar-bottom#custom"
+            href="/components/bottom-navigation-item#custom"
             id="custom">
             <ComponentDescription text="Adding children will replace all actionItems with the provided children, but still provide logic for for switching the active item." />
             <LiveEdit

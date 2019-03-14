@@ -162,22 +162,19 @@ export default class BadgePage extends Component {
           Usually banners are shown right below the appbar and can be fixed or scrollable. You can toggle this with the position prop.`}
           usageCode={usageCode}
           propData={propData}>
-          <Section
-            name="Demos"
-            href="/components/appbar-bottom#demos"
-            id="demos">
+          <Section name="Demos" href="/components/banner#demos" id="demos">
             <ComponentDescription text="" />
           </Section>
           <Section
             name="Single Line"
-            href="/components/appbar-bottom#singeline"
+            href="/components/banner#singeline"
             id="singeline">
             <ComponentDescription text="The singleLine prop forces the banner content to show in a row aligned centered, but it doesn't force the text content onto one line. This is so smaller screens will handle the text more gracefully." />
             <LiveEdit code={singleLineCode} scope={{ Banner }} />
           </Section>
           <Section
             name="Three Line"
-            href="/components/appbar-bottom#threeLineCode"
+            href="/components/banner#threeLineCode"
             id="threeLineCode">
             <ComponentDescription text="" />
             <LiveEdit code={threeLineCode} scope={{ Banner }} />

@@ -167,16 +167,13 @@ export default class AvatarPage extends Component {
           liveEditScope={{ Avatar, Image, View }}
           usageCode={usageCode}
           propData={propData}>
-          <Section
-            name="Demos"
-            href="/components/appbar-bottom#demos"
-            id="demos">
+          <Section name="Demos" href="/components/avatar#demos" id="demos">
             <ComponentDescription text="" />
           </Section>
 
           <Section
             name={'Avatar Icons'}
-            href="/components/appbar-bottom#icons"
+            href="/components/avatar#icons"
             id="icons">
             <ComponentDescription text="Icons are from Material Icons" />
             <LiveEdit code={icons} scope={{ Avatar, View }} />
@@ -184,16 +181,13 @@ export default class AvatarPage extends Component {
 
           <Section
             name={'Avatar Text'}
-            href="/components/appbar-bottom#text"
+            href="/components/avatar#text"
             id="text">
             <ComponentDescription text="Text is usually two letters for a person's initial, but it can be anything you want." />
             <LiveEdit code={text} scope={{ Avatar, View }} />
           </Section>
 
-          <Section
-            name="Custom"
-            href="/components/appbar-bottom#custom"
-            id="custom">
+          <Section name="Custom" href="/components/avatar#custom" id="custom">
             <ComponentDescription text="You can style any part or add children to replace all the inner content to create something more custom." />
             <LiveEdit code={custom} scope={{ Avatar }} />
           </Section>

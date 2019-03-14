@@ -92,10 +92,7 @@ export default class BadgePage extends Component {
           liveEditScope={{ IconButton, Icon, View, Badge }}
           usageCode={usageCode}
           propData={propData}>
-          <Section
-            name="Demos"
-            href="/components/appbar-bottom#demos"
-            id="demos">
+          <Section name="Demos" href="/components/badge#demos" id="demos">
             <ComponentDescription text="There are more demos in the playground." />
           </Section>
         </ComponentPageLayout>

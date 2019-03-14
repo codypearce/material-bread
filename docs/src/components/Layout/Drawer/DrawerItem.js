@@ -11,6 +11,7 @@ export class DrawerItem extends Component {
     selectItem: PropTypes.func,
     selected: PropTypes.bool,
     subItem: PropTypes.bool,
+    subsubItem: PropTypes.bool,
   };
 
   handleClick = () => {
@@ -20,8 +21,9 @@ export class DrawerItem extends Component {
   };
 
   render() {
-    const { label, selected, subItem } = this.props;
-
+    const { label, selected, subItem, subsubItem } = this.props;
+    let paddingLeft = subItem ? 10 : 0;
+    if (subsubItem) paddingLeft = 25;
     return (
       <ListItem button onClick={this.handleClick} selected={selected}>
         <ListItemText
@@ -29,7 +31,7 @@ export class DrawerItem extends Component {
           style={{
             fontSize: 13,
             fontWeight: 500,
-            paddingLeft: subItem ? 10 : 0,
+            paddingLeft,
             color: '#000',
           }}
           disableTypography

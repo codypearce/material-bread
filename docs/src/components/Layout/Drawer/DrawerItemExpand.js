@@ -67,6 +67,7 @@ class DrawerItemExpand extends Component {
           selected={post.title.toLowerCase() == itemSelected}
           selectItem={() => this.handleSubItemClick(post.title.toLowerCase())}
           subItem
+          subsubItem={post.subsubItem}
         />
       );
     });

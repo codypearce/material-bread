@@ -3,35 +3,55 @@ import { View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
 import Button from '../Button/Button';
+import IconButton from '../IconButton';
 
 class CardActions extends Component {
   static propTypes = {
     children: PropTypes.node,
     style: PropTypes.object,
-    leftButtonLabel: PropTypes.string,
-    leftOnPress: PropTypes.func,
-    rightOnPress: PropTypes.func,
-    rightButtonLabel: PropTypes.string,
+    leftActionItems: PropTypes.array,
+    rightActionItems: PropTypes.array,
   };
 
+  _leftActionItems() {
+    const { leftActionItems } = this.props;
+    return leftActionItems.map(item => {
+      if (item.name) {
+        return <Button onPress={item.onPress} text={item.name} />;
+      } else {
+        return item;
+      }
+    });
+  }
+  _rightActionItems() {
+    const { rightActionItems } = this.props;
+    return rightActionItems.map(item => {
+      if (item.name) {
+        return (
+          <IconButton
+            onPress={item.onPress}
+            name={item.name}
+            size={item.size ? item.size : 24}
+            color={item.color ? item.color : 'rgba(0,0,0,.57)'}
+            style={{ marginLeft: 8 }}
+          />
+        );
+      } else {
+        return item;
+      }
+    });
+  }
+
   render() {
-    const {
-      children,
-      leftButtonLabel,
-      leftOnPress,
-      rightOnPress,
-      rightButtonLabel,
-      style,
-    } = this.props;
+    const { style, leftActionItems, rightActionItems } = this.props;
     return (
       <View style={[styles.container, style]}>
         <View style={styles.actions}>
-          <Button onPress={leftOnPress}>{leftButtonLabel}</Button>
-          <Button onPress={rightOnPress} style={styles.rightButton}>
-            {rightButtonLabel}
-          </Button>
+          {leftActionItems && this._leftActionItems()}
         </View>
-        <View style={styles.moreActions}>{children}</View>
+        <View style={styles.moreActions}>
+          {rightActionItems && this._rightActionItems()}
+        </View>
       </View>
     );
   }
@@ -43,12 +63,15 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
   actions: {
     flexDirection: 'row',
+    alignItems: 'center',
   },
-  rightButton: {
-    marginLeft: 8,
+  moreActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });
 

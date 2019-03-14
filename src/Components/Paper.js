@@ -9,23 +9,21 @@ class Paper extends Component {
     children: PropTypes.node,
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     theme: PropTypes.object,
-    elevation: PropTypes.number,
+    shadow: PropTypes.number,
     radius: PropTypes.number,
   };
   render() {
-    const { style, theme, children, elevation, radius, ...rest } = this.props;
+    const { style, theme, children, shadow: userShadow, radius } = this.props;
 
     let shadows = shadow(4);
-    if (elevation > 0 && elevation < 25) {
-      shadows = shadow(elevation);
+    if (userShadow > 0 && userShadow < 25) {
+      shadows = shadow(userShadow);
     }
 
     const borderRadius = radius ? radius : 2;
 
     return (
-      <Animated.View
-        style={[theme.paper, shadows, { borderRadius }, style]}
-        {...rest}>
+      <Animated.View style={[theme.paper, shadows, { borderRadius }, style]}>
         {children}
       </Animated.View>
     );
