@@ -14,7 +14,7 @@ export {
 export {
   default as BottomNavigationItem,
 } from './Components/BottomNavigation/BottomNavigationItem';
-export { default as Button } from './Components/Button';
+export { default as Button } from './Components/Button/Button';
 export { default as Card } from './Components/Card/Card';
 export { default as CardActions } from './Components/Card/CardActions';
 export { default as CardContent } from './Components/Card/CardContent';

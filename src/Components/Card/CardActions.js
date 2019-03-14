@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
-import Button from '../Button';
+import Button from '../Button/Button';
 
 class CardActions extends Component {
   static propTypes = {

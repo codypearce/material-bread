@@ -29,6 +29,7 @@ class ComponentPageLayout extends Component {
     componentDescription: PropTypes.string,
     usageDescription: PropTypes.string,
     liveEditNoInline: PropTypes.bool,
+    propsDescription: PropTypes.string,
   };
 
   render() {
@@ -47,6 +48,7 @@ class ComponentPageLayout extends Component {
       componentDescription,
       usageDescription,
       liveEditNoInline,
+      propsDescription,
     } = this.props;
 
     const scrollItems = [
@@ -87,6 +89,7 @@ class ComponentPageLayout extends Component {
           name="Props"
           href={`/components/${componentName}#props`}
           id="props">
+          <ComponentDescription text={propsDescription} />
           <PropsTable data={propData} />
         </Section>
         {children}

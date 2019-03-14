@@ -9,14 +9,12 @@ export default {
   button: {
     padding: 8,
     color: '#2196f3',
-    height: 36,
-    minHeight: 36,
     borderRadius: 4,
   },
   buttonText: {
     fontSize: 14,
     fontWeight: '500',
-    letterSpacing: 1.25,
+    letterSpacing: 0.5,
   },
   outlinedButton: {
     borderColor: 'rgba(0,0,0,.29)',

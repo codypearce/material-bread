@@ -154,9 +154,9 @@ const custom = `const styles = {
 render(
 <AppbarBottom appbarStyles={styles.appbar} fab fabPosition="end" fabStyles={styles.fabStyle} >
   <View style={styles.left}>
-    <Button type="contained" textColor="white" style={[styles.button, {backgroundColor:'#00BCD4' }]} >Menu</Button>
-    <Button textColor="white" style={styles.button}>Install</Button>
-    <Button textColor="white" style={[styles.button, {marginRight: 0}]}>About</Button>
+    <Button type="contained" containerStyle={[styles.button, {height: 34}]} text={'menu'}  style={{height:30}}/>
+    <Button textColor="white" style={styles.button} text={'install'} />
+    <Button textColor="white" style={[styles.button, {marginRight: 0}]} text="About" />
   </View>
 </AppbarBottom>
 )`;

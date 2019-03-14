@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, Animated, View, Text } from 'react-native';
 
-import Button from './Button';
+import Button from './Button/Button';
 import Paper from './Paper';
 import withTheme from '../Theme/withTheme';
 import shadow from '../Abstract/shadow';

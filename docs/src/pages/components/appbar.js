@@ -256,12 +256,12 @@ const custom = `const styles = {
 render(
 <Appbar style={styles.appbar}>
   <View style={styles.left}>
-    <Button textColor="white" style={styles.button} >Home</Button>
-    <Button textColor="white" style={styles.button} >Install</Button>
-    <Button textColor="white" style={styles.button}>Docs</Button>
-    <Button textColor="white" style={[styles.button, {marginRight: 0}]}>About</Button>
+    <Button text={'Home'} textColor="white" style={styles.button} />
+    <Button text={'Install'} textColor="white" style={styles.button} />
+    <Button text={'Docs'} textColor="white" style={styles.button} />
+    <Button text={'About'} textColor="white" style={[styles.button, {marginRight: 0}]} />
   </View>
-  <Button type={'contained'} textColor="white" style={[styles.button, {marginRight: 0}]} >Buy</Button>
+  <Button text={'Buy'} type={'contained'} textColor="white" style={[styles.button, {marginRight: 0}]} />
 </Appbar>
 )`;
 

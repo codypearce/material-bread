@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { View, StyleSheet, Platform, Dimensions, Animated } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import shadow from '../../Abstract/shadow';
-import Button from '../Button';
+import Button from '../Button/Button';
 import BodyText from '../Typography/BodyText';
 
 class Banner extends Component {
@@ -88,15 +88,15 @@ class Banner extends Component {
             return (
               <Button
                 key={item.name}
+                text={item.name}
                 compact={true}
                 type="text"
                 onPress={() => {
                   item.onPress && item.onPress();
                   this.setState({ shouldHide: true });
                 }}
-                style={[styles.button]}>
-                {item.name}
-              </Button>
+                style={[styles.button]}
+              />
             );
           } else {
             return null;

@@ -6,9 +6,8 @@ import {
   Easing,
   TouchableWithoutFeedback,
   StyleSheet,
+  Platform,
 } from 'react-native';
-
-const radius = 10;
 
 export default class Ripple extends PureComponent {
   static defaultProps = {
@@ -23,6 +22,7 @@ export default class Ripple extends PureComponent {
     rippleSequential: false,
     rippleFades: true,
     disabled: false,
+    displayUntilPressOut: true,
 
     onRippleAnimation: (animation, callback) => animation.start(callback),
   };
@@ -40,6 +40,7 @@ export default class Ripple extends PureComponent {
     rippleSequential: PropTypes.bool,
     rippleFades: PropTypes.bool,
     disabled: PropTypes.bool,
+    displayUntilPressOut: PropTypes.bool,
 
     onRippleAnimation: PropTypes.func,
   };
@@ -53,10 +54,16 @@ export default class Ripple extends PureComponent {
     this.onPressOut = this.onPressOut.bind(this);
     this.onLongPress = this.onLongPress.bind(this);
     this.onAnimationEnd = this.onAnimationEnd.bind(this);
+
     this.renderRipple = this.renderRipple.bind(this);
 
     this.unique = 0;
     this.mounted = false;
+
+    this.rippleFades =
+      this.props.rippleFades && !this.props.displayUntilPressOut;
+    this.isPressingIn = false;
+    this.animationWaitingForEnd = false;
 
     this.state = {
       width: 0,
@@ -85,21 +92,16 @@ export default class Ripple extends PureComponent {
   }
 
   onPress(event) {
-    let { ripples } = this.state;
-    let { onPress, rippleSequential } = this.props;
+    let { onPress } = this.props;
 
-    if (!rippleSequential || !ripples.length) {
-      if ('function' === typeof onPress) {
-        requestAnimationFrame(() => onPress(event));
-      }
-
-      this.startRipple(event);
+    if ('function' === typeof onPress) {
+      requestAnimationFrame(() => onPress(event));
     }
   }
 
   onLongPress(event) {
-    let { onLongPress } = this.props;
-
+    let { onLongPress, disabled } = this.props;
+    if (disabled) return;
     if ('function' === typeof onLongPress) {
       requestAnimationFrame(() => onLongPress(event));
     }
@@ -108,10 +110,17 @@ export default class Ripple extends PureComponent {
   }
 
   onPressIn(event) {
-    let { onPressIn } = this.props;
+    const { onPressIn, rippleSequential, disabled } = this.props;
+    if (disabled) return;
 
-    if ('function' === typeof onPressIn) {
-      onPressIn(event);
+    this.isPressingIn = true;
+
+    if (!rippleSequential || !ripples.length) {
+      if (onPressIn) {
+        onPressIn(event);
+      }
+
+      this.startRipple(event);
     }
   }
 
@@ -121,12 +130,39 @@ export default class Ripple extends PureComponent {
     if ('function' === typeof onPressOut) {
       onPressOut(event);
     }
+
+    this.signalAnimationEnd();
+    this.isPressingIn = false;
   }
 
   onAnimationEnd() {
+    if (this.props.displayUntilPressOut && this.isPressingIn) {
+      this.animationWaitingForEnd = true;
+      return;
+    }
+
+    this.forceAnimationEnd();
+  }
+
+  signalAnimationEnd() {
+    if (this.animationWaitingForEnd) {
+      this.forceAnimationEnd();
+    }
+  }
+
+  forceAnimationEnd() {
     if (this.mounted) {
       this.setState(({ ripples }) => ({ ripples: ripples.slice(1) }));
     }
+
+    this.animationWaitingForEnd = false;
+  }
+
+  webGetPositionInElement(e) {
+    var rect = e.nativeEvent.target.getBoundingClientRect();
+    var x = e.nativeEvent.pageX - rect.left; //x position within the element.
+    var y = e.nativeEvent.changedTouches[0].clientY - rect.top; //y position within the element.
+    return { x, y };
   }
 
   startRipple(event) {
@@ -145,6 +181,11 @@ export default class Ripple extends PureComponent {
       ? { locationX: w2, locationY: h2 }
       : event.nativeEvent;
 
+    if (Platform.OS === 'web') {
+      locationX = this.webGetPositionInElement(event).x;
+      locationY = this.webGetPositionInElement(event).y;
+    }
+
     let offsetX = Math.abs(w2 - locationX);
     let offsetY = Math.abs(h2 - locationY);
 
@@ -157,11 +198,11 @@ export default class Ripple extends PureComponent {
       unique: this.unique++,
       progress: new Animated.Value(0),
       locationX,
-      locationY,
+      locationY: locationY,
       R,
     };
 
-    let animation = Animated.timing(ripple.progress, {
+    const animation = Animated.timing(ripple.progress, {
       toValue: 1,
       easing: Easing.out(Easing.ease),
       duration: rippleDuration,
@@ -173,7 +214,8 @@ export default class Ripple extends PureComponent {
   }
 
   renderRipple({ unique, progress, locationX, locationY, R }) {
-    let { rippleColor, rippleOpacity, rippleFades } = this.props;
+    let { rippleColor, rippleOpacity } = this.props;
+    const rippleFades = this.rippleFades;
 
     let rippleStyle = {
       top: locationY - radius,
@@ -254,12 +296,15 @@ export default class Ripple extends PureComponent {
   }
 }
 
+const radius = 10;
+
 const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
 
     backgroundColor: 'transparent',
     overflow: 'hidden',
+    zIndex: 10,
   },
 
   ripple: {
@@ -268,5 +313,6 @@ const styles = StyleSheet.create({
     borderRadius: radius,
     overflow: 'hidden',
     position: 'absolute',
+    zIndex: 10,
   },
 });
