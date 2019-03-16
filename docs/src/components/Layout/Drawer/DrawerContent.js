@@ -143,6 +143,11 @@ class DrawerContent extends React.PureComponent {
         title: 'Checkbox',
         path: '/components/checkbox',
       },
+      {
+        id: 14,
+        title: 'Chip',
+        path: '/components/chip',
+      },
     ];
     return (
       <div>

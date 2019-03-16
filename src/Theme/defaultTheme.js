@@ -5,6 +5,7 @@ export default {
     primary: '#1e88e5',
     primaryDark: '#005cb2',
     primaryLight: '#6ab7ff',
+    secondary: '#E91E63',
   },
   button: {
     padding: 8,

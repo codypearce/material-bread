@@ -13,7 +13,7 @@ export default class Ripple extends PureComponent {
   static defaultProps = {
     ...TouchableWithoutFeedback.defaultProps,
 
-    rippleColor: 'rgb(0, 0, 0)',
+    rippleColor: 'rgba(0, 0, 0, .87)',
     rippleOpacity: 0.3,
     rippleDuration: 400,
     rippleSize: 0,

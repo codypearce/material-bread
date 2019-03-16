@@ -16,7 +16,7 @@ class Paper extends Component {
     const { style, theme, children, shadow: userShadow, radius } = this.props;
 
     let shadows = shadow(4);
-    if (userShadow > 0 && userShadow < 25) {
+    if (userShadow > -1 && userShadow < 25) {
       shadows = shadow(userShadow);
     }
 
