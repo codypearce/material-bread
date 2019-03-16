@@ -3,6 +3,7 @@ html {
 }
 body {
   font-family: Roboto, sans-serif;
+  background-color: white !important;
 }
 
 .row {
@@ -61,7 +62,6 @@ body {
   border-radius: 30px;
   top: 1px;
   margin-right: 4px;
-  background-color: #ad0000;
   animation: pulsate 4s ease-out infinite;
 }
 

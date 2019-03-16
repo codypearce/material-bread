@@ -26,7 +26,7 @@ class LiveEdit extends Component {
         style={{
           boxShadow: '0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23)',
           borderRadius: 6,
-          backgroundColor: '#2d2d2d',
+          backgroundColor: '#fafafa',
         }}>
         <LivePreview
           style={{

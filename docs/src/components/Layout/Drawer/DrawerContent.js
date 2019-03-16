@@ -138,6 +138,11 @@ class DrawerContent extends React.PureComponent {
         path: '/components/card-media',
         subsubItem: true,
       },
+      {
+        id: 14,
+        title: 'Checkbox',
+        path: '/components/checkbox',
+      },
     ];
     return (
       <div>

@@ -177,15 +177,16 @@ export default class Ripple extends PureComponent {
     let w2 = 0.5 * width;
     let h2 = 0.5 * height;
 
-    let { locationX, locationY } = rippleCentered
-      ? { locationX: w2, locationY: h2 }
-      : event.nativeEvent;
+    let { locationX, locationY } = event.nativeEvent;
 
     if (Platform.OS === 'web') {
       locationX = this.webGetPositionInElement(event).x;
       locationY = this.webGetPositionInElement(event).y;
     }
-
+    if (rippleCentered) {
+      locationX = w2;
+      locationY = h2;
+    }
     let offsetX = Math.abs(w2 - locationX);
     let offsetY = Math.abs(h2 - locationY);
 
