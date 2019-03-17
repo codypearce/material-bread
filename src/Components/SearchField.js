@@ -11,9 +11,9 @@ class Searchfield extends Component {
     style: PropTypes.object,
     onChangeText: PropTypes.func,
     onCloseIcon: PropTypes.func,
-    primary: PropTypes.bool,
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,
+    color: PropTypes.string,
   };
 
   render() {
@@ -24,10 +24,16 @@ class Searchfield extends Component {
       value,
       onFocus,
       onBlur,
+      color,
     } = this.props;
 
     return (
-      <View style={[styles.container, style]} elevation>
+      <View
+        style={[
+          styles.container,
+          { backgroundColor: color ? color : 'rgba(255,255,255,.15)' },
+          style,
+        ]}>
         <IconButton name={'search'} size={20} color={'white'} />
 
         <TextInput
@@ -58,7 +64,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 4,
     paddingHorizontal: 8,
-    backgroundColor: 'rgba(255,255,255,.15)',
+
+    height: 40,
   },
   searchInput: {
     fontSize: 16,

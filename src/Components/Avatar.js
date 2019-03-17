@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 import withTheme from '../Theme/withTheme';
 import Icon from './Icon';
-import Ripple from '../Abstract/Ripple';
+import Ripple from './Ripple';
 
 class Avatar extends Component {
   static propTypes = {

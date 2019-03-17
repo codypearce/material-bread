@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Text, View, StyleSheet } from 'react-native';
 import withTheme from '../Theme/withTheme';
 import Paper from './Paper';
-import Ripple from '../Abstract/Ripple';
+import Ripple from './Ripple';
 import Icon from './Icon';
 class Chip extends Component {
   static propTypes = {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Text, View, StyleSheet } from 'react-native';
 import withTheme from '../Theme/withTheme';
-import Ripple from '../Abstract/Ripple';
+import Ripple from './Ripple';
 
 class Badge extends Component {
   static propTypes = {

@@ -144,7 +144,10 @@ export default class DataTableHeaderPage extends Component {
           }}
           usageCode={usageCode}
           propData={propData}>
-          <Section name="Demos" href="/components/tablecell#demos" id="demos">
+          <Section
+            name="Demos"
+            href="/components/proress-circle#demos"
+            id="demos">
             <ComponentDescription text="More demos can be seen in the playground" />
           </Section>
         </ComponentPageLayout>

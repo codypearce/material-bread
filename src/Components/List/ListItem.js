@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
-import Ripple from '../../Abstract/Ripple';
+import Ripple from '../Ripple';
 
 class ListItem extends Component {
   static propTypes = {

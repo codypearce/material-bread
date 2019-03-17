@@ -258,7 +258,6 @@ class DrawerContent extends React.PureComponent {
         id: 21,
         title: 'Ripple',
         path: '/components/ripple',
-        subsubItem: true,
       },
       {
         id: 21,
@@ -269,11 +268,6 @@ class DrawerContent extends React.PureComponent {
         id: 21,
         title: 'SearchField',
         path: '/components/searchfield',
-      },
-      {
-        id: 21,
-        title: 'Select',
-        path: '/components/select',
       },
       {
         id: 21,

@@ -3,108 +3,103 @@ import { View } from 'react-native';
 import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
-import {
-  DataTable,
-  DataTableHeader,
-  DataTableCell,
-  DataTablePagination,
-  DataTableRow,
-} from '../../../../src/index';
+import { ProgressCircle, Button } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 
 const sections = [{ name: 'Demos' }];
 
 const propData = [
-  createPropData('borderLeft', 'Shows border on the left', 'bool', ''),
-  createPropData('borderRight', 'Shows border on the right', 'bool', ''),
   createPropData(
-    'flex',
-    'Sets flex, higher numbers take more space of table row',
-    'flex',
-    '1',
+    'animationDuration',
+    'Length of each animation loop in ms',
+    'number',
+    '1000',
   ),
-  createPropData('onPress', 'Call back on cell', 'func', ''),
-  createPropData('right', 'Displays cell data on the right', 'bool', 'false'),
+  createPropData('animationEasing', 'Easaing function', 'func', ''),
+  createPropData('color', 'Color of bar', 'sstring', ''),
+  createPropData(
+    'determinate',
+    'Whether bar continues to animate or not',
+    'bool',
+    '',
+  ),
+  createPropData('easing', 'Easing function for bar animation', 'func', ''),
+  createPropData(
+    'indcatorStartPosition',
+    'Where the indicator starts before the animation begins',
+    'number',
+    '0',
+  ),
+  createPropData('size', 'Diameter of circle', 'number', '48'),
   createPropData('style', 'Styles root element', 'object', ''),
-  createPropData('text', 'Text content for cell', 'object', ''),
   createPropData(
-    'type',
-    'Whether it is a header or normal cell',
-    'string: header, normal',
-    'normal',
+    'trackStyle',
+    'Styles track containing the indicator',
+    'object',
+    '',
   ),
+  createPropData(
+    'value',
+    'Percent out of 100 the indcator should fill in determinate mode',
+    'number',
+    '',
+  ),
+  createPropData('visible', 'Whether bar is visible or not', 'bool', ''),
 ];
 
 const liveEditCode = `
-class Table extends React.Component {
+class ProgressCircleDemo extends React.Component {
     constructor(props) {
       super(props)
       this.state = {
-
+        circleValue3: 50
       }
     }
     render() {
       return (
-        <DataTable>
-            <DataTableHeader>
-                <DataTableCell text={'Desert'} type={'header'} borderRight flex={2} />
-                <DataTableCell text={'Calories'}  type={'header'}  right />
-                <DataTableCell text={'Fat (g)'}  type={'header'}  right />
-                <DataTableCell text={'Carbs (g)'}  type={'header'}  right />
-                <DataTableCell text={'Protein (g)'}  type={'header'}  right />
-            </DataTableHeader>
-            <DataTableRow>
-                <DataTableCell text={'Frozen yogurt'} borderRight flex={2} />
-                <DataTableCell text={'159'} right />
-                <DataTableCell text={'6.0'} right />
-                <DataTableCell text={'24'} right />
-                <DataTableCell text={'4'} right />
-            </DataTableRow>
-            <DataTableRow>
-                <DataTableCell text={'Ice Cream Sandwhich'} borderRight flex={2} />
-                <DataTableCell text={'237'} right />
-                <DataTableCell text={'9.0'} right />
-                <DataTableCell text={'37'} right />
-                <DataTableCell text={'4.3'} right />
-            </DataTableRow>
-            <DataTableRow>
-                <DataTableCell text={'Eclair'} borderRight flex={2} />
-                <DataTableCell text={'262'} right />
-                <DataTableCell text={'16.0'} right />
-                <DataTableCell text={'24'} right />
-                <DataTableCell text={'6.0'} right />
-            </DataTableRow>
-        </DataTable>
+        <View>
+            <ProgressCircle color={'#E91E63'} />
+
+            <ProgressCircle
+              value={this.state.circleValue3}
+              size={48}
+              thickness={4}
+              color="#2b80ff"
+              unfilledColor="#f2f2f2"
+              animationMethod="timing"
+              animationConfig={{ speed: 1 }}
+              shouldAnimateFirstValue
+              determinate
+            />
+
+            <Button
+              type="outlined"
+              style={{ marginTop: 20 }}
+              onPress={() => {
+                this.setState({
+                  circleValue3: Math.floor(Math.random() * Math.floor(100)),
+                });
+              }}
+              text={'Change Value'}
+              />
+        </View>
       );
     }
 }`;
 
 const usageCode = `import React, { Component } from 'react';
 import { View } from 'react-native';
-import { DataTable, DataTableHeader, DataTableCell, DataTablePagination, DataTableRow, } from 'material-bread';
+import { Button, ProgressCircle } from 'material-bread';
 
-class Table extends React.Component {
+class ProgressCircleDemo extends React.Component {
     constructor(props) {
       super(props)
     }
     render() {
       return (
-        <DataTable>
-            <DataTableHeader>
-                <DataTableCell text={'Desert'} borderRight flex={2} />
-                <DataTableCell text={'Calories'} right />
-                <DataTableCell text={'Fat (g)'} right />
-                <DataTableCell text={'Carbs (g)'} right />
-                <DataTableCell text={'Protein (g)'} right />
-            </DataTableHeader>
-            <DataTableRow>
-                <DataTableCell text={'Frozen yogurt'} borderRight flex={2} />
-                <DataTableCell text={'159'} right />
-                <DataTableCell text={'6.0'} right />
-                <DataTableCell text={'24'} right />
-                <DataTableCell text={'4'} right />
-            </DataTableRow>
-        </DataTable>
+        <View>
+          <ProgressCircle color={'#E91E63'} />
+        </View>
       );
     }
 }`;
@@ -114,25 +109,27 @@ export default class DataTableHeaderPage extends Component {
     return (
       <div>
         <ComponentPageLayout
-          componentName={'dataTable-header'}
-          title={'Data Table Header'}
-          description={`Data Table Header's display contextual information above tables`}
-          importCode={`import { DataTableHeader } from 'material-bread';`}
-          docsLink={'https://material.io/design/components/data-tables.html'}
-          componentDescription={`Data Table Headers can display action buttons, display number of selected items, display table title, or any other contextual information.`}
+          componentName={'progress-circle'}
+          title={'Progress Circle'}
+          description={`Progress indicators express an unspecified wait time or display the length of a process.`}
+          importCode={`import { ProgressBar } from 'material-bread';`}
+          docsLink={
+            'https://material.io/design/components/progress-indicators.html#circular-progress-indicators'
+          }
+          componentDescription={`Progress circles can be determinate or indeterminate. If determinate you must provide a value for the animation to stop at.`}
           sideScrollMenuItems={sections}
           liveEditCode={liveEditCode}
           liveEditScope={{
             View,
-            DataTable,
-            DataTableHeader,
-            DataTableCell,
-            DataTablePagination,
-            DataTableRow,
+            ProgressCircle,
+            Button,
           }}
           usageCode={usageCode}
           propData={propData}>
-          <Section name="Demos" href="/components/tablecell#demos" id="demos">
+          <Section
+            name="Demos"
+            href="/components/progress-circle#demos"
+            id="demos">
             <ComponentDescription text="More demos can be seen in the playground" />
           </Section>
         </ComponentPageLayout>

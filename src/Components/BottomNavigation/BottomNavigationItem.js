@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { StyleSheet, Animated } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import Icon from '../Icon';
-import Ripple from '../../Abstract/Ripple';
+import Ripple from '../Ripple';
 import Badge from '../Badge';
 
 import { BottomNavContext } from './BottomNavigation';

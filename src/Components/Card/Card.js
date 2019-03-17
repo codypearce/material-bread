@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
 import Paper from '../Paper';
-import Ripple from '../../Abstract/Ripple';
+import Ripple from '../Ripple';
 
 class Card extends Component {
   static propTypes = {

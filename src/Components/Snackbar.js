@@ -5,12 +5,11 @@ import { StyleSheet, Animated, View, Text } from 'react-native';
 import Button from './Button/Button';
 import Paper from './Paper';
 import withTheme from '../Theme/withTheme';
-import shadow from '../Abstract/shadow';
+import shadow from '../Utils/shadow';
 
 class Snackbar extends Component {
   static propTypes = {
     visible: PropTypes.bool,
-    duration: PropTypes.number,
     animationDuration: PropTypes.number,
     children: PropTypes.node,
     style: PropTypes.object,
@@ -20,7 +19,6 @@ class Snackbar extends Component {
 
   static defaultProps = {
     animationDuration: 200,
-    duration: 4000,
   };
 
   state = {
@@ -88,20 +86,20 @@ class Snackbar extends Component {
         <Button
           onPress={() => onButtonPress()}
           style={styles.button}
-          type="text">
-          {buttonLabel}
-        </Button>
+          type="text"
+          text={buttonLabel}
+        />
       );
     }
     return null;
   }
 
   render() {
-    const { children, style, buttonLabel } = this.props;
+    const { children, style, buttonLabel, visible } = this.props;
     const { opacity, scaleAnimation } = this.state;
 
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, { zIndex: visible ? 10 : -1 }]}>
         <Paper
           style={[
             styles.card,

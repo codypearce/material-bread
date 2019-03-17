@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
 
 import ButtonBase from './ButtonBase';
-import Hoverable from '../../Abstract/Hoverable';
+import Hoverable from '../../Utils/Hoverable';
 import color from 'color';
 
 class ContainedButton extends Component {

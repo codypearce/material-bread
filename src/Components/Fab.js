@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
 import withTheme from '../Theme/withTheme';
-import Ripple from '../Abstract/Ripple';
+import Ripple from './Ripple';
 import Icon from './Icon';
-import shadow from '../Abstract/shadow';
+import shadow from '../Utils/shadow';
 
 class Fab extends Component {
   static propTypes = {

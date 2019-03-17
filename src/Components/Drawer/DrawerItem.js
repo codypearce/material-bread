@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Text, StyleSheet } from 'react-native';
 import withTheme from '../../Theme/withTheme';
-import Ripple from '../../Abstract/Ripple';
+import Ripple from '../Ripple';
 import Icon from '../Icon';
 
 class DrawerItem extends Component {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Animated, StyleSheet } from 'react-native';
 import withTheme from '../Theme/withTheme';
-import Ripple from '../Abstract/Ripple';
+import Ripple from './Ripple';
 
 class RadioButton extends Component {
   static propTypes = {
@@ -12,6 +12,7 @@ class RadioButton extends Component {
     rippleColor: PropTypes.string,
     radioButtonColor: PropTypes.string,
     radioButtonBorderColor: PropTypes.string,
+    style: PropTypes.object,
   };
 
   render() {
@@ -21,6 +22,7 @@ class RadioButton extends Component {
       onPress,
       rippleColor,
       radioButtonColor,
+      style,
     } = this.props;
 
     const rippleColorApplied = rippleColor ? rippleColor : 'rgba(0,0,0,.8)';
@@ -37,7 +39,7 @@ class RadioButton extends Component {
         rippleColor={rippleColorApplied}
         rippleContainerBorderRadius={18}
         onPress={onPress}
-        style={styles.ripple}
+        style={[styles.ripple, style]}
         rippleCentered={true}
         disabled={disabled}>
         <Animated.View

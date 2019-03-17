@@ -4,7 +4,7 @@ import withTheme from '../../Theme/withTheme';
 
 import ButtonBase from './ButtonBase';
 import color from 'color';
-import Hoverable from '../../Abstract/Hoverable';
+import Hoverable from '../../Utils/Hoverable';
 
 class OutlinedButton extends Component {
   static propTypes = {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
 import Icon from './../Icon';
-import Ripple from '../../Abstract/Ripple';
+import Ripple from '../Ripple';
 
 import { ToggleButtonContext } from './ToggleButtonGroup';
 
@@ -53,10 +53,10 @@ class ToggleButton extends Component {
             rippleContainerBorderRadius={100}
             rippleColor={color ? color : 'rgb(0, 0, 0)'}
             onPress={() => {
-              if (context) {
-                context.updateActive(value);
+              if (context && context.updateActive) {
+                return context.updateActive(value);
               } else {
-                this.handleToggle();
+                return this.handleToggle();
               }
             }}
             style={{

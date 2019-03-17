@@ -3,136 +3,95 @@ import { View } from 'react-native';
 import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
-import {
-  DataTable,
-  DataTableHeader,
-  DataTableCell,
-  DataTablePagination,
-  DataTableRow,
-} from '../../../../src/index';
+import { Searchbar } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 
 const sections = [{ name: 'Demos' }];
 
 const propData = [
-  createPropData('borderLeft', 'Shows border on the left', 'bool', ''),
-  createPropData('borderRight', 'Shows border on the right', 'bool', ''),
+  createPropData('onChangeText', 'Callback when text is changed', 'func', ''),
   createPropData(
-    'flex',
-    'Sets flex, higher numbers take more space of table row',
-    'flex',
-    '1',
+    'onCloseIcon',
+    'Callback when close icon is pressed',
+    'func',
+    '',
   ),
-  createPropData('onPress', 'Call back on cell', 'func', ''),
-  createPropData('right', 'Displays cell data on the right', 'bool', 'false'),
+  createPropData(
+    'onNavigation',
+    'Callback when navigation icon is Pressed',
+    'func',
+    '',
+  ),
   createPropData('style', 'Styles root element', 'object', ''),
-  createPropData('text', 'Text content for cell', 'object', ''),
-  createPropData(
-    'type',
-    'Whether it is a header or normal cell',
-    'string: header, normal',
-    'normal',
-  ),
+  createPropData('value', 'Search input', 'string', ''),
 ];
 
 const liveEditCode = `
-class Table extends React.Component {
+class Demo extends React.Component {
     constructor(props) {
       super(props)
       this.state = {
-
+        search: ''
       }
     }
     render() {
       return (
-        <DataTable>
-            <DataTableHeader>
-                <DataTableCell text={'Desert'} type={'header'} borderRight flex={2} />
-                <DataTableCell text={'Calories'}  type={'header'}  right />
-                <DataTableCell text={'Fat (g)'}  type={'header'}  right />
-                <DataTableCell text={'Carbs (g)'}  type={'header'}  right />
-                <DataTableCell text={'Protein (g)'}  type={'header'}  right />
-            </DataTableHeader>
-            <DataTableRow>
-                <DataTableCell text={'Frozen yogurt'} borderRight flex={2} />
-                <DataTableCell text={'159'} right />
-                <DataTableCell text={'6.0'} right />
-                <DataTableCell text={'24'} right />
-                <DataTableCell text={'4'} right />
-            </DataTableRow>
-            <DataTableRow>
-                <DataTableCell text={'Ice Cream Sandwhich'} borderRight flex={2} />
-                <DataTableCell text={'237'} right />
-                <DataTableCell text={'9.0'} right />
-                <DataTableCell text={'37'} right />
-                <DataTableCell text={'4.3'} right />
-            </DataTableRow>
-            <DataTableRow>
-                <DataTableCell text={'Eclair'} borderRight flex={2} />
-                <DataTableCell text={'262'} right />
-                <DataTableCell text={'16.0'} right />
-                <DataTableCell text={'24'} right />
-                <DataTableCell text={'6.0'} right />
-            </DataTableRow>
-        </DataTable>
+        <View>
+          <Searchbar
+            label={'Label'}
+            value={this.state.search}
+            onChangeText={value => this.setState({ search: value })}
+            onCloseIcon={() => this.setState({ search: '' })}
+          />
+        </View>
       );
     }
 }`;
 
 const usageCode = `import React, { Component } from 'react';
 import { View } from 'react-native';
-import { DataTable, DataTableHeader, DataTableCell, DataTablePagination, DataTableRow, } from 'material-bread';
+import { Searchbar } from 'material-bread';
 
-class Table extends React.Component {
-    constructor(props) {
-      super(props)
+class Demo extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      search: ''
     }
-    render() {
-      return (
-        <DataTable>
-            <DataTableHeader>
-                <DataTableCell text={'Desert'} borderRight flex={2} />
-                <DataTableCell text={'Calories'} right />
-                <DataTableCell text={'Fat (g)'} right />
-                <DataTableCell text={'Carbs (g)'} right />
-                <DataTableCell text={'Protein (g)'} right />
-            </DataTableHeader>
-            <DataTableRow>
-                <DataTableCell text={'Frozen yogurt'} borderRight flex={2} />
-                <DataTableCell text={'159'} right />
-                <DataTableCell text={'6.0'} right />
-                <DataTableCell text={'24'} right />
-                <DataTableCell text={'4'} right />
-            </DataTableRow>
-        </DataTable>
-      );
-    }
+  }
+  render() {
+    return (
+      <View>
+        <Searchbar
+          label={'Label'}
+          value={this.state.search}
+          onChangeText={value => this.setState({ search: value })}
+          onCloseIcon={() => this.setState({ search: '' })}
+        />
+      </View>
+    );
+  }
 }`;
 
-export default class DataTableHeaderPage extends Component {
+export default class SearchBarPage extends Component {
   render() {
     return (
       <div>
         <ComponentPageLayout
-          componentName={'dataTable-header'}
-          title={'Data Table Header'}
-          description={`Data Table Header's display contextual information above tables`}
-          importCode={`import { DataTableHeader } from 'material-bread';`}
-          docsLink={'https://material.io/design/components/data-tables.html'}
-          componentDescription={`Data Table Headers can display action buttons, display number of selected items, display table title, or any other contextual information.`}
+          componentName={'searchbar'}
+          title={'Searchbar'}
+          description={`Searchbar displays as a full appbar for searching`}
+          importCode={`import { Searchbar } from 'material-bread';`}
+          componentDescription={`The Searchbar component is a convenient component for displaying a full searchbar in an appbar. Usually this component is used on mobile.`}
           sideScrollMenuItems={sections}
           liveEditCode={liveEditCode}
           liveEditScope={{
             View,
-            DataTable,
-            DataTableHeader,
-            DataTableCell,
-            DataTablePagination,
-            DataTableRow,
+            Searchbar,
           }}
           usageCode={usageCode}
           propData={propData}>
-          <Section name="Demos" href="/components/tablecell#demos" id="demos">
+          <Section name="Demos" href="/components/searchbar#demos" id="demos">
             <ComponentDescription text="More demos can be seen in the playground" />
           </Section>
         </ComponentPageLayout>

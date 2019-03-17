@@ -11,7 +11,6 @@ class Searchbar extends Component {
     style: PropTypes.object,
     onChangeText: PropTypes.func,
     onCloseIcon: PropTypes.func,
-    primary: PropTypes.bool,
     onNavigation: PropTypes.func,
   };
 
@@ -54,6 +53,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     backgroundColor: 'rgba(255,255,255,1)',
+    height: 56,
+    paddingHorizontal: 16,
   },
   searchInput: {
     fontSize: 16,

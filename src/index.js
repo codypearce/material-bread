@@ -1,6 +1,6 @@
-// ==== Abstract ====
-export { default as Ripple } from './Abstract/Ripple';
-export { default as shadow } from './Abstract/shadow';
+// ==== UTIL ====
+export { default as Hoverable } from './Utils/Hoverable';
+export { default as shadow } from './Utils/shadow';
 
 // ==== Components ====
 export { default as Appbar } from './Components/Appbar';
@@ -66,6 +66,7 @@ export {
   default as ProgressCircle,
 } from './Components/Progress/ProgressCircle';
 export { default as RadioButton } from './Components/RadioButton';
+export { default as Ripple } from './Components/Ripple';
 export { default as Searchbar } from './Components/Searchbar';
 export { default as SearchField } from './Components/SearchField';
 export { default as Snackbar } from './Components/Snackbar';

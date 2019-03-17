@@ -3,7 +3,7 @@ import { Text, View, TouchableWithoutFeedback } from 'react-native';
 import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
 import Icon from './Icon';
-import Ripple from '../Abstract/Ripple';
+import Ripple from './Ripple';
 import withTheme from '../Theme/withTheme';
 
 class Checkbox extends Component {

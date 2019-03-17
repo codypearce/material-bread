@@ -12,7 +12,6 @@ class ProgressCircle extends PureComponent {
     animationEasing: Easing.linear,
     animationDuration: 2400,
     visible: true,
-    interaction: true,
     determinate: false,
   };
 
@@ -24,8 +23,6 @@ class ProgressCircle extends PureComponent {
     easing: PropTypes.string,
     animationEasing: PropTypes.func,
     visible: PropTypes.bool,
-    interaction: PropTypes.bool,
-    renderComponent: PropTypes.func,
     determinate: PropTypes.bool,
   };
 
@@ -56,14 +53,12 @@ class ProgressCircle extends PureComponent {
 
   startIndeterminateAnimation() {
     const { progress } = this.state;
-    const { interaction, animationEasing, animationDuration } = this.props;
+    const { animationEasing, animationDuration } = this.props;
 
     Animated.loop(
       Animated.timing(progress, {
         duration: animationDuration,
         easing: animationEasing,
-        useNativeDriver: true,
-        isInteraction: interaction,
         toValue: 1,
       }),
 

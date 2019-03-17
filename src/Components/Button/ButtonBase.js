@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Text, ActivityIndicator } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 
-import Ripple from '../../Abstract/Ripple';
+import Ripple from '../Ripple';
 
 class ButtonBase extends Component {
   static propTypes = {
