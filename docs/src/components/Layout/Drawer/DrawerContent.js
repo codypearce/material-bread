@@ -303,13 +303,40 @@ class DrawerContent extends React.PureComponent {
     const utils = [
       {
         id: 1,
+        title: 'Color',
+        path: '/utils/color',
+      },
+      {
+        id: 2,
         title: 'Hoverable',
         path: '/utils/hoverable',
       },
       {
-        id: 2,
+        id: 3,
         title: 'Shadow',
         path: '/utils/shadow',
+      },
+    ];
+    const stylePages = [
+      {
+        id: 2,
+        title: 'Font',
+        path: '/style/font',
+      },
+      {
+        id: 3,
+        title: 'Icons',
+        path: '/style/icons',
+      },
+      {
+        id: 4,
+        title: 'Platform Guidelines',
+        path: '/style/platform-guidelines',
+      },
+      {
+        id: 5,
+        title: 'Themeing',
+        path: '/style/themeing',
       },
     ];
     return (
@@ -368,10 +395,7 @@ class DrawerContent extends React.PureComponent {
           />
           <DrawerItemExpand
             label="Style"
-            markdownMenuItems={posts
-              .filter(post => post.node.frontmatter.group === 'style')
-              .filter(post => post.node.frontmatter.layout === 'page')
-              .filter(post => post.node.frontmatter.status === 'complete')}
+            reactPageMenuItems={stylePages}
             selectItem={this.selectItem}
             itemSelected={itemSelected}
             selectSection={this.selectSection}

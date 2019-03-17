@@ -57,6 +57,7 @@ class ComponentPageLayout extends Component {
       { name: 'Props' },
       ...sideScrollMenuItems,
     ];
+    if (!propData) scrollItems.splice(2, 1);
     return (
       <div style={{ marginBottom: 24 }}>
         <SideScrollMenu items={scrollItems} />

@@ -96,3 +96,4 @@ export { default as withTheme } from './Theme/withTheme';
 
 // ==== Core ====
 export { default as BreadProvider } from './Core/BreadProvider';
+export { default as Colors } from './Core/colors';
