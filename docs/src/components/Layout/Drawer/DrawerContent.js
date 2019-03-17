@@ -32,7 +32,12 @@ class DrawerContent extends React.PureComponent {
 
   handleSectionExanded(pathArray) {
     let sectionExpanded = '';
-    let arrayOfExpandedSections = ['getting-started', 'style', 'components'];
+    let arrayOfExpandedSections = [
+      'getting-started',
+      'style',
+      'components',
+      'utils',
+    ];
 
     for (let i = 0; i < arrayOfExpandedSections.length; i++) {
       if (pathArray.includes(arrayOfExpandedSections[i])) {
@@ -295,6 +300,18 @@ class DrawerContent extends React.PureComponent {
         path: '/components/typography',
       },
     ];
+    const utils = [
+      {
+        id: 1,
+        title: 'Hoverable',
+        path: '/utils/hoverable',
+      },
+      {
+        id: 2,
+        title: 'Shadow',
+        path: '/utils/shadow',
+      },
+    ];
     return (
       <div>
         <div
@@ -367,6 +384,14 @@ class DrawerContent extends React.PureComponent {
             itemSelected={itemSelected}
             selectSection={this.selectSection}
             sectionExpanded={sectionExpanded == 'components'}
+          />
+          <DrawerItemExpand
+            label="Utils"
+            reactPageMenuItems={utils}
+            selectItem={this.selectItem}
+            itemSelected={itemSelected}
+            selectSection={this.selectSection}
+            sectionExpanded={sectionExpanded == 'utils'}
           />
           <DrawerItem
             label="Playground"

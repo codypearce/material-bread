@@ -12,7 +12,7 @@ export default class Hoverable extends Component {
     this._handleRelease = this._handleRelease.bind(this);
   }
 
-  _handleMouseEnter(e) {
+  _handleMouseEnter() {
     if (isHoverEnabled() && !this.state.isHovered) {
       const { onHoverIn } = this.props;
       if (onHoverIn) onHoverIn();
@@ -20,7 +20,7 @@ export default class Hoverable extends Component {
     }
   }
 
-  _handleMouseLeave(e) {
+  _handleMouseLeave() {
     if (this.state.isHovered) {
       const { onHoverOut } = this.props;
       if (onHoverOut) onHoverOut();
@@ -37,7 +37,7 @@ export default class Hoverable extends Component {
   }
 
   render() {
-    const { children, onHoverIn, onHoverOut } = this.props;
+    const { children } = this.props;
     const child =
       typeof children === 'function'
         ? children(this.state.showHover && this.state.isHovered)

@@ -85,13 +85,16 @@ class ComponentPageLayout extends Component {
           <ComponentDescription text={usageDescription} />
           <CodeBlock code={usageCode} canCopy />
         </Section>
-        <Section
-          name="Props"
-          href={`/components/${componentName}#props`}
-          id="props">
-          <ComponentDescription text={propsDescription} />
-          <PropsTable data={propData} />
-        </Section>
+        {propData ? (
+          <Section
+            name="Props"
+            href={`/components/${componentName}#props`}
+            id="props">
+            <ComponentDescription text={propsDescription} />
+            <PropsTable data={propData} />
+          </Section>
+        ) : null}
+
         {children}
       </div>
     );
