@@ -12,7 +12,7 @@ class Menu extends Component {
     style: PropTypes.object,
     visible: PropTypes.bool,
     menuStyle: PropTypes.object,
-    menuSameWidthAsButton: PropTypes.bool,
+    sameWidth: PropTypes.bool,
   };
 
   state = {
@@ -58,9 +58,9 @@ class Menu extends Component {
       buttonWidth,
     } = this.state;
 
-    const { menuSameWidthAsButton } = this.props;
+    const { sameWidth } = this.props;
 
-    const widthType = menuSameWidthAsButton ? buttonWidth : initialWidth;
+    const widthType = sameWidth ? buttonWidth : initialWidth;
 
     let opacity = 1;
     let height = initialHeight + 24;
@@ -93,7 +93,7 @@ class Menu extends Component {
 
   render() {
     const { menuHeight, menuWidth, opacity, buttonWidth } = this.state;
-    const { button, children, menuStyle, menuSameWidthAsButton } = this.props;
+    const { button, children, menuStyle, sameWidth } = this.props;
 
     return (
       <View>
@@ -108,7 +108,7 @@ class Menu extends Component {
             style={[
               styles.menu,
               menuStyle,
-              { width: menuSameWidthAsButton ? buttonWidth : 'auto' },
+              { width: sameWidth ? buttonWidth : 'auto' },
             ]}
             onLayout={this.onMenuLayout}>
             {children}

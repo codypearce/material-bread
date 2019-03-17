@@ -8,12 +8,9 @@ class MenuItem extends Component {
   static propTypes = {
     children: PropTypes.node,
     disabled: PropTypes.bool,
-    disabledTextColor: PropTypes.string,
     onPress: PropTypes.func,
     style: PropTypes.object,
     textStyle: PropTypes.object,
-    underlayColor: PropTypes.string,
-    content: PropTypes.node,
   };
   static defaultProps = {
     disabled: false,
@@ -25,11 +22,9 @@ class MenuItem extends Component {
     const {
       children,
       disabled,
-      disabledTextColor,
       onPress,
       style,
       textStyle,
-      underlayColor,
       ...props
     } = this.props;
 
@@ -38,16 +33,11 @@ class MenuItem extends Component {
         {...props}
         disabled={disabled}
         onPress={onPress}
-        style={[styles.container, style]}
-        underlayColor={underlayColor}>
+        style={[styles.container, style]}>
         <Text
           ellipsizeMode={Platform.OS === 'ios' ? 'clip' : 'tail'}
           numberOfLines={1}
-          style={[
-            styles.title,
-            disabled && { color: disabledTextColor },
-            textStyle,
-          ]}>
+          style={[styles.title, textStyle]}>
           {children}
         </Text>
       </TouchableHighlight>

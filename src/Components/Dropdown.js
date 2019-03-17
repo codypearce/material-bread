@@ -21,7 +21,6 @@ class Dropdown extends Component {
     selectedItem: PropTypes.node,
     menuItems: PropTypes.array,
     visible: PropTypes.bool,
-    onSelect: PropTypes.func,
   };
 
   state = {
@@ -52,7 +51,7 @@ class Dropdown extends Component {
     return (
       <Menu
         style={[styles.menu, { flex: 1 }]}
-        menuSameWidthAsButton
+        sameWidth
         visible={visible}
         button={
           <TouchableHighlight

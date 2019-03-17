@@ -4,13 +4,6 @@ import { Animated, Easing, StyleSheet } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 
 class ProgressBar extends PureComponent {
-  static defaultProps = {
-    animationDuration: 1000,
-    size: 40,
-    indcatorStartPosition: 0,
-    easing: Easing.bezier(0.65, 0.815, 0.735, 0.395),
-  };
-
   static propTypes = {
     color: PropTypes.string,
     height: PropTypes.number,
@@ -21,6 +14,12 @@ class ProgressBar extends PureComponent {
     animationDuration: PropTypes.number,
     value: PropTypes.number,
     visible: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    animationDuration: 1000,
+    indcatorStartPosition: 0,
+    easing: Easing.bezier(0.65, 0.815, 0.735, 0.395),
   };
 
   state = {

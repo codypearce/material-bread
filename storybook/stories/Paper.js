@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '../helpers/storiesOf';
-import { View, Text } from 'react-native';
 
 import { Paper } from '../../src/index';
 import Header from '../components/Header';

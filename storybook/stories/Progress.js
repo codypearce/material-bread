@@ -40,7 +40,6 @@ storiesOf('Progress', module)
             <Button
               type="outlined"
               style={{ marginTop: 20 }}
-              animationDuration={500}
               onPress={() => {
                 store.set({
                   value3: Math.floor(Math.random() * Math.floor(100)),

@@ -216,7 +216,7 @@ class DrawerContent extends React.PureComponent {
       {
         id: 21,
         title: 'IconButton',
-        path: '/components/IconButton',
+        path: '/components/iconbutton',
       },
       {
         id: 21,
