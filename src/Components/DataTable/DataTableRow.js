@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
-import Ripple from '../../Abstract/Ripple';
 import Checkbox from '../Checkbox';
 
 class DataTableRow extends Component {
-  static defaultProps = {
-    borderBottomColor: 'grey',
-  };
   static propTypes = {
     children: PropTypes.node,
     style: PropTypes.object,
@@ -18,6 +14,11 @@ class DataTableRow extends Component {
     showcheckBox: PropTypes.bool,
     onPress: PropTypes.func,
   };
+
+  static defaultProps = {
+    borderBottomColor: 'rgb(224, 224, 224)',
+  };
+
   render() {
     const {
       children,
@@ -30,19 +31,21 @@ class DataTableRow extends Component {
     } = this.props;
 
     return (
-      <Ripple
-        style={[styles.container, { borderBottomColor }, style]}
-        onPress={onPress}>
-        {showcheckBox ? (
-          <Checkbox
-            checked={checked}
-            onPress={onPressCheckBox}
-            size={24}
-            style={{ marginRight: 12 }}
-          />
-        ) : null}
-        {children}
-      </Ripple>
+      <TouchableWithoutFeedback
+        onPress={showcheckBox ? onPressCheckBox : onPress}
+        disabled={!onPressCheckBox && !onPress}>
+        <View style={[styles.container, { borderBottomColor }, style]}>
+          {showcheckBox ? (
+            <Checkbox
+              checked={checked}
+              onPress={onPressCheckBox}
+              size={24}
+              style={{ marginRight: 12 }}
+            />
+          ) : null}
+          {children}
+        </View>
+      </TouchableWithoutFeedback>
     );
   }
 }
@@ -52,7 +55,7 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderBottomWidth: StyleSheet.hairlineWidth,
     minHeight: 48,
-    paddingHorizontal: 16,
+    height: 48,
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',

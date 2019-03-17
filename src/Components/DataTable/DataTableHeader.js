@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
-import Ripple from '../../Abstract/Ripple';
 import Checkbox from '../Checkbox';
 
 class DataTableHeader extends Component {
@@ -14,6 +13,9 @@ class DataTableHeader extends Component {
     onPressCheckBox: PropTypes.func,
     showcheckBox: PropTypes.bool,
     onPress: PropTypes.func,
+  };
+  static defaultProps = {
+    borderBottomColor: 'rgb(224, 224, 224)',
   };
   render() {
     const {
@@ -27,7 +29,7 @@ class DataTableHeader extends Component {
     } = this.props;
 
     return (
-      <Ripple
+      <View
         style={[styles.dataTableHeader, { borderBottomColor }, style]}
         onPress={onPress}>
         {showcheckBox ? (
@@ -38,7 +40,7 @@ class DataTableHeader extends Component {
           />
         ) : null}
         {children}
-      </Ripple>
+      </View>
     );
   }
 }
@@ -47,10 +49,10 @@ const styles = StyleSheet.create({
   dataTableHeader: {
     height: 48,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    paddingHorizontal: 16,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    width: '100%',
   },
 });
 

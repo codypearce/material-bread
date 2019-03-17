@@ -29,7 +29,7 @@ export {
 export {
   default as DataTableHeaderItem,
 } from './Components/DataTable/DataTableHeaderItem';
-export { default as DataTableItem } from './Components/DataTable/DataTableItem';
+export { default as DataTableCell } from './Components/DataTable/DataTableCell';
 export {
   default as DataTablePagination,
 } from './Components/DataTable/DataTablePagination';

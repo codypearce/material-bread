@@ -1,35 +1,43 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableWithoutFeedback } from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
 
-class DataTableHeaderItem extends Component {
+class TableCell extends Component {
   static propTypes = {
     children: PropTypes.node,
     style: PropTypes.object,
-    onPress: PropTypes.func,
     right: PropTypes.bool,
     borderRight: PropTypes.bool,
     borderLeft: PropTypes.bool,
     flex: PropTypes.number,
+    text: PropTypes.string,
+    onPress: PropTypes.func,
+    type: PropTypes.string,
   };
 
+  _renderText() {
+    const { text, type } = this.props;
+    const style = type == 'head' ? styles.textHeader : styles.text;
+
+    return <Text style={style}>{text}</Text>;
+  }
   render() {
     const {
       children,
-      onPress,
-      right,
       style,
+      right,
       borderRight,
       borderLeft,
       flex,
+      onPress,
     } = this.props;
 
     return (
       <TouchableWithoutFeedback disabled={!onPress} onPress={onPress}>
         <View
           style={[
-            styles.item,
+            styles.dataTableItem,
             {
               flex: flex ? flex : 1,
               justifyContent: right ? 'flex-end' : 'flex-start',
@@ -38,9 +46,7 @@ class DataTableHeaderItem extends Component {
             },
             style,
           ]}>
-          <Text style={[styles.text]} numberOfLines={1}>
-            {children}
-          </Text>
+          {children ? children : this._renderText()}
         </View>
       </TouchableWithoutFeedback>
     );
@@ -48,16 +54,18 @@ class DataTableHeaderItem extends Component {
 }
 
 const styles = StyleSheet.create({
-  item: {
+  dataTableItem: {
     flexDirection: 'row',
-    alignContent: 'center',
-    paddingVertical: 12,
+    alignItems: 'center',
+    borderColor: 'rgb(224, 224, 224)',
     paddingHorizontal: 16,
     height: '100%',
-    borderColor: 'rgb(224, 224, 224)',
   },
-
   text: {
+    fontSize: 13,
+    color: 'rgba(0,0,0,.87)',
+  },
+  textHeader: {
     color: 'rgba(0,0,0,.54)',
     height: 24,
     lineHeight: 24,
@@ -67,4 +75,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default withTheme(DataTableHeaderItem);
+export default withTheme(TableCell);

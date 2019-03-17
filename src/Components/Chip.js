@@ -10,30 +10,31 @@ class Chip extends Component {
     children: PropTypes.node,
     style: PropTypes.object,
     theme: PropTypes.object,
-    disabled: PropTypes.bool,
-    visible: PropTypes.bool,
 
-    type: PropTypes.string,
+    chipStyle: PropTypes.string,
 
     color: PropTypes.string,
-    colorType: PropTypes.string,
+    themeColor: PropTypes.string,
+    radius: PropTypes.number,
 
     onPress: PropTypes.func,
-    onRight: PropTypes.func,
-    onLeft: PropTypes.func,
     onDelete: PropTypes.func,
+    visible: PropTypes.bool,
 
     text: PropTypes.string,
     textStyles: PropTypes.object,
 
     leftIcon: PropTypes.node,
     rightIcon: PropTypes.node,
-    canDelete: PropTypes.bool,
+
+    selected: PropTypes.bool,
+    disabled: PropTypes.bool,
   };
 
   static defaultProps = {
     visible: true,
     canDelete: false,
+    radius: 16,
   };
 
   _renderText() {
@@ -42,17 +43,17 @@ class Chip extends Component {
       textStyles,
       leftIcon,
       rightIcon,
-      canDelete,
+      onDelete,
       color,
-      colorType,
-      type,
+      themeColor,
+      chipStyle,
       theme,
     } = this.props;
 
-    let displayedColor = colorType || color ? 'white' : 'rgba(0, 0, 0, 0.87)';
+    let displayedColor = themeColor || color ? 'white' : 'rgba(0, 0, 0, 0.87)';
 
-    if (type == 'outlined' && (colorType || color))
-      displayedColor = theme.base[colorType];
+    if (chipStyle == 'outlined' && (themeColor || color))
+      displayedColor = theme.base[themeColor];
 
     return (
       <Text
@@ -62,7 +63,7 @@ class Chip extends Component {
           {
             color: displayedColor,
             marginLeft: leftIcon ? 8 : 12,
-            marginRight: rightIcon || canDelete ? 8 : 12,
+            marginRight: rightIcon || onDelete ? 8 : 12,
           },
           textStyles,
         ]}>
@@ -71,8 +72,8 @@ class Chip extends Component {
     );
   }
 
-  _renderIcon(icon, onPress, position) {
-    const { disabled, type } = this.props;
+  _renderIcon(icon, position) {
+    const { chipStyle } = this.props;
 
     if (!icon) return null;
 
@@ -80,37 +81,41 @@ class Chip extends Component {
       size: icon.props.size ? icon.props.size : 24,
     });
 
-    let marginRight = type == 'outlined' ? 8 : 4;
-    let marginLeft = type == 'outlined' ? 8 : 4;
+    let marginRight = chipStyle == 'outlined' ? 8 : 4;
+    let marginLeft = chipStyle == 'outlined' ? 8 : 4;
     if (position == 'right') marginLeft = 0;
     if (position == 'left') marginRight = 0;
 
     return (
-      <Ripple
-        onPress={onPress}
-        disabled={disabled || !onPress}
-        rippleContainerBorderRadius={100}
+      <View
         style={{
           marginRight,
           marginLeft,
         }}>
         {inner}
-      </Ripple>
+      </View>
     );
   }
 
   _renderRightIcon() {
-    const { rightIcon, onRight, canDelete } = this.props;
+    const { rightIcon, onDelete } = this.props;
 
-    if (canDelete) return this._renderDeleteIcon();
-    return this._renderIcon(rightIcon, onRight, 'right');
+    if (onDelete) return this._renderDeleteIcon();
+    return this._renderIcon(rightIcon, 'right');
   }
 
   _renderDeleteIcon() {
-    const { onDelete, disabled, colorType, color, type, theme } = this.props;
-    let iconColor = colorType || color ? 'white' : '#666666';
-    if (type == 'outlined')
-      iconColor = colorType ? theme.base[colorType] : '#666666';
+    const {
+      onDelete,
+      disabled,
+      themeColor,
+      color,
+      chipStyle,
+      theme,
+    } = this.props;
+    let iconColor = themeColor || color ? 'white' : '#666666';
+    if (chipStyle == 'outlined')
+      iconColor = themeColor ? theme.base[themeColor] : '#666666';
 
     return (
       <Ripple
@@ -125,34 +130,38 @@ class Chip extends Component {
 
   render() {
     const {
-      type,
+      chipStyle,
       disabled,
       onPress,
       style,
       color,
-      colorType,
+      themeColor,
       children,
       visible,
       leftIcon,
-      onLeft,
       theme,
+      radius,
     } = this.props;
 
     let borderWidth = 0;
-    let displayBackgroundColor = colorType ? theme.base[colorType] : '#e0e0e0';
-    let displayBorderColor = colorType
-      ? theme.base[colorType]
+    let displayBackgroundColor = themeColor
+      ? theme.base[themeColor]
+      : '#e0e0e0';
+    let displayBorderColor = themeColor
+      ? theme.base[themeColor]
       : 'rgba(0, 0, 0, 0.23)';
-    let rippleColor = colorType ? theme.base[colorType] : 'rgba(0, 0, 0, .87)';
+    let rippleColor = themeColor
+      ? theme.base[themeColor]
+      : 'rgba(0, 0, 0, .87)';
 
-    if (type === 'outlined') {
+    if (chipStyle === 'outlined') {
       borderWidth = StyleSheet.hairlineWidth;
       displayBackgroundColor = 'transparent';
     }
 
     if (color) {
-      displayBackgroundColor = color;
-      displayBorderColor = color;
+      if (chipStyle != 'outlined') displayBackgroundColor = color;
+      if (chipStyle == 'outlined') displayBorderColor = color;
       rippleColor = color;
     }
 
@@ -165,18 +174,19 @@ class Chip extends Component {
             backgroundColor: displayBackgroundColor,
             borderColor: displayBorderColor,
             borderWidth,
+            borderRadius: radius,
           },
           style,
         ]}
         shadow={0}>
         <Ripple
-          rippleContainerBorderRadius={16}
+          rippleContainerBorderRadius={radius}
           onPress={onPress}
           disabled={disabled || !onPress}
-          style={{ borderRadius: 16 }}
+          style={[styles.ripple, { borderRadius: radius }]}
           rippleColor={rippleColor}>
           <View style={styles.content}>
-            {this._renderIcon(leftIcon, onLeft, 'left')}
+            {this._renderIcon(leftIcon, 'left')}
             {children ? children : this._renderText()}
             {this._renderRightIcon()}
           </View>
@@ -188,11 +198,14 @@ class Chip extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 16,
     borderStyle: 'solid',
     flexGrow: 0,
     height: 32,
     alignSelf: 'flex-start',
+  },
+  ripple: {
+    height: '100%',
+    flexDirection: 'row',
   },
   content: {
     flexDirection: 'row',
@@ -203,6 +216,7 @@ const styles = StyleSheet.create({
   text: {
     lineHeight: 24,
     textAlignVertical: 'center',
+    alignSelf: 'center',
     marginVertical: 4,
 
     fontSize: 14,
