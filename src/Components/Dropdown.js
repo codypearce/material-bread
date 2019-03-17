@@ -17,12 +17,11 @@ class Dropdown extends Component {
   static propTypes = {
     onSelect: PropTypes.func,
     buttonStyle: PropTypes.object,
-    marginBottom: PropTypes.number,
     label: PropTypes.string,
     selectedItem: PropTypes.node,
     menuItems: PropTypes.array,
-    size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     visible: PropTypes.bool,
+    onSelect: PropTypes.func,
   };
 
   state = {
@@ -47,13 +46,7 @@ class Dropdown extends Component {
   }
 
   render() {
-    const {
-      buttonStyle,
-      marginBottom,
-      label,
-      selectedItem,
-      menuItems,
-    } = this.props;
+    const { buttonStyle, label, selectedItem, menuItems } = this.props;
 
     const { visible } = this.state;
     return (
@@ -64,7 +57,7 @@ class Dropdown extends Component {
         button={
           <TouchableHighlight
             onPress={() => this.showMenu()}
-            style={[styles.button, { marginBottom }, buttonStyle]}
+            style={[styles.button, buttonStyle]}
             underlayColor={'transparent'}>
             <View style={styles.innerView}>
               <Text

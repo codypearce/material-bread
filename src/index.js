@@ -26,9 +26,6 @@ export { default as DataTable } from './Components/DataTable/DataTable';
 export {
   default as DataTableHeader,
 } from './Components/DataTable/DataTableHeader';
-export {
-  default as DataTableHeaderItem,
-} from './Components/DataTable/DataTableHeaderItem';
 export { default as DataTableCell } from './Components/DataTable/DataTableCell';
 export {
   default as DataTablePagination,
@@ -68,7 +65,6 @@ export { default as ProgressBar } from './Components/Progress/ProgressBar';
 export {
   default as ProgressCircle,
 } from './Components/Progress/ProgressCircle';
-export { default as Portal } from './Components/Portal';
 export { default as RadioButton } from './Components/RadioButton';
 export { default as Searchbar } from './Components/Searchbar';
 export { default as SearchField } from './Components/SearchField';

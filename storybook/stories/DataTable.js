@@ -4,9 +4,7 @@ import { storiesOf } from '../helpers/storiesOf';
 import {
   DataTable,
   DataTableHeader,
-  DataTableItem,
-  DataTablePagination,
-  DataTableHeaderItem,
+  DataTableCell,
   DataTableRow,
 } from '../../src/index';
 import Header from '../components/Header';
@@ -17,31 +15,34 @@ storiesOf('Data Table', module).add('Data Table', () => (
     <Header title={'DataTable'} />
 
     <DataTable>
-      <DataTableHeader showcheckBox>
-        <DataTableHeaderItem>Header</DataTableHeaderItem>
-        <DataTableHeaderItem>Text Column</DataTableHeaderItem>
-        <DataTableHeaderItem right>No. Col</DataTableHeaderItem>
+      <DataTableHeader>
+        <DataTableCell text={'Desert'} type={'header'} borderRight flex={2} />
+        <DataTableCell text={'Calories'} type={'header'} right />
+        <DataTableCell text={'Fat (g)'} type={'header'} right />
+        <DataTableCell text={'Carbs (g)'} type={'header'} right />
+        <DataTableCell text={'Protein (g)'} type={'header'} right />
       </DataTableHeader>
-
-      <DataTableRow showcheckBox>
-        <DataTableItem>Row Item 1</DataTableItem>
-        <DataTableItem>Row Data 1</DataTableItem>
-        <DataTableItem right>1000</DataTableItem>
+      <DataTableRow>
+        <DataTableCell text={'Frozen yogurt'} borderRight flex={2} />
+        <DataTableCell text={'159'} right />
+        <DataTableCell text={'6.0'} right />
+        <DataTableCell text={'24'} right />
+        <DataTableCell text={'4'} right />
       </DataTableRow>
-
-      <DataTableRow showcheckBox>
-        <DataTableItem>Row Item 2</DataTableItem>
-        <DataTableItem>Row Data 2</DataTableItem>
-        <DataTableItem right>2000</DataTableItem>
+      <DataTableRow>
+        <DataTableCell text={'Ice Cream Sandwhich'} borderRight flex={2} />
+        <DataTableCell text={'237'} right />
+        <DataTableCell text={'9.0'} right />
+        <DataTableCell text={'37'} right />
+        <DataTableCell text={'4.3'} right />
       </DataTableRow>
-
-      <DataTableRow showcheckBox>
-        <DataTableItem>Row Item 3</DataTableItem>
-        <DataTableItem>Row Data 3</DataTableItem>
-        <DataTableItem right>3000</DataTableItem>
+      <DataTableRow>
+        <DataTableCell text={'Eclair'} borderRight flex={2} />
+        <DataTableCell text={'262'} right />
+        <DataTableCell text={'16.0'} right />
+        <DataTableCell text={'24'} right />
+        <DataTableCell text={'6.0'} right />
       </DataTableRow>
-
-      <DataTablePagination page={1} numberOfPages={3} perPage={3} />
     </DataTable>
   </Container>
 ));

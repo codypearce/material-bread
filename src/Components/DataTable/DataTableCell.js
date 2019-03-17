@@ -18,7 +18,7 @@ class TableCell extends Component {
 
   _renderText() {
     const { text, type } = this.props;
-    const style = type == 'head' ? styles.textHeader : styles.text;
+    const style = type == 'header' ? styles.textHeader : styles.text;
 
     return <Text style={style}>{text}</Text>;
   }

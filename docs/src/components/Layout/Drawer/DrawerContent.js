@@ -153,6 +153,153 @@ class DrawerContent extends React.PureComponent {
         title: 'DataTable',
         path: '/components/datatable',
       },
+      {
+        id: 17,
+        title: 'DataTableCell',
+        path: '/components/datatable-cell',
+        subsubItem: true,
+      },
+      {
+        id: 18,
+        title: 'DataTableHeader',
+        path: '/components/datatable-header',
+        subsubItem: true,
+      },
+      {
+        id: 19,
+        title: 'DataTablePagination',
+        path: '/components/datatable-pagination',
+        subsubItem: true,
+      },
+      {
+        id: 20,
+        title: 'DataTableRow',
+        path: '/components/datatable-row',
+        subsubItem: true,
+      },
+      {
+        id: 21,
+        title: 'Dialog',
+        path: '/components/dialog',
+      },
+      {
+        id: 21,
+        title: 'Divider',
+        path: '/components/divider',
+      },
+      {
+        id: 21,
+        title: 'Drawer',
+        path: '/components/drawer',
+      },
+      {
+        id: 21,
+        title: 'Dropdown',
+        path: '/components/dropdown',
+      },
+      {
+        id: 21,
+        title: 'Fab',
+        path: '/components/fab',
+      },
+      {
+        id: 21,
+        title: 'Speed dial',
+        path: '/components/fab-speeddial',
+        subsubItem: true,
+      },
+      {
+        id: 21,
+        title: 'Icon',
+        path: '/components/icon',
+      },
+      {
+        id: 21,
+        title: 'IconButton',
+        path: '/components/IconButton',
+      },
+      {
+        id: 21,
+        title: 'List',
+        path: '/components/list',
+      },
+      {
+        id: 21,
+        title: 'Menu',
+        path: '/components/menu',
+      },
+      {
+        id: 21,
+        title: 'MenuItem',
+        path: '/components/menu-item',
+        subsubItem: true,
+      },
+      {
+        id: 21,
+        title: 'Paper',
+        path: '/components/paper',
+      },
+      {
+        id: 21,
+        title: 'Progress Bar',
+        path: '/components/progress-bar',
+      },
+      {
+        id: 21,
+        title: 'Progress Circle',
+        path: '/components/progress-circle',
+      },
+      {
+        id: 21,
+        title: 'Radio Button',
+        path: '/components/radiobutton',
+      },
+      {
+        id: 21,
+        title: 'Ripple',
+        path: '/components/ripple',
+        subsubItem: true,
+      },
+      {
+        id: 21,
+        title: 'Searchbar',
+        path: '/components/searchbar',
+      },
+      {
+        id: 21,
+        title: 'SearchField',
+        path: '/components/searchfield',
+      },
+      {
+        id: 21,
+        title: 'Select',
+        path: '/components/select',
+      },
+      {
+        id: 21,
+        title: 'Snackbar',
+        path: '/components/snackbar',
+      },
+      {
+        id: 21,
+        title: 'Switch',
+        path: '/components/switch',
+      },
+      {
+        id: 21,
+        title: 'Textfield',
+        path: '/components/textfield',
+      },
+      {
+        id: 21,
+        title: 'ToggleButton',
+        path: '/components/togglebutton',
+      },
+      {
+        id: 21,
+        title: 'Typography',
+        path: '/components/typography',
+      },
     ];
     return (
       <div>

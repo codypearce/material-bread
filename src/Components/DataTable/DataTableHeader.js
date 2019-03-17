@@ -1,45 +1,83 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
-import Checkbox from '../Checkbox';
+import IconButton from '../IconButton';
 
 class DataTableHeader extends Component {
   static propTypes = {
     children: PropTypes.node,
     style: PropTypes.object,
-    borderBottomColor: PropTypes.string,
-    checked: PropTypes.bool,
-    onPressCheckBox: PropTypes.func,
-    showcheckBox: PropTypes.bool,
-    onPress: PropTypes.func,
+    rightActions: PropTypes.array,
+    leftActions: PropTypes.array,
+    title: PropTypes.string,
   };
   static defaultProps = {
     borderBottomColor: 'rgb(224, 224, 224)',
   };
+
+  _renderTitle() {
+    const { title, leftActions } = this.props;
+    if (!title) return null;
+    return (
+      <Text style={[styles.title, { marginLeft: leftActions ? 12 : 0 }]}>
+        {title}
+      </Text>
+    );
+  }
+  _renderActions(actionItems, position) {
+    if (!actionItems) return null;
+    return (
+      <View style={styles.actions}>
+        {actionItems.map((item, index) => {
+          if (item.name) {
+            return (
+              <IconButton
+                key={item.name}
+                name={item.name}
+                size={24}
+                color={'rgba(0,0,0,.87)'}
+                style={{
+                  marginRight:
+                    index + 1 === actionItems.length || position === 'left'
+                      ? 0
+                      : 16,
+                  marginLeft:
+                    index + 1 === actionItems.length || position === 'right'
+                      ? 0
+                      : 16,
+                }}
+                onPress={item.onPress}
+              />
+            );
+          } else {
+            return item;
+          }
+        })}
+      </View>
+    );
+  }
+
+  _renderContent() {
+    const { rightActions, leftActions } = this.props;
+    return (
+      <View style={styles.content}>
+        <View style={styles.left}>
+          {this._renderActions(leftActions, 'left')}
+          {this._renderTitle()}
+        </View>
+
+        {this._renderActions(rightActions, 'right')}
+      </View>
+    );
+  }
+
   render() {
-    const {
-      children,
-      style,
-      borderBottomColor,
-      onPress,
-      checked,
-      onPressCheckBox,
-      showcheckBox,
-    } = this.props;
+    const { children, style } = this.props;
 
     return (
-      <View
-        style={[styles.dataTableHeader, { borderBottomColor }, style]}
-        onPress={onPress}>
-        {showcheckBox ? (
-          <Checkbox
-            checked={checked}
-            onPress={onPressCheckBox}
-            style={{ marginRight: 12 }}
-          />
-        ) : null}
-        {children}
+      <View style={[styles.dataTableHeader, style]}>
+        {children ? children : this._renderContent()}
       </View>
     );
   }
@@ -47,12 +85,25 @@ class DataTableHeader extends Component {
 
 const styles = StyleSheet.create({
   dataTableHeader: {
-    height: 48,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    height: 64,
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+  },
+  content: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     width: '100%',
+  },
+  left: { flexDirection: 'row', alignItems: 'center' },
+  title: {
+    fontSize: 20,
+  },
+  actions: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });
 

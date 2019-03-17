@@ -41,7 +41,7 @@ class Fab extends Component {
               ? backgroundColor
               : 'rgba(33, 150, 243, 1)',
           },
-          shadow(elevation),
+          shadow(elevation || 10),
           style,
         ]}
         {...props}>
