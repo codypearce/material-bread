@@ -15,7 +15,7 @@ configureViewport({
 
 addDecorator(
   withOptions({
-    name: 'React Native Bread',
+    name: 'Material Bread',
 
     // showAddonPanel: false,
 

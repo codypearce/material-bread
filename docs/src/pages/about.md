@@ -35,8 +35,8 @@ React Native provides a unique challenge for customization since you cannot sele
 
 <section>
 
-#### Comprehensive Documentation
+#### Copious Live Demos
 
-Detailed documentation is necessary to take full advantage of the package,but it's also important to provide examples of common use cases. For React Native it's common to simply show a picture or link to Snack.io to show off components, but this doesn't really give the developer a good idea of how a component looks and functions. Therefore it is a high priority of this library to provide both detailed documentation and copious live demos.
+Demos make it much easier to understand how to use components and how to build common patterns. Since this library is deicated to providing Material Design components, it is important to provide as many demos as needed to illustrate reproducing various patterns.
 
 </section>
