@@ -339,6 +339,7 @@ class DrawerContent extends React.PureComponent {
         path: '/style/themeing',
       },
     ];
+
     return (
       <div>
         <div

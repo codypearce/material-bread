@@ -12,6 +12,7 @@ class Searchbar extends Component {
     onChangeText: PropTypes.func,
     onCloseIcon: PropTypes.func,
     onNavigation: PropTypes.func,
+    placeholder: PropTypes.string,
   };
 
   render() {
@@ -21,6 +22,7 @@ class Searchbar extends Component {
       onCloseIcon,
       onNavigation,
       value,
+      placeholder,
     } = this.props;
     return (
       <View style={[styles.container, style]}>
@@ -32,7 +34,7 @@ class Searchbar extends Component {
         />
         <TextInput
           style={styles.searchInput}
-          placeholder={'Search'}
+          placeholder={placeholder ? placeholder : 'Search'}
           onChangeText={onChangeText}
           value={value}
         />

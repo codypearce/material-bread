@@ -28,7 +28,8 @@
     "react-dom": "^16.8.3",
     "react-helmet": "^5.2.0",
     "react-live": "^1.12.0",
-    "react-scrollspy": "^3.3.5"
+    "react-scrollspy": "^3.3.5",
+    "react-window": "^1.7.1"
   },
   "devDependencies": {
     "prettier": "^1.16.4"

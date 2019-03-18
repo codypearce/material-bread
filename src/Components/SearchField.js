@@ -14,6 +14,7 @@ class Searchfield extends Component {
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,
     color: PropTypes.string,
+    placeholder: PropTypes.string,
   };
 
   render() {
@@ -25,6 +26,7 @@ class Searchfield extends Component {
       onFocus,
       onBlur,
       color,
+      placeholder,
     } = this.props;
 
     return (
@@ -38,7 +40,7 @@ class Searchfield extends Component {
 
         <TextInput
           style={styles.searchInput}
-          placeholder={'Search'}
+          placeholder={placeholder ? placeholder : 'Search'}
           value={value}
           onChangeText={onChangeText}
           placeholderTextColor={'rgba(255,255,255,.57)'}
