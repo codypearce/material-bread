@@ -23,7 +23,7 @@ export default class IconPage extends Component {
           please visit the getting started pages to learn more.
         </p>
 
-        <Section name="Using" href="/components/icons#Using" id="Using">
+        <Section name="Using" href="/style/icons#Using" id="Using">
           <p
             style={{
               color: 'rgba(0, 0, 0, 0.67)',

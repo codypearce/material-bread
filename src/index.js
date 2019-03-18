@@ -93,6 +93,7 @@ export {
 // ==== Theme ====
 export { default as ThemeContext } from './Theme/ThemeContext';
 export { default as withTheme } from './Theme/withTheme';
+export { default as defaultTheme } from './Theme/defaultTheme';
 
 // ==== Core ====
 export { default as BreadProvider } from './Core/BreadProvider';

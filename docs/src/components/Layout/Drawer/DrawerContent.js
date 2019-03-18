@@ -329,14 +329,9 @@ class DrawerContent extends React.PureComponent {
         path: '/style/icons',
       },
       {
-        id: 4,
-        title: 'Platform Guidelines',
-        path: '/style/platform-guidelines',
-      },
-      {
         id: 5,
-        title: 'Themeing',
-        path: '/style/themeing',
+        title: 'Theme',
+        path: '/style/theme',
       },
     ];
 

@@ -21,7 +21,7 @@ export default class FontPage extends Component {
         </p>
         <Section
           name="React Native"
-          href="/components/font#react-native"
+          href="/style/font#react-native"
           id="react-native">
           <p
             style={{
@@ -47,7 +47,7 @@ export default class FontPage extends Component {
             </ol>
           </p>
         </Section>
-        <Section name="Web" href="/components/font#web" id="web">
+        <Section name="Web" href="/style/font#web" id="web">
           <p
             style={{
               color: 'rgba(0, 0, 0, 0.67)',

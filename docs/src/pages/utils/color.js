@@ -4,9 +4,9 @@ import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import { Colors } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
-import FullPallete from '../../components/ColorPallete/FullPallete';
+import FullPalette from '../../components/ColorPalette/FullPalette';
 
-const sections = [{ name: 'Pallete' }];
+const sections = [{ name: 'Palette' }];
 
 const liveEditCode = `
 <View style={{flexDirection: 'row'}}>
@@ -52,11 +52,11 @@ export default class ColorPage extends Component {
           }}
           usageCode={usageCode}>
           <Section
-            name="Pallete"
-            href="/components/colors#pallete"
-            id="pallete">
+            name="Palette"
+            href="/components/colors#palette"
+            id="palette">
             <ComponentDescription text="Click a block to copy the hex value" />
-            <FullPallete />
+            <FullPalette />
           </Section>
         </ComponentPageLayout>
       </div>

@@ -6,7 +6,7 @@ import { Colors } from '../../../../src/index';
 const palleteList = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 const palleteListExtra = ['A100', 'A200', 'A400', 'A700'];
 
-class ColorPallete extends Component {
+export default class ColorPalette extends Component {
   constructor(props) {
     super(props);
   }
@@ -47,5 +47,3 @@ class ColorPallete extends Component {
     );
   }
 }
-
-export default ColorPallete;

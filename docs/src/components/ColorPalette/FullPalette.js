@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ColorPallete from './ColorPallete';
+import ColorPallete from './ColorPalette';
 
 const colorList = [
   { name: 'Red', color: 'red', hasExtra: true },
@@ -22,7 +22,7 @@ const colorList = [
   { name: 'Blue Grey', color: 'blueGrey' },
 ];
 
-class FullPallete extends Component {
+class FullPalette extends Component {
   constructor(props) {
     super(props);
   }
@@ -53,4 +53,4 @@ class FullPallete extends Component {
   }
 }
 
-export default FullPallete;
+export default FullPalette;
