@@ -131,7 +131,7 @@ class ButtonBase extends Component {
       iconPosition,
       ...props
     } = this.props;
-
+    console.log(style);
     return (
       <Ripple
         onPress={onPress}
@@ -143,7 +143,6 @@ class ButtonBase extends Component {
         style={[
           theme.button,
           {
-            alignSelf: 'flex-start',
             alignItems: 'center',
             justifyContent: 'center',
             flexDirection: hideLabel ? 'column' : 'row',

@@ -261,7 +261,7 @@ render(
     <Button text={'Docs'} textColor="white" style={styles.button} />
     <Button text={'About'} textColor="white" style={[styles.button, {marginRight: 0}]} />
   </View>
-  <Button text={'Buy'} type={'contained'} textColor="white" style={[styles.button, {marginRight: 0}]} />
+  <Button text={'Buy'} type={'contained'} textColor="white" containerStyle={[styles.button, {marginRight: 0}]} />
 </Appbar>
 )`;
 
@@ -276,7 +276,7 @@ export default class AppbarPage extends Component {
             'The top app bar displays information and actions relating to the current screen.'
           }
           componentDescription={
-            'Appbars are essentially broken into three parts: navigation, title, and action buttons. Material Bread Appbar abstracts away each component to both ensure all parts match material and provide many prebuilt cobminations. But if you need more customization you can replace any component, or all of them. Below is a simple live example you can edit, try changing some props to see how the component works.'
+            'Appbars are essentially broken into three parts: navigation, title, and action buttons. Many combinations are possible using these sections, but if you need more customization you can replace all of them by passing children.'
           }
           docsLink={'https://material.io/design/components/app-bars-top.html'}
           sideScrollMenuItems={sections}
