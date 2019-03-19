@@ -131,7 +131,7 @@ class ButtonBase extends Component {
       iconPosition,
       ...props
     } = this.props;
-    console.log(style);
+
     return (
       <Ripple
         onPress={onPress}

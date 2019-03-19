@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-
+import Link from '../Link';
 class ComponentSubtitle extends Component {
   constructor(props) {
     super(props);
@@ -16,9 +16,7 @@ class ComponentSubtitle extends Component {
     return (
       <Fragment>
         {'  - '}
-        <a href={docsLink} style={{ textDecoration: 'none' }}>
-          Material Docs
-        </a>
+        <Link href={docsLink}>Material Docs</Link>
       </Fragment>
     );
   }

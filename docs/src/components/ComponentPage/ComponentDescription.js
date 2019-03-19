@@ -13,14 +13,15 @@ class ComponentDescription extends Component {
   render() {
     const { text } = this.props;
     return (
-      <p
+      <div
         style={{
           color: 'rgba(0, 0, 0, 0.57)',
           fontSize: 14,
           lineHeight: 1.5,
+          marginBottom: 16,
         }}>
         {text}
-      </p>
+      </div>
     );
   }
 }

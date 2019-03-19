@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Section from '../../components/Section';
 import PageTitle from '../../components/PageTitle';
 import CodeBlock from '../../components/CodeBlock';
+import Link from '../../components/Link';
 
 export default class FontPage extends Component {
   render() {
@@ -33,16 +34,16 @@ export default class FontPage extends Component {
             <ol>
               <li>
                 Download Roboto from{' '}
-                <a href="https://fonts.google.com/specimen/Roboto">
+                <Link href="https://fonts.google.com/specimen/Roboto">
                   Google Fonts
-                </a>
+                </Link>
               </li>
               <li>
                 Follow the steps provided here to add fonts to React Native for
                 both{' '}
-                <a href="https://medium.com/react-native-training/react-native-custom-fonts-ccc9aacf9e5e">
+                <Link href="https://medium.com/react-native-training/react-native-custom-fonts-ccc9aacf9e5e">
                   iOS and Android
-                </a>
+                </Link>
               </li>
             </ol>
           </p>

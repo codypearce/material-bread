@@ -6,6 +6,7 @@ import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLay
 import { AppbarBottom, IconButton, Button } from '../../../../src/index';
 import LiveEdit from '../../components/LiveEdit/LiveEdit';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import Link from '../../components/Link';
 
 const sections = [
   { name: 'Demos' },
@@ -181,7 +182,15 @@ export default class AppbarPage extends Component {
           sideScrollMenuItems={sections}
           liveEditCode={liveEditCode}
           liveEditScope={{ AppbarBottom }}
-          usageDescription={`Usage depends on what navigation package you're using. For react-navigation you can follow their guide on TabNavigation https://reactnavigation.org/docs/en/tab-based-navigation.html`}
+          usageDescription={
+            <div>
+              {`Usage depends on what navigation package you're using. For
+              react-navigation you can follow their guide on TabNavigation `}
+              <Link href="https://reactnavigation.org/docs/en/tab-based-navigation.html">
+                guide on TabNavigation
+              </Link>
+            </div>
+          }
           usageCode={usageCode}
           propData={propData}>
           <Section

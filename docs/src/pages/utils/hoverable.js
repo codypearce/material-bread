@@ -25,29 +25,27 @@ const propData = [
 
 const liveEditCode = `
 class Demo extends React.Component {
-    constructor(props) {
-      super(props)
-      this.state = {
-        color: '#009688'
-      }
+  constructor(props) {
+    super(props)
+    this.state = {
+      color: '#009688'
     }
+  }
 
   handleHover(toggle) {
     this.setState({ color: toggle ? '#00BCD4' : '#009688' });
   }
 
-    render() {
-      return (
-        <Hoverable
-          onHoverIn={() => this.handleHover(true)}
-          onHoverOut={() => this.handleHover(false)}
-        >
-          {() => (
-            <View style={{width: 200, height: 125, backgroundColor: this.state.color}} />
-          )}
-      </Hoverable>
-      );
-    }
+  render() {
+    return (
+      <Hoverable
+        onHoverIn={() => this.handleHover(true)}
+        onHoverOut={() => this.handleHover(false)}
+      >
+        <View style={{width: 200, height: 125, backgroundColor: this.state.color}} />
+    </Hoverable>
+    );
+  }
 }`;
 
 const usageCode = `import React, { Component } from 'react';
@@ -72,9 +70,7 @@ handleHover(toggle) {
         onHoverIn={() => this.handleHover(true)}
         onHoverOut={() => this.handleHover(false)}
       >
-        {() => (
-          <View style={{width: 200, height: 125, backgroundColor: this.state.color}} />
-        )}
+        <View style={{width: 200, height: 125, backgroundColor: this.state.color}} />
     </Hoverable>
     );
   }

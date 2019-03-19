@@ -3,6 +3,7 @@ import Section from '../../components/Section';
 import PageTitle from '../../components/PageTitle';
 import CodeInline from '../../components/CodeInline';
 import IconDirectory from '../../components/IconDirectory/IconDirectory';
+import Link from '../../components/Link';
 
 export default class IconPage extends Component {
   render() {
@@ -16,9 +17,9 @@ export default class IconPage extends Component {
             lineHeight: 1.5,
           }}>
           Material Icons are provided by{' '}
-          <a href="https://github.com/oblador/react-native-vector-icons">
+          <Link href="https://github.com/oblador/react-native-vector-icons">
             react-native-vector-icons
-          </a>
+          </Link>
           . However some platforms might require extra steps to get working,
           please visit the getting started pages to learn more.
         </p>
@@ -31,8 +32,8 @@ export default class IconPage extends Component {
               lineHeight: 1.5,
             }}>
             Material Icon{' '}
-            <a href="https://material.io/tools/icons">documentation</a> shows
-            icon names separated by dashes. To use icons with{' '}
+            <Link href="https://material.io/tools/icons">documentation</Link>{' '}
+            shows icon names separated by dashes. To use icons with{' '}
             <CodeInline code={'react-native-vector-icons'} /> you need to pass
             them as dashes. For example <CodeInline code={'3d_rotation'} />{' '}
             becomes <CodeInline code={'3d-rotation'} />.

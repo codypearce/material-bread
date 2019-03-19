@@ -13,6 +13,7 @@ import {
 } from '../../../../src/index';
 import LiveEdit from '../../components/LiveEdit/LiveEdit';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import Link from '../../components/Link';
 
 const sections = [
   { name: 'Demos' },
@@ -284,7 +285,17 @@ export default class AppbarPage extends Component {
           liveEditCode={liveEditCode}
           liveEditScope={{ Appbar, IconButton, Image, Badge }}
           usageCode={usageCode}
-          usageDescription={`Usage depends entirely on what kind of navigation you are using in your app. For example, in react-navigation you can replace the entire header with a custom app bar https://hackernoon.com/how-to-use-a-custom-header-and-custom-bottom-tab-bar-for-react-native-with-react-navigation-969a5d3cabb1`}
+          usageDescription={
+            <div>
+              Usage depends entirely on what kind of navigation you are using in
+              your app. For example, in react-navigation you can replace the
+              entire header with a{' '}
+              <Link href="  https://hackernoon.com/how-to-use-a-custom-header-and-custom-bottom-tab-bar-for-react-native-with-react-navigation-969a5d3cabb1">
+                custom app bar
+              </Link>
+              .
+            </div>
+          }
           propData={propData}>
           <Section name="Demos" href="/components/appbar#demos" id="demos">
             <ComponentDescription text="Below are demos of various features and common patterns. You can see even more examples in the Storybook playground." />
