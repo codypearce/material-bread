@@ -14,6 +14,7 @@ import {
 import LiveEdit from '../../components/LiveEdit/LiveEdit';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 import Link from '../../components/Link';
+import CodeInline from '../../components/CodeInline';
 
 const sections = [
   { name: 'Demos' },
@@ -277,7 +278,13 @@ export default class AppbarPage extends Component {
             'The top app bar displays information and actions relating to the current screen.'
           }
           componentDescription={
-            'Appbars are essentially broken into three parts: navigation, title, and action buttons. Many combinations are possible using these sections, but if you need more customization you can replace all of them by passing children.'
+            <div>
+              Appbars are essentially broken into three parts: navigation,
+              title, and action buttons. Many combinations are possible using
+              these sections, but if you need more customization you can replace
+              all of them by passing{' '}
+              <CodeInline code="children" type={'prop'} />.
+            </div>
           }
           docsLink={'https://material.io/design/components/app-bars-top.html'}
           sideScrollMenuItems={sections}
@@ -288,10 +295,10 @@ export default class AppbarPage extends Component {
           usageDescription={
             <div>
               Usage depends entirely on what kind of navigation you are using in
-              your app. For example, in react-navigation you can replace the
-              entire header with a{' '}
+              your app. For example, in <CodeInline code="react-navigation" />{' '}
+              you can replace the entire header with a{' '}
               <Link href="  https://hackernoon.com/how-to-use-a-custom-header-and-custom-bottom-tab-bar-for-react-native-with-react-navigation-969a5d3cabb1">
-                custom app bar
+                custom appbar
               </Link>
               .
             </div>
@@ -305,7 +312,22 @@ export default class AppbarPage extends Component {
             name="Background image"
             href="/components/appbar#bg-image"
             id="bg-image">
-            <ComponentDescription text="You must pass in an <Image> component, please read the React Native docs on Images to get a better idea of how to pass in images. Generally they are only used for prominent bars, but can be used on other types." />
+            <ComponentDescription
+              text={
+                <div>
+                  You must pass in an{' '}
+                  <CodeInline code="Image" type={'element'} />
+                  component, please read the React Native{' '}
+                  <Link href="https://facebook.github.io/react-native/docs/images">
+                    docs on Images
+                  </Link>{' '}
+                  to get a better idea of how to pass in images. Generally they
+                  are only used for{' '}
+                  <CodeInline code="prominent" type={'value'} /> bars, but can
+                  be used on other types.
+                </div>
+              }
+            />
             <LiveEdit code={withImage} scope={{ Appbar, IconButton, Image }} />
           </Section>
 
@@ -313,7 +335,16 @@ export default class AppbarPage extends Component {
             name="Search field"
             href="/components/appbar#search-field"
             id="search-field">
-            <ComponentDescription text="You can add a search field or any other component directly in the appbar shown below." />
+            <ComponentDescription
+              text={
+                <div>
+                  You can add a{' '}
+                  <CodeInline code="SearchField" type={'element'} /> or any
+                  other component directly in the{' '}
+                  <CodeInline code="Appbar" type={'element'} />
+                </div>
+              }
+            />
             <LiveEdit
               code={withSearchField}
               scope={{ Appbar, IconButton, SearchField }}
@@ -324,7 +355,19 @@ export default class AppbarPage extends Component {
             name="Full Search bar"
             href="/components/appbar#search-bar"
             id="search-bar">
-            <ComponentDescription text="The ability to replace components provides various ways to display contextual app bars. The following demonstrates how one might set up a full search bar. Click the back button to return to a regular appbar, click the search icon to open the contextual search appbar." />
+            <ComponentDescription
+              text={
+                <div>
+                  The ability to replace components provides various ways to
+                  display contextual{' '}
+                  <CodeInline code="Appbar" type={'element'} />
+                  s. The following demonstrates how one might set up a full
+                  search bar. Click the back button to return to a regular
+                  <CodeInline code="Appbar" type={'element'} />, click the
+                  search icon to open the contextual search appbar.
+                </div>
+              }
+            />
             <LiveEdit
               code={withSearchBar}
               scope={{ Appbar, IconButton, Searchbar }}
@@ -335,12 +378,33 @@ export default class AppbarPage extends Component {
             name="Subtitle"
             href="/components/appbar#subtitle"
             id="subtitle">
-            <ComponentDescription text="Subtitles can be used on normal and prominent barTypes, but not dense. Try changing 'barType' to 'normal' to see how it will display" />
+            <ComponentDescription
+              text={
+                <div>
+                  Subtitles can be used on{' '}
+                  <CodeInline code="normal" type={'value'} /> or{' '}
+                  <CodeInline code="prominent" type={'value'} />{' '}
+                  <CodeInline code="barType" type={'prop'} />
+                  s, but not <CodeInline code="dense" type={'value'} />. Try
+                  changing
+                  <CodeInline code="barType" type={'prop'} /> to{' '}
+                  <CodeInline code="normal" type={'value'} /> to see how it will
+                  display
+                </div>
+              }
+            />
             <LiveEdit code={withSubtitle} scope={{ Appbar, IconButton }} />
           </Section>
 
           <Section name="Custom" href="/components/appbar#custom" id="custom">
-            <ComponentDescription text="Adding children will replace all internal components with the provided components." />
+            <ComponentDescription
+              text={
+                <div>
+                  Adding <CodeInline code="children" type={'prop'} /> will
+                  replace all internal components with the provided components.
+                </div>
+              }
+            />
             <LiveEdit
               noInline
               code={custom}

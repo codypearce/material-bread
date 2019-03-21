@@ -129,7 +129,12 @@ export default class DataTableHeaderPage extends Component {
           description={`Data Table Headers display contextual information above tables`}
           importCode={`import { DataTableHeader } from 'material-bread';`}
           docsLink={'https://material.io/design/components/data-tables.html'}
-          componentDescription={`Data Table Headers can display action buttons, the number of selected items, table title, or any other contextual information.`}
+          componentDescription={
+            <div>
+              DataTableHeaders can display action buttons, the number of
+              selected items, table title, or any other contextual information.
+            </div>
+          }
           sideScrollMenuItems={sections}
           liveEditCode={liveEditCode}
           liveEditScope={{

@@ -13,6 +13,7 @@ import {
   Avatar,
 } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import CodeInline from '../../components/CodeInline';
 
 const sections = [{ name: 'Demos' }];
 
@@ -118,7 +119,18 @@ export default class CardHeaderPage extends Component {
           }
           importCode={`import { CardHeader } from 'material-bread';`}
           componentDescription={
-            'The CardHeader component is built of Title, Subheader, Thumbnail, and Action. Any can be added or omitted. Children will replace both Title and Subheader and will show between Thumbnail and Action if provided.'
+            <div>
+              The CardHeader component is built of{' '}
+              <CodeInline code="title" type="prop" />,{' '}
+              <CodeInline code="subheader" type="prop" />,{' '}
+              <CodeInline code="thumbnail" type="prop" />, and
+              <CodeInline code="action" type="prop" />. Any can be added or
+              omitted. <CodeInline code="children" type="prop" /> will replace
+              both <CodeInline code="title" type="prop" /> and{' '}
+              <CodeInline code="subheader" type="prop" /> and will show between{' '}
+              <CodeInline code="thumbnail" type="prop" /> and
+              <CodeInline code="action" type="prop" /> if provided.
+            </div>
           }
           sideScrollMenuItems={sections}
           liveEditCode={liveEditCode}

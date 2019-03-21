@@ -15,6 +15,7 @@ import {
 } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 import LiveEdit from '../../components/LiveEdit/LiveEdit';
+import CodeInline from '../../components/CodeInline';
 
 const sections = [
   { name: 'Demos' },
@@ -200,7 +201,15 @@ export default class CardPage extends Component {
           importCode={`import { Card } from 'material-bread';`}
           docsLink={'https://material.io/design/components/cards.html'}
           componentDescription={
-            'Cards can be built using CardHeader, CardMedia, CardContent, CardActions, or custom components. Please see each Card Component page to learn how to use them.'
+            <div>
+              Cards can be built using{' '}
+              <CodeInline code="CardHeader" type="element" />,{' '}
+              <CodeInline code="CardMedia" type="element" />,{' '}
+              <CodeInline code="CardContent" type="element" />,
+              <CodeInline code="CardActions" type="element" />, or custom
+              components. Please see each Card Component page to learn how to
+              use them.
+            </div>
           }
           sideScrollMenuItems={sections}
           liveEditCode={liveEditCode}
@@ -225,7 +234,16 @@ export default class CardPage extends Component {
             name="Action Media"
             href="/components/card#action-media"
             id="action-media">
-            <ComponentDescription text="You can wrap any component with a ripple to make it clickable." />
+            <ComponentDescription
+              text={
+                <div>
+                  {' '}
+                  You can wrap any component with a{' '}
+                  <CodeInline code="Ripple" type="element" /> to make it
+                  clickable.
+                </div>
+              }
+            />
             <LiveEdit
               code={actionMedia}
               scope={{
@@ -247,7 +265,15 @@ export default class CardPage extends Component {
             name="Clickable"
             href="/components/card#clickable"
             id="clickable">
-            <ComponentDescription text="Adding onPress will make the entire card clickable, useful when cards act as links or actions." />
+            <ComponentDescription
+              text={
+                <div>
+                  Adding <CodeInline code="onPress" type="prop" /> will make the
+                  entire card clickable, useful when cards act as links or
+                  actions.
+                </div>
+              }
+            />
             <LiveEdit
               code={clickable}
               scope={{

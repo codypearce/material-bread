@@ -11,6 +11,7 @@ import {
   CardMedia,
 } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import CodeInline from '../../components/CodeInline';
 
 const sections = [{ name: 'Demos' }];
 
@@ -103,7 +104,13 @@ export default class CardMediaPage extends Component {
           description={'CardMedia displays an image on a card.'}
           importCode={`import { CardMedia } from 'material-bread';`}
           componentDescription={
-            'CardMedia takes an image prop and fits it into a card. Optional title and subtitle are shown in the bottom left corner of the image.'
+            <div>
+              CardMedia takes an <CodeInline code="image" type="prop" /> prop
+              and fits it into a <CodeInline code="Card" type="element" />.
+              Optional <CodeInline code="title" type="prop" /> and{' '}
+              <CodeInline code="subtitle" type="prop" /> are shown in the bottom
+              left corner of the <CodeInline code="image" type="prop" />.
+            </div>
           }
           sideScrollMenuItems={sections}
           liveEditCode={liveEditCode}

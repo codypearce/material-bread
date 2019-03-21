@@ -13,6 +13,7 @@ import {
 } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 import LiveEdit from '../../components/LiveEdit/LiveEdit';
+import CodeInline from '../../components/CodeInline';
 
 const sections = [{ name: 'Demos' }, { name: 'custom', sub: true }];
 
@@ -124,7 +125,16 @@ export default class CardPage extends Component {
           }
           importCode={`import { CardActions } from 'material-bread';`}
           componentDescription={
-            'CardActions are split into left and right. Left action items display as full text buttons, right action items display as IconButtons. Both can be passed either as objects or nodes.'
+            <div>
+              CardActions are split into{' '}
+              <CodeInline code="leftActionItems" type="prop" /> and{' '}
+              <CodeInline code="rightActionItems" type="prop" />. Left action
+              items display as full text{' '}
+              <CodeInline code="Button" type="element" />
+              s, right action items display as
+              <CodeInline code="IconButton" type="element" />
+              s. Both can be passed either as objects or nodes.
+            </div>
           }
           sideScrollMenuItems={sections}
           liveEditCode={liveEditCode}

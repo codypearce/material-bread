@@ -7,6 +7,7 @@ import { AppbarBottom, IconButton, Button } from '../../../../src/index';
 import LiveEdit from '../../components/LiveEdit/LiveEdit';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 import Link from '../../components/Link';
+import CodeInline from '../../components/CodeInline';
 
 const sections = [
   { name: 'Demos' },
@@ -177,15 +178,20 @@ export default class AppbarPage extends Component {
           }
           importCode={`import { AppbarBottom } from 'material-bread';`}
           componentDescription={
-            'Appbar bottom is made up of three parts: left actions, fab, and right actions. Many combinations can be created with these components, however you can replace any part as needed. Below is a simple live example.'
+            <div>
+              AppbarBottom is made up of three parts: left actions, fab, and
+              right actions. Numerous combinations can be created with these
+              components, however you can replace any part as needed. Below is a
+              simple live example.
+            </div>
           }
           sideScrollMenuItems={sections}
           liveEditCode={liveEditCode}
           liveEditScope={{ AppbarBottom }}
           usageDescription={
             <div>
-              {`Usage depends on what navigation package you're using. For
-              react-navigation you can follow their guide on TabNavigation `}
+              {`Usage depends on what navigation package you're using.`} For
+              <CodeInline code="react-navigation" /> you can follow their{' '}
               <Link href="https://reactnavigation.org/docs/en/tab-based-navigation.html">
                 guide on TabNavigation
               </Link>
@@ -196,15 +202,26 @@ export default class AppbarPage extends Component {
           <Section
             name="Demos"
             href="/components/appbar-bottom#demos"
-            id="demos">
-            <ComponentDescription text="Below are a few ways the appbar bottom can be used." />
-          </Section>
+            id="demos"
+          />
 
           <Section
             name="End Fab"
             href="/components/appbar-bottom#end-fab"
             id="end-fab">
-            <ComponentDescription text="Using an end fab will move actionItems to the left after the navigationIcon. Add the fabCutout prop to see how spacing is effected." />
+            <ComponentDescription
+              text={
+                <div>
+                  Changing <CodeInline code="fabPosition" type={'prop'} /> to{' '}
+                  <CodeInline code="end" type={'value'} /> will move{' '}
+                  <CodeInline code="actionItems" type={'prop'} />
+                  to the left after the{' '}
+                  <CodeInline code="navigationIcon" type={'prop'} />. Add the
+                  <CodeInline code="fabCutout" type={'prop'} /> prop to see how
+                  spacing is effected.
+                </div>
+              }
+            />
             <LiveEdit code={endFab} scope={{ AppbarBottom, IconButton }} />
           </Section>
 
@@ -212,7 +229,16 @@ export default class AppbarPage extends Component {
             name="No Fab"
             href="/components/appbar-bottom#no-fab"
             id="no-fab">
-            <ComponentDescription text="No fab will act like a normal appbar with actionItems." />
+            <ComponentDescription
+              text={
+                <div>
+                  If you do not provide the{' '}
+                  <CodeInline code="fab" type={'prop'} /> prop then the
+                  component will function like a normal ppbar with{' '}
+                  <CodeInline code="actionItems" type={'prop'} />.
+                </div>
+              }
+            />
             <LiveEdit code={noFab} scope={{ AppbarBottom, IconButton }} />
           </Section>
 
@@ -220,7 +246,15 @@ export default class AppbarPage extends Component {
             name="Custom"
             href="/components/appbar-bottom#custom"
             id="custom">
-            <ComponentDescription text="Adding children will replace all internal components with the provided components. This allows for full customization." />
+            <ComponentDescription
+              text={
+                <div>
+                  Adding <CodeInline code="children" type={'prop'} /> will
+                  replace all internal components with the provided components.
+                  This allows for full customization.
+                </div>
+              }
+            />
             <LiveEdit
               noInline
               code={custom}

@@ -6,6 +6,7 @@ import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLay
 import { Avatar } from '../../../../src/index';
 import LiveEdit from '../../components/LiveEdit/LiveEdit';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import CodeInline from '../../components/CodeInline';
 
 const sections = [
   { name: 'Demos' },
@@ -159,7 +160,14 @@ export default class AvatarPage extends Component {
             'Avatars are used to represent the user, other users, or contextual icons.'
           }
           componentDescription={
-            'Avatars can be images, letters, or icons. First provide the type of avatar, then either provide the value to display. A simple image example is shown below.'
+            <div>
+              Avatars can be images, letters, or icons. First provide the{' '}
+              <CodeInline code="type" type="prop" />
+              of avatar, then either provide the{' '}
+              <CodeInline code="content" type="prop" /> prop for icons and
+              letters or <CodeInline code="image" type="prop" /> prop for
+              images. A simple image example is shown below.
+            </div>
           }
           importCode={`import { Avatar } from 'material-bread';`}
           sideScrollMenuItems={sections}
@@ -175,7 +183,7 @@ export default class AvatarPage extends Component {
             name={'Avatar Icons'}
             href="/components/avatar#icons"
             id="icons">
-            <ComponentDescription text="Icons are from Material Icons" />
+            <ComponentDescription text="" />
             <LiveEdit code={icons} scope={{ Avatar, View }} />
           </Section>
 
@@ -188,7 +196,15 @@ export default class AvatarPage extends Component {
           </Section>
 
           <Section name="Custom" href="/components/avatar#custom" id="custom">
-            <ComponentDescription text="You can style any part or add children to replace all the inner content to create something more custom." />
+            <ComponentDescription
+              text={
+                <div>
+                  You can style any part or add{' '}
+                  <CodeInline code="children" type={'prop'} /> to replace all
+                  the inner content to create something more custom.
+                </div>
+              }
+            />
             <LiveEdit code={custom} scope={{ Avatar }} />
           </Section>
         </ComponentPageLayout>

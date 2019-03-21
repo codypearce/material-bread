@@ -6,6 +6,7 @@ import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLay
 import { Button, Banner, Avatar } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 import LiveEdit from '../../components/LiveEdit/LiveEdit';
+import CodeInline from '../../components/CodeInline';
 
 const sections = [{ name: 'Demos' }];
 
@@ -157,9 +158,19 @@ export default class BadgePage extends Component {
           sideScrollMenuItems={sections}
           liveEditCode={liveEditCode}
           liveEditScope={{ Button, View, Banner, Avatar }}
-          usageDescription={`Banners are meant to be dissmissed, changing the visible prop will trigger the animation to show and hide the banner. Each action button will dismiss the banner, but you can trigger this manually by changing the visible prop.
-          
-          Usually banners are shown right below the appbar and can be fixed or scrollable. You can toggle this with the position prop.`}
+          usageDescription={
+            <div>
+              Banners are meant to be dissmissed. Changing the{' '}
+              <CodeInline code="visible" type="prop" /> prop will trigger the
+              animation to show and hide the banner. Additionally, each{' '}
+              <CodeInline code="actionItem" type="prop" />
+              will dismiss the banner, but you can trigger this manually by
+              changing the <CodeInline code="visible" type="prop" /> prop.
+              Usually banners are shown right below the appbar and can be fixed
+              or scrollable. You can toggle this with the{' '}
+              <CodeInline code="position" type="prop" /> prop.
+            </div>
+          }
           usageCode={usageCode}
           propData={propData}>
           <Section name="Demos" href="/components/banner#demos" id="demos">
@@ -169,7 +180,18 @@ export default class BadgePage extends Component {
             name="Single Line"
             href="/components/banner#singeline"
             id="singeline">
-            <ComponentDescription text="The singleLine prop forces the banner content to show in a row aligned centered, but it doesn't force the text content onto one line. This is so smaller screens will handle the text more gracefully." />
+            <ComponentDescription
+              text={
+                <div>
+                  The <CodeInline code="singleLine" type="prop" /> prop forces
+                  the banner content to show in a row and aligned to the center.{' '}
+                  {`But it
+                  doesn't force the text content onto one line.`}{' '}
+                  This is so smaller screens will handle the text more
+                  gracefully.
+                </div>
+              }
+            />
             <LiveEdit code={singleLineCode} scope={{ Banner }} />
           </Section>
           <Section

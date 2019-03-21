@@ -6,6 +6,7 @@ import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLay
 import { Icon, Checkbox } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 import LiveEdit from '../../components/LiveEdit/LiveEdit';
+import CodeInline from '../../components/CodeInline';
 
 const sections = [
   { name: 'Demos' },
@@ -331,19 +332,51 @@ export default class CheckboxPage extends Component {
           <Section name="Demos" href="/components/checkbox#demos" id="demos" />
 
           <Section name="Labels" href="/components/checkbox#labels" id="labels">
-            <ComponentDescription text="Labels can be styled with the labelStyle prop which will override other styles. Labels can be on the left or right with labelPos. Clicking a label will activate onPress." />
+            <ComponentDescription
+              text={
+                <div>
+                  Labels can be styled with the{' '}
+                  <CodeInline code="labelStyle" type="prop" /> prop which will
+                  override other styles. Labels can be on the{' '}
+                  <CodeInline code="left" type="value" /> or{' '}
+                  <CodeInline code="right" type="value" /> with{' '}
+                  <CodeInline code="labelPos" type="prop" />. Clicking a label
+                  will activate <CodeInline code="onPress" type="prop" /> if
+                  provided.
+                </div>
+              }
+            />
             <LiveEdit code={labels} scope={{ View, Checkbox }} />
           </Section>
           <Section
             name="Custom Icon"
             href="/components/checkbox#icons"
             id="icons">
-            <ComponentDescription text="Custom icons can be achieved by either passing a string or a node to Icon and checkedIcon. The component will add the approriate color and toggle them based on checked." />
+            <ComponentDescription
+              text={
+                <div>
+                  Custom icons can be achieved by either passing a string or a
+                  node to <CodeInline code="Icon" type="element" /> and{' '}
+                  <CodeInline code="checkedIcon" type="prop" />. The component
+                  will add the approriate color and toggle them based on
+                  <CodeInline code="checked" type="prop" />.
+                </div>
+              }
+            />
             <LiveEdit code={icons} scope={{ View, Icon, Checkbox }} />
           </Section>
 
           <Section name="iOS" href="/components/checkbox#ios" id="ios">
-            <ComponentDescription text="Platform guidelines suggest using an iOS checkbox, you can accomplish this by adding the ios prop. The unchecked state is usually blank." />
+            <ComponentDescription
+              text={
+                <div>
+                  Platform guidelines suggest using an iOS checkbox, you can
+                  accomplish this by adding the{' '}
+                  <CodeInline code="ios" type="prop" /> prop. The unchecked
+                  state is usually blank.
+                </div>
+              }
+            />
             <LiveEdit code={ios} scope={{ Checkbox, Icon, View, Text }} />
           </Section>
         </ComponentPageLayout>

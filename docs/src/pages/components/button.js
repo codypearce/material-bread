@@ -6,6 +6,8 @@ import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLay
 import { IconButton, Icon, Button } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 import LiveEdit from '../../components/LiveEdit/LiveEdit';
+import CodeInline from '../../components/CodeInline';
+import Link from '../../components/Link';
 
 const sections = [
   { name: 'Demos' },
@@ -202,7 +204,7 @@ export default class ButtonPage extends Component {
             'Buttons allow users to take actions, and make choices, with a single tap.'
           }
           componentDescription={
-            'There are a few types of buttons: contained, outlined, and text. They can have text, icon, both, or you can replace them all with children. Each has a couple of normal, states, hover, active, disabled, and loading. See demos for more variations.'
+            'There are a few types of buttons: contained, outlined, and text. Each can have text, icons, or have their children completely replaced. See demos for more variations.'
           }
           docsLink={'https://material.io/design/components/buttons.html'}
           importCode={`import { Button } from 'material-bread';`}
@@ -212,7 +214,15 @@ export default class ButtonPage extends Component {
           usageCode={usageCode}
           propData={propData}
           propsDescription={
-            'You can add any of the TouchableProps or Ripple Props to the root component and they will be spread onto the Ripple component, please see the Ripple page to see full list of props.'
+            <div>
+              You can add any of the{' '}
+              <CodeInline code="TouchableProps" type="prop" /> or{' '}
+              <CodeInline code="Ripple" type="prop" /> props to the root
+              component and they will be spread onto the{' '}
+              <CodeInline code="Ripple" type="element" /> component, please see
+              the <Link href="/component/ripple">Ripple</Link> page to see full
+              list of props.
+            </div>
           }>
           <Section name="Demos" href="/components/button#demos" id="demos" />
 
@@ -220,7 +230,18 @@ export default class ButtonPage extends Component {
             name="Contained"
             href="/components/button#contained"
             id="contained">
-            <ComponentDescription text="Contained buttons are raised buttons and raise higher when pressed. Because of the shadow, you need to use containerStyle to style the root component to add spacing. The style prop will still style the inner Ripple component." />
+            <ComponentDescription
+              text={
+                <div>
+                  Contained buttons are raised buttons and raise higher when
+                  pressed. Because of the shadow, you need to use{' '}
+                  <CodeInline code="containerStyle" type="prop" />
+                  to style the root component to add spacing. The style prop
+                  will still style the inner{' '}
+                  <CodeInline code="Ripple" type="element" /> component.
+                </div>
+              }
+            />
             <LiveEdit code={contained} scope={{ Button, View, Icon }} />
           </Section>
           <Section name="Flat" href="/components/button#flat" id="flat">
@@ -231,7 +252,21 @@ export default class ButtonPage extends Component {
             name="Outlined"
             href="/components/button#outlined"
             id="outlined">
-            <ComponentDescription text="Outlined buttons are similiar to Text Buttons but with a border. The border color will match the text color, changing the textColor will change both. Change the background color by using color prop. The default border width is StyleSheet.hairlineWidth, but you can customize this with the borderSize prop." />
+            <ComponentDescription
+              text={
+                <div>
+                  Outlined buttons are similiar to Text Buttons but with a
+                  border. The border color will match the text color. Changing
+                  the <CodeInline code="textColor" type="prop" /> will change
+                  both. Change the{' '}
+                  <CodeInline code="backgroundColor" type="prop" /> by using
+                  color prop. The default border width is
+                  <CodeInline code="StyleSheet.hairlineWidth" type="value" />,
+                  but you can customize this with the{' '}
+                  <CodeInline code="borderSize" type="prop" /> prop.
+                </div>
+              }
+            />
             <LiveEdit code={outlined} scope={{ Button, View, Icon }} />
           </Section>
           <Section name="Text" href="/components/button#text" id="text">
@@ -246,11 +281,25 @@ export default class ButtonPage extends Component {
             name="Full Width Buttons"
             href="/components/button#full-width"
             id="full-width">
-            <ComponentDescription text="Adding full width will force the component to take up available space." />
+            <ComponentDescription
+              text={
+                <div>
+                  Adding <CodeInline code="fullWidth" type="prop" /> will force
+                  the component to take up available space.
+                </div>
+              }
+            />
             <LiveEdit code={fullwidth} scope={{ Button, Icon, View }} />
           </Section>
           <Section name="Custom" href="/components/button#custom" id="custom">
-            <ComponentDescription text="Adding children will replace the text node, but not icon or loader. This allows for a more customization." />
+            <ComponentDescription
+              text={
+                <div>
+                  Adding children will replace the text node, but not icon or
+                  loader. This allows for a more customization.
+                </div>
+              }
+            />
             <LiveEdit code={custom} scope={{ Button, Icon, View, Text }} />
           </Section>
         </ComponentPageLayout>

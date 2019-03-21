@@ -6,6 +6,7 @@ import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLay
 import { Icon, IconButton, Chip, Avatar } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 import LiveEdit from '../../components/LiveEdit/LiveEdit';
+import CodeInline from '../../components/CodeInline';
 
 const sections = [
   { name: 'Demos' },
@@ -328,31 +329,85 @@ export default class ChipPage extends Component {
             'https://material.io/design/components/selection-controls.html#checkboxes'
           }
           importCode={`import { Chip } from 'material-bread';`}
-          componentDescription={`This is the base Chip component for the four types of chips: InputChip, ChoiceChip, FilterChip, and ActionChip. Using this base component directly gives you more customization options and more flexibility.`}
+          componentDescription={
+            <div>
+              This is the base Chip component for the four types of chips:
+              <CodeInline code="InputChip" type="element" />,{' '}
+              <CodeInline code="ChoiceChip" type="element" />,
+              <CodeInline code="FilterChip" type="element" />, and{' '}
+              <CodeInline code="ActionChip" type="element" />. Using this base
+              component directly gives you more customization options and more
+              flexibility.
+            </div>
+          }
           sideScrollMenuItems={sections}
           liveEditCode={liveEditCode}
           liveEditScope={{ View, Chip, Avatar, Image, Icon }}
           usageCode={usageCode}
           propData={propData}>
           <Section name="Demos" href="/components/chip#demos" id="demos">
-            <ComponentDescription text="Chips have two styles: filled or outlined. Adding onPress will make the entire chip clickable. The rest can be customized as shown below." />
+            <ComponentDescription
+              text={
+                <div>
+                  Chips have two styles:{' '}
+                  <CodeInline code="filled" type="value" /> or{' '}
+                  <CodeInline code="outlined" type="value" />. Adding{' '}
+                  <CodeInline code="onPress" type="prop" />
+                  will make the entire chip clickable. The rest can be
+                  customized as shown below.
+                </div>
+              }
+            />
           </Section>
           <Section name="Delete" href="/components/chip#delete" id="delete">
-            <ComponentDescription text="Adding canDelete provides a prebuilt delete icon on the right side, it will replace any right icon provided. Toggle the visible prop to show or hide the chip." />
+            <ComponentDescription
+              text={
+                <div>
+                  Adding <CodeInline code="canDelete" type="prop" /> provides a
+                  prebuilt delete icon on the right side, it will replace any
+                  right icon provided. Toggle the
+                  <CodeInline code="visible" type="prop" /> prop to show or hide
+                  the chip.
+                </div>
+              }
+            />
             <LiveEdit
               code={deleteCode}
               scope={{ View, Icon, Chip, Avatar, Image }}
             />
           </Section>
           <Section name="Icons" href="/components/chip#icon" id="icon">
-            <ComponentDescription text="There are component spots on either side of the content in the chip. usually you psas an Icon, Avatar, or IconButton, but you can pass whatever you want. However, the right icon will be overwritten if you pass onPress, see second chip." />
+            <ComponentDescription
+              text={
+                <div>
+                  There are component spots on either side of the content in the
+                  chip. usually you psas an{' '}
+                  <CodeInline code="Icon" type="element" />,{' '}
+                  <CodeInline code="Avatar" type="element" />, or
+                  <CodeInline code="IconButton" type="element" />, but you can
+                  pass whatever you want. However, the right icon will be
+                  overwritten if you pass{' '}
+                  <CodeInline code="onPress" type="prop" />, see second chip.
+                </div>
+              }
+            />
             <LiveEdit
               code={iconCode}
               scope={{ View, Icon, Chip, Avatar, Image, IconButton }}
             />
           </Section>
           <Section name="Custom" href="/components/chip#custom" id="custom">
-            <ComponentDescription text="You replace the text content component by passing in children, style the outer component, and change the radius to create more custom chips." />
+            <ComponentDescription
+              text={
+                <div>
+                  You replace the text content component by passing in{' '}
+                  <CodeInline code="children" type="prop" />, style the outer
+                  component, and change the{' '}
+                  <CodeInline code="radius" type="prop" /> prop to create more
+                  custom chips.
+                </div>
+              }
+            />
             <LiveEdit
               code={custom}
               scope={{ View, Icon, Chip, Avatar, Image, IconButton, Text }}

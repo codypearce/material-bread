@@ -65,8 +65,8 @@ export default class IconPage extends Component {
             To apply a global custom theme:
             <ol>
               <li>
-                Wrap your app with the <CodeInline code={'BreadProvider'} />{' '}
-                component
+                Wrap your app with the{' '}
+                <CodeInline code={'BreadProvider'} type={'element'} /> component
               </li>
               <li>
                 Pass in a custom <CodeInline code={'theme'} /> object.

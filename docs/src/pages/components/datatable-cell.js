@@ -11,6 +11,7 @@ import {
   DataTableRow,
 } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import CodeInline from '../../components/CodeInline';
 
 const sections = [{ name: 'Demos' }];
 
@@ -119,7 +120,16 @@ export default class DataTableCellPage extends Component {
           description={`Data Table Cells display invidiual pieces of data.`}
           importCode={`import { DataTableCell } from 'material-bread';`}
           docsLink={'https://material.io/design/components/data-tables.html'}
-          componentDescription={`Data Table Cell's can either be header type or regular cell. You can add onPress, right align them, or add borders on either side.`}
+          componentDescription={
+            <div>
+              Data Table Cells can either be{' '}
+              <CodeInline code="header" type="value" /> or{' '}
+              <CodeInline code="regular" type="value" /> cell. You can add
+              <CodeInline code="onPress" type="props" /> ,{' '}
+              <CodeInline code="right" type="props" /> to align to the right, or
+              add borders on either side.
+            </div>
+          }
           sideScrollMenuItems={sections}
           liveEditCode={liveEditCode}
           liveEditScope={{

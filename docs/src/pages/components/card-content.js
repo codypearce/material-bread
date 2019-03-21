@@ -12,6 +12,7 @@ import {
   Badge,
 } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import CodeInline from '../../components/CodeInline';
 
 const sections = [{ name: 'Demos' }];
 
@@ -99,7 +100,12 @@ export default class CardContentPage extends Component {
           }
           importCode={`import { CardContent } from 'material-bread';`}
           componentDescription={
-            'The CardContent component is meant for describing the main content of a card, usually that content is text of some kind, but it can be Images, Avatars, or anything else.'
+            <div>
+              The CardContent component is meant for describing the main content
+              of a card, usually that content is text of some kind, but it can
+              be <CodeInline code="Images" type="element" />,{' '}
+              <CodeInline code="Images" type="Avatars" />, or anything else.
+            </div>
           }
           sideScrollMenuItems={sections}
           liveEditCode={liveEditCode}

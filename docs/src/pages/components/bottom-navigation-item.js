@@ -12,6 +12,8 @@ import {
 } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 import LiveEdit from '../../components/LiveEdit/LiveEdit';
+import CodeInline from '../../components/CodeInline';
+import Link from '../../components/Link';
 
 const sections = [
   { name: 'Demos' },
@@ -339,21 +341,29 @@ export default class BadgePage extends Component {
             BottomNavigationItem,
             Badge,
           }}
-          usageDescription={`Follow the instructions on your navigation package of choice for setting up bottom tabs with a custom component. Otherwise you can add onPress props to each tab to call your navigate function.`}
           usageCode={usageCode}
           propData={propData}>
           <Section
             name="Demos"
             href="/components/bottom-navigation-item#demos"
-            id="demos">
-            <ComponentDescription text="You can customize each item however you want or replace them completely." />
-          </Section>
+            id="demos"
+          />
 
           <Section
             name="Badges"
             href="/components/bottom-navigation-item#badges"
             id="badges">
-            <ComponentDescription text="Adding a key:value to the badgeProp will display a prop over the icon. See the Badge Component Page for more props." />
+            <ComponentDescription
+              text={
+                <div>
+                  Adding values to the{' '}
+                  <CodeInline code="badgeProp" type="prop" /> will display a
+                  prop over the icon. See the{' '}
+                  <Link href="/components/badge/">Badge</Link> component page
+                  for more props.
+                </div>
+              }
+            />
             <LiveEdit
               code={badges}
               scope={{ View, BottomNavigation, BottomNavigationItem, Badge }}
@@ -364,7 +374,7 @@ export default class BadgePage extends Component {
             name="Styled"
             href="/components/bottom-navigation-item#styled"
             id="styled">
-            <ComponentDescription text="Styling the component directly can be done with the style prop." />
+            <ComponentDescription text="" />
             <LiveEdit
               code={styled}
               scope={{ View, BottomNavigation, BottomNavigationItem }}
@@ -374,7 +384,15 @@ export default class BadgePage extends Component {
             name="Custom"
             href="/components/bottom-navigation-item#custom"
             id="custom">
-            <ComponentDescription text="Adding children will replace all actionItems with the provided children, but still provide logic for for switching the active item." />
+            <ComponentDescription
+              text={
+                <div>
+                  Adding <CodeInline code="children" type="prop" /> will replace
+                  all <CodeInline code="actionItems" type="prop" />, but still
+                  provide logic for for switching the active item.
+                </div>
+              }
+            />
             <LiveEdit
               code={custom}
               scope={{

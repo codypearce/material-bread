@@ -17,7 +17,7 @@ class ComponentDescription extends Component {
         style={{
           color: 'rgba(0, 0, 0, 0.57)',
           fontSize: 14,
-          lineHeight: 1.5,
+          lineHeight: 1.6,
           marginBottom: 16,
         }}>
         {text}

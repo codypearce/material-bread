@@ -11,6 +11,7 @@ import {
   DataTableRow,
 } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import CodeInline from '../../components/CodeInline';
 
 const sections = [{ name: 'Demos' }];
 const propData = [createPropData('style', 'Styles root element', 'object', '')];
@@ -99,7 +100,16 @@ export default class DataTablePage extends Component {
           description={'Data Tables display sets of data.'}
           docsLink={'https://material.io/design/components/data-tables.html'}
           importCode={`import { DataTable } from 'material-bread';`}
-          componentDescription={`DataTables are built from sub components, DataTableCell, DataTableHeader, DataTablePagination, and DataTableRow. Below is a simple example.`}
+          componentDescription={
+            <div>
+              DataTables are built from sub components,{' '}
+              <CodeInline code="DataTableCell" type="element" />,{' '}
+              <CodeInline code="DataTableHeader" type="element" />,{' '}
+              <CodeInline code="DataTablePagination" type="element" />, and{' '}
+              <CodeInline code="DataTableRow" type="element" />. Below is a
+              simple example.
+            </div>
+          }
           sideScrollMenuItems={sections}
           liveEditCode={liveEditCode}
           liveEditScope={{
