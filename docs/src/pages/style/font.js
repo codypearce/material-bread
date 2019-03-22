@@ -3,33 +3,25 @@ import Section from '../../components/Section';
 import PageTitle from '../../components/PageTitle';
 import CodeBlock from '../../components/CodeBlock';
 import Link from '../../components/Link';
+import P from '../../components/P';
 
 export default class FontPage extends Component {
   render() {
     return (
       <div>
         <PageTitle>Font</PageTitle>
-        <p
-          style={{
-            color: 'rgba(0, 0, 0, 0.67)',
-            marginTop: 16,
-            lineHeight: 1.5,
-          }}>
+        <P>
           The default font for Material Design and this package is Roboto,
           however you can use any font you want. To use Roboto you must include
           it in your project in addition to this package. The process to add a
           font is different depending on what platform you are targeting.
-        </p>
+        </P>
+
         <Section
           name="React Native"
           href="/style/font#react-native"
           id="react-native">
-          <p
-            style={{
-              color: 'rgba(0, 0, 0, 0.67)',
-              marginTop: 16,
-              lineHeight: 1.5,
-            }}>
+          <P>
             To install Roboto for both platforms:
             <ol>
               <li>
@@ -46,15 +38,10 @@ export default class FontPage extends Component {
                 </Link>
               </li>
             </ol>
-          </p>
+          </P>
         </Section>
         <Section name="Web" href="/style/font#web" id="web">
-          <p
-            style={{
-              color: 'rgba(0, 0, 0, 0.67)',
-              marginTop: 16,
-              lineHeight: 1.5,
-            }}>
+          <P>
             There are many ways to install fonts in web projects, the quickest
             way is to use the Google Fonts CDN.
             <CodeBlock
@@ -62,7 +49,7 @@ export default class FontPage extends Component {
               canCopy
               small
             />
-          </p>
+          </P>
         </Section>
       </div>
     );

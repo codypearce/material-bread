@@ -4,7 +4,7 @@ import PageTitle from '../../components/PageTitle';
 import CodeBlock from '../../components/CodeBlock';
 import CodeInline from '../../components/CodeInline';
 import { defaultTheme } from '../../../../src/index';
-
+import P from '../../components/P';
 const themeCode = `import * as React from 'react';
 import { BreadProvider, Colors } from 'material-bread';
 import App from './App';
@@ -44,22 +44,14 @@ export default class IconPage extends Component {
     return (
       <div>
         <PageTitle>Theme</PageTitle>
-        <p
-          style={{
-            color: 'rgba(0, 0, 0, 0.67)',
-            marginTop: 16,
-            lineHeight: 1.5,
-          }}>
+        <P>
           The theme defines both global and component specific styles for color,
           spacings, sizings, shadows, fonts, and more. You can customize as much
           or as little as you want.
-        </p>
+        </P>
         <Section name="Customizing" href="/style/theme#custom" id="custom">
-          <p
+          <P
             style={{
-              color: 'rgba(0, 0, 0, 0.67)',
-              marginTop: 16,
-              lineHeight: 1.5,
               marginBottom: 16,
             }}>
             To apply a global custom theme:
@@ -73,37 +65,31 @@ export default class IconPage extends Component {
               </li>
             </ol>
             This will merge your custom changes with the default theme.
-          </p>
+          </P>
           <CodeBlock code={themeCode} canCopy />
         </Section>
         <Section
           name="Apply theme to User Components"
           href="/style/theme#withTheme"
           id="withTheme">
-          <p
+          <P
             style={{
-              color: 'rgba(0, 0, 0, 0.67)',
-              marginTop: 16,
-              lineHeight: 1.5,
               marginBottom: 16,
             }}>
             Using the <CodeInline code={'withTheme'} /> utility function, you
             can use the app theme in your own components.
-          </p>
+          </P>
           <CodeBlock code={withThemeCode} canCopy small />
         </Section>
         <Section name="Default Theme" href="/style/theme#default" id="default">
-          <p
+          <P
             style={{
-              color: 'rgba(0, 0, 0, 0.67)',
-              marginTop: 16,
-              lineHeight: 1.5,
               marginBottom: 16,
             }}>
             Below is the full default theme. You can override any value by
             either passing in theme object with that key specified, or directly
             in components by changing that property with the style prop.
-          </p>
+          </P>
           <CodeBlock
             code={JSON.stringify(defaultTheme, null, 2)}
             canCopy
