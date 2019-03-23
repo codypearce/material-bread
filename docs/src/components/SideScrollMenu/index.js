@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Scrollspy from 'react-scrollspy';
-import SideScrollItem from './SideScrollItem';
 
 class SideScrollMenu extends Component {
   constructor(props) {
@@ -27,9 +26,16 @@ class SideScrollMenu extends Component {
 
   renderMenuItems(item, index) {
     const link = this.formatLinkFromName(item.name);
-
     return (
-      <SideScrollItem key={index} name={item.name} link={link} sub={item.sub} />
+      <li
+        key={index}
+        className={`SideMenu__ListItem ${
+          item.sub ? 'SideMenu__ListItem--sub' : ''
+        }`}>
+        <a className="SideMenu__Link" href={`#${link}`}>
+          {item.name}
+        </a>
+      </li>
     );
   }
   render() {
