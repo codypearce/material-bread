@@ -1,30 +1,12 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import { Snackbar, Button } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import propData from '../../content/components/snackbar/propData';
 
 const sections = [{ name: 'Demos' }];
-
-const propData = [
-  createPropData(
-    'animationDuration',
-    'Duration of entering and leaving animation',
-    'number',
-    '',
-  ),
-  createPropData('buttonLabel', 'Label for snackbar button', 'string', ''),
-  createPropData(
-    'onButtonPress',
-    'Call back on snackbar button if provided',
-    'func',
-    '',
-  ),
-  createPropData('style', 'Styles root element', 'object', ''),
-  createPropData('visible', 'Whether snackbar is visible', 'bool', 'false'),
-];
 
 const liveEditCode = `
 class Demo extends React.Component {

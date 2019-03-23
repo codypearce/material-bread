@@ -1,88 +1,18 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import { Icon, Checkbox } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 import LiveEdit from '../../components/LiveEdit/LiveEdit';
 import CodeInline from '../../components/CodeInline';
+import propData from '../../content/components/checkbox/propData';
 
 const sections = [
   { name: 'Demos' },
   { name: 'label', sub: true },
   { name: 'icon', sub: true },
   { name: 'ios', sub: true },
-];
-
-const propData = [
-  createPropData(
-    'checkboxColor',
-    'Custom color for checked icon',
-    'string',
-    '',
-  ),
-  createPropData('checkboxStyle', 'Styles checkbox icon', 'object', ''),
-
-  createPropData(
-    'checked',
-    'Wether the checkbox is filled or not',
-    'bool',
-    'false',
-  ),
-  createPropData(
-    'checkedIcon',
-    'Renders checked icon',
-    'string || node',
-    'check-box',
-  ),
-  createPropData(
-    'disabled',
-    'Toggles whether the checkbox can be toggled',
-    'bool',
-    '',
-  ),
-  createPropData(
-    'icon',
-    'Renders unchecked icon',
-    'string || node',
-    'check-box-outline-blank',
-  ),
-  createPropData('indeterminate', 'Toggle indeteminate state', 'bool', ''),
-  createPropData('ios', 'Toggle dispalying ios checkbox', 'bool', 'false'),
-  createPropData(
-    'label',
-    'Text for label of checkbox, has Onpress',
-    'bool',
-    '',
-  ),
-  createPropData(
-    'labelPos',
-    'Determines position of label',
-    'string',
-    'right ',
-  ),
-  createPropData('labelStyle', 'Styles label', 'object', ''),
-  createPropData(
-    'onPress',
-    'Call back for clicking on the checkbox or label',
-    'func',
-    '',
-  ),
-  createPropData('rippleColor', 'Custom ripple color', 'string', ''),
-  createPropData(
-    'rippleMatchesCheckbox',
-    'Default Material is dark ripple,  this forces the ripple to match checkbox',
-    'bool',
-    'false',
-  ),
-  createPropData('styles', 'Styles root container', 'object', ''),
-  createPropData(
-    'unCheckedColor',
-    'Custom color for unchecked icon',
-    'string',
-    '',
-  ),
 ];
 
 const liveEditCode = `

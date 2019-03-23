@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import {
@@ -11,29 +10,9 @@ import {
   Button,
 } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import propData from '../../content/components/dialog/propData';
 
 const sections = [{ name: 'Demos' }];
-
-const propData = [
-  createPropData('borderLeft', 'Shows border on the left', 'bool', ''),
-  createPropData('borderRight', 'Shows border on the right', 'bool', ''),
-  createPropData(
-    'flex',
-    'Sets flex, higher numbers take more space of table row',
-    'flex',
-    '1',
-  ),
-  createPropData('onPress', 'Call back on cell', 'func', ''),
-  createPropData('right', 'Displays cell data on the right', 'bool', 'false'),
-  createPropData('style', 'Styles root element', 'object', ''),
-  createPropData('text', 'Text content for cell', 'object', ''),
-  createPropData(
-    'type',
-    'Whether it is a header or normal cell',
-    'string: header, normal',
-    'normal',
-  ),
-];
 
 const liveEditCode = `
 class DialogPage extends React.Component {

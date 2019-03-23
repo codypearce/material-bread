@@ -1,21 +1,12 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import { ToggleButton } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import propData from '../../content/components/togglebutton/propData';
 
 const sections = [{ name: 'Demos' }];
-
-const propData = [
-  createPropData('active', 'Manually control active state', 'bool', ''),
-  createPropData('color', 'Color for icon', 'string', ''),
-  createPropData('icon', 'Name for icon component', 'string', ''),
-  createPropData('onPress', 'Callback for root component', 'func', ''),
-  createPropData('size', 'Size of icon', 'number', ''),
-  createPropData('style', 'Styles root element', 'object', ''),
-];
 
 const liveEditCode = `
 class Demo extends React.Component {

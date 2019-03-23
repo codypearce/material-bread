@@ -1,49 +1,17 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import { BottomNavigation, BottomNavigationItem } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 import LiveEdit from '../../components/LiveEdit/LiveEdit';
 import CodeInline from '../../components/CodeInline';
+import propData from '../../content/components/bottom-navigation/propData';
 
 const sections = [
   { name: 'Demos' },
   { name: 'labels', sub: true },
   { name: 'colored', sub: true },
-];
-
-const propData = [
-  createPropData(
-    'actionItems',
-    'Array of objects displaying tab items',
-    'array',
-    '',
-  ),
-  createPropData(
-    'backgroundColor',
-    'Background Color for root component',
-    'string',
-    'white',
-  ),
-  createPropData(
-    'handleChange',
-    'fires when a BottomNavigationItem is clicked',
-    'func',
-    '',
-  ),
-
-  createPropData(
-    'showLabels',
-    'Sets showLabel true for each BottomNavigationItem',
-    'bool',
-    '',
-  ),
-
-  createPropData('style', 'Styles root element', 'object', ''),
-
-  createPropData('value', 'Index of currently active Item', 'number', ''),
 ];
 
 const liveEditCode = `

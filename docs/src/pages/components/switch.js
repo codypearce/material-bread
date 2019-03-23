@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import { Switch } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import propData from '../../content/components/switch/propData';
 
 const sections = [{ name: 'Demos' }];
-
-const propData = [
-  createPropData('active', 'Whether switch is active', 'bool', ''),
-  createPropData('style', 'Styles root element', 'object', ''),
-];
 
 const liveEditCode = `
 class Demo extends React.Component {

@@ -16,7 +16,6 @@ class PropsTable extends Component {
 
   render() {
     const { data, classes } = this.props;
-    console.log(data);
     return (
       <Table className={classes.table}>
         <TableHead style={{ borderRadius: 6 }}>

@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import { Menu, MenuItem, Button } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import propData from '../../content/components/menu-item/propData';
 
 const sections = [{ name: 'Demos' }];
-
-const propData = [
-  createPropData('disabled', 'Toggles disabled', 'bool', ''),
-  createPropData('onPress', 'Callback on MenuItem', 'func', ''),
-  createPropData('style', 'Styles root element', 'object', ''),
-  createPropData('textStyle', 'Styles menu text', 'object', ''),
-];
 
 const liveEditCode = `
 class MenuPage extends React.Component {

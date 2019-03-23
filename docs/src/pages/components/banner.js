@@ -1,48 +1,13 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import { Button, Banner, Avatar } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 import LiveEdit from '../../components/LiveEdit/LiveEdit';
 import CodeInline from '../../components/CodeInline';
-
+import propData from '../../content/components/banner/propData';
 const sections = [{ name: 'Demos' }];
-
-const propData = [
-  createPropData(
-    'actionItems',
-    'Array of objects for displaying actions',
-    'array',
-    '',
-  ),
-  createPropData(
-    'media',
-    'Displays arbitrary component to the left of the text',
-    'node',
-    '',
-  ),
-  createPropData('message', 'Displays banner message', 'string', ''),
-
-  createPropData(
-    'mobileLayout',
-    'Display mobile layout on desktop',
-    'bool',
-    '',
-  ),
-
-  createPropData(
-    'position',
-    'Position on root',
-    'string: relative, fixed, absolute',
-    'relative',
-  ),
-  createPropData('singleLine', 'Display banner on one line', 'bool', ''),
-  createPropData('visible', 'Whether the banner is visible', 'bool', ''),
-
-  createPropData('style', 'Styles root banner element', 'object', ''),
-];
 
 const liveEditCode = `
 class Header extends React.Component {

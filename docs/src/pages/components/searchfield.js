@@ -1,27 +1,12 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import { SearchField } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import propData from '../../content/components/searchfield/propData';
 
 const sections = [{ name: 'Demos' }];
-
-const propData = [
-  createPropData('color', 'Background color', 'string', 'white'),
-  createPropData('onChangeText', 'Callback when text is changed', 'func', ''),
-  createPropData(
-    'onCloseIcon',
-    'Callback when close icon is pressed',
-    'func',
-    '',
-  ),
-  createPropData('onFocus', 'Callback when focused', 'func', ''),
-  createPropData('onBlur', 'Callback when blurred', 'func', ''),
-  createPropData('style', 'Styles root element', 'object', ''),
-  createPropData('value', 'Search input', 'string', ''),
-];
 
 const liveEditCode = `
 class Demo extends React.Component {

@@ -1,49 +1,12 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import { Badge, IconButton, Icon } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import propData from '../../content/components/badge/propData';
 
 const sections = [{ name: 'Demos' }];
-
-const propData = [
-  createPropData('color', 'Background color for badge', 'string', 'primary'),
-
-  createPropData('containerStyle', 'Styles badge container', 'object', ''),
-
-  createPropData(
-    'content',
-    'Content displayed in badge',
-    'string || number',
-    '',
-  ),
-
-  createPropData('left', 'Left position', 'number', 'auto'),
-
-  createPropData('onPress', 'Onpress callback', 'func', ''),
-
-  createPropData(
-    'position',
-    'Positions content on children ',
-    'string: left, right',
-    'right',
-  ),
-  createPropData('right', 'Right position', 'number', '0'),
-
-  createPropData(
-    'size',
-    'Size of badge, text scales with size',
-    'number',
-    '16',
-  ),
-
-  createPropData('textColor', 'Text color for badge', 'string', 'white'),
-  createPropData('top', 'Top position', 'number', '0'),
-
-  createPropData('style', 'Styles badge element', 'object', ''),
-];
 
 const liveEditCode = `<View style={{flexDirection: 'row', alignItems: 'center'}}>
     <Badge size={14} content={4}>

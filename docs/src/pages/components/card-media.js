@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import {
@@ -12,29 +11,9 @@ import {
 } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 import CodeInline from '../../components/CodeInline';
+import propData from '../../content/components/card-media/propData';
 
 const sections = [{ name: 'Demos' }];
-
-const propData = [
-  createPropData(
-    'height',
-    'Sets height of section and thus the image',
-    'number',
-    '194',
-  ),
-  createPropData(
-    'image',
-    'Displays image across the whole card media section',
-    'node',
-    '',
-  ),
-  createPropData('subtitle', 'Renders subtitle below the title', 'string', ''),
-  createPropData('subtitleStyles', 'Styles for subtitle', 'object', ''),
-
-  createPropData('title', 'Renders title', 'string', ''),
-  createPropData('titleStyles', 'Styles for title', 'object', ''),
-  createPropData('style', 'Styles root element', 'object', ''),
-];
 
 const liveEditCode = `<View style={{flexDirection: 'row', alignItems: 'center'}}>
   <Card style={{width: 400}}>

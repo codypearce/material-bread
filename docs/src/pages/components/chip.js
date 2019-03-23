@@ -1,59 +1,18 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import { Icon, IconButton, Chip, Avatar } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 import LiveEdit from '../../components/LiveEdit/LiveEdit';
 import CodeInline from '../../components/CodeInline';
+import propData from '../../content/components/chip/propData';
 
 const sections = [
   { name: 'Demos' },
   { name: 'delete', sub: true },
   { name: 'icons', sub: true },
   { name: 'custom', sub: true },
-];
-
-const propData = [
-  createPropData(
-    'chipStyle',
-    'Style of chip',
-    'string: outlined, flat',
-    'flat',
-  ),
-  createPropData('color', 'Color of chip background and outline', 'string', ''),
-  createPropData(
-    'disabled',
-    'Adds disabled styles and prevents clicking',
-    'bool',
-    '',
-  ),
-  createPropData(
-    'leftIcon',
-    'Displays component on the left of the content',
-    'node',
-    '',
-  ),
-  createPropData(
-    'onDelete',
-    'Callback func for delete icon, adding this will add delete icon',
-    'func',
-    '',
-  ),
-  createPropData('onPress', 'Callback func for chip, adds ripple', 'func', ''),
-  createPropData('radius', 'Radius of chip and ripple', 'number', '16'),
-  createPropData(
-    'rightIcon',
-    'Displays component on the right of the content',
-    'node',
-    '',
-  ),
-  createPropData('style', 'Styles root component', 'string', ''),
-  createPropData('text', 'Text content for chip', 'string', ''),
-  createPropData('textStyles', 'Styles text content', 'string', ''),
-  createPropData('themeColor', 'Assigns a theme color to chip', 'string', ''),
-  createPropData('visible', 'Toggle whether chip is shown or not', 'bool', ''),
 ];
 
 const liveEditCode = `

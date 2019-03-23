@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import {
@@ -11,13 +10,9 @@ import {
   ListExpanded,
 } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import propData from '../../content/components/list/propData';
 
 const sections = [{ name: 'Demos' }];
-
-const propData = [
-  createPropData('elevation', 'Shadow for list container', 'number', ''),
-  createPropData('style', 'Styles root element', 'object', ''),
-];
 
 const liveEditCode = `
 class ListPage extends React.Component {

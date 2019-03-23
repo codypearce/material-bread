@@ -1,30 +1,12 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import { Searchbar } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import propData from '../../content/components/searchbar/propData';
 
 const sections = [{ name: 'Demos' }];
-
-const propData = [
-  createPropData('onChangeText', 'Callback when text is changed', 'func', ''),
-  createPropData(
-    'onCloseIcon',
-    'Callback when close icon is pressed',
-    'func',
-    '',
-  ),
-  createPropData(
-    'onNavigation',
-    'Callback when navigation icon is Pressed',
-    'func',
-    '',
-  ),
-  createPropData('style', 'Styles root element', 'object', ''),
-  createPropData('value', 'Search input', 'string', ''),
-];
 
 const liveEditCode = `
 class Demo extends React.Component {

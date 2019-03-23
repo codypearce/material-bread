@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import { IconButton, Icon, Button } from '../../../../src/index';
@@ -8,6 +7,7 @@ import ComponentDescription from '../../components/ComponentPage/ComponentDescri
 import LiveEdit from '../../components/LiveEdit/LiveEdit';
 import CodeInline from '../../components/CodeInline';
 import Link from '../../components/Link';
+import propData from '../../content/components/button/propData';
 
 const sections = [
   { name: 'Demos' },
@@ -18,89 +18,6 @@ const sections = [
   { name: 'icons', sub: true },
   { name: 'fullwidth', sub: true },
   { name: 'custom', sub: true },
-];
-
-const propData = [
-  createPropData(
-    'borderSize',
-    'Size of border for outlined buttons',
-    'number',
-    'StyleSheet.hairlineWidth',
-  ),
-  createPropData(
-    'color',
-    'Background color for each buttontype',
-    'string',
-    'theme.base.primary',
-  ),
-  createPropData(
-    'containerStyle',
-    'Styles container of contained button',
-    'object',
-    '',
-  ),
-
-  createPropData(
-    'dense',
-    'Toggle dense type, button will be smaller',
-    'bool',
-    '',
-  ),
-  createPropData('disabled', 'Toggle disabled styles', 'bool', ''),
-  createPropData(
-    'fullWidth',
-    'Forces button to to take up 100% width',
-    'bool',
-    '',
-  ),
-  createPropData(
-    'hideLabel',
-    'Will hide label, useful with loading to show only loader',
-    'bool',
-    '',
-  ),
-  createPropData(
-    'icon',
-    'Icon element, will be displayed according to iconPosition',
-    'node',
-    '',
-  ),
-  createPropData(
-    'iconPosition',
-    'Postion of icon in button',
-    'string: left, right',
-    'left',
-  ),
-  createPropData('loading', 'Toggles loading indicator in button', 'bool', ''),
-  createPropData('onPress', 'Callback on button', 'func', ''),
-  createPropData(
-    'radius',
-    'Border radius for both ripple and component',
-    'number',
-    'theme.button.borderRadius',
-  ),
-  createPropData(
-    'rippleColor',
-    'Overrides default logic for ripple coloring',
-    'string',
-    'varies',
-  ),
-  createPropData('style', 'Styles root element', 'object', ''),
-  createPropData('text', 'Button Text', 'string', ''),
-  createPropData(
-    'textColor',
-    'Color applied to text, styles border if type is outlined',
-    'string',
-    'theme.base.primary',
-  ),
-  createPropData('textStyle', 'Styles applied to text', 'object', ''),
-
-  createPropData(
-    'type',
-    'Indicates the type of button from available',
-    'string: flat, text, outlined, contained',
-    'text',
-  ),
 ];
 
 const liveEditCode = `<View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>

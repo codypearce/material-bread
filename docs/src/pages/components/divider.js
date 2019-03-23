@@ -1,22 +1,11 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import { Divider } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
-
+import propData from '../../content/components/divider/propData';
 const sections = [{ name: 'Demos' }];
-
-const propData = [
-  createPropData(
-    'marginVertical',
-    'Adds magin on top and bottom for spacing',
-    'number',
-    '',
-  ),
-  createPropData('style', 'Styles root element', 'object', ''),
-];
 
 const liveEditCode = `
 class Dividers extends React.Component {

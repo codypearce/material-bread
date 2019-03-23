@@ -1,51 +1,12 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import { ProgressBar, Button } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import propData from '../../content/components/progress-bar/propData';
 
 const sections = [{ name: 'Demos' }];
-
-const propData = [
-  createPropData(
-    'animationDuration',
-    'Length of each animation loop in ms',
-    'number',
-    '1000',
-  ),
-  createPropData('color', 'Color of bar', 'sstring', ''),
-  createPropData(
-    'determinate',
-    'Whether bar continues to animate or not',
-    'bool',
-    '',
-  ),
-  createPropData('easing', 'Easing function for bar animation', 'func', ''),
-  createPropData('height', 'Height of track and indicator', 'number', '4'),
-  createPropData(
-    'indcatorStartPosition',
-    'Where the indicator starts before the animation begins',
-    'number',
-    '0',
-  ),
-
-  createPropData('style', 'Styles root element', 'object', ''),
-  createPropData(
-    'trackStyle',
-    'Styles track containing the indicator',
-    'object',
-    '',
-  ),
-  createPropData(
-    'value',
-    'Percent out of 100 the indcator should fill in determinate mode',
-    'number',
-    '',
-  ),
-  createPropData('visible', 'Whether bar is visible or not', 'bool', ''),
-];
 
 const liveEditCode = `
 class ProgressBarDemo extends React.Component {

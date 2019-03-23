@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import {
@@ -12,9 +11,9 @@ import {
 } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 import CodeInline from '../../components/CodeInline';
+import propData from '../../content/components/datatable/propData';
 
 const sections = [{ name: 'Demos' }];
-const propData = [createPropData('style', 'Styles root element', 'object', '')];
 
 const liveEditCode = `
 class Table extends React.Component {

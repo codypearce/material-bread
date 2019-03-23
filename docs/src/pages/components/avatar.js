@@ -1,66 +1,18 @@
 import React, { Component } from 'react';
 import { View, Image } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import { Avatar } from '../../../../src/index';
 import LiveEdit from '../../components/LiveEdit/LiveEdit';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 import CodeInline from '../../components/CodeInline';
+import propData from '../../content/components/avatar/propData';
 
 const sections = [
   { name: 'Demos' },
   { name: 'icons', sub: true },
   { name: 'text', sub: true },
   { name: 'custom', sub: true },
-];
-
-const propData = [
-  createPropData(
-    'color',
-    'Background color for avatar, applies to text and icon',
-    'string',
-    'primary',
-  ),
-  createPropData(
-    'content',
-    'Name of icon or string to be rendered',
-    'string',
-    '',
-  ),
-  createPropData('contentColor', 'Color of icon or text', 'string', 'white'),
-  createPropData(
-    'contentSize',
-    'Custom size that is not relative to avatar',
-    'number',
-    '',
-  ),
-  createPropData('contentStyles', 'Styles applied to content', 'object', ''),
-
-  createPropData('image', 'Display image element as avatar', 'node', ''),
-
-  createPropData('onPress', 'Onpress callback', 'func', ''),
-  createPropData(
-    'ripple',
-    'enables ripple if onPress is provided',
-    'bool',
-    'false',
-  ),
-  createPropData(
-    'size',
-    'Size of avatar, content scales with size',
-    'number',
-    '24',
-  ),
-
-  createPropData(
-    'type',
-    'Indicates which type of avatar',
-    'string: image, icon, text',
-    '',
-  ),
-
-  createPropData('style', 'Styles root element', 'object', ''),
 ];
 
 const liveEditCode = `<View style={{flexDirection: 'row', alignItems: 'center'}}>

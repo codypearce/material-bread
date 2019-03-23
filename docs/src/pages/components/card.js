@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, Image, Text } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import {
@@ -16,35 +15,12 @@ import {
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 import LiveEdit from '../../components/LiveEdit/LiveEdit';
 import CodeInline from '../../components/CodeInline';
+import propData from '../../content/components/card/propData';
 
 const sections = [
   { name: 'Demos' },
   { name: 'Action Media', sub: true },
   { name: 'Clickable', sub: true },
-];
-
-const propData = [
-  createPropData(
-    'onPress',
-    'Call back when card is pressed, adds ripple to whole component',
-    'func',
-    '',
-  ),
-  createPropData(
-    'outlined',
-    'Adds a hairlineWidth border around card',
-    'bool',
-    '',
-  ),
-  createPropData('radius', 'Border radius of card', 'number', '4'),
-  createPropData(
-    'rippleProps',
-    'Object is spread to Ripple Component',
-    'object',
-    '',
-  ),
-  createPropData('shadow', 'Adds shadow for all platforms', 'number', '1'),
-  createPropData('style', 'Styles root element', 'object', ''),
 ];
 
 const liveEditCode = `<View style={{flexDirection: 'row', alignItems: 'center'}}>

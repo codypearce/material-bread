@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import {
@@ -13,19 +12,8 @@ import {
 } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 import CodeInline from '../../components/CodeInline';
-
+import propData from '../../content/components/card-content/propData';
 const sections = [{ name: 'Demos' }];
-
-const propData = [
-  createPropData('onPress', 'Callback func on container', 'func', ''),
-  createPropData(
-    'rippleProps',
-    'Props spread to ripple if onPress is supplied',
-    'object',
-    '',
-  ),
-  createPropData('style', 'Styles root element', 'object', ''),
-];
 
 const liveEditCode = `<View style={{flexDirection: 'row', alignItems: 'center'}}>
   <Card style={{width: 400}}>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import {
@@ -11,21 +10,9 @@ import {
   Overline,
 } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import propData from '../../content/components/typography/propData';
 
 const sections = [{ name: 'Demos' }];
-
-const propData = [
-  createPropData('align', 'Applies text-align to component', 'string', 'start'),
-  createPropData('color', 'Text color', 'string', ''),
-  createPropData(
-    'gutterBottom',
-    'Adds marginBottom 10 to create space',
-    'bool',
-    'false',
-  ),
-
-  createPropData('style', 'Styles root element', 'object', ''),
-];
 
 const liveEditCode = `
 class Demo extends React.Component {

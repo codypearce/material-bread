@@ -1,27 +1,12 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import { Hoverable } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import propData from '../../content/utils/hoverable/propData';
 
 const sections = [{ name: 'Demos' }];
-
-const propData = [
-  createPropData(
-    'onHoverIn',
-    'Call back when mouse enters component',
-    'func',
-    '',
-  ),
-  createPropData(
-    'onHoverOut',
-    'Call back when mouse leaves component',
-    'func',
-    '',
-  ),
-];
 
 const liveEditCode = `
 class Demo extends React.Component {

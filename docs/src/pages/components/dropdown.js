@@ -1,27 +1,12 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import { Dropdown } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import propData from '../../content/components/dropdown/propData';
 
 const sections = [{ name: 'Demos' }];
-
-const propData = [
-  createPropData('buttonStyle', 'Styles for button', 'object', ''),
-  createPropData('label', 'Text for button', 'string', ''),
-  createPropData('menuItems', 'Items to display in dropdown', 'array', ''),
-  createPropData(
-    'onSelect',
-    'Callback when selecting new menu item',
-    'func',
-    '',
-  ),
-  createPropData('selectedItem', 'Item currently selected', 'string', ''),
-  createPropData('style', 'Styles root element', 'object', ''),
-  createPropData('visible', 'Whether menu is visible', 'bool', ''),
-];
 
 const liveEditCode = `
 class DropdownPage extends React.Component {

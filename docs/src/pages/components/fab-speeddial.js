@@ -1,29 +1,12 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import { FabSpeedDial } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import propData from '../../content/components/fab-speeddial/propData';
 
 const sections = [{ name: 'Demos' }];
-
-const propData = [
-  createPropData(
-    'Actions',
-    'Array of actions or other nodes to display when fab is activated',
-    'array',
-    '',
-  ),
-
-  createPropData(
-    'onPress',
-    'Call back on main fab, this will activate animation as well',
-    'func',
-    '',
-  ),
-  createPropData('style', 'Styles root element', 'object', ''),
-];
 
 const liveEditCode = `
 class FabPage extends React.Component {

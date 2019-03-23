@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import {
@@ -14,25 +13,9 @@ import {
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 import LiveEdit from '../../components/LiveEdit/LiveEdit';
 import CodeInline from '../../components/CodeInline';
+import propData from '../../content/components/card-actions/propData';
 
 const sections = [{ name: 'Demos' }, { name: 'custom', sub: true }];
-
-const propData = [
-  createPropData(
-    'leftActionItems',
-    'Can be array of objects or nodes, shows on the left as buttons',
-    'array',
-    '',
-  ),
-  createPropData(
-    'rightActionItems',
-    'Can be array of objects or nodes, shows on the right as IconButtons',
-    'array',
-    '',
-  ),
-
-  createPropData('style', 'Styles root element', 'object', ''),
-];
 
 const liveEditCode = `<View style={{flexDirection: 'row', alignItems: 'center'}}>
   <Card style={{width: 400}}>

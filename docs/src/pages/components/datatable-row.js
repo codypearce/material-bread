@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import {
@@ -11,21 +10,9 @@ import {
   DataTableRow,
 } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import propData from '../../content/components/datatable-row/propData';
 
 const sections = [{ name: 'Demos' }];
-
-const propData = [
-  createPropData('checked', `Whether row's chebox is selected`, 'bool', ''),
-  createPropData('onPressCheckBox', 'Call back on checkbox', 'func', ''),
-  createPropData(
-    'onPress',
-    'Call back on whole row, will default to onPressCheckBox if provided',
-    'func',
-    '',
-  ),
-  createPropData('showcheckBox', 'Toggle checkbox display', 'bool', ''),
-  createPropData('style', 'Styles root element', 'object', ''),
-];
 
 const liveEditCode = `
 class Table extends React.Component {

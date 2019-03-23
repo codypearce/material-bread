@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import { Paper } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import propData from '../../content/components/paper/propData';
 
 const sections = [{ name: 'Demos' }];
-
-const propData = [
-  createPropData('radius', 'Border Radius for paper', 'number', ''),
-  createPropData('shadow', 'Sets shadow on all platforms', 'number', ''),
-
-  createPropData('style', 'Styles root element', 'object', ''),
-];
 
 const liveEditCode = `
 class PaperDemo extends React.Component {

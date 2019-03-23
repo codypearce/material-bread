@@ -1,24 +1,12 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import { Icon } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import propData from '../../content/components/icon/propData';
 
 const sections = [{ name: 'Demos' }];
-
-const propData = [
-  createPropData('color', 'Icon Color', 'string', ''),
-  createPropData(
-    'name',
-    'Name of icon that matches material names',
-    'string',
-    '',
-  ),
-  createPropData('size', 'Size of icon', 'number', ''),
-  createPropData('style', 'Styles root element', 'object', ''),
-];
 
 const liveEditCode = `
 class IconPage extends React.Component {

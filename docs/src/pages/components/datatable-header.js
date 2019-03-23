@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import {
@@ -11,25 +10,9 @@ import {
   DataTableRow,
 } from '../../../../src/index';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import propData from '../../content/components/datatable-cell/propData';
 
 const sections = [{ name: 'Demos' }];
-
-const propData = [
-  createPropData(
-    'leftActions',
-    'Displays actions on left of header',
-    'array',
-    '',
-  ),
-  createPropData(
-    'rightActions',
-    'Displays actions on right of header',
-    'array',
-    '',
-  ),
-  createPropData('style', 'Styles root element', 'object', ''),
-  createPropData('title', 'Table title', 'string', ''),
-];
 
 const liveEditCode = `
 class Table extends React.Component {
