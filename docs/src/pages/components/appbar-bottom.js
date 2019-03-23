@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import { AppbarBottom, IconButton, Button } from '../../../../src/index';
@@ -8,71 +7,13 @@ import LiveEdit from '../../components/LiveEdit/LiveEdit';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 import Link from '../../components/Link';
 import CodeInline from '../../components/CodeInline';
+import propData from '../../content/components/appbar-bottom/propData';
 
 const sections = [
   { name: 'Demos' },
   { name: 'end fab', sub: true },
   { name: 'no fab', sub: true },
   { name: 'custom', sub: true },
-];
-
-const propData = [
-  createPropData(
-    'actionItems',
-    'Each can be an object or node, renders on the right',
-    'array',
-    '',
-  ),
-  createPropData('appbarStyles', 'Styles appbar around content', 'object', ''),
-  createPropData(
-    'color',
-    `Component's theme color`,
-    'string: primary, secondary, dark, white',
-    'primaryColor',
-  ),
-
-  createPropData('fab', `Displays fab or not`, 'bool', 'false'),
-  createPropData(
-    'fabCutout',
-    `Displays cutout on appbar for fab`,
-    'bool',
-    'false',
-  ),
-  createPropData('fabIcon', `Name of Fab Icon`, 'string', ''),
-  createPropData(
-    'fabPosition',
-    `Describes position of fab`,
-    'string: center, end',
-    'center',
-  ),
-  createPropData('fabStyles', `Styles applied to fab`, 'object', ''),
-  createPropData('onFab', 'OnPress for fab if provided.', 'func', ''),
-  createPropData(
-    'onNavigation',
-    'OnPress for navigationType IconButton if provided.',
-    'func',
-    '',
-  ),
-
-  createPropData(
-    'navigationIcon',
-    'Replaces navigationTyp element and renders on the far left before Title',
-    'node',
-    '',
-  ),
-  createPropData(
-    'navigationType',
-    'Name of IconButton, renders on the far left before Title.',
-    'string',
-    '',
-  ),
-
-  createPropData(
-    'style',
-    'Styles root element wrapping fab and appbar',
-    'object',
-    '',
-  ),
 ];
 
 const liveEditCode = `<AppbarBottom 

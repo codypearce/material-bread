@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Image, Text, View } from 'react-native';
-import createPropData from '../../utils/createPropData';
 import Section from '../../components/Section';
 import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
 import {
@@ -15,6 +14,7 @@ import LiveEdit from '../../components/LiveEdit/LiveEdit';
 import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
 import Link from '../../components/Link';
 import CodeInline from '../../components/CodeInline';
+import propData from '../../content/components/appbar/propData';
 
 const sections = [
   { name: 'Demos' },
@@ -23,86 +23,6 @@ const sections = [
   { name: 'search bar', sub: true },
   { name: 'subtitle', sub: true },
   { name: 'custom', sub: true },
-];
-
-const propData = [
-  createPropData(
-    'actionItems',
-    'Each can be an object or node, renders on the right',
-    'array',
-    '',
-  ),
-  createPropData(
-    'barType',
-    `Type of appbar, other components change based on type`,
-    'string: regular, prominent, dense, prominent dense',
-    'regular',
-  ),
-
-  createPropData(
-    'backgroundImage',
-    `Renders image element as background`,
-    'node',
-    '',
-  ),
-
-  createPropData(
-    'color',
-    `Component's theme color`,
-    'string: primary, secondary, dark, white',
-    'primary',
-  ),
-  createPropData(
-    'onNavigation',
-    'OnPress for navigationType IconButton if provided.',
-    'func',
-    '',
-  ),
-  createPropData(
-    'onTitle',
-    'OnPress for title string if provided.',
-    'func',
-    '',
-  ),
-  createPropData(
-    'navigationIcon',
-    'Replaces navigationTyp element and renders on the far left before Title',
-    'node',
-    '',
-  ),
-  createPropData(
-    'navigationType',
-    'Name of IconButton, renders on the far left before Title.',
-    'string',
-    '',
-  ),
-
-  createPropData(
-    'position',
-    'CSS position values applied to root appbar',
-    'string: fixed, relative, absolute',
-    'relative',
-  ),
-  createPropData(
-    'subtitle',
-    'Only displays on barType prominent, under the Title',
-    'string',
-    '',
-  ),
-  createPropData('subtitleStyles', 'Styles Subtitle', 'object', ''),
-  createPropData(
-    'title',
-    'Displays on the left after navigation. If string it follows guidelines',
-    'string || node',
-    '',
-  ),
-  createPropData(
-    'titleStyles',
-    'Styles title if provided as string',
-    'object',
-    '',
-  ),
-  createPropData('style', 'Styles root element', 'object', ''),
 ];
 
 const liveEditCode = ` <Appbar

@@ -16,6 +16,7 @@ class PropsTable extends Component {
 
   render() {
     const { data, classes } = this.props;
+    console.log(data);
     return (
       <Table className={classes.table}>
         <TableHead style={{ borderRadius: 6 }}>
@@ -47,7 +48,7 @@ class PropsTable extends Component {
             borderBottomLeftRadius: 6,
           }}>
           {data.map(row => (
-            <TableRow className={classes.row} key={row.id}>
+            <TableRow className={classes.row} key={row.name}>
               <TableCell style={{ borderBottomLeftRadius: 6 }}>
                 {row.name}
               </TableCell>
