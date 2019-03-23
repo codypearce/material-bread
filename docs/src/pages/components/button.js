@@ -91,7 +91,7 @@ const icons = `<View style={{flexDirection: 'row', alignItems: 'center', justify
     <Button text={'Fav'}  type="flat" icon={<Icon name="favorite" />}  color={'#00BCD4'} iconPosition="right" dense/>
 </View>`;
 
-const fullwidth = `<View style={{flexDirection: 'column', alignItems: 'space-between'}}>
+const fullwidth = `<View style={{flexDirection: 'column'}}>
     <Button fullWidth text={'Contained'} type="contained"  containerStyle={{marginBottom: 8}} />
     <Button fullWidth text={'Flat'} type="flat" color={'#E91E63'} style={{marginBottom: 8}} />
     <Button fullWidth text={'Outlined'} type="outlined" textColor={'#673AB7'} style={{marginBottom: 8}} />

@@ -8,7 +8,7 @@ import Ripple from '../Ripple';
 class ButtonBase extends Component {
   static propTypes = {
     theme: PropTypes.object,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     children: PropTypes.node,
 
     type: PropTypes.string,
@@ -33,8 +33,8 @@ class ButtonBase extends Component {
     text: PropTypes.string,
     textStyle: PropTypes.object,
 
-    typeTextColor: PropTypes.object,
-    typeButtonStyles: PropTypes.object,
+    typeTextColor: PropTypes.string,
+    typeButtonStyles: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     typeRippleColor: PropTypes.string,
     onPressIn: PropTypes.func,
     onPressOut: PropTypes.func,
@@ -86,7 +86,6 @@ class ButtonBase extends Component {
           alignItems: 'center',
           alignSelf: 'center',
           justifyContent: 'center',
-          textAlign: 'center',
           marginRight: hideLabel ? 0 : 8,
         }}
       />

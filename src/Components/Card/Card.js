@@ -11,7 +11,7 @@ class Card extends Component {
     style: PropTypes.object,
     outlined: PropTypes.bool,
     shadow: PropTypes.number,
-    radius: PropTypes.numbeer,
+    radius: PropTypes.number,
     onPress: PropTypes.func,
   };
 

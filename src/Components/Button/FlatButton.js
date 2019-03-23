@@ -15,7 +15,7 @@ class FlatButton extends Component {
     theme: PropTypes.object,
     onPressIn: PropTypes.func,
     onPressOut: PropTypes.func,
-    containerStyle: PropTypes.styles,
+    containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   };
   state = {
     stateBackgroundColor: null,

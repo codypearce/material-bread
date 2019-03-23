@@ -113,7 +113,13 @@ class Banner extends Component {
     return (
       <View style={[styles.content, platformStyles.content]}>
         {media ? <View style={platformStyles.image}>{media}</View> : null}
-        <BodyText type={2} style={styles.message}>
+        <BodyText
+          type={2}
+          style={{
+            lineHeight: 20,
+            maxWidth: 460,
+            flexShrink: 1,
+          }}>
           {message}
         </BodyText>
       </View>
@@ -223,11 +229,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexShrink: 1,
   },
-  message: {
-    lineHeight: 20,
-    maxWidth: 460,
-    flexShrink: 1,
-  },
+
   buttons: {
     flexDirection: 'row',
     marginRight: 8,

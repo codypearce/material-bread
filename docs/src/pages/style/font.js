@@ -21,35 +21,40 @@ export default class FontPage extends Component {
           name="React Native"
           href="/style/font#react-native"
           id="react-native">
-          <P>
-            To install Roboto for both platforms:
+          <div>
+            <P> To install Roboto for both platforms:</P>
+
             <ol>
               <li>
-                Download Roboto from{' '}
-                <Link href="https://fonts.google.com/specimen/Roboto">
-                  Google Fonts
-                </Link>
+                <P style={{ margin: 0 }}>
+                  Download Roboto from{' '}
+                  <Link href="https://fonts.google.com/specimen/Roboto">
+                    Google Fonts
+                  </Link>
+                </P>
               </li>
               <li>
-                Follow the steps provided here to add fonts to React Native for
-                both{' '}
-                <Link href="https://medium.com/react-native-training/react-native-custom-fonts-ccc9aacf9e5e">
-                  iOS and Android
-                </Link>
+                <P style={{ margin: 0 }}>
+                  Follow the steps provided here to add fonts to React Native
+                  for both{' '}
+                  <Link href="https://medium.com/react-native-training/react-native-custom-fonts-ccc9aacf9e5e">
+                    iOS and Android
+                  </Link>
+                </P>
               </li>
             </ol>
-          </P>
+          </div>
         </Section>
         <Section name="Web" href="/style/font#web" id="web">
           <P>
             There are many ways to install fonts in web projects, the quickest
             way is to use the Google Fonts CDN.
-            <CodeBlock
-              code={`<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"></link>`}
-              canCopy
-              small
-            />
           </P>
+          <CodeBlock
+            code={`<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"></link>`}
+            canCopy
+            small
+          />
         </Section>
       </div>
     );

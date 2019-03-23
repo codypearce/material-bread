@@ -5,7 +5,7 @@ import withTheme from '../Theme/withTheme';
 
 class Icon extends Component {
   static propTypes = {
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     theme: PropTypes.object,
     color: PropTypes.string,
     size: PropTypes.number,

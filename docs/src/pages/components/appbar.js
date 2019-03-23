@@ -101,7 +101,7 @@ class Header extends React.Component {
           <SearchField 
             style={{
               marginHorizontal: 24, 
-              flex: this.state.isSearching ? 1 : 'auto'
+              flex: this.state.isSearching ? 1 : -1
             }}
             primary
             value={this.state.value}

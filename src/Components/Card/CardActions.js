@@ -17,7 +17,9 @@ class CardActions extends Component {
     const { leftActionItems } = this.props;
     return leftActionItems.map(item => {
       if (item.name) {
-        return <Button onPress={item.onPress} text={item.name} />;
+        return (
+          <Button key={item.name} onPress={item.onPress} text={item.name} />
+        );
       } else {
         return item;
       }
@@ -29,6 +31,7 @@ class CardActions extends Component {
       if (item.name) {
         return (
           <IconButton
+            key={item.name}
             onPress={item.onPress}
             name={item.name}
             size={item.size ? item.size : 24}

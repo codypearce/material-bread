@@ -8,7 +8,7 @@ class CodeInline extends Component {
 
   static propTypes = {
     code: PropTypes.node,
-    type: PropTypes.bool,
+    type: PropTypes.string,
   };
 
   render() {

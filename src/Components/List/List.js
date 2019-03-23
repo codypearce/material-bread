@@ -6,7 +6,7 @@ import Paper from '../Paper';
 class List extends Component {
   static propTypes = {
     children: PropTypes.node,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     elevation: PropTypes.number,
   };
   render() {

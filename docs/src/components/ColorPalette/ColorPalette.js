@@ -22,7 +22,12 @@ export default class ColorPalette extends Component {
     const { color, name, hasExtra, style } = this.props;
     return (
       <div style={style}>
-        <ColorBlock name={500} color={Colors[color][500]} header={name} />
+        <ColorBlock
+          key={500}
+          name={500}
+          color={Colors[color][500]}
+          header={name}
+        />
         {palleteList.map(item => {
           return (
             <ColorBlock

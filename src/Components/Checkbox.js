@@ -20,7 +20,7 @@ class Checkbox extends Component {
     rippleMatchesCheckbox: PropTypes.bool,
     indeterminate: PropTypes.bool,
 
-    label: PropTypes.object,
+    label: PropTypes.string,
     labelStyle: PropTypes.object,
     labelPos: PropTypes.string,
 
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
     padding: 6,
     flexDirection: 'row',
     alignItems: 'center',
-    justfyContent: 'center',
+    justifyContent: 'center',
   },
   label: {},
 });

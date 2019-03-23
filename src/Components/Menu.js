@@ -9,7 +9,7 @@ class Menu extends Component {
     button: PropTypes.node,
     children: PropTypes.node,
     onHidden: PropTypes.func,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     visible: PropTypes.bool,
     menuStyle: PropTypes.object,
     sameWidth: PropTypes.bool,

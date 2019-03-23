@@ -85,7 +85,7 @@ class Snackbar extends Component {
       return (
         <Button
           onPress={() => onButtonPress()}
-          style={styles.button}
+          style={{ marginHorizontal: 8, marginVertical: 6 }}
           type="text"
           text={buttonLabel}
         />
@@ -147,10 +147,6 @@ const styles = StyleSheet.create({
     color: 'white',
     marginLeft: 16,
     marginVertical: 14,
-  },
-  button: {
-    marginHorizontal: 8,
-    marginVertical: 6,
   },
 });
 

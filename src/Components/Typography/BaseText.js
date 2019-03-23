@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
 
 export default class BaseText extends Component {
   static propTypes = {
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     children: PropTypes.node,
     typographyStyles: PropTypes.object,
     align: PropTypes.string,
@@ -39,8 +39,7 @@ export default class BaseText extends Component {
             marginBottom: gutterBottom ? 10 : 0,
           },
           style,
-        ]}
-        {...this.props}>
+        ]}>
         {children}
       </Text>
     );

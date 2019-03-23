@@ -20,7 +20,7 @@ class ProgressCircle extends PureComponent {
     size: PropTypes.number,
     style: PropTypes.object,
     animationDuration: PropTypes.number,
-    easing: PropTypes.string,
+    easing: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     animationEasing: PropTypes.func,
     visible: PropTypes.bool,
     determinate: PropTypes.bool,

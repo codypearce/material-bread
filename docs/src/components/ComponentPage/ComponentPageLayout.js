@@ -26,10 +26,13 @@ class ComponentPageLayout extends Component {
     liveEditScope: PropTypes.object,
     liveEditCode: PropTypes.string,
     usageCode: PropTypes.string,
-    componentDescription: PropTypes.string,
-    usageDescription: PropTypes.string,
+    componentDescription: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.string,
+    ]),
+    usageDescription: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     liveEditNoInline: PropTypes.bool,
-    propsDescription: PropTypes.string,
+    propsDescription: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   };
 
   render() {

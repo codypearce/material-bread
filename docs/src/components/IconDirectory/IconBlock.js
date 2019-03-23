@@ -68,7 +68,6 @@ const styles = {
     height: 116,
     borderRadius: 6,
     alignItems: 'center',
-    textAlign: 'center',
     justifyContent: 'center',
   },
   icon: {
@@ -77,5 +76,6 @@ const styles = {
   iconName: {
     fontSize: 12,
     color: 'rgba(0,0,0,.6)',
+    textAlign: 'center',
   },
 };

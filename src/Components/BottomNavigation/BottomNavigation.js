@@ -10,11 +10,11 @@ class BottomNavigation extends Component {
   static propTypes = {
     backgroundColor: PropTypes.string,
     children: PropTypes.node,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     actionItems: PropTypes.array,
     showLabels: PropTypes.bool,
     handleChange: PropTypes.func,
-    value: PropTypes.string,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   };
 
   state = {
@@ -38,6 +38,7 @@ class BottomNavigation extends Component {
           if (item.label && item.label.length > 0) {
             return (
               <BottomNavigationItem
+                key={item.label}
                 icon={item.icon}
                 label={item.label}
                 showLabel={showLabels || item.showLabel}
@@ -50,6 +51,7 @@ class BottomNavigation extends Component {
             );
           } else {
             return React.cloneElement(item, {
+              key: item.label,
               handleChange: item.props.handleChange
                 ? item.props.handleChange
                 : this.handleChange,

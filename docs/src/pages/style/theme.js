@@ -50,22 +50,27 @@ export default class IconPage extends Component {
           or as little as you want.
         </P>
         <Section name="Customizing" href="/style/theme#custom" id="custom">
-          <P
+          <div
             style={{
               marginBottom: 16,
             }}>
-            To apply a global custom theme:
+            <P> To apply a global custom theme:</P>
             <ol>
               <li>
-                Wrap your app with the{' '}
-                <CodeInline code={'BreadProvider'} type={'element'} /> component
+                <P style={{ margin: 0 }}>
+                  To apply a global custom theme:Wrap your app with the{' '}
+                  <CodeInline code={'BreadProvider'} type={'element'} />{' '}
+                  component
+                </P>
               </li>
               <li>
-                Pass in a custom <CodeInline code={'theme'} /> object.
+                <P style={{ margin: 0 }}>
+                  Pass in a custom <CodeInline code={'theme'} /> object.
+                </P>
               </li>
             </ol>
-            This will merge your custom changes with the default theme.
-          </P>
+            <P>This will merge your custom changes with the default theme.</P>
+          </div>
           <CodeBlock code={themeCode} canCopy />
         </Section>
         <Section

@@ -9,7 +9,7 @@ import shadow from '../../Utils/shadow';
 class Dialog extends Component {
   static propTypes = {
     dialogStyle: PropTypes.object,
-    children: PropTypes.object,
+    children: PropTypes.node,
     visible: PropTypes.bool,
     onRequestClose: PropTypes.func,
     onShow: PropTypes.func,

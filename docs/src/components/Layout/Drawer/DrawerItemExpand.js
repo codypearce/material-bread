@@ -61,7 +61,7 @@ class DrawerItemExpand extends Component {
     return reactPageMenuItems.map(post => {
       return (
         <DrawerItem
-          key={post.id}
+          key={post.title}
           label={post.title}
           link={post.path}
           selected={post.title.toLowerCase() == itemSelected}

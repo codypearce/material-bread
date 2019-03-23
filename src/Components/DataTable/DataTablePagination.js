@@ -90,11 +90,9 @@ const styles = StyleSheet.create({
     color: 'rgba(0,0,0,.6)',
   },
   rowsPerPage: {
-    fontSize: 12,
     flexDirection: 'row',
     alignItems: 'center',
     marginRight: 30,
-    color: 'rgba(0,0,0,.6)',
   },
   rowsPerPageText: {
     fontSize: 12,

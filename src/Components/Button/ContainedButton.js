@@ -17,7 +17,7 @@ class ContainedButton extends Component {
     theme: PropTypes.object,
     onPressIn: PropTypes.func,
     onPressOut: PropTypes.func,
-    containerStyle: PropTypes.styles,
+    containerStyle: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     radius: PropTypes.number,
     fullWidth: PropTypes.bool,
   };
@@ -180,7 +180,7 @@ class ContainedButton extends Component {
             style={[
               disabled ? {} : this.getShadowStyle(),
               {
-                alignSelf: fullWidth ? 'unset' : 'flex-start',
+                alignSelf: fullWidth ? 'auto' : 'flex-start',
                 borderRadius: radius ? radius : theme.button.borderRadius,
               },
               containerStyle,

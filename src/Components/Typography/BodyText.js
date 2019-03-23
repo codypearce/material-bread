@@ -8,14 +8,15 @@ class BodyText extends Component {
     type: PropTypes.number,
     children: PropTypes.node,
     theme: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   };
 
   render() {
-    const { type, theme } = this.props;
+    const { type, theme, style } = this.props;
 
     const textStyle = type == 2 ? theme.bodyTextTwo : theme.bodyText;
     return (
-      <BaseText typographyStyles={textStyle} {...this.props}>
+      <BaseText typographyStyles={textStyle} style={style} {...this.props}>
         {this.props.children}
       </BaseText>
     );

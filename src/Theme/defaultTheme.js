@@ -9,13 +9,13 @@ export default {
   },
   button: {
     padding: 8,
-    color: '#2196f3',
     borderRadius: 4,
   },
   buttonText: {
     fontSize: 14,
     fontWeight: '500',
     letterSpacing: 0.5,
+    color: '#2196f3',
   },
   outlinedButton: {
     borderColor: 'rgba(0,0,0,.29)',

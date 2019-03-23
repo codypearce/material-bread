@@ -10,7 +10,7 @@ class ColorBlock extends Component {
   }
 
   static propTypes = {
-    name: PropTypes.string,
+    name: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     color: PropTypes.string,
     children: PropTypes.node,
     header: PropTypes.string,
@@ -31,6 +31,7 @@ class ColorBlock extends Component {
 
     return (
       <Ripple
+        key={name}
         onClick={this.copyToClipboard}
         style={{
           height: header ? 130 : 50,

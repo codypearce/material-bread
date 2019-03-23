@@ -67,13 +67,15 @@ class AppbarBottom extends Component {
     const fabRightStyle = {
       right: fabCutout ? 24 : 16,
     };
-
-    const fabPosStyles = fabPosition === 'end' ? fabRightStyle : {};
+    const fabCenterStyle = {
+      right: 'auto',
+    };
+    const fabPosStyles = fabPosition === 'end' ? fabRightStyle : fabCenterStyle;
 
     return (
       <Fab
         elevation={fabCutout ? 8 : 6}
-        style={[styles.fabPos, fabPosStyles, { fabRightStyle }, fabStyles]}
+        style={[styles.fabPos, fabPosStyles, fabStyles]}
         onPress={onFab}
         icon={fabIcon}
       />

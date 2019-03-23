@@ -4,7 +4,6 @@ const propData = [
   ['disabled', 'Whether radiobutton is disabled', 'bool', ''],
   ['onPress', 'Call back on radioButton', 'func', ''],
   ['radioButtonColor', 'Ripple color', 'string', ''],
-  ['radioButtonColor', 'Ripple color', 'string', ''],
   ['rippleColor', 'Radio Button Border color', 'string', ''],
   ['style', 'Styles root element', 'object', ''],
 ];

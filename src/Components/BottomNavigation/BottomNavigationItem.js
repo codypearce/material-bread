@@ -19,7 +19,7 @@ class BottomNavigationItem extends Component {
     handleChange: PropTypes.func,
     value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     showLabels: PropTypes.bool,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     badgeProps: PropTypes.object,
   };
 

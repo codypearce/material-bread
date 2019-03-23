@@ -8,7 +8,7 @@ import shadow from '../Utils/shadow';
 
 class Fab extends Component {
   static propTypes = {
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     backgroundColor: PropTypes.string,
     onPress: PropTypes.func,
     disabled: PropTypes.bool,

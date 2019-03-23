@@ -17,9 +17,9 @@ class Badge extends Component {
 
     theme: PropTypes.object,
     containerStyle: PropTypes.object,
-    right: PropTypes.number,
-    left: PropTypes.number,
-    top: PropTypes.number,
+    right: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    left: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    top: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   };
 
   static defaultProps = {
