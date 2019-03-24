@@ -1,4 +1,4 @@
-import { createTableData } from '../../../utils/createPropData';
+import { createTableData } from '@utils/createPropData';
 const propData = [
   [
     'actionItems',

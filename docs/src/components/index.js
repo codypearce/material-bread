@@ -22,6 +22,14 @@ export {
   default as ComponentSubtitle,
 } from './ComponentPage/ComponentSubtitle';
 export { default as ComponentDemo } from './ComponentPage/ComponentDemo';
+export {
+  default as ComponentDemoHeader,
+} from './ComponentPage/ComponentDemoHeader';
+export {
+  default as ComponentMainDemo,
+} from './ComponentPage/ComponentMainDemo';
+export { default as ComponentUsage } from './ComponentPage/ComponentUsage';
+export { default as ComponentProps } from './ComponentPage/ComponentProps';
 
 // ICON DIRECTORY
 export { default as IconDirectory } from './IconDirectory/IconDirectory';

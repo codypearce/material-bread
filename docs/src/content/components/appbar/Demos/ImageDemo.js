@@ -3,16 +3,16 @@ import { Image } from 'react-native';
 import { Link, CodeInline, ComponentDemo } from '@components';
 import { Appbar, IconButton } from '../../../../../../src/index';
 
-export const withImageCode = ` <Appbar
-barType={'prominent'}
-title={'Page Title'} 
-backgroundImage={<Image  source={{uri: 'https://images.pexels.com/photos/355465/pexels-photo-355465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'}} />}
-navigationType={'menu'}
-actionItems={[
-  {name: 'favorite'},
-  {name: 'search', onPress: () => console.log('onSearch')},
-  <IconButton name="more-vert" size={24} color={'white'} />, 
-]}
+export const withImageCode = `<Appbar
+  barType={'prominent'}
+  title={'Page Title'} 
+  backgroundImage={<Image  source={{uri: 'https://images.pexels.com/photos/355465/pexels-photo-355465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'}} />}
+  navigationType={'menu'}
+  actionItems={[
+    {name: 'favorite'},
+    {name: 'search', onPress: () => console.log('onSearch')},
+    <IconButton name="more-vert" size={24} color={'white'} />, 
+  ]}
 />`;
 
 const WithImage = () => (

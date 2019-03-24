@@ -25,7 +25,9 @@
       "alias": {
         "map": [
           ["babel-polyfill", "babel-polyfill/dist/polyfill.min.js"],
-          ["@components", "./components"]
+          ["@components", "./components"],
+          ["@content", "./content"],
+          ["@utls", "./utils"]
         ],
         "extensions": [".ts", ".js", ".jsx", ".json"]
       }

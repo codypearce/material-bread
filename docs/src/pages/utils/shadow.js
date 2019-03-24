@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import Section from '../../components/Section';
-import ComponentPageLayout from '../../components/ComponentPage/ComponentPageLayout';
+import ComponentPageLayout from '../../components/Component/ComponentPageLayout';
 import { shadow } from '../../../../src/index';
-import ComponentDescription from '../../components/ComponentPage/ComponentDescription';
+import ComponentDescription from '../../components/Component/ComponentDescription';
 
 const sections = [{ name: 'Demos' }];
 

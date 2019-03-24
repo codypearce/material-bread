@@ -8,9 +8,7 @@ class ComponentDemo extends Component {
   }
 
   static propTypes = {
-    sectionName: PropTypes.string,
-    sectionHref: PropTypes.string,
-    sectionId: PropTypes.string,
+    pageHref: PropTypes.string,
     description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     code: PropTypes.string,
     scope: PropTypes.object,
@@ -18,17 +16,9 @@ class ComponentDemo extends Component {
   };
 
   render() {
-    const {
-      sectionName,
-      sectionHref,
-      sectionId,
-      description,
-      code,
-      scope,
-      noInline,
-    } = this.props;
+    const { pageHref, description, code, scope, noInline } = this.props;
     return (
-      <Section name={sectionName} href={sectionHref} id={sectionId}>
+      <Section name="Component" href={`${pageHref}#usage`} id="component">
         <ComponentDescription text={description} />
         <LiveEdit code={code} scope={scope} noInline={noInline} />
       </Section>
