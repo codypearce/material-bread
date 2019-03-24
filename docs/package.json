@@ -10,6 +10,7 @@
     "flexboxgrid": "^6.3.1",
     "gatsby": "^2.1.19",
     "gatsby-image": "^2.0.30",
+    "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-compile-es6-packages": "^1.0.6",
     "gatsby-plugin-layout": "^1.0.12",
     "gatsby-plugin-manifest": "^2.0.20",
@@ -33,6 +34,8 @@
   },
   "devDependencies": {
     "babel-preset-gatsby": "^0.1.10",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.16.0",
     "prettier": "^1.16.4"
   },
   "keywords": [

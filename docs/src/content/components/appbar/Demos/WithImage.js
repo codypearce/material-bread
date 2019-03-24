@@ -1,11 +1,13 @@
 import React from 'react';
-import Section from '../../../../components/Section';
-import ComponentDescription from '../../../../components/ComponentPage/ComponentDescription';
-import CodeInline from '../../../../components/CodeInline';
-import Link from '../../../../components/Link';
-import LiveEdit from '../../../../components/LiveEdit/LiveEdit';
-import { Appbar, IconButton } from '../../../../../../src/index';
 import { Image } from 'react-native';
+import {
+  LiveEdit,
+  Link,
+  CodeInline,
+  ComponentDescription,
+  Section,
+} from '@components';
+import { Appbar, IconButton } from '../../../../../../src/index';
 
 export const withImageCode = ` <Appbar
 barType={'prominent'}

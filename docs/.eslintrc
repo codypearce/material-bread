@@ -15,9 +15,20 @@
     "no-useless-constructor": 0,
     "import/no-extraneous-dependencies": 0,
     "import/named": 1,
-    "import/no-unresolved": 1,
+    "import/no-unresolved": [1, { "caseSensitive": false }],
     "react/display-name": 0,
     "react/no-typos": 0
   },
-  "plugins": ["prettier", "react", "import"]
+  "plugins": ["prettier", "react", "import"],
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["babel-polyfill", "babel-polyfill/dist/polyfill.min.js"],
+          ["@components", "./components"]
+        ],
+        "extensions": [".ts", ".js", ".jsx", ".json"]
+      }
+    }
+  }
 }
