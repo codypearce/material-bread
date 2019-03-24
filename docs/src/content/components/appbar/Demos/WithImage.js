@@ -1,12 +1,6 @@
 import React from 'react';
 import { Image } from 'react-native';
-import {
-  LiveEdit,
-  Link,
-  CodeInline,
-  ComponentDescription,
-  Section,
-} from '@components';
+import { Link, CodeInline, ComponentDemo } from '@components';
 import { Appbar, IconButton } from '../../../../../../src/index';
 
 export const withImageCode = ` <Appbar
@@ -22,25 +16,24 @@ actionItems={[
 />`;
 
 const WithImage = () => (
-  <Section
-    name="Background image"
-    href="/components/appbar#bg-image"
-    id="bg-image">
-    <ComponentDescription
-      text={
-        <div>
-          You must pass in an <CodeInline code="Image" type={'element'} />
-          component, please read the React Native{' '}
-          <Link href="https://facebook.github.io/react-native/docs/images">
-            docs on Images
-          </Link>{' '}
-          to get a better idea of how to pass in images. Generally they are only
-          used for <CodeInline code="prominent" type={'value'} /> bars, but can
-          be used on other types.
-        </div>
-      }
-    />
-    <LiveEdit code={withImageCode} scope={{ Appbar, IconButton, Image }} />
-  </Section>
+  <ComponentDemo
+    sectionName={'Background image'}
+    sectionHref={'/components/appbar#bg-image'}
+    sectionId={'bg-image'}
+    description={
+      <div>
+        You must pass in an <CodeInline code="Image" type={'element'} />
+        component, please read the React Native{' '}
+        <Link href="https://facebook.github.io/react-native/docs/images">
+          docs on Images
+        </Link>{' '}
+        to get a better idea of how to pass in images. Generally they are only
+        used for <CodeInline code="prominent" type={'value'} /> bars, but can be
+        used on other types.
+      </div>
+    }
+    code={withImageCode}
+    scope={{ Appbar, IconButton, Image }}
+  />
 );
 export default WithImage;

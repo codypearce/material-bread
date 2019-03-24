@@ -21,6 +21,7 @@ export {
 export {
   default as ComponentSubtitle,
 } from './ComponentPage/ComponentSubtitle';
+export { default as ComponentDemo } from './ComponentPage/ComponentDemo';
 
 // ICON DIRECTORY
 export { default as IconDirectory } from './IconDirectory/IconDirectory';
