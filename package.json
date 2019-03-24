@@ -12,6 +12,7 @@
     "build-storybook-web": "build-storybook -s public"
   },
   "dependencies": {
+    "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
     "@storybook/addon-links": "^4.1.13",
     "@storybook/react": "^4.1.13",
