@@ -18,8 +18,17 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 };
 
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage } = actions;
+  if (page.path == '/') {
+    page.context.layout = 'home';
+    createPage(page);
+  }
+};
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
+
   return graphql(`
     {
       allMarkdownRemark {

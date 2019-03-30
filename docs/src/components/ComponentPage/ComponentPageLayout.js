@@ -30,7 +30,7 @@ class ComponentPageLayout extends Component {
     } = this.props;
 
     return (
-      <div style={{ marginBottom: 24 }}>
+      <div drawerType={'permanent'} style={{ marginBottom: 24 }}>
         <SideScrollMenu items={sideScrollMenuItems} />
         <ComponentHeader
           title={title}

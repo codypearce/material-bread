@@ -33,9 +33,10 @@ export default ({ children }) => {
           }
         }
       `}
-      render={({ allMarkdownRemark: { edges: posts } }) => (
-        <PageLayout posts={posts}>{children}</PageLayout>
-      )}
+      render={({ allMarkdownRemark: { edges: posts } }) => {
+        console.log(posts);
+        return <PageLayout posts={posts}>{children}</PageLayout>;
+      }}
     />
   );
 };

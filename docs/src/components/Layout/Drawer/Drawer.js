@@ -16,6 +16,7 @@ const styles = theme => ({
     width: drawerWidth,
     backgroundColor: '#e3e5e7',
     border: 'none',
+    overflow: 'hidden',
   },
 });
 class Drawer extends Component {
@@ -28,32 +29,27 @@ class Drawer extends Component {
   };
 
   render() {
-    const { classes, theme, open, handleDrawerToggle, posts } = this.props;
+    const {
+      classes,
+      theme,
+      open,
+      handleDrawerToggle,
+      posts,
+      drawerType,
+    } = this.props;
 
     return (
       <nav className={classes.drawer}>
-        <Hidden mdUp implementation="css">
-          <MaterialDrawer
-            variant="temporary"
-            anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-            open={open}
-            onClose={handleDrawerToggle}
-            classes={{
-              paper: classes.drawerPaper,
-            }}>
-            <DrawerContent posts={posts} />
-          </MaterialDrawer>
-        </Hidden>
-        <Hidden smDown implementation="css">
-          <MaterialDrawer
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-            variant="permanent"
-            open>
-            <DrawerContent posts={posts} />
-          </MaterialDrawer>
-        </Hidden>
+        <MaterialDrawer
+          variant={drawerType || 'temporary'}
+          anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+          open={open}
+          onClose={handleDrawerToggle}
+          classes={{
+            paper: classes.drawerPaper,
+          }}>
+          <DrawerContent posts={posts} />
+        </MaterialDrawer>
       </nav>
     );
   }

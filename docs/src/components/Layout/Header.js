@@ -11,18 +11,15 @@ const drawerWidth = 240;
 
 const styles = theme => ({
   appBar: {
-    marginLeft: drawerWidth,
-    [theme.breakpoints.up('md')]: {
-      width: `calc(100% - ${drawerWidth}px)`,
-    },
+    // marginLeft: drawerWidth,
+    // [theme.breakpoints.up('md')]: {
+    //   width: `calc(100% - ${drawerWidth}px)`,
+    // },
     boxShadow: 'none',
     backgroundColor: 'transparent',
   },
   menuButton: {
     marginRight: 20,
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
-    },
   },
 });
 class Header extends Component {

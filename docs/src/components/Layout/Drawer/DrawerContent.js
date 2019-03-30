@@ -108,16 +108,16 @@ class DrawerContent extends React.PureComponent {
             Beta
           </span>
         </div>
+        <div style={{ overflow: 'auto', height: 'calc(100vh - 76px)' }}>
+          <List>
+            <DrawerItem
+              label="Home"
+              link="/"
+              selected={itemSelected == 'home'}
+              selectItem={this.selectItem}
+            />
 
-        <List>
-          <DrawerItem
-            label="Home"
-            link="/"
-            selected={itemSelected == 'home'}
-            selectItem={this.selectItem}
-          />
-
-          <DrawerItemExpand
+            {/* <DrawerItemExpand
             label="Getting Started"
             markdownMenuItems={posts
               .filter(post => post.node.frontmatter.group === 'getting-started')
@@ -127,49 +127,50 @@ class DrawerContent extends React.PureComponent {
             selectItem={this.selectItem}
             selectSection={this.selectSection}
             sectionExpanded={sectionExpanded == 'getting-started'}
-          />
-          <DrawerItemExpand
+          /> */}
+            {/* <DrawerItemExpand
             label="Style"
             reactPageMenuItems={stylePages}
             selectItem={this.selectItem}
             itemSelected={itemSelected}
             selectSection={this.selectSection}
             sectionExpanded={sectionExpanded == 'style'}
-          />
-          <DrawerItemExpand
-            label="Components"
-            reactPageMenuItems={components}
-            selectItem={this.selectItem}
-            itemSelected={itemSelected}
-            selectSection={this.selectSection}
-            sectionExpanded={sectionExpanded == 'components'}
-          />
-          <DrawerItemExpand
-            label="Utils"
-            reactPageMenuItems={utils}
-            selectItem={this.selectItem}
-            itemSelected={itemSelected}
-            selectSection={this.selectSection}
-            sectionExpanded={sectionExpanded == 'utils'}
-          />
-          <DrawerItem
-            label="Playground"
-            link="/http://localhost:9009/?selectedKind=Appbar&selectedStory=Appbar&full=0&addons=1&stories=1&panelRight=1&addonPanel=storybook-addon-viewport%2Faddon-panel"
-            selectItem={this.selectItem}
-          />
-          <DrawerItem
-            label="Contributing"
-            link="/contributing"
-            selectItem={this.selectItem}
-            selected={itemSelected == 'contributing'}
-          />
-          <DrawerItem
-            label="About"
-            link="/about"
-            selectItem={this.selectItem}
-            selected={itemSelected == 'about'}
-          />
-        </List>
+          /> */}
+            <DrawerItemExpand
+              label="Components"
+              reactPageMenuItems={components}
+              selectItem={this.selectItem}
+              itemSelected={itemSelected}
+              selectSection={this.selectSection}
+              sectionExpanded={sectionExpanded == 'components'}
+            />
+            <DrawerItemExpand
+              label="Utils"
+              reactPageMenuItems={utils}
+              selectItem={this.selectItem}
+              itemSelected={itemSelected}
+              selectSection={this.selectSection}
+              sectionExpanded={sectionExpanded == 'utils'}
+            />
+            <DrawerItem
+              label="Playground"
+              link="/http://localhost:9009/?selectedKind=Appbar&selectedStory=Appbar&full=0&addons=1&stories=1&panelRight=1&addonPanel=storybook-addon-viewport%2Faddon-panel"
+              selectItem={this.selectItem}
+            />
+            <DrawerItem
+              label="Contributing"
+              link="/contributing"
+              selectItem={this.selectItem}
+              selected={itemSelected == 'contributing'}
+            />
+            <DrawerItem
+              label="About"
+              link="/about"
+              selectItem={this.selectItem}
+              selected={itemSelected == 'about'}
+            />
+          </List>
+        </div>
       </div>
     );
   }

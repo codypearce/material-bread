@@ -16,6 +16,7 @@ class PageLayout extends Component {
     theme: PropTypes.object,
     children: PropTypes.node,
     posts: PropTypes.array,
+    pageContext: PropTypes.object,
   };
   state = {
     mobileOpen: false,
@@ -40,8 +41,11 @@ class PageLayout extends Component {
   };
 
   render() {
-    const { classes, posts, children } = this.props;
-
+    const { classes, posts, children, pageContext } = this.props;
+    let drawerType = 'permanent';
+    if (pageContext.layout === 'home') {
+      drawerType = 'temporary';
+    }
     return (
       <div className={classes.root}>
         <Helmet>
@@ -53,7 +57,7 @@ class PageLayout extends Component {
           />
           <meta
             name="keywords"
-            content="react reactnative material design components"
+            content="react react native material design components"
           />
 
           <link rel="icon" href="favicon.ico" />
@@ -66,15 +70,27 @@ class PageLayout extends Component {
         </Helmet>
 
         <CssBaseline />
-        <Drawer
-          open={this.state.mobileOpen}
-          handleDrawerToggle={this.handleDrawerToggle}
-          posts={posts}
-        />
-        <Header handleDrawerToggle={this.handleDrawerToggle} />
-        <main className={classes.content} style={{ scrollBehavior: 'smooth' }}>
-          {children}
-        </main>
+
+        <div>
+          <Drawer
+            open={this.state.mobileOpen}
+            handleDrawerToggle={this.handleDrawerToggle}
+            posts={posts}
+            drawerType={drawerType}
+          />
+          <Header handleDrawerToggle={this.handleDrawerToggle} />
+          <div
+            style={{
+              maxWidth: 760,
+              width:
+                drawerType == 'temporary' ? '100%' : `calc(100% - ${240}px)`,
+              marginLeft: drawerType == 'temporary' ? 0 : 'calc(240px + 130px)',
+              marginRight: 40,
+              paddingTop: 40,
+            }}>
+            {children}
+          </div>
+        </div>
       </div>
     );
   }
@@ -85,13 +101,7 @@ const styles = theme => ({
     display: 'flex',
   },
   toolbar: theme.mixins.toolbar,
-  content: {
-    maxWidth: 900,
-    width: `calc(100% - ${240}px)`,
-    marginLeft: 40,
-    marginRight: 40,
-    paddingTop: 40,
-  },
+  content: {},
 });
 
 export default withStyles(styles, { withTheme: true })(PageLayout);

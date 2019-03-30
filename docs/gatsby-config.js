@@ -17,9 +17,9 @@ module.exports = {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
-          '@components': `${__dirname}/docs/src/components`,
-          '@content': `${__dirname}/docs/src/content`,
-          '@utils': `${__dirname}/docs/src/utils`,
+          '@components': `${__dirname}/src/components`,
+          '@content': `${__dirname}/src/content`,
+          '@utils': `${__dirname}/src/utils`,
         },
         extensions: [],
       },
@@ -48,7 +48,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-layout`,
       options: {
-        component: require.resolve(`./src/components/Layout/Layout`),
+        component: require.resolve(`./src/components/Layout/PageLayout`),
       },
     },
     {

@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { Button } from '@material-ui/core';
 import styles from '../styles/pages/index.module.css';
 import Prism from 'prismjs';
-import Logo from '@components/Icons/Logo';
 import LogoWithText from '@components/Logo/LogoWithText';
 
 class IndexPage extends Component {
