@@ -7,14 +7,8 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Github from '../Icons/Github';
 
-const drawerWidth = 240;
-
-const styles = theme => ({
+const styles = () => ({
   appBar: {
-    // marginLeft: drawerWidth,
-    // [theme.breakpoints.up('md')]: {
-    //   width: `calc(100% - ${drawerWidth}px)`,
-    // },
     boxShadow: 'none',
     backgroundColor: 'transparent',
   },

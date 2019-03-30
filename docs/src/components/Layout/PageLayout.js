@@ -7,7 +7,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { withStyles } from '@material-ui/core/styles';
 import '../../../node_modules/flexboxgrid/css/flexboxgrid.min.css';
 import '../../styles/global/global.css';
-import Drawer from './Drawer/Drawer';
+import Drawer from '../Drawer/Drawer';
 import Header from './Header';
 import Prism from 'prismjs';
 

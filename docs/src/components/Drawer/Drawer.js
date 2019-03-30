@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import { Drawer as MaterialDrawer, Hidden } from '@material-ui/core';
+import { Drawer as MaterialDrawer } from '@material-ui/core';
 import DrawerContent from './DrawerContent';
 
 const drawerWidth = 240;

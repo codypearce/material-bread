@@ -1,0 +1,70 @@
+.Logo {
+  overflow: hidden;
+}
+
+.Logo--animated .Logo__middle--1 {
+  transform: translateY(400px);
+  animation: middle 300ms ease-in-out 1000ms forwards;
+}
+.Logo--animated .Logo__middle--2 {
+  transform: translateY(400px);
+  animation: middle 300ms ease-in-out 1100ms forwards;
+}
+
+.Logo--animated .Logo__crust {
+  transform: translateY(-350px);
+}
+.Logo--animated .Logo__crust--1 {
+  animation: crust 300ms ease-in-out 0s forwards;
+}
+.Logo--animated .Logo__crust--2 {
+  animation: crust 300ms ease-in-out 100ms forwards;
+}
+.Logo--animated .Logo__crust--3 {
+  animation: crust 300ms ease-in-out 200ms forwards;
+}
+.Logo--animated .Logo__crust--4 {
+  animation: crust 300ms ease-in-out 300ms forwards;
+}
+.Logo--animated .Logo__crust--5 {
+  animation: crust 300ms ease-in-out 400ms forwards;
+}
+.Logo--animated .Logo__crust--6 {
+  animation: crust 300ms ease-in-out 500ms forwards;
+}
+.Logo--animated .Logo__crust--7 {
+  animation: crust 300ms ease-in-out 600ms forwards;
+}
+.Logo--animated .Logo__crust--8 {
+  animation: crust 300ms ease-in-out 700ms forwards;
+}
+.Logo--animated .Logo__crust--9 {
+  animation: crust 300ms ease-in-out 800ms forwards;
+}
+.Logo--animated .Logo__crust--10 {
+  animation: crust 300ms ease-in-out 900ms forwards;
+}
+
+@keyframes crust {
+  0% {
+    transform: translateY(-200px);
+  }
+  90% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes middle {
+  0% {
+    transform: translateY(400px);
+  }
+  90% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

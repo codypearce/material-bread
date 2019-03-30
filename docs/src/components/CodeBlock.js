@@ -13,6 +13,8 @@ class CodeBlock extends Component {
     canCopy: PropTypes.bool,
     language: PropTypes.string,
     small: PropTypes.bool,
+    style: PropTypes.object,
+    fontSize: PropTypes.number,
   };
 
   state = {
@@ -37,20 +39,21 @@ class CodeBlock extends Component {
   };
 
   render() {
-    const { code, canCopy, language, small } = this.props;
+    const { code, canCopy, language, small, style, fontSize } = this.props;
     const { copySuccess } = this.state;
     return (
       <pre
         className={'CodeBlock'}
         style={{
           width: small ? 'auto' : '100%',
-          paddingRight: small ? 44 : 0,
+          paddingRight: small ? 44 : 16,
+          ...style,
         }}>
         <code
           ref={codeArea => (this.codeArea = codeArea)}
           className={language || 'language-jsx'}
           style={{
-            fontSize: 14,
+            fontSize: fontSize ? fontSize : 14,
           }}>
           {code}
         </code>

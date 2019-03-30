@@ -36,8 +36,11 @@ export { default as IconDirectory } from './IconDirectory/IconDirectory';
 
 // LAYOUT
 export { default as Header } from './Layout/Header';
-export { default as Layout } from './Layout/Layout';
 export { default as PageLayout } from './Layout/PageLayout';
+
+// LOGO
+export { default as Logo } from './Logo/Logo';
+export { default as LogoWithText } from './Logo/LogoWithText';
 
 // LIVE EDIT
 export { default as LiveEdit } from './LiveEdit/LiveEdit';

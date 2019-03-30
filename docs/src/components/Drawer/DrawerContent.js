@@ -9,7 +9,7 @@ import {
   components,
   utils,
   stylePages,
-} from '../../../navigation/drawerItems';
+} from '../../navigation/drawerItems';
 
 const styles = theme => ({
   content: {
