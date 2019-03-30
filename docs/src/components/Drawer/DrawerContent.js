@@ -10,6 +10,7 @@ import {
   utils,
   stylePages,
 } from '../../navigation/drawerItems';
+import DrawerHeader from './DrawerHeader';
 
 const styles = theme => ({
   content: {
@@ -80,38 +81,7 @@ class DrawerContent extends React.PureComponent {
 
     return (
       <div>
-        <div
-          style={{
-            padding: '25px 20px',
-
-            backgroundColor: '#263238',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-          <h3
-            style={{
-              fontSize: 20,
-              color: 'white',
-              margin: 0,
-              fontWeight: 400,
-              display: 'block',
-              letterSpacing: 1.2,
-            }}>
-            Material Bread
-          </h3>
-          <span
-            style={{
-              margin: 0,
-              color: 'rgba(255,255,255,.7)',
-              fontSize: 12,
-              marginLeft: 10,
-              marginTop: 6,
-              display: 'inline-block',
-            }}>
-            Beta
-          </span>
-        </div>
+        <DrawerHeader />
         <div style={{ overflow: 'auto', height: 'calc(100vh - 76px)' }}>
           <List>
             <DrawerItem

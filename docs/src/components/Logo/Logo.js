@@ -1,11 +1,11 @@
 import React from 'react';
 import '../../styles/components/Logo.css';
 
-function Logo(animated) {
+function Logo({ animated, width, height }) {
   return (
     <svg
-      width="387.502"
-      height="320.398"
+      width={width ? width : '387.502'}
+      height={height ? height : '320.398'}
       viewBox="0 0 363.28359 300.3731"
       id="svg5967"
       style={{ filter: 'drop-shadow(rgba(0, 0, 0, 0.3) 6px 6px 8px)' }}
@@ -26,7 +26,7 @@ function Logo(animated) {
             overflow="visible"
             fill="#dcd09d"
             stroke="#dcd09d"
-            className={`Logo__middle--1 `}
+            className={`Logo__middle Logo__middle--1 `}
           />
           <path
             d="m 154.68318,586.01885 9.09765,0 17.39095,0 34.78172,0 69.56334,0 0,-115.6424 23.30657,-66.5185 -24.31985,-68.45971 -74.98621,-23.0455 -31.56369,19.8132 -15.7818,9.9066 -7.48868,4.9532 z"
@@ -34,7 +34,7 @@ function Logo(animated) {
             overflow="visible"
             fill="#dac589"
             stroke="#dac589"
-            className="Logo__middle--2"
+            className="Logo__middle Logo__middle--2"
           />
           <path
             id="path4930-1-5"

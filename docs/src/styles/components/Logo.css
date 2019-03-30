@@ -2,6 +2,69 @@
   overflow: hidden;
 }
 
+/*
+==== Hover Animation ====
+*/
+
+.Logo__crust,
+.Logo__middle {
+  transition: all 700ms ease-out;
+}
+
+.Logo__middle--1:hover {
+  fill: #e91e63;
+  stroke: #e91e63;
+}
+
+.Logo__middle--2:hover {
+  fill: #2196f3;
+  stroke: #2196f3;
+}
+.Logo__crust--1:hover {
+  fill: #ffeb3b;
+  stroke: #ffeb3b;
+}
+.Logo__crust--2:hover {
+  fill: #4caf50;
+  stroke: #4caf50;
+}
+.Logo__crust--3:hover {
+  fill: #00bcd4;
+  stroke: #00bcd4;
+}
+.Logo__crust--4:hover {
+  fill: #009688;
+  stroke: #009688;
+}
+.Logo__crust--5:hover {
+  fill: #9c27b0;
+  stroke: #9c27b0;
+}
+.Logo__crust--6:hover {
+  fill: #4527a0;
+  stroke: #4527a0;
+}
+.Logo__crust--7:hover {
+  fill: #3949ab;
+  stroke: #3949ab;
+}
+.Logo__crust--8:hover {
+  fill: #00796b;
+  stroke: #00796b;
+}
+.Logo__crust--9:hover {
+  fill: #d32f2f;
+  stroke: #d32f2f;
+}
+.Logo__crust--10:hover {
+  fill: #d81b60;
+  stroke: #d81b60;
+}
+
+/*
+ ==== INTRO ANIMATION =====
+*/
+
 .Logo--animated .Logo__middle--1 {
   transform: translateY(400px);
   animation: middle 300ms ease-in-out 1000ms forwards;
