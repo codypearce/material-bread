@@ -26,6 +26,7 @@ class Drawer extends Component {
     open: PropTypes.bool,
     handleDrawerToggle: PropTypes.func,
     posts: PropTypes.array,
+    drawerType: PropTypes.string,
   };
 
   render() {

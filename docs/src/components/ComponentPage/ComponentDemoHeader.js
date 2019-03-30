@@ -10,7 +10,7 @@ class ComponentDemoHeader extends Component {
 
   static propTypes = {
     description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-    pageHref: PropTypes.string,
+    pageHref: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   };
 
   render() {

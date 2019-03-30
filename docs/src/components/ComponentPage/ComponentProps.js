@@ -8,7 +8,7 @@ class ComponentProps extends Component {
   }
 
   static propTypes = {
-    pageHref: PropTypes.string,
+    pageHref: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     propData: PropTypes.array,
   };

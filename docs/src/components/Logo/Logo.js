@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../../styles/components/Logo.css';
 
 function Logo({ animated, width, height }) {
@@ -132,4 +133,9 @@ function Logo({ animated, width, height }) {
   );
 }
 
+Logo.propTypes = {
+  animated: PropTypes.bool,
+  width: PropTypes.number,
+  height: PropTypes.number,
+};
 export default Logo;

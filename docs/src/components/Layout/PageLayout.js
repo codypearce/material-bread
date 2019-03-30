@@ -43,6 +43,7 @@ class PageLayout extends Component {
     this.handleDifferentLayouts();
   }
   componentDidUpdate() {
+    Prism.highlightAll();
     this.handleDifferentLayouts();
   }
 

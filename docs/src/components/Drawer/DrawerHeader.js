@@ -9,7 +9,7 @@ export default class DrawerContent extends React.PureComponent {
         <Logo width={77} height={64} />
         <div style={styles.right}>
           <p style={styles.title}>Material Bread</p>
-          <span style={styles.version}>Beta</span>
+          <span style={styles.version}>Alpha</span>
         </div>
       </div>
     );
