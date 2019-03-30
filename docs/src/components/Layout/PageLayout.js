@@ -6,9 +6,13 @@ import { Helmet } from 'react-helmet';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { withStyles } from '@material-ui/core/styles';
 import '../../../node_modules/flexboxgrid/css/flexboxgrid.min.css';
+import '../../styles/global/global.css';
 import Drawer from './Drawer/Drawer';
 import Header from './Header';
 import Prism from 'prismjs';
+
+require('prismjs/components/prism-jsx.min');
+require('prismjs/themes/prism-tomorrow.css');
 
 class PageLayout extends Component {
   static propTypes = {
@@ -20,11 +24,13 @@ class PageLayout extends Component {
   };
   state = {
     mobileOpen: false,
+    isTemporary: false,
   };
 
   componentDidMount() {
     Prism.highlightAll();
-    const hash = window && window.location && window.location.hash;
+    const location = window && window.location;
+    const hash = location.hash;
     if (hash) {
       const id = hash.split('#')[1].toString();
       const el = document.getElementById(id);
@@ -34,6 +40,20 @@ class PageLayout extends Component {
         });
       }
     }
+    this.handleDifferentLayouts();
+  }
+  componentDidUpdate() {
+    this.handleDifferentLayouts();
+  }
+
+  handleDifferentLayouts() {
+    const location = window && window.location;
+    const pathName = location.pathname;
+    if (pathName == '/' && !this.state.isTemporary) {
+      this.setState({ isTemporary: true, mobileOpen: false });
+    } else if (this.state.isTemporary && pathName !== '/') {
+      this.setState({ isTemporary: false });
+    }
   }
 
   handleDrawerToggle = () => {
@@ -41,11 +61,14 @@ class PageLayout extends Component {
   };
 
   render() {
-    const { classes, posts, children, pageContext } = this.props;
+    const { classes, posts, children } = this.props;
+    const { isTemporary } = this.state;
+
     let drawerType = 'permanent';
-    if (pageContext.layout === 'home') {
+    if (isTemporary) {
       drawerType = 'temporary';
     }
+
     return (
       <div className={classes.root}>
         <Helmet>
@@ -81,11 +104,10 @@ class PageLayout extends Component {
           <Header handleDrawerToggle={this.handleDrawerToggle} />
           <div
             style={{
-              maxWidth: 760,
-              width:
-                drawerType == 'temporary' ? '100%' : `calc(100% - ${240}px)`,
-              marginLeft: drawerType == 'temporary' ? 0 : 'calc(240px + 130px)',
-              marginRight: 40,
+              maxWidth: isTemporary ? '100%' : 760,
+              width: isTemporary ? '100%' : `calc(100% - ${240}px)`,
+              marginLeft: isTemporary ? 0 : 'calc(240px + 130px)',
+              marginRight: isTemporary ? 0 : 40,
               paddingTop: 40,
             }}>
             {children}
@@ -98,7 +120,7 @@ class PageLayout extends Component {
 
 const styles = theme => ({
   root: {
-    display: 'flex',
+    width: '100%',
   },
   toolbar: theme.mixins.toolbar,
   content: {},

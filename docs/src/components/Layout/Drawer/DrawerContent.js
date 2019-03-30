@@ -4,7 +4,12 @@ import { withStyles } from '@material-ui/core/styles';
 import { List } from '@material-ui/core';
 import DrawerItem from './DrawerItem';
 import DrawerItemExpand from './DrawerItemExpand';
-import { components, utils, stylePages } from '../../../navigation/drawerItems';
+import {
+  gettingStartedPages,
+  components,
+  utils,
+  stylePages,
+} from '../../../navigation/drawerItems';
 
 const styles = theme => ({
   content: {
@@ -71,7 +76,6 @@ class DrawerContent extends React.PureComponent {
   };
 
   render() {
-    const { posts } = this.props;
     const { itemSelected, sectionExpanded } = this.state;
 
     return (
@@ -117,25 +121,22 @@ class DrawerContent extends React.PureComponent {
               selectItem={this.selectItem}
             />
 
-            {/* <DrawerItemExpand
-            label="Getting Started"
-            markdownMenuItems={posts
-              .filter(post => post.node.frontmatter.group === 'getting-started')
-              .filter(post => post.node.frontmatter.layout === 'page')
-              .filter(post => post.node.frontmatter.status === 'complete')}
-            itemSelected={itemSelected}
-            selectItem={this.selectItem}
-            selectSection={this.selectSection}
-            sectionExpanded={sectionExpanded == 'getting-started'}
-          /> */}
-            {/* <DrawerItemExpand
-            label="Style"
-            reactPageMenuItems={stylePages}
-            selectItem={this.selectItem}
-            itemSelected={itemSelected}
-            selectSection={this.selectSection}
-            sectionExpanded={sectionExpanded == 'style'}
-          /> */}
+            <DrawerItemExpand
+              label="Getting Started"
+              reactPageMenuItems={gettingStartedPages}
+              itemSelected={itemSelected}
+              selectItem={this.selectItem}
+              selectSection={this.selectSection}
+              sectionExpanded={sectionExpanded == 'getting-started'}
+            />
+            <DrawerItemExpand
+              label="Style"
+              reactPageMenuItems={stylePages}
+              selectItem={this.selectItem}
+              itemSelected={itemSelected}
+              selectSection={this.selectSection}
+              sectionExpanded={sectionExpanded == 'style'}
+            />
             <DrawerItemExpand
               label="Components"
               reactPageMenuItems={components}

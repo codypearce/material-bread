@@ -1,3 +1,13 @@
+const gettingStartedPages = [
+  {
+    title: 'React Native',
+    path: '/getting-started/react-native',
+  },
+  {
+    title: 'Web',
+    path: '/getting-started/web',
+  },
+];
 const components = [
   {
     title: 'Appbar',
@@ -212,4 +222,4 @@ const stylePages = [
   },
 ];
 
-export { components, utils, stylePages };
+export { gettingStartedPages, components, utils, stylePages };

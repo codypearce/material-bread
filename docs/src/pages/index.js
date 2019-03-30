@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
 
 import { Button } from '@material-ui/core';
-import styles from '../styles/pages/index.module.css';
 import Prism from 'prismjs';
 import LogoWithText from '@components/Logo/LogoWithText';
 
-class IndexPage extends Component {
+class Index extends Component {
   componentDidMount() {
     Prism.highlightAll();
   }
   render() {
     return (
-      <div>
-        <div className="" style={{ marginTop: 40 }}>
+      <div style={styles.container}>
+        <div style={{ marginTop: 40 }}>
           <LogoWithText />
-          <h4 className={styles.subtitle}>
-            React Native Material Design Components
-          </h4>
+          <h4>React Native Material Design Components</h4>
         </div>
         <div className="row " style={{ marginTop: 40 }}>
           <pre
@@ -69,4 +66,14 @@ class IndexPage extends Component {
   }
 }
 
-export default IndexPage;
+const styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+  },
+};
+
+export default Index;

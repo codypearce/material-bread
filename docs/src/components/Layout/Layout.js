@@ -1,12 +1,7 @@
-import '../../styles/global/global.css';
-
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
 import PageLayout from './PageLayout';
-
-require('prismjs/components/prism-jsx.min');
-require('prismjs/themes/prism-tomorrow.css');
 
 export default ({ children }) => {
   return (
@@ -34,7 +29,6 @@ export default ({ children }) => {
         }
       `}
       render={({ allMarkdownRemark: { edges: posts } }) => {
-        console.log(posts);
         return <PageLayout posts={posts}>{children}</PageLayout>;
       }}
     />
