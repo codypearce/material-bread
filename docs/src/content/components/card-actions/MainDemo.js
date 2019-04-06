@@ -1,25 +1,41 @@
 import React from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, Text } from 'react-native';
 import { ComponentMainDemo, CodeInline } from '@components';
-import { Avatar } from '../../../../../src/index';
+import {
+  IconButton,
+  Card,
+  CardContent,
+  CardActions,
+  CardMedia,
+} from '../../../../../src/index';
 
 export const code = `<View style={{flexDirection: 'row', alignItems: 'center'}}>
-    <Avatar 
-        type="image" 
-        image={<Image source={{uri: 'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4'}} /> } 
-        size={64} 
+  <Card style={{width: 400}}>
+    <CardMedia
+        image={
+            <Image
+            style={{ flex: 1, width: '100%' }}
+            source={{uri: 'https://images.pexels.com/photos/1938123/pexels-photo-1938123.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'}}
+            resizeMode="cover"
+            />
+        }
     />
-    <Avatar 
-        type="image" 
-        image={<Image source={{uri: 'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4'}} /> } 
-        size={48} 
-        onPress={() => console.log('avatar')}
-        ripple
+    <CardContent >
+      <Text style={{ color: 'rgba(0,0,0,.6)', fontSize: 14 }}>
+        Fact: dogs make everything better
+      </Text>
+    </CardContent>
+    <CardActions
+      leftActionItems={[
+        {name: 'share',},
+        {name: 'learn more'}
+      ]}
+      rightActionItems={[
+        {name: 'favorite',},
+        {name: 'share'} 
+      ]}
     />
-    <Avatar 
-        type="image" 
-        image={<Image source={{uri: 'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4'}} /> } 
-    /> 
+  </Card>
 </View>`;
 
 const MainDemo = pageHref => (
@@ -27,16 +43,26 @@ const MainDemo = pageHref => (
     pageHref={pageHref}
     description={
       <div>
-        Avatars can be images, letters, or icons. First provide the{' '}
-        <CodeInline code="type" type="prop" />
-        of avatar, then either provide the{' '}
-        <CodeInline code="content" type="prop" /> prop for icons and letters or{' '}
-        <CodeInline code="image" type="prop" /> prop for images. A simple image
-        example is shown below.
+        CardActions are split into{' '}
+        <CodeInline code="leftActionItems" type="prop" /> and{' '}
+        <CodeInline code="rightActionItems" type="prop" />. Left action items
+        display as full text <CodeInline code="Button" type="element" />
+        s, right action items display as
+        <CodeInline code="IconButton" type="element" />
+        s. Both can be passed either as objects or nodes.
       </div>
     }
     code={code}
-    scope={{ View, Avatar, Image }}
+    scope={{
+      View,
+      IconButton,
+      Card,
+      CardContent,
+      CardActions,
+      CardMedia,
+      Image,
+      Text,
+    }}
   />
 );
 export default MainDemo;

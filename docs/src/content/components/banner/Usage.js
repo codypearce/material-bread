@@ -1,18 +1,42 @@
 import React from 'react';
-import { ComponentUsage, CodeInline, Link } from '@components';
+import { ComponentUsage, CodeInline } from '@components';
 
 export const code = `import React, { Component } from 'react';
-import { View } from 'react-native';
-import { Avatar } from 'material-bread';
+import { Banner, Button } from 'material-bread';
 
-export default class UserAvatar extends Component {
+class Header extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      visible: true
+    }
+  }
+ 
   render() {
     return (
-        <Avatar 
-            type="icon"
-            content="face"
-            contentColor={'white'}
+      <View>
+        <Banner
+          visible={this.state.visible}
+          position={'relative'}
+          actionItems={[
+            {name: 'Continue'},
+            {name: 'Sign in', onPress: () => console.log('sign in')}
+          ]}
+          media={
+            <Avatar
+              type="icon"
+              content="notifications"
+              size={40}
+              contentColor={'white'}
+              color={'#42a5f5'}
+            />
+          }
+          message={
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+            }
         />
+        <Button text={'Toggle'} type={'outlined'} onPress={() => this.setState({visible: !this.state.visible})} containerStyle={{marginTop: 16}} />
+      </View>
     );
   }
 }`;
@@ -22,11 +46,14 @@ const Usage = pageHref => (
     pageHref={pageHref}
     description={
       <div>
-        {`Usage depends on what navigation package you're using.`} For
-        <CodeInline code="react-navigation" /> you can follow their{' '}
-        <Link href="https://reactnavigation.org/docs/en/tab-based-navigation.html">
-          guide on TabNavigation
-        </Link>
+        Banners are meant to be dissmissed. Changing the{' '}
+        <CodeInline code="visible" type="prop" /> prop will trigger the
+        animation to show and hide the banner. Additionally, each{' '}
+        <CodeInline code="actionItem" type="prop" />
+        will dismiss the banner, but you can trigger this manually by changing
+        the <CodeInline code="visible" type="prop" /> prop. Usually banners are
+        shown right below the appbar and can be fixed or scrollable. You can
+        toggle this with the <CodeInline code="position" type="prop" /> prop.
       </div>
     }
     code={code}

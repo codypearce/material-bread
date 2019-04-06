@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ComponentDemoHeader } from '@components';
 
-import IconDemo from './IconDemo';
-import TextDemo from './TextDemo';
-import CustomDemo from './CustomDemo';
-
 export default class Demos extends Component {
   static propTypes = {
     pageHref: PropTypes.string,
@@ -20,10 +16,6 @@ export default class Demos extends Component {
             'You can see even more examples in the Storybook playground.'
           }
         />
-
-        <IconDemo pageHref={pageHref} />
-        <TextDemo pageHref={pageHref} />
-        <CustomDemo pageHref={pageHref} />
       </div>
     );
   }

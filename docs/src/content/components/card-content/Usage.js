@@ -1,35 +1,28 @@
 import React from 'react';
-import { ComponentUsage, CodeInline, Link } from '@components';
+import { ComponentUsage } from '@components';
 
 export const code = `import React, { Component } from 'react';
-import { View } from 'react-native';
-import { Avatar } from 'material-bread';
+import { Card, CardContent, CardActions, } from 'material-bread';
 
-export default class UserAvatar extends Component {
+export default class FullCard extends Component {
   render() {
     return (
-        <Avatar 
-            type="icon"
-            content="face"
-            contentColor={'white'}
+      <Card>
+        <CardContent >
+          <Text style={{ color: 'rgba(0,0,0,.6)', fontSize: 14 }}>
+            This is some test card content, though it can anything.
+          </Text>
+        </CardContent>
+        <CardActions
+          leftActionItems={[
+            {name: 'share',},
+            {name: 'learn more'}
+          ]}
         />
+      </Card>
     );
   }
 }`;
 
-const Usage = pageHref => (
-  <ComponentUsage
-    pageHref={pageHref}
-    description={
-      <div>
-        {`Usage depends on what navigation package you're using.`} For
-        <CodeInline code="react-navigation" /> you can follow their{' '}
-        <Link href="https://reactnavigation.org/docs/en/tab-based-navigation.html">
-          guide on TabNavigation
-        </Link>
-      </div>
-    }
-    code={code}
-  />
-);
+const Usage = pageHref => <ComponentUsage pageHref={pageHref} code={code} />;
 export default Usage;

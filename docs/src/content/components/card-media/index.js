@@ -1,77 +1,17 @@
 import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
-import Section from '../../../components/Section';
+
 import ComponentPageLayout from '../../../components/ComponentPage/ComponentPageLayout';
-import {
-  IconButton,
-  Card,
-  CardContent,
-  CardActions,
-  CardMedia,
-} from '../../../../../src/index';
-import ComponentDescription from '../../../components/ComponentPage/ComponentDescription';
-import CodeInline from '../../../components/CodeInline';
-import propData from '../../../content/components/card-media/propData';
+import MainDemo from './MainDemo';
+import Usage from './Usage';
+import Props from './Props';
+import Demos from './Demos';
 
-const sections = [{ name: 'Demos' }];
-
-const liveEditCode = `<View style={{flexDirection: 'row', alignItems: 'center'}}>
-  <Card style={{width: 400}}>
-    <CardMedia
-        title={'Top ten books'}
-        subtitle={'by Cody'}
-        image={
-            <Image
-                style={{ flex: 1, width: '100%' }}
-                source={{uri: 'https://images.pexels.com/photos/34620/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'}}  
-                resizeMode="cover"
-            />
-        }
-    />
-    <CardContent >
-      <Text style={{ color: 'rgba(0,0,0,.6)', fontSize: 14 }}>
-        Books ranked with arbitrary bias, inconsistent logic, and strong opinions.
-      </Text>
-    </CardContent>
-    <CardActions
-      leftActionItems={[
-        {name: 'Read',},
-      ]}
-      rightActionItems={[
-        {name: 'favorite',},
-        {name: 'share'} 
-      ]}
-    />
-  </Card>
-</View>`;
-
-const usageCode = `import React, { Component } from 'react';
-import { Card, CardContent, CardMedia } from 'material-bread';
-
-export default class FullCard extends Component {
-  render() {
-    return (
-      <Card>
-        <CardMedia
-            title={'Top ten books'}
-            subtitle={'by Cody'}
-            image={
-                <Image
-                    style={{ flex: 1, width: '100%' }}
-                    source={{uri: 'https://images.pexels.com/photos/34620/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'}}  
-                    resizeMode="cover"
-                />
-            }
-        />
-        <CardContent >
-          <Text style={{ color: 'rgba(0,0,0,.6)', fontSize: 14 }}>
-            This is some test card content, though it can anything.
-          </Text>
-        </CardContent>
-      </Card>
-    );
-  }
-}`;
+const sections = [
+  { name: 'Component' },
+  { name: 'Usage' },
+  { name: 'Props' },
+  { name: 'Demos' },
+];
 
 export default class CardMediaPage extends Component {
   render() {
@@ -82,32 +22,11 @@ export default class CardMediaPage extends Component {
           title={'Card Media'}
           description={'CardMedia displays an image on a card.'}
           importCode={`import { CardMedia } from 'material-bread';`}
-          componentDescription={
-            <div>
-              CardMedia takes an <CodeInline code="image" type="prop" /> prop
-              and fits it into a <CodeInline code="Card" type="element" />.
-              Optional <CodeInline code="title" type="prop" /> and{' '}
-              <CodeInline code="subtitle" type="prop" /> are shown in the bottom
-              left corner of the <CodeInline code="image" type="prop" />.
-            </div>
-          }
-          sideScrollMenuItems={sections}
-          liveEditCode={liveEditCode}
-          liveEditScope={{
-            IconButton,
-            View,
-            Card,
-            CardContent,
-            CardActions,
-            Text,
-            CardMedia,
-            Image,
-          }}
-          usageCode={usageCode}
-          propData={propData}>
-          <Section name="Demos" href="/components/card-media#demos" id="demos">
-            <ComponentDescription text="You can see more demos on the other component pages and storybook." />
-          </Section>
+          sideScrollMenuItems={sections}>
+          <MainDemo pageHref={'/components/card-media'} />
+          <Usage pageHref={'/components/card-media'} />
+          <Props pageHref={'/components/card-media'} />
+          <Demos pageHref={'/components/card-media'} />
         </ComponentPageLayout>
       </div>
     );

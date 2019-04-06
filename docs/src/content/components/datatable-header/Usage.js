@@ -1,35 +1,42 @@
 import React from 'react';
-import { ComponentUsage, CodeInline, Link } from '@components';
+import { ComponentUsage } from '@components';
 
 export const code = `import React, { Component } from 'react';
 import { View } from 'react-native';
-import { Avatar } from 'material-bread';
+import { DataTable, DataTableHeader, DataTableCell, DataTableRow, } from 'material-bread';
 
-export default class UserAvatar extends Component {
-  render() {
-    return (
-        <Avatar 
-            type="icon"
-            content="face"
-            contentColor={'white'}
-        />
-    );
-  }
+class Table extends React.Component {
+    constructor(props) {
+      super(props)
+    }
+    render() {
+      return (
+        <DataTable>
+            <DataTableHeader
+              title={'Nutrition'}
+              rightActions={[
+                {name: 'filter-list'},
+                {name: 'more-vert'},
+              ]} 
+            />
+            <DataTableRow>
+                <DataTableCell text={'Desert'} borderRight flex={2} />
+                <DataTableCell text={'Calories'} right />
+                <DataTableCell text={'Fat (g)'} right />
+                <DataTableCell text={'Carbs (g)'} right />
+                <DataTableCell text={'Protein (g)'} right />
+            </DataTableRow>
+            <DataTableRow>
+                <DataTableCell text={'Frozen yogurt'} borderRight flex={2} />
+                <DataTableCell text={'159'} right />
+                <DataTableCell text={'6.0'} right />
+                <DataTableCell text={'24'} right />
+                <DataTableCell text={'4'} right />
+            </DataTableRow>
+        </DataTable>
+      );
+    }
 }`;
 
-const Usage = pageHref => (
-  <ComponentUsage
-    pageHref={pageHref}
-    description={
-      <div>
-        {`Usage depends on what navigation package you're using.`} For
-        <CodeInline code="react-navigation" /> you can follow their{' '}
-        <Link href="https://reactnavigation.org/docs/en/tab-based-navigation.html">
-          guide on TabNavigation
-        </Link>
-      </div>
-    }
-    code={code}
-  />
-);
+const Usage = pageHref => <ComponentUsage pageHref={pageHref} code={code} />;
 export default Usage;

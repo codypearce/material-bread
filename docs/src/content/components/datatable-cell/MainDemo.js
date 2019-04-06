@@ -1,42 +1,79 @@
 import React from 'react';
 import { View, Image } from 'react-native';
 import { ComponentMainDemo, CodeInline } from '@components';
-import { Avatar } from '../../../../../src/index';
+import {
+  DataTable,
+  DataTableHeader,
+  DataTableCell,
+  DataTablePagination,
+  DataTableRow,
+} from '../../../../../src/index';
 
-export const code = `<View style={{flexDirection: 'row', alignItems: 'center'}}>
-    <Avatar 
-        type="image" 
-        image={<Image source={{uri: 'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4'}} /> } 
-        size={64} 
-    />
-    <Avatar 
-        type="image" 
-        image={<Image source={{uri: 'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4'}} /> } 
-        size={48} 
-        onPress={() => console.log('avatar')}
-        ripple
-    />
-    <Avatar 
-        type="image" 
-        image={<Image source={{uri: 'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4'}} /> } 
-    /> 
-</View>`;
+export const code = `class Table extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+
+    }
+  }
+  render() {
+    return (
+      <DataTable>
+          <DataTableRow>
+              <DataTableCell text={'Desert'} type={'header'} borderRight flex={2} />
+              <DataTableCell text={'Calories'}  type={'header'}  right />
+              <DataTableCell text={'Fat (g)'}  type={'header'}  right />
+              <DataTableCell text={'Carbs (g)'}  type={'header'}  right />
+              <DataTableCell text={'Protein (g)'}  type={'header'}  right />
+          </DataTableRow>
+          <DataTableRow>
+              <DataTableCell text={'Frozen yogurt'} borderRight flex={2} />
+              <DataTableCell text={'159'} right />
+              <DataTableCell text={'6.0'} right />
+              <DataTableCell text={'24'} right />
+              <DataTableCell text={'4'} right />
+          </DataTableRow>
+          <DataTableRow>
+              <DataTableCell text={'Ice Cream Sandwich'} borderRight flex={2} />
+              <DataTableCell text={'237'} right />
+              <DataTableCell text={'9.0'} right />
+              <DataTableCell text={'37'} right />
+              <DataTableCell text={'4.3'} right />
+          </DataTableRow>
+          <DataTableRow>
+              <DataTableCell text={'Eclair'} borderRight flex={2} />
+              <DataTableCell text={'262'} right />
+              <DataTableCell text={'16.0'} right />
+              <DataTableCell text={'24'} right />
+              <DataTableCell text={'6.0'} right />
+          </DataTableRow>
+      </DataTable>
+    );
+  }
+}`;
 
 const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
     description={
       <div>
-        Avatars can be images, letters, or icons. First provide the{' '}
-        <CodeInline code="type" type="prop" />
-        of avatar, then either provide the{' '}
-        <CodeInline code="content" type="prop" /> prop for icons and letters or{' '}
-        <CodeInline code="image" type="prop" /> prop for images. A simple image
-        example is shown below.
+        Data Table Cells can either be <CodeInline code="header" type="value" />{' '}
+        or <CodeInline code="regular" type="value" /> cell. You can add
+        <CodeInline code="onPress" type="props" /> ,{' '}
+        <CodeInline code="right" type="props" /> to align to the right, or add
+        borders on either side.
       </div>
     }
     code={code}
-    scope={{ View, Avatar, Image }}
+    scope={{
+      View,
+      DataTable,
+      DataTableHeader,
+      DataTableCell,
+      DataTablePagination,
+      DataTableRow,
+      Image,
+    }}
   />
 );
 export default MainDemo;

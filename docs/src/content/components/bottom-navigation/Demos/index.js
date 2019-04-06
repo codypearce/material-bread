@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ComponentDemoHeader } from '@components';
+import { ComponentDemoHeader, CodeInline } from '@components';
 
-import IconDemo from './IconDemo';
-import TextDemo from './TextDemo';
-import CustomDemo from './CustomDemo';
+import LabelsDemo from './LabelsDemo';
+import ColoredDemo from './ColoredDemo';
 
 export default class Demos extends Component {
   static propTypes = {
@@ -17,13 +16,16 @@ export default class Demos extends Component {
         <ComponentDemoHeader
           pageHref={pageHref}
           description={
-            'You can see even more examples in the Storybook playground.'
+            <div>
+              Please see the{' '}
+              <CodeInline code="BottomNavigationItem" type="element" /> page to
+              learn how to customize each item more fully.
+            </div>
           }
         />
 
-        <IconDemo pageHref={pageHref} />
-        <TextDemo pageHref={pageHref} />
-        <CustomDemo pageHref={pageHref} />
+        <LabelsDemo pageHref={pageHref} />
+        <ColoredDemo pageHref={pageHref} />
       </div>
     );
   }

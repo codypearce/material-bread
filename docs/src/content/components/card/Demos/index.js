@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ComponentDemoHeader } from '@components';
 
-import IconDemo from './IconDemo';
-import TextDemo from './TextDemo';
-import CustomDemo from './CustomDemo';
+import ActionMediaDemo from './ActionMediaDemo';
+import ClickableDemo from './ClickableDemo';
 
 export default class Demos extends Component {
   static propTypes = {
@@ -21,9 +20,8 @@ export default class Demos extends Component {
           }
         />
 
-        <IconDemo pageHref={pageHref} />
-        <TextDemo pageHref={pageHref} />
-        <CustomDemo pageHref={pageHref} />
+        <ActionMediaDemo pageHref={pageHref} />
+        <ClickableDemo pageHref={pageHref} />
       </div>
     );
   }

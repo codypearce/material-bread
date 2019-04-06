@@ -1,23 +1,17 @@
 import { createTableData } from '../../../utils/createPropData';
 const propData = [
-  ['borderLeft', 'Shows border on the left', 'bool', ''],
-  ['borderRight', 'Shows border on the right', 'bool', ''],
+  ['dialogStyle', 'Styles container dialog', 'object', ''],
+
+  ['onRequestClose', 'Callback when dialog is closing', 'func', ''],
+  ['onShow', 'Callback when dialog is opening', 'func', ''],
   [
-    'flex',
-    'Sets flex, higher numbers take more space of table row',
-    'flex',
-    '1',
+    'onTouchOutside',
+    'Callback when clicking outside of dialog when shown',
+    'func',
+    '',
   ],
-  ['onPress', 'Call back on cell', 'func', ''],
-  ['right', 'Displays cell data on the right', 'bool', 'false'],
-  ['style', 'Styles root element', 'object', ''],
-  ['text', 'Text content for cell', 'object', ''],
-  [
-    'type',
-    'Whether it is a header or normal cell',
-    'string: header, normal',
-    'normal',
-  ],
+
+  ['visible', 'Wether to show dialog or not', 'bool', ''],
 ];
 
 export default createTableData(propData);

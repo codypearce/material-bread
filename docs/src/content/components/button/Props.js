@@ -7,13 +7,12 @@ const Props = pageHref => (
     pageHref={pageHref}
     description={
       <div>
-        Usage depends entirely on what kind of navigation you are using in your
-        app. For example, in <CodeInline code="react-navigation" /> you can
-        replace the entire header with a{' '}
-        <Link href="https://hackernoon.com/how-to-use-a-custom-header-and-custom-bottom-tab-bar-for-react-native-with-react-navigation-969a5d3cabb1">
-          custom appbar
-        </Link>
-        .
+        You can add any of the <CodeInline code="TouchableProps" type="prop" />{' '}
+        or <CodeInline code="Ripple" type="prop" /> props to the root component
+        and they will be spread onto the{' '}
+        <CodeInline code="Ripple" type="element" /> component, please see the{' '}
+        <Link href="/component/ripple">Ripple</Link> page to see full list of
+        props.
       </div>
     }
     propData={propData}

@@ -1,42 +1,52 @@
 import React from 'react';
-import { View, Image } from 'react-native';
-import { ComponentMainDemo, CodeInline } from '@components';
-import { Avatar } from '../../../../../src/index';
+import { View } from 'react-native';
+import { ComponentMainDemo } from '@components';
+import { Avatar, Banner, Button } from '../../../../../src/index';
 
-export const code = `<View style={{flexDirection: 'row', alignItems: 'center'}}>
-    <Avatar 
-        type="image" 
-        image={<Image source={{uri: 'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4'}} /> } 
-        size={64} 
-    />
-    <Avatar 
-        type="image" 
-        image={<Image source={{uri: 'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4'}} /> } 
-        size={48} 
-        onPress={() => console.log('avatar')}
-        ripple
-    />
-    <Avatar 
-        type="image" 
-        image={<Image source={{uri: 'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4'}} /> } 
-    /> 
-</View>`;
+export const code = `class Header extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      visible: true
+    }
+  }
+ 
+  render() {
+    return (
+      <View>
+        <Banner
+          visible={this.state.visible}
+          actionItems={[
+            {name: 'Continue'},
+            {name: 'Sign in', onPress: () => console.log('sign in')}
+          ]}
+          media={
+            <Avatar
+              type="icon"
+              content="notifications"
+              size={40}
+              contentColor={'white'}
+              color={'#42a5f5'}
+            />
+          }
+          message={
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+            }
+        />
+        <Button text={'Toggle'} type={'contained'} onPress={() => this.setState({visible: !this.state.visible})} containerStyle={{marginTop: 16}} />
+      </View>
+    );
+  }
+}`;
 
 const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
     description={
-      <div>
-        Avatars can be images, letters, or icons. First provide the{' '}
-        <CodeInline code="type" type="prop" />
-        of avatar, then either provide the{' '}
-        <CodeInline code="content" type="prop" /> prop for icons and letters or{' '}
-        <CodeInline code="image" type="prop" /> prop for images. A simple image
-        example is shown below.
-      </div>
+      'Banners show important information at the top of a page, you can add an icon or other media, text, and action buttons. A simple web multiline example is shown below.'
     }
     code={code}
-    scope={{ View, Avatar, Image }}
+    scope={{ View, Banner, Avatar, Button }}
   />
 );
 export default MainDemo;

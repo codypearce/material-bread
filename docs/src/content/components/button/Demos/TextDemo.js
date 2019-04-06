@@ -1,41 +1,25 @@
 import React from 'react';
 import { View } from 'react-native';
 import { ComponentDemo } from '@components';
-import { Avatar } from '../../../../../../src/index';
+import { Button, Icon } from '../../../../../../src/index';
 
-export const code = `<View style={{flexDirection: 'row', alignItems: 'center'}}>
-    <Avatar
-        type="text"
-        content="CP"
-        contentColor={'white'}
-        size={64}
-        color={'#42a5f5'}
-    />
-    <Avatar
-        type="text"
-        content="MB"
-        size={48}
-        color={'#c2185b'}
-    />
-    <Avatar
-        type="text"
-        content="NP"
-        contentColor={'#c2185b'}
-        color={'#f4511e'}
-    />
+export const code = `<View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
+    <Button text={'Text'} />
+    <Button text={'Icon'} textColor={'#E91E63'} borderSize={2} icon={<Icon name="favorite" />} />
+    <Button text={'Radius'} textColor={'#FF5722'} radius={20}  />
+    <Button text={'Dense'} ttextColor={'#673AB7'} dense  />
+    <Button text={'Loading'} textColor={'#009688'} loading  />
+    <Button text={'Disabled'} disabled />
 </View>
 `;
 
-const SubtitleDemo = pageHref => (
+const IconDemo = pageHref => (
   <ComponentDemo
-    sectionName={'Avatar Text'}
+    sectionName={'Text'}
     sectionHref={`${pageHref}#text`}
     sectionId={'text'}
-    description={
-      "Text is usually two letters for a person's initial, but it can be anything you want."
-    }
     code={code}
-    scope={{ View, Avatar }}
+    scope={{ View, Button, Icon }}
   />
 );
-export default SubtitleDemo;
+export default IconDemo;

@@ -1,42 +1,59 @@
 import React from 'react';
 import { View, Image } from 'react-native';
-import { ComponentMainDemo, CodeInline } from '@components';
-import { Avatar } from '../../../../../src/index';
+import { ComponentMainDemo } from '@components';
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContentText,
+  DialogTitle,
+} from '../../../../../src/index';
 
-export const code = `<View style={{flexDirection: 'row', alignItems: 'center'}}>
-    <Avatar 
-        type="image" 
-        image={<Image source={{uri: 'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4'}} /> } 
-        size={64} 
-    />
-    <Avatar 
-        type="image" 
-        image={<Image source={{uri: 'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4'}} /> } 
-        size={48} 
-        onPress={() => console.log('avatar')}
-        ripple
-    />
-    <Avatar 
-        type="image" 
-        image={<Image source={{uri: 'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4'}} /> } 
-    /> 
-</View>`;
+export const code = `class DialogPage extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      visible: false
+    }
+  }
+  render() {
+    return (
+      <View>
+        <Button text={'Open'} onPress={() => this.setState({ visible: !this.state.visible })} />
+        <Dialog
+          visible={this.state.visible}
+          onTouchOutside={() => this.setState({ visible: false })}>
+          <DialogTitle>Use Googles location service?</DialogTitle>
+          <DialogContentText>
+            Let Google help apps determine location. This means sending
+            anonymous location data to Google, even when no apps are running.
+          </DialogContentText>
+          <DialogActions>
+            <Button text={'Cancel'} onPress={() => this.setState({ visible: false })} />
+            <Button text={'OK'} onPress={() => this.setState({ visible: false })} />
+          </DialogActions>
+        </Dialog>
+      </View>
+    );
+  }
+}`;
 
 const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
     description={
-      <div>
-        Avatars can be images, letters, or icons. First provide the{' '}
-        <CodeInline code="type" type="prop" />
-        of avatar, then either provide the{' '}
-        <CodeInline code="content" type="prop" /> prop for icons and letters or{' '}
-        <CodeInline code="image" type="prop" /> prop for images. A simple image
-        example is shown below.
-      </div>
+      'Data Table Headers can display action buttons, display number of selected items, display table title, or any other contextual information.'
     }
     code={code}
-    scope={{ View, Avatar, Image }}
+    scope={{
+      View,
+      Button,
+      Dialog,
+      DialogActions,
+      DialogContentText,
+      DialogTitle,
+      Image,
+    }}
   />
 );
 export default MainDemo;
