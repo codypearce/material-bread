@@ -1,35 +1,36 @@
 import React from 'react';
-import { ComponentUsage, CodeInline, Link } from '@components';
+import { ComponentUsage } from '@components';
 
 export const code = `import React, { Component } from 'react';
 import { View } from 'react-native';
-import { Avatar } from 'material-bread';
+import { RadioButton } from 'material-bread';
 
-export default class UserAvatar extends Component {
+class RadioButtonDemo extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      checked: 1
+    }
+  }
   render() {
     return (
-        <Avatar 
-            type="icon"
-            content="face"
-            contentColor={'white'}
+      <View>
+        <RadioButton
+          checked={this.state.checked == 1}
+          onPress={() => this.setState({ checked: 1 })}
         />
+        <RadioButton
+          checked={this.state.checked == 2}
+          onPress={() => this.setState({ checked: 2 })}
+        />
+        <RadioButton
+          checked={this.state.checked == 3}
+          onPress={() => this.setState({ checked: 3 })}
+        />
+      </View>
     );
   }
 }`;
 
-const Usage = pageHref => (
-  <ComponentUsage
-    pageHref={pageHref}
-    description={
-      <div>
-        {`Usage depends on what navigation package you're using.`} For
-        <CodeInline code="react-navigation" /> you can follow their{' '}
-        <Link href="https://reactnavigation.org/docs/en/tab-based-navigation.html">
-          guide on TabNavigation
-        </Link>
-      </div>
-    }
-    code={code}
-  />
-);
+const Usage = pageHref => <ComponentUsage pageHref={pageHref} code={code} />;
 export default Usage;

@@ -1,42 +1,55 @@
 import React from 'react';
 import { View, Image } from 'react-native';
-import { ComponentMainDemo, CodeInline } from '@components';
-import { Avatar } from '../../../../../src/index';
+import { ComponentMainDemo } from '@components';
+import {
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  ListExpanded,
+} from '../../../../../src/index';
 
-export const code = `<View style={{flexDirection: 'row', alignItems: 'center'}}>
-    <Avatar 
-        type="image" 
-        image={<Image source={{uri: 'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4'}} /> } 
-        size={64} 
-    />
-    <Avatar 
-        type="image" 
-        image={<Image source={{uri: 'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4'}} /> } 
-        size={48} 
-        onPress={() => console.log('avatar')}
-        ripple
-    />
-    <Avatar 
-        type="image" 
-        image={<Image source={{uri: 'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4'}} /> } 
-    /> 
-</View>`;
+export const code = `class ListPage extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+
+    }
+  }
+  render() {
+    return (
+      <List>
+        <ListItem>
+          <ListItemIcon icon={'alarm'} />
+          <ListItemText primary={'This is a list Item'} />
+        </ListItem>
+        <ListExpanded title="Expanded">
+          <ListItem>
+            <ListItemText primary={'This is a list Item'} />
+          </ListItem>
+          <ListItem>
+            <ListItemText primary={'This is a list Item'} />
+          </ListItem>
+        </ListExpanded>
+      </List>
+    );
+  }
+}`;
 
 const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
-    description={
-      <div>
-        Avatars can be images, letters, or icons. First provide the{' '}
-        <CodeInline code="type" type="prop" />
-        of avatar, then either provide the{' '}
-        <CodeInline code="content" type="prop" /> prop for icons and letters or{' '}
-        <CodeInline code="image" type="prop" /> prop for images. A simple image
-        example is shown below.
-      </div>
-    }
+    description={`Lists are built from other List Components. You can combine these components to create many different combinations.`}
     code={code}
-    scope={{ View, Avatar, Image }}
+    scope={{
+      View,
+      List,
+      ListItem,
+      ListItemIcon,
+      ListItemText,
+      ListExpanded,
+      Image,
+    }}
   />
 );
 export default MainDemo;

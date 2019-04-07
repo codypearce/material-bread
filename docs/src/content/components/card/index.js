@@ -25,10 +25,10 @@ export default class CardPage extends Component {
         importCode={`import { Card } from 'material-bread';`}
         docsLink={'https://material.io/design/components/cards.html'}
         sideScrollMenuItems={sections}>
-        <MainDemo pageHref={'/components/button'} />
-        <Usage pageHref={'/components/button'} />
-        <Props pageHref={'/components/button'} />
-        <Demos pageHref={'/components/button'} />
+        <MainDemo pageHref={'/components/card'} />
+        <Usage pageHref={'/components/card'} />
+        <Props pageHref={'/components/card'} />
+        <Demos pageHref={'/components/card'} />
       </ComponentPageLayout>
     );
   }

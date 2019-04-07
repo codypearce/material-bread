@@ -17,9 +17,9 @@ export default class DividerPage extends Component {
           importCode={`import { Divider } from 'material-bread';`}
           docsLink={'https://material.io/design/components/dividers.html'}
           sideScrollMenuItems={sections}>
-          <MainDemo pageHref={'/components/dialog'} />
-          <Usage pageHref={'/components/dialog'} />
-          <Props pageHref={'/components/dialog'} />
+          <MainDemo pageHref={'/components/divider'} />
+          <Usage pageHref={'/components/divider'} />
+          <Props pageHref={'/components/divider'} />
         </ComponentPageLayout>
       </div>
     );

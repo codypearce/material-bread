@@ -1,49 +1,12 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
-import Section from '../../../components/Section';
+
 import ComponentPageLayout from '../../../components/ComponentPage/ComponentPageLayout';
-import { Fab } from '../../../../../src/index';
-import ComponentDescription from '../../../components/ComponentPage/ComponentDescription';
-import propData from '../../../content/components/fab/propData';
 
-const sections = [{ name: 'Demos' }];
+import MainDemo from './MainDemo';
+import Usage from './Usage';
+import Props from './Props';
 
-const liveEditCode = `
-class FabPage extends React.Component {
-    constructor(props) {
-      super(props)
-      this.state = {
-
-      }
-    }
-    render() {
-      return (
-        <View>
-          <Fab />
-        </View>
-      );
-    }
-}`;
-
-const usageCode = `import React, { Component } from 'react';
-import { View } from 'react-native';
-import { Fab} from 'material-bread';
-
-class FabPage extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-
-    }
-  }
-  render() {
-    return (
-      <View>
-        <Fab />
-      </View>
-    );
-  }
-}`;
+const sections = [{ name: 'Component' }, { name: 'Usage' }, { name: 'Props' }];
 
 export default class FabPage extends Component {
   render() {
@@ -57,18 +20,10 @@ export default class FabPage extends Component {
           docsLink={
             'https://material.io/design/components/buttons-floating-action-button.html'
           }
-          componentDescription={`Fabs can have different icons, color, or inner content.`}
-          sideScrollMenuItems={sections}
-          liveEditCode={liveEditCode}
-          liveEditScope={{
-            View,
-            Fab,
-          }}
-          usageCode={usageCode}
-          propData={propData}>
-          <Section name="Demos" href="/components/fab#demos" id="demos">
-            <ComponentDescription text="More demos can be seen in the playground" />
-          </Section>
+          sideScrollMenuItems={sections}>
+          <MainDemo pageHref={'/components/fab'} />
+          <Usage pageHref={'/components/fab'} />
+          <Props pageHref={'/components/fab'} />
         </ComponentPageLayout>
       </div>
     );

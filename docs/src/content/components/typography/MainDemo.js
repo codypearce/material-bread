@@ -1,42 +1,47 @@
 import React from 'react';
 import { View, Image } from 'react-native';
-import { ComponentMainDemo, CodeInline } from '@components';
-import { Avatar } from '../../../../../src/index';
+import { ComponentMainDemo } from '@components';
+import {
+  Heading,
+  Subtitle,
+  BodyText,
+  Caption,
+  Overline,
+} from '../../../../../src/index';
 
-export const code = `<View style={{flexDirection: 'row', alignItems: 'center'}}>
-    <Avatar 
-        type="image" 
-        image={<Image source={{uri: 'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4'}} /> } 
-        size={64} 
-    />
-    <Avatar 
-        type="image" 
-        image={<Image source={{uri: 'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4'}} /> } 
-        size={48} 
-        onPress={() => console.log('avatar')}
-        ripple
-    />
-    <Avatar 
-        type="image" 
-        image={<Image source={{uri: 'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4'}} /> } 
-    /> 
-</View>`;
+export const code = `class Demo extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+
+    }
+  }
+  render() {
+    return (
+      <View>
+        <Heading type={1}>h1</Heading>
+        <Heading type={2}>h2</Heading>
+        <Heading type={3}>h3</Heading>
+        <Heading type={4}>h4</Heading>
+        <Heading type={5}>h5</Heading>
+        <Heading type={6}>h6</Heading>
+        <Subtitle type={1}>Subtitle One</Subtitle>
+        <Subtitle type={2}>Subtitle Two</Subtitle>
+        <BodyText type={1}>Body 1</BodyText>
+        <BodyText type={2}>Body 2</BodyText>
+        <Caption>Caption</Caption>
+        <Overline>Overline</Overline>
+      </View>
+    );
+  }
+}`;
 
 const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
-    description={
-      <div>
-        Avatars can be images, letters, or icons. First provide the{' '}
-        <CodeInline code="type" type="prop" />
-        of avatar, then either provide the{' '}
-        <CodeInline code="content" type="prop" /> prop for icons and letters or{' '}
-        <CodeInline code="image" type="prop" /> prop for images. A simple image
-        example is shown below.
-      </div>
-    }
+    description={'Use each component to convey meaning to the page.'}
     code={code}
-    scope={{ View, Avatar, Image }}
+    scope={{ View, Heading, Subtitle, BodyText, Caption, Overline, Image }}
   />
 );
 export default MainDemo;

@@ -1,42 +1,41 @@
 import React from 'react';
 import { View, Image } from 'react-native';
-import { ComponentMainDemo, CodeInline } from '@components';
-import { Avatar } from '../../../../../src/index';
+import { ComponentMainDemo } from '@components';
+import {
+  Drawer,
+  DrawerItem,
+  DrawerHeader,
+  DrawerSection,
+} from '../../../../../src/index';
 
-export const code = `<View style={{flexDirection: 'row', alignItems: 'center'}}>
-    <Avatar 
-        type="image" 
-        image={<Image source={{uri: 'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4'}} /> } 
-        size={64} 
-    />
-    <Avatar 
-        type="image" 
-        image={<Image source={{uri: 'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4'}} /> } 
-        size={48} 
-        onPress={() => console.log('avatar')}
-        ripple
-    />
-    <Avatar 
-        type="image" 
-        image={<Image source={{uri: 'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4'}} /> } 
-    /> 
-</View>`;
+export const code = `class DrawerPage extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+    }
+  }
+  render() {
+    return (
+      <Drawer containerStyle={{ height: 400 }}>
+        <DrawerHeader title={'Jon Snow'} subtitle={'Knows nothing'} />
+        <DrawerSection bottomDivider>
+          <DrawerItem text={'Inbox'} icon={'mail'} active />
+          <DrawerItem text={'Outbox'} icon={'send'} />
+          <DrawerItem text={'Favorites'} icon={'favorite'} />
+        </DrawerSection>
+      </Drawer>
+    );
+  }
+}`;
 
 const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
     description={
-      <div>
-        Avatars can be images, letters, or icons. First provide the{' '}
-        <CodeInline code="type" type="prop" />
-        of avatar, then either provide the{' '}
-        <CodeInline code="content" type="prop" /> prop for icons and letters or{' '}
-        <CodeInline code="image" type="prop" /> prop for images. A simple image
-        example is shown below.
-      </div>
+      'Drawers can be displayed on either side of the app. There are a few types of drawers that are available. The contents are built withDrawerItem, DrawerHeader, and DrawerSection components.'
     }
     code={code}
-    scope={{ View, Avatar, Image }}
+    scope={{ View, Drawer, DrawerItem, DrawerHeader, DrawerSection, Image }}
   />
 );
 export default MainDemo;

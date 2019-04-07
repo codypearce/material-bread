@@ -1,49 +1,10 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
-import Section from '../../../components/Section';
 import ComponentPageLayout from '../../../components/ComponentPage/ComponentPageLayout';
-import { Switch } from '../../../../../src/index';
-import ComponentDescription from '../../../components/ComponentPage/ComponentDescription';
-import propData from '../../../content/components/switch/propData';
+import MainDemo from './MainDemo';
+import Usage from './Usage';
+import Props from './Props';
 
-const sections = [{ name: 'Demos' }];
-
-const liveEditCode = `
-class Demo extends React.Component {
-    constructor(props) {
-      super(props)
-      this.state = {
-
-      }
-    }
-    render() {
-      return (
-        <View>
-          <Switch />
-        </View>
-      );
-    }
-}`;
-
-const usageCode = `import React, { Component } from 'react';
-import { View } from 'react-native';
-import { Switch } from 'material-bread';
-
-class Demo extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-
-    }
-  }
-  render() {
-    return (
-      <View>
-        <Switch />
-      </View>
-    );
-  }
-}`;
+const sections = [{ name: 'Component' }, { name: 'Usage' }, { name: 'Props' }];
 
 export default class SwitchPage extends Component {
   render() {
@@ -57,18 +18,10 @@ export default class SwitchPage extends Component {
           docsLink={
             'https://material.io/design/components/selection-controls.html#switches'
           }
-          componentDescription={`The Switch knob and track can be customized however you wish.`}
-          sideScrollMenuItems={sections}
-          liveEditCode={liveEditCode}
-          liveEditScope={{
-            View,
-            Switch,
-          }}
-          usageCode={usageCode}
-          propData={propData}>
-          <Section name="Demos" href="/components/switch#demos" id="demos">
-            <ComponentDescription text="More demos can be seen in the playground" />
-          </Section>
+          sideScrollMenuItems={sections}>
+          <MainDemo pageHref={'/components/switch'} />
+          <Usage pageHref={'/components/switch'} />
+          <Props pageHref={'/components/switch'} />
         </ComponentPageLayout>
       </div>
     );

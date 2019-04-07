@@ -1,35 +1,46 @@
 import React from 'react';
-import { ComponentUsage, CodeInline, Link } from '@components';
+import { ComponentUsage } from '@components';
 
 export const code = `import React, { Component } from 'react';
 import { View } from 'react-native';
-import { Avatar } from 'material-bread';
+import { TextField} from 'material-bread';
 
-export default class UserAvatar extends Component {
+class Demo extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      one: '',
+      two: '',
+      three: ''
+    }
+  }
   render() {
     return (
-        <Avatar 
-            type="icon"
-            content="face"
-            contentColor={'white'}
+     <View>
+        <TextField
+          label={'Label'}
+          value={this.state.one}
+          onChangeText={value => this.setState({ one: value })}
         />
+        <TextField
+          containerStyle={{ marginTop: 20 }}
+          type={'outlined'}
+          value={this.state.two}
+          onChangeText={value => this.setState({ two: value })}
+        />
+        <TextField
+          containerStyle={{ marginTop: 20 }}
+          type={'Filled'}
+          label={'Label'}
+          error={true}
+          value={this.state.two}
+          onChangeText={value => this.setState({ three: value })}
+          helperText={'There is an error'}
+        />
+     </View>
     );
   }
 }`;
 
-const Usage = pageHref => (
-  <ComponentUsage
-    pageHref={pageHref}
-    description={
-      <div>
-        {`Usage depends on what navigation package you're using.`} For
-        <CodeInline code="react-navigation" /> you can follow their{' '}
-        <Link href="https://reactnavigation.org/docs/en/tab-based-navigation.html">
-          guide on TabNavigation
-        </Link>
-      </div>
-    }
-    code={code}
-  />
-);
+const Usage = pageHref => <ComponentUsage pageHref={pageHref} code={code} />;
 export default Usage;

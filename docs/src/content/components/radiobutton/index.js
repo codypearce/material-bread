@@ -1,71 +1,10 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
-import Section from '../../../components/Section';
 import ComponentPageLayout from '../../../components/ComponentPage/ComponentPageLayout';
-import { RadioButton } from '../../../../../src/index';
-import ComponentDescription from '../../../components/ComponentPage/ComponentDescription';
-import propData from '../../../content/components/radiobutton/propData';
+import MainDemo from './MainDemo';
+import Usage from './Usage';
+import Props from './Props';
 
-const sections = [{ name: 'Demos' }];
-
-const liveEditCode = `
-class RadioButtonDemo extends React.Component {
-    constructor(props) {
-      super(props)
-      this.state = {
-        checked: 1
-      }
-    }
-    render() {
-      return (
-        <View>
-          <RadioButton
-            checked={this.state.checked == 1}
-            onPress={() => this.setState({ checked: 1 })}
-          />
-          <RadioButton
-            checked={this.state.checked == 2}
-            onPress={() => this.setState({ checked: 2 })}
-          />
-          <RadioButton
-            checked={this.state.checked == 3}
-            onPress={() => this.setState({ checked: 3 })}
-          />
-        </View>
-      );
-    }
-}`;
-
-const usageCode = `import React, { Component } from 'react';
-import { View } from 'react-native';
-import { RadioButton } from 'material-bread';
-
-class RadioButtonDemo extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      checked: 1
-    }
-  }
-  render() {
-    return (
-      <View>
-        <RadioButton
-          checked={this.state.checked == 1}
-          onPress={() => this.setState({ checked: 1 })}
-        />
-        <RadioButton
-          checked={this.state.checked == 2}
-          onPress={() => this.setState({ checked: 2 })}
-        />
-        <RadioButton
-          checked={this.state.checked == 3}
-          onPress={() => this.setState({ checked: 3 })}
-        />
-      </View>
-    );
-  }
-}`;
+const sections = [{ name: 'Component' }, { name: 'Usage' }, { name: 'Props' }];
 
 export default class RadioButtonPage extends Component {
   render() {
@@ -79,18 +18,10 @@ export default class RadioButtonPage extends Component {
           docsLink={
             'https://material.io/design/components/selection-controls.html#radio-buttons'
           }
-          componentDescription={`Radio buttons can be fully cutsomized using various props.`}
-          sideScrollMenuItems={sections}
-          liveEditCode={liveEditCode}
-          liveEditScope={{
-            View,
-            RadioButton,
-          }}
-          usageCode={usageCode}
-          propData={propData}>
-          <Section name="Demos" href="/components/radiobutton#demos" id="demos">
-            <ComponentDescription text="More demos can be seen in the playground" />
-          </Section>
+          sideScrollMenuItems={sections}>
+          <MainDemo pageHref={'/components/radiobutton'} />
+          <Usage pageHref={'/components/radiobutton'} />
+          <Props pageHref={'/components/radiobutton'} />
         </ComponentPageLayout>
       </div>
     );

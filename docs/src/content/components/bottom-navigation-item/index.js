@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ComponentPageLayout from '../../../components/ComponentPage/ComponentPageLayout';
-import propData from '../../../content/components/bottom-navigation-item/propData';
 import MainDemo from './MainDemo';
 import Usage from './Usage';
 import Props from './Props';
