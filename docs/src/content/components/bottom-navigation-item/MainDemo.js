@@ -23,7 +23,7 @@ export const code = `class BottomTabs extends React.Component {
     return (
       <View style={{alignItems: 'center'}}>
         <BottomNavigation 
-            style={{width: 672 }}
+            style={{ maxWidth: 672, width: '100%' }}
             actionItems={[
                 <BottomNavigationItem 
                     icon={'home'} 

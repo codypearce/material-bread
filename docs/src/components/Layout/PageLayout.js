@@ -25,6 +25,8 @@ class PageLayout extends Component {
   state = {
     mobileOpen: false,
     isTemporary: false,
+    drawerType: 'permanent',
+    windowWidth: 0,
   };
 
   componentDidMount() {
@@ -40,22 +42,55 @@ class PageLayout extends Component {
         });
       }
     }
-    this.handleDifferentLayouts();
-  }
-  componentDidUpdate() {
-    Prism.highlightAll();
-    this.handleDifferentLayouts();
+
+    const pathName = location.pathname;
+    if (pathName !== '/') {
+      this.setLarge();
+    } else if (pathName == '/') {
+      this.setSmall();
+    }
+
+    const mediaQuery = window.matchMedia('(min-width: 1180px)');
+
+    if (mediaQuery.matches && pathName != '/') {
+      this.setLarge();
+    } else {
+      this.setSmall();
+    }
+    mediaQuery.addListener(mq => {
+      if (mq.matches && pathName != '/') {
+        this.setLarge();
+      } else {
+        this.setSmall();
+      }
+    });
   }
 
-  handleDifferentLayouts() {
+  componentDidUpdate(prevProps, prevState) {
+    Prism.highlightAll();
+    this.handleDifferentLayouts(prevState);
+  }
+
+  setSmall = () => {
+    this.setState({ isTemporary: true, mobileOpen: false });
+  };
+
+  setLarge = () => {
+    this.setState({ isTemporary: false, mobileOpen: true });
+  };
+
+  handleDifferentLayouts = () => {
     const location = window && window.location;
     const pathName = location.pathname;
-    if (pathName == '/' && !this.state.isTemporary) {
-      this.setState({ isTemporary: true, mobileOpen: false });
-    } else if (this.state.isTemporary && pathName !== '/') {
-      this.setState({ isTemporary: false });
+    const width = window.innerWidth;
+    const { isTemporary } = this.state;
+
+    if (isTemporary && pathName !== '/' && width >= 1180) {
+      this.setLarge();
+    } else if (pathName == '/' && !isTemporary) {
+      this.setSmall();
     }
-  }
+  };
 
   handleDrawerToggle = () => {
     this.setState(state => ({ mobileOpen: !state.mobileOpen }));
@@ -102,15 +137,14 @@ class PageLayout extends Component {
             posts={posts}
             drawerType={drawerType}
           />
-          <Header handleDrawerToggle={this.handleDrawerToggle} />
+          <Header
+            handleDrawerToggle={this.handleDrawerToggle}
+            isTemporary={isTemporary}
+          />
           <div
-            style={{
-              maxWidth: isTemporary ? '100%' : 760,
-              width: isTemporary ? '100%' : `calc(100% - ${240}px)`,
-              marginLeft: isTemporary ? 0 : 'calc(240px + 130px)',
-              marginRight: isTemporary ? 0 : 40,
-              paddingTop: 40,
-            }}>
+            className={`${
+              isTemporary ? 'main--temporaryDrawer' : 'main--permanentDrawer'
+            }`}>
             {children}
           </div>
         </div>

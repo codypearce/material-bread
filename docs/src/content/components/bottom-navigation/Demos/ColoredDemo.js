@@ -22,7 +22,7 @@ export const code = `class BottomTabs extends React.Component {
     return (
       <View style={{alignItems: 'center'}}>
         <BottomNavigation 
-            style={{width: 672 }}
+            style={{ maxWidth: 672, width: '100%' }}
             value={this.state.value}
             backgroundColor={'#673AB7'}
             handleChange={(value) => this.handleChange(value)}

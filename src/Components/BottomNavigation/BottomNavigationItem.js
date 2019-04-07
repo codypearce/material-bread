@@ -161,7 +161,6 @@ class BottomNavigationItem extends Component {
 
 const styles = StyleSheet.create({
   bottomNavigationItem: {
-    minWidth: 80,
     maxWidth: 168,
     height: 56,
     flexDirection: 'column',

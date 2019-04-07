@@ -19,6 +19,8 @@ class DataTable extends Component {
             width: '100%',
             backgroundColor: 'white',
             borderRadius: 4,
+            overflowX: 'auto',
+            minWidth: 'auto',
             ...shadow(4),
           },
           style,

@@ -24,7 +24,7 @@ export const code = `class BottomTabs extends React.Component {
     return (
       <View style={{alignItems: 'center'}}>
         <BottomNavigation 
-            style={{width: 672, height: 42, borderTopRightRadius: 6, borderTopLeftRadius: 6 }}
+            style={{ maxWidth: 672, width: '100%', height: 42, borderTopRightRadius: 6, borderTopLeftRadius: 6 }}
             backgroundColor={'black'}
             actionItems={[
                 <BottomNavigationItem 

@@ -28,6 +28,10 @@ class Badge extends Component {
     right: 0,
     left: 'auto',
   };
+  state = {
+    childrenWidth: 0,
+    childrenHeight: 0,
+  };
 
   getFontSize() {
     const { content, size } = this.props;
@@ -37,6 +41,15 @@ class Badge extends Component {
     }
     return size * scaleFactor;
   }
+
+  onChildrenLayout = e => {
+    const { width, height } = e.nativeEvent.layout;
+
+    this.setState({
+      childrenWidth: width,
+      childrenHeight: height,
+    });
+  };
 
   _renderBadge() {
     const {
@@ -102,7 +115,7 @@ class Badge extends Component {
 
   render() {
     const { children, containerStyle, onPress } = this.props;
-
+    const { childrenHeight, childrenWidth } = this.state;
     return (
       <View
         style={[
@@ -111,10 +124,16 @@ class Badge extends Component {
             alignSelf: 'flex-start',
             alignItems: 'flex-start',
             display: 'inline-flex',
+            height: children ? childrenHeight : 'auto',
+            width: children ? childrenWidth : 'auto',
+            maxHeight: children ? childrenHeight : 'auto',
+            maxWidth: children ? childrenWidth : 'auto',
+            minHeight: children ? childrenHeight : 'auto',
+            minWidth: children ? childrenWidth : 'auto',
           },
           containerStyle,
         ]}>
-        {children}
+        <View onLayout={this.onChildrenLayout}>{children}</View>
         {onPress ? (
           <Ripple onPress>{this._renderBadge()}</Ripple>
         ) : (

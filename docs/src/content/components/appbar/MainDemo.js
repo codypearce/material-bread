@@ -10,7 +10,7 @@ export const code = ` <Appbar
     onNavigation={() => console.log('onNavigation!')}
     actionItems={[
     <Badge
-        containerStyle={{marginRight: 16}}
+        containerStyle={{marginRight: 16, flex: 1}}
         color={'#e10050'}
         textColor={'white'}
         size={14}

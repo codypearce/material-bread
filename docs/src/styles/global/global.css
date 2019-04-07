@@ -118,3 +118,22 @@ body {
   float: left; /* 1 */
   min-width: 100%; /* 2 */
 }
+
+.main--permanentDrawer {
+  max-width: 760px;
+  width: calc(100% - 240);
+  margin-left: calc(240px + 130px);
+  margin-right: 40px;
+  padding-top: 40px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.main--temporaryDrawer {
+  max-width: 100%;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 60px;
+  padding-left: 24px;
+  padding-right: 24px;
+}

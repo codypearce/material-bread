@@ -57,7 +57,7 @@ export default class IconDirectory extends Component {
           onChangeText={this._handleInputChange}
           onCloseIcon={() => this.setState({ search: '' })}
           placeholder="Search Icons"
-          style={{ height: 50, width: 820, marginBottom: 20 }}
+          style={{ height: 50, width: '100%', maxWidth: 820, marginBottom: 20 }}
         />
         <div style={styles.results}>
           <Grid

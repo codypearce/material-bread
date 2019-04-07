@@ -16,7 +16,7 @@ export const code = `class CheckboxPage extends React.Component {
   }
   render() {
     return (
-      <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
+      <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap'}}>
           <Checkbox
               checked={this.state.checkedOne}
               onPress={() => this.setState({ checkedOne: !this.state.checkedOne })}

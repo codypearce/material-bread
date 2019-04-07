@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: 12,
+    minWidth: 'auto',
   },
 
   currentNumber: {

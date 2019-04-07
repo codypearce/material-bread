@@ -12,7 +12,7 @@ class Index extends Component {
     return (
       <div style={styles.container}>
         <div style={{ marginTop: 40 }}>
-          <LogoWithText subtitle />
+          <LogoWithText subtitle style={{ width: '100%' }} />
         </div>
         <div style={{ marginTop: 20 }}>
           <CodeBlock

@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { ComponentDemo, CodeInline } from '@components';
 import { Button, Icon } from '../../../../../../src/index';
 
-export const code = `<View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
+export const code = `<View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap'}}>
   <Button text={'contained'} type="contained" />
   <Button text={'Icon'} type="contained" color={'#E91E63'} icon={<Icon name="favorite" />} />
   <Button text={'Radius'} type="contained" color={'#FF5722'} radius={20} />

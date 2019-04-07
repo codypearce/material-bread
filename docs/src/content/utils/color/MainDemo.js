@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { ComponentMainDemo } from '@components';
 import { Colors } from '../../../../../src/index';
 
-export const code = `<View style={{flexDirection: 'row'}}>
+export const code = `<View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
     <View style={{width: 100, height: 100, backgroundColor: Colors.blue[700]}} />
     <View style={{width: 100, height: 100, backgroundColor: Colors.red[300]}} />
     <View style={{width: 100, height: 100, backgroundColor: Colors.teal[500]}} />

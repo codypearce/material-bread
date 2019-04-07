@@ -12,7 +12,7 @@ export const code = `class PaperDemo extends React.Component {
   }
   render() {
     return (
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+      <View style={{flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap'}}>
         <Paper
             style={{
               height: 100,

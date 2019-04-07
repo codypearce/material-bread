@@ -15,7 +15,7 @@ export const code = `class CheckboxPage extends React.Component {
   }
   render() {
     return (
-      <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
+      <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap'}}>
           <Checkbox
               label={'Click me'}
               checked={this.state.checkedOne}

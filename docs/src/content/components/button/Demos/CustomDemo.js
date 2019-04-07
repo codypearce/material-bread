@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import { ComponentDemo } from '@components';
 import { Button, Icon } from '../../../../../../src/index';
 
-export const code = `<View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start'}}>
+export const code = `<View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', flexWrap: 'wrap'}}>
   <Button
     style={{height: 100, width: 100, flexDirection: "column", marginRight: 24}}
     type={'outlined'}

@@ -2,14 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../../styles/components/Logo.css';
 
-function Logo({ animated, width, height }) {
+function Logo({ animated, width, height, style }) {
   return (
     <svg
       width={width ? width : '387.502'}
       height={height ? height : '320.398'}
       viewBox="0 0 363.28359 300.3731"
       id="svg5967"
-      style={{ filter: 'drop-shadow(rgba(0, 0, 0, 0.3) 6px 6px 8px)' }}
+      style={{
+        filter: 'drop-shadow(rgba(0, 0, 0, 0.3) 6px 6px 8px)',
+        ...style,
+      }}
       className={`Logo ${animated ? 'Logo--animated' : ''}`}>
       <g id="layer1" transform="translate(26.837 -286.146)">
         <g
@@ -137,5 +140,6 @@ Logo.propTypes = {
   animated: PropTypes.bool,
   width: PropTypes.number,
   height: PropTypes.number,
+  style: PropTypes.object,
 };
 export default Logo;

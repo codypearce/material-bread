@@ -9,7 +9,9 @@ export const code = `const styles = {
     justifyContent:'space-between', 
     height: 60, 
     paddingVertical: 0, 
-    backgroundColor: 'black'
+    paddingHorizontal: 8,
+    backgroundColor: 'black',
+    overflowX: 'auto'
   },
   left: {
     flexDirection: 'row', 

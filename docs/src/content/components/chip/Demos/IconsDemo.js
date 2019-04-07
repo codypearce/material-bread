@@ -12,7 +12,7 @@ export const code = `class ChipPage extends React.Component {
   }
   render() {
     return (
-      <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>    
+      <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap'}}>    
           <Chip 
             text={'Mood'}
             leftIcon={<Icon name="mood" color={'#4CAF50'} />}

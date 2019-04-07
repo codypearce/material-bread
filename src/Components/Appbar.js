@@ -232,6 +232,9 @@ const styles = StyleSheet.create({
     padding: 16,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    overflowX: 'auto',
+    overflowY: 'hidden',
+    minWidth: 'auto',
   },
   backgroundImage: {
     flex: 1,
@@ -250,12 +253,14 @@ const styles = StyleSheet.create({
   left: {
     flexDirection: 'row',
     alignItems: 'center',
+    minWidth: 'auto',
   },
   right: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-end',
+    minWidth: 'auto',
   },
 });
 

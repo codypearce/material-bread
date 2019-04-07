@@ -139,7 +139,7 @@ class Banner extends Component {
 
   getPlatformStyles() {
     const { mobileLayout, media, singleLine } = this.props;
-    const { isWideScreen } = this.state;
+    const { isWideScreen, width } = this.state;
     const isWeb = Platform.OS == 'web';
     let styles = {
       body: {
@@ -151,11 +151,13 @@ class Banner extends Component {
       },
       content: {
         marginBottom: 8,
+        marginRight: width < 400 ? 8 : 0,
       },
       actions: {
         justifyContent: singleLine ? 'center' : 'flex-end',
         alignItems: singleLine ? 'center' : 'flex-end',
         alignSelf: singleLine ? 'center' : 'flex-end',
+        marginRight: 8,
       },
       image: {
         marginRight: 16,
@@ -235,6 +237,7 @@ const styles = StyleSheet.create({
     marginRight: 8,
     marginBottom: 8,
     flexShrink: 1,
+    minWidth: 'auto',
   },
   button: {
     width: 'auto',

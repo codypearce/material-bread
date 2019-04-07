@@ -1,21 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { IconButton } from '../../../../src';
+
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import { withStyles } from '@material-ui/core/styles';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import Github from '../Icons/Github';
 
-const styles = () => ({
-  appBar: {
-    boxShadow: 'none',
-    backgroundColor: 'transparent',
-  },
-  menuButton: {
-    marginRight: 20,
-  },
-});
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -24,28 +14,37 @@ class Header extends Component {
   static propTypes = {
     classes: PropTypes.object,
     handleDrawerToggle: PropTypes.func,
+    isTemporary: PropTypes.bool,
   };
 
   render() {
-    const { classes, handleDrawerToggle } = this.props;
+    const { handleDrawerToggle, isTemporary } = this.props;
+    let backgroundColor = isTemporary ? '' : 'transparent';
+    const location = window && window.location;
+    const pathName = location.pathname;
+    if (pathName == '/') {
+      backgroundColor = 'transparent';
+    }
     return (
-      <AppBar className={classes.appBar} color="default">
+      <AppBar
+        color="default"
+        style={{
+          backgroundColor,
+          boxShadow: 'none',
+        }}>
         <Toolbar>
           <IconButton
-            color="inherit"
-            aria-label="Open drawer"
-            onClick={handleDrawerToggle}
-            className={classes.menuButton}>
-            <MenuIcon />
-          </IconButton>
+            color={'263238'}
+            size={28}
+            name={'menu'}
+            onPress={handleDrawerToggle}
+          />
           <div style={{ flexGrow: 1 }} />
-          <IconButton>
-            <Github />
-          </IconButton>
+          <Github />
         </Toolbar>
       </AppBar>
     );
   }
 }
 
-export default withStyles(styles, { withTheme: true })(Header);
+export default Header;

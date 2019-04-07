@@ -1,10 +1,11 @@
 import React from 'react';
 import Logo from './Logo';
+import PropTypes from 'prop-types';
 
-function LogoWithText(subtitle) {
+function LogoWithText({ subtitle, style }) {
   return (
     <div style={styles.container}>
-      <Logo animated />
+      <Logo animated style={{ ...style }} />
       <h1 style={styles.title} className={'Logo__title'}>
         Material Bread
       </h1>
@@ -36,6 +37,11 @@ const styles = {
     marginTop: 6,
     textAlign: 'center',
   },
+};
+
+LogoWithText.propTypes = {
+  subtitle: PropTypes.string,
+  style: PropTypes.object,
 };
 
 export default LogoWithText;

@@ -6,12 +6,14 @@ import { AppbarBottom, Button } from '../../../../../../src/index';
 
 export const code = `const styles = {
     appbar: {
-      backgroundColor: '#009688'
+      backgroundColor: '#009688',
+      overflowX: 'auto'
     },
     left: {
       flexDirection: 'row', 
       alignItems: 'center', 
       justifyContent:'flex-start',
+      minWidth: 'auto'
     },
     button: {
       height: 30, 
@@ -35,9 +37,9 @@ export const code = `const styles = {
 
 const SubtitleDemo = pageHref => (
   <ComponentDemo
-    sectionName={'No Fab'}
-    sectionHref={`${pageHref}#no-fab`}
-    sectionId={'no-fab'}
+    sectionName={'Custom'}
+    sectionHref={`${pageHref}#custom`}
+    sectionId={'custom'}
     description={
       <div>
         Adding <CodeInline code="children" type={'prop'} /> will replace all

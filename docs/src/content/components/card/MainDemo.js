@@ -13,7 +13,7 @@ import {
 } from '../../../../../src/index';
 
 export const code = `<View style={{flexDirection: 'row', alignItems: 'center'}}>
-  <Card style={{width: 400}}>
+  <Card style={{maxWidth: 400, width: '100%'}}>
     <CardHeader
         thumbnail={
             <Avatar 

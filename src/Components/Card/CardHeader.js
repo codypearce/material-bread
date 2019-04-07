@@ -66,10 +66,13 @@ const styles = StyleSheet.create({
   },
   left: {
     flexDirection: 'row',
+    flexShrink: 1,
   },
 
   textContainer: {
     marginLeft: 16,
+    flexWrap: 'wrap',
+    flexShrink: 1,
   },
 
   title: {
@@ -77,11 +80,13 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     lineHeight: 20,
     color: 'rgba(0,0,0,.87)',
+    flexWrap: 'wrap',
   },
   subtitle: {
     fontSize: 14,
     lineHeight: 20,
     color: 'rgba(0,0,0,.6)',
+    flexWrap: 'wrap',
   },
 });
 

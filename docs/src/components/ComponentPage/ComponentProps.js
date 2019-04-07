@@ -18,7 +18,18 @@ class ComponentProps extends Component {
     return (
       <Section name="Props" href={`${pageHref}#props`} id="props">
         <ComponentDescription text={description} />
-        <PropsTable data={propData} />
+        <div
+          style={{
+            width: 'auto',
+            overflowX: 'auto',
+            backgroundColor: 'transparent',
+            boxShadow:
+              '0 2px 4px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.08)',
+            borderBottomRightRadius: 6,
+            borderBottomLeftRadius: 6,
+          }}>
+          <PropsTable data={propData} />
+        </div>
       </Section>
     );
   }

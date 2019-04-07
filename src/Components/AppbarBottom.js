@@ -181,6 +181,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     position: 'relative',
+    overflowX: 'auto',
+    overflowY: 'hidden',
+    minWidth: 'auto',
   },
 
   left: {

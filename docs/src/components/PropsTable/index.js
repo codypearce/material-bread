@@ -42,9 +42,6 @@ class PropsTable extends Component {
         <TableBody
           style={{
             backgroundColor: 'white',
-            boxShadow: '0 1px 2px rgba(0,0,0,0.16), 0 1px 2px rgba(0,0,0,0.23)',
-            borderBottomRightRadius: 6,
-            borderBottomLeftRadius: 6,
           }}>
           {data.map(row => (
             <TableRow className={classes.row} key={row.name}>

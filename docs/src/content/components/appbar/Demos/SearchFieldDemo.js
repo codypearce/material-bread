@@ -21,7 +21,8 @@ class Header extends React.Component {
           <SearchField 
             style={{
               marginHorizontal: 24, 
-              flex: this.state.isSearching ? 1 : -1
+              flexGrow: this.state.isSearching ? 1 : 0,
+              flexShrink: 0
             }}
             primary
             value={this.state.value}

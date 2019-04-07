@@ -12,8 +12,8 @@ import {
   Ripple,
 } from '../../../../../../src/index';
 
-export const code = `<View style={{flexDirection: 'row', alignItems: 'center'}}>
-  <Card style={{width: 300, marginRight: 24}} onPress={() => console.log('clicked gorilla')}>
+export const code = `<View style={{flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap'}}>
+  <Card style={{maxWidth: 300, width: '100%', marginRight: 24}} onPress={() => console.log('clicked gorilla')}>
     <CardMedia
       image={
         <Image
@@ -33,7 +33,7 @@ export const code = `<View style={{flexDirection: 'row', alignItems: 'center'}}>
     </CardContent>
   </Card>
 
-  <Card style={{width: 300}} onPress={() => console.log('clicked dog')}>
+  <Card style={{maxWidth: 300, width: '100%'}} onPress={() => console.log('clicked dog')}>
     <CardMedia
       image={
         <Image

@@ -25,7 +25,7 @@ export const code = `class Header extends React.Component {
       >
       {this.state.isSearching ?  
         <Searchbar
-          style={{height: 56, width: '100%', paddingHorizontal: 16}}
+          style={{height: 56, width: '100%', paddingHorizontal: 16, overflow: scroll}}
           value={this.state.value}
           onChangeText={(value) => this.setState({value})}
           onNavigation={() => this.setState({isSearching: false})}
