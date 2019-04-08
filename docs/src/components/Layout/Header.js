@@ -17,14 +17,35 @@ class Header extends Component {
     isTemporary: PropTypes.bool,
   };
 
+  state = {
+    isHome: false,
+  };
+
+  componentDidmount() {
+    this.isHome();
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (this.isHome() && !this.state.isHome) {
+      this.setState({ isHome: true });
+    } else if (!this.isHome() && !prevState.isHome && this.state.isHome) {
+      this.setState({ isHome: false });
+    }
+  }
+
+  isHome() {
+    if (typeof window !== `undefined`) {
+      const location = window && window.location;
+      const pathName = location.pathname;
+      if (pathName == '/') {
+        return true;
+      }
+    }
+  }
   render() {
     const { handleDrawerToggle, isTemporary } = this.props;
-    let backgroundColor = isTemporary ? '' : 'transparent';
-    const location = window && window.location;
-    const pathName = location.pathname;
-    if (pathName == '/') {
-      backgroundColor = 'transparent';
-    }
+    let backgroundColor =
+      !isTemporary || this.state.isHome ? 'transparent' : '';
+
     return (
       <AppBar
         color="default"

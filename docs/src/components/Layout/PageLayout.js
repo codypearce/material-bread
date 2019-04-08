@@ -31,39 +31,40 @@ class PageLayout extends Component {
 
   componentDidMount() {
     Prism.highlightAll();
-    const location = window && window.location;
-    const hash = location.hash;
-    if (hash) {
-      const id = hash.split('#')[1].toString();
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({
-          behavior: 'smooth',
-        });
+    if (typeof window !== `undefined`) {
+      const location = window && window.location;
+      const hash = location.hash;
+      if (hash) {
+        const id = hash.split('#')[1].toString();
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({
+            behavior: 'smooth',
+          });
+        }
       }
-    }
+      const pathName = location.pathname;
+      if (pathName !== '/') {
+        this.setLarge();
+      } else if (pathName == '/') {
+        this.setSmall();
+      }
 
-    const pathName = location.pathname;
-    if (pathName !== '/') {
-      this.setLarge();
-    } else if (pathName == '/') {
-      this.setSmall();
-    }
+      const mediaQuery = window.matchMedia('(min-width: 1180px)');
 
-    const mediaQuery = window.matchMedia('(min-width: 1180px)');
-
-    if (mediaQuery.matches && pathName != '/') {
-      this.setLarge();
-    } else {
-      this.setSmall();
-    }
-    mediaQuery.addListener(mq => {
-      if (mq.matches && pathName != '/') {
+      if (mediaQuery.matches && pathName != '/') {
         this.setLarge();
       } else {
         this.setSmall();
       }
-    });
+      mediaQuery.addListener(mq => {
+        if (mq.matches && pathName != '/') {
+          this.setLarge();
+        } else {
+          this.setSmall();
+        }
+      });
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -80,15 +81,17 @@ class PageLayout extends Component {
   };
 
   handleDifferentLayouts = () => {
-    const location = window && window.location;
-    const pathName = location.pathname;
-    const width = window.innerWidth;
-    const { isTemporary } = this.state;
+    if (typeof window !== `undefined`) {
+      const location = window && window.location;
+      const pathName = location.pathname;
+      const width = window.innerWidth;
+      const { isTemporary } = this.state;
 
-    if (isTemporary && pathName !== '/' && width >= 1180) {
-      this.setLarge();
-    } else if (pathName == '/' && !isTemporary) {
-      this.setSmall();
+      if (isTemporary && pathName !== '/' && width >= 1180) {
+        this.setLarge();
+      } else if (pathName == '/' && !isTemporary) {
+        this.setSmall();
+      }
     }
   };
 
@@ -119,7 +122,7 @@ class PageLayout extends Component {
             content="react react native material design components"
           />
 
-          <link rel="icon" href="favicon.ico" />
+          <link rel="icon" href="assets/favicon.ico" />
 
           <link
             rel="stylesheet"

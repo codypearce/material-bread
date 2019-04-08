@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Image } from 'react-native';
 import { ComponentMainDemo } from '@components';
 import { Badge, IconButton, Icon } from '../../../../../src/index';
 

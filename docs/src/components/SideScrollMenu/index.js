@@ -40,6 +40,9 @@ class SideScrollMenu extends Component {
   }
   render() {
     const { items } = this.props;
+    if (typeof window == 'undefined') {
+      return null;
+    }
     return (
       <Scrollspy
         items={this.handleLinks()}

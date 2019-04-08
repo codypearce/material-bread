@@ -17,6 +17,9 @@ class LiveEdit extends Component {
 
   render() {
     const { scope, code, syntax, noInline } = this.props;
+    if (typeof window == 'undefined') {
+      return null;
+    }
     return (
       <LiveProvider
         code={code}

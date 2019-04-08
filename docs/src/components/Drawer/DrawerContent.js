@@ -30,11 +30,13 @@ class DrawerContent extends React.PureComponent {
   };
 
   componentDidMount() {
-    const pathName = window.location.pathname;
-    const pathArray = pathName.split('/');
+    if (typeof window !== `undefined`) {
+      const pathName = window.location.pathname;
+      const pathArray = pathName.split('/');
 
-    this.handleSectionExanded(pathArray);
-    this.handleSelectedItem(pathArray, pathName);
+      this.handleSectionExanded(pathArray);
+      this.handleSelectedItem(pathArray, pathName);
+    }
   }
 
   handleSectionExanded(pathArray) {

@@ -80,5 +80,8 @@ module.exports = {
         name: 'pages',
       },
     },
+    {
+      resolve: `gatsby-plugin-material-ui`,
+    },
   ],
 };

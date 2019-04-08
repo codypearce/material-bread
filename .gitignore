@@ -64,3 +64,4 @@ ios/Index
 docs/public
 docs/node_modules
 docs/.cache
+gh/**/*

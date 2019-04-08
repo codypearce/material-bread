@@ -59,3 +59,19 @@ exports.createPages = ({ graphql, actions }) => {
     });
   });
 };
+
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === 'build-html') {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /react-scrollspy/,
+            use: loaders.null(),
+          },
+          { test: /react-window/, use: loaders.null() },
+        ],
+      },
+    });
+  }
+};

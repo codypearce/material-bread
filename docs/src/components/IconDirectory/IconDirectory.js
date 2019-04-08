@@ -48,7 +48,9 @@ export default class IconDirectory extends Component {
   };
   render() {
     const searchResults = this._getResults();
-
+    if (typeof window == 'undefined') {
+      return null;
+    }
     return (
       <div style={styles.container}>
         <SearchField

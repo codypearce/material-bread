@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Image, Text } from 'react-native';
 import { CodeInline, ComponentDemo } from '@components';
 import { Avatar, Icon, Chip, IconButton } from '../../../../../../src/index';
 
