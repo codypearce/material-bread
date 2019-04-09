@@ -10,9 +10,7 @@ function LogoWithText({ subtitle, style }) {
         Material Bread
       </h1>
       {subtitle ? (
-        <h4 style={styles.subtitle}>
-          One Material Component Library, Six Platforms
-        </h4>
+        <h4 style={styles.subtitle}>One Component Library, Six Platforms</h4>
       ) : null}
     </div>
   );

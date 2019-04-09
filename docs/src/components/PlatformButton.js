@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from '@components';
+
 import { Ripple, Hoverable } from '../../../src';
 class Section extends Component {
   constructor(props) {
@@ -24,37 +26,39 @@ class Section extends Component {
   }
 
   render() {
-    const { text, img } = this.props;
+    const { text, img, href } = this.props;
     const { backgroundColor } = this.state;
     return (
       <Hoverable
         onHoverIn={() => this.handleHover(true)}
         onHoverOut={() => this.handleHover(false)}>
-        <Ripple
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginLeft: 16,
-            marginRight: 16,
-            height: 150,
-            width: 150,
-            backgroundColor,
-            borderRadius: 10,
-          }}
-          rippleContainerBorderRadius={10}>
-          <img src={img} style={{ width: 100 }} />
-          <h4
+        <a href={href} style={{ textDecoration: 'none', color: 'black' }}>
+          <Ripple
             style={{
-              margin: 0,
-              marginTop: 6,
-              letterSpacing: 1,
-              fontWeight: 400,
-            }}>
-            {text}
-          </h4>
-        </Ripple>
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginLeft: 16,
+              marginRight: 16,
+              height: 150,
+              width: 150,
+              backgroundColor,
+              borderRadius: 10,
+            }}
+            rippleContainerBorderRadius={10}>
+            <img src={img} style={{ width: 100 }} />
+            <h4
+              style={{
+                margin: 0,
+                marginTop: 6,
+                letterSpacing: 1,
+                fontWeight: 400,
+              }}>
+              {text}
+            </h4>
+          </Ripple>
+        </a>
       </Hoverable>
     );
   }

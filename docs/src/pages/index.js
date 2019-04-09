@@ -18,17 +18,23 @@ class Index extends Component {
         <div style={{ marginTop: 40 }}>
           <LogoWithText subtitle style={{ width: '100%' }} />
         </div>
-        {/* <div style={{ marginTop: 20 }}>
-          <CodeBlock
-            code={'npm i material-bread'}
-            style={styles.code}
-            fontSize={16}
-          />
-        </div> */}
+
         <div style={{ marginTop: 20, display: 'flex', flexDirection: 'row' }}>
-          <PlatformButton text="REACT NATIVE" img={iphone} />
-          <PlatformButton text="REACT" img={browser} />
-          <PlatformButton text="ELECTRON" img={imac} />
+          <PlatformButton
+            text="REACT NATIVE"
+            img={iphone}
+            href={'/getting-started/react-native'}
+          />
+          <PlatformButton
+            text="REACT"
+            img={browser}
+            href={'/getting-started/web'}
+          />
+          <PlatformButton
+            text="ELECTRON"
+            img={imac}
+            href={'/getting-started/electron'}
+          />
         </div>
       </div>
     );
