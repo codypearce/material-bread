@@ -3,7 +3,7 @@
 </p>
 <h1 align="center" style="margin: 0px">Material Bread</h1>
 
-![NPM registry](https://img.shields.io/npm/v/material-bread.svg?style=for-the-badge)] ![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=for-the-badge) ![NPM license](https://img.shields.io/badge/license-mit-red.svg?style=for-the-badge)
+![NPM registry](https://img.shields.io/npm/v/material-bread.svg?style=for-the-badge) ![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=for-the-badge) ![NPM license](https://img.shields.io/badge/license-mit-red.svg?style=for-the-badge)
 
 ## Install
 
