@@ -14,7 +14,7 @@ const styles = theme => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor: '#e3e5e7',
+    backgroundColor: '#fff',
     border: 'none',
     overflow: 'hidden',
   },

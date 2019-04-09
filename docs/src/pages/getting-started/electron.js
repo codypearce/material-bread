@@ -7,6 +7,8 @@ import {
   Link,
   ComponentDescription,
   SideScrollMenu,
+  PageTitle,
+  ComponentSubtitle,
 } from '@components';
 
 const sections = [
@@ -203,7 +205,13 @@ class Index extends Component {
   render() {
     return (
       <div style={styles.container}>
-        <h1>Electron</h1>
+        <PageTitle>Electron</PageTitle>
+        <ComponentSubtitle
+          description={
+            'Build cross platform desktop apps with JavaScript, HTML, and CSS'
+          }
+        />
+
         <SideScrollMenu items={sections} />
         <Section
           name="Install"

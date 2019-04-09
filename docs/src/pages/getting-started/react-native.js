@@ -7,6 +7,8 @@ import {
   Link,
   ComponentDescription,
   SideScrollMenu,
+  PageTitle,
+  ComponentSubtitle,
 } from '@components';
 
 const sections = [
@@ -37,7 +39,11 @@ class Index extends Component {
   render() {
     return (
       <div style={styles.container}>
-        <h1>React Native</h1>
+        <PageTitle>React Native</PageTitle>
+        <ComponentSubtitle
+          description={'Build native mobile apps using JavaScript and React'}
+        />
+
         <SideScrollMenu items={sections} />
         <Section
           name="Install"

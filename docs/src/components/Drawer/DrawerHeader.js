@@ -18,8 +18,8 @@ export default class DrawerContent extends React.PureComponent {
 
 const styles = {
   container: {
-    padding: '16px',
-
+    padding: '12px 6px',
+    paddingRight: 10,
     backgroundColor: '#263238',
     display: 'flex',
     justifyContent: 'center',

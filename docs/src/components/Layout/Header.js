@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { IconButton } from '../../../../src';
+import { IconButton, Ripple } from '../../../../src';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -36,7 +36,21 @@ class Header extends Component {
             onPress={handleDrawerToggle}
           />
           <div style={{ flexGrow: 1 }} />
-          <Github />
+          <a
+            href={'https://github.com/codypearce/material-bread'}
+            style={{ color: 'black' }}>
+            <Ripple
+              rippleContainerBorderRadius={100}
+              style={{
+                width: 40,
+                height: 40,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+              <Github />
+            </Ripple>
+          </a>
         </Toolbar>
       </AppBar>
     );
