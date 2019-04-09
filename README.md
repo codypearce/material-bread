@@ -3,6 +3,10 @@
 </p>
 <h1 align="center" style="margin: 0px">Material Bread</h1>
 
+![NPM registry](https://img.shields.io/npm/v/material-bread.svg?style=for-the-badge)] [![NPM license](https://img.shields.io/badge/license-mit-red.svg?style=for-the-badge)](LICENSE.md)
+
+## Install
+
 Highly customizable React Native Material Design Components.
 
 ### [Docs](http://material-bread.org)
@@ -10,8 +14,6 @@ Highly customizable React Native Material Design Components.
 
 
 ## Installation
-
-Material Bread is available on [npm](https://www.npmjs.com/package/material-bread).
 
 ```sh
 npm install material-bread
