@@ -11,8 +11,7 @@ import {
 
 const sections = [{ name: 'Install' }, { name: 'Usage' }, { name: 'Examples' }];
 
-const code = `
-import React, { Component } from "react";
+const code = `import React, { Component } from "react";
 import Root from "./Root";
 import { BreadProvider } from "material-bread";
 
@@ -107,7 +106,7 @@ class Index extends Component {
             </div>
             <Link
               href="https://github.com/codypearce/material-bread-expo-example"
-              tyle={{ fontSize: 18 }}>
+              style={{ fontSize: 18 }}>
               Expo Example
             </Link>
           </div>
