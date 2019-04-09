@@ -10,6 +10,7 @@ import '../../styles/global/global.css';
 import Drawer from '../Drawer/Drawer';
 import Header from './Header';
 import Prism from 'prismjs';
+import favicon from '../../assets/favicon.ico';
 
 require('prismjs/components/prism-jsx.min');
 require('prismjs/themes/prism-tomorrow.css');
@@ -115,14 +116,14 @@ class PageLayout extends Component {
           <meta charSet="utf-8" />
           <meta
             name="description"
-            content="React and React Native Components that implement Material Design Components. Designed to be highly customizable"
+            content="Highly Customizable React Native Material Design Components"
           />
           <meta
             name="keywords"
             content="react react native material design components"
           />
 
-          <link rel="icon" href="assets/favicon.ico" />
+          <link rel="shortcut icon" href={favicon} />
 
           <link
             rel="stylesheet"

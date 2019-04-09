@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: `Material Bread | React Material Design Components`,
-    description: `React and React Native Components that implement Material Design Components. Designed to be highly customizable`,
+    description: `Highly Customizable React Native Material Design Components`,
     author: `codypearce`,
+    favicon: 'src/assets/favicon.ico',
+    legacy: false,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -42,7 +44,8 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        favicon: 'src/assets/favicon.ico',
+        legacy: false,
       },
     },
     {
