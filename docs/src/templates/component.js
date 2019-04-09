@@ -1,9 +1,8 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import Prism from 'prismjs';
 
 export default ({ data }) => {
-  setTimeout(() => Prism.highlightAll(), 100);
+  if (!data) return null;
+
   const post = data.markdownRemark;
   const { title, description, materialDocsLink } = post.frontmatter;
   return (
@@ -28,14 +27,3 @@ export default ({ data }) => {
     </div>
   );
 };
-
-export const query = graphql`
-  query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title
-      }
-    }
-  }
-`;

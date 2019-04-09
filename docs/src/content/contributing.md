@@ -1,11 +1,4 @@
----
-title: Contributing
-description: Below are guidelines for getting the project set up, developing, and making a PR.
-path: /contributing
-layout: page
-group: standalone
-status: complete
----
+
 
 ### Getting Started
 

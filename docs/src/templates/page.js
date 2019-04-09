@@ -1,8 +1,8 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import '../styles/templates/Page.css';
 
 export default ({ data }) => {
+  if (!data) return null;
   const post = data.markdownRemark;
   return (
     <div className="Page">
@@ -20,15 +20,3 @@ export default ({ data }) => {
     </div>
   );
 };
-
-export const query = graphql`
-  query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title
-        description
-      }
-    }
-  }
-`;
