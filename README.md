@@ -12,7 +12,7 @@ Highly customizable React Native Material Design Components.
 
 ## Installation
 
-Material Bread is available on [npm package](https://www.npmjs.com/package/material-bread).
+Material Bread is available on [npm](https://www.npmjs.com/package/material-bread).
 
 ```sh
 npm install material-bread
@@ -24,16 +24,16 @@ yarn add material-bread
 
 ## Getting Started
 
-#### [React Native](http://material-bread.org/getting-started/react-native)
-#### [Web](http://material-bread.org/getting-started/web)
-#### [Electron](http://material-bread.org/getting-started/electron)
+[React Native](http://material-bread.org/getting-started/react-native)
+[Web](http://material-bread.org/getting-started/web)
+[Electron](http://material-bread.org/getting-started/electron)
 
-### Example Repos
+## Example Repos
 
-#### [React Native](https://github.com/codypearce/material-bread-rn-example)
-#### [Expo](https://github.com/codypearce/material-bread-expo-example)
-#### [React](https://github.com/codypearce/material-bread-react-example)
-#### [Electron](https://github.com/codypearce/material-bread-electron-example)
+[React Native](https://github.com/codypearce/material-bread-rn-example)
+[Expo](https://github.com/codypearce/material-bread-expo-example)
+[React](https://github.com/codypearce/material-bread-react-example)
+[Electron](https://github.com/codypearce/material-bread-electron-example)
 
 ## Usage 
 
