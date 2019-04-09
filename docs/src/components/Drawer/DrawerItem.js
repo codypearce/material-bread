@@ -22,8 +22,8 @@ export class DrawerItem extends Component {
 
   render() {
     const { label, selected, subItem, subsubItem } = this.props;
-    let paddingLeft = subItem ? 10 : 0;
-    if (subsubItem) paddingLeft = 25;
+    let paddingLeft = subItem ? 12 : 0;
+    if (subsubItem) paddingLeft = 24;
     return (
       <ListItem button onClick={this.handleClick} selected={selected}>
         <ListItemText

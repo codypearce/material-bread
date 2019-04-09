@@ -9,6 +9,7 @@ import {
   components,
   utils,
   stylePages,
+  contributingPages,
 } from '../../navigation/drawerItems';
 import DrawerHeader from './DrawerHeader';
 
@@ -137,11 +138,13 @@ class DrawerContent extends React.PureComponent {
               link="/http://localhost:9009/?selectedKind=Appbar&selectedStory=Appbar&full=0&addons=1&stories=1&panelRight=1&addonPanel=storybook-addon-viewport%2Faddon-panel"
               selectItem={this.selectItem}
             />
-            <DrawerItem
+            <DrawerItemExpand
               label="Contributing"
-              link="/contributing"
+              reactPageMenuItems={contributingPages}
               selectItem={this.selectItem}
-              selected={itemSelected == 'contributing'}
+              itemSelected={itemSelected}
+              selectSection={this.selectSection}
+              sectionExpanded={sectionExpanded == 'contributing'}
             />
             <DrawerItem
               label="About"

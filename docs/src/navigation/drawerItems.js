@@ -226,4 +226,21 @@ const stylePages = [
   },
 ];
 
-export { gettingStartedPages, components, utils, stylePages };
+const contributingPages = [
+  {
+    title: 'Library',
+    path: '/contributing/library',
+  },
+  {
+    title: 'Docs',
+    path: '/contributing/docs',
+  },
+];
+
+export {
+  gettingStartedPages,
+  components,
+  utils,
+  stylePages,
+  contributingPages,
+};
