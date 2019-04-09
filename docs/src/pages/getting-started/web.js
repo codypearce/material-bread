@@ -9,7 +9,12 @@ import {
   SideScrollMenu,
 } from '@components';
 
-const sections = [{ name: 'Install' }, { name: 'Usage' }, { name: 'Examples' }];
+const sections = [
+  { name: 'Install' },
+  { name: 'Setup' },
+  { name: 'Usage' },
+  { name: 'Examples' },
+];
 
 const code = `
 import React, { Component } from "react";
@@ -112,7 +117,8 @@ class Index extends Component {
           <ComponentDescription
             text={
               <div>
-                The follow is small guide for setting up
+                The following guide is for setting up a minimal configuration
+                for
                 <Link
                   href="https://github.com/necolas/react-native-web"
                   style={{ margin: '0 4px', display: 'inline' }}>
@@ -120,8 +126,8 @@ class Index extends Component {
                   react-native-web
                 </Link>
                 <span>
-                  and Material Bread in a minimal react set up. Please see the
-                  example repo for the full code.
+                  and Material Bread. Please see the example repo for the full
+                  code.
                 </span>
               </div>
             }
@@ -181,7 +187,8 @@ class Index extends Component {
               text={
                 <div>
                   Finally you'll need to exclude both Material Bread and
-                  react-native-vector-icons
+                  react-native-vector-icons, as well as add a few babel
+                  packages.
                 </div>
               }
             />
@@ -242,6 +249,7 @@ const styles = {
   code: {},
   h3: {
     fontWeight: 400,
+    marginBottom: 8,
   },
   subSection: {
     marginTop: 40,

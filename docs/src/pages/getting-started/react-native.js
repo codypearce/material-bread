@@ -9,7 +9,12 @@ import {
   SideScrollMenu,
 } from '@components';
 
-const sections = [{ name: 'Install' }, { name: 'Usage' }, { name: 'Examples' }];
+const sections = [
+  { name: 'Install' },
+  { name: 'Setup' },
+  { name: 'Usage' },
+  { name: 'Examples' },
+];
 
 const code = `import React, { Component } from "react";
 import Root from "./Root";
@@ -57,16 +62,25 @@ class Index extends Component {
               small
             />
           </div>
-          <div className="row" style={{ marginTop: 30 }}>
-            If you are not using Expo, then you need to install and link {'  '}
-            <Link
-              href="https://github.com/oblador/react-native-vector-icons"
-              style={{ margin: '0 4px' }}>
-              {' '}
-              react-native-vector-icons{' '}
-            </Link>
-            {'  '} as well.
-          </div>
+        </Section>
+        <Section
+          name="Setup"
+          id="setup"
+          href="/getting-started/react-native#setup ">
+          <ComponentDescription
+            text={
+              <div>
+                If you're using Expo then you're all set to start using
+                components. If you're using native then you need to install and
+                link {'  '}
+                <Link href="https://github.com/oblador/react-native-vector-icons">
+                  {' '}
+                  react-native-vector-icons{' '}
+                </Link>
+                .
+              </div>
+            }
+          />
         </Section>
         <Section
           name="Usage"

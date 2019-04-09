@@ -7,6 +7,10 @@ const gettingStartedPages = [
     title: 'Web',
     path: '/getting-started/web',
   },
+  {
+    title: 'Electron',
+    path: '/getting-started/electron',
+  },
 ];
 const components = [
   {
