@@ -11,7 +11,7 @@ function LogoWithText({ subtitle, style }) {
       </h1>
       {subtitle ? (
         <h4 style={styles.subtitle}>
-          React Native Material Design Components{' '}
+          One Material Component Library, Six Platforms
         </h4>
       ) : null}
     </div>

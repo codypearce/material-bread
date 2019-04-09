@@ -51,3 +51,5 @@ export { default as PropsTable } from './PropsTable';
 
 // SIDESCROLL
 export { default as SideScrollMenu } from './SideScrollMenu';
+
+export { default as PlatformButton } from './PlatformButton';
