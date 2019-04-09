@@ -73,6 +73,20 @@
     "ui kit",
     "react",
     "ios",
-    "android"
-  ]
+    "android",
+    "web",
+    "electron"
+  ],
+  "description": "Highly customizable React Native Material Design Components.",
+  "homepage": "http://material-bread.org",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codypearce/material-bread.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codypearce/material-bread/issues"
+  }
 }
