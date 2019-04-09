@@ -15,9 +15,9 @@ class Section extends Component {
   };
 
   render() {
-    const { name, href, children, id } = this.props;
+    const { name, href, children, id, style } = this.props;
     return (
-      <section style={{ marginTop: 60 }} id={id}>
+      <section style={{ marginTop: 60, ...style }} id={id}>
         <SectionHeader name={name} href={href} />
         {children}
       </section>

@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 
-import { Button } from '@material-ui/core';
 import Prism from 'prismjs';
-import { LogoWithText, CodeBlock } from '@components';
+import {
+  PageTitle,
+  ComponentSubtitle,
+  Section,
+  ComponentDescription,
+} from '@components';
 
 class Index extends Component {
   componentDidMount() {
@@ -11,37 +15,83 @@ class Index extends Component {
   render() {
     return (
       <div style={styles.container}>
-        ## Goals
-        <section>
-          #### More Components Currently one must mix and match libraries to
-          utilize all the material components found in the guidelines. This can
-          create inconsistencies in the design and api of your app's components.
-          Additionally, there's no guarantee that those components will work
-          well together. Therefore, the main goal of this package is to provide
-          all components found in the Material Docs.
-        </section>
-        <section>
-          #### Highly Customizable Having almost complete control over the
-          styling of every component is a crucial feature of UI libraries for
-          the following reasons: 1. There will always be something that needs to
-          be slightly changed or different. Packages that make it difficult to
-          customize quickly become more of a burden then a useful tool. 2.
-          Having more control over the component allows the developer to
-          possibly fix edge cases or issues themselves rather than wait for a
-          new release of the package. 3. More customization allows developers to
-          build their own components on top package components. React Native
-          provides a unique challenge for customization since you cannot select
-          any element you want with CSS and override all the styles. This means
-          that it’s important to design and build customization into each
-          component from the ground up.
-        </section>
-        <section>
-          #### Copious Live Demos Demos make it much easier to understand how to
-          use components and how to build common patterns. Since this library is
-          deicated to providing Material Design components, it is important to
-          provide as many demos as needed to illustrate reproducing various
-          patterns.
-        </section>
+        <PageTitle>About</PageTitle>
+        <ComponentSubtitle
+          description={
+            'This is a React Native Material Component Library that aims to provide useful components across various platforms.'
+          }
+        />
+        <h2>Goals</h2>
+
+        <Section
+          name="All Components"
+          id="all-components"
+          href="/about#all-components"
+          style={{ marginTop: 0 }}>
+          <ComponentDescription
+            text={
+              <div>
+                The main goal of this package is to provide all components found
+                in the Material Docs. This includes all variations within
+                reason. The idea is that a developer could recreate whatever is
+                seen in the docs.
+              </div>
+            }
+          />
+        </Section>
+        <Section
+          name="Highly Customizable"
+          id="highly-customizable"
+          href="/about#highly-customizable"
+          style={{ marginTop: 0 }}>
+          <ComponentDescription
+            text={
+              <div>
+                Having almost complete control over the styling of every
+                component is a crucial feature of UI libraries for the following
+                reasons:
+                <ol>
+                  <li>
+                    There will always be something that needs to be slightly
+                    changed or different. Packages that make it difficult to
+                    customize quickly become more of a burden then a useful
+                    tool.
+                  </li>
+                  <li>
+                    Having more control over the component allows the developer
+                    to possibly fix edge cases or issues themselves rather than
+                    wait for a new release of the package.
+                  </li>
+                  <li>
+                    More customization allows developers to build their own
+                    components on top package components.{' '}
+                  </li>
+                </ol>
+                React Native provides a unique challenge for customization since
+                you cannot select any element you want with CSS and override all
+                the styles.
+              </div>
+            }
+          />
+        </Section>
+
+        <Section
+          name="Copious Demos "
+          id="copious-demos"
+          href="/about#copious-demos"
+          style={{ marginTop: 0 }}>
+          <ComponentDescription
+            text={
+              <div>
+                Demos make learning how to use components and how to build
+                common patterns much easier. Since this library is dedicated to
+                providing Material Design components, it is important to provide
+                as many demos as needed to illustrate how one can create all
+                variations with this library.
+              </div>
+            }
+          />
+        </Section>
       </div>
     );
   }
@@ -51,9 +101,9 @@ const styles = {
   container: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
+
     width: '100%',
+    paddingBottom: 60,
   },
   code: {},
 };
