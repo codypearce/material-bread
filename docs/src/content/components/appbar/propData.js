@@ -15,12 +15,7 @@ const propData = [
 
   ['backgroundImage', `Renders image element as background`, 'node', ''],
 
-  [
-    'color',
-    `Component's theme color`,
-    'string: primary, secondary, dark, white',
-    'primary',
-  ],
+  ['color', `Component's background color`, 'string', 'primary'],
   [
     'onNavigation',
     'OnPress for navigationType IconButton if provided.',

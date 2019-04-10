@@ -7,12 +7,7 @@ const propData = [
     '',
   ],
   ['appbarStyles', 'Styles appbar around content', 'object', ''],
-  [
-    'color',
-    `Component's theme color`,
-    'string: primary, secondary, dark, white',
-    'primaryColor',
-  ],
+  ['color', `Component's background color`, 'string', 'primary'],
   ['fab', `Displays fab or not`, 'bool', 'false'],
   ['fabCutout', `Displays cutout on appbar for fab`, 'bool', 'false'],
   ['fabIcon', `Name of Fab Icon`, 'string', ''],
