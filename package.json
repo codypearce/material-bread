@@ -13,6 +13,7 @@
     "deploy-docs": "gh-pages -d gh"
   },
   "dependencies": {
+    "@storybook/addon-storyshots": "^5.0.6",
     "color": "^3.1.0",
     "react-native-vector-icons": "^6.2.0"
   },
@@ -60,7 +61,16 @@
   ],
   "main": "src/index.js",
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "transformIgnorePatterns": [
+      "/node_modules/(?!(react-native|react-native-swipe-gestures|react-native-vector-icons)/)"
+    ],
+    "testMatch": [
+      "<rootDir>/**/*.test.js"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    }
   },
   "rnpm": {
     "assets": [

@@ -232,8 +232,6 @@ const styles = StyleSheet.create({
     padding: 16,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    overflowX: 'auto',
-    overflowY: 'hidden',
     minWidth: 'auto',
   },
   backgroundImage: {

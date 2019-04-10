@@ -47,6 +47,7 @@ module.exports = {
         },
       ],
     },
+
     // Most react native projects will need some extra plugin configuration.
     plugins: [
       // Add __DEV__ flag to browser example.
