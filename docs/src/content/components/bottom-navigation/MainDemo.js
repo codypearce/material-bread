@@ -62,6 +62,7 @@ const MainDemo = pageHref => (
       </div>
     }
     code={code}
+    livePreviewBackground={'#f7f7f7'}
     scope={{ View, BottomNavigation, BottomNavigationItem }}
   />
 );

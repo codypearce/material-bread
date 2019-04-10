@@ -126,7 +126,6 @@ class Badge extends Component {
             position: 'relative',
             alignSelf: 'flex-start',
             alignItems: 'flex-start',
-            display: 'inline-flex',
             height: children ? childrenHeight : 'auto',
             width: children ? childrenWidth : 'auto',
             maxHeight: children ? childrenHeight : 'auto',

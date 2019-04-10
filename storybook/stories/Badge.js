@@ -11,7 +11,12 @@ storiesOf('Badge', module)
     <Container>
       <Header title={'Standalone'} />
 
-      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginBottom: 40,
+        }}>
         <Badge size={12} content={24} />
         <Badge size={24} content={99} color={'#E91E63'} />
         <Badge size={36} content={2} color={'#9C27B0'} />
@@ -38,7 +43,13 @@ storiesOf('Badge', module)
     <Container>
       <Header title={'On Icons'} />
 
-      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <View
+        style={{
+          flex: 1,
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginBottom: 80,
+        }}>
         <Badge size={14} content={4}>
           <Icon name="favorite" size={24} />
         </Badge>
@@ -52,7 +63,8 @@ storiesOf('Badge', module)
           <IconButton name="bookmark" size={64} color={'#E91E63'} />
         </Badge>
       </View>
-      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+
+      <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
         <Badge size={14} content={7} position={'left'} textColor={'pink'}>
           <IconButton name="info" size={24} />
         </Badge>

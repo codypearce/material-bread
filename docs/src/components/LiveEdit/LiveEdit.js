@@ -16,7 +16,7 @@ class LiveEdit extends Component {
   };
 
   render() {
-    const { scope, code, syntax, noInline } = this.props;
+    const { scope, code, syntax, noInline, livePreviewBackground } = this.props;
     if (typeof window == 'undefined') {
       return null;
     }
@@ -36,7 +36,9 @@ class LiveEdit extends Component {
             padding: 24,
             borderTopRightRadius: 6,
             borderTopLeftRadius: 6,
-            backgroundColor: '#f7f7f7',
+            backgroundColor: livePreviewBackground
+              ? livePreviewBackground
+              : '#fff',
           }}
         />
         <LiveEditToolTip>

@@ -15,9 +15,7 @@ import Header from '../components/Header';
 import Container from '../components/Container';
 
 const store = new Store({
-  state: false,
-  visibleTwo: false,
-  visibleThree: false,
+  visible: false,
 });
 
 storiesOf('Dialog', module).add('Simple', () => (
@@ -32,11 +30,11 @@ storiesOf('Dialog', module).add('Simple', () => (
         <View>
           <Button
             text={'Open'}
-            onPress={() => this.setState({ visible: !state.visible })}
+            onPress={() => store.set({ visible: !state.visible })}
           />
           <Dialog
             visible={state.visible}
-            onTouchOutside={() => this.setState({ visible: false })}>
+            onTouchOutside={() => store.set({ visible: false })}>
             <DialogTitle>Use Googles location service?</DialogTitle>
             <DialogContentText>
               Let Google help apps determine location. This means sending
@@ -45,11 +43,11 @@ storiesOf('Dialog', module).add('Simple', () => (
             <DialogActions>
               <Button
                 text={'Cancel'}
-                onPress={() => this.setState({ visible: false })}
+                onPress={() => store.set({ visible: false })}
               />
               <Button
                 text={'OK'}
-                onPress={() => this.setState({ visible: false })}
+                onPress={() => store.set({ visible: false })}
               />
             </DialogActions>
           </Dialog>

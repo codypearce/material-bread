@@ -8,7 +8,7 @@ import Container from '../components/Container';
 /*  eslint-disable no-console */
 storiesOf('AppbarBottom', module)
   .add('Center Fab', () => (
-    <Container>
+    <Container scroll>
       <Header title={'Center Fab'} />
       <AppbarBottom
         fab
@@ -115,7 +115,7 @@ storiesOf('AppbarBottom', module)
     </Container>
   ))
   .add('End Fab', () => (
-    <Container>
+    <Container scroll>
       <Header title={'End Fab'} />
       <AppbarBottom
         fab
@@ -224,7 +224,7 @@ storiesOf('AppbarBottom', module)
     </Container>
   ))
   .add('No Fab', () => (
-    <Container>
+    <Container scroll>
       <Header title={'No Fab'} />
       <AppbarBottom
         onFab={() => console.log('onFab')}

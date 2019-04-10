@@ -21,6 +21,7 @@ class DataTable extends Component {
             borderRadius: 4,
             overflowX: 'auto',
             minWidth: 'auto',
+            minHeight: 'auto',
             ...shadow(4),
           },
           style,

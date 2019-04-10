@@ -45,6 +45,7 @@ const IconDemo = pageHref => (
     sectionHref={`${pageHref}#labels`}
     sectionId={'labels'}
     code={code}
+    livePreviewBackground={'#f7f7f7'}
     scope={{ View, BottomNavigation, BottomNavigationItem }}
   />
 );

@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "ReactNativeBread.app"
-               BlueprintName = "ReactNativeBread"
-               ReferencedContainer = "container:ReactNativeBread.xcodeproj">
+               BuildableName = "MaterialBread.app"
+               BlueprintName = "MaterialBread"
+               ReferencedContainer = "container:MaterialBread.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "ReactNativeBreadTests.xctest"
-               BlueprintName = "ReactNativeBreadTests"
-               ReferencedContainer = "container:ReactNativeBread.xcodeproj">
+               BuildableName = "MaterialBreadTests.xctest"
+               BlueprintName = "MaterialBreadTests"
+               ReferencedContainer = "container:MaterialBread.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "ReactNativeBreadTests.xctest"
-               BlueprintName = "ReactNativeBreadTests"
-               ReferencedContainer = "container:ReactNativeBread.xcodeproj">
+               BuildableName = "MaterialBreadTests.xctest"
+               BlueprintName = "MaterialBreadTests"
+               ReferencedContainer = "container:MaterialBread.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ReactNativeBread.app"
-            BlueprintName = "ReactNativeBread"
-            ReferencedContainer = "container:ReactNativeBread.xcodeproj">
+            BuildableName = "MaterialBread.app"
+            BlueprintName = "MaterialBread"
+            ReferencedContainer = "container:MaterialBread.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ReactNativeBread.app"
-            BlueprintName = "ReactNativeBread"
-            ReferencedContainer = "container:ReactNativeBread.xcodeproj">
+            BuildableName = "MaterialBread.app"
+            BlueprintName = "MaterialBread"
+            ReferencedContainer = "container:MaterialBread.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -113,9 +113,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ReactNativeBread.app"
-            BlueprintName = "ReactNativeBread"
-            ReferencedContainer = "container:ReactNativeBread.xcodeproj">
+            BuildableName = "MaterialBread.app"
+            BlueprintName = "MaterialBread"
+            ReferencedContainer = "container:MaterialBread.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

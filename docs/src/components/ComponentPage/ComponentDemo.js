@@ -26,11 +26,17 @@ class ComponentDemo extends Component {
       code,
       scope,
       noInline,
+      livePreviewBackground,
     } = this.props;
     return (
       <Section name={sectionName} href={sectionHref} id={sectionId}>
         <ComponentDescription text={description} />
-        <LiveEdit code={code} scope={scope} noInline={noInline} />
+        <LiveEdit
+          code={code}
+          scope={scope}
+          noInline={noInline}
+          livePreviewBackground={livePreviewBackground}
+        />
       </Section>
     );
   }

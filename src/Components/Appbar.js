@@ -108,15 +108,14 @@ class Appbar extends Component {
     return (
       <View
         style={[
-          { marginLeft: navigationIcon || navigationType ? 32 : 0 },
           {
+            marginLeft: navigationIcon || navigationType ? 32 : 0,
             marginBottom: barType === 'prominent' ? 12 : 0,
-          },
-          {
             alignSelf:
               barType === 'prominent' || barType === 'prominent dense'
                 ? 'flex-end'
                 : 'center',
+            zIndex: 100,
           },
         ]}>
         <Text
@@ -202,6 +201,7 @@ class Appbar extends Component {
           {
             backgroundColor: backgroundColor,
             height: this.appbarHeight(),
+            padding: barType == 'dense' ? 12 : 16,
             position: position || 'relative',
             alignItems:
               barType == 'prominent' || barType === 'prominent dense'
@@ -224,7 +224,6 @@ class Appbar extends Component {
 
 const styles = StyleSheet.create({
   appbar: {
-    padding: 16,
     flexDirection: 'row',
     justifyContent: 'space-between',
     minWidth: 'auto',
