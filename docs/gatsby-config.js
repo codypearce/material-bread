@@ -86,5 +86,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-material-ui`,
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-72995758-2',
+      },
+    },
   ],
 };

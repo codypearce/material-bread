@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "color": "^3.1.0",
+    "gatsby-plugin-google-analytics": "^2.0.18",
     "react-native-vector-icons": "^6.2.0"
   },
   "devDependencies": {
