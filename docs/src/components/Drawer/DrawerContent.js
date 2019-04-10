@@ -134,8 +134,8 @@ class DrawerContent extends React.PureComponent {
               sectionExpanded={sectionExpanded == 'utils'}
             />
             <DrawerItem
-              label="Playground"
-              link="/http://localhost:9009/?selectedKind=Appbar&selectedStory=Appbar&full=0&addons=1&stories=1&panelRight=1&addonPanel=storybook-addon-viewport%2Faddon-panel"
+              label="Storybook"
+              link="https://codypearce.github.io/material-bread/"
               selectItem={this.selectItem}
             />
             <DrawerItemExpand

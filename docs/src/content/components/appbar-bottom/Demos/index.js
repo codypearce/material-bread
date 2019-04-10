@@ -14,12 +14,7 @@ export default class Demos extends Component {
     const { pageHref } = this.props;
     return (
       <div>
-        <ComponentDemoHeader
-          pageHref={pageHref}
-          description={
-            'You can see even more examples in the Storybook playground.'
-          }
-        />
+        <ComponentDemoHeader pageHref={pageHref} />
 
         <EndFabDemo pageHref={pageHref} />
         <NoFabDemo pageHref={pageHref} />

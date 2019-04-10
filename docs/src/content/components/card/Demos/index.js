@@ -13,12 +13,7 @@ export default class Demos extends Component {
     const { pageHref } = this.props;
     return (
       <div>
-        <ComponentDemoHeader
-          pageHref={pageHref}
-          description={
-            'You can see even more examples in the Storybook playground.'
-          }
-        />
+        <ComponentDemoHeader pageHref={pageHref} />
 
         <ActionMediaDemo pageHref={pageHref} />
         <ClickableDemo pageHref={pageHref} />

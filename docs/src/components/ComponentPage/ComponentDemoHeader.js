@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { Section, ComponentDescription } from '@components';
+import { Section, ComponentDescription, Link } from '@components';
 
 class ComponentDemoHeader extends Component {
   constructor(props) {
@@ -13,11 +13,24 @@ class ComponentDemoHeader extends Component {
     pageHref: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   };
 
+  _defaultDemoHeader() {
+    return (
+      <div>
+        You can see even more examples in the{' '}
+        <Link href="https://codypearce.github.io/material-bread/">
+          Storybook playground.
+        </Link>
+      </div>
+    );
+  }
+
   render() {
     const { pageHref, description } = this.props;
     return (
       <Section name="Demos" href={`${pageHref}#demos`} id="demos">
-        <ComponentDescription text={description} />
+        <ComponentDescription
+          text={description ? description : this._defaultDemoHeader()}
+        />
       </Section>
     );
   }
