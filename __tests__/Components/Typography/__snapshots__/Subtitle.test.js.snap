@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Subtitle Renders 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "rgba(0, 0, 0, 0.87)",
+      },
+      undefined,
+      Object {
+        "color": "rgba(0,0,0, 87)",
+        "marginBottom": 0,
+        "textAlign": "left",
+      },
+      undefined,
+    ]
+  }
+/>
+`;

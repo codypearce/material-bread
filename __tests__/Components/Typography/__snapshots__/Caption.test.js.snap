@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Caption Renders 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "rgba(0, 0, 0, 0.87)",
+      },
+      Object {
+        "fontSize": 12,
+        "letterSpacing": 0.4,
+        "lineHeight": 12,
+      },
+      Object {
+        "color": "rgba(0,0,0, 87)",
+        "marginBottom": 0,
+        "textAlign": "left",
+      },
+      undefined,
+    ]
+  }
+/>
+`;

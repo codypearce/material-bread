@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataTableCell Renders 1`] = `
+<View
+  accessible={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "borderColor": "rgb(224, 224, 224)",
+        "flexDirection": "row",
+        "flexShrink": 1,
+        "height": "100%",
+        "minWidth": "auto",
+        "paddingHorizontal": 16,
+      },
+      Object {
+        "borderLeftWidth": 0,
+        "borderRightWidth": 0,
+        "flex": 1,
+        "justifyContent": "flex-start",
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "rgba(0,0,0,.87)",
+        "flexShrink": 0,
+        "fontSize": 13,
+      }
+    }
+  />
+</View>
+`;

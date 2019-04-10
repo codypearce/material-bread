@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Renders 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "borderBottomColor": "rgba(0,0,0,.4)",
+      "borderRadius": 4,
+      "borderWidth": 0,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 0.18,
+      "shadowRadius": 1,
+    }
+  }
+/>
+`;

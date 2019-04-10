@@ -4,6 +4,9 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import withTheme from '../Theme/withTheme';
 
 class Icon extends Component {
+  constructor(props) {
+    super(props);
+  }
   static propTypes = {
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     theme: PropTypes.object,

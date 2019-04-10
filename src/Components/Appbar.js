@@ -101,7 +101,6 @@ class Appbar extends Component {
       navigationIcon,
       navigationType,
       titleStyles,
-      onTitle,
       subtitle,
       subtitleStyles,
     } = this.props;
@@ -124,11 +123,7 @@ class Appbar extends Component {
           numberOfLines={
             barType === 'prominent' || barType === 'prominent dense' ? 3 : 1
           }
-          style={[
-            styles.pageTitle,
-            { cursor: onTitle ? 'auto' : 'default' },
-            titleStyles,
-          ]}>
+          style={[styles.pageTitle, titleStyles]}>
           {title}
         </Text>
         {subtitle && barType !== 'dense' ? (

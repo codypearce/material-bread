@@ -6,7 +6,11 @@ import Ripple from './Ripple';
 import Icon from './Icon';
 import shadow from '../Utils/shadow';
 
-class Fab extends Component {
+export class Fab extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   static propTypes = {
     style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     backgroundColor: PropTypes.string,

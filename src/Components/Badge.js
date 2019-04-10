@@ -5,6 +5,9 @@ import withTheme from '../Theme/withTheme';
 import Ripple from './Ripple';
 
 class Badge extends Component {
+  constructor(props) {
+    super(props);
+  }
   static propTypes = {
     color: PropTypes.string,
     textColor: PropTypes.string,

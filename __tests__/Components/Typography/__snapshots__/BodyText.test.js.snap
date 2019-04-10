@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BodyText Renders 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "rgba(0, 0, 0, 0.87)",
+      },
+      Object {
+        "fontSize": 16,
+        "letterSpacing": 0.5,
+        "lineHeight": 16,
+      },
+      Object {
+        "color": "rgba(0,0,0, 87)",
+        "marginBottom": 0,
+        "textAlign": "left",
+      },
+      undefined,
+    ]
+  }
+/>
+`;

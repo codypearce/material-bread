@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppbarBottom Renders 1`] = `
+<View
+  style={
+    Array [
+      Object {},
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#1e88e5",
+        "borderRadius": 2,
+        "flexDirection": "row",
+        "height": 56,
+        "justifyContent": "space-between",
+        "minWidth": "auto",
+        "padding": 16,
+        "position": "relative",
+        "shadowColor": "#000",
+        "shadowOffset": Object {
+          "height": 2,
+          "width": 0,
+        },
+        "shadowOpacity": 0.23,
+        "shadowRadius": 2.62,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+        }
+      }
+    />
+  </View>
+</View>
+`;

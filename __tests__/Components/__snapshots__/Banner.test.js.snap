@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Banner Renders 1`] = `
+<Context.Consumer>
+  [Function]
+</Context.Consumer>
+`;

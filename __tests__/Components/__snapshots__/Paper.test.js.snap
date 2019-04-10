@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paper Renders 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "borderRadius": 2,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 0.23,
+      "shadowRadius": 2.62,
+    }
+  }
+/>
+`;

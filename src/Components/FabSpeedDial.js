@@ -5,6 +5,9 @@ import withTheme from '../Theme/withTheme';
 import Fab from './Fab';
 
 class FabSpeedDial extends Component {
+  constructor(props) {
+    super(props);
+  }
   static propTypes = {
     style: PropTypes.object,
     onPress: PropTypes.func,

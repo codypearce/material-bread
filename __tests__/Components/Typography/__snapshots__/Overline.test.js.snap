@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Overline Renders 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "rgba(0, 0, 0, 0.87)",
+      },
+      Object {
+        "fontSize": 10,
+        "letterSpacing": 1.5,
+        "lineHeight": 10,
+        "textTransform": "uppercase",
+      },
+      Object {
+        "color": "rgba(0,0,0, 87)",
+        "marginBottom": 0,
+        "textAlign": "left",
+      },
+      undefined,
+    ]
+  }
+/>
+`;

@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge Renders 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "flex-start",
+        "alignSelf": "flex-start",
+        "display": "inline-flex",
+        "height": "auto",
+        "maxHeight": "auto",
+        "maxWidth": "auto",
+        "minHeight": "auto",
+        "minWidth": "auto",
+        "position": "relative",
+        "width": "auto",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    onLayout={[Function]}
+  />
+  <View
+    numberOfLines={1}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#1e88e5",
+          "borderRadius": 16,
+          "height": 16,
+          "justifyContent": "center",
+          "position": "relative",
+          "top": 0,
+          "width": 16,
+        },
+        Object {
+          "left": "auto",
+          "right": "auto",
+        },
+        undefined,
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "alignSelf": "center",
+            "justifyContent": "center",
+          },
+          Object {
+            "color": "white",
+            "fontSize": 8,
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;
