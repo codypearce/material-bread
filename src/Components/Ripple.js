@@ -111,6 +111,7 @@ export default class Ripple extends PureComponent {
 
   onPressIn(event) {
     const { onPressIn, rippleSequential, disabled } = this.props;
+    const { ripples } = this.state;
     if (disabled) return;
 
     this.isPressingIn = true;
