@@ -204,6 +204,7 @@ class Banner extends Component {
     const { style, position, visible } = this.props;
     const { shouldHide } = this.state;
     const appliedShadow = visible && !shouldHide ? 1 : 0;
+
     return (
       <Animated.View
         style={[

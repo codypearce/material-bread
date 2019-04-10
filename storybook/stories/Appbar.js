@@ -10,7 +10,7 @@ import Container from '../components/Container';
 
 storiesOf('Appbar', module)
   .add('Simple', () => (
-    <Container>
+    <Container scroll>
       <Header title={'Appbar Simple'} />
       <Appbar
         barType={'normal'}
@@ -101,7 +101,7 @@ storiesOf('Appbar', module)
       <Appbar
         barType={'simple'}
         title={'PAGE TITLE'}
-        titleStyles={{ fontSize: 18, fontWeight: 300, letterSpacing: 2 }}
+        titleStyles={{ fontSize: 18, fontWeight: '300', letterSpacing: 2 }}
         backgroundImage={
           <Image
             source={{
@@ -122,7 +122,7 @@ storiesOf('Appbar', module)
   ))
 
   .add('Prominent', () => (
-    <Container>
+    <Container scroll>
       <Header title={'Appbar Prominent'} />
       <Appbar
         barType={'prominent'}
@@ -214,7 +214,7 @@ storiesOf('Appbar', module)
     </Container>
   ))
   .add('Dense', () => (
-    <Container>
+    <Container scroll>
       <Header title={'Appbar Dense'} />
       <Appbar
         barType={'dense'}
@@ -304,7 +304,7 @@ storiesOf('Appbar', module)
     </Container>
   ))
   .add('Prominent Dense', () => (
-    <Container>
+    <Container scroll>
       <Header title={'Appbar Prominent Dense'} />
       <Appbar
         barType={'prominent dense'}

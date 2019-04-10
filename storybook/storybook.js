@@ -20,5 +20,5 @@ class StorybookUIHMRRoot extends Component {
   }
 }
 
-AppRegistry.registerComponent('StorybookSetup', () => StorybookUIHMRRoot);
+AppRegistry.registerComponent('MaterialBread', () => StorybookUIHMRRoot);
 export default StorybookUIHMRRoot;

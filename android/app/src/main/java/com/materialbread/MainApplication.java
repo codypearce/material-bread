@@ -1,4 +1,4 @@
-package com.reactnativebread;
+package com.materialbread;
 
 import android.app.Application;
 

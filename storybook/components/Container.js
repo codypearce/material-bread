@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, ScrollView } from 'react-native';
 import { BreadProvider } from '../../src/index';
 
 export default class Container extends Component {
@@ -10,7 +10,16 @@ export default class Container extends Component {
   };
 
   render() {
-    const { style, children } = this.props;
+    const { style, scroll, children } = this.props;
+    if (scroll) {
+      return (
+        <ScrollView>
+          <View style={[styles.container, style]}>
+            <BreadProvider value={{}}>{children}</BreadProvider>
+          </View>
+        </ScrollView>
+      );
+    }
     return (
       <View style={[styles.container, style]}>
         <BreadProvider value={{}}>{children}</BreadProvider>

@@ -16,11 +16,23 @@ class ComponentDemo extends Component {
   };
 
   render() {
-    const { pageHref, description, code, scope, noInline } = this.props;
+    const {
+      pageHref,
+      description,
+      code,
+      scope,
+      noInline,
+      livePreviewBackground,
+    } = this.props;
     return (
       <Section name="Component" href={`${pageHref}#usage`} id="component">
         <ComponentDescription text={description} />
-        <LiveEdit code={code} scope={scope} noInline={noInline} />
+        <LiveEdit
+          code={code}
+          scope={scope}
+          noInline={noInline}
+          livePreviewBackground={livePreviewBackground}
+        />
       </Section>
     );
   }

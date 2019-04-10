@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Platform } from 'react-native';
 import withTheme from '../Theme/withTheme';
 import Paper from './Paper';
 import IconButton from './IconButton';
@@ -201,12 +201,11 @@ const styles = StyleSheet.create({
   centerCut: {
     position: 'absolute',
     zIndex: 10,
-    backgroundColor: 'white',
-    borderBottomRightRadius: 500,
-    borderBottomLeftRadius: 500,
-    transform: [{ translateY: -1 }],
+    backgroundColor: Platform.OS === 'web' ? 'rgba(255,255,255,1)' : 'white',
+    borderRadius: 56 + 16,
+    transform: [{ translateY: -65 / 2 }],
     width: 56 + 16,
-    height: (56 + 16) / 2,
+    height: 56 + 16,
   },
 });
 
