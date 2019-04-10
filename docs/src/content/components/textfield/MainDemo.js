@@ -23,6 +23,7 @@ export const code = `class Demo extends React.Component {
         <TextField
           containerStyle={{ marginTop: 20 }}
           type={'outlined'}
+          label={'Label'}
           value={this.state.two}
           onChangeText={value => this.setState({ two: value })}
         />

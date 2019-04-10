@@ -19,7 +19,7 @@
     "gatsby-plugin-offline": "^2.0.24",
     "gatsby-plugin-react-helmet": "^3.0.7",
     "gatsby-plugin-react-native-web": "^2.0.0-beta.0",
-    "gatsby-plugin-sharp": "^2.0.23",
+    "gatsby-plugin-sharp": "^2.0.30",
     "gatsby-remark-images": "^3.0.5",
     "gatsby-remark-prismjs": "^3.2.4",
     "gatsby-source-filesystem": "^2.0.23",
@@ -51,6 +51,7 @@
     "develop": "gatsby develop",
     "build-deploy": "gatsby build && rm -r ../gh && mv public ../gh",
     "format": "prettier --write src/**/*.{js,jsx}",
+    "production": "gatsby serve -H 0.0.0.0 -p 80",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""

@@ -25,47 +25,45 @@ class PageLayout extends Component {
   };
   state = {
     mobileOpen: false,
-    isTemporary: false,
-    drawerType: 'permanent',
+    isTemporary: true,
+    drawerType: 'temporary',
     windowWidth: 0,
   };
 
   componentDidMount() {
     Prism.highlightAll();
-    if (typeof window !== `undefined`) {
-      const location = window && window.location;
-      const hash = location.hash;
-      if (hash) {
-        const id = hash.split('#')[1].toString();
-        const el = document.getElementById(id);
-        if (el) {
-          el.scrollIntoView({
-            behavior: 'smooth',
-          });
-        }
+    const location = window && window.location;
+    const hash = location.hash;
+    if (hash) {
+      const id = hash.split('#')[1].toString();
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({
+          behavior: 'smooth',
+        });
       }
-      const pathName = location.pathname;
-      if (pathName !== '/') {
-        this.setLarge();
-      } else if (pathName == '/') {
-        this.setSmall();
-      }
+    }
+    const pathName = location.pathname;
+    if (pathName !== '/') {
+      this.setLarge();
+    } else if (pathName == '/') {
+      this.setSmall();
+    }
 
-      const mediaQuery = window.matchMedia('(min-width: 1180px)');
+    const mediaQuery = window.matchMedia('(min-width: 1180px)');
 
-      if (mediaQuery.matches && pathName != '/') {
+    if (mediaQuery.matches && pathName != '/') {
+      this.setLarge();
+    } else {
+      this.setSmall();
+    }
+    mediaQuery.addListener(mq => {
+      if (mq.matches && pathName != '/') {
         this.setLarge();
       } else {
         this.setSmall();
       }
-      mediaQuery.addListener(mq => {
-        if (mq.matches && pathName != '/') {
-          this.setLarge();
-        } else {
-          this.setSmall();
-        }
-      });
-    }
+    });
   }
 
   componentDidUpdate(prevProps, prevState) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '../helpers/storiesOf';
-import { Text, Image } from 'react-native';
+import { Text, View, Image } from 'react-native';
 
 import {
   Card,
