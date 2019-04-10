@@ -215,7 +215,7 @@ storiesOf('Appbar', module)
   ))
   .add('Dense', () => (
     <Container>
-      <Header title={'Appbar Simple'} />
+      <Header title={'Appbar Dense'} />
       <Appbar
         barType={'dense'}
         title={'Page Title'}
@@ -305,7 +305,7 @@ storiesOf('Appbar', module)
   ))
   .add('Prominent Dense', () => (
     <Container>
-      <Header title={'Appbar Simple'} />
+      <Header title={'Appbar Prominent Dense'} />
       <Appbar
         barType={'prominent dense'}
         title={'Page Title'}

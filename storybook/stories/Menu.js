@@ -24,12 +24,12 @@ storiesOf('Menu', module).add('Menu', () => (
             visible={state.visibleOne}
             button={
               <Button
+                text={'Show menu'}
                 onPress={() => {
                   store.set({ visibleOne: !state.visibleOne });
                 }}
-                type="contained">
-                Show menu
-              </Button>
+                type="contained"
+              />
             }>
             <MenuItem onPress={() => store.set({ visibleOne: false })}>
               Menu item 1

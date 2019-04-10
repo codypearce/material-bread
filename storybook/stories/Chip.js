@@ -1,25 +1,145 @@
 import React from 'react';
+import { View, Image } from 'react-native';
 import { storiesOf } from '../helpers/storiesOf';
 
-import { Chip } from '../../src/index';
+import { Chip, Icon, Avatar } from '../../src/index';
 import Header from '../components/Header';
 import Container from '../components/Container';
 
-storiesOf('Chip', module).add('Simple', () => (
-  <Container>
-    <Header title={'Chip'} />
+import { State, Store } from '@sambego/storybook-state';
 
-    <Chip size={64} style={{ marginBottom: 20 }}>
-      4
-    </Chip>
-    <Chip
-      size={24}
-      style={{ marginBottom: 20 }}
-      onDelete={() => console.log('delete')}>
-      10
-    </Chip>
-    <Chip size={16} type={'outlined'}>
-      99
-    </Chip>
-  </Container>
-));
+const store = new Store({
+  chipOne: true,
+  chipTwo: true,
+  chipThree: true,
+  chipFour: true,
+  chipFive: true,
+  chipSix: true,
+});
+
+storiesOf('Chip', module)
+  .add('Filled', () => (
+    <Container>
+      <Header title={'Filled'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+            }}>
+            <Chip text={'Chip'} />
+            <Chip
+              text={'Delete me'}
+              visible={state.chipTwo}
+              onDelete={() => store.set({ chipTwo: false })}
+            />
+            <Chip
+              text={'Alaska'}
+              color={'#009688'}
+              visible={state.chipThree}
+              onDelete={() => store.set({ chipThree: false })}
+              leftIcon={<Icon name="place" color={'white'} />}
+            />
+            <Chip
+              text={'User'}
+              themeColor={'primary'}
+              onPress={() => console.log('clicked four')}
+              leftIcon={
+                <Avatar
+                  type="image"
+                  image={
+                    <Image
+                      source={{
+                        uri:
+                          'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4',
+                      }}
+                    />
+                  }
+                />
+              }
+            />
+            <Chip
+              text={'Click me'}
+              themeColor={'primary'}
+              onPress={() => console.log('clicked five')}
+            />
+            <Chip
+              text={'Biking'}
+              themeColor={'secondary'}
+              leftIcon={<Icon name="directions-bike" color={'#009688'} />}
+              visible={state.chipSix}
+              onDelete={() => store.set({ chipSix: false })}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
+  ))
+  .add('Outlined', () => (
+    <Container>
+      <Header title={'Outlined'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+            }}>
+            <Chip text={'Chip'} chipStyle={'outlined'} />
+            <Chip
+              text={'Delete me'}
+              chipStyle={'outlined'}
+              visible={state.chipTwo}
+              onDelete={() => store.set({ chipTwo: false })}
+            />
+            <Chip
+              text={'Alaska'}
+              chipStyle={'outlined'}
+              color={'#009688'}
+              visible={state.chipThree}
+              onDelete={() => store.set({ chipThree: false })}
+              leftIcon={<Icon name="place" color={'#009688'} />}
+            />
+            <Chip
+              text={'User'}
+              chipStyle={'outlined'}
+              themeColor={'primary'}
+              onPress={() => console.log('clicked four')}
+              leftIcon={
+                <Avatar
+                  type="image"
+                  image={
+                    <Image
+                      source={{
+                        uri:
+                          'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4',
+                      }}
+                    />
+                  }
+                />
+              }
+            />
+            <Chip
+              text={'Click me'}
+              chipStyle={'outlined'}
+              themeColor={'primary'}
+              onPress={() => console.log('clicked five')}
+            />
+            <Chip
+              text={'Biking'}
+              chipStyle={'outlined'}
+              themeColor={'secondary'}
+              leftIcon={<Icon name="directions-bike" color={'#009688'} />}
+              visible={state.chipSix}
+              onDelete={() => store.set({ chipSix: false })}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
+  ));

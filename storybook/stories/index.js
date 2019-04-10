@@ -1,6 +1,5 @@
 export { default as Appbar } from './Appbar';
 export { default as AppbarBottom } from './AppbarBottom';
-export { default as Abstract } from './Abstract';
 export { default as Avatar } from './Avatar';
 export { default as Badge } from './Badge';
 export { default as Banner } from './Banner';
@@ -23,8 +22,10 @@ export { default as Menu } from './Menu';
 export { default as Paper } from './Paper';
 export { default as Progress } from './Progress';
 export { default as RadioButton } from './RadioButton';
+export { default as Ripple } from './Ripple';
 export { default as Searchbar } from './Searchbar';
 export { default as Snackbar } from './Snackbar';
+export { default as Shadows } from './Shadows';
 export { default as Switch } from './Switch';
 export { default as TextField } from './TextField';
 export { default as ToggleButton } from './ToggleButton';

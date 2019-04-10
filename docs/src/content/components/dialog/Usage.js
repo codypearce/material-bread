@@ -36,5 +36,11 @@ class DialogPage extends React.Component {
   }
 }`;
 
-const Usage = pageHref => <ComponentUsage pageHref={pageHref} code={code} />;
+const Usage = pageHref => (
+  <ComponentUsage
+    pageHref={pageHref}
+    description={'Currently does not work on the web, but coming soon.'}
+    code={code}
+  />
+);
 export default Usage;

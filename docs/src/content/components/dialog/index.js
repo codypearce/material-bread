@@ -17,7 +17,7 @@ export default class DialogPage extends Component {
           importCode={`import { Dialog } from 'material-bread';`}
           docsLink={'https://material.io/design/components/dialogs.html'}
           sideScrollMenuItems={sections}>
-          <MainDemo pageHref={'/components/dialog'} />
+          {/* <MainDemo pageHref={'/components/dialog'} /> */}
           <Usage pageHref={'/components/dialog'} />
           <Props pageHref={'/components/dialog'} />
         </ComponentPageLayout>

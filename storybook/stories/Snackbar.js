@@ -17,9 +17,11 @@ storiesOf('Snackbar', module).add('Snackbar', () => (
     <State store={store} style={{ flex: 1 }}>
       {state => (
         <View style={{ flex: 1 }}>
-          <Button type="outlined" onPress={() => store.set({ show: true })}>
-            Open Snackbar
-          </Button>
+          <Button
+            type="outlined"
+            onPress={() => store.set({ show: true })}
+            text={'Open Snackbar'}
+          />
           <Snackbar
             visible={state.show}
             onButtonPress={() => store.set({ show: false })}

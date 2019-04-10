@@ -122,7 +122,7 @@ class FabSpeedDial extends Component {
                 transform: [{ scale: this.state.actionAnimationsScale[index] }],
                 opacity: this.state.actionAnimationsOpacity[index],
               }}>
-              <Fab />
+              {item}
             </Animated.View>
           );
         })}

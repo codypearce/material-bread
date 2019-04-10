@@ -21,7 +21,7 @@ class BottomNavigation extends Component {
     backgroundColor: '#2196f3',
   };
 
-  handleChange = (value, backgroundColor) => {
+  handleInternalChange = (value, backgroundColor) => {
     const { handleChange } = this.props;
     if (handleChange) handleChange(value);
     this.setState({ backgroundColor: backgroundColor });
@@ -35,7 +35,7 @@ class BottomNavigation extends Component {
       <BottomNavContext.Provider
         value={{ backgroundColor: backgroundColorActual }}>
         {actionItems.map((item, index) => {
-          if (item.label && item.label.length > 0) {
+          if (!item.props) {
             return (
               <BottomNavigationItem
                 key={item.label}
@@ -43,7 +43,7 @@ class BottomNavigation extends Component {
                 label={item.label}
                 showLabel={showLabels || item.showLabel}
                 onPress={item.onPress}
-                handleChange={this.handleChange}
+                handleChange={this.handleInternalChange}
                 value={index || index === 0 ? index : item.value}
                 showLabels={this.props.showLabels}
                 active={index === this.props.value}
@@ -54,7 +54,7 @@ class BottomNavigation extends Component {
               key: item.label,
               handleChange: item.props.handleChange
                 ? item.props.handleChange
-                : this.handleChange,
+                : this.handleInternalChange,
               value: item.props.value ? item.props.value : index,
               showLabels: this.props.showLabels,
               active: item.props.active

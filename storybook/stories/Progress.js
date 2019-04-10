@@ -40,25 +40,25 @@ storiesOf('Progress', module)
             <Button
               type="outlined"
               style={{ marginTop: 20 }}
+              text={' Change Value'}
               onPress={() => {
                 store.set({
                   value3: Math.floor(Math.random() * Math.floor(100)),
                 });
-              }}>
-              Change Value
-            </Button>
+              }}
+            />
 
             <Button
               type="outlined"
               style={{ marginTop: 20 }}
               animationDuration={500}
+              text={'Hide / Show Animate'}
               onPress={() => {
                 store.set({
                   visible2: !state.visible2,
                 });
-              }}>
-              Hide / Show Animate
-            </Button>
+              }}
+            />
           </View>
         )}
       </State>
@@ -89,13 +89,13 @@ storiesOf('Progress', module)
               type="outlined"
               style={{ marginTop: 20 }}
               animationDuration={500}
+              text={'Change Value'}
               onPress={() => {
                 store.set({
                   circleValue3: Math.floor(Math.random() * Math.floor(100)),
                 });
-              }}>
-              Change Value
-            </Button>
+              }}
+            />
           </View>
         )}
       </State>

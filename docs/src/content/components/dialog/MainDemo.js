@@ -42,7 +42,7 @@ const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
     description={
-      'Data Table Headers can display action buttons, display number of selected items, display table title, or any other contextual information.'
+      'Data Table Headers can display action buttons, display number of selected items, display table title, or any other contextual information. Modal is currently only working with React Native.'
     }
     code={code}
     scope={{

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Image, View } from 'react-native';
 import { storiesOf } from '../helpers/storiesOf';
 
 import { Avatar } from '../../src/index';
@@ -9,45 +10,130 @@ storiesOf('Avatars', module)
   .add('Image', () => (
     <Container>
       <Header title={'Image Avatar'} />
-
-      <Avatar type="image" image={require('../assets/avatar.png')} size={64} />
-      <Avatar type="image" image={require('../assets/avatar.png')} size={48} />
-      <Avatar type="image" image={require('../assets/avatar.png')} size={24} />
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
+        <Avatar
+          type="image"
+          image={
+            <Image
+              source={{
+                uri:
+                  'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4',
+              }}
+            />
+          }
+          size={16}
+        />
+        <Avatar
+          type="image"
+          image={
+            <Image
+              source={{
+                uri:
+                  'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4',
+              }}
+            />
+          }
+          size={24}
+        />
+        <Avatar
+          type="image"
+          image={
+            <Image
+              source={{
+                uri:
+                  'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4',
+              }}
+            />
+          }
+          size={38}
+          onPress={() => console.log('avatar')}
+          ripple
+        />
+        <Avatar
+          type="image"
+          image={
+            <Image
+              source={{
+                uri:
+                  'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4',
+              }}
+            />
+          }
+          size={56}
+        />
+        <Avatar
+          type="image"
+          image={
+            <Image
+              source={{
+                uri:
+                  'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4',
+              }}
+            />
+          }
+          size={80}
+        />
+        <Avatar
+          type="image"
+          image={
+            <Image
+              source={{
+                uri:
+                  'https://avatars1.githubusercontent.com/u/12564956?s=460&v=4',
+              }}
+            />
+          }
+          size={70}
+        />
+      </View>
     </Container>
   ))
   .add('Icon', () => (
     <Container>
       <Header title={'Icon Avatar'} />
-
-      <Avatar
-        type="icon"
-        icon="face"
-        size={64}
-        iconColor={'white'}
-        backgroundColor={'#42a5f5'}
-      />
-      <Avatar
-        type="icon"
-        icon="alarm"
-        size={48}
-        iconColor={'white'}
-        backgroundColor={'#c2185b'}
-      />
-      <Avatar
-        type="icon"
-        icon="arrow-back"
-        size={24}
-        iconColor={'white'}
-        backgroundColor={'#f4511e'}
-      />
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
+        <Avatar
+          type="icon"
+          content="arrow-back"
+          contentColor={'#c2185b'}
+          color={'black'}
+          size={16}
+        />
+        <Avatar type="icon" content="alarm" size={24} color={'#c2185b'} />
+        <Avatar
+          type="icon"
+          content="add"
+          contentColor={'#E91E63'}
+          size={48}
+          color={'#8BC34A'}
+        />
+        <Avatar
+          type="icon"
+          content="face"
+          contentColor={'white'}
+          size={64}
+          color={'#42a5f5'}
+        />
+      </View>
     </Container>
   ))
   .add('Text', () => (
     <Container>
       <Header title={'Text Avatar'} />
 
-      <Avatar type="text" text={'CP'} size={64} backgroundColor={'#42a5f5'} />
-      <Avatar type="text" text={'NP'} size={48} backgroundColor={'#c2185b'} />
-      <Avatar type="text" text={'MB'} size={24} backgroundColor={'#f4511e'} />
+      <Avatar
+        type="text"
+        content="CP"
+        contentColor={'white'}
+        size={64}
+        color={'#42a5f5'}
+      />
+      <Avatar type="text" content="MB" size={48} color={'#c2185b'} />
+      <Avatar
+        type="text"
+        content="NP"
+        contentColor={'#c2185b'}
+        color={'#f4511e'}
+      />
     </Container>
   ));

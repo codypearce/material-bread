@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Image } from 'react-native';
 import { ComponentMainDemo } from '@components';
-import { FabSpeedDial } from '../../../../../src/index';
+import { Fab, FabSpeedDial } from '../../../../../src/index';
 
 export const code = `class FabPage extends React.Component {
   constructor(props) {
@@ -12,18 +12,10 @@ export const code = `class FabPage extends React.Component {
   }
   render() {
     const actions = [
-      {
-        text: 'Favorites',
-      },
-      {
-        text: 'Language',
-      },
-      {
-        text: 'Location',
-      },
-      {
-        text: 'Video',
-      },
+      <Fab backgroundColor={'#E91E63'} icon={'archive'} />,
+      <Fab backgroundColor={'#F44336'} icon={'delete'} />,
+      <Fab backgroundColor={'#009688'} icon={'edit'} />,
+      <Fab backgroundColor={'black'} icon={'attach-money'} />,
     ];
     return (
       <View>
@@ -40,7 +32,7 @@ const MainDemo = pageHref => (
       'Fab Speed Dials accept an array of actions that will animate out from the main Fab.'
     }
     code={code}
-    scope={{ View, FabSpeedDial, Image }}
+    scope={{ View, FabSpeedDial, Fab, Image }}
   />
 );
 export default MainDemo;

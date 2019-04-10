@@ -1,76 +1,93 @@
 import React from 'react';
 import { storiesOf } from '../helpers/storiesOf';
-import { Text } from 'react-native';
 
 import { Banner, Avatar } from '../../src/index';
-import { State, Store } from '@sambego/storybook-state';
 import Header from '../components/Header';
 import Container from '../components/Container';
 
-const store = new Store({
-  visibleOne: true,
-  visibleTwo: true,
-  visibleThree: true,
-});
+storiesOf('Banner', module)
+  .add('Single line', () => (
+    <Container>
+      <Header title={'Banner Single Line'} />
 
-storiesOf('Banner', module).add('Component', () => (
-  <Container>
-    <Header title={'Banner'} />
+      <Banner
+        actionItems={[
+          { name: 'Sign in', onPress: () => console.log('sign in') },
+        ]}
+        singleLine
+        message={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
+        visible
+        style={{ marginBottom: 20 }}
+      />
+      <Banner
+        actionItems={[{ name: 'Continue' }]}
+        singleLine
+        message={'New Action here'}
+        visible
+        style={{ marginBottom: 20 }}
+      />
+      <Banner
+        actionItems={[{ name: 'Cancel' }, { name: 'Continue' }]}
+        singleLine
+        message={'Two Actions here'}
+        visible
+      />
+    </Container>
+  ))
+  .add('Multi line', () => (
+    <Container>
+      <Header title={'Banner Multi line'} />
+      <Banner
+        visible
+        actionItems={[{ name: 'Continue' }, { name: 'Sign in' }]}
+        message={
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+        }
+        style={{ marginBottom: 40 }}
+      />
+      <Banner
+        visible
+        actionItems={[{ name: 'Continue' }, { name: 'Sign in' }]}
+        message={
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco'
+        }
+        style={{ marginBottom: 40 }}
+      />
 
-    <Text style={{ fontSize: 16, marginBottom: 4 }}>Single line Banner</Text>
-    <State store={store}>
-      {state => (
-        <Banner
-          visible={state.visibleOne}
-          rightActionText={'Sign in'}
-          rightActionOnPress={() => store.set({ visibleOne: false })}
-          message={'One line text with one action'}
-          singleLine
-          style={{ marginBottom: 40 }}
-        />
-      )}
-    </State>
+      <Banner
+        visible
+        actionItems={[{ name: 'Continue' }, { name: 'Sign in' }]}
+        media={
+          <Avatar
+            type="icon"
+            content="notifications"
+            size={40}
+            contentColor={'white'}
+            color={'#42a5f5'}
+          />
+        }
+        message={
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+        }
+        style={{ marginBottom: 40 }}
+      />
 
-    <Text style={{ fontSize: 16, marginBottom: 4 }}>No icon Banner</Text>
-    <State store={store}>
-      {state => (
-        <Banner
-          visible={state.visibleTwo}
-          rightActionText={'Sign in'}
-          rightActionOnPress={() => store.set({ visibleTwo: false })}
-          leftActionText={'Continue'}
-          leftActionOnPress={() => store.set({ visibleTwo: false })}
-          message={
-            'Two line text string with two actions. One to two lines is preferable'
-          }
-          style={{ marginBottom: 40 }}
-        />
-      )}
-    </State>
-
-    <Text style={{ fontSize: 16, marginBottom: 4 }}>Full Banner with icon</Text>
-    <State store={store}>
-      {state => (
-        <Banner
-          visible={state.visibleThree}
-          rightActionText={'Sign in'}
-          rightActionOnPress={() => store.set({ visibleThree: false })}
-          leftActionText={'Continue'}
-          leftActionOnPress={() => store.set({ visibleThree: false })}
-          media={
-            <Avatar
-              type="icon"
-              icon="notifications"
-              size={40}
-              iconColor={'white'}
-              backgroundColor={'#42a5f5'}
-            />
-          }
-          message={
-            'Two line text string with two actions. One to two lines is preferable'
-          }
-        />
-      )}
-    </State>
-  </Container>
-));
+      <Banner
+        visible
+        actionItems={[{ name: 'Continue' }, { name: 'Sign in' }]}
+        media={
+          <Avatar
+            type="icon"
+            content="favorite"
+            size={40}
+            contentColor={'white'}
+            color={'#E91E63'}
+          />
+        }
+        message={
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco'
+        }
+        style={{ marginBottom: 40 }}
+      />
+    </Container>
+  ));

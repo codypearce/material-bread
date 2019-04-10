@@ -18,7 +18,7 @@ class ComponentDemoHeader extends Component {
       <div>
         You can see even more examples in the{' '}
         <Link href="https://codypearce.github.io/material-bread/">
-          Storybook playground.
+          Storybook environment.
         </Link>
       </div>
     );
