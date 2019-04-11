@@ -121,6 +121,11 @@ class PageLayout extends Component {
             content="react react native material design components"
           />
 
+          <meta
+            name="google-site-verification"
+            content="pnInoKlqzLFjeCNTW6F-BnibL8xE4qnA7Tghks5dLwo"
+          />
+
           <link rel="shortcut icon" href={favicon} />
 
           <link
