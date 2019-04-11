@@ -11,7 +11,7 @@ import {
 import Header from '../components/Header';
 import Container from '../components/Container';
 
-storiesOf('Data Table', module)
+storiesOf('Components|Data Table', module)
   .add('Data Table', () => (
     <Container>
       <Header title={'DataTable'} />

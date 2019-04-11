@@ -12,7 +12,7 @@ import {
 import Header from '../components/Header';
 import Container from '../components/Container';
 
-storiesOf('Typography', module).add('Components', () => (
+storiesOf('Components|Typography', module).add('Components', () => (
   <Container>
     <Header title={'Typography'} />
     <View style={{ marginTop: 50 }}>

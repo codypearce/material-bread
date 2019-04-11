@@ -19,7 +19,7 @@ const store = new Store({
   outlinedThree: '',
 });
 
-storiesOf('TextField', module)
+storiesOf('Components|TextField', module)
   .add('Flat', () => (
     <Container>
       <Header title={'Flat TextField'} />

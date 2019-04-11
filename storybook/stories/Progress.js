@@ -13,7 +13,7 @@ const store = new Store({
   circleValue3: 40,
 });
 
-storiesOf('Progress', module)
+storiesOf('Components|Progress', module)
   .add('Progress Bar', () => (
     <Container>
       <Header title={'Progress Bar'} />

@@ -7,7 +7,7 @@ import { shadow } from '../../src';
 import Header from '../components/Header';
 import Container from '../components/Container';
 
-storiesOf('Shadows', module).add('Simple', () => (
+storiesOf('Utils|Shadows', module).add('Simple', () => (
   <Container>
     <Header
       title={'Shadows'}

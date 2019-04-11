@@ -13,7 +13,7 @@ const store = new Store({
   five: 0,
 });
 
-storiesOf('Bottom Navigation', module).add('Component', () => (
+storiesOf('Components|Bottom Navigation', module).add('Component', () => (
   <Container>
     <Header title={'Bottom Navigation'} />
     <State store={store} style={{ flex: 1 }}>

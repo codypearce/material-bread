@@ -11,7 +11,7 @@ import {
 import Header from '../components/Header';
 import Container from '../components/Container';
 
-storiesOf('List', module).add('List', () => (
+storiesOf('Components|List', module).add('List', () => (
   <Container>
     <Header title={'List'} />
 

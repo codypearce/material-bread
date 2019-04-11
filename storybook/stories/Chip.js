@@ -17,7 +17,7 @@ const store = new Store({
   chipSix: true,
 });
 
-storiesOf('Chip', module)
+storiesOf('Components|Chip', module)
   .add('Filled', () => (
     <Container>
       <Header title={'Filled'} />

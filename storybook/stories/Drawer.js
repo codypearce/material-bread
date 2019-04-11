@@ -10,7 +10,7 @@ import {
 import Header from '../components/Header';
 import Container from '../components/Container';
 
-storiesOf('Drawer', module).add('Simple', () => (
+storiesOf('Components|Drawer', module).add('Simple', () => (
   <Container>
     <Header title={'Drawer'} />
 

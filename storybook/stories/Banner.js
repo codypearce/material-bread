@@ -5,7 +5,7 @@ import { Banner, Avatar } from '../../src/index';
 import Header from '../components/Header';
 import Container from '../components/Container';
 
-storiesOf('Banner', module)
+storiesOf('Components|Banner', module)
   .add('Single line', () => (
     <Container>
       <Header title={'Banner Single Line'} />

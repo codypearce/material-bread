@@ -7,7 +7,7 @@ import { Ripple } from '../../src';
 import Header from '../components/Header';
 import Container from '../components/Container';
 
-storiesOf('Ripple', module).add('Simple', () => (
+storiesOf('Components|Ripple', module).add('Simple', () => (
   <Container>
     <Header title={'Ripple'} subtitle={'Add a touchable ripple to anything'} />
     <Ripple

@@ -16,7 +16,7 @@ const data = [
   { id: 3, name: 'Option 3' },
 ];
 
-storiesOf('Dropdown', module).add('Outlined', () => (
+storiesOf('Components|Dropdown', module).add('Outlined', () => (
   <Container>
     <Header title={'Outlined Dropdown'} />
 

@@ -6,7 +6,7 @@ import { Badge, Icon, IconButton } from '../../src/index';
 import Header from '../components/Header';
 import Container from '../components/Container';
 
-storiesOf('Badge', module)
+storiesOf('Components|Badge', module)
   .add('Standalone', () => (
     <Container>
       <Header title={'Standalone'} />

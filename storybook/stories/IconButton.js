@@ -6,7 +6,7 @@ import { IconButton } from '../../src/index';
 import Header from '../components/Header';
 import Container from '../components/Container';
 
-storiesOf('Icon Button', module)
+storiesOf('Components|Icon Button', module)
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
 
   .add('Component', () => (

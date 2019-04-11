@@ -11,7 +11,7 @@ const store = new Store({
   show: false,
 });
 
-storiesOf('Snackbar', module).add('Snackbar', () => (
+storiesOf('Components|Snackbar', module).add('Snackbar', () => (
   <Container>
     <Header title={'Snackbar'} />
     <State store={store} style={{ flex: 1 }}>

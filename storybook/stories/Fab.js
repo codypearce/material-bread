@@ -6,7 +6,7 @@ import { Fab } from '../../src/index';
 import Header from '../components/Header';
 import Container from '../components/Container';
 
-storiesOf('Fab', module).add('Fab', () => (
+storiesOf('Components|Fab', module).add('Fab', () => (
   <Container>
     <Header title={'Fab'} />
     <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>

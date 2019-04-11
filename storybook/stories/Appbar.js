@@ -8,7 +8,7 @@ import Container from '../components/Container';
 
 /*  eslint-disable no-console */
 
-storiesOf('Appbar', module)
+storiesOf('Components|Appbar', module)
   .add('Simple', () => (
     <Container scroll>
       <Header title={'Appbar Simple'} />

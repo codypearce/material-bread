@@ -13,7 +13,7 @@ const actions = [
   <Fab backgroundColor={'black'} icon={'attach-money'} />,
 ];
 
-storiesOf('FabSpeedDial', module).add('Simple', () => (
+storiesOf('Components|FabSpeedDial', module).add('Simple', () => (
   <Container>
     <Header title={'Fab SpeedDial'} />
 

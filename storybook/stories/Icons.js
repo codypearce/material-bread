@@ -5,7 +5,7 @@ import { Icon, Badge } from '../../src/index';
 import Header from '../components/Header';
 import Container from '../components/Container';
 
-storiesOf('Icons', module).add('Component', () => (
+storiesOf('Components|Icons', module).add('Component', () => (
   <Container>
     <Header title={'Icon Component'} />
 

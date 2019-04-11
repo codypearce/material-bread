@@ -5,7 +5,7 @@ import { Paper } from '../../src/index';
 import Header from '../components/Header';
 import Container from '../components/Container';
 
-storiesOf('Paper', module)
+storiesOf('Components|Paper', module)
   .add('Elevation', () => (
     <Container>
       <Header title={'Paper'} />

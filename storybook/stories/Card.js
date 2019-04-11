@@ -18,7 +18,7 @@ import {
 import Header from '../components/Header';
 import Container from '../components/Container';
 
-storiesOf('Card', module)
+storiesOf('Components|Card', module)
   .add('Card', () => (
     <Container scroll>
       <Header title={'Card'} />

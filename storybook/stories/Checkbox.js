@@ -13,7 +13,7 @@ const store = new Store({
   checkedThree: false,
 });
 
-storiesOf('Checkbox', module)
+storiesOf('Components|Checkbox', module)
   .add('Icons', () => (
     <Container>
       <Header title={'Icons'} />

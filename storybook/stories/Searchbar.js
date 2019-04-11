@@ -11,7 +11,7 @@ const store = new Store({
   searchOne: '',
 });
 
-storiesOf('Searchbar', module).add('Simple', () => (
+storiesOf('Components|Searchbar', module).add('Simple', () => (
   <Container>
     <Header title={'Searchbar'} />
     <State store={store} style={{ flex: 1 }}>

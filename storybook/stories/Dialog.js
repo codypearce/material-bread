@@ -18,7 +18,7 @@ const store = new Store({
   visible: false,
 });
 
-storiesOf('Dialog', module).add('Simple', () => (
+storiesOf('Components|Dialog', module).add('Simple', () => (
   <Container>
     <Header title={'Dialog'} />
     <Text>

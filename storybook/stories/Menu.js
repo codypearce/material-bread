@@ -13,7 +13,7 @@ const store = new Store({
   visibleThree: false,
 });
 
-storiesOf('Menu', module).add('Menu', () => (
+storiesOf('Components|Menu', module).add('Menu', () => (
   <Container>
     <Header title={'Menu'} />
 

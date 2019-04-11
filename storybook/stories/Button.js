@@ -6,7 +6,7 @@ import { Button, Icon } from '../../src/index';
 import Header from '../components/Header';
 import Container from '../components/Container';
 
-storiesOf('Buttons', module)
+storiesOf('Components|Buttons', module)
   .add('Text Button', () => (
     <Container>
       <Header title={'Text Button'} />

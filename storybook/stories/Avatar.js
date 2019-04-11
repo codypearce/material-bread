@@ -6,7 +6,7 @@ import { Avatar } from '../../src/index';
 import Header from '../components/Header';
 import Container from '../components/Container';
 
-storiesOf('Avatars', module)
+storiesOf('Components|Avatars', module)
   .add('Image', () => (
     <Container>
       <Header title={'Image Avatar'} />

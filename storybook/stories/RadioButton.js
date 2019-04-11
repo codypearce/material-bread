@@ -11,7 +11,7 @@ const store = new Store({
   checked: 0,
 });
 
-storiesOf('Radio Button', module).add('Radio', () => (
+storiesOf('Components|Radio Button', module).add('Radio', () => (
   <Container>
     <Header title={'Radio Button'} />
     <State store={store} style={{ flex: 1 }}>

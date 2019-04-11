@@ -5,7 +5,7 @@ import { Divider } from '../../src/index';
 import Header from '../components/Header';
 import Container from '../components/Container';
 
-storiesOf('Divider', module).add('Simple', () => (
+storiesOf('Components|Divider', module).add('Simple', () => (
   <Container>
     <Header title={'Divider'} />
 

@@ -6,7 +6,7 @@ import Header from '../components/Header';
 import Container from '../components/Container';
 
 /*  eslint-disable no-console */
-storiesOf('AppbarBottom', module)
+storiesOf('Components|AppbarBottom', module)
   .add('Center Fab', () => (
     <Container scroll>
       <Header title={'Center Fab'} />

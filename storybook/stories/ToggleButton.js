@@ -5,7 +5,7 @@ import { ToggleButton, ToggleButtonGroup } from '../../src/index';
 import Header from '../components/Header';
 import Container from '../components/Container';
 
-storiesOf('Toggle Button', module)
+storiesOf('Components|Toggle Button', module)
   .add('Single', () => (
     <Container>
       <Header title={'Toggle Button'} />
