@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="250" src="https://raw.githubusercontent.com/codypearce/material-bread/master/docs/src/assets/logo-shadow.svg" alt="Material Bread logo" align="center">
+  <img width="250" src="https://github.com/codypearce/material-bread/blob/master/docs/src/assets/logo-shadow.svg" alt="Material Bread logo" align="center">
 </p>
 <h1 align="center" style="margin: 0px">Material Bread</h1>
 
