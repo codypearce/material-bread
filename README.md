@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="250" src="./docs/src/assets/logo-shadow.svg" alt="Material Bread logo" align="center">
+  <img width="250" src="https://raw.githubusercontent.com/codypearce/material-bread/master/docs/src/assets/logo-shadow.svg" alt="Material Bread logo" align="center">
 </p>
 <h1 align="center" style="margin: 0px">Material Bread</h1>
 
@@ -10,15 +10,17 @@
 Highly customizable React Native Material Design Components.
 
 ### [Docs](http://material-bread.org)
-### [Storybook](https://codypearce.github.io/material-bread/)
 
+### [Storybook](https://codypearce.github.io/material-bread/)
 
 ## Installation
 
 ```sh
 npm install material-bread
 ```
+
 or
+
 ```sh
 yarn add material-bread
 ```
@@ -41,18 +43,14 @@ yarn add material-bread
 
 [Electron](https://github.com/codypearce/material-bread-electron-example)
 
-## Usage 
+## Usage
 
 ```jsx
 import React from 'react';
-import Button from 'material-bread';
+import { Button } from 'material-bread';
 
 function App() {
-  return (
-    <Button type="contained" >
-      Click Me
-    </Button>
-  );
+  return <Button type="contained">Click Me</Button>;
 }
 ```
 

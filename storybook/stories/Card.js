@@ -13,6 +13,7 @@ import {
   IconButton,
   Button,
   Ripple,
+  Badge,
 } from '../../src/index';
 import Header from '../components/Header';
 import Container from '../components/Container';
