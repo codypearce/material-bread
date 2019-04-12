@@ -9,6 +9,7 @@ import Container from '../components/Container';
 /*  eslint-disable no-console */
 
 storiesOf('Components|Appbar', module)
+  .addParameters({ jest: ['Appbar'] })
   .add('Simple', () => (
     <Container scroll>
       <Header title={'Appbar Simple'} />

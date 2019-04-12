@@ -14,6 +14,7 @@ const store = new Store({
 });
 
 storiesOf('Components|Progress', module)
+  .addParameters({ jest: ['ProgressBar', 'ProgressCircle'] })
   .add('Progress Bar', () => (
     <Container>
       <Header title={'Progress Bar'} />

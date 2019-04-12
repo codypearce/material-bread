@@ -11,23 +11,25 @@ import {
 import Header from '../components/Header';
 import Container from '../components/Container';
 
-storiesOf('Components|List', module).add('List', () => (
-  <Container>
-    <Header title={'List'} />
+storiesOf('Components|List', module)
+  .addParameters({ jest: ['List'] })
+  .add('List', () => (
+    <Container>
+      <Header title={'List'} />
 
-    <List>
-      <ListItem>
-        <ListItemIcon icon={'alarm'} />
-        <ListItemText primary={'This is a list Item'} />
-      </ListItem>
-      <ListExpanded title="Expanded">
+      <List>
         <ListItem>
+          <ListItemIcon icon={'alarm'} />
           <ListItemText primary={'This is a list Item'} />
         </ListItem>
-        <ListItem>
-          <ListItemText primary={'This is a list Item'} />
-        </ListItem>
-      </ListExpanded>
-    </List>
-  </Container>
-));
+        <ListExpanded title="Expanded">
+          <ListItem>
+            <ListItemText primary={'This is a list Item'} />
+          </ListItem>
+          <ListItem>
+            <ListItemText primary={'This is a list Item'} />
+          </ListItem>
+        </ListExpanded>
+      </List>
+    </Container>
+  ));

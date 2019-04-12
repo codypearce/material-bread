@@ -1,6 +1,12 @@
-import { addDecorator, configure, setAddon } from '@storybook/react';
-import { withOptions } from '@storybook/addon-options';
+import {
+  addDecorator,
+  configure,
+  setAddon,
+  addParameters,
+} from '@storybook/react';
 import { configureViewport } from '@storybook/addon-viewport';
+import { withTests } from '@storybook/addon-jest';
+import results from '../jest-test-results.json';
 
 // Generate required css
 const iconFont = require('react-native-vector-icons/Fonts/MaterialIcons.ttf');
@@ -13,13 +19,19 @@ configureViewport({
   defaultViewport: 'iphone6',
 });
 
-addDecorator(
-  withOptions({
+addParameters({
+  options: {
+    showPanel: true,
+    panelPosition: 'bottom',
+    isToolshown: true,
+
     name: 'Material Bread',
+  },
+});
 
-    showAddonPanel: false,
-
-    addonPanelInRight: true,
+addDecorator(
+  withTests({
+    results,
   }),
 );
 

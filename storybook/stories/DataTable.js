@@ -12,6 +12,7 @@ import Header from '../components/Header';
 import Container from '../components/Container';
 
 storiesOf('Components|Data Table', module)
+  .addParameters({ jest: ['DataTable'] })
   .add('Data Table', () => (
     <Container>
       <Header title={'DataTable'} />

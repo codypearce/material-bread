@@ -7,6 +7,7 @@ import Header from '../components/Header';
 import Container from '../components/Container';
 
 storiesOf('Components|Badge', module)
+  .addParameters({ jest: ['Badge'] })
   .add('Standalone', () => (
     <Container>
       <Header title={'Standalone'} />

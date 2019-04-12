@@ -7,6 +7,7 @@ import Header from '../components/Header';
 import Container from '../components/Container';
 
 storiesOf('Components|Avatars', module)
+  .addParameters({ jest: ['Avatar'] })
   .add('Image', () => (
     <Container>
       <Header title={'Image Avatar'} />

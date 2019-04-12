@@ -13,12 +13,14 @@ const actions = [
   <Fab backgroundColor={'black'} icon={'attach-money'} />,
 ];
 
-storiesOf('Components|FabSpeedDial', module).add('Simple', () => (
-  <Container>
-    <Header title={'Fab SpeedDial'} />
+storiesOf('Components|FabSpeedDial', module)
+  .addParameters({ jest: ['FabSpeedDial'] })
+  .add('Simple', () => (
+    <Container>
+      <Header title={'Fab SpeedDial'} />
 
-    <View style={{ flex: 1, position: 'relative', paddingTop: 400 }}>
-      <FabSpeedDial actions={actions} style={{ marginTop: 400 }} />
-    </View>
-  </Container>
-));
+      <View style={{ flex: 1, position: 'relative', paddingTop: 400 }}>
+        <FabSpeedDial actions={actions} style={{ marginTop: 400 }} />
+      </View>
+    </Container>
+  ));

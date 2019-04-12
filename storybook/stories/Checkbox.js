@@ -14,6 +14,7 @@ const store = new Store({
 });
 
 storiesOf('Components|Checkbox', module)
+  .addParameters({ jest: ['Checkbox'] })
   .add('Icons', () => (
     <Container>
       <Header title={'Icons'} />

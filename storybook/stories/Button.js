@@ -7,6 +7,7 @@ import Header from '../components/Header';
 import Container from '../components/Container';
 
 storiesOf('Components|Buttons', module)
+  .addParameters({ jest: ['Button'] })
   .add('Text Button', () => (
     <Container>
       <Header title={'Text Button'} />

@@ -18,6 +18,7 @@ const store = new Store({
 });
 
 storiesOf('Components|Chip', module)
+  .addParameters({ jest: ['Chip'] })
   .add('Filled', () => (
     <Container>
       <Header title={'Filled'} />

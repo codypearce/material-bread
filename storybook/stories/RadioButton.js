@@ -11,27 +11,29 @@ const store = new Store({
   checked: 0,
 });
 
-storiesOf('Components|Radio Button', module).add('Radio', () => (
-  <Container>
-    <Header title={'Radio Button'} />
-    <State store={store} style={{ flex: 1 }}>
-      {state => (
-        <View>
-          <RadioButton
-            checked={state.checked == 1}
-            onPress={() => store.set({ checked: 1 })}
-          />
-          <RadioButton
-            checked={state.checked == 2}
-            onPress={() => store.set({ checked: 2 })}
-          />
-          <RadioButton
-            checked={state.checked == 3}
-            disabled
-            onPress={() => store.set({ checked: 3 })}
-          />
-        </View>
-      )}
-    </State>
-  </Container>
-));
+storiesOf('Components|Radio Button', module)
+  .addParameters({ jest: ['RadioButton'] })
+  .add('Radio', () => (
+    <Container>
+      <Header title={'Radio Button'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <RadioButton
+              checked={state.checked == 1}
+              onPress={() => store.set({ checked: 1 })}
+            />
+            <RadioButton
+              checked={state.checked == 2}
+              onPress={() => store.set({ checked: 2 })}
+            />
+            <RadioButton
+              checked={state.checked == 3}
+              disabled
+              onPress={() => store.set({ checked: 3 })}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
+  ));

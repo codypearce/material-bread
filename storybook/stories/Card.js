@@ -9,7 +9,6 @@ import {
   CardContent,
   CardActions,
   Avatar,
-  Icon,
   IconButton,
   Button,
   Ripple,
@@ -19,6 +18,7 @@ import Header from '../components/Header';
 import Container from '../components/Container';
 
 storiesOf('Components|Card', module)
+  .addParameters({ jest: ['Card'] })
   .add('Card', () => (
     <Container scroll>
       <Header title={'Card'} />

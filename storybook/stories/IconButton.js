@@ -7,6 +7,7 @@ import Header from '../components/Header';
 import Container from '../components/Container';
 
 storiesOf('Components|Icon Button', module)
+  .addParameters({ jest: ['IconButton'] })
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
 
   .add('Component', () => (

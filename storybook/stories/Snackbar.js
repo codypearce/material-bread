@@ -11,25 +11,27 @@ const store = new Store({
   show: false,
 });
 
-storiesOf('Components|Snackbar', module).add('Snackbar', () => (
-  <Container>
-    <Header title={'Snackbar'} />
-    <State store={store} style={{ flex: 1 }}>
-      {state => (
-        <View style={{ flex: 1 }}>
-          <Button
-            type="outlined"
-            onPress={() => store.set({ show: true })}
-            text={'Open Snackbar'}
-          />
-          <Snackbar
-            visible={state.show}
-            onButtonPress={() => store.set({ show: false })}
-            buttonLabel={'Ok'}>
-            {'This is a snackbar component'}
-          </Snackbar>
-        </View>
-      )}
-    </State>
-  </Container>
-));
+storiesOf('Components|Snackbar', module)
+  .addParameters({ jest: ['Snackbar'] })
+  .add('Snackbar', () => (
+    <Container>
+      <Header title={'Snackbar'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View style={{ flex: 1 }}>
+            <Button
+              type="outlined"
+              onPress={() => store.set({ show: true })}
+              text={'Open Snackbar'}
+            />
+            <Snackbar
+              visible={state.show}
+              onButtonPress={() => store.set({ show: false })}
+              buttonLabel={'Ok'}>
+              {'This is a snackbar component'}
+            </Snackbar>
+          </View>
+        )}
+      </State>
+    </Container>
+  ));

@@ -16,19 +16,21 @@ const data = [
   { id: 3, name: 'Option 3' },
 ];
 
-storiesOf('Components|Dropdown', module).add('Outlined', () => (
-  <Container>
-    <Header title={'Outlined Dropdown'} />
+storiesOf('Components|Dropdown', module)
+  .addParameters({ jest: ['Dropdown'] })
+  .add('Outlined', () => (
+    <Container>
+      <Header title={'Outlined Dropdown'} />
 
-    <State store={store} style={{ flex: 1 }}>
-      {state => (
-        <Dropdown
-          label={'Dropdown'}
-          menuItems={data}
-          onSelect={value => store.set({ selectedItem: value.name })}
-          selectedItem={state.selectedItem}
-        />
-      )}
-    </State>
-  </Container>
-));
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <Dropdown
+            label={'Dropdown'}
+            menuItems={data}
+            onSelect={value => store.set({ selectedItem: value.name })}
+            selectedItem={state.selectedItem}
+          />
+        )}
+      </State>
+    </Container>
+  ));

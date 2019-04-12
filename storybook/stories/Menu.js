@@ -13,39 +13,43 @@ const store = new Store({
   visibleThree: false,
 });
 
-storiesOf('Components|Menu', module).add('Menu', () => (
-  <Container>
-    <Header title={'Menu'} />
+storiesOf('Components|Menu', module)
+  .addParameters({ jest: ['Menu'] })
+  .add('Menu', () => (
+    <Container>
+      <Header title={'Menu'} />
 
-    <State store={store} style={{ flex: 1 }}>
-      {state => (
-        <View>
-          <Menu
-            visible={state.visibleOne}
-            button={
-              <Button
-                text={'Show menu'}
-                onPress={() => {
-                  store.set({ visibleOne: !state.visibleOne });
-                }}
-                type="contained"
-              />
-            }>
-            <MenuItem onPress={() => store.set({ visibleOne: false })}>
-              Menu item 1
-            </MenuItem>
-            <MenuItem onPress={() => store.set({ visibleOne: false })}>
-              Menu item 2
-            </MenuItem>
-            <MenuItem onPress={() => store.set({ visibleOne: false })} disabled>
-              Menu item 3
-            </MenuItem>
-            <MenuItem onPress={() => store.set({ visibleOne: false })}>
-              Menu item 2
-            </MenuItem>
-          </Menu>
-        </View>
-      )}
-    </State>
-  </Container>
-));
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <Menu
+              visible={state.visibleOne}
+              button={
+                <Button
+                  text={'Show menu'}
+                  onPress={() => {
+                    store.set({ visibleOne: !state.visibleOne });
+                  }}
+                  type="contained"
+                />
+              }>
+              <MenuItem onPress={() => store.set({ visibleOne: false })}>
+                Menu item 1
+              </MenuItem>
+              <MenuItem onPress={() => store.set({ visibleOne: false })}>
+                Menu item 2
+              </MenuItem>
+              <MenuItem
+                onPress={() => store.set({ visibleOne: false })}
+                disabled>
+                Menu item 3
+              </MenuItem>
+              <MenuItem onPress={() => store.set({ visibleOne: false })}>
+                Menu item 2
+              </MenuItem>
+            </Menu>
+          </View>
+        )}
+      </State>
+    </Container>
+  ));

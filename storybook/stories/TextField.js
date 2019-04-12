@@ -20,6 +20,7 @@ const store = new Store({
 });
 
 storiesOf('Components|TextField', module)
+  .addParameters({ jest: ['TextField'] })
   .add('Flat', () => (
     <Container>
       <Header title={'Flat TextField'} />

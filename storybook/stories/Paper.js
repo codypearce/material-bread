@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import Container from '../components/Container';
 
 storiesOf('Components|Paper', module)
+  .addParameters({ jest: ['Paper'] })
   .add('Elevation', () => (
     <Container>
       <Header title={'Paper'} />

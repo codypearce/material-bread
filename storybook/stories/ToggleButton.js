@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import Container from '../components/Container';
 
 storiesOf('Components|Toggle Button', module)
+  .addParameters({ jest: ['ToggleButton'] })
   .add('Single', () => (
     <Container>
       <Header title={'Toggle Button'} />

@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import Container from '../components/Container';
 
 storiesOf('Components|Banner', module)
+  .addParameters({ jest: ['Banner'] })
   .add('Single line', () => (
     <Container>
       <Header title={'Banner Single Line'} />

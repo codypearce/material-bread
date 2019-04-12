@@ -7,6 +7,7 @@ import Container from '../components/Container';
 
 /*  eslint-disable no-console */
 storiesOf('Components|AppbarBottom', module)
+  .addParameters({ jest: ['AppbarBottom'] })
   .add('Center Fab', () => (
     <Container scroll>
       <Header title={'Center Fab'} />
