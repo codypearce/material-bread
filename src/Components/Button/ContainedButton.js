@@ -137,13 +137,24 @@ class ContainedButton extends Component {
   }
 
   handleHover(toggle) {
-    let implementedColor = toggle
-      ? color(this.getBackgroundColor())
-          .darken(0.15)
-          .rgb()
-          .string()
-      : null;
+    const bgColor = this.getBackgroundColor();
+    let implementedColor;
 
+    if (color(bgColor).isDark()) {
+      implementedColor = toggle
+        ? color(bgColor)
+            .lighten(0.15)
+            .rgb()
+            .string()
+        : null;
+    } else {
+      implementedColor = toggle
+        ? color()
+            .darken(0.15)
+            .rgb()
+            .string()
+        : null;
+    }
     this.setState({ stateBackgroundColor: implementedColor });
   }
 

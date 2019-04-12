@@ -37,10 +37,10 @@ exports[`RadioButton Renders 1`] = `
         "borderColor": "rgba(0,0,0,.5)",
         "borderRadius": 24,
         "borderWidth": 2,
-        "height": 20,
+        "height": 21,
         "justifyContent": "center",
         "margin": 2,
-        "width": 20,
+        "width": 21,
       }
     }
   />

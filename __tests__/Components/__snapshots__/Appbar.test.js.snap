@@ -41,13 +41,10 @@ exports[`Appbar Renders 1`] = `
       style={
         Array [
           Object {
-            "marginLeft": 0,
-          },
-          Object {
-            "marginBottom": 0,
-          },
-          Object {
             "alignSelf": "center",
+            "marginBottom": 0,
+            "marginLeft": 0,
+            "zIndex": 100,
           },
         ]
       }

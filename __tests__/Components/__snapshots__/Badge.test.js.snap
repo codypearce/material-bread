@@ -7,7 +7,6 @@ exports[`Badge Renders 1`] = `
       Object {
         "alignItems": "flex-start",
         "alignSelf": "flex-start",
-        "display": "inline-flex",
         "height": "auto",
         "maxHeight": "auto",
         "maxWidth": "auto",

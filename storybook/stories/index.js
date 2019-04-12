@@ -1,3 +1,5 @@
+export { default as Home } from './Home';
+
 export { default as Appbar } from './Appbar';
 export { default as AppbarBottom } from './AppbarBottom';
 export { default as Avatar } from './Avatar';

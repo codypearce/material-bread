@@ -7,6 +7,7 @@ exports[`DataTable Renders 1`] = `
       Object {
         "backgroundColor": "white",
         "borderRadius": 4,
+        "minHeight": "auto",
         "minWidth": "auto",
         "overflowX": "auto",
         "shadowColor": "#000",
