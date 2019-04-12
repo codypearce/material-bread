@@ -4,7 +4,6 @@ import {
   setAddon,
   addParameters,
 } from '@storybook/react';
-import { configureViewport } from '@storybook/addon-viewport';
 import { withTests } from '@storybook/addon-jest';
 import results from '../jest-test-results.json';
 import '@storybook/addon-console';
@@ -52,3 +51,4 @@ if (style.styleSheet) {
 }
 // Inject stylesheet
 document.head.appendChild(style);
+window.STORYBOOK_GA_ID = 'UA-72995758-3';
