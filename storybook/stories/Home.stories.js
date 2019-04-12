@@ -4,8 +4,6 @@ import { storiesOf } from '../helpers/storiesOf';
 
 import Container from '../components/Container';
 import { Heading, BodyText, Button, Anchor } from '../../src';
-import { linkTo } from '@storybook/addon-links';
-
 const styles = StyleSheet.create({
   top: {
     flexDirection: 'column',
@@ -53,10 +51,7 @@ const styles = StyleSheet.create({
 storiesOf('Docs|Start Here', module).add('Home', () => (
   <Container>
     <View style={styles.top}>
-      <Image
-        source={{ uri: '../assets/logo-shadow.svg' }}
-        style={styles.logo}
-      />
+      <Image source={{ uri: '/logo-shadow.svg' }} style={styles.logo} />
       <Heading style={styles.header}>Material Bread</Heading>
       <BodyText style={styles.subtitle}>
         One Component Library, Six Platforms

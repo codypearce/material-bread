@@ -8,7 +8,7 @@
     "lint": "./node_modules/.bin/eslint './src'",
     "storybook": "storybook start -p 7007",
     "storybook-web": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -c .storybook -o gh",
+    "build-storybook": "build-storybook -c .storybook -s ./public -o gh",
     "deploy-docs": "gh-pages -d gh",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true"
   },
