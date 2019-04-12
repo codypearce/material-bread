@@ -28,6 +28,7 @@ addParameters({
     { name: 'white', value: '#fff', default: true },
     { name: 'light', value: '#eeeeee' },
   ],
+  viewport: {},
 });
 
 addDecorator(

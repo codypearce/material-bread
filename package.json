@@ -31,6 +31,7 @@
     "@storybook/addon-jest": "^5.0.6",
     "@storybook/addon-links": "^5.0.6",
     "@storybook/addon-storyshots": "^5.0.6",
+    "@storybook/addon-viewport": "^5.0.6",
     "@storybook/react": "^5.0.6",
     "@storybook/react-native": "^4.1.16",
     "@storybook/theming": "^5.0.6",
