@@ -50,68 +50,47 @@ const styles = StyleSheet.create({
   },
 });
 
-storiesOf('Docs|Start Here', module)
-  .add('Home', () => (
-    <Container>
-      <View style={styles.top}>
-        <Image
-          source={{ uri: '../assets/logo-shadow.svg' }}
-          style={styles.logo}
-        />
-        <Heading style={styles.header}>Material Bread</Heading>
-        <BodyText style={styles.subtitle}>
-          One Component Library, Six Platforms
-        </BodyText>
-      </View>
+storiesOf('Docs|Start Here', module).add('Home', () => (
+  <Container>
+    <View style={styles.top}>
+      <Image
+        source={{ uri: '../assets/logo-shadow.svg' }}
+        style={styles.logo}
+      />
+      <Heading style={styles.header}>Material Bread</Heading>
+      <BodyText style={styles.subtitle}>
+        One Component Library, Six Platforms
+      </BodyText>
+    </View>
 
-      <View style={styles.initialText}>
-        <BodyText style={styles.bodyText}>
-          This is the Storybook environment for Material Bread which is a highly
-          customizable cross-platform React Native Material Library. Each
-          component storybook story contains many demos, visit the docs to see
-          the full component API.
-        </BodyText>
-        <View style={styles.buttonRow}>
-          <Anchor url={'http://material-bread.org/'} target={'_parent'}>
-            <Button
-              text={'Documentation'}
-              type={'outlined'}
-              textColor={'#d0ab82'}
-            />
-          </Anchor>
-
-          <Anchor
-            url={'https://github.com/codypearce/material-bread'}
-            target={'_parent'}>
-            <Button
-              text={'Github'}
-              type={'outlined'}
-              textColor={'#666'}
-              style={styles.secondButton}
-            />
-          </Anchor>
-        </View>
-        <View style={styles.textRow}>
-          <BodyText style={styles.bodyText}>
-            Storybook has great addons, checkout the storybook page to see all
-            the addons you can use to test and checkout components.
-          </BodyText>
-        </View>
-        <View style={styles.buttonRow}>
+    <View style={styles.initialText}>
+      <BodyText style={styles.bodyText}>
+        This is the Storybook environment for Material Bread which is a highly
+        customizable cross-platform React Native Material Library. Change the
+        background, change the viewport to other devices, see console logs in
+        actions, see jest tests, story JS source, or accessbility tests. Visit
+        the docs to see the full component API.
+      </BodyText>
+      <View style={styles.buttonRow}>
+        <Anchor url={'http://material-bread.org/'} target={'_parent'}>
           <Button
-            onClick={linkTo('Docs|Start Here', 'Storybook')}
-            text={'Storybook Addons'}
+            text={'Documentation'}
             type={'outlined'}
             textColor={'rgb(233, 30, 99)'}
           />
-        </View>
+        </Anchor>
+
+        <Anchor
+          url={'https://github.com/codypearce/material-bread'}
+          target={'_parent'}>
+          <Button
+            text={'Github'}
+            type={'outlined'}
+            textColor={'#666'}
+            style={styles.secondButton}
+          />
+        </Anchor>
       </View>
-    </Container>
-  ))
-  .add('Storybook', () => (
-    <Container>
-      <View style={styles.top}>
-        <Heading style={styles.header}>Storybook Addons</Heading>
-      </View>
-    </Container>
-  ));
+    </View>
+  </Container>
+));
