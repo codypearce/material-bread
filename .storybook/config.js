@@ -7,6 +7,7 @@ import {
 import { configureViewport } from '@storybook/addon-viewport';
 import { withTests } from '@storybook/addon-jest';
 import results from '../jest-test-results.json';
+import '@storybook/addon-console';
 
 // Generate required css
 const iconFont = require('react-native-vector-icons/Fonts/MaterialIcons.ttf');
@@ -14,10 +15,6 @@ const iconFontStyles = `@font-face {
   src: url(${iconFont}); 
   font-family: MaterialIcons;
 }`;
-
-configureViewport({
-  defaultViewport: 'iphone6',
-});
 
 addParameters({
   options: {
