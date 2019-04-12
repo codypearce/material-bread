@@ -27,6 +27,10 @@ addParameters({
 
     name: 'Material Bread',
   },
+  backgrounds: [
+    { name: 'white', value: '#fff', default: true },
+    { name: 'light', value: '#eeeeee' },
+  ],
 });
 
 addDecorator(
