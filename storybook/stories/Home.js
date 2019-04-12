@@ -3,7 +3,7 @@ import { View, Image, StyleSheet } from 'react-native';
 import { storiesOf } from '../helpers/storiesOf';
 
 import Container from '../components/Container';
-import { Heading, BodyText, Button } from '../../src';
+import { Heading, BodyText, Button, Anchor } from '../../src';
 
 const styles = StyleSheet.create({
   top: {
@@ -24,13 +24,17 @@ const styles = StyleSheet.create({
   bodyText: {
     fontSize: 14,
     lineHeight: 22,
-    flexWrap: 'wrap',
   },
   initialText: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     marginTop: 40,
     marginHorizontal: 'auto',
+    maxWidth: 780,
+  },
+  textRow: {
+    marginTop: 20,
+    flexWrap: 'wrap',
     maxWidth: 780,
   },
   buttonRow: {
@@ -66,13 +70,24 @@ storiesOf('Docs|Start Here', module).add('Home', () => (
         full component API.
       </BodyText>
       <View style={styles.buttonRow}>
-        <Button text={'Docs'} type={'outlined'} textColor={'#dac589'} />
-        <Button
-          text={'Github'}
-          type={'outlined'}
-          textColor={'#666'}
-          style={styles.secondButton}
-        />
+        <Anchor url={'http://material-bread.org/'} target={'_parent'}>
+          <Button
+            text={'Documentation'}
+            type={'outlined'}
+            textColor={'#d0ab82'}
+          />
+        </Anchor>
+
+        <Anchor
+          url={'https://github.com/codypearce/material-bread'}
+          target={'_parent'}>
+          <Button
+            text={'Github'}
+            type={'outlined'}
+            textColor={'#666'}
+            style={styles.secondButton}
+          />
+        </Anchor>
       </View>
     </View>
   </Container>
