@@ -13,6 +13,7 @@
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true"
   },
   "dependencies": {
+    "@storybook/addon-a11y": "^5.0.6",
     "@storybook/addon-google-analytics": "^5.0.6",
     "@storybook/addon-storysource": "^5.0.6",
     "color": "^3.1.0",
@@ -106,8 +107,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm test"
+      "pre-commit": "npm run lint"
     }
   }
 }

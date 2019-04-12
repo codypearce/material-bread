@@ -5,6 +5,7 @@ import {
   addParameters,
 } from '@storybook/react';
 import { withTests } from '@storybook/addon-jest';
+import { withA11y } from '@storybook/addon-a11y';
 import results from '../jest-test-results.json';
 import '@storybook/addon-console';
 
@@ -33,6 +34,7 @@ addDecorator(
   withTests({
     results,
   }),
+  withA11y,
 );
 
 function loadStories() {
