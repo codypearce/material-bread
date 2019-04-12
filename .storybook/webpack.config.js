@@ -15,6 +15,11 @@ module.exports = ({ config, mode }) => {
         loader: 'babel-loader',
       },
     },
+    {
+      test: /\.stories\.js?$/,
+      loaders: [require.resolve('@storybook/addon-storysource/loader')],
+      enforce: 'pre',
+    },
   );
 
   config.resolve.extensions = ['.web.js', '.js', '.json', '.web.jsx', '.jsx'];
