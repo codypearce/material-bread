@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
-import TextButton from './TextButton';
-import OutlinedButton from './OutlinedButton';
-import ContainedButton from './ContainedButton';
-import FlatButton from './FlatButton';
+import TextButton from './TextButton/TextButton';
+import OutlinedButton from './OutlinedButton/OutlinedButton';
+import ContainedButton from './ContainedButton/ContainedButton';
+import FlatButton from './FlatButton/FlatButton';
 
 class Button extends Component {
   static propTypes = {

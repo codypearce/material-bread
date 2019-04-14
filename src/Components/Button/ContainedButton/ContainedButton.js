@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Animated, Platform } from 'react-native';
 
 import PropTypes from 'prop-types';
-import withTheme from '../../Theme/withTheme';
+import withTheme from '../../../Theme/withTheme';
 
-import ButtonBase from './ButtonBase';
-import Hoverable from '../../Utils/Hoverable';
+import ButtonBase from '../ButtonBase/ButtonBase';
+import Hoverable from '../../../Utils/Hoverable';
 import color from 'color';
 
 class ContainedButton extends Component {

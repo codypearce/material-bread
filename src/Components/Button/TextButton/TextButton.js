@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import withTheme from '../../Theme/withTheme';
+import withTheme from '../../../Theme/withTheme';
 
-import ButtonBase from './ButtonBase';
+import ButtonBase from '../ButtonBase/ButtonBase';
 import color from 'color';
-import Hoverable from '../../Utils/Hoverable';
+import Hoverable from '../../../Utils/Hoverable';
 
 class TextButton extends Component {
   static propTypes = {
