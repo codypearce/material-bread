@@ -103,7 +103,7 @@ export {
 export { default as RadioButton } from './Components/RadioButton/RadioButton';
 export { default as Ripple } from './Components/Ripple/Ripple';
 export { default as Searchbar } from './Components/Searchbar/Searchbar';
-export { default as SearchField } from './Components/SearchField/SearchField';
+export { default as Searchfield } from './Components/Searchfield/Searchfield';
 export { default as Snackbar } from './Components/Snackbar/Snackbar';
 export { default as Switch } from './Components/Switch/Switch';
 export { default as TextField } from './Components/TextField/TextField';

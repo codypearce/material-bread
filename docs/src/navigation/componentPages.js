@@ -159,7 +159,7 @@ const components = [
     path: '/components/searchbar',
   },
   {
-    title: 'SearchField',
+    title: 'Searchfield',
     path: '/components/searchfield',
   },
   {

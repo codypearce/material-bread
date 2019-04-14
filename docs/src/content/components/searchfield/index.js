@@ -12,9 +12,9 @@ export default class SearchBarPage extends Component {
       <div>
         <ComponentPageLayout
           componentName={'searchfield'}
-          title={'SearchField'}
-          description={`SearchField allows the user to enter and clear a search.`}
-          importCode={`import { SearchField } from 'material-bread';`}
+          title={'Searchfield'}
+          description={`Searchfield allows the user to enter and clear a search.`}
+          importCode={`import { Searchfield } from 'material-bread';`}
           sideScrollMenuItems={sections}>
           <MainDemo pageHref={'/components/searchfield'} />
           <Usage pageHref={'/components/searchfield'} />

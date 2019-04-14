@@ -1,1 +1,1 @@
-export default from '../../content/components/searchbar';
+export default from '../../content/components/searchfield';

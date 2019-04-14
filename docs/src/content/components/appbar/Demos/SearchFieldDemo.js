@@ -1,6 +1,6 @@
 import React from 'react';
 import { CodeInline, ComponentDemo } from '@components';
-import { Appbar, IconButton, SearchField } from '../../../../../../src/index';
+import { Appbar, IconButton, Searchfield } from '../../../../../../src/index';
 
 export const code = ` 
 class Header extends React.Component {
@@ -18,7 +18,7 @@ class Header extends React.Component {
         title={'Page Title'} 
         navigationType={'menu'}
         actionItems={[
-          <SearchField 
+          <Searchfield 
             style={{
               marginHorizontal: 24, 
               flexGrow: this.state.isSearching ? 1 : 0,
@@ -43,18 +43,18 @@ class Header extends React.Component {
 
 const WithSearchField = pageHref => (
   <ComponentDemo
-    sectionName={'Search Field'}
+    sectionName={'Searchfield'}
     sectionHref={`${pageHref}#search-field`}
     sectionId={'search-field'}
     description={
       <div>
-        You can add a <CodeInline code="SearchField" type={'element'} /> or any
+        You can add a <CodeInline code="Searchfield" type={'element'} /> or any
         other component directly in the{' '}
         <CodeInline code="Appbar" type={'element'} />
       </div>
     }
     code={code}
-    scope={{ Appbar, IconButton, SearchField }}
+    scope={{ Appbar, IconButton, Searchfield }}
   />
 );
 export default WithSearchField;

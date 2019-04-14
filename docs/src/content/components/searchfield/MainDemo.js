@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Image } from 'react-native';
 import { ComponentMainDemo } from '@components';
-import { SearchField } from '../../../../../src/index';
+import { Searchfield } from '../../../../../src/index';
 
 export const code = `class Demo extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ export const code = `class Demo extends React.Component {
   render() {
     return (
       <View >
-        <SearchField 
+        <Searchfield 
           color={'#E91E63'}
           value={this.state.search}
           onChangeText={(search) => this.setState({search})}
@@ -27,9 +27,9 @@ export const code = `class Demo extends React.Component {
 const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
-    description={`SearchField is a convenient component for displaying a simple search component.`}
+    description={`Searchfield is a convenient component for displaying a simple search component.`}
     code={code}
-    scope={{ View, SearchField, Image }}
+    scope={{ View, Searchfield, Image }}
   />
 );
 export default MainDemo;
