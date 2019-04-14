@@ -99,3 +99,4 @@ webpack.config.js
 yarn.lock
 src/**/*.stories.js
 src/**/*.tests.js
+src/storybook/**/*

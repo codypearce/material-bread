@@ -39,7 +39,7 @@ addDecorator(
 );
 
 function loadStories() {
-  require('../storybook/stories');
+  require('../src/storybook/stories');
 }
 
 configure(loadStories, module);
