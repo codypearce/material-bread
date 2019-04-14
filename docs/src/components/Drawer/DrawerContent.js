@@ -6,11 +6,11 @@ import DrawerItem from './DrawerItem';
 import DrawerItemExpand from './DrawerItemExpand';
 import {
   gettingStartedPages,
-  components,
-  utils,
+  componentPages,
+  utilsPages,
   stylePages,
   contributingPages,
-} from '../../navigation/drawerItems';
+} from '../../navigation';
 import DrawerHeader from './DrawerHeader';
 
 const styles = theme => ({
@@ -119,7 +119,7 @@ class DrawerContent extends React.PureComponent {
             />
             <DrawerItemExpand
               label="Components"
-              reactPageMenuItems={components}
+              reactPageMenuItems={componentPages}
               selectItem={this.selectItem}
               itemSelected={itemSelected}
               selectSection={this.selectSection}
@@ -127,7 +127,7 @@ class DrawerContent extends React.PureComponent {
             />
             <DrawerItemExpand
               label="Utils"
-              reactPageMenuItems={utils}
+              reactPageMenuItems={utilsPages}
               selectItem={this.selectItem}
               itemSelected={itemSelected}
               selectSection={this.selectSection}

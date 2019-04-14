@@ -1,17 +1,3 @@
-const gettingStartedPages = [
-  {
-    title: 'React Native',
-    path: '/getting-started/react-native',
-  },
-  {
-    title: 'Web',
-    path: '/getting-started/web',
-  },
-  {
-    title: 'Electron',
-    path: '/getting-started/electron',
-  },
-];
 const components = [
   {
     title: 'Appbar',
@@ -197,54 +183,5 @@ const components = [
     path: '/components/typography',
   },
 ];
-const utils = [
-  {
-    title: 'Anchor',
-    path: '/utils/anchor',
-  },
-  {
-    title: 'Color',
-    path: '/utils/color',
-  },
-  {
-    title: 'Hoverable',
-    path: '/utils/hoverable',
-  },
-  {
-    title: 'Shadow',
-    path: '/utils/shadow',
-  },
-];
-const stylePages = [
-  {
-    title: 'Font',
-    path: '/style/font',
-  },
-  {
-    title: 'Icons',
-    path: '/style/icons',
-  },
-  {
-    title: 'Theme',
-    path: '/style/theme',
-  },
-];
 
-const contributingPages = [
-  {
-    title: 'Library',
-    path: '/contributing/library',
-  },
-  {
-    title: 'Docs',
-    path: '/contributing/docs',
-  },
-];
-
-export {
-  gettingStartedPages,
-  components,
-  utils,
-  stylePages,
-  contributingPages,
-};
+export default components;
