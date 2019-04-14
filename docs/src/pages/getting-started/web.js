@@ -9,6 +9,7 @@ import {
   SideScrollMenu,
   PageTitle,
   ComponentSubtitle,
+  CodeInline,
 } from '@components';
 
 const sections = [
@@ -150,7 +151,8 @@ class Index extends Component {
                     canCopy
                     small
                   />{' '}
-                  then set up webpack to alias `react-native`
+                  then set up webpack to alias{' '}
+                  <CodeInline code="react-native" type="" />
                 </div>
               }
             />
@@ -162,7 +164,8 @@ class Index extends Component {
               text={
                 <div>
                   Material Icons need to be installed as a font, first add the
-                  font to a css file called `global.css`
+                  font to a css file called{' '}
+                  <CodeInline code="global.css" type="file" />
                 </div>
               }
             />
@@ -170,8 +173,9 @@ class Index extends Component {
             <ComponentDescription
               text={
                 <div>
-                  Then include it in your App component or include it as a link
-                  in index.html
+                  Then include it in your{' '}
+                  <CodeInline code="App" type="element" /> component or include
+                  it as a link in <CodeInline code="index.html" type="file" />
                 </div>
               }
             />
@@ -192,8 +196,8 @@ class Index extends Component {
               text={
                 <div>
                   Finally you'll need to exclude both Material Bread and
-                  react-native-vector-icons, as well as add a few babel
-                  packages.
+                  <CodeInline code="react-native-vector-icons" type="" />, as
+                  well as add a few babel packages.
                 </div>
               }
             />
@@ -216,7 +220,8 @@ class Index extends Component {
           <ComponentDescription
             text={
               <div>
-                Simply wrap your app or root in the BreadProvider and start
+                Simply wrap your app or root in the{' '}
+                <CodeInline code="BreadProvider" type="element" /> and start
                 developing. You can learn about customizing on the
                 <Link href="/style/theme"> theme page</Link>.
               </div>
@@ -231,8 +236,10 @@ class Index extends Component {
           <ComponentDescription
             text={
               <div>
-                For a quick start with minimal set up with react-native-web and
-                materal-bread, checkout the example below
+                For a quick start with minimal set up with{' '}
+                <CodeInline code="react-native-web" type="" /> and{' '}
+                <CodeInline code="materal-bread" type="" />, checkout the
+                example below
               </div>
             }
           />

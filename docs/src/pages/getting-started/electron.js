@@ -9,6 +9,7 @@ import {
   SideScrollMenu,
   PageTitle,
   ComponentSubtitle,
+  CodeInline,
 } from '@components';
 
 const sections = [
@@ -253,8 +254,10 @@ class Index extends Component {
                 </ol>
                 The quickest and easiest way to get started is to check out the
                 example repo linked below. If you're familiar with setting up
-                react and react-native-web with electron then you can skip to
-                the section about webpack config and app.js.
+                <CodeInline code="react" type="" /> and{' '}
+                <CodeInline code="react-native-web" type="" /> with electron
+                then you can skip to the section about webpack config and{' '}
+                <CodeInline code="app.js" type="file" />.
               </div>
             }
           />
@@ -263,8 +266,11 @@ class Index extends Component {
             <ComponentDescription
               text={
                 <div>
-                  This includes react, react-native, react-native-web, electron,
-                  required babel plugins, and webpack loaders.
+                  This includes <CodeInline code="react" type="" />,{' '}
+                  <CodeInline code="react-native" type="" />
+                  , <CodeInline code="react-native-web" type="" />,{' '}
+                  <CodeInline code="electron" type="" />, required babel
+                  plugins, and webpack loaders.
                 </div>
               }
             />
@@ -281,7 +287,9 @@ class Index extends Component {
             <ComponentDescription
               text={
                 <div>
-                  Create a src folder with index.html to act as an entry
+                  Create a src folder with{' '}
+                  <CodeInline code="index.html" type="file" /> to act as an
+                  entry
                 </div>
               }
             />
@@ -293,8 +301,10 @@ class Index extends Component {
             <ComponentDescription
               text={
                 <div>
-                  Create a main.js file in src that will create a window and
-                  load the index.html file.
+                  Create a <CodeInline code="main.js" type="file" /> file in src
+                  that will create a window and load the{' '}
+                  <CodeInline code="index.html" type="file" />
+                  file.
                 </div>
               }
             />
@@ -306,8 +316,9 @@ class Index extends Component {
             <ComponentDescription
               text={
                 <div>
-                  Create a renderer.js file in src that will load react into the
-                  html file with hot reloading.
+                  Create a <CodeInline code="renderer.js" type="file" /> file in
+                  src that will load react into the html file with hot
+                  reloading.
                 </div>
               }
             />
@@ -319,9 +330,10 @@ class Index extends Component {
             <ComponentDescription
               text={
                 <div>
-                  Create a webpack.config.js file in the root of the project
-                  that will handle babel plugins, loaders, electron-renderer,
-                  output our bundle, and alias react-native.
+                  Create a <CodeInline code="webpack.config.js" type="file" />{' '}
+                  file in the root of the project that will handle babel
+                  plugins, loaders, electron-renderer, output our bundle, and
+                  alias react-native.
                 </div>
               }
             />
@@ -333,8 +345,9 @@ class Index extends Component {
             <ComponentDescription
               text={
                 <div>
-                  Create App.js component in src. Add the FontFace function
-                  below to add the material icons to the package.
+                  Create <CodeInline code="App.js " type="file" />
+                  component in src. Add the FontFace function below to add the
+                  material icons to the package.
                 </div>
               }
             />
@@ -346,7 +359,8 @@ class Index extends Component {
             <ComponentDescription
               text={
                 <div>
-                  Add webpack server script and electron server to package.json.
+                  Add webpack server script and electron server to{' '}
+                  <CodeInline code="package.json" type="file" />.
                 </div>
               }
             />
@@ -358,11 +372,15 @@ class Index extends Component {
             <ComponentDescription
               text={
                 <div>
-                  Finally open up two console tabs, run `npm run server` in one
-                  and `npm run electron` in the other.` You should now see your
-                  app running with Material Bread components. Keep in mind this
-                  a very minimal setup, there are plenty of other great guides
-                  setting up react and react-native with Electron.
+                  Finally open up two console tabs, run{' '}
+                  <CodeInline code="npm run server" type="" />
+                  in one and <CodeInline code="npm run electron" type="" /> in
+                  the other. You should now see your app running with Material
+                  Bread components. Keep in mind this a very minimal setup,
+                  there are plenty of other great guides setting up{' '}
+                  <CodeInline code="react" type="" /> and
+                  <CodeInline code="react-native" type="" /> with{' '}
+                  <CodeInline code="electron" type="" />.
                 </div>
               }
             />
@@ -372,7 +390,8 @@ class Index extends Component {
           <ComponentDescription
             text={
               <div>
-                Simply wrap your app or root in the BreadProvider and start
+                Simply wrap your app or root in the{' '}
+                <CodeInline code="BreadProvider" type="element" /> and start
                 developing. You can learn about customizing on the
                 <Link href="/style/theme"> theme page</Link>.
               </div>
@@ -387,8 +406,11 @@ class Index extends Component {
           <ComponentDescription
             text={
               <div>
-                For a quick start with minimal set up with react-native-web,
-                electron, and materal-bread, checkout the example below
+                For a quick start with minimal set up with{' '}
+                <CodeInline code="react-native-web" type="" />,
+                <CodeInline code="electron" type="" />, and{' '}
+                <CodeInline code="materal-bread" type="" />, checkout the
+                example below
               </div>
             }
           />

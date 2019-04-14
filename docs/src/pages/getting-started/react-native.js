@@ -9,6 +9,7 @@ import {
   SideScrollMenu,
   PageTitle,
   ComponentSubtitle,
+  CodeInline,
 } from '@components';
 
 const sections = [
@@ -95,7 +96,8 @@ class Index extends Component {
           <ComponentDescription
             text={
               <div>
-                Simply wrap your app or root in the BreadProvider and start
+                Simply wrap your app or root in the{' '}
+                <CodeInline code="BreadProvider" type="element" /> and start
                 developing. You can learn about customizing on the
                 <Link href="/style/theme"> theme page</Link>.
               </div>

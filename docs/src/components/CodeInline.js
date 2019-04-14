@@ -19,7 +19,9 @@ class CodeInline extends Component {
     } else if (type == 'value') {
       color = '#8E24AA';
     } else if (type == 'element') {
-      color = '#E53935';
+      color = '#E91E63';
+    } else if (type == 'file') {
+      color = '#0288D1';
     }
     return (
       <Fragment>
