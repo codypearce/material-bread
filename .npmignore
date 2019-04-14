@@ -100,3 +100,4 @@ yarn.lock
 src/**/*.stories.js
 src/**/*.tests.js
 src/storybook/**/*
+**/*/__snapshots__

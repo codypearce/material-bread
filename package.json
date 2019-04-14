@@ -14,13 +14,13 @@
     "see-npm-package": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz"
   },
   "dependencies": {
-    "@storybook/addon-a11y": "^5.0.6",
-    "@storybook/addon-google-analytics": "^5.0.6",
-    "@storybook/addon-storysource": "^5.0.6",
     "color": "^3.1.0",
     "react-native-vector-icons": "^6.2.0"
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^5.0.6",
+    "@storybook/addon-google-analytics": "^5.0.6",
+    "@storybook/addon-storysource": "^5.0.6",
     "@babel/plugin-proposal-class-properties": "^7.2.3",
     "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.4",

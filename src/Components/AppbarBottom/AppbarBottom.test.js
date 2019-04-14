@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppbarBottom } from '../../src';
+import AppbarBottom from './AppbarBottom';
 
 import renderer from 'react-test-renderer';
 

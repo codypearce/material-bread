@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar } from '../../src';
+import Avatar from './Avatar';
 
 import renderer from 'react-test-renderer';
 

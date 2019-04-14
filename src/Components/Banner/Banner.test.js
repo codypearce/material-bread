@@ -1,5 +1,5 @@
 import React from 'react';
-import { Banner } from '../../src';
+import Banner from './Banner';
 
 import ShallowRenderer from 'react-test-renderer/shallow';
 const renderer = new ShallowRenderer();
