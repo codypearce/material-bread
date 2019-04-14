@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   fabPos: {
     position: 'absolute',
     zIndex: 10,
-    transform: [{ translateY: -28 }],
+    transform: [{ translateY: -25 }],
     backgroundColor: 'black',
   },
   centerCut: {

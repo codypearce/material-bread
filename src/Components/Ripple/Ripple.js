@@ -8,7 +8,7 @@ import {
   Platform,
 } from 'react-native';
 import styles from './Ripple.styles';
-
+import radius from './Ripple.styles';
 export default class Ripple extends PureComponent {
   static defaultProps = {
     ...TouchableWithoutFeedback.defaultProps,

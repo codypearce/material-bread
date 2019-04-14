@@ -71,10 +71,6 @@ class Index extends Component {
                     <DataTableCell text={'src'} />
                     <DataTableCell text={'component library'} />
                   </DataTableRow>
-                  <DataTableRow>
-                    <DataTableCell text={'storybook'} />
-                    <DataTableCell text={'development environment'} />
-                  </DataTableRow>
                 </DataTable>
                 Essentially the project files are in the{' '}
                 <CodeInline code="root" type={'value'} /> of the folder, and all
@@ -105,7 +101,7 @@ class Index extends Component {
                   <li>
                     Clone the fork to your machine{' '}
                     <CodeInline
-                      code="git clone git@github.com:yourname/material-bread.git"
+                      code="git clone git@github.com:copypearce/material-bread.git"
                       type={''}
                     />
                   </li>
@@ -156,16 +152,17 @@ class Index extends Component {
               <div>
                 <div>
                   Components all live in{' '}
-                  <CodeInline code="src/components" type={''} />, and they're
-                  displayed in the dev environment in a corresponding file in{' '}
-                  <CodeInline code="storybook/stories" type={''} />.
+                  <CodeInline code="src/Components" type={''} />, and they're
+                  displayed in the dev environment in a corresponding file{' '}
+                  <CodeInline code="src/storybook/stories/index" type={''} />.
                 </div>
                 Use the following steps to create a new component:
                 <ol>
                   <li>
-                    Create a basic component file in{' '}
-                    <CodeInline code="src/component" type={'element'} /> named
-                    <CodeInline code="ComponentName.js" type={'element'} />.
+                    Create a basic component folder and file in{' '}
+                    <CodeInline code="src/Components/ComponentName" type={''} />{' '}
+                    named
+                    <CodeInline code="ComponentName.js" type={''} />.
                   </li>
                   <li>
                     Import <CodeInline code="withTheme" type={'element'} />
@@ -177,28 +174,28 @@ class Index extends Component {
                   </li>
                   <li>
                     Add component to{' '}
-                    <CodeInline code="src/index.js" type={'element'} />
+                    <CodeInline code="src/index.js" type={''} />
                     as such{' '}
                     <CodeInline
-                      code="export { default as ComponentName } from './Components/ComponentName'"
+                      code="export { default as ComponentName } from './Components/ComponentName/ComponentName'"
                       type={''}
                     />
                     .
                   </li>
                   <li>
                     Create component file in{' '}
-                    <CodeInline code="storybook/stories" type={'element'} /> as
-                    shown in the other files
+                    <CodeInline
+                      code="src/Components/ComponentName.stroies.js"
+                      type={''}
+                    />{' '}
+                    as shown in the other files
                   </li>
                   <li>
                     Add component story to{' '}
-                    <CodeInline
-                      code="storybook/stories/index"
-                      type={'element'}
-                    />{' '}
+                    <CodeInline code="src/storybook/stories/index" type={''} />{' '}
                     as such{' '}
                     <CodeInline
-                      code="export { default as ComponentName } from './ComponentName'"
+                      code="export { default as ComponentName } from '../Components/ComponentName/ComponentName.stories.js'"
                       type={''}
                     />{' '}
                     .
