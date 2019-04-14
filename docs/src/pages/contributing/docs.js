@@ -99,7 +99,7 @@ class Index extends Component {
                   <li>
                     Clone the fork to your machine{' '}
                     <CodeInline
-                      code="git clone git@github.com:yourname/material-bread.git"
+                      code="git clone git@github.com:codypearce/material-bread.git"
                       type={''}
                     />
                   </li>
