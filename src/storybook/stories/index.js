@@ -1,5 +1,6 @@
 export { default as Home } from './Home.stories.js';
 
+/* Components */
 export { default as Appbar } from '../../Components/Appbar/Appbar.stories';
 export {
   default as AppbarBottom,
@@ -51,7 +52,7 @@ export {
 export {
   default as Snackbar,
 } from '../../Components/Snackbar/Snackbar.stories.js';
-export { default as Shadows } from '../../Utils/Shadow/Shadow.stories.js';
+
 export { default as Switch } from '../../Components/Switch/Switch.stories.js';
 export {
   default as TextField,
@@ -62,3 +63,7 @@ export {
 export {
   default as Typography,
 } from '../../Components/Typography/Typography.stories.js';
+
+/* Utils */
+export { default as Anchor } from '../../Utils/Anchor/Anchor.stories.js';
+export { default as Shadows } from '../../Utils/Shadow/Shadow.stories.js';

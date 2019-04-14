@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Linking, Platform, TouchableWithoutFeedback } from 'react-native';
+import {
+  View,
+  Linking,
+  Platform,
+  TouchableWithoutFeedback,
+} from 'react-native';
 
 export default class Anchor extends Component {
   static propTypes = {
@@ -22,7 +27,7 @@ export default class Anchor extends Component {
           href={url}
           accessibilityRole="link"
           target={target ? target : '_self'}>
-          {children}
+          <View>{children}</View>
         </TouchableWithoutFeedback>
       );
     }

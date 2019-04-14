@@ -1,7 +1,7 @@
 // ==== UTIL ====
 export { default as Hoverable } from './Utils/Hoverable';
 export { default as shadow } from './Utils/Shadow/shadow';
-export { default as Anchor } from './Utils/Anchor';
+export { default as Anchor } from './Utils/Anchor/Anchor';
 
 // ==== Components ====
 export { default as Appbar } from './Components/Appbar/Appbar';
