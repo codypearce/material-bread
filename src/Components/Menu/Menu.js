@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Animated, StyleSheet, View, Easing } from 'react-native';
 import withTheme from '../../Theme/withTheme';
-import shadow from '../../Utils/shadow';
+import shadow from '../../Utils/Shadow/shadow';
 
 class Menu extends Component {
   static propTypes = {

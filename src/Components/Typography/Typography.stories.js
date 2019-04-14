@@ -1,16 +1,10 @@
 import React from 'react';
-import { storiesOf } from '../helpers/storiesOf';
+import { storiesOf } from '../../storybook/helpers/storiesOf';
 import { View } from 'react-native';
 
-import {
-  Heading,
-  Subtitle,
-  BodyText,
-  Caption,
-  Overline,
-} from '../../src/index';
-import Header from '../components/Header';
-import Container from '../components/Container';
+import { Heading, Subtitle, BodyText, Caption, Overline } from '../..';
+import Header from '../../storybook/components/Header';
+import Container from '../../storybook/components/Container';
 
 storiesOf('Components|Typography', module)
   .addParameters({

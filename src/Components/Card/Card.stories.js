@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '../helpers/storiesOf';
+import { storiesOf } from '../../storybook/helpers/storiesOf';
 import { Text, View, Image } from 'react-native';
 
 import {
@@ -13,9 +13,9 @@ import {
   Button,
   Ripple,
   Badge,
-} from '../../src/index';
-import Header from '../components/Header';
-import Container from '../components/Container';
+} from '../../';
+import Header from '../../storybook/components/Header';
+import Container from '../../storybook/components/Container';
 
 storiesOf('Components|Card', module)
   .addParameters({ jest: ['Card'] })

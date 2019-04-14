@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '../helpers/storiesOf';
 
 import {
   DataTable,
@@ -7,9 +6,10 @@ import {
   DataTableCell,
   DataTableRow,
   DataTablePagination,
-} from '../../src/index';
-import Header from '../components/Header';
-import Container from '../components/Container';
+} from '../../';
+import Header from '../../storybook/components/Header';
+import Container from '../../storybook/components/Container';
+import { storiesOf } from '../../storybook/helpers/storiesOf';
 
 storiesOf('Components|Data Table', module)
   .addParameters({ jest: ['DataTable'] })

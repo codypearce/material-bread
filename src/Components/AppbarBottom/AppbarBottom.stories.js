@@ -1,9 +1,9 @@
 import React from 'react';
-import { storiesOf } from '../helpers/storiesOf';
+import { storiesOf } from '../../storybook/helpers/storiesOf';
 
-import { AppbarBottom, Badge, IconButton } from '../../src/index';
-import Header from '../components/Header';
-import Container from '../components/Container';
+import { AppbarBottom, Badge, IconButton } from '../..';
+import Header from '../../storybook/components/Header';
+import Container from '../../storybook/components/Container';
 
 /*  eslint-disable no-console */
 storiesOf('Components|AppbarBottom', module)

@@ -1,9 +1,9 @@
 import React from 'react';
-import { storiesOf } from '../helpers/storiesOf';
 
-import { Paper } from '../../src/index';
-import Header from '../components/Header';
-import Container from '../components/Container';
+import { Paper } from '../../';
+import Header from '../../storybook/components/Header';
+import Container from '../../storybook/components/Container';
+import { storiesOf } from '../../storybook/helpers/storiesOf';
 
 storiesOf('Components|Paper', module)
   .addParameters({ jest: ['Paper'] })

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet, ScrollView } from 'react-native';
-import { BreadProvider } from '../../src/index';
+import { BreadProvider } from '../..';
 
 export default class Container extends Component {
   static propTypes = {

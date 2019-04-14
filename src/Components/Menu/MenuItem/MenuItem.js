@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
 import { StyleSheet, Text, TouchableHighlight, Platform } from 'react-native';
-import withTheme from '../Theme/withTheme';
+import withTheme from '../../../Theme/withTheme';
 
 class MenuItem extends Component {
   static propTypes = {

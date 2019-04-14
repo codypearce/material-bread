@@ -1,14 +1,9 @@
 import React from 'react';
-import { storiesOf } from '../helpers/storiesOf';
 
-import {
-  Drawer,
-  DrawerItem,
-  DrawerHeader,
-  DrawerSection,
-} from '../../src/index';
-import Header from '../components/Header';
-import Container from '../components/Container';
+import { Drawer, DrawerItem, DrawerHeader, DrawerSection } from '../../';
+import Header from '../../storybook/components/Header';
+import Container from '../../storybook/components/Container';
+import { storiesOf } from '../../storybook/helpers/storiesOf';
 
 storiesOf('Components|Drawer', module)
   .addParameters({ jest: ['Drawer'] })

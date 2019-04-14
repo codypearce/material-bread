@@ -1,11 +1,11 @@
 import React from 'react';
-import { storiesOf } from '../helpers/storiesOf';
 import { View } from 'react-native';
 
-import { Menu, MenuItem, Button } from '../../src/index';
+import { Menu, MenuItem, Button } from '../../';
 import { State, Store } from '@sambego/storybook-state';
-import Header from '../components/Header';
-import Container from '../components/Container';
+import Header from '../../storybook/components/Header';
+import Container from '../../storybook/components/Container';
+import { storiesOf } from '../../storybook/helpers/storiesOf';
 
 const store = new Store({
   visibleOne: false,

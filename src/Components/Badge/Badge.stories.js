@@ -1,10 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
-import { storiesOf } from '../helpers/storiesOf';
 
-import { Badge, Icon, IconButton } from '../../src/index';
-import Header from '../components/Header';
-import Container from '../components/Container';
+import { Badge, Icon, IconButton } from '../..';
+import Header from '../../storybook/components/Header';
+import Container from '../../storybook/components/Container';
+import { storiesOf } from '../../storybook/helpers/storiesOf';
 
 storiesOf('Components|Badge', module)
   .addParameters({ jest: ['Badge'] })

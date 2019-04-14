@@ -64,7 +64,7 @@ export {
 } from './Components/List/ListSecondaryAction';
 export { default as ListSubheader } from './Components/List/ListSubheader';
 export { default as Menu } from './Components/Menu/Menu';
-export { default as MenuItem } from './Components/Menu/MenuItem';
+export { default as MenuItem } from './Components/Menu/MenuItem/MenuItem';
 export { default as Paper } from './Components/Paper/Paper';
 export { default as ProgressBar } from './Components/Progress/ProgressBar';
 export {

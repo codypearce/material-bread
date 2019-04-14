@@ -1,9 +1,9 @@
 import React from 'react';
-import { storiesOf } from '../helpers/storiesOf';
 
-import { ToggleButton, ToggleButtonGroup } from '../../src/index';
-import Header from '../components/Header';
-import Container from '../components/Container';
+import { ToggleButton, ToggleButtonGroup } from '../../';
+import Header from '../../storybook/components/Header';
+import Container from '../../storybook/components/Container';
+import { storiesOf } from '../../storybook/helpers/storiesOf';
 
 storiesOf('Components|Toggle Button', module)
   .addParameters({ jest: ['ToggleButton'] })

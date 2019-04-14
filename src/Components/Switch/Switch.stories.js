@@ -1,9 +1,9 @@
 import React from 'react';
-import { storiesOf } from '../helpers/storiesOf';
 
-import { Switch } from '../../src/index';
-import Header from '../components/Header';
-import Container from '../components/Container';
+import { Switch } from '../../';
+import Header from '../../storybook/components/Header';
+import Container from '../../storybook/components/Container';
+import { storiesOf } from '../../storybook/helpers/storiesOf';
 
 storiesOf('Components|Switch', module)
   .addParameters({ jest: ['Switch'] })

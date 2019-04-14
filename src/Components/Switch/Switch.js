@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { StyleSheet, Animated } from 'react-native';
 import PropTypes from 'prop-types';
-import withTheme from '../Theme/withTheme';
-import Ripple from './Ripple';
-import shadow from '../Utils/shadow';
+import withTheme from '../../Theme/withTheme';
+import Ripple from '../Ripple/Ripple';
+import shadow from '../../Utils/Shadow/shadow';
 
 class Switch extends Component {
   static propTypes = { active: PropTypes.bool, style: PropTypes.object };

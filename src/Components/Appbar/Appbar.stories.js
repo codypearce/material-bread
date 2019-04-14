@@ -1,10 +1,10 @@
 import React from 'react';
 import { Image } from 'react-native';
-import { storiesOf } from '../helpers/storiesOf';
+import { storiesOf } from '../../storybook/helpers/storiesOf';
 
-import { Appbar, Badge, IconButton } from '../../src/index';
-import Header from '../components/Header';
-import Container from '../components/Container';
+import { Appbar, Badge, IconButton } from '../..';
+import Header from '../../storybook/components/Header';
+import Container from '../../storybook/components/Container';
 
 /*  eslint-disable no-console */
 

@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import Ripple from '../Ripple/Ripple';
 import Icon from '../Icon/Icon';
-import shadow from '../../Utils/shadow';
+import shadow from '../../Utils/Shadow/shadow';
 
 export class Fab extends Component {
   constructor(props) {

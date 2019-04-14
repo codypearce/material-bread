@@ -5,7 +5,7 @@ import { StyleSheet, Animated, View, Text } from 'react-native';
 import Button from '../Button/Button';
 import Paper from '../Paper/Paper';
 import withTheme from '../../Theme/withTheme';
-import shadow from '../../Utils/shadow';
+import shadow from '../../Utils/Shadow/shadow';
 
 class Snackbar extends Component {
   static propTypes = {

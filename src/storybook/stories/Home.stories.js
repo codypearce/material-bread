@@ -3,7 +3,7 @@ import { View, Image, StyleSheet } from 'react-native';
 import { storiesOf } from '../helpers/storiesOf';
 
 import Container from '../components/Container';
-import { Heading, BodyText, Button, Anchor } from '../../src';
+import { Heading, BodyText, Button, Anchor } from '../..';
 const styles = StyleSheet.create({
   top: {
     flexDirection: 'column',

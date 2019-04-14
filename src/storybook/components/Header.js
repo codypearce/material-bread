@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet } from 'react-native';
-import { Heading, Subtitle } from '../../src/index';
+import { Heading, Subtitle } from '../..';
 
 export default class Header extends Component {
   static propTypes = {

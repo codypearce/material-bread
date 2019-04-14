@@ -1,9 +1,9 @@
 import React from 'react';
-import { storiesOf } from '../helpers/storiesOf';
+import { storiesOf } from '../../storybook/helpers/storiesOf';
 
-import { BottomNavigation, BottomNavigationItem } from '../../src/index';
-import Header from '../components/Header';
-import Container from '../components/Container';
+import { BottomNavigation, BottomNavigationItem } from '../../';
+import Header from '../../storybook/components/Header';
+import Container from '../../storybook/components/Container';
 import { State, Store } from '@sambego/storybook-state';
 const store = new Store({
   one: 0,

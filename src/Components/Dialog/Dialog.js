@@ -4,7 +4,7 @@ import { View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import Modal from '../Modal/Modal';
 import withTheme from '../../Theme/withTheme';
-import shadow from '../../Utils/shadow';
+import shadow from '../../Utils/Shadow/shadow';
 
 class Dialog extends Component {
   static propTypes = {

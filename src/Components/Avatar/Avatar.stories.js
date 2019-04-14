@@ -1,10 +1,10 @@
 import React from 'react';
 import { Image, View } from 'react-native';
-import { storiesOf } from '../helpers/storiesOf';
+import { storiesOf } from '../../storybook/helpers/storiesOf';
 
-import { Avatar } from '../../src/index';
-import Header from '../components/Header';
-import Container from '../components/Container';
+import { Avatar } from '../..';
+import Header from '../../storybook/components/Header';
+import Container from '../../storybook/components/Container';
 
 storiesOf('Components|Avatars', module)
   .addParameters({ jest: ['Avatar'] })

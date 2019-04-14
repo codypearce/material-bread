@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '../helpers/storiesOf';
 import { View, Text } from 'react-native';
 
 import {
@@ -8,11 +7,11 @@ import {
   DialogContentText,
   DialogTitle,
   Button,
-} from '../../src/index';
+} from '../../';
 import { State, Store } from '@sambego/storybook-state';
-import Header from '../components/Header';
-
-import Container from '../components/Container';
+import Header from '../../storybook/components/Header';
+import Container from '../../storybook/components/Container';
+import { storiesOf } from '../../storybook/helpers/storiesOf';
 
 const store = new Store({
   visible: false,

@@ -1,9 +1,9 @@
 import React from 'react';
-import { storiesOf } from '../helpers/storiesOf';
 
-import { Icon, Badge } from '../../src/index';
-import Header from '../components/Header';
-import Container from '../components/Container';
+import { Icon, Badge } from '../../';
+import Header from '../../storybook/components/Header';
+import Container from '../../storybook/components/Container';
+import { storiesOf } from '../../storybook/helpers/storiesOf';
 
 storiesOf('Components|Icons', module)
   .addParameters({ jest: ['Icons'] })

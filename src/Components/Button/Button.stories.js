@@ -1,10 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
-import { storiesOf } from '../helpers/storiesOf';
+import { storiesOf } from '../../storybook/helpers/storiesOf';
 
-import { Button, Icon } from '../../src/index';
-import Header from '../components/Header';
-import Container from '../components/Container';
+import { Button, Icon } from '../../';
+import Header from '../../storybook/components/Header';
+import Container from '../../storybook/components/Container';
 
 storiesOf('Components|Buttons', module)
   .addParameters({ jest: ['Button'] })

@@ -1,11 +1,11 @@
 import React from 'react';
-import { storiesOf } from '../helpers/storiesOf';
 import { Text } from 'react-native';
 
-import { Ripple } from '../../src';
+import { Ripple } from '../../';
 
-import Header from '../components/Header';
-import Container from '../components/Container';
+import Header from '../../storybook/components/Header';
+import Container from '../../storybook/components/Container';
+import { storiesOf } from '../../storybook/helpers/storiesOf';
 
 storiesOf('Components|Ripple', module)
   .addParameters({ jest: ['Ripple'] })

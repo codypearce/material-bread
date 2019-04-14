@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '../helpers/storiesOf';
 
 import {
   List,
@@ -7,10 +6,10 @@ import {
   ListItemIcon,
   ListItemText,
   ListExpanded,
-} from '../../src/index';
-import Header from '../components/Header';
-import Container from '../components/Container';
-
+} from '../../';
+import Header from '../../storybook/components/Header';
+import Container from '../../storybook/components/Container';
+import { storiesOf } from '../../storybook/helpers/storiesOf';
 storiesOf('Components|List', module)
   .addParameters({ jest: ['List'] })
   .add('List', () => (
