@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { View, TextInput } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import IconButton from '../IconButton/IconButton';
-import styles from './SearchField.styles';
+import styles from './Searchfield.styles';
 
 class Searchfield extends Component {
   static propTypes = {

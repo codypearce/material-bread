@@ -50,6 +50,9 @@ export {
   default as Searchbar,
 } from '../../Components/Searchbar/Searchbar.stories.js';
 export {
+  default as Searchfield,
+} from '../../Components/Searchfield/Searchfield.stories.js';
+export {
   default as Snackbar,
 } from '../../Components/Snackbar/Snackbar.stories.js';
 
