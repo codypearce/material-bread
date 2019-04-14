@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { Animated, Easing, StyleSheet } from 'react-native';
+import { Animated, Easing } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
+import styles from './ProgressBar.styles';
 
 class ProgressBar extends PureComponent {
   static propTypes = {
@@ -164,14 +165,5 @@ class ProgressBar extends PureComponent {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  track: {
-    width: '100%',
-    position: 'relative',
-    overflow: 'hidden',
-  },
-  indicator: {},
-});
 
 export default withTheme(ProgressBar);

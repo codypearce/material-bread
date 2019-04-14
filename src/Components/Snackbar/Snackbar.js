@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, Animated, View, Text } from 'react-native';
+import { Animated, View, Text } from 'react-native';
 
 import Button from '../Button/Button';
 import Paper from '../Paper/Paper';
 import withTheme from '../../Theme/withTheme';
-import shadow from '../../Utils/Shadow/shadow';
+import styles from './Snackbar.styles';
 
 class Snackbar extends Component {
   static propTypes = {
@@ -122,32 +122,5 @@ class Snackbar extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    bottom: 0,
-    flex: 1,
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    position: 'absolute',
-  },
-
-  card: {
-    ...shadow(6),
-    borderRadius: 4,
-    backgroundColor: '#323232',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  text: {
-    flex: 1,
-    flexWrap: 'wrap',
-    color: 'white',
-    marginLeft: 16,
-    marginVertical: 14,
-  },
-});
 
 export default withTheme(Snackbar);

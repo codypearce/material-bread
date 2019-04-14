@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
+import { TouchableWithoutFeedback, View } from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../../Theme/withTheme';
 import Checkbox from '../../Checkbox/Checkbox';
+import styles from './DataTableRow.styles';
 
 class DataTableRow extends Component {
   static propTypes = {
@@ -49,19 +50,5 @@ class DataTableRow extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    borderStyle: 'solid',
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    minHeight: 48,
-    height: 48,
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    width: '100%',
-    minWidth: 'auto',
-  },
-});
 
 export default withTheme(DataTableRow);

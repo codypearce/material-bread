@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../../Theme/withTheme';
 import Button from '../../Button/Button';
 import IconButton from '../../IconButton/IconButton';
+import styles from './CardActions.styles';
 
 class CardActions extends Component {
   static propTypes = {
@@ -59,24 +60,5 @@ class CardActions extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 8,
-    paddingVertical: 8,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    flexWrap: 'wrap',
-  },
-  actions: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  moreActions: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-});
 
 export default withTheme(CardActions);

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../../Theme/withTheme';
+import styles from './CardMedia.styles';
 
 class CardMedia extends Component {
   static propTypes = {
@@ -50,32 +51,5 @@ class CardMedia extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    width: '100%',
-    overflow: 'hidden',
-    justifyContent: 'center',
-    alignItems: 'center',
-    position: 'relative',
-  },
-  textContainer: {
-    position: 'absolute',
-    left: 16,
-    bottom: 16,
-  },
-
-  title: {
-    fontSize: 16,
-    fontWeight: '500',
-    lineHeight: 20,
-    color: 'rgba(255,255,255,.87)',
-  },
-  subtitle: {
-    fontSize: 14,
-    lineHeight: 20,
-    color: 'rgba(255,255,255,.87)',
-  },
-});
 
 export default withTheme(CardMedia);

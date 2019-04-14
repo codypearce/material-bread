@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import BottomNavigationItem from './BottomNavigationItem/BottomNavigationItem';
+import styles from './BottomNavigation.styles';
 
 export const BottomNavContext = React.createContext();
 
@@ -86,12 +87,5 @@ class BottomNavigation extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  bottomNavigation: {
-    height: 56,
-    flexDirection: 'row',
-  },
-});
 
 export default withTheme(BottomNavigation);

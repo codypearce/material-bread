@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, StyleSheet, View, Easing } from 'react-native';
+import { Animated, View, Easing } from 'react-native';
 import withTheme from '../../Theme/withTheme';
-import shadow from '../../Utils/Shadow/shadow';
+import styles from './Menu.styles';
 
 class Menu extends Component {
   static propTypes = {
@@ -118,23 +118,5 @@ class Menu extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  menuContainer: {
-    left: -10, // Otherwise shadow of inner component is cut off on left
-    top: -10, // Padding doesn't work because shows this component when hidden
-    overflow: 'hidden',
-    position: 'absolute',
-  },
-  menu: {
-    borderRadius: 6,
-    position: 'absolute',
-    left: 10,
-    top: 10,
-    paddingVertical: 8,
-    backgroundColor: 'white',
-    ...shadow(5),
-  },
-});
 
 export default withTheme(Menu);

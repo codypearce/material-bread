@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, StyleSheet } from 'react-native';
+import { Animated } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import Ripple from '../Ripple/Ripple';
+import styles from './RadioButton.styles';
 
 class RadioButton extends Component {
   static propTypes = {
@@ -62,29 +63,5 @@ class RadioButton extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  ripple: {
-    borderRadius: 18,
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: 40,
-    width: 40,
-  },
-  radio: {
-    height: 21,
-    width: 21,
-    borderRadius: 24,
-    borderWidth: 2,
-    margin: 2,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  radioDot: {
-    height: 10,
-    width: 10,
-    borderRadius: 5,
-  },
-});
 
 export default withTheme(RadioButton);

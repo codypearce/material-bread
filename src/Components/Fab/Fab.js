@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet } from 'react-native';
+
 import withTheme from '../../Theme/withTheme';
 import Ripple from '../Ripple/Ripple';
 import Icon from '../Icon/Icon';
 import shadow from '../../Utils/Shadow/shadow';
+import styles from './Fab.styles';
 
 export class Fab extends Component {
   constructor(props) {
@@ -54,26 +55,5 @@ export class Fab extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  button: {
-    height: 56,
-    width: 56,
-    flexDirection: 'row',
-    alignItems: 'center',
-    alignSelf: 'center',
-    justifyContent: 'center',
-    borderRadius: 100,
-  },
-
-  icon: {
-    width: 16,
-    flexDirection: 'row',
-    alignItems: 'center',
-    alignSelf: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-  },
-});
 
 export default withTheme(Fab);

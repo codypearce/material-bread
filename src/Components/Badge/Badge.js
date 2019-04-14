@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import Ripple from '../Ripple/Ripple';
+import styles from './Badge.styles';
 
 class Badge extends Component {
   constructor(props) {
@@ -145,13 +146,5 @@ class Badge extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  content: {
-    alignSelf: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default withTheme(Badge);

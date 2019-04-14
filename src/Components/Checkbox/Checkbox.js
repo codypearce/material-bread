@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Text, View, TouchableWithoutFeedback } from 'react-native';
 import PropTypes from 'prop-types';
-import { StyleSheet } from 'react-native';
+
 import Icon from '../Icon/Icon';
 import Ripple from '../Ripple/Ripple';
 import withTheme from '../../Theme/withTheme';
+import styles from './Checkbox.styles';
 
 class Checkbox extends Component {
   static propTypes = {
@@ -152,22 +153,5 @@ class Checkbox extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  checkBoxRipple: {
-    borderRadius: 100,
-    width: 36,
-    height: 36,
-    padding: 6,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  label: {},
-});
 
 export default withTheme(Checkbox);

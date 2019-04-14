@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Text, StyleSheet } from 'react-native';
+import { Text } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import Ripple from '../../Ripple/Ripple';
 import Icon from '../../Icon/Icon';
+import styles from './DrawerItem.styles';
 
 class DrawerItem extends Component {
   static propTypes = {
@@ -45,20 +46,5 @@ class DrawerItem extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  drawerItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    height: 48,
-    borderRadius: 6,
-    paddingHorizontal: 8,
-  },
-  text: {
-    fontSize: 14,
-    color: 'rgba(0,0,0,.87)',
-    fontWeight: '500',
-  },
-});
 
 export default withTheme(DrawerItem);

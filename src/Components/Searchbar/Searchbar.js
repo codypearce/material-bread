@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, View, TextInput } from 'react-native';
+import { View, TextInput } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import IconButton from '../IconButton/IconButton';
-import { shadow } from '../..';
+import styles from './Searchbar.styles';
 
 class Searchbar extends Component {
   static propTypes = {
@@ -48,23 +48,5 @@ class Searchbar extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    width: '100%',
-    backgroundColor: 'rgba(255,255,255,1)',
-    height: 56,
-    paddingHorizontal: 16,
-  },
-  searchInput: {
-    fontSize: 16,
-    flex: 1,
-    marginLeft: 8,
-    height: 30,
-    ...shadow(0),
-  },
-});
 
 export default withTheme(Searchbar);

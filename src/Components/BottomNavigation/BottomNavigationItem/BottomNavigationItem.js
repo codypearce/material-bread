@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, Animated } from 'react-native';
+import { Animated } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import Icon from '../../Icon/Icon';
 import Ripple from '../../Ripple/Ripple';
 import Badge from '../../Badge/Badge';
-
 import { BottomNavContext } from '../BottomNavigation';
+import styles from './BottomNavigationItem.styles';
 
 class BottomNavigationItem extends Component {
   static propTypes = {
@@ -158,17 +158,5 @@ class BottomNavigationItem extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  bottomNavigationItem: {
-    maxWidth: 168,
-    height: 56,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flex: 1,
-    position: 'relative',
-  },
-});
 
 export default withTheme(BottomNavigationItem);

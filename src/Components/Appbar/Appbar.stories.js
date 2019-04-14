@@ -115,7 +115,7 @@ storiesOf('Components|Appbar', module)
         actionItems={[
           { name: 'favorite' },
           { name: 'search', onPress: () => console.log('onSearch') },
-          <IconButton name="more-vert" size={24} color={'white'} />,
+          <IconButton key={1} name="more-vert" size={24} color={'white'} />,
         ]}
         style={{ marginBottom: 20 }}
       />

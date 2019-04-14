@@ -3,13 +3,13 @@ import {
   Modal as NativeModal,
   View,
   TouchableWithoutFeedback,
-  StyleSheet,
   Dimensions,
   Animated,
 } from 'react-native';
 
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
+import styles from './Modal.styles';
 
 class Modal extends Component {
   static propTypes = {
@@ -138,14 +138,5 @@ class Modal extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 24,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 
 export default withTheme(Modal);

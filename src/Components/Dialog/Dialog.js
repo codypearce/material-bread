@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 
 import PropTypes from 'prop-types';
 import Modal from '../Modal/Modal';
 import withTheme from '../../Theme/withTheme';
-import shadow from '../../Utils/Shadow/shadow';
+import styles from './Dialog.styles';
 
 class Dialog extends Component {
   static propTypes = {
@@ -37,16 +37,5 @@ class Dialog extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#ffffff',
-    width: '100%',
-    borderRadius: 4,
-    paddingTop: 24,
-
-    ...shadow(12),
-  },
-});
 
 export default withTheme(Dialog);

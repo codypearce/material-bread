@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
-import { StyleSheet, Text, TouchableHighlight, Platform } from 'react-native';
+import { Text, TouchableHighlight, Platform } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
+import styles from './MenuItem.styles';
 
 class MenuItem extends Component {
   static propTypes = {
@@ -44,20 +45,5 @@ class MenuItem extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    height: 48,
-    justifyContent: 'center',
-    width: '100%',
-    minWidth: 124,
-    flex: 1,
-  },
-  title: {
-    fontSize: 14,
-    fontWeight: '400',
-    paddingHorizontal: 16,
-  },
-});
 
 export default withTheme(MenuItem);

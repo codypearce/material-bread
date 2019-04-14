@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, Animated, StyleSheet } from 'react-native';
+import { View, Animated } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import Fab from '../Fab/Fab';
+import styles from './FabSpeedDial.styles';
 
 class FabSpeedDial extends Component {
   constructor(props) {
@@ -139,13 +140,5 @@ class FabSpeedDial extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    position: 'absolute',
-    bottom: 0,
-    right: 0,
-  },
-});
 
 export default withTheme(FabSpeedDial);

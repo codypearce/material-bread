@@ -5,6 +5,9 @@ import withTheme from '../../Theme/withTheme';
 import Paper from '../Paper/Paper';
 import Ripple from '../Ripple/Ripple';
 import Icon from '../Icon/Icon';
+
+import styles from './Chip.styles';
+
 class Chip extends Component {
   static propTypes = {
     children: PropTypes.node,
@@ -195,32 +198,5 @@ class Chip extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    borderStyle: 'solid',
-    flexGrow: 0,
-    height: 32,
-    alignSelf: 'flex-start',
-  },
-  ripple: {
-    height: '100%',
-    flexDirection: 'row',
-  },
-  content: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    flexGrow: 0,
-  },
-
-  text: {
-    lineHeight: 24,
-    textAlignVertical: 'center',
-    alignSelf: 'center',
-    marginVertical: 4,
-
-    fontSize: 14,
-  },
-});
 
 export default withTheme(Chip);

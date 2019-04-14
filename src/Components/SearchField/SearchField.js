@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, View, TextInput } from 'react-native';
+import { View, TextInput } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import IconButton from '../IconButton/IconButton';
-import { shadow } from '../..';
+import styles from './SearchField.styles';
 
 class Searchfield extends Component {
   static propTypes = {
@@ -59,24 +59,5 @@ class Searchfield extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderRadius: 4,
-    paddingHorizontal: 8,
-
-    height: 40,
-  },
-  searchInput: {
-    fontSize: 16,
-    height: 40,
-    marginLeft: 8,
-    flex: 1,
-    color: 'white',
-    ...shadow(0),
-  },
-});
 
 export default withTheme(Searchfield);

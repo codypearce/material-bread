@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, Animated } from 'react-native';
+import { Animated } from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
 import Ripple from '../Ripple/Ripple';
-import shadow from '../../Utils/Shadow/shadow';
+import styles from './Switch.styles';
 
 class Switch extends Component {
   static propTypes = { active: PropTypes.bool, style: PropTypes.object };
@@ -62,31 +62,5 @@ class Switch extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  track: {
-    width: 36,
-    height: 14,
-    backgroundColor: 'rgba(0,0,0,.38)',
-    borderRadius: 10,
-    position: 'relative',
-  },
-  thumbRipple: {
-    width: 32,
-    height: 32,
-    borderRadius: 100,
-    position: 'absolute',
-    top: -9,
-    left: -8,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  thumb: {
-    width: 20,
-    height: 20,
-    ...shadow(3),
-    borderRadius: 100,
-  },
-});
 
 export default withTheme(Switch);

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import Divider from '../../Divider/Divider';
+import styles from './DrawerSection.styles';
 
 class DrawerSection extends Component {
   static propTypes = {
@@ -26,13 +27,5 @@ class DrawerSection extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  content: {
-    paddingTop: 14,
-    paddingBottom: 8,
-    paddingHorizontal: 8,
-  },
-});
 
 export default withTheme(DrawerSection);

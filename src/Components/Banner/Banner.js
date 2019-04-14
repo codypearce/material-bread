@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, StyleSheet, Platform, Dimensions, Animated } from 'react-native';
+import { View, Platform, Dimensions, Animated } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import shadow from '../../Utils/Shadow/shadow';
 import Button from '../Button/Button';
 import { BodyText } from '../Typography/';
+import styles from './Banner.styles';
 
 class Banner extends Component {
   static propTypes = {
@@ -221,29 +222,5 @@ class Banner extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    overflow: 'hidden',
-    backgroundColor: 'white',
-  },
-
-  content: {
-    flexDirection: 'row',
-    flexShrink: 1,
-  },
-
-  buttons: {
-    flexDirection: 'row',
-    marginRight: 8,
-    marginBottom: 8,
-    flexShrink: 1,
-    minWidth: 'auto',
-  },
-  button: {
-    width: 'auto',
-    marginLeft: 8,
-  },
-});
 
 export default withTheme(Banner);

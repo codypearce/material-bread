@@ -5,9 +5,9 @@ import {
   Animated,
   Easing,
   TouchableWithoutFeedback,
-  StyleSheet,
   Platform,
 } from 'react-native';
+import styles from './Ripple.styles';
 
 export default class Ripple extends PureComponent {
   static defaultProps = {
@@ -297,24 +297,3 @@ export default class Ripple extends PureComponent {
     );
   }
 }
-
-const radius = 10;
-
-const styles = StyleSheet.create({
-  container: {
-    ...StyleSheet.absoluteFillObject,
-
-    backgroundColor: 'transparent',
-    overflow: 'hidden',
-    zIndex: 10,
-  },
-
-  ripple: {
-    width: radius * 2,
-    height: radius * 2,
-    borderRadius: radius,
-    overflow: 'hidden',
-    position: 'absolute',
-    zIndex: 10,
-  },
-});

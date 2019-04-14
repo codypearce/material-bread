@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, ScrollView, StyleSheet } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import withTheme from '../../Theme/withTheme';
-import shadow from '../../Utils/Shadow/shadow';
+import styles from './Drawer.styles';
 
 class Drawer extends Component {
   static propTypes = {
@@ -29,12 +29,5 @@ class Drawer extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'white',
-    ...shadow(8),
-  },
-});
 
 export default withTheme(Drawer);

@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, Text, View, TouchableWithoutFeedback } from 'react-native';
+import { Text, View, TouchableWithoutFeedback } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import Paper from '../Paper/Paper';
 import IconButton from '../IconButton/IconButton';
+import styles from './Appbar.styles';
 
 class Appbar extends Component {
   static propTypes = {
@@ -221,39 +222,5 @@ class Appbar extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  appbar: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    minWidth: 'auto',
-  },
-  backgroundImage: {
-    flex: 1,
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    width: '100%',
-    height: '100%',
-  },
-  pageTitle: {
-    fontSize: 18,
-    color: 'white',
-  },
-  left: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    minWidth: 'auto',
-  },
-  right: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    minWidth: 'auto',
-  },
-});
 
 export default withTheme(Appbar);

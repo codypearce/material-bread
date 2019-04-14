@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../../Theme/withTheme';
 import IconButton from '../../IconButton/IconButton';
+import styles from './DataTableHeader.styles';
 
 class DataTableHeader extends Component {
   static propTypes = {
@@ -82,30 +83,5 @@ class DataTableHeader extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  dataTableHeader: {
-    height: 64,
-    width: '100%',
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 16,
-    minWidth: 'auto',
-  },
-  content: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: '100%',
-  },
-  left: { flexDirection: 'row', alignItems: 'center' },
-  title: {
-    fontSize: 20,
-  },
-  actions: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-});
 
 export default withTheme(DataTableHeader);

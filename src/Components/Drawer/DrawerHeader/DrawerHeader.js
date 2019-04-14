@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, Image, Text, StyleSheet } from 'react-native';
+import { View, Image, Text } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import Dropdown from '../../Dropdown/Dropdown';
+import styles from './DrawerHeader.styles';
 
 class DrawerHeader extends Component {
   static propTypes = {
@@ -29,24 +30,5 @@ class DrawerHeader extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  drawerHeader: {
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: 'grey',
-    paddingHorizontal: 16,
-    paddingVertical: 18,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: '500',
-    color: 'rgba(0,0,0,.87)',
-  },
-  subtitle: {
-    marginTop: 8,
-    fontSize: 13,
-    color: 'rgba(0,0,0,.67)',
-  },
-});
 
 export default withTheme(DrawerHeader);
