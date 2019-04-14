@@ -10,7 +10,8 @@
     "storybook-web": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -c .storybook -s ./public -o gh",
     "deploy-docs": "gh-pages -d gh",
-    "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true"
+    "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
+    "see-npm-package": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz"
   },
   "dependencies": {
     "@storybook/addon-a11y": "^5.0.6",
@@ -61,10 +62,6 @@
     "react-native": "*",
     "react-native-vector-icons": "*"
   },
-  "files": [
-    "*.md",
-    "src"
-  ],
   "main": "src/index.js",
   "jest": {
     "preset": "react-native",
