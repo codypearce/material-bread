@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressCircle Renders 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "height": 48,
+        "transform": Array [
+          Object {
+            "rotate": "45deg",
+          },
+        ],
+        "width": 48,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        Object {
+          "height": 24,
+          "overflow": "hidden",
+          "width": 48,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "height": 48,
+            "transform": Array [
+              Object {
+                "rotate": "-165deg",
+              },
+            ],
+            "width": 48,
+          }
+        }
+      >
+        <View
+          collapsable={false}
+          style={
+            Object {
+              "height": 24,
+              "overflow": "hidden",
+              "width": 48,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderColor": "rgb(0, 0, 0)",
+                "borderRadius": 24,
+                "borderWidth": 4.8,
+                "height": 48,
+                "width": 48,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

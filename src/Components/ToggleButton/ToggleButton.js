@@ -4,7 +4,7 @@ import withTheme from '../../Theme/withTheme';
 import Icon from '../Icon/Icon';
 import Ripple from '../Ripple/Ripple';
 
-import { ToggleButtonContext } from './ToggleButtonGroup';
+import { ToggleButtonContext } from './ToggleButtonGroup/ToggleButtonGroup';
 
 class ToggleButton extends Component {
   static propTypes = {

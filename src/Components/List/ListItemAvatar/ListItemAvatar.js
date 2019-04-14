@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import withTheme from '../../Theme/withTheme';
-import Avatar from '../Avatar/Avatar';
+import withTheme from '../../../Theme/withTheme';
+import Avatar from '../../Avatar/Avatar';
 
 class ListItemAvatar extends Component {
   static propTypes = {

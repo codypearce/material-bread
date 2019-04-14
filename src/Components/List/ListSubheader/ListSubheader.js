@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Text, StyleSheet } from 'react-native';
-import withTheme from '../../Theme/withTheme';
+import withTheme from '../../../Theme/withTheme';
 
 class ListItemText extends Component {
   static propTypes = {

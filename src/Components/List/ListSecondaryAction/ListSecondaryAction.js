@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet } from 'react-native';
-import withTheme from '../../Theme/withTheme';
+import withTheme from '../../../Theme/withTheme';
 
 class ListSecondaryAction extends Component {
   static propTypes = {

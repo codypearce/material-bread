@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chip Renders 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "flex-start",
+      "backgroundColor": "#e0e0e0",
+      "borderColor": "rgba(0, 0, 0, 0.23)",
+      "borderRadius": 16,
+      "borderStyle": "solid",
+      "borderWidth": 0,
+      "flexGrow": 0,
+      "height": 32,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 0,
+        "width": 0,
+      },
+      "shadowOpacity": 0,
+      "shadowRadius": 1,
+    }
+  }
+>
+  <View
+    accessible={true}
+    displayUntilPressOut={true}
+    onLayout={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onRippleAnimation={[Function]}
+    onStartShouldSetResponder={[Function]}
+    pointerEvents="box-only"
+    rippleCentered={false}
+    rippleColor="rgba(0, 0, 0, .87)"
+    rippleDuration={400}
+    rippleFades={true}
+    rippleOpacity={0.3}
+    rippleSequential={false}
+    rippleSize={0}
+    style={
+      Object {
+        "borderRadius": 16,
+        "flexDirection": "row",
+        "height": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "flexGrow": 0,
+        }
+      }
+    >
+      <Text
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "alignSelf": "center",
+              "fontSize": 14,
+              "lineHeight": 24,
+              "marginVertical": 4,
+              "textAlignVertical": "center",
+            },
+            Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "marginLeft": 12,
+              "marginRight": 12,
+            },
+            undefined,
+          ]
+        }
+      />
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "bottom": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "zIndex": 10,
+          },
+          Object {
+            "borderRadius": 16,
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;

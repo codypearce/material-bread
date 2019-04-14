@@ -1,5 +1,5 @@
 import React from 'react';
-import { BottomNavigation } from '../../src';
+import { BottomNavigation } from '../..';
 
 import ShallowRenderer from 'react-test-renderer/shallow';
 const renderer = new ShallowRenderer();

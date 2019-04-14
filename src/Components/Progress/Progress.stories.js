@@ -3,9 +3,9 @@ import { View } from 'react-native';
 
 import { ProgressCircle, ProgressBar, Button } from '../../..';
 import { State, Store } from '@sambego/storybook-state';
-import Header from '../../../storybook/components/Header';
-import Container from '../../../storybook/components/Container';
-import { storiesOf } from '../../../storybook/helpers/storiesOf';
+import Header from '../../storybook/components/Header';
+import Container from '../../storybook/components/Container';
+import { storiesOf } from '../../storybook/helpers/storiesOf';
 
 const store = new Store({
   value3: 30,

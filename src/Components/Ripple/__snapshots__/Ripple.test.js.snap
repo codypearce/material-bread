@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ripple Renders 1`] = `
+<View
+  accessible={true}
+  displayUntilPressOut={true}
+  onLayout={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onRippleAnimation={[Function]}
+  onStartShouldSetResponder={[Function]}
+  pointerEvents="box-only"
+  rippleCentered={false}
+  rippleColor="rgba(0, 0, 0, .87)"
+  rippleDuration={400}
+  rippleFades={true}
+  rippleOpacity={0.3}
+  rippleSequential={false}
+  rippleSize={0}
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "bottom": 0,
+          "left": 0,
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "zIndex": 10,
+        },
+        Object {
+          "borderRadius": 0,
+        },
+      ]
+    }
+  />
+</View>
+`;
