@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
-import Ripple from '../Ripple';
+import Ripple from '../Ripple/Ripple';
 
 class CardContent extends Component {
   static propTypes = {

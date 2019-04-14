@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import withTheme from '../Theme/withTheme';
+import withTheme from '../../Theme/withTheme';
 
 class Icon extends Component {
   constructor(props) {

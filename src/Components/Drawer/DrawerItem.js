@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Text, StyleSheet } from 'react-native';
 import withTheme from '../../Theme/withTheme';
-import Ripple from '../Ripple';
-import Icon from '../Icon';
+import Ripple from '../Ripple/Ripple';
+import Icon from '../Icon/Icon';
 
 class DrawerItem extends Component {
   static propTypes = {

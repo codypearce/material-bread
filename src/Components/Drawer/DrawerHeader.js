@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, Image, Text, StyleSheet } from 'react-native';
 import withTheme from '../../Theme/withTheme';
-import Dropdown from '../Dropdown';
+import Dropdown from '../Dropdown/Dropdown';
 
 class DrawerHeader extends Component {
   static propTypes = {

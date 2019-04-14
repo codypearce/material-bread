@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Text, View, TouchableWithoutFeedback } from 'react-native';
 import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
-import Icon from './Icon';
-import Ripple from './Ripple';
-import withTheme from '../Theme/withTheme';
+import Icon from '../Icon/Icon';
+import Ripple from '../Ripple/Ripple';
+import withTheme from '../../Theme/withTheme';
 
 class Checkbox extends Component {
   static propTypes = {

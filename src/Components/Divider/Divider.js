@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
-import withTheme from '../Theme/withTheme';
+import withTheme from '../../Theme/withTheme';
 
 class Divider extends Component {
   static propTypes = {

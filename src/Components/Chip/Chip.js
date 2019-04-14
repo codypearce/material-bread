@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Text, View, StyleSheet } from 'react-native';
-import withTheme from '../Theme/withTheme';
-import Paper from './Paper';
-import Ripple from './Ripple';
-import Icon from './Icon';
+import withTheme from '../../Theme/withTheme';
+import Paper from '../Paper/Paper';
+import Ripple from '../Ripple/Ripple';
+import Icon from '../Icon/Icon';
 class Chip extends Component {
   static propTypes = {
     children: PropTypes.node,

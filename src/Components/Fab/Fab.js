@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
-import withTheme from '../Theme/withTheme';
-import Ripple from './Ripple';
-import Icon from './Icon';
-import shadow from '../Utils/shadow';
+import withTheme from '../../Theme/withTheme';
+import Ripple from '../Ripple/Ripple';
+import Icon from '../Icon/Icon';
+import shadow from '../../Utils/shadow';
 
 export class Fab extends Component {
   constructor(props) {

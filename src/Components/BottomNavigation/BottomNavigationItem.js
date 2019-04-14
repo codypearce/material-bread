@@ -2,9 +2,9 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, Animated } from 'react-native';
 import withTheme from '../../Theme/withTheme';
-import Icon from '../Icon';
-import Ripple from '../Ripple';
-import Badge from '../Badge';
+import Icon from '../Icon/Icon';
+import Ripple from '../Ripple/Ripple';
+import Badge from '../Badge/Badge';
 
 import { BottomNavContext } from './BottomNavigation';
 

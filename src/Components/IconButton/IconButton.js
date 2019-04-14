@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import withTheme from '../Theme/withTheme';
-import Icon from './Icon';
-import Ripple from './Ripple';
+import withTheme from '../../Theme/withTheme';
+import Icon from '../Icon/Icon';
+import Ripple from '../Ripple/Ripple';
 
 class IconButton extends Component {
   static propTypes = {

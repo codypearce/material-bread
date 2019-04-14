@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, Text, View, TouchableWithoutFeedback } from 'react-native';
-import withTheme from '../Theme/withTheme';
-import Paper from './Paper';
-import IconButton from './IconButton';
+import withTheme from '../../Theme/withTheme';
+import Paper from '../Paper/Paper';
+import IconButton from '../IconButton/IconButton';
 
 class Appbar extends Component {
   static propTypes = {

@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, View, Platform } from 'react-native';
-import withTheme from '../Theme/withTheme';
-import Paper from './Paper';
-import IconButton from './IconButton';
-import Fab from './Fab';
+import withTheme from '../../Theme/withTheme';
+import Paper from '../Paper/Paper';
+import IconButton from '../IconButton/IconButton';
+import Fab from '../Fab/Fab';
 
 class AppbarBottom extends Component {
   static propTypes = {

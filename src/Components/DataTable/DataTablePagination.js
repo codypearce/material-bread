@@ -3,8 +3,8 @@ import { StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 import withTheme from '../../Theme/withTheme';
-import IconButton from '../IconButton';
-import Icon from '../Icon';
+import IconButton from '../IconButton/IconButton';
+import Icon from '../Icon/Icon';
 
 class DataTablePagination extends Component {
   static propTypes = {

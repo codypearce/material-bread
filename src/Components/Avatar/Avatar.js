@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
-import withTheme from '../Theme/withTheme';
-import Icon from './Icon';
-import Ripple from './Ripple';
+import withTheme from '../../Theme/withTheme';
+import Icon from '../Icon/Icon';
+import Ripple from '../Ripple/Ripple';
 
 class Avatar extends Component {
   static propTypes = {

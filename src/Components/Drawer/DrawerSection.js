@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, Text, StyleSheet } from 'react-native';
 import withTheme from '../../Theme/withTheme';
-import Divider from '../Divider';
+import Divider from '../Divider/Divider';
 
 class DrawerSection extends Component {
   static propTypes = {

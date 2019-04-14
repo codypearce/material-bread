@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
-import Checkbox from '../Checkbox';
+import Checkbox from '../Checkbox/Checkbox';
 
 class DataTableRow extends Component {
   static propTypes = {

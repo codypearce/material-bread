@@ -8,10 +8,10 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import Menu from './Menu';
-import MenuItem from './MenuItem';
-import Icon from './Icon';
-import withTheme from '../Theme/withTheme';
+import Menu from '../Menu/Menu';
+import MenuItem from '../Menu/MenuItem/MenuItem';
+import Icon from '../Icon/Icon';
+import withTheme from '../../Theme/withTheme';
 
 class Dropdown extends Component {
   static propTypes = {

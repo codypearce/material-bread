@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 
 import PropTypes from 'prop-types';
-import Modal from '../Modal';
+import Modal from '../Modal/Modal';
 import withTheme from '../../Theme/withTheme';
 import shadow from '../../Utils/shadow';
 

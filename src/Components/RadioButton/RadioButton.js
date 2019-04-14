@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Animated, StyleSheet } from 'react-native';
-import withTheme from '../Theme/withTheme';
-import Ripple from './Ripple';
+import withTheme from '../../Theme/withTheme';
+import Ripple from '../Ripple/Ripple';
 
 class RadioButton extends Component {
   static propTypes = {

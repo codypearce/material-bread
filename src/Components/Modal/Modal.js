@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 
 import PropTypes from 'prop-types';
-import withTheme from '../Theme/withTheme';
+import withTheme from '../../Theme/withTheme';
 
 class Modal extends Component {
   static propTypes = {

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Animated, View, Text, StyleSheet } from 'react-native';
 import withTheme from '../../Theme/withTheme';
-import Ripple from '../Ripple';
-import Icon from '../Icon';
+import Ripple from '../Ripple/Ripple';
+import Icon from '../Icon/Icon';
 
 class ListExpanded extends Component {
   static propTypes = {

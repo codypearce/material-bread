@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
-import Paper from '../Paper';
+import Paper from '../Paper/Paper';
 
 class List extends Component {
   static propTypes = {

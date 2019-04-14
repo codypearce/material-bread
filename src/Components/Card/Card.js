@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
-import Paper from '../Paper';
-import Ripple from '../Ripple';
+import Paper from '../Paper/Paper';
+import Ripple from '../Ripple/Ripple';
 
 class Card extends Component {
   static propTypes = {

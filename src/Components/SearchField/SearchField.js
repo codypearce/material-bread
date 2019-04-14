@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, View, TextInput } from 'react-native';
-import withTheme from '../Theme/withTheme';
-import IconButton from './IconButton';
-import { shadow } from '..';
+import withTheme from '../../Theme/withTheme';
+import IconButton from '../IconButton/IconButton';
+import { shadow } from '../..';
 
 class Searchfield extends Component {
   static propTypes = {
