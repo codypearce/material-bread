@@ -1,5 +1,5 @@
 import React from 'react';
-import { SearchField } from '../../src';
+import { SearchField } from '../../';
 
 import ShallowRenderer from 'react-test-renderer/shallow';
 const renderer = new ShallowRenderer();

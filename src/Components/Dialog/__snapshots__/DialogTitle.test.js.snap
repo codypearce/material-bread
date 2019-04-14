@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DialogTitle Renders 1`] = `
+<Text
+  style={
+    Object {
+      "color": "rgba(0, 0, 0, 0.87)",
+      "fontSize": 20,
+      "fontWeight": "500",
+      "marginBottom": 20,
+      "paddingHorizontal": 24,
+    }
+  }
+/>
+`;

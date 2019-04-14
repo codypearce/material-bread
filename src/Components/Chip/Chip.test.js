@@ -1,5 +1,5 @@
 import React from 'react';
-import { Chip } from '../../src';
+import Chip from '../..';
 
 import renderer from 'react-test-renderer';
 

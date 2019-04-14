@@ -1,5 +1,5 @@
 import React from 'react';
-import { RadioButton } from '../../src';
+import { RadioButton } from '../../';
 
 import renderer from 'react-test-renderer';
 

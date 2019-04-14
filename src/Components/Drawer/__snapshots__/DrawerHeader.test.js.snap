@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DrawerHeader Renders 1`] = `
+<View
+  style={
+    Object {
+      "borderBottomColor": "grey",
+      "borderBottomWidth": 0.5,
+      "paddingHorizontal": 16,
+      "paddingVertical": 18,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "rgba(0,0,0,.87)",
+        "fontSize": 20,
+        "fontWeight": "500",
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "color": "rgba(0,0,0,.67)",
+        "fontSize": 13,
+        "marginTop": 8,
+      }
+    }
+  />
+</View>
+`;

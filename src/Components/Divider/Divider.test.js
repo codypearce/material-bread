@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider } from '../../src';
+import { Divider } from '../../';
 
 import renderer from 'react-test-renderer';
 

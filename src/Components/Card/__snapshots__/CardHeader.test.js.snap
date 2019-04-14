@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardHeader Renders 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderBottomColor": "rgba(0,0,0,.2)",
+        "borderBottomWidth": 0.5,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "padding": 16,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "flexShrink": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexShrink": 1,
+          "flexWrap": "wrap",
+          "marginLeft": 16,
+        }
+      }
+    />
+  </View>
+</View>
+`;

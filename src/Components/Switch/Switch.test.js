@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch } from '../../src';
+import { Switch } from '../../';
 
 import ShallowRenderer from 'react-test-renderer/shallow';
 const renderer = new ShallowRenderer();

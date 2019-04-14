@@ -68,4 +68,3 @@ docs/.cache
 gh/**/*
 jest-test-results.json
 .jest-test-results.json
-**/*/__snapshots__

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paper } from '../../src';
+import { Paper } from '../../';
 
 import renderer from 'react-test-renderer';
 

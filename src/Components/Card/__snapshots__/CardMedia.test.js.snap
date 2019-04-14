@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardMedia Renders 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "overflow": "hidden",
+        "position": "relative",
+        "width": "100%",
+      },
+      Object {
+        "height": 194,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "bottom": 16,
+        "left": 16,
+        "position": "absolute",
+      }
+    }
+  />
+</View>
+`;

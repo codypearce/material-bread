@@ -1,5 +1,5 @@
 import React from 'react';
-import { MenuItem } from '../../../src';
+import { MenuItem } from '../../../';
 
 import renderer from 'react-test-renderer';
 

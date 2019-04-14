@@ -1,5 +1,5 @@
 import React from 'react';
-import { Drawer } from '../../../src';
+import { Drawer } from '../../..';
 
 import renderer from 'react-test-renderer';
 

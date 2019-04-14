@@ -1,5 +1,5 @@
 import React from 'react';
-import { FabSpeedDial } from '../../src';
+import { FabSpeedDial } from '../..';
 import ShallowRenderer from 'react-test-renderer/shallow';
 const renderer = new ShallowRenderer();
 const actions = [

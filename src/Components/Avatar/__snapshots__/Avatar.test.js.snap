@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar Renders 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#1e88e5",
+        "borderRadius": 12,
+        "height": 24,
+        "justifyContent": "center",
+        "width": 24,
+      },
+      undefined,
+    ]
+  }
+/>
+`;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown } from '../../src';
+import { Dropdown } from '../..';
 
 import ShallowRenderer from 'react-test-renderer/shallow';
 const renderer = new ShallowRenderer();

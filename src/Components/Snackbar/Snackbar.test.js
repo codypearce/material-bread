@@ -1,5 +1,5 @@
 import React from 'react';
-import { Snackbar } from '../../src';
+import { Snackbar } from '../../';
 
 import ShallowRenderer from 'react-test-renderer/shallow';
 const renderer = new ShallowRenderer();

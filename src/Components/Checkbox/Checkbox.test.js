@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox } from '../../src';
+import Checkbox from '../..';
 
 import ShallowRenderer from 'react-test-renderer/shallow';
 const renderer = new ShallowRenderer();

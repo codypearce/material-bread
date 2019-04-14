@@ -1,5 +1,5 @@
 import React from 'react';
-import { Ripple } from '../../src';
+import { Ripple } from '../../';
 
 import renderer from 'react-test-renderer';
 

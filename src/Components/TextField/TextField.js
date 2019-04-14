@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
-import TextFieldOutline from './TextFieldOutline';
-import TextFieldFilled from './TextFieldFilled';
-import TextFieldFlat from './TextFieldFlat';
+import TextFieldOutline from './TextFieldOutline/TextFieldOutline';
+import TextFieldFilled from './TextFieldFilled/TextFieldFilled';
+import TextFieldFlat from './TextFieldFlat/TextFieldFlat';
 
 class TextField extends Component {
   static propTypes = {

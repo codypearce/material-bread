@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../../src';
+import Button from './Button';
 
 import ShallowRenderer from 'react-test-renderer/shallow';
 const renderer = new ShallowRenderer();
