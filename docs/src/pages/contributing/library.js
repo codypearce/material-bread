@@ -152,33 +152,41 @@ class Index extends Component {
               <div>
                 <div>
                   Components all live in{' '}
-                  <CodeInline code="src/Components" type={''} />, and they're
-                  displayed in the dev environment in a corresponding file{' '}
-                  <CodeInline code="src/storybook/stories/index" type={''} />.
+                  <CodeInline code="src/Components" type={'file'} />, and
+                  they're displayed in the dev environment in a corresponding
+                  file{' '}
+                  <CodeInline
+                    code="src/storybook/stories/index"
+                    type={'file'}
+                  />
+                  .
                 </div>
                 Use the following steps to create a new component:
                 <ol>
                   <li>
                     Create a basic component folder and file in{' '}
-                    <CodeInline code="src/Components/ComponentName" type={''} />{' '}
+                    <CodeInline
+                      code="src/Components/ComponentName"
+                      type={'file'}
+                    />{' '}
                     named
-                    <CodeInline code="ComponentName.js" type={''} />.
+                    <CodeInline code="ComponentName.js" type={'file'} />.
                   </li>
                   <li>
                     Import <CodeInline code="withTheme" type={'element'} />
                     and Wrap component in the HOC theme component as such
                     <CodeInline
                       code="export default withTheme(ComponentName);"
-                      type={''}
+                      type={'value'}
                     />
                   </li>
                   <li>
                     Add component to{' '}
-                    <CodeInline code="src/index.js" type={''} />
+                    <CodeInline code="src/index.js" type={'file'} />
                     as such{' '}
                     <CodeInline
                       code="export { default as ComponentName } from './Components/ComponentName/ComponentName'"
-                      type={''}
+                      type={'value'}
                     />
                     .
                   </li>
@@ -186,17 +194,20 @@ class Index extends Component {
                     Create component file in{' '}
                     <CodeInline
                       code="src/Components/ComponentName.stroies.js"
-                      type={''}
+                      type={'file'}
                     />{' '}
                     as shown in the other files
                   </li>
                   <li>
                     Add component story to{' '}
-                    <CodeInline code="src/storybook/stories/index" type={''} />{' '}
+                    <CodeInline
+                      code="src/storybook/stories/index"
+                      type={'file'}
+                    />{' '}
                     as such{' '}
                     <CodeInline
                       code="export { default as ComponentName } from '../Components/ComponentName/ComponentName.stories.js'"
-                      type={''}
+                      type={'value'}
                     />{' '}
                     .
                   </li>
