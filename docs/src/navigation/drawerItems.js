@@ -199,6 +199,10 @@ const components = [
 ];
 const utils = [
   {
+    title: 'Anchor',
+    path: '/utils/anchor',
+  },
+  {
     title: 'Color',
     path: '/utils/color',
   },
