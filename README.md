@@ -8,13 +8,17 @@
 
 [![Storybook](https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg?style=for-the-badge)](https://codypearce.github.io/material-bread/)
 
-## Install
+## Intro/Features
 
-Highly customizable React Native Material Design Components.
 
 ### [Docs](http://material-bread.org)
 
 ### [Storybook](https://codypearce.github.io/material-bread/)
+
+
+* Highly Customizable React Native Material Design Components
+* Cross platform support: React Native (iOS, Android), React-native-web (Browsers), Electron (Windows, Mac, Linux)
+* Numerous live demos you can edit in in your browser.
 
 ## Installation
 
