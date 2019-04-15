@@ -38,6 +38,10 @@ class Drawer extends PureComponent {
     scrim: PropTypes.bool,
     scrimColor: PropTypes.string,
     scrimOpacity: PropTypes.number,
+
+    style: PropTypes.object,
+    contentContainerStyle: PropTypes.object,
+    drawerStyle: PropTypes.object,
   };
 
   static defaultProps = {
@@ -189,7 +193,7 @@ class Drawer extends PureComponent {
   }
 
   _renderAppContent() {
-    const { children, appbar, type, open } = this.props;
+    const { children, appbar, type, open, contentContainerStyle } = this.props;
     const { leftOffset } = this.state;
 
     const isPush = type == 'push';
@@ -198,7 +202,7 @@ class Drawer extends PureComponent {
 
     if (isPush || isPermanent) {
       return (
-        <View>
+        <View style={contentContainerStyle}>
           {appbar ? this._renderAppBar() : null}
           <Animated.View
             style={{
@@ -214,7 +218,7 @@ class Drawer extends PureComponent {
       );
     }
     return (
-      <View>
+      <View style={contentContainerStyle}>
         {appbar ? this._renderAppBar() : null}
         <View>{children}</View>
       </View>
@@ -222,7 +226,7 @@ class Drawer extends PureComponent {
   }
 
   _renderDrawer() {
-    const { drawerContent, type, open } = this.props;
+    const { drawerContent, type, open, drawerStyle } = this.props;
     const { drawerWidth, screenHeight, leftOffset, appbarHeight } = this.state;
 
     const isPush = type == 'push';
@@ -244,6 +248,7 @@ class Drawer extends PureComponent {
               transform: [{ translateX: leftOffset }],
               ...shadowImplemented,
             },
+            drawerStyle,
           ]}>
           {drawerContent}
         </Animated.View>
@@ -255,12 +260,17 @@ class Drawer extends PureComponent {
   }
 
   render() {
+    const { style } = this.props;
     const { drawerWidth, screenWidth } = this.state;
 
     if (needsSafeArea) {
       return (
         <SafeAreaView
-          style={[styles.safeAreaView, { width: screenWidth + drawerWidth }]}>
+          style={[
+            styles.safeAreaView,
+            { width: screenWidth + drawerWidth },
+            style,
+          ]}>
           {this._renderDrawer()}
         </SafeAreaView>
       );
@@ -271,6 +281,7 @@ class Drawer extends PureComponent {
         style={[
           styles.fullWidthContainer,
           { width: screenWidth, overflow: 'hidden' },
+          style,
         ]}>
         {this._renderDrawer()}
       </View>

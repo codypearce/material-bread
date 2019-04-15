@@ -83,7 +83,10 @@ const Usage = pageHref => (
       <div>
         The <CodeInline code="Drawer" type="element" /> component needs to wrap
         each page it will be displayed on. Usually this can be defined as a base
-        layout in your root <CodeInline code="App.js" type="file" /> file.
+        layout in your root <CodeInline code="App.js" type="file" /> file. You
+        must provide an <CodeInline code="onClose" type="prop" /> function if
+        you want to close the <CodeInline code="Drawer" type="element" /> by
+        clicking outside.
       </div>
     }
     code={code}
