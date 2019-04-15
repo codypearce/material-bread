@@ -24,9 +24,9 @@ exports[`DrawerItem Renders 1`] = `
     Object {
       "alignItems": "center",
       "backgroundColor": "transparent",
-      "borderRadius": 6,
+      "borderRadius": 4,
       "flexDirection": "row",
-      "height": 48,
+      "height": 40,
       "paddingHorizontal": 8,
     }
   }
@@ -60,7 +60,7 @@ exports[`DrawerItem Renders 1`] = `
           "zIndex": 10,
         },
         Object {
-          "borderRadius": 6,
+          "borderRadius": 4,
         },
       ]
     }

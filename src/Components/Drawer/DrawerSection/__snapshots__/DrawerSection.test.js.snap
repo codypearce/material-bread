@@ -1,12 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DrawerSection Renders 1`] = `
-<View>
+<View
+  style={
+    Array [
+      undefined,
+      Object {
+        "paddingHorizontal": 8,
+      },
+    ]
+  }
+>
   <View
     style={
       Object {
         "paddingBottom": 8,
-        "paddingHorizontal": 8,
         "paddingTop": 14,
       }
     }

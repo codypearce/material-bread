@@ -4,7 +4,7 @@ exports[`DrawerHeader Renders 1`] = `
 <View
   style={
     Object {
-      "borderBottomColor": "grey",
+      "borderBottomColor": "rgba(0,0,0,.12)",
       "borderBottomWidth": 0.5,
       "paddingHorizontal": 16,
       "paddingVertical": 18,

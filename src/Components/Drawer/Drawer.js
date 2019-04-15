@@ -198,7 +198,6 @@ class Drawer extends PureComponent {
 
     const isPush = type == 'push';
     const isPermanent = type == 'permanent';
-    const offsetDrawerShadow = isPermanent ? 0 : 5;
 
     if (isPush || isPermanent) {
       return (
@@ -206,11 +205,12 @@ class Drawer extends PureComponent {
           {appbar ? this._renderAppBar() : null}
           <Animated.View
             style={{
-              left: open ? -offsetDrawerShadow : 0,
               transform: [{ translateX: leftOffset }],
               flex: 1,
               width:
-                open && Platform.OS == 'web' ? 'calc(100% - 240px)' : '100%',
+                open && Platform.OS == 'web' && isPermanent
+                  ? 'calc(100% - 240px)'
+                  : '100%',
             }}>
             {children}
           </Animated.View>

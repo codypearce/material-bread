@@ -3,8 +3,17 @@ import ComponentPageLayout from '../../../components/ComponentPage/ComponentPage
 import MainDemo from './MainDemo';
 import Usage from './Usage';
 import Props from './Props';
+import Demos from './Demos';
 
-const sections = [{ name: 'Component' }, { name: 'Usage' }, { name: 'Props' }];
+const sections = [
+  { name: 'Component' },
+  { name: 'Usage' },
+  { name: 'Props' },
+  { name: 'Demos' },
+  { name: 'clipped', sub: true },
+  { name: 'push', sub: true },
+  { name: 'permanent', sub: true },
+];
 
 export default class DrawerPage extends Component {
   render() {
@@ -22,6 +31,7 @@ export default class DrawerPage extends Component {
           <MainDemo pageHref={'/components/drawer'} />
           <Usage pageHref={'/components/drawer'} />
           <Props pageHref={'/components/drawer'} />
+          <Demos pageHref={'/components/drawer'} />
         </ComponentPageLayout>
       </div>
     );

@@ -9,8 +9,10 @@ exports[`Drawer Renders 1`] = `
         "flex": 1,
       },
       Object {
+        "overflow": "hidden",
         "width": 750,
       },
+      undefined,
     ]
   }
 >
