@@ -192,14 +192,16 @@ class Drawer extends PureComponent {
 
     if (type == 'push') {
       return (
-        <Animated.View
-          style={{
-            left: open ? -offsetDrawerShadow : 0,
-            transform: [{ translateX: leftOffset }],
-          }}>
+        <View>
           {appbar ? this._renderAppBar() : null}
-          <View>{children}</View>
-        </Animated.View>
+          <Animated.View
+            style={{
+              left: open ? -offsetDrawerShadow : 0,
+              transform: [{ translateX: leftOffset }],
+            }}>
+            {children}
+          </Animated.View>
+        </View>
       );
     }
     return (
@@ -228,6 +230,9 @@ class Drawer extends PureComponent {
               height: screenHeight,
               transform: [{ translateX: leftOffset }],
               zIndex: 100,
+              borderRightWidth: 1,
+              borderRightColor: 'rgba(0,0,0,.12)',
+              borderRightStyle: 'solid',
               ...shadowImplemented,
             },
           ]}>
