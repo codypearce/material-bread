@@ -12,6 +12,7 @@ class ListExpanded extends Component {
     children: PropTypes.node,
     style: PropTypes.object,
     title: PropTypes.string,
+    titleStyle: PropTypes.object,
   };
 
   state = {
@@ -81,17 +82,17 @@ class ListExpanded extends Component {
   }
 
   render() {
-    const { title, style } = this.props;
+    const { title, style, titleStyle } = this.props;
     const { isOpen } = this.state;
 
     return (
       <View>
-        <Ripple style={[styles.container, style]} onPress={this.toggleMenu}>
-          <Text style={styles.title}>{title}</Text>
-          <Icon
-            name={isOpen ? 'keyboard-arrow-up' : 'keyboard-arrow-down'}
-            size={24}
-          />
+        <Ripple
+          style={[styles.container, style]}
+          onPress={this.toggleMenu}
+          rippleDuration={100}>
+          <Text style={[styles.title, titleStyle]}>{title}</Text>
+          <Icon name={isOpen ? 'expand-less' : 'expand-more'} size={24} />
         </Ripple>
         {this.renderExpandedContent()}
       </View>
@@ -105,10 +106,11 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
 
   title: {
-    fontSize: 16,
+    fontSize: 14,
   },
 });
 

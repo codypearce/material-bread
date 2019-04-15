@@ -22,7 +22,6 @@ function Logo({ animated, width, height, style }) {
           fontFamily="Open Sans"
           letterSpacing="0"
           wordSpacing="0"
-          whiteSpace="normal"
           fillRule="evenodd">
           <path
             d="m 154.92453,347.02574 -7.48868,-4.9532 -15.7818,-9.9066 -31.56367,-19.8132 -74.9862,23.0455 -24.31982983,68.45971 23.30650983,66.5185 0,115.6424 69.56348,0 34.78159,0 17.39095,0 9.09765,0 z"

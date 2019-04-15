@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Logo } from '@components';
+import { BodyText } from '../../../../src';
 
 export default class DrawerContent extends React.PureComponent {
   render() {
@@ -8,8 +9,8 @@ export default class DrawerContent extends React.PureComponent {
       <div style={styles.container}>
         <Logo width={77} height={64} style={{ width: 77 }} />
         <div style={styles.right}>
-          <p style={styles.title}>Material Bread</p>
-          <span style={styles.version}>Alpha</span>
+          <BodyText style={styles.title}>Material Bread</BodyText>
+          <BodyText style={styles.version}>Alpha</BodyText>
         </div>
       </div>
     );
@@ -32,7 +33,7 @@ const styles = {
   },
   title: {
     color: 'rgba(255,255,255,1)',
-    fontWeigth: 600,
+    fontWeight: '300',
     margin: 0,
     letterSpacing: 1,
   },
@@ -40,6 +41,6 @@ const styles = {
     margin: 0,
     color: 'rgba(255,255,255,.7)',
     fontSize: 12,
-    display: 'inline-block',
+    marginTop: 6,
   },
 };

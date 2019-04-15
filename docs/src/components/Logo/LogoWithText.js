@@ -38,7 +38,7 @@ const styles = {
 };
 
 LogoWithText.propTypes = {
-  subtitle: PropTypes.string,
+  subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   style: PropTypes.object,
 };
 

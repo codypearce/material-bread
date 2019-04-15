@@ -81,9 +81,7 @@ module.exports = {
         name: 'pages',
       },
     },
-    {
-      resolve: `gatsby-plugin-material-ui`,
-    },
+
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

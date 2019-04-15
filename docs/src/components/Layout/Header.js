@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Image } from 'react-native';
-import { IconButton, Ripple } from '../../../../src';
 
+import { IconButton, Ripple } from '../../../../src';
+import github from '../../assets/github.svg';
 import { Appbar } from '../../../../src';
 class Header extends Component {
   constructor(props) {
@@ -49,13 +49,7 @@ class Header extends Component {
                 alignItems: 'center',
                 justifyContent: 'center',
               }}>
-              <Image
-                style={{ width: 28, height: 28 }}
-                source={{
-                  uri:
-                    'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
-                }}
-              />
+              <img style={{ width: 28, height: 28 }} src={github} />
             </Ripple>
           </a>,
         ]}

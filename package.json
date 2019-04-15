@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "color": "^3.1.0",
-    "react-native-vector-icons": "^6.2.0"
+    "react-native-vector-icons": "^6.2.0",
+    "react-tooltip": "^3.10.0"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^5.0.6",

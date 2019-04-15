@@ -141,6 +141,9 @@ export default class Ripple extends PureComponent {
       this.animationWaitingForEnd = true;
       return;
     }
+    if ('function' === typeof this.props.onAnimationEnd) {
+      this.props.onAnimationEnd(event);
+    }
 
     this.forceAnimationEnd();
   }

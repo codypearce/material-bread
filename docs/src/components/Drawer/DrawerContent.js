@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 
 import { ScrollView } from 'react-native';
 
-import { withStyles } from '@material-ui/core/styles';
-import { List } from '@material-ui/core';
 import DrawerItem from './DrawerItem';
 import DrawerItemExpand from './DrawerItemExpand';
 import {
@@ -16,14 +14,7 @@ import {
 } from '../../navigation';
 import DrawerHeader from './DrawerHeader';
 
-const styles = theme => ({
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing.unit * 3,
-  },
-});
-
-class DrawerContent extends React.PureComponent {
+export default class DrawerContent extends React.PureComponent {
   static propTypes = {
     posts: PropTypes.array,
   };
@@ -89,70 +80,66 @@ class DrawerContent extends React.PureComponent {
       <ScrollView>
         <DrawerHeader />
         <div>
-          <List>
-            <DrawerItem
-              label="Home"
-              link="/"
-              selected={itemSelected == 'home'}
-              selectItem={this.selectItem}
-            />
+          <DrawerItem
+            label="Home"
+            link="/"
+            selected={itemSelected == 'home'}
+            selectItem={this.selectItem}
+          />
 
-            <DrawerItemExpand
-              label="Getting Started"
-              reactPageMenuItems={gettingStartedPages}
-              itemSelected={itemSelected}
-              selectItem={this.selectItem}
-              selectSection={this.selectSection}
-              sectionExpanded={sectionExpanded == 'getting-started'}
-            />
-            <DrawerItemExpand
-              label="Style"
-              reactPageMenuItems={stylePages}
-              selectItem={this.selectItem}
-              itemSelected={itemSelected}
-              selectSection={this.selectSection}
-              sectionExpanded={sectionExpanded == 'style'}
-            />
-            <DrawerItemExpand
-              label="Components"
-              reactPageMenuItems={componentPages}
-              selectItem={this.selectItem}
-              itemSelected={itemSelected}
-              selectSection={this.selectSection}
-              sectionExpanded={sectionExpanded == 'components'}
-            />
-            <DrawerItemExpand
-              label="Utils"
-              reactPageMenuItems={utilsPages}
-              selectItem={this.selectItem}
-              itemSelected={itemSelected}
-              selectSection={this.selectSection}
-              sectionExpanded={sectionExpanded == 'utils'}
-            />
-            <DrawerItem
-              label="Storybook"
-              link="https://codypearce.github.io/material-bread/"
-              selectItem={this.selectItem}
-            />
-            <DrawerItemExpand
-              label="Contributing"
-              reactPageMenuItems={contributingPages}
-              selectItem={this.selectItem}
-              itemSelected={itemSelected}
-              selectSection={this.selectSection}
-              sectionExpanded={sectionExpanded == 'contributing'}
-            />
-            <DrawerItem
-              label="About"
-              link="/about"
-              selectItem={this.selectItem}
-              selected={itemSelected == 'about'}
-            />
-          </List>
+          <DrawerItemExpand
+            label="Getting Started"
+            reactPageMenuItems={gettingStartedPages}
+            itemSelected={itemSelected}
+            selectItem={this.selectItem}
+            selectSection={this.selectSection}
+            sectionExpanded={sectionExpanded == 'getting-started'}
+          />
+          <DrawerItemExpand
+            label="Style"
+            reactPageMenuItems={stylePages}
+            selectItem={this.selectItem}
+            itemSelected={itemSelected}
+            selectSection={this.selectSection}
+            sectionExpanded={sectionExpanded == 'style'}
+          />
+          <DrawerItemExpand
+            label="Components"
+            reactPageMenuItems={componentPages}
+            selectItem={this.selectItem}
+            itemSelected={itemSelected}
+            selectSection={this.selectSection}
+            sectionExpanded={sectionExpanded == 'components'}
+          />
+          <DrawerItemExpand
+            label="Utils"
+            reactPageMenuItems={utilsPages}
+            selectItem={this.selectItem}
+            itemSelected={itemSelected}
+            selectSection={this.selectSection}
+            sectionExpanded={sectionExpanded == 'utils'}
+          />
+          <DrawerItem
+            label="Storybook"
+            link="https://codypearce.github.io/material-bread/"
+            selectItem={this.selectItem}
+          />
+          <DrawerItemExpand
+            label="Contributing"
+            reactPageMenuItems={contributingPages}
+            selectItem={this.selectItem}
+            itemSelected={itemSelected}
+            selectSection={this.selectSection}
+            sectionExpanded={sectionExpanded == 'contributing'}
+          />
+          <DrawerItem
+            label="About"
+            link="/about"
+            selectItem={this.selectItem}
+            selected={itemSelected == 'about'}
+          />
         </div>
       </ScrollView>
     );
   }
 }
-
-export default withStyles(styles, { withTheme: true })(DrawerContent);

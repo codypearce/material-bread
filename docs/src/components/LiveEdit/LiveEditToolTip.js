@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Tooltip } from '@material-ui/core';
-
+import ReactTooltip from 'react-tooltip';
 class LiveEditToolTip extends Component {
   constructor(props) {
     super(props);
@@ -18,23 +17,22 @@ class LiveEditToolTip extends Component {
         style={{
           position: 'relative',
         }}>
-        <Tooltip
-          title="You can edit/add props, elements, or components. Errors will show below."
-          placement={'top'}>
-          <span
-            style={{
-              color: '#00a2b1',
-              position: 'absolute',
-              right: 0,
-              padding: 10,
-              marginRight: 8,
-              fontSize: 12,
-              cursor: 'pointer',
-            }}>
-            Live Editing
-          </span>
-        </Tooltip>
-
+        <span
+          data-tip={
+            'You can edit/add props, elements, or components. Errors will show below.'
+          }
+          style={{
+            color: '#00a2b1',
+            position: 'absolute',
+            right: 0,
+            padding: 10,
+            marginRight: 8,
+            fontSize: 12,
+            cursor: 'pointer',
+          }}>
+          Live Editing
+        </span>
+        <ReactTooltip place={'top'} effect={'solid'} />
         {children}
       </div>
     );

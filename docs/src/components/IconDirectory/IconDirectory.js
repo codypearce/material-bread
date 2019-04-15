@@ -3,7 +3,7 @@ import icons from 'react-native-vector-icons/glyphmaps/MaterialIcons.json';
 import IconBlock from './IconBlock';
 
 import { FixedSizeGrid as Grid } from 'react-window';
-import { SearchField } from '../../../../src/index';
+import { Searchfield } from '../../../../src/index';
 
 export default class IconDirectory extends Component {
   constructor(props) {
@@ -53,7 +53,7 @@ export default class IconDirectory extends Component {
     }
     return (
       <div style={styles.container}>
-        <SearchField
+        <Searchfield
           color={'rgb(38, 50, 56)'}
           value={this.state.search}
           onChangeText={this._handleInputChange}

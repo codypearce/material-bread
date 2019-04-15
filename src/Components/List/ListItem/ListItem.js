@@ -9,17 +9,19 @@ class ListItem extends Component {
     style: PropTypes.object,
     onPress: PropTypes.func,
     disabled: PropTypes.bool,
+    selected: PropTypes.bool,
   };
   render() {
-    const { style, onPress, disabled } = this.props;
+    const { style, onPress, disabled, selected } = this.props;
     return (
       <Ripple
-        onPress={onPress}
+        onAnimationEnd={onPress}
+        rippleDuration={200}
         disabled={disabled}
         rippleColor={'rgba(0,0,0,.8)'}
         style={[
           {
-            backgroundColor: '#fff',
+            backgroundColor: selected ? '#eee' : '#fff',
             flexDirection: 'row',
             alignItems: 'center',
             paddingHorizontal: 16,

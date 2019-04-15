@@ -11,10 +11,10 @@ class ListItemText extends Component {
     secondary: PropTypes.string,
   };
   render() {
-    const { primary, secondary } = this.props;
+    const { primary, secondary, style } = this.props;
     return (
       <View>
-        <Text style={styles.primary}>{primary}</Text>
+        <Text style={[styles.primary, style]}>{primary}</Text>
         {secondary ? <Text style={styles.secondary}>{secondary}</Text> : null}
       </View>
     );
@@ -24,11 +24,11 @@ class ListItemText extends Component {
 const styles = StyleSheet.create({
   primary: {
     color: 'rgba(0, 0, 0, 0.87)',
-    fontSize: 16,
+    fontSize: 14,
   },
   secondary: {
     color: 'rgba(0, 0, 0, 0.54)',
-    fontSize: 14,
+    fontSize: 12,
   },
 });
 
