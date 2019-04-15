@@ -26,7 +26,7 @@ class Section extends Component {
   }
 
   render() {
-    const { text, img, href } = this.props;
+    const { text, img, href, imgWidth, width, height } = this.props;
     const { backgroundColor } = this.state;
     return (
       <Hoverable
@@ -41,13 +41,16 @@ class Section extends Component {
               justifyContent: 'center',
               marginLeft: 16,
               marginRight: 16,
-              height: 150,
-              width: 150,
+              height: height ? height : 150,
+              width: width ? width : 150,
               backgroundColor,
               borderRadius: 10,
             }}
             rippleContainerBorderRadius={10}>
-            <img src={img} style={{ width: 100, margin: 'auto' }} />
+            <img
+              src={img}
+              style={{ width: imgWidth ? imgWidth : 100, margin: 'auto' }}
+            />
             <h4
               style={{
                 margin: 0,

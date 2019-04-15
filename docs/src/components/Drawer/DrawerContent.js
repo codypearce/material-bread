@@ -124,6 +124,12 @@ export default class DrawerContent extends React.PureComponent {
             link="https://codypearce.github.io/material-bread/"
             selectItem={this.selectItem}
           />
+          <DrawerItem
+            label="Showcase"
+            link="/showcase"
+            selectItem={this.selectItem}
+            selected={itemSelected == 'showcase'}
+          />
           <DrawerItemExpand
             label="Contributing"
             reactPageMenuItems={contributingPages}
@@ -132,6 +138,7 @@ export default class DrawerContent extends React.PureComponent {
             selectSection={this.selectSection}
             sectionExpanded={sectionExpanded == 'contributing'}
           />
+
           <DrawerItem
             label="About"
             link="/about"
