@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 
 import { Helmet } from 'react-helmet';
 
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { withStyles } from '@material-ui/core/styles';
 import '../../../node_modules/flexboxgrid/css/flexboxgrid.min.css';
 import '../../styles/global/global.css';
 import Header from './Header';
@@ -16,9 +14,8 @@ import DrawerContent from '../Drawer/DrawerContent';
 require('prismjs/components/prism-jsx.min');
 require('prismjs/themes/prism-tomorrow.css');
 
-class PageLayout extends Component {
+export default class PageLayout extends Component {
   static propTypes = {
-    classes: PropTypes.object,
     theme: PropTypes.object,
     children: PropTypes.node,
     posts: PropTypes.array,
@@ -27,7 +24,6 @@ class PageLayout extends Component {
   state = {
     mobileOpen: false,
     isTemporary: true,
-    drawerType: 'temporary',
     windowWidth: 0,
   };
 
@@ -100,11 +96,11 @@ class PageLayout extends Component {
   };
 
   render() {
-    const { classes, posts, children } = this.props;
+    const { posts, children } = this.props;
     const { isTemporary } = this.state;
 
     return (
-      <div className={classes.root}>
+      <div style={{ width: '100%' }}>
         <Helmet>
           <title>Material Bread</title>
           <meta charSet="utf-8" />
@@ -131,14 +127,13 @@ class PageLayout extends Component {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Helmet>
 
-        <CssBaseline />
-
         <div>
           <Drawer
             open={this.state.mobileOpen}
             onClose={this.handleDrawerToggle}
             type={isTemporary ? 'modal' : 'permanent'}
-            drawerContent={<DrawerContent posts={posts} />}>
+            drawerContent={<DrawerContent posts={posts} />}
+            position={'fixed'}>
             <Header
               handleDrawerToggle={this.handleDrawerToggle}
               isTemporary={isTemporary}
@@ -155,13 +150,3 @@ class PageLayout extends Component {
     );
   }
 }
-
-const styles = theme => ({
-  root: {
-    width: '100%',
-  },
-  toolbar: theme.mixins.toolbar,
-  content: {},
-});
-
-export default withStyles(styles, { withTheme: true })(PageLayout);

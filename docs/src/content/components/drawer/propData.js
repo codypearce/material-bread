@@ -15,6 +15,12 @@ const propData = [
   ['contentContainerStyle', 'Styles wrapper around page content', 'object', ''],
   ['drawerContent', 'Components displayed inside the drawer', 'node', ''],
   ['drawerStyle', 'Styles drawer', 'object', ''],
+  [
+    'fullHeight',
+    'Drawer takes up full height of the page so conent is not scrolled',
+    'bool',
+    'false',
+  ],
   ['onClose', 'Callback when clicking outside of drawer', 'func', ''],
   [
     'pageHeight',
@@ -29,8 +35,9 @@ const propData = [
     'number',
     'ScreenWidth',
   ],
+  ['position', 'Position of drawer', 'string', 'absolute'],
   ['open', 'Whether drawer is shown or hidden', 'bool', 'false'],
-  ['style', 'Styles scroll element', 'object', ''],
+  ['style', 'Styles container element', 'object', ''],
   ['scrim', 'Whether scrim is shown', 'bool', 'true'],
   ['scrimColor', 'Color of scrim', 'object', 'black'],
   ['scrimOpacity', 'The ending opacity for the scim', 'number', '.4'],
@@ -43,7 +50,7 @@ const propData = [
 
   [
     'width',
-    'Specific drawer width in pixels, will overrid widthPercentage',
+    'Specific drawer width in pixels, will override widthPercentage',
     'number',
     '240',
   ],

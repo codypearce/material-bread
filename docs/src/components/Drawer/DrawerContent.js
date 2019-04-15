@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import { ScrollView } from 'react-native';
+
 import { withStyles } from '@material-ui/core/styles';
 import { List } from '@material-ui/core';
 import DrawerItem from './DrawerItem';
@@ -83,7 +86,7 @@ class DrawerContent extends React.PureComponent {
     const { itemSelected, sectionExpanded } = this.state;
 
     return (
-      <div>
+      <ScrollView>
         <DrawerHeader />
         <div>
           <List>
@@ -147,7 +150,7 @@ class DrawerContent extends React.PureComponent {
             />
           </List>
         </div>
-      </div>
+      </ScrollView>
     );
   }
 }
