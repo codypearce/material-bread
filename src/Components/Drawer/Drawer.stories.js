@@ -53,13 +53,13 @@ const PageContent = () => {
   );
 };
 
-const AppbarContent = (isOpen, state) => {
+const AppbarContent = isOpen => {
   return (
     <Appbar
       barType={'normal'}
       title={'Page Title'}
       navigationType={'menu'}
-      onNavigation={() => store.set({ isOpen: !state.isOpen })}
+      onNavigation={() => store.set({ isOpen: !isOpen.isOpen })}
       actionItems={[{ name: 'search' }, { name: 'more-vert' }]}
     />
   );
@@ -111,7 +111,7 @@ export default storiesOf('Components|Drawer', module)
               onClose={() => store.set({ isOpen: false })}
               animationTime={250}>
               <View style={styles.body}>
-                <AppbarContent isOpen={state.isOpen} state={state} />
+                <AppbarContent isOpen={state.isOpen} />
                 <PageContent />
               </View>
             </Drawer>
@@ -132,7 +132,7 @@ export default storiesOf('Components|Drawer', module)
               pageHeight={500}
               drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
-              appbar={<AppbarContent isOpen={state.isOpen} state={state} />}>
+              appbar={<AppbarContent isOpen={state.isOpen} />}>
               <PageContent />
             </Drawer>
           </View>
@@ -154,7 +154,7 @@ export default storiesOf('Components|Drawer', module)
               onClose={() => store.set({ isOpen: false })}
               scrim={false}>
               <View style={styles.body}>
-                <AppbarContent isOpen={state.isOpen} state={state} />
+                <AppbarContent isOpen={state.isOpen} />
                 <PageContent />
               </View>
             </Drawer>
@@ -178,7 +178,7 @@ export default storiesOf('Components|Drawer', module)
               scrimColor={'#E91E63'}
               scrimOpacity={0.2}>
               <View style={styles.body}>
-                <AppbarContent isOpen={state.isOpen} state={state} />
+                <AppbarContent isOpen={state.isOpen} />
                 <PageContent />
               </View>
             </Drawer>
@@ -231,7 +231,7 @@ export default storiesOf('Components|Drawer', module)
               scrimColor={'#E91E63'}
               scrimOpacity={0.2}>
               <View style={styles.body}>
-                <AppbarContent isOpen={state.isOpen} state={state} />
+                <AppbarContent isOpen={state.isOpen} />
                 <PageContent />
               </View>
             </Drawer>
@@ -254,7 +254,7 @@ export default storiesOf('Components|Drawer', module)
               onClose={() => store.set({ isOpen: false })}
               type={'push'}>
               <View style={styles.body}>
-                <AppbarContent isOpen={state.isOpen} state={state} />
+                <AppbarContent isOpen={state.isOpen} />
                 <PageContent />
               </View>
             </Drawer>
@@ -276,7 +276,7 @@ export default storiesOf('Components|Drawer', module)
               drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
               type={'push'}
-              appbar={<AppbarContent isOpen={state.isOpen} state={state} />}>
+              appbar={<AppbarContent isOpen={state.isOpen} />}>
               <View style={styles.body}>
                 <PageContent />
               </View>

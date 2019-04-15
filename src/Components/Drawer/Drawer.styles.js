@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     zIndex: 100,
     borderRightWidth: 1,
     borderRightColor: 'rgba(0,0,0,.12)',
-    borderRightStyle: 'solid',
+    borderStyle: 'solid',
     backgroundColor: 'white',
   },
 });

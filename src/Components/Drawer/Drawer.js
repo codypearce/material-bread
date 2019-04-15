@@ -202,7 +202,8 @@ class Drawer extends PureComponent {
               left: open ? -offsetDrawerShadow : 0,
               transform: [{ translateX: leftOffset }],
               flex: 1,
-              width: open ? 'calc(100% - 240px)' : '100%',
+              width:
+                open && Platform.OS == 'web' ? 'calc(100% - 240px)' : '100%',
             }}>
             {children}
           </Animated.View>
