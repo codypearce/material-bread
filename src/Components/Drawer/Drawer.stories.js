@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Platform, Dimensions } from 'react-native';
 
 import {
   Drawer,
@@ -23,16 +23,17 @@ const store = new Store({
 storiesOf('Components|Drawer', module)
   .addParameters({ jest: ['Drawer'] })
   .add('Simple', () => (
-    <Container>
+    <Container scroll style={{ padding: 0 }}>
       <Header title={'Drawer'} />
-
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <View style={styles.container}>
             <Drawer
               open={state.isOpen}
-              pageWidth={600}
-              pageHeight={600}
+              pageWidth={
+                Platform.OS == 'web' ? 600 : Dimensions.get('window').width
+              }
+              pageHeight={500}
               drawerContent={
                 <View>
                   <DrawerHeader title={'Jon Snow'} subtitle={'Knows nothing'} />
@@ -52,11 +53,12 @@ storiesOf('Components|Drawer', module)
                   name="menu"
                   onPress={() => store.set({ isOpen: !state.isOpen })}
                 />
-                <View style={{ marginTop: 40, alignItems: 'center' }}>
+                <View style={{ alignItems: 'center' }}>
                   <Heading type={4} style={{ marginBottom: 20 }}>
                     This is a page
                   </Heading>
-                  <BodyText>Lorem ispusm</BodyText>
+                  <BodyText>Click the menu button to open the drawer</BodyText>
+                  <BodyText>Click outside the drawer to close it</BodyText>
                 </View>
               </View>
             </Drawer>
@@ -68,23 +70,15 @@ storiesOf('Components|Drawer', module)
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 30,
-    zIndex: 0,
-    width: 600,
-    height: 1000,
+    zIndex: 1,
+    width: Platform.OS == 'web' ? 600 : Dimensions.get('window').width,
+    height: 500,
     overflow: 'hidden',
     position: 'relative',
   },
-  animatedBox: {
-    flex: 1,
-    backgroundColor: '#38C8EC',
-    padding: 10,
-  },
   body: {
-    flex: 1,
+    backgroundColor: '#eee',
+    width: Platform.OS == 'web' ? 600 : Dimensions.get('window').width,
+    height: 500,
   },
 });
