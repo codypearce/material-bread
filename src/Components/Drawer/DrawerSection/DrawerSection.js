@@ -9,18 +9,29 @@ class DrawerSection extends Component {
   static propTypes = {
     children: PropTypes.node,
     style: PropTypes.object,
-    subheader: PropTypes.string,
+    label: PropTypes.string,
     topDivider: PropTypes.bool,
     bottomDivider: PropTypes.bool,
+    fullWidth: PropTypes.bool,
   };
 
   render() {
-    const { children, subheader, topDivider, bottomDivider } = this.props;
+    const {
+      children,
+      label,
+      topDivider,
+      bottomDivider,
+      fullWidth,
+    } = this.props;
 
     return (
-      <View style={styles.drawerSection}>
+      <View
+        style={[
+          styles.drawerSection,
+          { paddingHorizontal: fullWidth ? 0 : 8 },
+        ]}>
         {topDivider ? <Divider /> : null}
-        {subheader ? <Text>{subheader}</Text> : null}
+        {label ? <Text>{label}</Text> : null}
         <View style={styles.content}>{children}</View>
         {bottomDivider ? <Divider /> : null}
       </View>

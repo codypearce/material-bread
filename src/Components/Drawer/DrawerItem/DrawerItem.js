@@ -14,6 +14,7 @@ class DrawerItem extends Component {
     icon: PropTypes.string,
     onPress: PropTypes.func,
     active: PropTypes.bool,
+    fullWidth: PropTypes.bool,
   };
 
   render() {
@@ -28,7 +29,7 @@ class DrawerItem extends Component {
           },
         ]}
         onPress={onPress}
-        rippleContainerBorderRadius={6}>
+        rippleContainerBorderRadius={4}>
         {icon ? (
           <Icon name={icon} size={20} color={active ? '#1e88e5' : 'grey'} />
         ) : null}

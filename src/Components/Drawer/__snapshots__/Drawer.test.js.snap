@@ -18,6 +18,9 @@ exports[`Drawer Renders 1`] = `
     style={
       Object {
         "backgroundColor": "white",
+        "borderRightColor": "rgba(0,0,0,.12)",
+        "borderRightWidth": 1,
+        "borderStyle": "solid",
         "height": 1334,
         "left": -245,
         "position": "absolute",
@@ -47,6 +50,7 @@ exports[`Drawer Renders 1`] = `
         "left": 0,
         "opacity": 0,
         "position": "absolute",
+        "top": 0,
         "width": 750,
         "zIndex": 0,
       }
@@ -63,12 +67,12 @@ exports[`Drawer Renders 1`] = `
       style={
         Array [
           Object {
-            "backgroundColor": "black",
             "left": 0,
             "position": "absolute",
             "zIndex": 0,
           },
           Object {
+            "backgroundColor": "black",
             "height": 1334,
             "width": 750,
           },
@@ -76,6 +80,8 @@ exports[`Drawer Renders 1`] = `
       }
     />
   </View>
-  <View />
+  <View>
+    <View />
+  </View>
 </View>
 `;

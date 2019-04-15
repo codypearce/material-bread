@@ -4,8 +4,8 @@ const styles = StyleSheet.create({
   drawerItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    height: 48,
-    borderRadius: 6,
+    height: 40,
+    borderRadius: 4,
     paddingHorizontal: 8,
   },
   text: {
