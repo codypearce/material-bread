@@ -7,7 +7,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { withStyles } from '@material-ui/core/styles';
 import '../../../node_modules/flexboxgrid/css/flexboxgrid.min.css';
 import '../../styles/global/global.css';
-// import Drawer from '../Drawer/Drawer';
 import Header from './Header';
 import Prism from 'prismjs';
 import favicon from '../../assets/favicon.ico';
@@ -104,11 +103,6 @@ class PageLayout extends Component {
     const { classes, posts, children } = this.props;
     const { isTemporary } = this.state;
 
-    let drawerType = 'permanent';
-    if (isTemporary) {
-      drawerType = 'temporary';
-    }
-
     return (
       <div className={classes.root}>
         <Helmet>
@@ -144,13 +138,11 @@ class PageLayout extends Component {
             open={this.state.mobileOpen}
             onClose={this.handleDrawerToggle}
             type={isTemporary ? 'modal' : 'permanent'}
-            drawerContent={<DrawerContent posts={posts} />}
-            appbar={
-              <Header
-                handleDrawerToggle={this.handleDrawerToggle}
-                isTemporary={isTemporary}
-              />
-            }>
+            drawerContent={<DrawerContent posts={posts} />}>
+            <Header
+              handleDrawerToggle={this.handleDrawerToggle}
+              isTemporary={isTemporary}
+            />
             <main
               className={`${
                 isTemporary ? 'main--temporaryDrawer' : 'main--permanentDrawer'

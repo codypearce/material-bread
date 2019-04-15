@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 
-import { Button } from '@material-ui/core';
 import Prism from 'prismjs';
-import { LogoWithText, CodeBlock, PlatformButton } from '@components';
+import { LogoWithText, PlatformButton } from '@components';
 import browser from '../assets/browser.svg';
 import iphone from '../assets/iphone.svg';
 import imac from '../assets/imac.svg';
-import { Ripple, Hoverable } from '../../../src';
 
 class Index extends Component {
   componentDidMount() {

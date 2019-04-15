@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { IconButton, Ripple } from '../../../../src';
 
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import Github from '../Icons/Github';
-
+import { Appbar } from '../../../../src';
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -19,24 +17,27 @@ class Header extends Component {
 
   render() {
     const { handleDrawerToggle, isTemporary } = this.props;
-    let backgroundColor = isTemporary ? '' : 'transparent';
+    let backgroundColor = isTemporary ? '#eee' : 'transparent';
 
     return (
-      <AppBar
-        color="default"
+      <Appbar
+        position={'fixed'}
+        color={backgroundColor}
         style={{
-          backgroundColor,
           boxShadow: 'none',
-        }}>
-        <Toolbar>
+          zIndex: 10,
+        }}
+        navigationIcon={
           <IconButton
-            color={'263238'}
+            color={'#263238'}
             size={28}
             name={'menu'}
             onPress={handleDrawerToggle}
           />
-          <div style={{ flexGrow: 1 }} />
+        }
+        actionItems={[
           <a
+            key={1}
             href={'https://github.com/codypearce/material-bread'}
             style={{ color: 'black' }}>
             <Ripple
@@ -50,9 +51,9 @@ class Header extends Component {
               }}>
               <Github />
             </Ripple>
-          </a>
-        </Toolbar>
-      </AppBar>
+          </a>,
+        ]}
+      />
     );
   }
 }

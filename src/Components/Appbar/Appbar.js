@@ -200,6 +200,7 @@ class Appbar extends Component {
           styles.appbar,
 
           {
+            width: '100%',
             backgroundColor: backgroundColor,
             height: this.appbarHeight(),
             padding: barType == 'dense' ? 12 : 16,
