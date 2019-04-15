@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+
 const styles = StyleSheet.create({
   fullWidthContainer: {
     flex: 1,
@@ -17,7 +18,10 @@ const styles = StyleSheet.create({
   },
   drawer: {
     position: 'absolute',
-
+    zIndex: 100,
+    borderRightWidth: 1,
+    borderRightColor: 'rgba(0,0,0,.12)',
+    borderRightStyle: 'solid',
     backgroundColor: 'white',
   },
 });

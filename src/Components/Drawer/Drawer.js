@@ -188,9 +188,12 @@ class Drawer extends PureComponent {
   _renderAppContent() {
     const { children, appbar, type, open } = this.props;
     const { leftOffset } = this.state;
-    const offsetDrawerShadow = 5;
 
-    if (type == 'push') {
+    const isPush = type == 'push';
+    const isPermanent = type == 'permanent';
+    const offsetDrawerShadow = isPermanent ? 0 : 5;
+
+    if (isPush || isPermanent) {
       return (
         <View>
           {appbar ? this._renderAppBar() : null}
@@ -198,6 +201,8 @@ class Drawer extends PureComponent {
             style={{
               left: open ? -offsetDrawerShadow : 0,
               transform: [{ translateX: leftOffset }],
+              flex: 1,
+              width: open ? 'calc(100% - 240px)' : '100%',
             }}>
             {children}
           </Animated.View>
@@ -216,8 +221,12 @@ class Drawer extends PureComponent {
     const { drawerContent, type } = this.props;
     const { drawerWidth, screenHeight, leftOffset, appbarHeight } = this.state;
 
-    const offsetDrawerShadow = 5;
-    const shadowImplemented = type == 'push' ? shadow(0) : shadow(8);
+    const isPush = type == 'push';
+    const isPermanent = type == 'permanent';
+
+    const offsetDrawerShadow = isPermanent ? 0 : 5;
+    const shadowImplemented = isPush || isPermanent ? shadow(0) : shadow(8);
+
     return (
       <Fragment>
         <Animated.View
@@ -229,17 +238,13 @@ class Drawer extends PureComponent {
               top: appbarHeight,
               height: screenHeight,
               transform: [{ translateX: leftOffset }],
-              zIndex: 100,
-              borderRightWidth: 1,
-              borderRightColor: 'rgba(0,0,0,.12)',
-              borderRightStyle: 'solid',
               ...shadowImplemented,
             },
           ]}>
           {drawerContent}
         </Animated.View>
 
-        {this._renderScrim()}
+        {isPermanent ? null : this._renderScrim()}
         {this._renderAppContent()}
       </Fragment>
     );
