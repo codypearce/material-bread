@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import {
   View,
   StyleSheet,
@@ -28,6 +28,43 @@ const store = new Store({
   isOpenPermanent: true,
 });
 
+const DrawerContent = () => {
+  return (
+    <View>
+      <DrawerHeader title={'Jon Snow'} subtitle={'Knows nothing'} />
+      <DrawerSection bottomDivider>
+        <DrawerItem text={'Inbox'} icon={'mail'} active />
+        <DrawerItem text={'Outbox'} icon={'send'} />
+        <DrawerItem text={'Favorites'} icon={'favorite'} />
+      </DrawerSection>
+    </View>
+  );
+};
+
+const PageContent = () => {
+  return (
+    <View style={{ marginTop: 20, alignItems: 'center' }}>
+      <Heading type={4} style={{ marginBottom: 20 }}>
+        This is a page
+      </Heading>
+      <BodyText>Click the menu button to open the drawer</BodyText>
+      <BodyText>Click outside the drawer to close it</BodyText>
+    </View>
+  );
+};
+
+const AppbarContent = (isOpen, state) => {
+  return (
+    <Appbar
+      barType={'normal'}
+      title={'Page Title'}
+      navigationType={'menu'}
+      onNavigation={() => store.set({ isOpen: !state.isOpen })}
+      actionItems={[{ name: 'search' }, { name: 'more-vert' }]}
+    />
+  );
+};
+
 export default storiesOf('Components|Drawer', module)
   .addParameters({ jest: ['Drawer'] })
   .add('Simple', () => (
@@ -42,16 +79,7 @@ export default storiesOf('Components|Drawer', module)
                 Platform.OS == 'web' ? 600 : Dimensions.get('window').width
               }
               pageHeight={500}
-              drawerContent={
-                <View>
-                  <DrawerHeader title={'Jon Snow'} subtitle={'Knows nothing'} />
-                  <DrawerSection bottomDivider>
-                    <DrawerItem text={'Inbox'} icon={'mail'} active />
-                    <DrawerItem text={'Outbox'} icon={'send'} />
-                    <DrawerItem text={'Favorites'} icon={'favorite'} />
-                  </DrawerSection>
-                </View>
-              }
+              drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
               animationTime={250}
               opacity={0.33}>
@@ -61,13 +89,7 @@ export default storiesOf('Components|Drawer', module)
                   name="menu"
                   onPress={() => store.set({ isOpen: !state.isOpen })}
                 />
-                <View style={{ alignItems: 'center' }}>
-                  <Heading type={4} style={{ marginBottom: 20 }}>
-                    This is a page
-                  </Heading>
-                  <BodyText>Click the menu button to open the drawer</BodyText>
-                  <BodyText>Click outside the drawer to close it</BodyText>
-                </View>
+                <PageContent />
               </View>
             </Drawer>
           </View>
@@ -87,34 +109,12 @@ export default storiesOf('Components|Drawer', module)
                 Platform.OS == 'web' ? 600 : Dimensions.get('window').width
               }
               pageHeight={500}
-              drawerContent={
-                <View>
-                  <DrawerHeader title={'Jon Snow'} subtitle={'Knows nothing'} />
-                  <DrawerSection bottomDivider>
-                    <DrawerItem text={'Inbox'} icon={'mail'} active />
-                    <DrawerItem text={'Outbox'} icon={'send'} />
-                    <DrawerItem text={'Favorites'} icon={'favorite'} />
-                  </DrawerSection>
-                </View>
-              }
+              drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
               animationTime={250}>
               <View style={styles.body}>
-                <Appbar
-                  barType={'normal'}
-                  title={'Page Title'}
-                  navigationType={'menu'}
-                  onNavigation={() => store.set({ isOpen: !state.isOpen })}
-                  actionItems={[{ name: 'search' }, { name: 'more-vert' }]}
-                />
-
-                <View style={{ marginTop: 20, alignItems: 'center' }}>
-                  <Heading type={4} style={{ marginBottom: 20 }}>
-                    This is a page
-                  </Heading>
-                  <BodyText>Click the menu button to open the drawer</BodyText>
-                  <BodyText>Click outside the drawer to close it</BodyText>
-                </View>
+                <AppbarContent isOpen={state.isOpen} state={state} />
+                <PageContent />
               </View>
             </Drawer>
           </View>
@@ -134,35 +134,10 @@ export default storiesOf('Components|Drawer', module)
                 Platform.OS == 'web' ? 600 : Dimensions.get('window').width
               }
               pageHeight={500}
-              drawerContent={
-                <View>
-                  <DrawerHeader title={'Jon Snow'} subtitle={'Knows nothing'} />
-                  <DrawerSection bottomDivider>
-                    <DrawerItem text={'Inbox'} icon={'mail'} active />
-                    <DrawerItem text={'Outbox'} icon={'send'} />
-                    <DrawerItem text={'Favorites'} icon={'favorite'} />
-                  </DrawerSection>
-                </View>
-              }
+              drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
-              appbar={
-                <Appbar
-                  barType={'normal'}
-                  title={'Page Title'}
-                  navigationType={'menu'}
-                  onNavigation={() => store.set({ isOpen: !state.isOpen })}
-                  actionItems={[{ name: 'search' }, { name: 'more-vert' }]}
-                />
-              }>
-              <View style={styles.body}>
-                <View style={{ marginTop: 20, alignItems: 'center' }}>
-                  <Heading type={4} style={{ marginBottom: 20 }}>
-                    This is a page
-                  </Heading>
-                  <BodyText>Click the menu button to open the drawer</BodyText>
-                  <BodyText>Click outside the drawer to close it</BodyText>
-                </View>
-              </View>
+              appbar={<AppbarContent isOpen={state.isOpen} state={state} />}>
+              <PageContent />
             </Drawer>
           </View>
         )}
@@ -181,33 +156,12 @@ export default storiesOf('Components|Drawer', module)
                 Platform.OS == 'web' ? 600 : Dimensions.get('window').width
               }
               pageHeight={500}
-              drawerContent={
-                <View>
-                  <DrawerHeader title={'Jon Snow'} subtitle={'Knows nothing'} />
-                  <DrawerSection bottomDivider>
-                    <DrawerItem text={'Inbox'} icon={'mail'} active />
-                    <DrawerItem text={'Outbox'} icon={'send'} />
-                    <DrawerItem text={'Favorites'} icon={'favorite'} />
-                  </DrawerSection>
-                </View>
-              }
+              drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
               scrim={false}>
               <View style={styles.body}>
-                <Appbar
-                  barType={'normal'}
-                  title={'Page Title'}
-                  navigationType={'menu'}
-                  onNavigation={() => store.set({ isOpen: !state.isOpen })}
-                  actionItems={[{ name: 'search' }, { name: 'more-vert' }]}
-                />
-                <View style={{ marginTop: 20, alignItems: 'center' }}>
-                  <Heading type={4} style={{ marginBottom: 20 }}>
-                    This is a page
-                  </Heading>
-                  <BodyText>Click the menu button to open the drawer</BodyText>
-                  <BodyText>Click outside the drawer to close it</BodyText>
-                </View>
+                <AppbarContent isOpen={state.isOpen} state={state} />
+                <PageContent />
               </View>
             </Drawer>
           </View>
@@ -227,34 +181,13 @@ export default storiesOf('Components|Drawer', module)
                 Platform.OS == 'web' ? 600 : Dimensions.get('window').width
               }
               pageHeight={500}
-              drawerContent={
-                <View>
-                  <DrawerHeader title={'Jon Snow'} subtitle={'Knows nothing'} />
-                  <DrawerSection bottomDivider>
-                    <DrawerItem text={'Inbox'} icon={'mail'} active />
-                    <DrawerItem text={'Outbox'} icon={'send'} />
-                    <DrawerItem text={'Favorites'} icon={'favorite'} />
-                  </DrawerSection>
-                </View>
-              }
+              drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
               scrimColor={'#E91E63'}
               scrimOpacity={0.2}>
               <View style={styles.body}>
-                <Appbar
-                  barType={'normal'}
-                  title={'Page Title'}
-                  navigationType={'menu'}
-                  onNavigation={() => store.set({ isOpen: !state.isOpen })}
-                  actionItems={[{ name: 'search' }, { name: 'more-vert' }]}
-                />
-                <View style={{ marginTop: 20, alignItems: 'center' }}>
-                  <Heading type={4} style={{ marginBottom: 20 }}>
-                    This is a page
-                  </Heading>
-                  <BodyText>Click the menu button to open the drawer</BodyText>
-                  <BodyText>Click outside the drawer to close it</BodyText>
-                </View>
+                <AppbarContent isOpen={state.isOpen} state={state} />
+                <PageContent />
               </View>
             </Drawer>
           </View>
@@ -308,20 +241,8 @@ export default storiesOf('Components|Drawer', module)
               scrimColor={'#E91E63'}
               scrimOpacity={0.2}>
               <View style={styles.body}>
-                <Appbar
-                  barType={'normal'}
-                  title={'Page Title'}
-                  navigationType={'menu'}
-                  onNavigation={() => store.set({ isOpen: !state.isOpen })}
-                  actionItems={[{ name: 'search' }, { name: 'more-vert' }]}
-                />
-                <View style={{ marginTop: 20, alignItems: 'center' }}>
-                  <Heading type={4} style={{ marginBottom: 20 }}>
-                    This is a page
-                  </Heading>
-                  <BodyText>Click the menu button to open the drawer</BodyText>
-                  <BodyText>Click outside the drawer to close it</BodyText>
-                </View>
+                <AppbarContent isOpen={state.isOpen} state={state} />
+                <PageContent />
               </View>
             </Drawer>
           </View>
@@ -341,33 +262,12 @@ export default storiesOf('Components|Drawer', module)
                 Platform.OS == 'web' ? 600 : Dimensions.get('window').width
               }
               pageHeight={500}
-              drawerContent={
-                <View>
-                  <DrawerHeader title={'Jon Snow'} subtitle={'Knows nothing'} />
-                  <DrawerSection bottomDivider>
-                    <DrawerItem text={'Inbox'} icon={'mail'} active />
-                    <DrawerItem text={'Outbox'} icon={'send'} />
-                    <DrawerItem text={'Favorites'} icon={'favorite'} />
-                  </DrawerSection>
-                </View>
-              }
+              drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
               type={'push'}>
               <View style={styles.body}>
-                <Appbar
-                  barType={'normal'}
-                  title={'Page Title'}
-                  navigationType={'menu'}
-                  onNavigation={() => store.set({ isOpen: !state.isOpen })}
-                  actionItems={[{ name: 'search' }, { name: 'more-vert' }]}
-                />
-                <View style={{ marginTop: 20, alignItems: 'center' }}>
-                  <Heading type={4} style={{ marginBottom: 20 }}>
-                    This is a page
-                  </Heading>
-                  <BodyText>Click the menu button to open the drawer</BodyText>
-                  <BodyText>Click outside the drawer to close it</BodyText>
-                </View>
+                <AppbarContent isOpen={state.isOpen} state={state} />
+                <PageContent />
               </View>
             </Drawer>
           </View>
@@ -387,34 +287,12 @@ export default storiesOf('Components|Drawer', module)
                 Platform.OS == 'web' ? 600 : Dimensions.get('window').width
               }
               pageHeight={500}
-              drawerContent={
-                <View>
-                  <DrawerHeader title={'Jon Snow'} subtitle={'Knows nothing'} />
-                  <DrawerSection bottomDivider>
-                    <DrawerItem text={'Inbox'} icon={'mail'} active />
-                    <DrawerItem text={'Outbox'} icon={'send'} />
-                    <DrawerItem text={'Favorites'} icon={'favorite'} />
-                  </DrawerSection>
-                </View>
-              }
+              drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
               type={'push'}
-              appbar={
-                <Appbar
-                  barType={'normal'}
-                  title={'Page Title'}
-                  navigationType={'menu'}
-                  onNavigation={() => store.set({ isOpen: !state.isOpen })}
-                  actionItems={[{ name: 'search' }, { name: 'more-vert' }]}
-                />
-              }>
+              appbar={<AppbarContent isOpen={state.isOpen} state={state} />}>
               <View style={styles.body}>
-                <View style={{ marginTop: 20, alignItems: 'center' }}>
-                  <Heading type={4} style={{ marginBottom: 20 }}>
-                    This is a page
-                  </Heading>
-                  <BodyText>This is a permanent drawer</BodyText>
-                </View>
+                <PageContent />
               </View>
             </Drawer>
           </View>
@@ -434,16 +312,7 @@ export default storiesOf('Components|Drawer', module)
                 Platform.OS == 'web' ? 1000 : Dimensions.get('window').width
               }
               pageHeight={500}
-              drawerContent={
-                <View>
-                  <DrawerHeader title={'Jon Snow'} subtitle={'Knows nothing'} />
-                  <DrawerSection bottomDivider>
-                    <DrawerItem text={'Inbox'} icon={'mail'} active />
-                    <DrawerItem text={'Outbox'} icon={'send'} />
-                    <DrawerItem text={'Favorites'} icon={'favorite'} />
-                  </DrawerSection>
-                </View>
-              }
+              drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
               type={'permanent'}>
               <View
@@ -459,13 +328,7 @@ export default storiesOf('Components|Drawer', module)
                   }
                   actionItems={[{ name: 'search' }, { name: 'more-vert' }]}
                 />
-                <View style={{ marginTop: 20, alignItems: 'center' }}>
-                  <Heading type={4} style={{ marginBottom: 20 }}>
-                    This is a page
-                  </Heading>
-                  <BodyText>Click the menu button to open the drawer</BodyText>
-                  <BodyText>Click outside the drawer to close it</BodyText>
-                </View>
+                <PageContent />
               </View>
             </Drawer>
           </View>
@@ -485,16 +348,7 @@ export default storiesOf('Components|Drawer', module)
                 Platform.OS == 'web' ? 1000 : Dimensions.get('window').width
               }
               pageHeight={500}
-              drawerContent={
-                <View>
-                  <DrawerHeader title={'Jon Snow'} subtitle={'Knows nothing'} />
-                  <DrawerSection bottomDivider>
-                    <DrawerItem text={'Inbox'} icon={'mail'} active />
-                    <DrawerItem text={'Outbox'} icon={'send'} />
-                    <DrawerItem text={'Favorites'} icon={'favorite'} />
-                  </DrawerSection>
-                </View>
-              }
+              drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
               type={'permanent'}
               appbar={
@@ -512,13 +366,7 @@ export default storiesOf('Components|Drawer', module)
                 style={{
                   width: '100%',
                 }}>
-                <View style={{ marginTop: 20, alignItems: 'center' }}>
-                  <Heading type={4} style={{ marginBottom: 20 }}>
-                    This is a page
-                  </Heading>
-                  <BodyText>Click the menu button to open the drawer</BodyText>
-                  <BodyText>Click outside the drawer to close it</BodyText>
-                </View>
+                <PageContent />
               </View>
             </Drawer>
           </View>
