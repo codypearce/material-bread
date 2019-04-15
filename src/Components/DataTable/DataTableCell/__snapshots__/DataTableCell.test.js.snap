@@ -14,11 +14,11 @@ exports[`DataTableCell Renders 1`] = `
       Object {
         "alignItems": "center",
         "borderColor": "rgb(224, 224, 224)",
+        "flex": 1,
         "flexDirection": "row",
-        "flexShrink": 1,
-        "height": "100%",
         "minWidth": "auto",
         "paddingHorizontal": 16,
+        "paddingVertical": 4,
       },
       Object {
         "borderLeftWidth": 0,
@@ -34,6 +34,7 @@ exports[`DataTableCell Renders 1`] = `
     style={
       Object {
         "color": "rgba(0,0,0,.87)",
+        "flex": 1,
         "flexShrink": 0,
         "fontSize": 13,
       }

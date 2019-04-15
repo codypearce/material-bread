@@ -12,12 +12,11 @@ exports[`DataTableRow Renders 1`] = `
   style={
     Array [
       Object {
-        "alignItems": "center",
+        "alignItems": "stretch",
         "borderBottomWidth": 0.5,
         "borderStyle": "solid",
         "flex": 1,
         "flexDirection": "row",
-        "height": 48,
         "minHeight": 48,
         "minWidth": "auto",
         "width": "100%",

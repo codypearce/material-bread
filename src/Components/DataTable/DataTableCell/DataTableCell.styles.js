@@ -5,14 +5,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderColor: 'rgb(224, 224, 224)',
     paddingHorizontal: 16,
-    height: '100%',
+    paddingVertical: 4,
     minWidth: 'auto',
-    flexShrink: 1,
+    flex: 1,
   },
   text: {
     fontSize: 13,
     color: 'rgba(0,0,0,.87)',
     flexShrink: 0,
+    flex: 1,
   },
   textHeader: {
     color: 'rgba(0,0,0,.54)',
@@ -22,6 +23,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     alignItems: 'center',
     flexShrink: 0,
+    flex: 1,
   },
 });
 

@@ -35,7 +35,10 @@ class TableCell extends Component {
     } = this.props;
 
     return (
-      <TouchableWithoutFeedback disabled={!onPress} onPress={onPress}>
+      <TouchableWithoutFeedback
+        disabled={!onPress}
+        onPress={onPress}
+        style={{ flex: 1 }}>
         <View
           style={[
             styles.dataTableItem,
