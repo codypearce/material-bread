@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import {
   View,
   StyleSheet,
@@ -65,6 +65,8 @@ const AppbarContent = (isOpen, state) => {
   );
 };
 
+const pageWidth = Platform.OS == 'web' ? 600 : Dimensions.get('window').width;
+
 export default storiesOf('Components|Drawer', module)
   .addParameters({ jest: ['Drawer'] })
   .add('Simple', () => (
@@ -75,9 +77,7 @@ export default storiesOf('Components|Drawer', module)
           <View style={styles.container}>
             <Drawer
               open={state.isOpen}
-              pageWidth={
-                Platform.OS == 'web' ? 600 : Dimensions.get('window').width
-              }
+              pageWidth={pageWidth}
               pageHeight={500}
               drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
@@ -105,9 +105,7 @@ export default storiesOf('Components|Drawer', module)
           <View style={styles.container}>
             <Drawer
               open={state.isOpen}
-              pageWidth={
-                Platform.OS == 'web' ? 600 : Dimensions.get('window').width
-              }
+              pageWidth={pageWidth}
               pageHeight={500}
               drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
@@ -130,9 +128,7 @@ export default storiesOf('Components|Drawer', module)
           <View style={styles.container}>
             <Drawer
               open={state.isOpen}
-              pageWidth={
-                Platform.OS == 'web' ? 600 : Dimensions.get('window').width
-              }
+              pageWidth={pageWidth}
               pageHeight={500}
               drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
@@ -152,9 +148,7 @@ export default storiesOf('Components|Drawer', module)
           <View style={styles.container}>
             <Drawer
               open={state.isOpen}
-              pageWidth={
-                Platform.OS == 'web' ? 600 : Dimensions.get('window').width
-              }
+              pageWidth={pageWidth}
               pageHeight={500}
               drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
@@ -177,9 +171,7 @@ export default storiesOf('Components|Drawer', module)
           <View style={styles.container}>
             <Drawer
               open={state.isOpen}
-              pageWidth={
-                Platform.OS == 'web' ? 600 : Dimensions.get('window').width
-              }
+              pageWidth={pageWidth}
               pageHeight={500}
               drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
@@ -203,9 +195,7 @@ export default storiesOf('Components|Drawer', module)
           <View style={styles.container}>
             <Drawer
               open={state.isOpen}
-              pageWidth={
-                Platform.OS == 'web' ? 600 : Dimensions.get('window').width
-              }
+              pageWidth={pageWidth}
               pageHeight={500}
               drawerContent={
                 <ScrollView>
@@ -258,9 +248,7 @@ export default storiesOf('Components|Drawer', module)
           <View style={styles.container}>
             <Drawer
               open={state.isOpen}
-              pageWidth={
-                Platform.OS == 'web' ? 600 : Dimensions.get('window').width
-              }
+              pageWidth={pageWidth}
               pageHeight={500}
               drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
@@ -283,9 +271,7 @@ export default storiesOf('Components|Drawer', module)
           <View style={styles.container}>
             <Drawer
               open={state.isOpen}
-              pageWidth={
-                Platform.OS == 'web' ? 600 : Dimensions.get('window').width
-              }
+              pageWidth={pageWidth}
               pageHeight={500}
               drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
@@ -378,14 +364,14 @@ export default storiesOf('Components|Drawer', module)
 const styles = StyleSheet.create({
   container: {
     zIndex: 1,
-    width: Platform.OS == 'web' ? 600 : Dimensions.get('window').width,
+    width: pageWidth,
     height: 500,
     overflow: 'hidden',
     position: 'relative',
   },
   body: {
     backgroundColor: '#eee',
-    width: Platform.OS == 'web' ? 600 : Dimensions.get('window').width,
+    width: pageWidth,
     height: 500,
   },
 });
