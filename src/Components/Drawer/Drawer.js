@@ -35,6 +35,7 @@ class Drawer extends PureComponent {
     width: PropTypes.number,
 
     appbar: PropTypes.node,
+    scrim: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -43,6 +44,7 @@ class Drawer extends PureComponent {
     open: false,
     animationTime: 200,
     opacity: 0.4,
+    scrim: true,
   };
 
   state = {
@@ -141,7 +143,7 @@ class Drawer extends PureComponent {
   }
 
   _renderDrawer() {
-    const { children, drawerContent, open, appbar } = this.props;
+    const { children, drawerContent, open, appbar, scrim } = this.props;
     const {
       backdropFade,
       drawerWidth,
@@ -173,6 +175,7 @@ class Drawer extends PureComponent {
           style={[
             styles.container,
             {
+              backgroundColor: scrim ? 'black' : 'transparent',
               opacity: backdropFade,
               zIndex: open ? 10 : 0,
               width: screenWidth,
@@ -183,7 +186,11 @@ class Drawer extends PureComponent {
             <View
               style={[
                 styles.container,
-                { width: screenWidth, height: screenHeight },
+                {
+                  width: screenWidth,
+                  height: screenHeight,
+                  backgroundColor: scrim ? 'black' : 'transparent',
+                },
               ]}
             />
           </TouchableWithoutFeedback>

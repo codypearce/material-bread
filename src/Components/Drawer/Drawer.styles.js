@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 0,
     zIndex: 0,
-    backgroundColor: 'black',
   },
   drawer: {
     position: 'absolute',
