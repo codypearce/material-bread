@@ -23,6 +23,7 @@ class Drawer extends PureComponent {
     open: PropTypes.bool,
     onClose: PropTypes.func,
 
+    type: PropTypes.string,
     drawerContent: PropTypes.node,
     children: PropTypes.node,
     animationTime: PropTypes.number,
@@ -45,6 +46,7 @@ class Drawer extends PureComponent {
     animationTime: 200,
     scrimOpacity: 0.4,
     scrim: true,
+    type: 'modal',
   };
 
   state = {
@@ -142,26 +144,61 @@ class Drawer extends PureComponent {
     );
   }
 
-  _renderDrawer() {
-    const {
-      children,
-      drawerContent,
-      open,
-      appbar,
-      scrim,
-      scrimColor,
-    } = this.props;
+  _renderScrim() {
+    const { open, scrim, scrimColor } = this.props;
     const {
       backdropFade,
-      drawerWidth,
       screenWidth,
       screenHeight,
-      leftOffset,
       appbarHeight,
     } = this.state;
 
-    const offsetDrawerShadow = 5;
     const scrimColorImplemented = scrimColor ? scrimColor : 'black';
+    return (
+      <Animated.View
+        style={[
+          styles.container,
+          {
+            backgroundColor: scrim ? scrimColorImplemented : 'transparent',
+            opacity: backdropFade,
+            zIndex: open ? 10 : 0,
+            width: screenWidth,
+            height: screenHeight,
+            top: appbarHeight,
+          },
+        ]}>
+        <TouchableWithoutFeedback onPress={this.props.onClose}>
+          <View
+            style={[
+              styles.container,
+              {
+                width: screenWidth,
+                height: screenHeight,
+                backgroundColor: scrim ? scrimColorImplemented : 'transparent',
+              },
+            ]}
+          />
+        </TouchableWithoutFeedback>
+      </Animated.View>
+    );
+  }
+
+  _renderAppContent() {
+    const { children, appbar } = this.props;
+
+    return (
+      <View>
+        {appbar ? this._renderAppBar() : null}
+        <View>{children}</View>
+      </View>
+    );
+  }
+
+  _renderDrawer() {
+    const { drawerContent } = this.props;
+    const { drawerWidth, screenHeight, leftOffset, appbarHeight } = this.state;
+
+    const offsetDrawerShadow = 5;
 
     return (
       <Fragment>
@@ -175,40 +212,13 @@ class Drawer extends PureComponent {
               height: screenHeight,
               transform: [{ translateX: leftOffset }],
               zIndex: 100,
-              overflow: 'auto',
             },
           ]}>
           {drawerContent}
         </Animated.View>
 
-        <Animated.View
-          style={[
-            styles.container,
-            {
-              backgroundColor: scrim ? scrimColorImplemented : 'transparent',
-              opacity: backdropFade,
-              zIndex: open ? 10 : 0,
-              width: screenWidth,
-              height: screenHeight,
-            },
-          ]}>
-          <TouchableWithoutFeedback onPress={this.props.onClose}>
-            <View
-              style={[
-                styles.container,
-                {
-                  width: screenWidth,
-                  height: screenHeight,
-                  backgroundColor: scrim
-                    ? scrimColorImplemented
-                    : 'transparent',
-                },
-              ]}
-            />
-          </TouchableWithoutFeedback>
-        </Animated.View>
-        {appbar ? this._renderAppBar() : null}
-        <View>{children}</View>
+        {this._renderScrim()}
+        {this._renderAppContent()}
       </Fragment>
     );
   }
