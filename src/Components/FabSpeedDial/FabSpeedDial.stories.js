@@ -7,10 +7,10 @@ import Container from '../../storybook/components/Container';
 import { storiesOf } from '../../storybook/helpers/storiesOf';
 
 const actions = [
-  <Fab backgroundColor={'#E91E63'} icon={'archive'} />,
-  <Fab backgroundColor={'#F44336'} icon={'delete'} />,
-  <Fab backgroundColor={'#009688'} icon={'edit'} />,
-  <Fab backgroundColor={'black'} icon={'attach-money'} />,
+  <Fab key={1} backgroundColor={'#E91E63'} icon={'archive'} />,
+  <Fab key={2} backgroundColor={'#F44336'} icon={'delete'} />,
+  <Fab key={3} backgroundColor={'#009688'} icon={'edit'} />,
+  <Fab key={4} backgroundColor={'black'} icon={'attach-money'} />,
 ];
 
 storiesOf('Components|FabSpeedDial', module)

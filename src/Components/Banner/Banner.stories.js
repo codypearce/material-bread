@@ -5,6 +5,7 @@ import { Banner, Avatar } from '../../';
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
 
+/* eslint-disable no-console */
 storiesOf('Components|Banner', module)
   .addParameters({ jest: ['Banner'] })
   .add('Single line', () => (

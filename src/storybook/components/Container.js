@@ -7,6 +7,7 @@ export default class Container extends Component {
   static propTypes = {
     style: PropTypes.object,
     children: PropTypes.node,
+    scroll: PropTypes.bool,
   };
 
   render() {

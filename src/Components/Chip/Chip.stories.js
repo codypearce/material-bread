@@ -17,6 +17,8 @@ const store = new Store({
   chipSix: true,
 });
 
+/* eslint-disable no-console */
+
 storiesOf('Components|Chip', module)
   .addParameters({ jest: ['Chip'] })
   .add('Filled', () => (

@@ -6,6 +6,8 @@ import { Avatar } from '../..';
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
 
+/* eslint-disable no-console */
+
 storiesOf('Components|Avatars', module)
   .addParameters({ jest: ['Avatar'] })
   .add('Image', () => (
