@@ -10,7 +10,8 @@ import {
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
 import { storiesOf } from '../../storybook/helpers/storiesOf';
-storiesOf('Components|List', module)
+
+export default storiesOf('Components|List', module)
   .addParameters({ jest: ['List'] })
   .add('List', () => (
     <Container>

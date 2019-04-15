@@ -13,7 +13,7 @@ const store = new Store({
   checkedThree: false,
 });
 
-storiesOf('Components|Checkbox', module)
+export default storiesOf('Components|Checkbox', module)
   .addParameters({ jest: ['Checkbox'] })
   .add('Icons', () => (
     <Container>

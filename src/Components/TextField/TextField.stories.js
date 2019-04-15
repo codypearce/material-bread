@@ -19,7 +19,7 @@ const store = new Store({
   outlinedThree: '',
 });
 
-storiesOf('Components|TextField', module)
+export default storiesOf('Components|TextField', module)
   .addParameters({ jest: ['TextField'] })
   .add('Flat', () => (
     <Container>

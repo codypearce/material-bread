@@ -6,7 +6,7 @@ import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
 
 /*  eslint-disable no-console */
-storiesOf('Components|AppbarBottom', module)
+export default storiesOf('Components|AppbarBottom', module)
   .addParameters({ jest: ['AppbarBottom'] })
   .add('Center Fab', () => (
     <Container scroll>

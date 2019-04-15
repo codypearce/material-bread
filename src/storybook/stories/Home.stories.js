@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   },
 });
 
-storiesOf('Docs|Start Here', module).add('Home', () => (
+export default storiesOf('Docs|Start Here', module).add('Home', () => (
   <Container>
     <View style={styles.top}>
       <Image source={{ uri: '/logo-shadow.svg' }} style={styles.logo} />

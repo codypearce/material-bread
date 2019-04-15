@@ -17,7 +17,7 @@ const store = new Store({
   visible: false,
 });
 
-storiesOf('Components|Dialog', module)
+export default storiesOf('Components|Dialog', module)
   .addParameters({ jest: ['Dialog'] })
   .add('Simple', () => (
     <Container>

@@ -11,7 +11,7 @@ import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
 import { storiesOf } from '../../storybook/helpers/storiesOf';
 
-storiesOf('Components|Data Table', module)
+export default storiesOf('Components|Data Table', module)
   .addParameters({ jest: ['DataTable'] })
   .add('Data Table', () => (
     <Container>

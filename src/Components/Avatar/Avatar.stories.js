@@ -8,7 +8,7 @@ import Container from '../../storybook/components/Container';
 
 /* eslint-disable no-console */
 
-storiesOf('Components|Avatars', module)
+export default storiesOf('Components|Avatars', module)
   .addParameters({ jest: ['Avatar'] })
   .add('Image', () => (
     <Container>

@@ -11,7 +11,7 @@ const store = new Store({
   checked: 0,
 });
 
-storiesOf('Components|Radio Button', module)
+export default storiesOf('Components|Radio Button', module)
   .addParameters({ jest: ['RadioButton'] })
   .add('Radio', () => (
     <Container>

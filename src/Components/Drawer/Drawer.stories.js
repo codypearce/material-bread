@@ -21,7 +21,7 @@ const store = new Store({
   isOpen: false,
 });
 
-storiesOf('Components|Drawer', module)
+export default storiesOf('Components|Drawer', module)
   .addParameters({ jest: ['Drawer'] })
   .add('Simple', () => (
     <Container scroll style={{ padding: 0 }}>

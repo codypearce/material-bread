@@ -6,7 +6,7 @@ import { Button, Icon } from '../../';
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
 
-storiesOf('Components|Buttons', module)
+export default storiesOf('Components|Buttons', module)
   .addParameters({ jest: ['Button'] })
   .add('Text Button', () => (
     <Container>

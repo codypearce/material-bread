@@ -13,7 +13,7 @@ const store = new Store({
   circleValue3: 40,
 });
 
-storiesOf('Components|Progress', module)
+export default storiesOf('Components|Progress', module)
   .addParameters({ jest: ['ProgressBar', 'ProgressCircle'] })
   .add('Progress Bar', () => (
     <Container>

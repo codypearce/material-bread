@@ -13,7 +13,7 @@ const actions = [
   <Fab key={4} backgroundColor={'black'} icon={'attach-money'} />,
 ];
 
-storiesOf('Components|FabSpeedDial', module)
+export default storiesOf('Components|FabSpeedDial', module)
   .addParameters({ jest: ['FabSpeedDial'] })
   .add('Simple', () => (
     <Container>

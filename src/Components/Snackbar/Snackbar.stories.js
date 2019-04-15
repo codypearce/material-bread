@@ -11,7 +11,7 @@ const store = new Store({
   show: false,
 });
 
-storiesOf('Components|Snackbar', module)
+export default storiesOf('Components|Snackbar', module)
   .addParameters({ jest: ['Snackbar'] })
   .add('Snackbar', () => (
     <Container>

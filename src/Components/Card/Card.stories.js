@@ -17,7 +17,8 @@ import {
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
 
-storiesOf('Components|Card', module)
+/*  eslint-disable no-console */
+export default storiesOf('Components|Card', module)
   .addParameters({ jest: ['Card'] })
   .add('Card', () => (
     <Container scroll>
@@ -193,7 +194,7 @@ storiesOf('Components|Card', module)
           </Text>
           <View style={{ marginLeft: 8 }}>
             <Text style={{ color: 'rgba(0,0,0,.6)', fontSize: 14 }}>
-              - Man's best friend
+              - Man&apos;s best friend
             </Text>
             <Text style={{ color: 'rgba(0,0,0,.6)', fontSize: 14 }}>
               - Some have jobs
@@ -205,7 +206,7 @@ storiesOf('Components|Card', module)
         </CardContent>
         <CardActions
           rightActionItems={[
-            <Badge content={99}>
+            <Badge key={2} content={99}>
               <IconButton name="favorite" color={'#F44336'} size={24} />
             </Badge>,
             { name: 'share' },

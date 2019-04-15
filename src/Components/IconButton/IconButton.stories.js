@@ -6,7 +6,7 @@ import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
 import { storiesOf } from '../../storybook/helpers/storiesOf';
 
-storiesOf('Components|Icon Button', module)
+export default storiesOf('Components|Icon Button', module)
   .addParameters({ jest: ['IconButton'] })
   .addDecorator(story => <View style={{ padding: 16 }}>{story()}</View>)
 

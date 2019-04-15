@@ -11,7 +11,7 @@ const store = new Store({
   searchOne: '',
 });
 
-storiesOf('Components|Searchbar', module)
+export default storiesOf('Components|Searchbar', module)
   .addParameters({ jest: ['Searchbar'] })
   .add('Simple', () => (
     <Container>

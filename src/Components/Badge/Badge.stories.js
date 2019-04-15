@@ -6,7 +6,7 @@ import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
 import { storiesOf } from '../../storybook/helpers/storiesOf';
 
-storiesOf('Components|Badge', module)
+export default storiesOf('Components|Badge', module)
   .addParameters({ jest: ['Badge'] })
   .add('Standalone', () => (
     <Container>

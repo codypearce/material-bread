@@ -19,7 +19,7 @@ const store = new Store({
 
 /* eslint-disable no-console */
 
-storiesOf('Components|Chip', module)
+export default storiesOf('Components|Chip', module)
   .addParameters({ jest: ['Chip'] })
   .add('Filled', () => (
     <Container>

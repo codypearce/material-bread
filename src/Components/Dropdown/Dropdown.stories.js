@@ -16,7 +16,7 @@ const data = [
   { id: 3, name: 'Option 3' },
 ];
 
-storiesOf('Components|Dropdown', module)
+export default storiesOf('Components|Dropdown', module)
   .addParameters({ jest: ['Dropdown'] })
   .add('Outlined', () => (
     <Container>

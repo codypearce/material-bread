@@ -13,7 +13,7 @@ const store = new Store({
   visibleThree: false,
 });
 
-storiesOf('Components|Menu', module)
+export default storiesOf('Components|Menu', module)
   .addParameters({ jest: ['Menu'] })
   .add('Menu', () => (
     <Container>

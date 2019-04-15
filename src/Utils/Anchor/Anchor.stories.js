@@ -7,7 +7,7 @@ import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
 import { storiesOf } from '../../storybook/helpers/storiesOf';
 
-storiesOf('Utils|Anchor', module)
+export default storiesOf('Utils|Anchor', module)
   .addParameters({ jest: ['Anchor'] })
   .add('Simple', () => (
     <Container>

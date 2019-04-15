@@ -13,7 +13,7 @@ const store = new Store({
   five: 0,
 });
 
-storiesOf('Components|Bottom Navigation', module)
+export default storiesOf('Components|Bottom Navigation', module)
   .addParameters({ jest: ['BottomNavigation'] })
   .add('Component', () => (
     <Container>

@@ -8,7 +8,7 @@ import Container from '../../storybook/components/Container';
 
 /*  eslint-disable no-console */
 
-storiesOf('Components|Appbar', module)
+export default storiesOf('Components|Appbar', module)
   .addParameters({ jest: ['Appbar'] })
   .add('Simple', () => (
     <Container scroll>

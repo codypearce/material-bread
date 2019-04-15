@@ -6,7 +6,7 @@ import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
 import { storiesOf } from '../../storybook/helpers/storiesOf';
 
-storiesOf('Components|Fab', module)
+export default storiesOf('Components|Fab', module)
   .addParameters({ jest: ['Fab'] })
   .add('Fab', () => (
     <Container>

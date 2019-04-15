@@ -5,7 +5,7 @@ import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
 import { storiesOf } from '../../storybook/helpers/storiesOf';
 
-storiesOf('Components|Icons', module)
+export default storiesOf('Components|Icons', module)
   .addParameters({ jest: ['Icons'] })
   .add('Component', () => (
     <Container>

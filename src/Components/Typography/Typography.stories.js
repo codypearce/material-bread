@@ -6,7 +6,7 @@ import { Heading, Subtitle, BodyText, Caption, Overline } from '../..';
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
 
-storiesOf('Components|Typography', module)
+export default storiesOf('Components|Typography', module)
   .addParameters({
     jest: ['BodyText', 'Caption', 'Heading', 'Overline', 'Subtitle'],
   })
