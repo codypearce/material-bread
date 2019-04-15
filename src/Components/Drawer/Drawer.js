@@ -175,6 +175,7 @@ class Drawer extends PureComponent {
               height: screenHeight,
               transform: [{ translateX: leftOffset }],
               zIndex: 100,
+              overflow: 'auto',
             },
           ]}>
           {drawerContent}
