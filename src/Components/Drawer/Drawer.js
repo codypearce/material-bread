@@ -33,6 +33,8 @@ class Drawer extends PureComponent {
     pageWidth: PropTypes.number,
     widthPercentage: PropTypes.number,
     width: PropTypes.number,
+
+    appbar: PropTypes.node,
   };
 
   static defaultProps = {
@@ -46,10 +48,14 @@ class Drawer extends PureComponent {
   state = {
     screenWidth: 0,
     screenHeight: 0,
+
     drawerWidth: 0,
     expanded: false,
     backdropFade: new Animated.Value(0),
     leftOffset: new Animated.Value(0),
+
+    appbarHeight: 0,
+    appbarWidth: 0,
   };
 
   componentDidMount() {
@@ -116,14 +122,33 @@ class Drawer extends PureComponent {
     ]).start();
   };
 
+  _onAppbarLayout = e => {
+    const { width, height } = e.nativeEvent.layout;
+
+    this.setState({
+      appbarWidth: width,
+      appbarHeight: height,
+    });
+  };
+
+  _renderAppBar() {
+    const { appbar } = this.props;
+    return (
+      <View style={{ zIndex: 1200 }} onLayout={this._onAppbarLayout}>
+        {appbar}
+      </View>
+    );
+  }
+
   _renderDrawer() {
-    const { children, drawerContent, open } = this.props;
+    const { children, drawerContent, open, appbar } = this.props;
     const {
       backdropFade,
       drawerWidth,
       screenWidth,
       screenHeight,
       leftOffset,
+      appbarHeight,
     } = this.state;
 
     const offsetDrawerShadow = 5;
@@ -135,12 +160,15 @@ class Drawer extends PureComponent {
             {
               width: drawerWidth,
               left: -drawerWidth - offsetDrawerShadow,
+              top: appbarHeight,
               height: screenHeight,
               transform: [{ translateX: leftOffset }],
+              zIndex: 100,
             },
           ]}>
           {drawerContent}
         </Animated.View>
+
         <Animated.View
           style={[
             styles.container,
@@ -160,6 +188,7 @@ class Drawer extends PureComponent {
             />
           </TouchableWithoutFeedback>
         </Animated.View>
+        {appbar ? this._renderAppBar() : null}
         <View>{children}</View>
       </Fragment>
     );

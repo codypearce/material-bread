@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
   drawer: {
     position: 'absolute',
-    zIndex: 100,
+
     backgroundColor: 'white',
     ...shadow(8),
   },
