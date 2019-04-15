@@ -6,6 +6,21 @@ exports[`Drawer Renders 1`] = `
     Array [
       Object {
         "backgroundColor": "white",
+        "flex": 1,
+      },
+      Object {
+        "width": 750,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "white",
+        "height": 1334,
+        "left": -245,
+        "position": "absolute",
         "shadowColor": "#000",
         "shadowOffset": Object {
           "height": 4,
@@ -13,13 +28,54 @@ exports[`Drawer Renders 1`] = `
         },
         "shadowOpacity": 0.3,
         "shadowRadius": 4.65,
-      },
-      undefined,
-    ]
-  }
->
-  <RCTScrollView>
-    <View />
-  </RCTScrollView>
+        "top": 0,
+        "transform": Array [
+          Object {
+            "translateX": 0,
+          },
+        ],
+        "width": 240,
+        "zIndex": 100,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "black",
+        "height": 1334,
+        "left": 0,
+        "opacity": 0,
+        "position": "absolute",
+        "width": 750,
+        "zIndex": 0,
+      }
+    }
+  >
+    <View
+      accessible={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "black",
+            "left": 0,
+            "position": "absolute",
+            "zIndex": 0,
+          },
+          Object {
+            "height": 1334,
+            "width": 750,
+          },
+        ]
+      }
+    />
+  </View>
+  <View />
 </View>
 `;
