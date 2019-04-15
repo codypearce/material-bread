@@ -364,9 +364,6 @@ export default storiesOf('Components|Drawer', module)
 const styles = StyleSheet.create({
   container: {
     zIndex: 1,
-    width: pageWidth,
-    height: 500,
-    overflow: 'hidden',
     position: 'relative',
   },
   body: {

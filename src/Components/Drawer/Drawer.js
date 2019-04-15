@@ -66,10 +66,13 @@ class Drawer extends PureComponent {
   componentDidMount() {
     const { pageWidth, pageHeight, widthPercentage, width } = this.props;
 
-    const screenWidth = pageWidth ? pageWidth : Dimensions.get('window').width;
-    const screenHeight = pageHeight
-      ? pageHeight
-      : Dimensions.get('window').height;
+    let screenWidth =
+      Platform.OS == 'web' ? '100%' : Dimensions.get('window').width;
+    let screenHeight =
+      Platform.OS == 'web' ? '100%' : Dimensions.get('window').height;
+
+    if (pageWidth) screenWidth = pageWidth;
+    if (pageHeight) screenHeight = pageHeight;
 
     let drawerWidth = screenWidth * widthPercentage;
     if (width) drawerWidth = width;
@@ -219,13 +222,13 @@ class Drawer extends PureComponent {
   }
 
   _renderDrawer() {
-    const { drawerContent, type } = this.props;
+    const { drawerContent, type, open } = this.props;
     const { drawerWidth, screenHeight, leftOffset, appbarHeight } = this.state;
 
     const isPush = type == 'push';
     const isPermanent = type == 'permanent';
 
-    const offsetDrawerShadow = isPermanent ? 0 : 5;
+    const offsetDrawerShadow = isPermanent || open ? 0 : 5;
     const shadowImplemented = isPush || isPermanent ? shadow(0) : shadow(8);
 
     return (
@@ -264,7 +267,11 @@ class Drawer extends PureComponent {
     }
 
     return (
-      <View style={[styles.fullWidthContainer, { width: screenWidth }]}>
+      <View
+        style={[
+          styles.fullWidthContainer,
+          { width: screenWidth, overflow: 'hidden' },
+        ]}>
         {this._renderDrawer()}
       </View>
     );
