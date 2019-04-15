@@ -25,9 +25,7 @@ class Drawer extends PureComponent {
 
     drawerContent: PropTypes.node,
     children: PropTypes.node,
-
     animationTime: PropTypes.number,
-    opacity: PropTypes.number,
 
     pageHeight: PropTypes.number,
     pageWidth: PropTypes.number,
@@ -36,6 +34,8 @@ class Drawer extends PureComponent {
 
     appbar: PropTypes.node,
     scrim: PropTypes.bool,
+    scrimColor: PropTypes.string,
+    scrimOpacity: PropTypes.number,
   };
 
   static defaultProps = {
@@ -43,7 +43,7 @@ class Drawer extends PureComponent {
     width: 240,
     open: false,
     animationTime: 200,
-    opacity: 0.4,
+    scrimOpacity: 0.4,
     scrim: true,
   };
 
@@ -90,7 +90,7 @@ class Drawer extends PureComponent {
 
   openDrawer = () => {
     const { drawerWidth, leftOffset, backdropFade } = this.state;
-    const { animationTime, opacity } = this.props;
+    const { animationTime, scrimOpacity } = this.props;
 
     Animated.parallel([
       Animated.timing(leftOffset, {
@@ -99,7 +99,7 @@ class Drawer extends PureComponent {
         useNativeDriver: true,
       }),
       Animated.timing(backdropFade, {
-        toValue: opacity,
+        toValue: scrimOpacity,
         duration: animationTime,
         useNativeDriver: true,
       }),
@@ -143,7 +143,14 @@ class Drawer extends PureComponent {
   }
 
   _renderDrawer() {
-    const { children, drawerContent, open, appbar, scrim } = this.props;
+    const {
+      children,
+      drawerContent,
+      open,
+      appbar,
+      scrim,
+      scrimColor,
+    } = this.props;
     const {
       backdropFade,
       drawerWidth,
@@ -154,6 +161,8 @@ class Drawer extends PureComponent {
     } = this.state;
 
     const offsetDrawerShadow = 5;
+    const scrimColorImplemented = scrimColor ? scrimColor : 'black';
+
     return (
       <Fragment>
         <Animated.View
@@ -175,7 +184,7 @@ class Drawer extends PureComponent {
           style={[
             styles.container,
             {
-              backgroundColor: scrim ? 'black' : 'transparent',
+              backgroundColor: scrim ? scrimColorImplemented : 'transparent',
               opacity: backdropFade,
               zIndex: open ? 10 : 0,
               width: screenWidth,
@@ -189,7 +198,9 @@ class Drawer extends PureComponent {
                 {
                   width: screenWidth,
                   height: screenHeight,
-                  backgroundColor: scrim ? 'black' : 'transparent',
+                  backgroundColor: scrim
+                    ? scrimColorImplemented
+                    : 'transparent',
                 },
               ]}
             />
