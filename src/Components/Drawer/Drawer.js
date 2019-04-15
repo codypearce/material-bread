@@ -108,12 +108,10 @@ class Drawer extends PureComponent {
       Animated.timing(leftOffset, {
         toValue: drawerWidth,
         duration: animationTime,
-        useNativeDriver: true,
       }),
       Animated.timing(backdropFade, {
         toValue: scrimOpacity,
         duration: animationTime,
-        useNativeDriver: true,
       }),
     ]).start();
   };
@@ -126,12 +124,10 @@ class Drawer extends PureComponent {
       Animated.timing(leftOffset, {
         toValue: 0,
         duration: animationTime,
-        useNativeDriver: true,
       }),
       Animated.timing(backdropFade, {
         toValue: 0,
         duration: animationTime,
-        useNativeDriver: true,
       }),
     ]).start();
   };
