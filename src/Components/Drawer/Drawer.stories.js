@@ -327,6 +327,52 @@ export default storiesOf('Components|Drawer', module)
         )}
       </State>
     </Container>
+  ))
+  .add('Push', () => (
+    <Container scroll style={{ padding: 0 }}>
+      <Header title={'Drawer'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View style={styles.container}>
+            <Drawer
+              open={state.isOpen}
+              pageWidth={
+                Platform.OS == 'web' ? 600 : Dimensions.get('window').width
+              }
+              pageHeight={500}
+              drawerContent={
+                <View>
+                  <DrawerHeader title={'Jon Snow'} subtitle={'Knows nothing'} />
+                  <DrawerSection bottomDivider>
+                    <DrawerItem text={'Inbox'} icon={'mail'} active />
+                    <DrawerItem text={'Outbox'} icon={'send'} />
+                    <DrawerItem text={'Favorites'} icon={'favorite'} />
+                  </DrawerSection>
+                </View>
+              }
+              onClose={() => store.set({ isOpen: false })}
+              type={'push'}>
+              <View style={styles.body}>
+                <Appbar
+                  barType={'normal'}
+                  title={'Page Title'}
+                  navigationType={'menu'}
+                  onNavigation={() => store.set({ isOpen: !state.isOpen })}
+                  actionItems={[{ name: 'search' }, { name: 'more-vert' }]}
+                />
+                <View style={{ marginTop: 20, alignItems: 'center' }}>
+                  <Heading type={4} style={{ marginBottom: 20 }}>
+                    This is a page
+                  </Heading>
+                  <BodyText>Click the menu button to open the drawer</BodyText>
+                  <BodyText>Click outside the drawer to close it</BodyText>
+                </View>
+              </View>
+            </Drawer>
+          </View>
+        )}
+      </State>
+    </Container>
   ));
 
 const styles = StyleSheet.create({

@@ -11,6 +11,7 @@ import {
 
 import withTheme from '../../Theme/withTheme';
 import styles from './Drawer.styles';
+import shadow from '../../Utils/Shadow/shadow';
 
 const needsSafeArea = Platform.OS === 'ios' && parseInt(Platform.Version, 10);
 
@@ -145,7 +146,7 @@ class Drawer extends PureComponent {
   }
 
   _renderScrim() {
-    const { open, scrim, scrimColor } = this.props;
+    const { open, scrim, scrimColor, type } = this.props;
     const {
       backdropFade,
       screenWidth,
@@ -153,7 +154,8 @@ class Drawer extends PureComponent {
       appbarHeight,
     } = this.state;
 
-    const scrimColorImplemented = scrimColor ? scrimColor : 'black';
+    let scrimColorImplemented = type == 'push' ? 'transparent' : 'black';
+    if (scrimColor) scrimColorImplemented = scrimColor;
     return (
       <Animated.View
         style={[
@@ -184,8 +186,22 @@ class Drawer extends PureComponent {
   }
 
   _renderAppContent() {
-    const { children, appbar } = this.props;
+    const { children, appbar, type, open } = this.props;
+    const { leftOffset } = this.state;
+    const offsetDrawerShadow = 5;
 
+    if (type == 'push') {
+      return (
+        <Animated.View
+          style={{
+            left: open ? -offsetDrawerShadow : 0,
+            transform: [{ translateX: leftOffset }],
+          }}>
+          {appbar ? this._renderAppBar() : null}
+          <View>{children}</View>
+        </Animated.View>
+      );
+    }
     return (
       <View>
         {appbar ? this._renderAppBar() : null}
@@ -195,11 +211,11 @@ class Drawer extends PureComponent {
   }
 
   _renderDrawer() {
-    const { drawerContent } = this.props;
+    const { drawerContent, type } = this.props;
     const { drawerWidth, screenHeight, leftOffset, appbarHeight } = this.state;
 
     const offsetDrawerShadow = 5;
-
+    const shadowImplemented = type == 'push' ? shadow(0) : shadow(8);
     return (
       <Fragment>
         <Animated.View
@@ -212,6 +228,7 @@ class Drawer extends PureComponent {
               height: screenHeight,
               transform: [{ translateX: leftOffset }],
               zIndex: 100,
+              ...shadowImplemented,
             },
           ]}>
           {drawerContent}
