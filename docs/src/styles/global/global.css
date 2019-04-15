@@ -119,10 +119,18 @@ body {
   min-width: 100%; /* 2 */
 }
 
+.main {
+  max-width: 760px;
+  margin-left: 130px;
+  margin-right: 40px;
+  padding-top: 40px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .main--permanentDrawer {
   max-width: 760px;
-  width: calc(100% - 240);
-  margin-left: calc(240px + 130px);
+  margin-left: calc(130px);
   margin-right: 40px;
   padding-top: 40px;
   padding-left: 0px;

@@ -7,10 +7,12 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { withStyles } from '@material-ui/core/styles';
 import '../../../node_modules/flexboxgrid/css/flexboxgrid.min.css';
 import '../../styles/global/global.css';
-import Drawer from '../Drawer/Drawer';
+// import Drawer from '../Drawer/Drawer';
 import Header from './Header';
 import Prism from 'prismjs';
 import favicon from '../../assets/favicon.ico';
+import { Drawer } from '../../../../src/';
+import DrawerContent from '../Drawer/DrawerContent';
 
 require('prismjs/components/prism-jsx.min');
 require('prismjs/themes/prism-tomorrow.css');
@@ -140,20 +142,22 @@ class PageLayout extends Component {
         <div>
           <Drawer
             open={this.state.mobileOpen}
-            handleDrawerToggle={this.handleDrawerToggle}
-            posts={posts}
-            drawerType={drawerType}
-          />
-          <Header
-            handleDrawerToggle={this.handleDrawerToggle}
-            isTemporary={isTemporary}
-          />
-          <div
-            className={`${
-              isTemporary ? 'main--temporaryDrawer' : 'main--permanentDrawer'
-            }`}>
-            {children}
-          </div>
+            onClose={this.handleDrawerToggle}
+            type={isTemporary ? 'modal' : 'permanent'}
+            drawerContent={<DrawerContent posts={posts} />}
+            appbar={
+              <Header
+                handleDrawerToggle={this.handleDrawerToggle}
+                isTemporary={isTemporary}
+              />
+            }>
+            <main
+              className={`${
+                isTemporary ? 'main--temporaryDrawer' : 'main--permanentDrawer'
+              }`}>
+              {children}
+            </main>
+          </Drawer>
         </div>
       </div>
     );

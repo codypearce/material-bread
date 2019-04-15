@@ -83,14 +83,7 @@ class DrawerContent extends React.PureComponent {
     const { itemSelected, sectionExpanded } = this.state;
 
     return (
-      <div
-        style={{
-          overflowY: 'overlay',
-          borderRightWidth: 1,
-          borderRightColor: 'rgba(0, 0, 0, 0.12)',
-          borderRightStyle: 'solid',
-          height: '100%',
-        }}>
+      <div>
         <DrawerHeader />
         <div>
           <List>
