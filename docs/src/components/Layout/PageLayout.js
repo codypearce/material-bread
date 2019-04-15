@@ -24,7 +24,7 @@ export default class PageLayout extends Component {
   state = {
     mobileOpen: false,
     isTemporary: true,
-    windowWidth: 0,
+    firstLoaded: false,
   };
 
   componentDidMount() {
@@ -61,6 +61,8 @@ export default class PageLayout extends Component {
         this.setSmall();
       }
     });
+
+    this.setState({ firstLoaded: true });
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -98,6 +100,12 @@ export default class PageLayout extends Component {
   render() {
     const { posts, children } = this.props;
     const { isTemporary } = this.state;
+    if (!this.state.firstLoaded)
+      return (
+        <div
+          style={{ width: '100vw', height: '100vh', backgroundColor: 'white' }}
+        />
+      );
 
     return (
       <div style={{ width: '100%' }}>

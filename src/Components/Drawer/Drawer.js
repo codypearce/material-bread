@@ -58,10 +58,10 @@ class Drawer extends PureComponent {
   };
 
   state = {
-    screenWidth: 0,
-    screenHeight: 0,
+    screenWidth: Dimensions.get('window').width,
+    screenHeight: Dimensions.get('window').height,
 
-    drawerWidth: 0,
+    drawerWidth: 240,
     expanded: false,
     backdropFade: new Animated.Value(0),
     leftOffset: new Animated.Value(0),

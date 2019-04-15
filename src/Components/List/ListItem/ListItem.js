@@ -25,6 +25,8 @@ class ListItem extends Component {
             flexDirection: 'row',
             alignItems: 'center',
             paddingHorizontal: 16,
+            paddingLeft: 16,
+            paddingRight: 16,
             paddingVertical: 12,
             width: '100%',
           },
