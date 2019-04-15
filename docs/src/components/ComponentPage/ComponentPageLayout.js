@@ -39,7 +39,7 @@ class ComponentPageLayout extends Component {
     } = this.props;
 
     return (
-      <div style={{ marginBottom: 24 }}>
+      <div style={{ marginBottom: 24, position: 'relative' }}>
         <SideScrollMenu items={sideScrollMenuItems} />
         <ComponentHeader
           title={title}

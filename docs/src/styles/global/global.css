@@ -18,6 +18,7 @@ body {
 .SideMenu {
   position: fixed;
   right: 50px;
+  top: 80px;
 }
 
 .SideMenu__ListItem {

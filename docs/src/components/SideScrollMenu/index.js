@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import Scrollspy from 'react-scrollspy';
 
@@ -43,13 +44,14 @@ class SideScrollMenu extends Component {
     if (typeof window == 'undefined') {
       return null;
     }
-    return (
+    return ReactDOM.createPortal(
       <Scrollspy
         items={this.handleLinks()}
         currentClassName="is-current"
         className="SideMenu">
         {items && items.map((item, index) => this.renderMenuItems(item, index))}
-      </Scrollspy>
+      </Scrollspy>,
+      document.body,
     );
   }
 }
