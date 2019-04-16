@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Modal, Animated, View, Easing } from 'react-native';
+import { Animated, View, Easing, Platform } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import styles from './Menu.styles';
+import Modal from 'modal-react-native-web';
 
 class Menu extends Component {
   static propTypes = {
@@ -19,7 +20,6 @@ class Menu extends Component {
     menuHeight: new Animated.Value(0),
     menuWidth: new Animated.Value(0),
     opacity: new Animated.Value(0),
-    expanded: false,
     easing: Easing.bezier(0.4, 0, 0.2, 1),
     animationDuration: 300,
   };
@@ -34,9 +34,18 @@ class Menu extends Component {
   onButtonLayout = e => {
     const { width, height } = e.nativeEvent.layout;
 
+    let { locationX, locationY } = e.nativeEvent;
+
+    if (Platform.OS === 'web') {
+      locationX = e.nativeEvent.target.getBoundingClientRect().x;
+      locationY = e.nativeEvent.target.getBoundingClientRect().y;
+    }
+
     this.setState({
       buttonWidth: width,
       buttonHeight: height,
+      buttonPositionX: locationX,
+      buttonPositionY: locationY,
     });
   };
 
@@ -57,6 +66,11 @@ class Menu extends Component {
       animationDuration,
       buttonWidth,
     } = this.state;
+
+    if (!initialHeight || !initialWidth) {
+      setTimeout(() => this.toggle(), 100);
+      return;
+    }
 
     const { sameWidth } = this.props;
 
@@ -97,29 +111,36 @@ class Menu extends Component {
       menuWidth,
       opacity,
       buttonWidth,
-      expanded,
+      buttonPositionY,
+      buttonPositionX,
     } = this.state;
-    const { button, children, menuStyle, sameWidth } = this.props;
+    const { button, children, menuStyle, sameWidth, visible } = this.props;
 
     return (
       <View>
         <View onLayout={this.onButtonLayout}>{button}</View>
         <Modal
+          ariaHideApp={false}
           animationType={'none'}
-          visible={expanded}
-          // onRequestClose={onRequestClose}
-          // onShow={onShow}
-        >
+          visible={visible}
+          transparent
+          backdropOpacity={0}>
           <Animated.View
             style={[
               styles.menuContainer,
-              { height: menuHeight, width: menuWidth, opacity: opacity },
+              {
+                height: menuHeight,
+                width: menuWidth,
+                opacity: opacity,
+                top: buttonPositionY - 10,
+                left: buttonPositionX - 10,
+              },
             ]}>
             <View
               style={[
                 styles.menu,
-                menuStyle,
                 { width: sameWidth ? buttonWidth : 'auto' },
+                menuStyle,
               ]}
               onLayout={this.onMenuLayout}>
               {children}

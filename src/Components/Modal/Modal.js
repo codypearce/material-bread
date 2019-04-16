@@ -5,7 +5,7 @@ import {
   Dimensions,
   Animated,
 } from 'react-native';
-import NativeModal from 'modal-react-native-web';
+import NativeModal from 'modal-enhanced-react-native-web';
 
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';

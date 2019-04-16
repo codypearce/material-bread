@@ -29,6 +29,7 @@ export default storiesOf('Components|Dropdown', module)
             menuItems={data}
             onSelect={value => store.set({ selectedItem: value.name })}
             selectedItem={state.selectedItem}
+            onBackdropPress={() => store.set({ selectedItem: false })}
           />
         )}
       </State>

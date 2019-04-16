@@ -24,6 +24,9 @@ export default storiesOf('Components|Menu', module)
           <View>
             <Menu
               visible={state.visibleOne}
+              onBackdropPress={() => {
+                store.set({ visibleOne: false });
+              }}
               button={
                 <Button
                   text={'Show menu'}
