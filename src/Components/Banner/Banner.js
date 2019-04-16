@@ -4,7 +4,7 @@ import { View, Platform, Dimensions, Animated } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import shadow from '../../Utils/Shadow/shadow';
 import Button from '../Button/Button';
-import { BodyText } from '../Typography/';
+import { BodyText } from '../../';
 import styles from './Banner.styles';
 
 class Banner extends Component {
