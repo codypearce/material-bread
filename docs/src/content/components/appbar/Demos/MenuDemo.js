@@ -1,0 +1,72 @@
+import React from 'react';
+import { CodeInline, ComponentDemo } from '@components';
+import {
+  Appbar,
+  IconButton,
+  Menu,
+  MenuItem,
+  Button,
+} from '../../../../../../src/index';
+
+export const code = ` 
+class AppbarDemo extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      visibleOne: false
+    };
+  }
+
+  render() {
+
+    return (
+      <Appbar
+        barType={'normal'}
+        navigationType={'menu'}
+        color={'#00BCD4'}
+        style={{ marginBottom: 20 }}
+        actionItems={[
+          { name: 'search', onPress: () => console.log('onSearch') },
+          <Menu
+            visible={this.state.visibleOne}
+            button={
+              <Button
+                textColor={'white'}
+                text={'Show menu'}
+                onPress={() => this.setState({ visibleOne: !this.state.visibleOne })}
+                type="text"
+              />
+          }>
+            <MenuItem onPress={() => this.setState({ visibleOne: false })}>
+              Menu item 1
+            </MenuItem>
+            <MenuItem onPress={() => this.setState({ visibleOne: false })}>
+              Menu item 2
+            </MenuItem>
+            <MenuItem onPress={() => this.setState({ visibleOne: false })}>
+              Menu item 3
+            </MenuItem>
+          </Menu>,
+        ]}
+      />
+    );
+  }
+}`;
+
+const MenuDemo = pageHref => (
+  <ComponentDemo
+    sectionName={'Menu'}
+    sectionHref={`${pageHref}#menu`}
+    sectionId={'menu'}
+    description={
+      <div>
+        You can add a <CodeInline code="Menu" type={'element'} /> to the{' '}
+        <CodeInline code="Appbar" type={'element'} />
+        as shown below.
+      </div>
+    }
+    code={code}
+    scope={{ Appbar, IconButton, Menu, MenuItem, Button }}
+  />
+);
+export default MenuDemo;

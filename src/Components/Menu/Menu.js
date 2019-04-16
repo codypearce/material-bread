@@ -22,10 +22,12 @@ class Menu extends Component {
     opacity: new Animated.Value(0),
     easing: Easing.bezier(0.4, 0, 0.2, 1),
     animationDuration: 300,
+    expanded: false,
   };
 
   componentDidUpdate(prevProps) {
     const { visible } = this.props;
+
     if (visible !== prevProps.visible) {
       this.toggle();
     }
@@ -66,7 +68,6 @@ class Menu extends Component {
       animationDuration,
       buttonWidth,
     } = this.state;
-
     if (!initialHeight || !initialWidth) {
       setTimeout(() => this.toggle(), 100);
       return;
@@ -123,8 +124,7 @@ class Menu extends Component {
           ariaHideApp={false}
           animationType={'none'}
           visible={visible}
-          transparent
-          backdropOpacity={0}>
+          transparent>
           <Animated.View
             style={[
               styles.menuContainer,

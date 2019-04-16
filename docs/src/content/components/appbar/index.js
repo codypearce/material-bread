@@ -14,6 +14,7 @@ const sections = [
   { name: 'search field', sub: true },
   { name: 'search bar', sub: true },
   { name: 'subtitle', sub: true },
+  { name: 'menu', sub: true },
   { name: 'custom', sub: true },
 ];
 

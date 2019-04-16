@@ -6,6 +6,7 @@ import ImageDemo from './ImageDemo';
 import SearchFieldDemo from './SearchFieldDemo';
 import SearchBarDemo from './SearchBarDemo';
 import SubtitleDemo from './SubtitleDemo';
+import MenuDemo from './MenuDemo';
 import CustomDemo from './CustomDemo';
 
 export default class Demos extends Component {
@@ -22,6 +23,7 @@ export default class Demos extends Component {
         <SearchFieldDemo pageHref={pageHref} />
         <SearchBarDemo pageHref={pageHref} />
         <SubtitleDemo pageHref={pageHref} />
+        <MenuDemo paageHref={pageHref} />
         <CustomDemo pageHref={pageHref} />
       </div>
     );
