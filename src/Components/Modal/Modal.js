@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {
-  Modal as NativeModal,
   View,
   TouchableWithoutFeedback,
   Dimensions,
   Animated,
 } from 'react-native';
+import NativeModal from 'modal-react-native-web';
 
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';

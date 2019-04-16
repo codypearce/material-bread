@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
     top: -10, // Padding doesn't work because shows this component when hidden
     overflow: 'hidden',
     position: 'absolute',
+    zIndex: 200,
   },
   menu: {
     borderRadius: 6,
@@ -15,6 +16,7 @@ const styles = StyleSheet.create({
     top: 10,
     paddingVertical: 8,
     backgroundColor: 'white',
+    zIndex: 200,
     ...shadow(5),
   },
 });

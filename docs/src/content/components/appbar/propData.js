@@ -16,6 +16,7 @@ const propData = [
   ['backgroundImage', `Renders image element as background`, 'node', ''],
 
   ['color', `Component's background color`, 'string', 'primary'],
+  ['elevation', `Shadow on container appbar`, 'number', '8'],
   [
     'onNavigation',
     'OnPress for navigationType IconButton if provided.',

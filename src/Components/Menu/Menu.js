@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, View, Easing } from 'react-native';
+import { Modal, Animated, View, Easing } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import styles from './Menu.styles';
 
@@ -92,28 +92,40 @@ class Menu extends Component {
   }
 
   render() {
-    const { menuHeight, menuWidth, opacity, buttonWidth } = this.state;
+    const {
+      menuHeight,
+      menuWidth,
+      opacity,
+      buttonWidth,
+      expanded,
+    } = this.state;
     const { button, children, menuStyle, sameWidth } = this.props;
 
     return (
       <View>
         <View onLayout={this.onButtonLayout}>{button}</View>
-
-        <Animated.View
-          style={[
-            styles.menuContainer,
-            { height: menuHeight, width: menuWidth, opacity: opacity },
-          ]}>
-          <View
+        <Modal
+          animationType={'none'}
+          visible={expanded}
+          // onRequestClose={onRequestClose}
+          // onShow={onShow}
+        >
+          <Animated.View
             style={[
-              styles.menu,
-              menuStyle,
-              { width: sameWidth ? buttonWidth : 'auto' },
-            ]}
-            onLayout={this.onMenuLayout}>
-            {children}
-          </View>
-        </Animated.View>
+              styles.menuContainer,
+              { height: menuHeight, width: menuWidth, opacity: opacity },
+            ]}>
+            <View
+              style={[
+                styles.menu,
+                menuStyle,
+                { width: sameWidth ? buttonWidth : 'auto' },
+              ]}
+              onLayout={this.onMenuLayout}>
+              {children}
+            </View>
+          </Animated.View>
+        </Modal>
       </View>
     );
   }

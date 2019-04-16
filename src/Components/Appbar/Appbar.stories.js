@@ -1,18 +1,23 @@
 import React from 'react';
-import { Image } from 'react-native';
+import { View, Image } from 'react-native';
 import { storiesOf } from '../../storybook/helpers/storiesOf';
 
-import { Appbar, Badge, IconButton } from '../..';
+import { Appbar, Badge, IconButton, Menu, Button, MenuItem } from '../..';
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
+import { State, Store } from '@sambego/storybook-state';
+
+const store = new Store({
+  visibleOne: true,
+});
 
 /*  eslint-disable no-console */
-
 export default storiesOf('Components|Appbar', module)
   .addParameters({ jest: ['Appbar'] })
   .add('Simple', () => (
     <Container scroll>
       <Header title={'Appbar Simple'} />
+
       <Appbar
         barType={'normal'}
         title={'Page Title'}
@@ -393,4 +398,127 @@ export default storiesOf('Components|Appbar', module)
         ]}
       />
     </Container>
+  ))
+  .add('with menu', () => (
+    <Container scroll>
+      <Header title={'With Overflow Menu'} />
+
+      <Appbar
+        barType={'normal'}
+        navigationType={'menu'}
+        color={'#00BCD4'}
+        style={{ marginBottom: 20 }}
+        actionItems={[
+          { name: 'search', onPress: () => console.log('onSearch') },
+          <ExampleMenu key={1} />,
+        ]}
+      />
+      <Appbar
+        barType={'normal'}
+        color={'#009688'}
+        style={{ marginBottom: 20 }}
+        actionItems={[
+          { name: 'add' },
+          { name: 'edit' },
+          { name: 'archive' },
+          { name: 'delete' },
+        ]}
+      />
+      <Appbar
+        barType={'normal'}
+        title={'Page Title'}
+        color={'#4CAF50'}
+        navigationType={'menu'}
+        onNavigation={() => console.log('onNavigation!')}
+        actionItems={[
+          <Badge
+            key={1}
+            containerStyle={{ marginRight: 16, flex: 1 }}
+            color={'#e10050'}
+            textColor={'white'}
+            size={14}
+            content={77}>
+            <IconButton name="favorite" size={24} color={'white'} />
+          </Badge>,
+          { name: 'search', onPress: () => console.log('onSearch') },
+          { name: 'more-vert' },
+        ]}
+        style={{ marginBottom: 20 }}
+      />
+      <Appbar
+        barType={'simple'}
+        title={'Page Title'}
+        backgroundImage={
+          <Image
+            source={{
+              uri:
+                'https://images.pexels.com/photos/355465/pexels-photo-355465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+            }}
+          />
+        }
+        navigationType={'menu'}
+        actionItems={[
+          { name: 'favorite' },
+          { name: 'search', onPress: () => console.log('onSearch') },
+          <IconButton key={3} name="more-vert" size={24} color={'white'} />,
+        ]}
+        style={{ marginBottom: 20 }}
+      />
+      <Appbar
+        barType={'simple'}
+        title={'PAGE TITLE'}
+        titleStyles={{ fontSize: 18, fontWeight: '300', letterSpacing: 2 }}
+        backgroundImage={
+          <Image
+            source={{
+              uri:
+                'https://images.pexels.com/photos/355465/pexels-photo-355465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+            }}
+          />
+        }
+        navigationType={'menu'}
+        actionItems={[
+          { name: 'favorite' },
+          { name: 'search', onPress: () => console.log('onSearch') },
+          <IconButton key={1} name="more-vert" size={24} color={'white'} />,
+        ]}
+        style={{ marginBottom: 20 }}
+      />
+    </Container>
   ));
+
+const ExampleMenu = () => {
+  return (
+    <State store={store}>
+      {state => (
+        <View>
+          <Menu
+            visible={state.visibleOne}
+            button={
+              <Button
+                textColor={'white'}
+                text={'Show menu'}
+                onPress={() => {
+                  store.set({ visibleOne: !state.visibleOne });
+                }}
+                type="text"
+              />
+            }>
+            <MenuItem onPress={() => store.set({ visibleOne: false })}>
+              Menu item 1
+            </MenuItem>
+            <MenuItem onPress={() => store.set({ visibleOne: false })}>
+              Menu item 2
+            </MenuItem>
+            <MenuItem onPress={() => store.set({ visibleOne: false })} disabled>
+              Menu item 3
+            </MenuItem>
+            <MenuItem onPress={() => store.set({ visibleOne: false })}>
+              Menu item 2
+            </MenuItem>
+          </Menu>
+        </View>
+      )}
+    </State>
+  );
+};
