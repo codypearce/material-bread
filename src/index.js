@@ -1,5 +1,5 @@
 // ==== UTIL ====
-export { default as Hoverable } from './Utils/Hoverable';
+export { default as Hoverable } from './Utils/Hoverable/Hoverable';
 export { default as shadow } from './Utils/Shadow/shadow';
 export { default as Anchor } from './Utils/Anchor/Anchor';
 

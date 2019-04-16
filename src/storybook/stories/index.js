@@ -69,4 +69,7 @@ export {
 
 /* Utils */
 export { default as Anchor } from '../../Utils/Anchor/Anchor.stories.js';
+export {
+  default as Hoverable,
+} from '../../Utils/Hoverable/Hoverable.stories.js';
 export { default as Shadows } from '../../Utils/Shadow/Shadow.stories.js';

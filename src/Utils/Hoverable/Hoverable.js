@@ -1,40 +1,47 @@
-import { isHoverEnabled } from './HoverState';
-import { element, func, oneOfType } from 'prop-types';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+import { isHoverEnabled } from './HoverState';
 
 export default class Hoverable extends Component {
   constructor(props) {
     super(props);
-    this.state = { isHovered: false, showHover: true };
-    this._handleMouseEnter = this._handleMouseEnter.bind(this);
-    this._handleMouseLeave = this._handleMouseLeave.bind(this);
-    this._handleGrant = this._handleGrant.bind(this);
-    this._handleRelease = this._handleRelease.bind(this);
   }
 
-  _handleMouseEnter() {
+  state = {
+    isHovered: false,
+    showHover: true,
+  };
+
+  static propTypes = {
+    children: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
+    onHoverIn: PropTypes.func,
+    onHoverOut: PropTypes.func,
+  };
+
+  _handleMouseEnter = () => {
     if (isHoverEnabled() && !this.state.isHovered) {
       const { onHoverIn } = this.props;
       if (onHoverIn) onHoverIn();
       this.setState(state => ({ ...state, isHovered: true }));
     }
-  }
+  };
 
-  _handleMouseLeave() {
+  _handleMouseLeave = () => {
     if (this.state.isHovered) {
       const { onHoverOut } = this.props;
       if (onHoverOut) onHoverOut();
       this.setState(state => ({ ...state, isHovered: false }));
     }
-  }
+  };
 
-  _handleGrant() {
+  _handleGrant = () => {
     this.setState(state => ({ ...state, showHover: false }));
-  }
+  };
 
-  _handleRelease() {
+  _handleRelease = () => {
     this.setState(state => ({ ...state, showHover: true }));
-  }
+  };
 
   render() {
     const { children } = this.props;
@@ -46,17 +53,8 @@ export default class Hoverable extends Component {
     return React.cloneElement(React.Children.only(child), {
       onMouseEnter: this._handleMouseEnter,
       onMouseLeave: this._handleMouseLeave,
-      // prevent hover showing while responder
       onResponderGrant: this._handleGrant,
       onResponderRelease: this._handleRelease,
     });
   }
 }
-
-Hoverable.displayName = 'Hoverable';
-
-Hoverable.propTypes = {
-  children: oneOfType([func, element]),
-  onHoverIn: func,
-  onHoverOut: func,
-};
