@@ -5,6 +5,7 @@ import withTheme from '../../Theme/withTheme';
 import Paper from '../Paper/Paper';
 import IconButton from '../IconButton/IconButton';
 import styles from './Appbar.styles';
+import { shadow } from '../../';
 
 class Appbar extends Component {
   static propTypes = {
@@ -14,6 +15,7 @@ class Appbar extends Component {
     barType: PropTypes.string,
     backgroundImage: PropTypes.node,
     position: PropTypes.string,
+    elevation: PropTypes.number,
 
     navigationIcon: PropTypes.node,
     navigationType: PropTypes.string,
@@ -189,11 +191,12 @@ class Appbar extends Component {
       style,
       children,
       position,
+      elevation,
       ...rest
     } = this.props;
 
     let backgroundColor = color ? color : theme.base.primary;
-
+    const implementedShadow = elevation ? shadow(shadow) : shadow(6);
     return (
       <Paper
         style={[
@@ -209,6 +212,7 @@ class Appbar extends Component {
               barType == 'prominent' || barType === 'prominent dense'
                 ? 'flex-start'
                 : 'center',
+            ...implementedShadow,
           },
 
           style,
