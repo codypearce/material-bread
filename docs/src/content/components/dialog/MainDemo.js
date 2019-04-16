@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Image } from 'react-native';
-import { ComponentMainDemo } from '@components';
+import { ComponentMainDemo, CodeInline } from '@components';
 import {
   Button,
   Dialog,
@@ -42,7 +42,12 @@ const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
     description={
-      'Data Table Headers can display action buttons, display number of selected items, display table title, or any other contextual information. Modal is currently only working with React Native.'
+      <div>
+        Dialogs are rendered with{' '}
+        <CodeInline code="modal-react-native-web" type="" /> package. This
+        mimics the default modal found in{' '}
+        <CodeInline code="react-native" type="" />
+      </div>
     }
     code={code}
     scope={{

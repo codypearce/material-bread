@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     width: '100%',
     borderRadius: 4,
     paddingTop: 24,
-
+    maxWidth: 560,
     ...shadow(12),
   },
 });
