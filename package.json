@@ -1,6 +1,6 @@
 {
   "name": "material-bread",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest -w 1 --forceExit",
@@ -30,7 +30,7 @@
     "@storybook/addon-actions": "^5.0.6",
     "@storybook/addon-backgrounds": "^5.0.6",
     "@storybook/addon-console": "^1.1.0",
-    "@storybook/addon-jest": "^5.0.6",
+    "@storybook/addon-jest": "^ 5.0.6",
     "@storybook/addon-links": "^5.0.6",
     "@storybook/addon-storyshots": "^5.0.6",
     "@storybook/addon-viewport": "^5.0.6",
