@@ -7,11 +7,13 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 4,
     paddingHorizontal: 8,
+    zIndex: 10,
   },
   text: {
     fontSize: 14,
     color: 'rgba(0,0,0,.87)',
     fontWeight: '500',
+    zIndex: 10,
   },
 });
 
