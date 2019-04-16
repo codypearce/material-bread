@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { default as ColorTool } from 'color';
-import { Ripple } from '../../../../src/index';
+import { Ripple } from '../../../../../src';
 import { View, Text } from 'react-native';
+import styles from './ColorBlock.styles';
 
-class ColorBlock extends Component {
+export default class ColorBlock extends Component {
   constructor(props) {
     super(props);
   }
@@ -33,26 +34,17 @@ class ColorBlock extends Component {
       <Ripple
         key={name}
         onClick={this.copyToClipboard}
-        style={{
-          height: header ? 130 : 50,
-          padding: 16,
-          backgroundColor: color,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          cursor: 'pointer',
-          width: '100%',
-        }}>
+        style={[
+          styles.ripple,
+          {
+            height: header ? 130 : 50,
+            backgroundColor: color,
+          },
+        ]}>
         <View>
           {header ? <Text style={{ color: textColor }}>{header}</Text> : null}
         </View>
-        <View
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-          }}>
+        <View style={styles.textRow}>
           <Text style={{ color: textColor }}>{name}</Text>
           <Text style={{ color: textColor }}>{color}</Text>
         </View>
@@ -60,5 +52,3 @@ class ColorBlock extends Component {
     );
   }
 }
-
-export default ColorBlock;

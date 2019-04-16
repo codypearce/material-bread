@@ -22,7 +22,7 @@ export const code = `class Demo extends React.Component {
           onHoverOut={() => this.handleHover(false)}
         >
           <View style={{width: 200, height: 125, backgroundColor: this.state.color}} />
-      </Hoverable>
+        </Hoverable>
       );
     }
   }`;
