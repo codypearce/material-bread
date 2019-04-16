@@ -27,9 +27,12 @@ const MainDemo = pageHref => (
     pageHref={pageHref}
     description={
       <div>
-        Appbars are essentially broken into three parts: navigation, title, and
-        action buttons. Many combinations are possible using these sections, but
-        if you need more customization you can replace all of them by passing{' '}
+        <CodeInline code="Appbar" type={'element'} />s are essentially broken
+        into three parts: <CodeInline code="navigation" type={'prop'} />,{' '}
+        <CodeInline code="title" type={'prop'} />, and
+        <CodeInline code="actionItems" type={'prop'} />. Many combinations are
+        possible using these sections, but if you need more customization you
+        can replace all of them by passing{' '}
         <CodeInline code="children" type={'prop'} />.
       </div>
     }

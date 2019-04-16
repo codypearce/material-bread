@@ -197,6 +197,7 @@ class Appbar extends Component {
 
     let backgroundColor = color ? color : theme.base.primary;
     const implementedShadow = elevation ? shadow(shadow) : shadow(6);
+
     return (
       <Paper
         style={[
@@ -220,7 +221,19 @@ class Appbar extends Component {
         {...rest}>
         {backgroundImage &&
           React.cloneElement(backgroundImage, {
-            style: styles.backgroundImage,
+            style: [
+              // For some reason importing styles here means they  don't get applied
+              {
+                flex: 1,
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                width: '100%',
+                height: '100%',
+              },
+            ],
           })}
         {children ? children : this._renderAppbarContent()}
       </Paper>

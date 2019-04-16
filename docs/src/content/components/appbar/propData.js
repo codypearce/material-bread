@@ -26,7 +26,7 @@ const propData = [
   ['onTitle', 'OnPress for title string if provided.', 'func', ''],
   [
     'navigationIcon',
-    'Replaces navigationTyp element and renders on the far left before Title',
+    'Replaces navigationType element and renders on the far left before Title',
     'node',
     '',
   ],
