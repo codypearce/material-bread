@@ -15,7 +15,7 @@ export const code = `class Header extends React.Component {
     return (
       <Appbar
         title={'Page Title'} 
-        navigationType={'menu'}
+        navigation={'menu'}
         actionItems={[ 
           {name: 'search', onPress: () => this.setState({isSearching: true})},
           {name: 'favorite'},

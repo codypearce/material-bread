@@ -13,7 +13,7 @@ export default class Page extends Component {
             fab 
             fabPosition={'center'} 
             fabCutout
-            navigationType={'menu'}
+            navigation={'menu'}
             actionItems={[
                 {name: 'search', onPress: () => console.log('onSearch')},
                 {name: 'more-vert'},

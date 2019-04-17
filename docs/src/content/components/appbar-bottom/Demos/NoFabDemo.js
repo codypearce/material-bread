@@ -3,7 +3,7 @@ import { CodeInline, ComponentDemo } from '@components';
 import { AppbarBottom } from '../../../../../../src/index';
 
 export const code = `<AppbarBottom
-    navigationType={'menu'} 
+    navigation={'menu'} 
     actionItems={[
         {name: 'archive', onPress: () => console.log('onArchive')},
         {name: 'mail'},

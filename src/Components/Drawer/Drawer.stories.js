@@ -58,7 +58,7 @@ const AppbarContent = isOpen => {
     <Appbar
       barType={'normal'}
       title={'Page Title'}
-      navigationType={'menu'}
+      navigation={'menu'}
       onNavigation={() => store.set({ isOpen: !isOpen.isOpen })}
       actionItems={[{ name: 'search' }, { name: 'more-vert' }]}
     />
@@ -308,7 +308,7 @@ export default storiesOf('Components|Drawer', module)
                 <Appbar
                   barType={'normal'}
                   title={'Page Title'}
-                  navigationType={'menu'}
+                  navigation={'menu'}
                   onNavigation={() =>
                     store.set({ isOpenPermanent: !state.isOpenPermanent })
                   }
@@ -341,7 +341,7 @@ export default storiesOf('Components|Drawer', module)
                 <Appbar
                   barType={'normal'}
                   title={'Page Title'}
-                  navigationType={'menu'}
+                  navigation={'menu'}
                   onNavigation={() =>
                     store.set({ isOpenPermanent: !state.isOpenPermanent })
                   }

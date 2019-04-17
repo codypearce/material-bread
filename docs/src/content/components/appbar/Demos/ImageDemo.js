@@ -7,7 +7,7 @@ export const withImageCode = `<Appbar
   barType={'prominent'}
   title={'Background image'}
   color={'#9C27B0'}
-  navigationType={'menu'}
+  navigation={'menu'}
   backgroundImage={
     <Image
       source={{

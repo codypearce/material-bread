@@ -22,7 +22,7 @@ class AppbarDemo extends React.Component {
     return (
       <Appbar
         barType={'normal'}
-        navigationType={'menu'}
+        navigation={'menu'}
         color={'#00BCD4'}
         style={{ marginBottom: 20 }}
         actionItems={[

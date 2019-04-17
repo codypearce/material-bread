@@ -6,7 +6,7 @@ export const code = `<Appbar
   barType={'prominent'}
   title={'Page Title'} 
   subtitle={'Subtitle'}
-  navigationType={'menu'}
+  navigation={'menu'}
   actionItems={[
     {name: 'favorite'},
     {name: 'search', onPress: () => console.log('onSearch')},

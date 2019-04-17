@@ -6,7 +6,7 @@ import { Appbar, IconButton, Badge } from '../../../../../src/index';
 export const code = ` <Appbar
     barType={"normal"}
     title={'Page Title'} 
-    navigationType={'menu'}
+    navigation={'menu'}
     onNavigation={() => console.log('onNavigation!')}
     actionItems={[
     <Badge

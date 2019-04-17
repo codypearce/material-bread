@@ -16,7 +16,7 @@ class Header extends React.Component {
     return (
       <Appbar
         title={'Page Title'} 
-        navigationType={'menu'}
+        navigation={'menu'}
         actionItems={[
           <Searchfield 
             style={{
@@ -35,7 +35,7 @@ class Header extends React.Component {
           {name: 'favorite'},
           <IconButton name="more-vert" size={24} color={'white'} />, 
         ]}
-        navigationType={'close'}
+        navigation={'close'}
       />
     );
   }

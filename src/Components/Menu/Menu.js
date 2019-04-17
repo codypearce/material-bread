@@ -37,19 +37,29 @@ class Menu extends Component {
   onButtonLayout = e => {
     const { width, height } = e.nativeEvent.layout;
 
-    let { locationX, locationY } = e.nativeEvent;
+    let locationX, locationY;
 
     if (Platform.OS === 'web') {
       locationX = e.nativeEvent.target.getBoundingClientRect().x;
       locationY = e.nativeEvent.target.getBoundingClientRect().y;
+      this.setState({
+        buttonWidth: width,
+        buttonHeight: height,
+        buttonPositionX: locationX,
+        buttonPositionY: locationY,
+      });
+    } else {
+      this.marker.measure((x, y, width, height, pageX, pageY) => {
+        locationX = pageX;
+        locationY = pageY;
+        this.setState({
+          buttonWidth: width,
+          buttonHeight: height,
+          buttonPositionX: locationX,
+          buttonPositionY: locationY,
+        });
+      });
     }
-
-    this.setState({
-      buttonWidth: width,
-      buttonHeight: height,
-      buttonPositionX: locationX,
-      buttonPositionY: locationY,
-    });
   };
 
   onMenuLayout = e => {
@@ -127,7 +137,13 @@ class Menu extends Component {
 
     return (
       <View>
-        <View onLayout={this.onButtonLayout}>{button}</View>
+        <View
+          onLayout={this.onButtonLayout}
+          ref={ref => {
+            this.marker = ref;
+          }}>
+          {button}
+        </View>
         <ModelMenu
           animationType={'none'}
           visible={visible}
@@ -140,8 +156,8 @@ class Menu extends Component {
                 height: menuHeight,
                 width: menuWidth,
                 opacity: opacity,
-                top: buttonPositionY - 10,
-                left: buttonPositionX - 10,
+                top: buttonPositionY && buttonPositionY - 10,
+                left: buttonPositionX && buttonPositionX - 10,
               },
             ]}>
             <View

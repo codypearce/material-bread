@@ -27,7 +27,7 @@ class Header extends Component {
           boxShadow: 'none',
           zIndex: 10,
         }}
-        navigationIcon={
+        navigation={
           <IconButton
             color={'#263238'}
             size={28}

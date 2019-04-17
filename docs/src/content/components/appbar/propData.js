@@ -19,21 +19,15 @@ const propData = [
   ['elevation', `Shadow on container appbar`, 'number', '8'],
   [
     'onNavigation',
-    'OnPress for navigationType IconButton if provided.',
+    'OnPress for navigation IconButton if provided.',
     'func',
     '',
   ],
   ['onTitle', 'OnPress for title string if provided.', 'func', ''],
   [
-    'navigationIcon',
-    'Replaces navigationType element and renders on the far left before Title',
-    'node',
-    '',
-  ],
-  [
-    'navigationType',
-    'Name of IconButton, renders on the far left before Title.',
-    'string',
+    'navigation',
+    'Renders IconButton if string, or renders custom node on left of title',
+    'node || string',
     '',
   ],
 

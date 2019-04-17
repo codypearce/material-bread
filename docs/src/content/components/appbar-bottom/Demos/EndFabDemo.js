@@ -24,7 +24,7 @@ const SubtitleDemo = pageHref => (
         Changing <CodeInline code="fabPosition" type={'prop'} /> to{' '}
         <CodeInline code="end" type={'value'} /> will move{' '}
         <CodeInline code="actionItems" type={'prop'} />
-        to the left after the <CodeInline code="navigationIcon" type={'prop'} />
+        to the left after the <CodeInline code="navigation" type={'prop'} />
         . Add the
         <CodeInline code="fabCutout" type={'prop'} /> prop to see how spacing is
         effected.

@@ -16,22 +16,17 @@ const propData = [
   ['onFab', 'OnPress for fab if provided.', 'func', ''],
   [
     'onNavigation',
-    'OnPress for navigationType IconButton if provided.',
+    'OnPress for navigation IconButton if provided.',
     'func',
     '',
   ],
   [
-    'navigationIcon',
-    'Replaces navigationTyp element and renders on the far left before Title',
-    'node',
+    'navigation',
+    'Name of IconButton if string or node, renders on the far left before Title',
+    'node || string',
     '',
   ],
-  [
-    'navigationType',
-    'Name of IconButton, renders on the far left before Title.',
-    'string',
-    '',
-  ],
+
   ['style', 'Styles root element wrapping fab and appbar', 'object', ''],
 ];
 

@@ -7,7 +7,7 @@ export const code = `<AppbarBottom
     fabPosition={'center'} 
     fabCutout
     onFab={() => console.log('onFab')}
-    navigationType={'menu'}
+    navigation={'menu'}
     actionItems={[
         {name: 'search', onPress: () => console.log('onSearch')},
         {name: 'more-vert'},

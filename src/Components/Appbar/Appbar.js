@@ -17,8 +17,7 @@ class Appbar extends Component {
     position: PropTypes.string,
     elevation: PropTypes.number,
 
-    navigationIcon: PropTypes.node,
-    navigationType: PropTypes.string,
+    navigation: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     onNavigation: PropTypes.func,
 
     title: PropTypes.string,
@@ -56,19 +55,12 @@ class Appbar extends Component {
   }
 
   _renderNavigation() {
-    const {
-      navigationType,
-      navigationIcon,
-      onNavigation,
-      barType,
-    } = this.props;
+    const { navigation, onNavigation, barType } = this.props;
 
-    if (navigationIcon) return navigationIcon;
-
-    if (navigationType) {
+    if (typeof navigation === 'string' || navigation instanceof String) {
       return (
         <IconButton
-          name={navigationType || 'menu'}
+          name={navigation || 'menu'}
           size={24}
           color={'white'}
           onPress={onNavigation}
@@ -80,8 +72,9 @@ class Appbar extends Component {
           }}
         />
       );
+    } else {
+      return navigation;
     }
-    return null;
   }
 
   _renderTitle() {
@@ -101,8 +94,7 @@ class Appbar extends Component {
     const {
       barType,
       title,
-      navigationIcon,
-      navigationType,
+      navigation,
       titleStyles,
       subtitle,
       subtitleStyles,
@@ -112,7 +104,7 @@ class Appbar extends Component {
       <View
         style={[
           {
-            marginLeft: navigationIcon || navigationType ? 32 : 0,
+            marginLeft: navigation ? 32 : 0,
             marginBottom: barType === 'prominent' ? 12 : 0,
             alignSelf:
               barType === 'prominent' || barType === 'prominent dense'

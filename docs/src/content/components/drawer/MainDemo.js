@@ -49,7 +49,7 @@ export const code = `class DrawerPage extends React.Component {
         <Appbar
           barType={'normal'}
           title={'Page Title'}
-          navigationType={'menu'}
+          navigation={'menu'}
           onNavigation={() => this.setState({ isOpen: !this.state.isOpen })}
           actionItems={[{ name: 'search' }, { name: 'more-vert' }]}
         />

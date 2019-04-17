@@ -33,20 +33,20 @@ export default storiesOf('Components|Appbar', module)
       <Appbar
         barType={'normal'}
         title={'Navigation Type'}
-        navigationType={'menu'}
+        navigation={'menu'}
         color={'#9C27B0'}
         style={{ marginBottom: 20 }}
       />
       <Appbar
         barType={'normal'}
         title={'Different Icon'}
-        navigationType={'arrow-back'}
+        navigation={'arrow-back'}
         color={'#673AB7'}
         style={{ marginBottom: 20 }}
       />
       <Appbar
         barType={'normal'}
-        navigationType={'menu'}
+        navigation={'menu'}
         color={'#00BCD4'}
         style={{ marginBottom: 20 }}
         actionItems={[
@@ -69,7 +69,7 @@ export default storiesOf('Components|Appbar', module)
         barType={'normal'}
         title={'Page Title'}
         color={'#4CAF50'}
-        navigationType={'menu'}
+        navigation={'menu'}
         onNavigation={() => console.log('onNavigation!')}
         actionItems={[
           <Badge
@@ -97,7 +97,7 @@ export default storiesOf('Components|Appbar', module)
             }}
           />
         }
-        navigationType={'menu'}
+        navigation={'menu'}
         actionItems={[
           { name: 'favorite' },
           { name: 'search', onPress: () => console.log('onSearch') },
@@ -117,7 +117,7 @@ export default storiesOf('Components|Appbar', module)
             }}
           />
         }
-        navigationType={'menu'}
+        navigation={'menu'}
         actionItems={[
           { name: 'favorite' },
           { name: 'search', onPress: () => console.log('onSearch') },
@@ -133,7 +133,7 @@ export default storiesOf('Components|Appbar', module)
       <Header title={'Appbar Prominent'} />
       <Appbar
         barType={'prominent'}
-        navigationType={'menu'}
+        navigation={'menu'}
         title={'Prominent'}
         style={{ marginBottom: 20 }}
       />
@@ -141,7 +141,7 @@ export default storiesOf('Components|Appbar', module)
         barType={'prominent'}
         title={'Actions'}
         color={'#E91E63'}
-        navigationType={'menu'}
+        navigation={'menu'}
         onNavigation={() => console.log('onNavigation!')}
         actionItems={[{ name: 'more-vert' }]}
         style={{ marginBottom: 20 }}
@@ -150,7 +150,7 @@ export default storiesOf('Components|Appbar', module)
         barType={'prominent'}
         title={'Badge and icons'}
         color={'#9C27B0'}
-        navigationType={'menu'}
+        navigation={'menu'}
         onNavigation={() => console.log('onNavigation!')}
         actionItems={[
           <Badge
@@ -172,7 +172,7 @@ export default storiesOf('Components|Appbar', module)
         title={'Subtitle'}
         subtitle={'Subtitle'}
         color={'#009688'}
-        navigationType={'menu'}
+        navigation={'menu'}
         onNavigation={() => console.log('onNavigation!')}
         actionItems={[
           <Badge
@@ -194,7 +194,7 @@ export default storiesOf('Components|Appbar', module)
         title={'Background image'}
         subtitle={'Subtitle'}
         color={'#9C27B0'}
-        navigationType={'menu'}
+        navigation={'menu'}
         backgroundImage={
           <Image
             source={{
@@ -237,20 +237,20 @@ export default storiesOf('Components|Appbar', module)
       <Appbar
         barType={'dense'}
         title={'Navigation Type'}
-        navigationType={'menu'}
+        navigation={'menu'}
         color={'#9C27B0'}
         style={{ marginBottom: 20 }}
       />
       <Appbar
         barType={'dense'}
         title={'Different Icon'}
-        navigationType={'arrow-back'}
+        navigation={'arrow-back'}
         color={'#673AB7'}
         style={{ marginBottom: 20 }}
       />
       <Appbar
         barType={'dense'}
-        navigationType={'menu'}
+        navigation={'menu'}
         color={'#00BCD4'}
         style={{ marginBottom: 20 }}
         actionItems={[
@@ -273,7 +273,7 @@ export default storiesOf('Components|Appbar', module)
         barType={'dense'}
         title={'Page Title'}
         color={'#4CAF50'}
-        navigationType={'menu'}
+        navigation={'menu'}
         onNavigation={() => console.log('onNavigation!')}
         actionItems={[
           <Badge
@@ -301,7 +301,7 @@ export default storiesOf('Components|Appbar', module)
             }}
           />
         }
-        navigationType={'menu'}
+        navigation={'menu'}
         actionItems={[
           { name: 'favorite' },
           { name: 'search', onPress: () => console.log('onSearch') },
@@ -327,20 +327,20 @@ export default storiesOf('Components|Appbar', module)
       <Appbar
         barType={'prominent dense'}
         title={'Navigation Type'}
-        navigationType={'menu'}
+        navigation={'menu'}
         color={'#9C27B0'}
         style={{ marginBottom: 20 }}
       />
       <Appbar
         barType={'prominent dense'}
         title={'Different Icon'}
-        navigationType={'arrow-back'}
+        navigation={'arrow-back'}
         color={'#673AB7'}
         style={{ marginBottom: 20 }}
       />
       <Appbar
         barType={'prominent dense'}
-        navigationType={'menu'}
+        navigation={'menu'}
         color={'#00BCD4'}
         style={{ marginBottom: 20 }}
         actionItems={[
@@ -363,7 +363,7 @@ export default storiesOf('Components|Appbar', module)
         barType={'prominent dense'}
         title={'Page Title'}
         color={'#4CAF50'}
-        navigationType={'menu'}
+        navigation={'menu'}
         onNavigation={() => console.log('onNavigation!')}
         actionItems={[
           <Badge
@@ -391,7 +391,7 @@ export default storiesOf('Components|Appbar', module)
             }}
           />
         }
-        navigationType={'menu'}
+        navigation={'menu'}
         actionItems={[
           { name: 'favorite' },
           { name: 'search', onPress: () => console.log('onSearch') },
@@ -406,7 +406,7 @@ export default storiesOf('Components|Appbar', module)
 
       <Appbar
         barType={'normal'}
-        navigationType={'menu'}
+        navigation={'menu'}
         color={'#00BCD4'}
         style={{ marginBottom: 20 }}
         actionItems={[

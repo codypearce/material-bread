@@ -27,7 +27,7 @@ export default storiesOf('Components|AppbarBottom', module)
         fabPosition={'center'}
         fabIcon={'change-history'}
         fabStyles={{ backgroundColor: '#009688' }}
-        navigationType={'menu'}
+        navigation={'menu'}
         color={'#E91E63'}
         style={{ marginBottom: 50 }}
       />
@@ -37,7 +37,7 @@ export default storiesOf('Components|AppbarBottom', module)
         fabPosition={'center'}
         fabIcon={'change-history'}
         fabStyles={{ backgroundColor: '#009688' }}
-        navigationType={'menu'}
+        navigation={'menu'}
         color={'#E91E63'}
         style={{ marginBottom: 50 }}
       />
@@ -46,7 +46,7 @@ export default storiesOf('Components|AppbarBottom', module)
         fabPosition={'center'}
         fabIcon={'drafts'}
         fabStyles={{ backgroundColor: '#8BC34A' }}
-        navigationType={'arrow-back'}
+        navigation={'arrow-back'}
         actionItems={[
           { name: 'search', onPress: () => console.log('onSearch') },
           { name: 'more-vert' },
@@ -60,7 +60,7 @@ export default storiesOf('Components|AppbarBottom', module)
         fabPosition={'center'}
         fabIcon={'drafts'}
         fabStyles={{ backgroundColor: '#8BC34A' }}
-        navigationType={'arrow-back'}
+        navigation={'arrow-back'}
         actionItems={[
           { name: 'search', onPress: () => console.log('onSearch') },
           { name: 'more-vert' },
@@ -73,7 +73,7 @@ export default storiesOf('Components|AppbarBottom', module)
         fabPosition={'center'}
         fabIcon={'favorite'}
         fabStyles={{ backgroundColor: '#E91E63' }}
-        navigationType={'menu'}
+        navigation={'menu'}
         actionItems={[
           <Badge
             key={1}
@@ -96,7 +96,7 @@ export default storiesOf('Components|AppbarBottom', module)
         fabIcon={'favorite'}
         fabCutout
         fabStyles={{ backgroundColor: '#E91E63' }}
-        navigationType={'menu'}
+        navigation={'menu'}
         actionItems={[
           <Badge
             key={1}
@@ -136,7 +136,7 @@ export default storiesOf('Components|AppbarBottom', module)
         fabPosition={'end'}
         fabIcon={'change-history'}
         fabStyles={{ backgroundColor: '#009688' }}
-        navigationType={'menu'}
+        navigation={'menu'}
         color={'#E91E63'}
         style={{ marginBottom: 50 }}
       />
@@ -146,7 +146,7 @@ export default storiesOf('Components|AppbarBottom', module)
         fabPosition={'end'}
         fabIcon={'change-history'}
         fabStyles={{ backgroundColor: '#009688' }}
-        navigationType={'menu'}
+        navigation={'menu'}
         color={'#E91E63'}
         style={{ marginBottom: 50 }}
       />
@@ -155,7 +155,7 @@ export default storiesOf('Components|AppbarBottom', module)
         fabPosition={'end'}
         fabIcon={'drafts'}
         fabStyles={{ backgroundColor: '#8BC34A' }}
-        navigationType={'arrow-back'}
+        navigation={'arrow-back'}
         actionItems={[
           { name: 'search', onPress: () => console.log('onSearch') },
           { name: 'more-vert' },
@@ -169,7 +169,7 @@ export default storiesOf('Components|AppbarBottom', module)
         fabPosition={'end'}
         fabIcon={'drafts'}
         fabStyles={{ backgroundColor: '#8BC34A' }}
-        navigationType={'arrow-back'}
+        navigation={'arrow-back'}
         actionItems={[
           { name: 'search', onPress: () => console.log('onSearch') },
           { name: 'more-vert' },
@@ -182,7 +182,7 @@ export default storiesOf('Components|AppbarBottom', module)
         fabPosition={'end'}
         fabIcon={'favorite'}
         fabStyles={{ backgroundColor: '#E91E63' }}
-        navigationType={'menu'}
+        navigation={'menu'}
         actionItems={[
           <Badge
             key={1}
@@ -205,7 +205,7 @@ export default storiesOf('Components|AppbarBottom', module)
         fabIcon={'favorite'}
         fabCutout
         fabStyles={{ backgroundColor: '#E91E63' }}
-        navigationType={'menu'}
+        navigation={'menu'}
         actionItems={[
           <Badge
             key={1}
@@ -241,7 +241,7 @@ export default storiesOf('Components|AppbarBottom', module)
 
       <AppbarBottom
         fabStyles={{ backgroundColor: '#009688' }}
-        navigationType={'menu'}
+        navigation={'menu'}
         color={'#E91E63'}
         style={{ marginBottom: 50 }}
         actionItems={[
@@ -254,7 +254,7 @@ export default storiesOf('Components|AppbarBottom', module)
       />
 
       <AppbarBottom
-        navigationType={'arrow-back'}
+        navigation={'arrow-back'}
         actionItems={[
           { name: 'search', onPress: () => console.log('onSearch') },
           { name: 'more-vert' },
@@ -264,7 +264,7 @@ export default storiesOf('Components|AppbarBottom', module)
       />
 
       <AppbarBottom
-        navigationType={'menu'}
+        navigation={'menu'}
         actionItems={[
           <Badge
             key={1}

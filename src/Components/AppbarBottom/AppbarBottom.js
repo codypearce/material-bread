@@ -20,8 +20,7 @@ class AppbarBottom extends Component {
     fabIcon: PropTypes.string,
     onFab: PropTypes.func,
 
-    navigationIcon: PropTypes.node,
-    navigationType: PropTypes.string,
+    navigation: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     onNavigation: PropTypes.func,
 
     actionItems: PropTypes.oneOfType([PropTypes.node, PropTypes.array]),
@@ -31,27 +30,21 @@ class AppbarBottom extends Component {
   };
 
   _renderNavigation() {
-    const {
-      navigationType,
-      navigationIcon,
-      onNavigation,
-      fabPosition,
-    } = this.props;
+    const { navigation, onNavigation, fabPosition } = this.props;
 
-    if (navigationIcon) return navigationIcon;
-
-    if (navigationType) {
+    if (typeof navigation === 'string' || navigation instanceof String) {
       return (
         <IconButton
-          name={navigationType || 'menu'}
+          name={navigation || 'menu'}
           size={24}
           color={'white'}
           onPress={onNavigation}
           style={{ marginRight: fabPosition === 'end' ? 24 : 0 }}
         />
       );
+    } else {
+      return navigation;
     }
-    return null;
   }
 
   _renderFab() {

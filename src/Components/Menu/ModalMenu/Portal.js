@@ -15,11 +15,9 @@ export default class Portal extends Component {
 
   componentDidMount() {
     const container = document.createElement('div');
-    // container.style.position = 'fixed';
-    // container.style.top = 0;
-    // container.style.left = 0;
-    // container.style.right = 0;
-    // container.style.bottom = 0;
+    if (typeof document == `undefined`) {
+      return;
+    }
 
     this.setState({ el: container, target: document.body }, () => {
       this.state.target.appendChild(this.state.el);
