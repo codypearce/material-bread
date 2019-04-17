@@ -1,12 +1,50 @@
 import { StyleSheet } from 'react-native';
 
 export default {
-  base: {
-    primary: '#1e88e5',
-    primaryDark: '#005cb2',
-    primaryLight: '#6ab7ff',
-    secondary: '#E91E63',
+  primary: {
+    main: '#1e88e5',
+    dark: '#005cb2',
+    light: '#6ab7ff',
   },
+  secondary: {
+    main: '#f50057',
+    dark: '#c51162',
+    light: '#ff4081',
+  },
+  error: {
+    main: '#f44336',
+    light: '#e57373',
+    dark: '#d32f2f',
+  },
+  text: {
+    primary: 'rgba(0, 0, 0, 0.87)',
+    secondary: 'rgba(0, 0, 0, 0.54)',
+    disabled: 'rgba(0, 0, 0, 0.38)',
+    hint: 'rgba(0, 0, 0, 0.38)',
+  },
+  background: {
+    default: '#fafafa',
+  },
+  action: {
+    active: 'rgba(0, 0, 0, 0.54)',
+    hover: 'rgba(0, 0, 0, 0.08)',
+    hoverOpacity: 0.08,
+    selected: 'rgba(0, 0, 0, 0.14)',
+    disabled: 'rgba(0, 0, 0, 0.26)',
+    disabledBackground: 'rgba(0, 0, 0, 0.12)',
+  },
+  paper: {
+    backgroundColor: 'white',
+    borderRadius: 2,
+  },
+  divider: {
+    height: StyleSheet.hairlineWidth,
+    width: '100%',
+    opacity: 0.12,
+    backgroundColor: 'rgba(0,0,0,.12)',
+    marginVertical: 16,
+  },
+
   button: {
     padding: 8,
     borderRadius: 4,
@@ -88,16 +126,5 @@ export default {
     lineHeight: 14,
     letterSpacing: 0.1,
     fontWeight: '500',
-  },
-  paper: {
-    backgroundColor: 'white',
-    borderRadius: 2,
-  },
-  divider: {
-    height: StyleSheet.hairlineWidth,
-    width: '100%',
-    opacity: 0.12,
-    backgroundColor: 'rgba(0,0,0,.12)',
-    marginVertical: 16,
   },
 };

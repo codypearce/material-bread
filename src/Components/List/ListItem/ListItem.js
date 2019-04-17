@@ -29,6 +29,7 @@ class ListItem extends Component {
             paddingRight: 16,
             paddingVertical: 12,
             width: '100%',
+            zIndex: 1,
           },
           style,
         ]}>

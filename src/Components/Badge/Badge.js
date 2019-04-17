@@ -91,7 +91,7 @@ class Badge extends Component {
             height: size,
             width: size,
             borderRadius: size,
-            backgroundColor: color ? color : theme.base.primary,
+            backgroundColor: color ? color : theme.primary.main,
 
             alignItems: 'center',
             justifyContent: 'center',

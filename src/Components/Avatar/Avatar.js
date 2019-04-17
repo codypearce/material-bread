@@ -101,7 +101,7 @@ class Avatar extends Component {
             width: size,
             height: size,
             borderRadius: size / 2,
-            backgroundColor: color ? color : theme.base.primary,
+            backgroundColor: color ? color : theme.primary.main,
             alignItems: 'center',
             justifyContent: 'center',
           },

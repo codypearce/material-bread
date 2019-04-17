@@ -47,7 +47,7 @@ class TextButton extends Component {
   getRippleColor() {
     const { textColor, theme, rippleColor } = this.props;
 
-    let implementedRippleColor = textColor ? textColor : theme.base.primary;
+    let implementedRippleColor = textColor ? textColor : theme.primary.main;
 
     return rippleColor ? rippleColor : implementedRippleColor;
   }
@@ -55,7 +55,7 @@ class TextButton extends Component {
   getTextColor() {
     const { textColor, disabled, theme } = this.props;
 
-    let implementedTextColor = textColor ? textColor : theme.base.primary;
+    let implementedTextColor = textColor ? textColor : theme.primary.main;
 
     return disabled ? 'rgba(0, 0, 0, 0.26)' : implementedTextColor;
   }

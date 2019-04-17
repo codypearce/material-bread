@@ -23,7 +23,7 @@ class OutlinedButton extends Component {
   getButtonStyles() {
     const { theme, textColor, disabled, borderSize } = this.props;
 
-    let borderColor = textColor ? textColor : theme.primary;
+    let borderColor = textColor ? textColor : theme.primary.main;
 
     const buttonStyles = [
       theme.outlinedButton,
@@ -52,7 +52,7 @@ class OutlinedButton extends Component {
   getRippleColor() {
     const { textColor, theme, rippleColor } = this.props;
 
-    let implementedRippleColor = textColor ? textColor : theme.base.primary;
+    let implementedRippleColor = textColor ? textColor : theme.primary.main;
 
     return rippleColor ? rippleColor : implementedRippleColor;
   }
@@ -60,7 +60,7 @@ class OutlinedButton extends Component {
   getTextColor() {
     const { textColor, disabled, theme } = this.props;
 
-    let implementedTextColor = textColor ? textColor : theme.base.primary;
+    let implementedTextColor = textColor ? textColor : theme.primary.main;
 
     return disabled ? 'rgba(0, 0, 0, 0.26)' : implementedTextColor;
   }

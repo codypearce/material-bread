@@ -10,7 +10,7 @@ const propData = [
     'color',
     'Background color for each buttontype',
     'string',
-    'theme.base.primary',
+    'theme.primary.main',
   ],
   ['containerStyle', 'Styles container of contained button', 'object', ''],
 
@@ -50,7 +50,7 @@ const propData = [
     'textColor',
     'Color applied to text, styles border if type is outlined',
     'string',
-    'theme.base.primary',
+    'theme.primary.main',
   ],
   ['textStyle', 'Styles applied to text', 'object', ''],
 

@@ -33,7 +33,7 @@ function AppButton(props) {
   const { theme } = props;
 
   return (
-    <View style={{backgroundColor: theme.palette.primary }}>Click Me</View>
+    <View style={{backgroundColor: theme.primary.main }}>Click Me</View>
   )
 }
 

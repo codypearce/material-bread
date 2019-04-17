@@ -56,7 +56,7 @@ class Chip extends Component {
     let displayedColor = themeColor || color ? 'white' : 'rgba(0, 0, 0, 0.87)';
 
     if (chipStyle == 'outlined' && (themeColor || color))
-      displayedColor = theme.base[themeColor];
+      displayedColor = theme[themeColor].main;
 
     return (
       <Text
@@ -118,7 +118,7 @@ class Chip extends Component {
     } = this.props;
     let iconColor = themeColor || color ? 'white' : '#666666';
     if (chipStyle == 'outlined')
-      iconColor = themeColor ? theme.base[themeColor] : '#666666';
+      iconColor = themeColor ? theme[themeColor].main : '#666666';
 
     return (
       <Ripple
@@ -148,13 +148,13 @@ class Chip extends Component {
 
     let borderWidth = 0;
     let displayBackgroundColor = themeColor
-      ? theme.base[themeColor]
+      ? theme[themeColor].main
       : '#e0e0e0';
     let displayBorderColor = themeColor
-      ? theme.base[themeColor]
+      ? theme[themeColor].main
       : 'rgba(0, 0, 0, 0.23)';
     let rippleColor = themeColor
-      ? theme.base[themeColor]
+      ? theme[themeColor].main
       : 'rgba(0, 0, 0, .87)';
 
     if (chipStyle === 'outlined') {

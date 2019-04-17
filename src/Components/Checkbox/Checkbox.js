@@ -54,7 +54,7 @@ class Checkbox extends Component {
     const { disabled, checkboxColor, theme } = this.props;
     let checkboxColorApplied = checkboxColor
       ? checkboxColor
-      : theme.base.primary;
+      : theme.primary.main;
 
     if (disabled) {
       checkboxColorApplied = 'rgba(0,0,0,.5)';

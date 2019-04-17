@@ -112,7 +112,7 @@ class ContainedButton extends Component {
     const { color: userColor, disabled, theme } = this.props;
     const { stateBackgroundColor } = this.state;
 
-    let backgroundColor = userColor ? userColor : theme.base.primary;
+    let backgroundColor = userColor ? userColor : theme.primary.main;
 
     backgroundColor = disabled ? 'rgba(0, 0, 0, 0.12)' : backgroundColor;
 

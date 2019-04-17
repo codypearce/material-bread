@@ -150,7 +150,7 @@ class AppbarBottom extends Component {
       theme,
       ...rest
     } = this.props;
-    const backgroundColor = color ? color : theme.base.primary;
+    const backgroundColor = color ? color : theme.primary.main;
     return (
       <View style={[styles.contianer, style]}>
         {this._renderCutout()}
