@@ -8,6 +8,7 @@ const propData = [
   ],
   ['menuStyle', 'Styles the container to menu', 'object', ''],
   ['onHidden', 'Callback when menu is hidden', 'func', ''],
+  ['onBackdropPress', 'Callback when clicking outside menu', 'func', ''],
   [
     'sameWidth',
     'Forces menu to match the width of the passed in button',

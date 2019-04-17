@@ -31,7 +31,8 @@
     "react-native-web": "^0.11.2",
     "react-scrollspy": "^3.3.5",
     "react-window": "^1.7.1",
-    "sharp": "^0.22.0"
+    "sharp": "^0.22.0",
+    "react-tooltip": "^3.10.0"
   },
   "devDependencies": {
     "babel-preset-gatsby": "^0.1.10",

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Animated, View, Easing, Platform } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import styles from './Menu.styles';
-import Modal from 'modal-react-native-web';
+import ModelMenu from './ModalMenu';
 
 class Menu extends Component {
   static propTypes = {
@@ -14,6 +14,7 @@ class Menu extends Component {
     visible: PropTypes.bool,
     menuStyle: PropTypes.object,
     sameWidth: PropTypes.bool,
+    onBackdropPress: PropTypes.func,
   };
 
   state = {
@@ -115,15 +116,22 @@ class Menu extends Component {
       buttonPositionY,
       buttonPositionX,
     } = this.state;
-    const { button, children, menuStyle, sameWidth, visible } = this.props;
+    const {
+      button,
+      children,
+      menuStyle,
+      sameWidth,
+      visible,
+      onBackdropPress,
+    } = this.props;
 
     return (
       <View>
         <View onLayout={this.onButtonLayout}>{button}</View>
-        <Modal
-          ariaHideApp={false}
+        <ModelMenu
           animationType={'none'}
           visible={visible}
+          onBackdropPress={onBackdropPress}
           transparent>
           <Animated.View
             style={[
@@ -146,7 +154,7 @@ class Menu extends Component {
               {children}
             </View>
           </Animated.View>
-        </Modal>
+        </ModelMenu>
       </View>
     );
   }

@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   require: ['@babel/polyfill'],
@@ -15,6 +16,7 @@ module.exports = {
           test: /\.js$/,
           loader: 'babel-loader',
           exclude: [/node_modules/],
+          include: [path.resolve('./node_modules/react-native-animatable')],
           options: {
             plugins: [
               '@babel/proposal-class-properties',

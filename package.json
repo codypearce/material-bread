@@ -16,9 +16,7 @@
   "dependencies": {
     "color": "^3.1.0",
     "modal-enhanced-react-native-web": "^0.2.0",
-    "modal-react-native-web": "^0.2.0",
-    "react-native-vector-icons": "^6.2.0",
-    "react-tooltip": "^3.10.0"
+    "react-native-vector-icons": "^6.2.0"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^5.0.6",
@@ -58,7 +56,8 @@
     "react-art": "^16.8.3",
     "react-native": "^0.59.3",
     "react-native-web": "^0.11.2",
-    "react-test-renderer": "^16.7.0"
+    "react-test-renderer": "^16.7.0",
+    "modal-react-native-web": "^0.2.0"
   },
   "peerDependencies": {
     "react": "*",

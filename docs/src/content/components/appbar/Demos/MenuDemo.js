@@ -29,6 +29,11 @@ class AppbarDemo extends React.Component {
           { name: 'search', onPress: () => console.log('onSearch') },
           <Menu
             visible={this.state.visibleOne}
+            onBackdropPress={() => {
+              console.log('called')
+              this.setState({visibleOne: false})
+            }
+            }
             button={
               <Button
                 textColor={'white'}
