@@ -36,6 +36,7 @@ export default class Modal extends Component {
     appElement: PropTypes.instanceOf(SafeHTMLElement),
     containerStyle: PropTypes.object,
     onBackdropPress: PropTypes.func,
+    onLayout: PropTypes.func,
   };
 
   static defaultProps = {
@@ -247,10 +248,17 @@ export default class Modal extends Component {
   }
 
   render() {
-    const { containerStyle, onBackdropPress, children, visible } = this.props;
+    const {
+      containerStyle,
+      onBackdropPress,
+      children,
+      visible,
+      onLayout,
+    } = this.props;
     return (
       <ModalPortal visible={visible}>
         <Animated.View
+          onLayout={onLayout}
           aria-modal="true"
           style={[
             styles.container,
@@ -268,7 +276,6 @@ export default class Modal extends Component {
                 width: visible ? '100%' : 0,
                 position: 'fixed',
                 top: 0,
-
                 zIndex: visible ? 10 : -10,
               }}
             />
