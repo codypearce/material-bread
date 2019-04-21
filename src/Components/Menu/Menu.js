@@ -21,6 +21,7 @@ class Menu extends Component {
     menuHeight: new Animated.Value(0),
     menuWidth: new Animated.Value(0),
     opacity: new Animated.Value(0),
+    modalMenuWidth: 0,
     easing: Easing.bezier(0.4, 0, 0.2, 1),
     animationDuration: 300,
     expanded: false,
@@ -33,6 +34,13 @@ class Menu extends Component {
       this.toggle();
     }
   }
+
+  onModalMenuLayout = e => {
+    const { width } = e.nativeEvent.layout;
+    this.setState({
+      modalMenuWidth: width,
+    });
+  };
 
   onButtonLayout = e => {
     const { width, height } = e.nativeEvent.layout;
@@ -70,7 +78,7 @@ class Menu extends Component {
       buttonWidth,
     } = this.state;
     if (!initialHeight || !initialWidth) {
-      setTimeout(() => this.toggle(), 100);
+      setTimeout(this.toggle, 100);
       return;
     }
 
@@ -115,6 +123,7 @@ class Menu extends Component {
       buttonWidth,
       buttonPositionY,
       buttonPositionX,
+      modalMenuWidth,
     } = this.state;
     const {
       button,
@@ -125,25 +134,32 @@ class Menu extends Component {
       onBackdropPress,
     } = this.props;
 
+    const menuContainerStyle = {
+      height: menuHeight,
+      width: menuWidth,
+      opacity: opacity,
+      top: buttonPositionY - 10,
+    };
+
+    if (modalMenuWidth > 0) {
+      if (buttonPositionX > modalMenuWidth / 2) {
+        menuContainerStyle.right =
+          modalMenuWidth - buttonPositionX - buttonWidth;
+      } else {
+        menuContainerStyle.left = buttonPositionX - 10;
+      }
+    }
+
     return (
       <View>
         <View onLayout={this.onButtonLayout}>{button}</View>
         <ModelMenu
+          onLayout={this.onModalMenuLayout}
           animationType={'none'}
           visible={visible}
           onBackdropPress={onBackdropPress}
           transparent>
-          <Animated.View
-            style={[
-              styles.menuContainer,
-              {
-                height: menuHeight,
-                width: menuWidth,
-                opacity: opacity,
-                top: buttonPositionY - 10,
-                left: buttonPositionX - 10,
-              },
-            ]}>
+          <Animated.View style={[styles.menuContainer, menuContainerStyle]}>
             <View
               style={[
                 styles.menu,
