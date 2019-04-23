@@ -10,6 +10,7 @@ const sections = [
   { name: 'Usage' },
   { name: 'Props' },
   { name: 'Demos' },
+  { name: 'dot', sub: true },
 ];
 
 export default class BadgePage extends Component {
