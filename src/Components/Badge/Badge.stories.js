@@ -80,4 +80,45 @@ export default storiesOf('Components|Badge', module)
         </Badge>
       </View>
     </Container>
+  ))
+  .add('Dot', () => (
+    <Container>
+      <Header title={'Dots'} />
+
+      <View
+        style={{
+          flex: 1,
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginBottom: 80,
+        }}>
+        <Badge size={7}>
+          <Icon name="favorite" size={24} />
+        </Badge>
+        <Badge size={8} color={'red'}>
+          <IconButton name="mail" size={32} />
+        </Badge>
+        <Badge size={10} color={'#8BC34A'}>
+          <IconButton name="album" size={46} />
+        </Badge>
+        <Badge size={12} color={'#03A9F4'}>
+          <IconButton name="bookmark" size={64} color={'#E91E63'} />
+        </Badge>
+      </View>
+
+      <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
+        <Badge size={7} position={'left'} textColor={'pink'}>
+          <IconButton name="info" size={24} />
+        </Badge>
+        <Badge size={8} position={'left'}>
+          <IconButton name="message" size={32} color={'#8BC34A'} />
+        </Badge>
+        <Badge size={9} position={'left'} color={'black'}>
+          <IconButton name="error" size={48} color={'#F44336'} />
+        </Badge>
+        <Badge size={10} position={'left'} color={'#FFC107'}>
+          <IconButton name="favorite" size={64} color={'#9C27B0'} />
+        </Badge>
+      </View>
+    </Container>
   ));
