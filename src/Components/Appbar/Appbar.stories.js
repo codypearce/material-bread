@@ -431,34 +431,31 @@ export default storiesOf('Components|Appbar', module)
 const ExampleMenu = () => {
   return (
     <State store={store}>
-      {state => (
-        <View>
-          <Menu
-            visible={state.visibleOne}
-            onTouchOutside={() => store.set({ visibleOne: false })}
-            button={
-              <Button
-                textColor={'white'}
-                text={'Show menu'}
-                onPress={() => {
-                  store.set({ visibleOne: !state.visibleOne });
-                }}
-                type="text"
-              />
-            }>
-            <MenuItem onPress={() => store.set({ visibleOne: false })}>
-              Menu item 1
-            </MenuItem>
-            <MenuItem onPress={() => store.set({ visibleOne: false })}>
-              Menu item 2
-            </MenuItem>
+      {state => {
+        const isVisible = state.visibleOne;
+        const dismissMenu = () => store.set({ visibleOne: false });
+        const toggleMenu = () => store.set({ visibleOne: !isVisible });
 
-            <MenuItem onPress={() => store.set({ visibleOne: false })}>
-              Menu item 3
-            </MenuItem>
-          </Menu>
-        </View>
-      )}
+        return (
+          <View>
+            <Menu
+              visible={isVisible}
+              onBackdropPress={dismissMenu}
+              button={
+                <Button
+                  textColor={'white'}
+                  text={'Show menu'}
+                  onPress={toggleMenu}
+                  type="text"
+                />
+              }>
+              <MenuItem onPress={dismissMenu}>Menu item 1</MenuItem>
+              <MenuItem onPress={dismissMenu}>Menu item 2</MenuItem>
+              <MenuItem onPress={dismissMenu}>Menu item 3</MenuItem>
+            </Menu>
+          </View>
+        );
+      }}
     </State>
   );
 };
@@ -466,33 +463,31 @@ const ExampleMenu = () => {
 const ExampleOverflowMenu = () => {
   return (
     <State store={store}>
-      {state => (
-        <View>
-          <Menu
-            visible={state.visibleTwo}
-            onTouchOutside={() => store.set({ visibleTwo: false })}
-            button={
-              <IconButton
-                name={'more-vert'}
-                onPress={() => {
-                  store.set({ visibleOne: !state.visibleTwo });
-                }}
-                size={24}
-                color={'white'}
-              />
-            }>
-            <MenuItem onPress={() => store.set({ visibleTwo: false })}>
-              Menu item 1
-            </MenuItem>
-            <MenuItem onPress={() => store.set({ visibleTwo: false })}>
-              Menu item 2
-            </MenuItem>
-            <MenuItem onPress={() => store.set({ visibleTwo: false })}>
-              Menu item 3
-            </MenuItem>
-          </Menu>
-        </View>
-      )}
+      {state => {
+        const isVisible = state.visibleTwo;
+        const dismissMenu = () => store.set({ visibleTwo: false });
+        const toggleMenu = () => store.set({ visibleTwo: !state.visibleTwo });
+
+        return (
+          <View>
+            <Menu
+              visible={isVisible}
+              onBackdropPress={dismissMenu}
+              button={
+                <IconButton
+                  name={'more-vert'}
+                  onPress={toggleMenu}
+                  size={24}
+                  color={'white'}
+                />
+              }>
+              <MenuItem onPress={dismissMenu}>Menu item 1</MenuItem>
+              <MenuItem onPress={dismissMenu}>Menu item 2</MenuItem>
+              <MenuItem onPress={dismissMenu}>Menu item 3</MenuItem>
+            </Menu>
+          </View>
+        );
+      }}
     </State>
   );
 };
