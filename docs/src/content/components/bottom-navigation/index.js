@@ -12,6 +12,7 @@ const sections = [
   { name: 'Demos' },
   { name: 'labels', sub: true },
   { name: 'colored', sub: true },
+  { name: 'icons', sub: true },
 ];
 
 export default class BadgePage extends Component {

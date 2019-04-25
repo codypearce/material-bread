@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { ComponentDemo, CodeInline } from '@components';
+import { ComponentDemo } from '@components';
 import {
   BottomNavigation,
   BottomNavigationItem,
@@ -23,34 +23,31 @@ export const code = `class BottomTabs extends React.Component {
       <View style={{alignItems: 'center'}}>
         <BottomNavigation 
             style={{ maxWidth: 672, width: '100%' }}
+            showLabels
+            backgroundColor={'white'}
             value={this.state.value}
-            backgroundColor={'#673AB7'}
             handleChange={(value) => this.handleChange(value)}
             actionItems={[
-                {icon: 'home', label: 'Home'},
-                {icon: 'favorite', label: 'Favorite'},
-                <BottomNavigationItem icon={'settings'} label={'Settings'} />, 
+                {icon: 'home' },
+                {icon: 'attach-money'},
+                {icon: 'favorite'},
+                {icon: 'info'},
+                <BottomNavigationItem icon={'settings'} />, 
             ]}
         />
       </View>
     );
   }
-}
-`;
+}`;
 
-const SubtitleDemo = pageHref => (
+const IconDemo = pageHref => (
   <ComponentDemo
-    sectionName={'Colored Background'}
-    sectionHref={`${pageHref}#colored`}
-    sectionId={'colored'}
-    description={
-      <div>
-        Changing the <CodeInline code="backgroundColor" type="prop" /> will
-        change the icons to display as <CodeInline code="white" type="value" />.
-      </div>
-    }
+    sectionName={'Icons'}
+    sectionHref={`${pageHref}#icons`}
+    sectionId={'icons'}
     code={code}
+    livePreviewBackground={'#f7f7f7'}
     scope={{ View, BottomNavigation, BottomNavigationItem }}
   />
 );
-export default SubtitleDemo;
+export default IconDemo;
