@@ -11,6 +11,9 @@ export { default as Banner } from '../../Components/Banner/Banner.stories.js';
 export {
   default as BottomNavigation,
 } from '../../Components/BottomNavigation/BottomNavigation.stories.js';
+export {
+  default as BottomNavigationItem,
+} from '../../Components/BottomNavigation/BottomNavigationItem/BottomNavigationItem.stories.js';
 export { default as Button } from '../../Components/Button/Button.stories.js';
 export { default as Card } from '../../Components/Card/Card.stories.js';
 export {
