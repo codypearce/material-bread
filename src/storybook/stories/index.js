@@ -15,6 +15,9 @@ export {
   default as BottomNavigationItem,
 } from '../../Components/BottomNavigation/BottomNavigationItem/BottomNavigationItem.stories.js';
 export { default as Button } from '../../Components/Button/Button.stories.js';
+export {
+  default as TextButton,
+} from '../../Components/Button/TextButton/TextButton.stories.js';
 export { default as Card } from '../../Components/Card/Card.stories.js';
 export {
   default as Checkbox,

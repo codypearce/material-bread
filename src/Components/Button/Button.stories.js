@@ -8,37 +8,7 @@ import Container from '../../storybook/components/Container';
 
 export default storiesOf('Components|Buttons', module)
   .addParameters({ jest: ['Button'] })
-  .add('Text Button', () => (
-    <Container>
-      <Header title={'Text Button'} />
 
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
-        }}>
-        <Button text={'Text'} />
-        <Button
-          text={'Icon'}
-          textColor={'#E91E63'}
-          borderSize={2}
-          icon={<Icon name="favorite" />}
-        />
-        <Button text={'Radius'} textColor={'#FF5722'} radius={20} />
-        <Button text={'Dense'} ttextColor={'#673AB7'} dense />
-        <Button text={'Loading'} textColor={'#009688'} loading />
-        <Button text={'Disabled'} disabled />
-      </View>
-      <Button
-        fullWidth
-        text={'Text'}
-        textColor={'#009688'}
-        style={{ marginBottom: 8 }}
-      />
-    </Container>
-  ))
   .add('Flat Button', () => (
     <Container>
       <Header title={'Flat Button'} />
