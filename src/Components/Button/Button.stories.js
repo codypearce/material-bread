@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { storiesOf } from '../../storybook/helpers/storiesOf';
 
 import { Button, Icon } from '../../';
@@ -147,5 +147,33 @@ export default storiesOf('Components|Buttons', module)
         type="contained"
         containerStyle={{ marginBottom: 8 }}
       />
+    </Container>
+  ))
+  .add('custom', () => (
+    <Container>
+      <Header title={'Custom Button'} />
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+        }}>
+        <Button
+          style={{
+            height: 100,
+            width: 100,
+            flexDirection: 'column',
+            marginRight: 24,
+          }}
+          type={'outlined'}
+          borderSize={4}
+          radius={10}>
+          <Icon name="cloud-upload" size={34} />
+          <Text style={{ fontWeight: '600', textAlign: 'center' }}>
+            Upload files
+          </Text>
+        </Button>
+      </View>
     </Container>
   ));
