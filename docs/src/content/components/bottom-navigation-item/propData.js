@@ -35,6 +35,8 @@ const propData = [
     '',
   ],
 
+  ['rippleProps', 'Props applied to the ripple', 'object', ''],
+
   ['style', 'Styles root element', 'object', ''],
 
   [
