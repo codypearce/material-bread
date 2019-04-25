@@ -22,6 +22,9 @@ export {
 export {
   default as FlatButton,
 } from '../../Components/Button/FlatButton/FlatButton.stories.js';
+export {
+  default as OutlinedButton,
+} from '../../Components/Button/OutlinedButton/OutlinedButton.stories.js';
 
 export { default as Card } from '../../Components/Card/Card.stories.js';
 export {

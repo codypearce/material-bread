@@ -6,11 +6,11 @@ import { Button, Icon } from '../../..';
 import Header from '../../../storybook/components/Header';
 import Container from '../../../storybook/components/Container';
 
-export default storiesOf('Components|Buttons/Flat Button', module)
+export default storiesOf('Components|Buttons/Outlined Button', module)
   .addParameters({ jest: ['Button'] })
   .add('Simple', () => (
     <Container>
-      <Header title={'Simple Flat Button'} />
+      <Header title={'Simple Outlined Button'} />
 
       <View
         style={{
@@ -20,17 +20,17 @@ export default storiesOf('Components|Buttons/Flat Button', module)
           flexWrap: 'wrap',
           marginBottom: 20,
         }}>
-        <Button text={'Text'} type="flat" />
-        <Button text={'Button'} color={'#E91E63'} type="flat" />
-        <Button text={'Buy'} color={'#FF5722'} type="flat" />
-        <Button text={'Click Here'} color={'#673AB7'} type="flat" />
-        <Button text={'Do not click'} color={'#009688'} type="flat" />
+        <Button text={'Text'} type="outlined" />
+        <Button text={'Button'} textColor={'#E91E63'} type="outlined" />
+        <Button text={'Buy'} textColor={'#FF5722'} type="outlined" />
+        <Button text={'Click Here'} textColor={'#673AB7'} type="outlined" />
+        <Button text={'Do not click'} textColor={'#009688'} type="outlined" />
       </View>
     </Container>
   ))
   .add('with icon', () => (
     <Container>
-      <Header title={'Flat Button'} />
+      <Header title={'Outlined Button'} />
 
       <View
         style={{
@@ -40,40 +40,40 @@ export default storiesOf('Components|Buttons/Flat Button', module)
           flexWrap: 'wrap',
           marginBottom: 20,
         }}>
-        <Button text={'Home'} icon={<Icon name="home" />} type="flat" />
+        <Button text={'Home'} icon={<Icon name="home" />} type="outlined" />
         <Button
           text={'Favorite'}
-          color={'#E91E63'}
+          textColor={'#E91E63'}
           borderSize={2}
-          type="flat"
+          type="outlined"
           icon={<Icon name="favorite" />}
         />
         <Button
           text={'Settings'}
           icon={<Icon name="settings" />}
-          color={'#FF5722'}
+          textColor={'#FF5722'}
           radius={20}
-          type="flat"
+          type="outlined"
         />
         <Button
           text={'Buy'}
-          color={'#673AB7'}
+          textColor={'#673AB7'}
           dense
           icon={<Icon name="attach-money" />}
-          type="flat"
+          type="outlined"
         />
         <Button
           text={'Archive'}
-          color={'#009688'}
+          textColor={'#009688'}
           icon={<Icon name="archive" />}
-          type="flat"
+          type="outlined"
         />
       </View>
     </Container>
   ))
   .add('radius', () => (
     <Container>
-      <Header title={'Flat Button'} />
+      <Header title={'Outlined Button'} />
 
       <View
         style={{
@@ -83,37 +83,42 @@ export default storiesOf('Components|Buttons/Flat Button', module)
           flexWrap: 'wrap',
           marginBottom: 20,
         }}>
-        <Button text={'Home'} radius={20} type="flat" />
+        <Button text={'Home'} radius={20} type="outlined" />
         <Button
           text={'Favorite'}
-          color={'#E91E63'}
+          textColor={'#E91E63'}
           borderSize={2}
           radius={40}
           icon={<Icon name="favorite" />}
-          type="flat"
+          type="outlined"
         />
-        <Button text={'Settings'} color={'#FF5722'} radius={60} type="flat" />
+        <Button
+          text={'Settings'}
+          textColor={'#FF5722'}
+          radius={60}
+          type="outlined"
+        />
         <Button
           text={'Buy'}
-          tcolor={'#673AB7'}
+          ttextColor={'#673AB7'}
           dense
           radius={0}
           icon={<Icon name="attach-money" />}
-          type="flat"
+          type="outlined"
         />
         <Button
           text={'Archive'}
-          color={'#009688'}
+          textColor={'#009688'}
           radius={0}
           icon={<Icon name="archive" />}
-          type="flat"
+          type="outlined"
         />
       </View>
     </Container>
   ))
   .add('dense', () => (
     <Container>
-      <Header title={'Flat Button'} />
+      <Header title={'Outlined Button'} />
 
       <View
         style={{
@@ -123,43 +128,43 @@ export default storiesOf('Components|Buttons/Flat Button', module)
           flexWrap: 'wrap',
           marginBottom: 20,
         }}>
-        <Button text={'Home'} dense type="flat" />
+        <Button text={'Home'} dense type="outlined" />
         <Button
           text={'Favorite'}
-          color={'#E91E63'}
+          textColor={'#E91E63'}
           borderSize={2}
           dense
-          type="flat"
+          type="outlined"
           icon={<Icon name="favorite" />}
         />
         <Button
           text={'Settings'}
-          color={'#FF5722'}
+          textColor={'#FF5722'}
           dense
           radius={60}
-          type="flat"
+          type="outlined"
         />
         <Button
           text={'Buy'}
-          tcolor={'#673AB7'}
+          ttextColor={'#673AB7'}
           dense
           radius={0}
-          type="flat"
+          type="outlined"
           icon={<Icon name="attach-money" />}
         />
         <Button
           text={'Archive'}
-          color={'#009688'}
+          textColor={'#009688'}
           dense
           icon={<Icon name="archive" />}
-          type="flat"
+          type="outlined"
         />
       </View>
     </Container>
   ))
   .add('loading', () => (
     <Container>
-      <Header title={'Flat Button'} />
+      <Header title={'Outlined Button'} />
 
       <View
         style={{
@@ -169,36 +174,36 @@ export default storiesOf('Components|Buttons/Flat Button', module)
           flexWrap: 'wrap',
           marginBottom: 20,
         }}>
-        <Button text={'Home'} loading type="flat" />
+        <Button text={'Home'} loading type="outlined" />
         <Button
           text={'Favorite'}
-          color={'#E91E63'}
+          textColor={'#E91E63'}
           borderSize={2}
           loading
-          type="flat"
+          type="outlined"
           icon={<Icon name="favorite" />}
         />
         <Button
           text={'Settings'}
-          color={'#FF5722'}
+          textColor={'#FF5722'}
           loading
           radius={60}
-          type="flat"
+          type="outlined"
         />
         <Button
           text={'Buy'}
-          tcolor={'#673AB7'}
+          ttextColor={'#673AB7'}
           dense
           radius={0}
           loading
-          type="flat"
+          type="outlined"
           icon={<Icon name="attach-money" />}
         />
         <Button
           text={'Archive'}
-          color={'#009688'}
+          textColor={'#009688'}
           loading
-          type="flat"
+          type="outlined"
           icon={<Icon name="archive" />}
         />
       </View>
@@ -206,7 +211,7 @@ export default storiesOf('Components|Buttons/Flat Button', module)
   ))
   .add('disabled', () => (
     <Container>
-      <Header title={'Flat Button'} />
+      <Header title={'Outlined Button'} />
 
       <View
         style={{
@@ -216,37 +221,37 @@ export default storiesOf('Components|Buttons/Flat Button', module)
           flexWrap: 'wrap',
           marginBottom: 20,
         }}>
-        <Button text={'Home'} disabled type="flat" />
+        <Button text={'Home'} disabled type="outlined" />
         <Button
           text={'Favorite'}
-          color={'#E91E63'}
+          textColor={'#E91E63'}
           borderSize={2}
           loading
           disabled
-          type="flat"
+          type="outlined"
           icon={<Icon name="favorite" />}
         />
         <Button
           text={'Settings'}
-          color={'#FF5722'}
-          type="flat"
+          textColor={'#FF5722'}
+          type="outlined"
           disabled
           radius={60}
         />
         <Button
           text={'Buy'}
-          tcolor={'#673AB7'}
+          ttextColor={'#673AB7'}
           dense
           radius={0}
           disabled
-          type="flat"
+          type="outlined"
           icon={<Icon name="attach-money" />}
         />
         <Button
           text={'Archive'}
-          color={'#009688'}
+          textColor={'#009688'}
           disabled
-          type="flat"
+          type="outlined"
           icon={<Icon name="archive" />}
         />
       </View>
@@ -255,37 +260,42 @@ export default storiesOf('Components|Buttons/Flat Button', module)
   .add('full width', () => (
     <Container>
       <Header title={'Full Width'} />
-      <Button fullWidth text={'Flat'} type="flat" style={{ marginBottom: 8 }} />
+      <Button
+        fullWidth
+        text={'Outlined'}
+        type="outlined"
+        style={{ marginBottom: 8 }}
+      />
 
       <Button
         fullWidth
         text={'Radius'}
-        color={'#009688'}
-        type="flat"
+        textColor={'#009688'}
+        type="outlined"
         style={{ marginBottom: 8 }}
         radius={40}
       />
       <Button
         fullWidth
         text={'Icon'}
-        color={'#E91E63'}
-        type="flat"
+        textColor={'#E91E63'}
+        type="outlined"
         style={{ marginBottom: 8 }}
         icon={<Icon name="favorite" />}
       />
       <Button
         fullWidth
         text={'Loading'}
-        color={'#FF5722'}
-        type="flat"
+        textColor={'#FF5722'}
+        type="outlined"
         loading
         style={{ marginBottom: 8 }}
       />
       <Button
         fullWidth
         text={'Disabled'}
-        color={'#673AB7'}
-        type="flat"
+        textColor={'#673AB7'}
+        type="outlined"
         style={{ marginBottom: 8 }}
         disabled
       />
