@@ -21,6 +21,7 @@ class BottomNavigationItem extends Component {
     showLabels: PropTypes.bool,
     style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     badgeProps: PropTypes.object,
+    rippleProps: PropTypes.object,
   };
 
   state = {
@@ -92,7 +93,7 @@ class BottomNavigationItem extends Component {
   };
 
   _renderWrapper(context) {
-    const { active, children, style } = this.props;
+    const { active, children, style, rippleProps } = this.props;
 
     return (
       <Ripple
@@ -101,7 +102,8 @@ class BottomNavigationItem extends Component {
           { opacity: active ? 1 : 0.6 },
           style,
         ]}
-        onPress={this.onChange}>
+        onPress={this.onChange}
+        {...rippleProps}>
         {children ? children : this._renderContent(context)}
       </Ripple>
     );

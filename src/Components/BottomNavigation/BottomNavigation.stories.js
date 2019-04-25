@@ -270,4 +270,50 @@ export default storiesOf('Components|Bottom Navigation', module)
         )}
       </State>
     </Container>
+  ))
+  .add('Custom', () => (
+    <Container>
+      <Header title={'Bottom Navigation'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <BottomNavigation
+            style={{
+              maxWidth: 672,
+              width: '100%',
+              marginBottom: 40,
+              borderRadius: 50,
+            }}
+            value={state.one}
+            handleChange={value => store.set({ one: value })}
+            showLabels
+            actionItems={[
+              <BottomNavigationItem
+                key={1}
+                icon={'home'}
+                label={'Home'}
+                rippleProps={{ rippleContainerBorderRadius: 50 }}
+              />,
+              <BottomNavigationItem
+                key={2}
+                icon={'favorite'}
+                label={'Favorite'}
+                rippleProps={{ rippleContainerBorderRadius: 50 }}
+              />,
+              <BottomNavigationItem
+                key={3}
+                icon={'info'}
+                label={'Settings'}
+                rippleProps={{ rippleContainerBorderRadius: 50 }}
+              />,
+              <BottomNavigationItem
+                key={4}
+                icon={'settings'}
+                label={'Settings'}
+                rippleProps={{ rippleContainerBorderRadius: 50 }}
+              />,
+            ]}
+          />
+        )}
+      </State>
+    </Container>
   ));
