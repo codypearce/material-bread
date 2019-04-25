@@ -121,4 +121,38 @@ export default storiesOf('Components|Badge', module)
         </Badge>
       </View>
     </Container>
+  ))
+  .add('custom', () => (
+    <Container>
+      <Header title={'Custom'} />
+
+      <View
+        style={{
+          flex: 1,
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginBottom: 80,
+        }}>
+        <Badge size={14} content={4} left={10} style={{ borderRadius: 3 }}>
+          <Icon name="favorite" size={24} />
+        </Badge>
+        <Badge size={14} color={'red'} style={{ borderRadius: 3, height: 10 }}>
+          <IconButton name="mail" size={32} />
+        </Badge>
+        <Badge
+          size={20}
+          content={22}
+          color={'#8BC34A'}
+          style={{ borderRadius: 2, transform: [{ rotate: '40deg' }] }}>
+          <IconButton name="album" size={46} />
+        </Badge>
+        <Badge
+          size={25}
+          content={'99+'}
+          color={'#03A9F4'}
+          style={{ borderRadius: 10, width: 40 }}>
+          <IconButton name="bookmark" size={64} color={'#E91E63'} />
+        </Badge>
+      </View>
+    </Container>
   ));
