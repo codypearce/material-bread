@@ -20,7 +20,7 @@ import Container from '../../storybook/components/Container';
 /*  eslint-disable no-console */
 export default storiesOf('Components|Card', module)
   .addParameters({ jest: ['Card'] })
-  .add('Simple', () => (
+  .add('simple', () => (
     <Container scroll>
       <Header title={'Card'} />
 
@@ -89,7 +89,7 @@ export default storiesOf('Components|Card', module)
       </Card>
     </Container>
   ))
-  .add('Full', () => (
+  .add('full card', () => (
     <Container scroll>
       <Header title={'Card'} />
 
@@ -131,6 +131,45 @@ export default storiesOf('Components|Card', module)
           rightActionItems={[{ name: 'thumb-up' }, { name: 'share' }]}
         />
       </Card>
+    </Container>
+  ))
+  .add('clickable', () => (
+    <Container scroll>
+      <Header title={'Clickable Card'} />
+
+      <Card
+        style={{ maxWidth: 300, width: '100%', marginBottom: 50 }}
+        shadow={4}
+        onPress={() => console.log('clicked dog')}>
+        <CardMedia
+          image={
+            <Image
+              style={{ flex: 1, width: '100%' }}
+              source={{
+                uri:
+                  'https://images.pexels.com/photos/955463/pexels-photo-955463.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=800',
+              }}
+              resizeMode="cover"
+            />
+          }
+        />
+        <CardContent>
+          <Text
+            style={{
+              color: 'rgba(0,0,0,.6)',
+              fontSize: 16,
+              fontWeight: '600',
+              marginBottom: 6,
+            }}>
+            Dog
+          </Text>
+          <Text style={{ color: 'rgba(0,0,0,.6)', fontSize: 14 }}>
+            The domestic dog is a member of the genus Canis (canines), which
+            forms part of the wolf-like canids, and is the most widely abundant
+            terrestrial carnivore.
+          </Text>
+        </CardContent>
+      </Card>
 
       <Card style={{ maxWidth: 400, width: '100%', marginBottom: 50 }}>
         <Ripple onPress={() => console.log('pressed action')}>
@@ -165,38 +204,6 @@ export default storiesOf('Components|Card', module)
         <CardActions
           leftActionItems={[{ name: 'share' }, { name: 'learn more' }]}
         />
-      </Card>
-      <Card
-        style={{ maxWidth: 300, width: '100%', marginBottom: 50 }}
-        onPress={() => console.log('clicked dog')}>
-        <CardMedia
-          image={
-            <Image
-              style={{ flex: 1, width: '100%' }}
-              source={{
-                uri:
-                  'https://images.pexels.com/photos/955463/pexels-photo-955463.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=800',
-              }}
-              resizeMode="cover"
-            />
-          }
-        />
-        <CardContent>
-          <Text
-            style={{
-              color: 'rgba(0,0,0,.6)',
-              fontSize: 16,
-              fontWeight: '600',
-              marginBottom: 6,
-            }}>
-            Dog
-          </Text>
-          <Text style={{ color: 'rgba(0,0,0,.6)', fontSize: 14 }}>
-            The domestic dog is a member of the genus Canis (canines), which
-            forms part of the wolf-like canids, and is the most widely abundant
-            terrestrial carnivore.
-          </Text>
-        </CardContent>
       </Card>
     </Container>
   ))
