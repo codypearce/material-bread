@@ -131,6 +131,42 @@ export default storiesOf('Components|Card', module)
           rightActionItems={[{ name: 'thumb-up' }, { name: 'share' }]}
         />
       </Card>
+
+      <Card style={{ maxWidth: 400, width: '100%', marginBottom: 50 }}>
+        <CardMedia
+          image={
+            <Image
+              style={{ flex: 1, width: '100%' }}
+              source={{
+                uri:
+                  'https://images.pexels.com/photos/1451360/pexels-photo-1451360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+              }}
+              resizeMode="cover"
+            />
+          }
+        />
+        <CardContent>
+          <View style={{ flexDirection: 'row' }}>
+            <Avatar
+              type="image"
+              image={
+                <Image
+                  source={{
+                    uri:
+                      'https://upload.wikimedia.org/wikipedia/en/thumb/7/74/Anakin-Jedi.jpg/220px-Anakin-Jedi.jpg',
+                  }}
+                />
+              }
+              size={40}
+            />
+            <Text
+              style={{ color: 'rgba(0,0,0,.6)', fontSize: 14, marginLeft: 16 }}>
+              I don&apos;t like sand. It&apos;s coarse and rough and irritating
+              and it gets everywhere.
+            </Text>
+          </View>
+        </CardContent>
+      </Card>
     </Container>
   ))
   .add('clickable', () => (
