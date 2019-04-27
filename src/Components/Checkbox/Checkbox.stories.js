@@ -485,7 +485,6 @@ export default storiesOf('Components|Checkbox', module)
             style={{
               flexDirection: 'row',
               alignItems: 'center',
-              justifyContent: 'space-between',
               flexWrap: 'wrap',
             }}>
             <Checkbox
@@ -498,16 +497,23 @@ export default storiesOf('Components|Checkbox', module)
               rippleMatchesCheckbox
               checkboxColor={'#009688'}
               checked={state.checkedTwo}
-              label={'Toggle'}
               onPress={() => store.set({ checkedTwo: !state.checkedTwo })}
             />
             <Checkbox
               ios
-              disabled
               checkboxColor={'#E91E63'}
-              label={'Disabled'}
+              label={'Toggle'}
               checked={state.checkedThree}
               onPress={() => store.set({ checkedThree: !state.checkedThree })}
+            />
+            <Checkbox
+              ios
+              disabled
+              rippleMatchesCheckbox
+              checkboxColor={'#009688'}
+              checked={state.checkedFour}
+              label={'Disabled'}
+              onPress={() => store.set({ checkedFour: !state.checkedFour })}
             />
           </View>
         )}
