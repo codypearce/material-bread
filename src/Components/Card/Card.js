@@ -13,6 +13,7 @@ class Card extends Component {
     shadow: PropTypes.number,
     radius: PropTypes.number,
     onPress: PropTypes.func,
+    rippleProps: PropTypes.object,
   };
 
   static defaultProps = {
@@ -21,9 +22,9 @@ class Card extends Component {
   };
 
   _renderRipple() {
-    const { style, children, onPress, ...rippleProps } = this.props;
+    const { children, onPress, rippleProps } = this.props;
     return (
-      <Ripple style={[{ flex: 1 }, style]} onPress={onPress} {...rippleProps}>
+      <Ripple style={[{ flex: 1 }]} onPress={onPress} {...rippleProps}>
         {children}
       </Ripple>
     );

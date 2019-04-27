@@ -20,16 +20,79 @@ import Container from '../../storybook/components/Container';
 /*  eslint-disable no-console */
 export default storiesOf('Components|Card', module)
   .addParameters({ jest: ['Card'] })
-  .add('Card', () => (
+  .add('simple', () => (
     <Container scroll>
       <Header title={'Card'} />
 
-      <Card style={{ flex: 1, marginBottom: 20, padding: 16 }}>
+      <Card style={{ flex: 1, marginBottom: 20, padding: 16, maxWidth: 400 }}>
         <Text style={{ fontSize: 14, textAlign: 'center', marginBottom: 8 }}>
-          Just some text
+          This is a simple card with a button
         </Text>
         <Button type={'flat'} text="Card button" />
       </Card>
+
+      <Card
+        style={{ flex: 1, marginBottom: 20, padding: 16, maxWidth: 400 }}
+        shadow={5}>
+        <Text style={{ fontSize: 14, textAlign: 'center', marginBottom: 8 }}>
+          This one has more shadow
+        </Text>
+        <Button type={'flat'} text="Card button" style={{ marginBottom: 20 }} />
+        <Button type={'flat'} color={'#E91E63'} text="Card button" />
+      </Card>
+
+      <Card
+        style={{ flex: 1, marginBottom: 20, padding: 16, maxWidth: 400 }}
+        shadow={8}>
+        <Text style={{ fontSize: 14, textAlign: 'center', marginBottom: 8 }}>
+          This one has more shadow
+        </Text>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            marginTop: 20,
+          }}>
+          <Button type={'flat'} text="Card button" />
+          <Button type={'flat'} color={'#E91E63'} text="Card button" />
+        </View>
+      </Card>
+      <Card
+        style={{ flex: 1, marginBottom: 20, padding: 16, maxWidth: 400 }}
+        radius={20}
+        shadow={5}>
+        <Text style={{ fontSize: 14, textAlign: 'center', marginBottom: 8 }}>
+          This one has more radius
+        </Text>
+        <Button type={'flat'} text="Card button" />
+      </Card>
+      <Card
+        style={{
+          flex: 1,
+          marginBottom: 20,
+          padding: 16,
+          maxWidth: 400,
+          maxHeight: 400,
+        }}
+        radius={200}
+        shadow={5}>
+        <Text style={{ fontSize: 14, textAlign: 'center', marginBottom: 8 }}>
+          This one has more radius
+        </Text>
+        <Button type={'flat'} text="Card button" />
+      </Card>
+      <Card style={{ flex: 1, marginBottom: 20, padding: 16 }}>
+        <Text style={{ fontSize: 14, textAlign: 'center', marginBottom: 8 }}>
+          This is one takes up the full width
+        </Text>
+        <Button type={'flat'} text="Card button" />
+      </Card>
+    </Container>
+  ))
+  .add('full card', () => (
+    <Container scroll>
+      <Header title={'Card'} />
+
       <Card style={{ maxWidth: 400, width: '100%', marginBottom: 50 }}>
         <CardHeader
           thumbnail={
@@ -70,6 +133,178 @@ export default storiesOf('Components|Card', module)
       </Card>
 
       <Card style={{ maxWidth: 400, width: '100%', marginBottom: 50 }}>
+        <CardMedia
+          image={
+            <Image
+              style={{ flex: 1, width: '100%' }}
+              source={{
+                uri:
+                  'https://images.pexels.com/photos/1451360/pexels-photo-1451360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+              }}
+              resizeMode="cover"
+            />
+          }
+        />
+        <CardContent>
+          <View style={{ flexDirection: 'row' }}>
+            <Avatar
+              type="image"
+              image={
+                <Image
+                  source={{
+                    uri:
+                      'https://upload.wikimedia.org/wikipedia/en/thumb/7/74/Anakin-Jedi.jpg/220px-Anakin-Jedi.jpg',
+                  }}
+                />
+              }
+              size={40}
+            />
+            <Text
+              style={{ color: 'rgba(0,0,0,.6)', fontSize: 14, marginLeft: 16 }}>
+              I don&apos;t like sand. It&apos;s coarse and rough and irritating
+              and it gets everywhere.
+            </Text>
+          </View>
+        </CardContent>
+      </Card>
+    </Container>
+  ))
+  .add('clickable', () => (
+    <Container scroll>
+      <Header title={'Clickable Card'} />
+
+      <View style={{ flexDirection: 'row' }}>
+        <Card
+          style={{
+            maxWidth: 150,
+            width: '100%',
+            marginBottom: 50,
+            marginRight: 4,
+          }}
+          shadow={4}
+          onPress={() => console.log('clicked dog')}>
+          <CardMedia
+            image={
+              <Image
+                style={{ flex: 1, width: '100%' }}
+                source={{
+                  uri:
+                    'https://images.pexels.com/photos/86405/penguin-funny-blue-water-86405.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                }}
+                resizeMode="cover"
+              />
+            }
+          />
+          <CardContent>
+            <Text
+              style={{
+                color: 'rgba(0,0,0,.6)',
+                fontSize: 16,
+                fontWeight: '600',
+                marginBottom: 6,
+              }}>
+              Penguin
+            </Text>
+          </CardContent>
+        </Card>
+        <Card
+          style={{
+            maxWidth: 150,
+            width: '100%',
+            marginBottom: 50,
+            marginRight: 4,
+          }}
+          shadow={4}
+          onPress={() => console.log('clicked dog')}>
+          <CardMedia
+            image={
+              <Image
+                style={{ flex: 1, width: '100%' }}
+                source={{
+                  uri:
+                    'https://images.pexels.com/photos/460823/pexels-photo-460823.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                }}
+                resizeMode="cover"
+              />
+            }
+          />
+          <CardContent>
+            <Text
+              style={{
+                color: 'rgba(0,0,0,.6)',
+                fontSize: 16,
+                fontWeight: '600',
+                marginBottom: 6,
+              }}>
+              Pup
+            </Text>
+          </CardContent>
+        </Card>
+        <Card
+          style={{ maxWidth: 150, width: '100%', marginBottom: 50 }}
+          shadow={4}
+          onPress={() => console.log('clicked dog')}>
+          <CardMedia
+            image={
+              <Image
+                style={{ flex: 1, width: '100%' }}
+                source={{
+                  uri:
+                    'https://images.pexels.com/photos/1661535/pexels-photo-1661535.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                }}
+                resizeMode="cover"
+              />
+            }
+          />
+          <CardContent>
+            <Text
+              style={{
+                color: 'rgba(0,0,0,.6)',
+                fontSize: 16,
+                fontWeight: '600',
+                marginBottom: 6,
+              }}>
+              Panda
+            </Text>
+          </CardContent>
+        </Card>
+      </View>
+
+      <Card
+        style={{ maxWidth: 300, width: '100%', marginBottom: 50 }}
+        shadow={4}
+        onPress={() => console.log('clicked dog')}>
+        <CardMedia
+          image={
+            <Image
+              style={{ flex: 1, width: '100%' }}
+              source={{
+                uri:
+                  'https://images.pexels.com/photos/955463/pexels-photo-955463.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=800',
+              }}
+              resizeMode="cover"
+            />
+          }
+        />
+        <CardContent>
+          <Text
+            style={{
+              color: 'rgba(0,0,0,.6)',
+              fontSize: 16,
+              fontWeight: '600',
+              marginBottom: 6,
+            }}>
+            Dog
+          </Text>
+          <Text style={{ color: 'rgba(0,0,0,.6)', fontSize: 14 }}>
+            The domestic dog is a member of the genus Canis (canines), which
+            forms part of the wolf-like canids, and is the most widely abundant
+            terrestrial carnivore.
+          </Text>
+        </CardContent>
+      </Card>
+
+      <Card style={{ maxWidth: 400, width: '100%', marginBottom: 50 }}>
         <Ripple onPress={() => console.log('pressed action')}>
           <CardMedia
             image={
@@ -102,38 +337,6 @@ export default storiesOf('Components|Card', module)
         <CardActions
           leftActionItems={[{ name: 'share' }, { name: 'learn more' }]}
         />
-      </Card>
-      <Card
-        style={{ maxWidth: 300, width: '100%', marginBottom: 50 }}
-        onPress={() => console.log('clicked dog')}>
-        <CardMedia
-          image={
-            <Image
-              style={{ flex: 1, width: '100%' }}
-              source={{
-                uri:
-                  'https://images.pexels.com/photos/955463/pexels-photo-955463.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=800',
-              }}
-              resizeMode="cover"
-            />
-          }
-        />
-        <CardContent>
-          <Text
-            style={{
-              color: 'rgba(0,0,0,.6)',
-              fontSize: 16,
-              fontWeight: '600',
-              marginBottom: 6,
-            }}>
-            Dog
-          </Text>
-          <Text style={{ color: 'rgba(0,0,0,.6)', fontSize: 14 }}>
-            The domestic dog is a member of the genus Canis (canines), which
-            forms part of the wolf-like canids, and is the most widely abundant
-            terrestrial carnivore.
-          </Text>
-        </CardContent>
       </Card>
     </Container>
   ))
