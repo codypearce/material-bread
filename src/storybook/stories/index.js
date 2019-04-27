@@ -25,6 +25,9 @@ export {
 export {
   default as OutlinedButton,
 } from '../../Components/Button/OutlinedButton/OutlinedButton.stories.js';
+export {
+  default as ContainedButton,
+} from '../../Components/Button/ContainedButton/ContainedButton.stories.js';
 
 export { default as Card } from '../../Components/Card/Card.stories.js';
 export {
