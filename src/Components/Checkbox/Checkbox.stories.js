@@ -388,7 +388,6 @@ export default storiesOf('Components|Checkbox', module)
             style={{
               flexDirection: 'row',
               alignItems: 'center',
-              justifyContent: 'space-between',
               flexWrap: 'wrap',
             }}>
             <Checkbox
@@ -418,11 +417,58 @@ export default storiesOf('Components|Checkbox', module)
             <Checkbox
               rippleMatchesCheckbox
               checkboxColor={'#3F51B5'}
-              label={'Left'}
+              label={'Click'}
               labelStyle={{ fontSize: 14, color: '#3F51B5' }}
-              labelPos={'left'}
               checked={state.checkedFour}
               onPress={() => store.set({ checkedFour: !state.checkedFour })}
+            />
+          </View>
+        )}
+      </State>
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              marginTop: 40,
+            }}>
+            <Checkbox
+              label={'Click me'}
+              checked={state.checkedOne}
+              onPress={() => store.set({ checkedOne: !state.checkedOne })}
+              labelPos={'left'}
+            />
+            <Checkbox
+              rippleMatchesCheckbox
+              checkboxColor={'#009688'}
+              checked={state.checkedTwo}
+              label={'Item 2'}
+              labelStyle={{ fontSize: 18, color: '#009688' }}
+              onPress={() => store.set({ checkedTwo: !state.checkedTwo })}
+              labelPos={'left'}
+            />
+            <Checkbox
+              rippleMatchesCheckbox
+              checkboxColor={'#E91E63'}
+              icon={'bookmark-border'}
+              checkedIcon={'bookmark'}
+              label={'Bookmark'}
+              labelStyle={{ fontSize: 14, color: '#E91E63' }}
+              checked={state.checkedThree}
+              onPress={() => store.set({ checkedThree: !state.checkedThree })}
+              labelPos={'left'}
+            />
+
+            <Checkbox
+              rippleMatchesCheckbox
+              checkboxColor={'#3F51B5'}
+              label={'Click'}
+              labelStyle={{ fontSize: 14, color: '#3F51B5' }}
+              checked={state.checkedFour}
+              onPress={() => store.set({ checkedFour: !state.checkedFour })}
+              labelPos={'left'}
             />
           </View>
         )}
