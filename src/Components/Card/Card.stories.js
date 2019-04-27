@@ -20,16 +20,79 @@ import Container from '../../storybook/components/Container';
 /*  eslint-disable no-console */
 export default storiesOf('Components|Card', module)
   .addParameters({ jest: ['Card'] })
-  .add('Card', () => (
+  .add('Simple', () => (
     <Container scroll>
       <Header title={'Card'} />
 
-      <Card style={{ flex: 1, marginBottom: 20, padding: 16 }}>
+      <Card style={{ flex: 1, marginBottom: 20, padding: 16, maxWidth: 400 }}>
         <Text style={{ fontSize: 14, textAlign: 'center', marginBottom: 8 }}>
-          Just some text
+          This is a simple card with a button
         </Text>
         <Button type={'flat'} text="Card button" />
       </Card>
+
+      <Card
+        style={{ flex: 1, marginBottom: 20, padding: 16, maxWidth: 400 }}
+        shadow={5}>
+        <Text style={{ fontSize: 14, textAlign: 'center', marginBottom: 8 }}>
+          This one has more shadow
+        </Text>
+        <Button type={'flat'} text="Card button" style={{ marginBottom: 20 }} />
+        <Button type={'flat'} color={'#E91E63'} text="Card button" />
+      </Card>
+
+      <Card
+        style={{ flex: 1, marginBottom: 20, padding: 16, maxWidth: 400 }}
+        shadow={8}>
+        <Text style={{ fontSize: 14, textAlign: 'center', marginBottom: 8 }}>
+          This one has more shadow
+        </Text>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            marginTop: 20,
+          }}>
+          <Button type={'flat'} text="Card button" />
+          <Button type={'flat'} color={'#E91E63'} text="Card button" />
+        </View>
+      </Card>
+      <Card
+        style={{ flex: 1, marginBottom: 20, padding: 16, maxWidth: 400 }}
+        radius={20}
+        shadow={5}>
+        <Text style={{ fontSize: 14, textAlign: 'center', marginBottom: 8 }}>
+          This one has more radius
+        </Text>
+        <Button type={'flat'} text="Card button" />
+      </Card>
+      <Card
+        style={{
+          flex: 1,
+          marginBottom: 20,
+          padding: 16,
+          maxWidth: 400,
+          maxHeight: 400,
+        }}
+        radius={200}
+        shadow={5}>
+        <Text style={{ fontSize: 14, textAlign: 'center', marginBottom: 8 }}>
+          This one has more radius
+        </Text>
+        <Button type={'flat'} text="Card button" />
+      </Card>
+      <Card style={{ flex: 1, marginBottom: 20, padding: 16 }}>
+        <Text style={{ fontSize: 14, textAlign: 'center', marginBottom: 8 }}>
+          This is one takes up the full width
+        </Text>
+        <Button type={'flat'} text="Card button" />
+      </Card>
+    </Container>
+  ))
+  .add('Full', () => (
+    <Container scroll>
+      <Header title={'Card'} />
+
       <Card style={{ maxWidth: 400, width: '100%', marginBottom: 50 }}>
         <CardHeader
           thumbnail={
