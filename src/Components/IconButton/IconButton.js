@@ -12,14 +12,17 @@ class IconButton extends Component {
     size: PropTypes.number,
     name: PropTypes.string,
     onPress: PropTypes.func,
+    rippleColor: PropTypes.string,
   };
   render() {
-    const { style, name, color, size, onPress } = this.props;
+    const { style, name, color, size, onPress, rippleColor } = this.props;
+    let rippleColorImplemented = color ? color : 'rgb(0, 0, 0)';
+    if (rippleColor) rippleColorImplemented = rippleColor;
 
     return (
       <Ripple
         rippleContainerBorderRadius={100}
-        rippleColor={color ? color : 'rgb(0, 0, 0)'}
+        rippleColor={rippleColorImplemented}
         onPress={onPress}
         style={[
           {
