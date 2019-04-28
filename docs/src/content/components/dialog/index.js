@@ -3,8 +3,15 @@ import ComponentPageLayout from '../../../components/ComponentPage/ComponentPage
 import MainDemo from './MainDemo';
 import Usage from './Usage';
 import Props from './Props';
+import Demos from './Demos';
 
-const sections = [{ name: 'Component' }, { name: 'Usage' }, { name: 'Props' }];
+const sections = [
+  { name: 'Component' },
+  { name: 'Usage' },
+  { name: 'Props' },
+  { name: 'alert', sub: true },
+  { name: 'simple', sub: true },
+];
 
 export default class DialogPage extends Component {
   render() {
@@ -20,6 +27,7 @@ export default class DialogPage extends Component {
           <MainDemo pageHref={'/components/dialog'} />
           <Usage pageHref={'/components/dialog'} />
           <Props pageHref={'/components/dialog'} />
+          <Demos pageHref={'/components/chip'} />
         </ComponentPageLayout>
       </div>
     );
