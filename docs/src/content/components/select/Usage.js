@@ -2,9 +2,9 @@ import React from 'react';
 import { ComponentUsage } from '@components';
 
 export const code = `import React, { Component } from 'react';
-import { Dropdown } from 'material-bread';
+import { Select } from 'material-bread';
 
-class DropdownPage extends React.Component {
+class SelectPage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -18,8 +18,8 @@ class DropdownPage extends React.Component {
       { id: 3, name: 'Option 3' },
     ];
     return (
-      <Dropdown
-        label={'Dropdown'}
+      <Select
+        label={'Select'}
         menuItems={data}
         onSelect={value => this.setState({ selectedItem: value.name })}
         selectedItem={this.state.selectedItem}

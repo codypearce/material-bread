@@ -6,9 +6,9 @@ import Menu from '../Menu/Menu';
 import MenuItem from '../Menu/MenuItem/MenuItem';
 import Icon from '../Icon/Icon';
 import withTheme from '../../Theme/withTheme';
-import styles from './Dropdown.styles';
+import styles from './Select.styles';
 
-class Dropdown extends Component {
+class Select extends Component {
   static propTypes = {
     onSelect: PropTypes.func,
     buttonStyle: PropTypes.object,
@@ -98,4 +98,4 @@ class Dropdown extends Component {
   }
 }
 
-export default withTheme(Dropdown);
+export default withTheme(Select);

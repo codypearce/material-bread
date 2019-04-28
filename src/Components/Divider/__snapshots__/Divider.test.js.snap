@@ -6,12 +6,10 @@ exports[`Divider Renders 1`] = `
     Array [
       Object {
         "backgroundColor": "rgba(0,0,0,.12)",
-        "height": 0.5,
-        "marginVertical": 16,
-        "opacity": 0.12,
         "width": "100%",
       },
       Object {
+        "height": 0.5,
         "marginVertical": 8,
       },
       undefined,

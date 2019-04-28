@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, Platform } from 'react-native';
+import { View, Platform, StyleSheet } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import { BodyText } from '../..';
 import styles from './Divider.styles';
