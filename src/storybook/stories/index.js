@@ -46,6 +46,9 @@ export {
 export {
   default as DrawerSection,
 } from '../../Components/Drawer/DrawerSection/DrawerSection.stories.js';
+export {
+  default as DrawerItem,
+} from '../../Components/Drawer/DrawerItem/DrawerItem.stories.js';
 
 export {
   default as Dropdown,

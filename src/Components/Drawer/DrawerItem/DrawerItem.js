@@ -14,7 +14,6 @@ class DrawerItem extends Component {
     icon: PropTypes.string,
     onPress: PropTypes.func,
     active: PropTypes.bool,
-    fullWidth: PropTypes.bool,
   };
 
   render() {
