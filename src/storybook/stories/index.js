@@ -38,7 +38,12 @@ export {
   default as DataTable,
 } from '../../Components/DataTable/DataTable.stories.js';
 export { default as Dialog } from '../../Components/Dialog/Dialog.stories.js';
+
 export { default as Drawer } from '../../Components/Drawer/Drawer.stories.js';
+export {
+  default as DrawerHeader,
+} from '../../Components/Drawer/DrawerHeader/DrawerHeader.stories.js';
+
 export {
   default as Dropdown,
 } from '../../Components/Dropdown/Dropdown.stories.js';

@@ -7,14 +7,17 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 18,
   },
+  avatarContainer: {
+    marginBottom: 20,
+  },
   title: {
     fontSize: 20,
     fontWeight: '500',
     color: 'rgba(0,0,0,.87)',
   },
   subtitle: {
-    marginTop: 8,
-    fontSize: 13,
+    marginTop: 4,
+    fontSize: 12,
     color: 'rgba(0,0,0,.67)',
   },
 });
