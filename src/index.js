@@ -44,15 +44,7 @@ export {
 } from './Components/DataTable/DataTableRow/DataTableRow';
 
 export { default as Dialog } from './Components/Dialog/Dialog';
-export {
-  default as DialogActions,
-} from './Components/Dialog/DialogActions/DialogActions';
-export {
-  default as DialogContentText,
-} from './Components/Dialog/DialogContentText/DialogContentText';
-export {
-  default as DialogTitle,
-} from './Components/Dialog/DialogTitle/DialogTitle';
+
 export { default as Dropdown } from './Components/Dropdown/Dropdown';
 export { default as Drawer } from './Components/Drawer/Drawer';
 export {

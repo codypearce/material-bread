@@ -1,7 +1,12 @@
 import { createTableData } from '../../../utils/createPropData';
 const propData = [
-  ['dialogStyle', 'Styles container dialog', 'object', ''],
-
+  ['actionItems', 'Array of actions to show at the bottom right', 'array', ''],
+  [
+    'contentStyle',
+    'Styles content container excluding action items',
+    'object',
+    '',
+  ],
   ['onRequestClose', 'Callback when dialog is closing', 'func', ''],
   ['onShow', 'Callback when dialog is opening', 'func', ''],
   [
@@ -10,7 +15,9 @@ const propData = [
     'func',
     '',
   ],
-
+  ['title', 'Adds a dialog title at the top', 'string', ''],
+  ['style', 'Styles container dialog', 'object', ''],
+  ['supportingText', 'Adds styled text below title', 'string', ''],
   ['visible', 'Wether to show dialog or not', 'bool', ''],
 ];
 

@@ -7,7 +7,35 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     paddingTop: 24,
     maxWidth: 560,
+    maxHeight: 'calc(100vh - 20px)',
+    overflow: 'hidden',
+
     ...shadow(12),
+  },
+  contentContainer: {
+    paddingLeft: 24,
+    paddingRight: 24,
+    paddingBottom: 8,
+    flex: 1,
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: '500',
+    color: 'rgba(0, 0, 0, 0.87)',
+    marginBottom: 20,
+  },
+  supportingText: {
+    fontSize: 16,
+    fontWeight: '400',
+    color: 'rgba(0, 0, 0, 0.54)',
+    marginBottom: 16,
+    lineHeight: 24,
+  },
+  actionItems: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    paddingHorizontal: 8,
+    paddingBottom: 8,
   },
 });
 

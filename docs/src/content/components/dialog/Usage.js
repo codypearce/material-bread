@@ -20,27 +20,26 @@ class DialogPage extends React.Component {
         </Button>
         <Dialog
           visible={this.state.visible}
-          onTouchOutside={() => this.setState({ visible: false })}>
-          <DialogTitle>Use Googles location service?</DialogTitle>
-          <DialogContentText>
-            Let Google help apps determine location. This means sending
-            anonymous location data to Google, even when no apps are running.
-          </DialogContentText>
-          <DialogActions>
-            <Button text={'Cancel'} onPress={() => this.setState({ visible: false })} />
-            <Button text={'OK'} onPress={() => store.set({ visible: false })}>
-          </DialogActions>
-        </Dialog>
+          onTouchOutside={() => this.setState({ visible: false })}
+          title={'Use Googles location service?'}
+          supportingText={
+            'Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.'
+          }
+          actionItems={[
+            {
+              text: 'Cancel',
+              onPress: () =>  this.setState({ visible: false }),
+            },
+            {
+              text: 'OK',
+              onPress: () =>  this.setState({ visible: false }),
+            },
+          ]}
+        />
       </View>
     );
   }
 }`;
 
-const Usage = pageHref => (
-  <ComponentUsage
-    pageHref={pageHref}
-    description={'Currently does not work on the web, but coming soon.'}
-    code={code}
-  />
-);
+const Usage = pageHref => <ComponentUsage pageHref={pageHref} code={code} />;
 export default Usage;
