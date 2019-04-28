@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentUsage, CodeInline } from '@components';
+import { ComponentUsage } from '@components';
 
 export const code = `import React, { Component } from 'react';
 import { View } from 'react-native';
@@ -76,20 +76,5 @@ class App extends React.Component {
   }
 }`;
 
-const Usage = pageHref => (
-  <ComponentUsage
-    pageHref={pageHref}
-    description={
-      <div>
-        The <CodeInline code="Drawer" type="element" /> component needs to wrap
-        each page it will be displayed on. Usually this can be defined as a base
-        layout in your root <CodeInline code="App.js" type="file" /> file. You
-        must provide an <CodeInline code="onClose" type="prop" /> function if
-        you want to close the <CodeInline code="Drawer" type="element" /> by
-        clicking outside.
-      </div>
-    }
-    code={code}
-  />
-);
+const Usage = pageHref => <ComponentUsage pageHref={pageHref} code={code} />;
 export default Usage;

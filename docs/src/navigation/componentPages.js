@@ -106,6 +106,11 @@ const components = [
     subsubItem: true,
   },
   {
+    title: 'DrawerItem',
+    path: '/components/drawer-item',
+    subsubItem: true,
+  },
+  {
     title: 'DrawerSection',
     path: '/components/drawer-section',
     subsubItem: true,

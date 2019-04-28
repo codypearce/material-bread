@@ -1,14 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Platform, Dimensions } from 'react-native';
 
-import {
-  Drawer,
-  DrawerItem,
-  DrawerSection,
-  IconButton,
-  BodyText,
-  Heading,
-} from '../../..';
+import { Drawer, DrawerItem, IconButton, BodyText, Heading } from '../../..';
 import Header from '../../../storybook/components/Header';
 import Container from '../../../storybook/components/Container';
 import { storiesOf } from '../../../storybook/helpers/storiesOf';
