@@ -4,7 +4,6 @@ import { View, StyleSheet, Platform, Dimensions } from 'react-native';
 import {
   Drawer,
   DrawerItem,
-  DrawerHeader,
   DrawerSection,
   IconButton,
   BodyText,

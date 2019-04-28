@@ -106,6 +106,11 @@ const components = [
     subsubItem: true,
   },
   {
+    title: 'DrawerSection',
+    path: '/components/drawer-section',
+    subsubItem: true,
+  },
+  {
     title: 'Dropdown',
     path: '/components/dropdown',
   },
