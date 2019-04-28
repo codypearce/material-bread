@@ -15,4 +15,13 @@ export default storiesOf('Components|Divider', module)
       <Divider />
       <Divider marginVertical={24} />
     </Container>
+  ))
+  .add('subheader', () => (
+    <Container>
+      <Header title={'Divider'} />
+
+      <Divider subheader={'Subheader'} />
+      <Divider subheader={'Title'} inset={8} />
+      <Divider subheader={'Section'} inset={16} marginVertical={24} />
+    </Container>
   ));

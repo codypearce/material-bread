@@ -38,9 +38,8 @@ export default {
     borderRadius: 2,
   },
   divider: {
-    height: StyleSheet.hairlineWidth,
     width: '100%',
-    opacity: 0.12,
+
     backgroundColor: 'rgba(0,0,0,.12)',
     marginVertical: 16,
   },
