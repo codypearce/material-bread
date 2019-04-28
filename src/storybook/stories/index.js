@@ -43,6 +43,9 @@ export { default as Drawer } from '../../Components/Drawer/Drawer.stories.js';
 export {
   default as DrawerHeader,
 } from '../../Components/Drawer/DrawerHeader/DrawerHeader.stories.js';
+export {
+  default as DrawerSection,
+} from '../../Components/Drawer/DrawerSection/DrawerSection.stories.js';
 
 export {
   default as Dropdown,
