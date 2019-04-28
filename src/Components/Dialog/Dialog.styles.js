@@ -7,12 +7,16 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     paddingTop: 24,
     maxWidth: 560,
+    maxHeight: 'calc(100vh - 20px)',
+    overflow: 'hidden',
+
     ...shadow(12),
   },
   contentContainer: {
     paddingLeft: 24,
     paddingRight: 24,
     paddingBottom: 8,
+    flex: 1,
   },
   title: {
     fontSize: 20,
