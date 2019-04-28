@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Image } from 'react-native';
 import { ComponentMainDemo } from '@components';
-import { Dropdown } from '../../../../../src/index';
+import { Select } from '../../../../../src/';
 
 export const code = `class DropdownPage extends React.Component {
   constructor(props) {
@@ -18,8 +18,8 @@ export const code = `class DropdownPage extends React.Component {
     ];
     return (
       <View style={{marginBottom: 80}}>
-        <Dropdown
-          label={'Dropdown'}
+        <Select
+          label={'Select'}
           menuItems={data}
           onSelect={value => this.setState({ selectedItem: value.name })}
           selectedItem={this.state.selectedItem}
@@ -32,9 +32,9 @@ export const code = `class DropdownPage extends React.Component {
 const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
-    description={`Dropdowns are convenient components for adding a menu attached to a component.`}
+    description={`Select or Exposed Menu's are components that allow you to select an item as input.`}
     code={code}
-    scope={{ View, Dropdown, Image }}
+    scope={{ View, Select, Image }}
   />
 );
 export default MainDemo;

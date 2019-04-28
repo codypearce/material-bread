@@ -96,10 +96,7 @@ const components = [
     title: 'Divider',
     path: '/components/divider',
   },
-  {
-    title: 'Drawer',
-    path: '/components/drawer',
-  },
+
   {
     title: 'DrawerHeader',
     path: '/components/drawer-header',
@@ -176,6 +173,10 @@ const components = [
   {
     title: 'Searchfield',
     path: '/components/searchfield',
+  },
+  {
+    title: 'Select',
+    path: '/components/select',
   },
   {
     title: 'Snackbar',

@@ -45,7 +45,6 @@ export {
 
 export { default as Dialog } from './Components/Dialog/Dialog';
 
-export { default as Dropdown } from './Components/Dropdown/Dropdown';
 export { default as Drawer } from './Components/Drawer/Drawer';
 export {
   default as DrawerHeader,
@@ -94,6 +93,7 @@ export {
 } from './Components/Progress/ProgressCircle/ProgressCircle';
 export { default as RadioButton } from './Components/RadioButton/RadioButton';
 export { default as Ripple } from './Components/Ripple/Ripple';
+export { default as Select } from './Components/Select/Select';
 export { default as Searchbar } from './Components/Searchbar/Searchbar';
 export { default as Searchfield } from './Components/Searchfield/Searchfield';
 export { default as Snackbar } from './Components/Snackbar/Snackbar';

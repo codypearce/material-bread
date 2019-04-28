@@ -24,8 +24,8 @@ exports[`DrawerHeader Renders 1`] = `
     style={
       Object {
         "color": "rgba(0,0,0,.67)",
-        "fontSize": 13,
-        "marginTop": 8,
+        "fontSize": 12,
+        "marginTop": 4,
       }
     }
   />

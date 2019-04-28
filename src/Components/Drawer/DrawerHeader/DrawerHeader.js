@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
-import Dropdown from '../../Dropdown/Dropdown';
 import styles from './DrawerHeader.styles';
 
 class DrawerHeader extends Component {
@@ -13,10 +12,6 @@ class DrawerHeader extends Component {
     subtitle: PropTypes.string,
     avatar: PropTypes.node,
   };
-
-  _accountSwitcher() {
-    return <Dropdown />;
-  }
 
   _renderAvatar() {
     const { avatar } = this.props;

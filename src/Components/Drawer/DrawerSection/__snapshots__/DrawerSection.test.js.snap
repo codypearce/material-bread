@@ -7,6 +7,7 @@ exports[`DrawerSection Renders 1`] = `
       undefined,
       Object {
         "paddingHorizontal": 8,
+        "paddingTop": 0,
       },
     ]
   }
@@ -15,7 +16,7 @@ exports[`DrawerSection Renders 1`] = `
     style={
       Object {
         "paddingBottom": 8,
-        "paddingTop": 14,
+        "paddingTop": 8,
       }
     }
   />

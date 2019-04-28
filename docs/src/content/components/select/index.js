@@ -11,17 +11,17 @@ export default class DropdownPage extends Component {
     return (
       <div>
         <ComponentPageLayout
-          componentName={'dropdown'}
-          title={'Dropdown'}
+          componentName={'select'}
+          title={'Select'}
           description={`Exposed dropdown menus display the currently selected menu item above the menu.`}
-          importCode={`import { Dropdown } from 'material-bread';`}
+          importCode={`import { Select } from 'material-bread';`}
           docsLink={
             'https://material.io/design/components/menus.html#exposed-dropdown-menu'
           }
           sideScrollMenuItems={sections}>
-          <MainDemo pageHref={'/components/dropdown'} />
-          <Usage pageHref={'/components/dropdown'} />
-          <Props pageHref={'/components/dropdown'} />
+          <MainDemo pageHref={'/components/select'} />
+          <Usage pageHref={'/components/select'} />
+          <Props pageHref={'/components/select'} />
         </ComponentPageLayout>
       </div>
     );

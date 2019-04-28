@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Dropdown } from '../../';
+import { Select } from '../../';
 import { State, Store } from '@sambego/storybook-state';
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
@@ -16,16 +16,16 @@ const data = [
   { id: 3, name: 'Option 3' },
 ];
 
-export default storiesOf('Components|Dropdown', module)
-  .addParameters({ jest: ['Dropdown'] })
+export default storiesOf('Components|Select', module)
+  .addParameters({ jest: ['Select'] })
   .add('Outlined', () => (
     <Container>
-      <Header title={'Outlined Dropdown'} />
+      <Header title={'Outlined Select'} />
 
       <State store={store} style={{ flex: 1 }}>
         {state => (
-          <Dropdown
-            label={'Dropdown'}
+          <Select
+            label={'Select'}
             menuItems={data}
             onSelect={value => store.set({ selectedItem: value.name })}
             selectedItem={state.selectedItem}

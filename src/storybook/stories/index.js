@@ -51,9 +51,6 @@ export {
 } from '../../Components/Drawer/DrawerItem/DrawerItem.stories.js';
 
 export {
-  default as Dropdown,
-} from '../../Components/Dropdown/Dropdown.stories.js';
-export {
   default as Divider,
 } from '../../Components/Divider/Divider.stories.js';
 export { default as Fab } from '../../Components/Fab/Fab.stories.js';
@@ -80,6 +77,7 @@ export {
 export {
   default as Searchfield,
 } from '../../Components/Searchfield/Searchfield.stories.js';
+export { default as Dropdown } from '../../Components/Select/Select.stories.js';
 export {
   default as Snackbar,
 } from '../../Components/Snackbar/Snackbar.stories.js';
