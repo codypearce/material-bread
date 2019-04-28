@@ -3,8 +3,15 @@ import ComponentPageLayout from '../../../components/ComponentPage/ComponentPage
 import MainDemo from './MainDemo';
 import Usage from './Usage';
 import Props from './Props';
+import Demos from './Demos';
 
-const sections = [{ name: 'Component' }, { name: 'Usage' }, { name: 'Props' }];
+const sections = [
+  { name: 'Component' },
+  { name: 'Usage' },
+  { name: 'Props' },
+  { name: 'Demos' },
+  { name: 'animated', sub: true },
+];
 
 export default class HoverablePage extends Component {
   render() {
@@ -19,6 +26,7 @@ export default class HoverablePage extends Component {
           <MainDemo pageHref={'/utils/hoverable'} />
           <Usage pageHref={'/utils/hoverable'} />
           <Props pageHref={'/utils/hoverable'} />
+          <Demos pageHref={'/utils/hoverable'} />
         </ComponentPageLayout>
       </div>
     );
