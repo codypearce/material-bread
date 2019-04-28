@@ -101,6 +101,11 @@ const components = [
     path: '/components/drawer',
   },
   {
+    title: 'DrawerHeader',
+    path: '/components/drawer-header',
+    subsubItem: true,
+  },
+  {
     title: 'Dropdown',
     path: '/components/dropdown',
   },
