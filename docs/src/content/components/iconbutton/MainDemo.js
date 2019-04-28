@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Image } from 'react-native';
 import { ComponentMainDemo } from '@components';
-import { IconButton } from '../../../../../src/index';
+import { IconButton, Badge } from '../../../../../src/index';
 
 export const code = `class IconPage extends React.Component {
   constructor(props) {
@@ -12,8 +12,23 @@ export const code = `class IconPage extends React.Component {
   }
   render() {
     return (
-      <View>
-        <IconButton name="favorite" size={48} />
+      <View style={{flexDirection: 'row'}}>
+
+        <IconButton name="adb" size={12} color={'#F44336'} />
+        <IconButton name="album" size={24} color={'#E91E63'} />
+        <IconButton name="battery-full" size={32} color={'#9C27B0'} />
+        <Badge
+          style={{ position: 'absolute', top: 0, right: 0 }}
+          size={14}
+          badgeContent={4}>
+          <IconButton name="camera" size={48} color={'#009688'} />
+        </Badge>
+
+        <IconButton name="create" size={24} color={'#00BCD4'} />
+        <IconButton name="dashboard" size={32} color={'#607D8B'} />
+        <IconButton name="directions-walk" size={48} color={'#8BC34A'} />
+
+        <IconButton name="flash-on" size={64} color={'#FFEB3B'} />
       </View>
     );
   }
@@ -26,7 +41,7 @@ const MainDemo = pageHref => (
       'IconButtons are convenient components for adding onPress and Ripple to icons.'
     }
     code={code}
-    scope={{ View, IconButton, Image }}
+    scope={{ View, IconButton, Badge, Image }}
   />
 );
 export default MainDemo;
