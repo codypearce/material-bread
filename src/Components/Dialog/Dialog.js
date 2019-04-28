@@ -17,6 +17,7 @@ class Dialog extends Component {
     actionItems: PropTypes.array,
     title: PropTypes.string,
     supportingText: PropTypes.string,
+    contentStyle: PropTypes.object,
   };
 
   _renderActionItems() {
@@ -31,14 +32,23 @@ class Dialog extends Component {
   }
 
   _renderContent() {
-    const { style, title, supportingText, children, actionItems } = this.props;
+    const {
+      style,
+      title,
+      supportingText,
+      children,
+      actionItems,
+      contentStyle,
+    } = this.props;
     return (
       <View style={[styles.container, style]}>
-        {title ? <BodyText style={styles.title}>{title}</BodyText> : null}
-        {supportingText ? (
-          <BodyText style={styles.supportingText}>{supportingText}</BodyText>
-        ) : null}
-        {children}
+        <View style={[styles.contentContainer, contentStyle]}>
+          {title ? <BodyText style={styles.title}>{title}</BodyText> : null}
+          {supportingText ? (
+            <BodyText style={styles.supportingText}>{supportingText}</BodyText>
+          ) : null}
+          {children}
+        </View>
         {actionItems ? this._renderActionItems() : null}
       </View>
     );

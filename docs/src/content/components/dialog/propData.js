@@ -1,6 +1,12 @@
 import { createTableData } from '../../../utils/createPropData';
 const propData = [
   ['actionItems', 'Array of actions to show at the bottom right', 'array', ''],
+  [
+    'contentStyle',
+    'Styles content container excluding action items',
+    'object',
+    '',
+  ],
   ['onRequestClose', 'Callback when dialog is closing', 'func', ''],
   ['onShow', 'Callback when dialog is opening', 'func', ''],
   [
