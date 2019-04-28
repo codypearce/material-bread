@@ -3,8 +3,14 @@ import ComponentPageLayout from '../../../components/ComponentPage/ComponentPage
 import MainDemo from './MainDemo';
 import Usage from './Usage';
 import Props from './Props';
+import Demos from './Demos';
 
-const sections = [{ name: 'Component' }, { name: 'Usage' }, { name: 'Props' }];
+const sections = [
+  { name: 'Component' },
+  { name: 'Usage' },
+  { name: 'Props' },
+  { name: 'subheader', sub: true },
+];
 
 export default class DividerPage extends Component {
   render() {
@@ -20,6 +26,7 @@ export default class DividerPage extends Component {
           <MainDemo pageHref={'/components/divider'} />
           <Usage pageHref={'/components/divider'} />
           <Props pageHref={'/components/divider'} />
+          <Demos pageHref={'/components/divider'} />
         </ComponentPageLayout>
       </div>
     );

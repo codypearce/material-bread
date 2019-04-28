@@ -41,7 +41,6 @@ export default {
     width: '100%',
 
     backgroundColor: 'rgba(0,0,0,.12)',
-    marginVertical: 16,
   },
 
   button: {
