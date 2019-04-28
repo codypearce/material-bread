@@ -27,7 +27,7 @@ export default class DialogPage extends Component {
           <MainDemo pageHref={'/components/dialog'} />
           <Usage pageHref={'/components/dialog'} />
           <Props pageHref={'/components/dialog'} />
-          <Demos pageHref={'/components/chip'} />
+          <Demos pageHref={'/components/dialog'} />
         </ComponentPageLayout>
       </div>
     );
