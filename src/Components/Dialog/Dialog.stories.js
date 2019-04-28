@@ -1,13 +1,7 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
-import {
-  Dialog,
-  DialogActions,
-  DialogContentText,
-  DialogTitle,
-  Button,
-} from '../../';
+import { Dialog, Button } from '../../';
 import { State, Store } from '@sambego/storybook-state';
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
@@ -19,40 +13,67 @@ const store = new Store({
 
 export default storiesOf('Components|Dialog', module)
   .addParameters({ jest: ['Dialog'] })
-  .add('Simple', () => (
+  .add('Alert', () => (
     <Container>
-      <Header title={'Dialog'} />
-      <Text>
-        Modal is currently only working with React Native. React Native Web has
-        not implemented the native functionality.
-      </Text>
+      <Header title={'Alert Dialog'} />
+
       <State store={store} style={{ flex: 1 }}>
         {state => (
-          <View>
+          <View style={{ flexDirection: 'row' }}>
             <Button
               text={'Open'}
               onPress={() => store.set({ visible: !state.visible })}
             />
             <Dialog
               visible={state.visible}
-              onTouchOutside={() => store.set({ visible: false })}>
-              <DialogTitle>Use Googles location service?</DialogTitle>
-              <DialogContentText>
-                Let Google help apps determine location. This means sending
-                anonymous location data to Google, even when no apps are
-                running.
-              </DialogContentText>
-              <DialogActions>
-                <Button
-                  text={'Cancel'}
-                  onPress={() => store.set({ visible: false })}
-                />
-                <Button
-                  text={'OK'}
-                  onPress={() => store.set({ visible: false })}
-                />
-              </DialogActions>
-            </Dialog>
+              onTouchOutside={() => store.set({ visible: false })}
+              supportingText={'Discard draft?'}
+              style={{ width: 280 }}
+              actionItems={[
+                {
+                  text: 'Cancel',
+                  onPress: () => store.set({ visible: false }),
+                },
+                {
+                  text: 'Discard',
+                  onPress: () => store.set({ visible: false }),
+                },
+              ]}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
+  ))
+  .add('Confirmation', () => (
+    <Container>
+      <Header title={'Confirmation Dialog'} />
+
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View style={{ flexDirection: 'row' }}>
+            <Button
+              text={'Open'}
+              onPress={() => store.set({ visible: !state.visible })}
+            />
+            <Dialog
+              visible={state.visible}
+              onTouchOutside={() => store.set({ visible: false })}
+              title={'Use Googles location service?'}
+              supportingText={
+                'Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.'
+              }
+              actionItems={[
+                {
+                  text: 'Cancel',
+                  onPress: () => store.set({ visible: false }),
+                },
+                {
+                  text: 'OK',
+                  onPress: () => store.set({ visible: false }),
+                },
+              ]}
+            />
           </View>
         )}
       </State>

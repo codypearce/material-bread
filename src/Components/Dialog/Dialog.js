@@ -5,26 +5,47 @@ import PropTypes from 'prop-types';
 import Modal from '../Modal/Modal';
 import withTheme from '../../Theme/withTheme';
 import styles from './Dialog.styles';
-
+import { Button, BodyText } from '../..';
 class Dialog extends Component {
   static propTypes = {
-    dialogStyle: PropTypes.object,
+    style: PropTypes.object,
     children: PropTypes.node,
     visible: PropTypes.bool,
     onRequestClose: PropTypes.func,
     onShow: PropTypes.func,
     onTouchOutside: PropTypes.func,
+    actionItems: PropTypes.array,
+    title: PropTypes.string,
+    supportingText: PropTypes.string,
   };
 
+  _renderActionItems() {
+    const { actionItems } = this.props;
+    return (
+      <View style={styles.actionItems}>
+        {actionItems.map((item, index) => {
+          return <Button key={index} text={item.text} onPress={item.onPress} />;
+        })}
+      </View>
+    );
+  }
+
+  _renderContent() {
+    const { style, title, supportingText, children, actionItems } = this.props;
+    return (
+      <View style={[styles.container, style]}>
+        {title ? <BodyText style={styles.title}>{title}</BodyText> : null}
+        {supportingText ? (
+          <BodyText style={styles.supportingText}>{supportingText}</BodyText>
+        ) : null}
+        {children}
+        {actionItems ? this._renderActionItems() : null}
+      </View>
+    );
+  }
+
   render() {
-    const {
-      dialogStyle,
-      visible,
-      onRequestClose,
-      onShow,
-      onTouchOutside,
-      children,
-    } = this.props;
+    const { visible, onRequestClose, onShow, onTouchOutside } = this.props;
 
     return (
       <Modal
@@ -32,7 +53,7 @@ class Dialog extends Component {
         onRequestClose={onRequestClose}
         onShow={onShow}
         onTouchOutside={onTouchOutside}>
-        <View style={[styles.container, dialogStyle]}>{children}</View>
+        {this._renderContent()}
       </Modal>
     );
   }
