@@ -28,10 +28,10 @@ class DrawerSection extends Component {
       <View
         style={[
           styles.drawerSection,
-          { paddingHorizontal: fullWidth ? 0 : 8 },
+          { paddingHorizontal: fullWidth ? 0 : 8, paddingTop: label ? 8 : 0 },
         ]}>
         {topDivider ? <Divider /> : null}
-        {label ? <Text>{label}</Text> : null}
+        {label ? <Text style={styles.label}>{label}</Text> : null}
         <View style={styles.content}>{children}</View>
         {bottomDivider ? <Divider /> : null}
       </View>

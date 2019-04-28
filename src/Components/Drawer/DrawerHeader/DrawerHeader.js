@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, Image, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import Dropdown from '../../Dropdown/Dropdown';
 import styles from './DrawerHeader.styles';
@@ -11,19 +11,25 @@ class DrawerHeader extends Component {
     style: PropTypes.object,
     title: PropTypes.string,
     subtitle: PropTypes.string,
-    image: PropTypes.string,
+    avatar: PropTypes.node,
   };
 
   _accountSwitcher() {
     return <Dropdown />;
   }
 
+  _renderAvatar() {
+    const { avatar } = this.props;
+
+    return <View style={styles.avatarContainer}>{avatar}</View>;
+  }
+
   render() {
-    const { image, title, subtitle } = this.props;
+    const { avatar, title, subtitle } = this.props;
 
     return (
       <View style={styles.drawerHeader}>
-        {image ? <Image source={image} /> : null}
+        {avatar ? this._renderAvatar() : null}
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.subtitle}>{subtitle}</Text>
       </View>
