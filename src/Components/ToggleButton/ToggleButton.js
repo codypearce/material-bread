@@ -54,7 +54,7 @@ class ToggleButton extends Component {
       rippleContainerBorderRadius,
     } = this.props;
     const { isActive } = this.state;
-    console.log(rippleContainerBorderRadius);
+
     return (
       <ToggleButtonContext.Consumer>
         {context => (
