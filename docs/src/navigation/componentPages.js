@@ -4,6 +4,11 @@ const components = [
     path: '/components/appbar',
   },
   {
+    title: 'Searchbar',
+    path: '/components/searchbar',
+    subsubItem: true,
+  },
+  {
     title: 'Appbar Bottom',
     path: '/components/appbar-bottom',
   },
@@ -165,10 +170,6 @@ const components = [
   {
     title: 'Ripple',
     path: '/components/ripple',
-  },
-  {
-    title: 'Searchbar',
-    path: '/components/searchbar',
   },
 
   {

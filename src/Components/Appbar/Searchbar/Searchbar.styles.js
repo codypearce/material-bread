@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { shadow } from '../..';
+import { shadow } from '../../..';
 
 const styles = StyleSheet.create({
   container: {

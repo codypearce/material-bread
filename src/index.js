@@ -94,10 +94,10 @@ export {
 export { default as RadioButton } from './Components/RadioButton/RadioButton';
 export { default as Ripple } from './Components/Ripple/Ripple';
 export { default as Select } from './Components/Select/Select';
-export { default as Searchbar } from './Components/Searchbar/Searchbar';
 export {
   default as Searchfield,
 } from './Components/TextField/Searchfield/Searchfield';
+export { default as Searchbar } from './Components/Appbar/Searchbar/Searchbar';
 export { default as Snackbar } from './Components/Snackbar/Snackbar';
 export { default as Switch } from './Components/Switch/Switch';
 export { default as TextField } from './Components/TextField/TextField';

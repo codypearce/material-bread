@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, TextInput } from 'react-native';
-import withTheme from '../../Theme/withTheme';
-import IconButton from '../IconButton/IconButton';
+import withTheme from '../../../Theme/withTheme';
+import IconButton from '../../IconButton/IconButton';
 import styles from './Searchbar.styles';
 
 class Searchbar extends Component {
