@@ -1,4 +1,5 @@
 import React from 'react';
+import { Text } from 'react-native';
 
 import { MenuItem, Paper, Divider, Icon } from '../../..';
 
@@ -32,6 +33,35 @@ export default storiesOf('Components|Menu/MenuItem', module)
         <Divider />
         <MenuItem icon={<Icon name={'content-copy'} />}>Preview</MenuItem>
         <MenuItem icon={<Icon name={'file-download'} />}>Download</MenuItem>
+      </Paper>
+    </Container>
+  ))
+  .add('with keyboard', () => (
+    <Container>
+      <Header title={'Menu keyboard commands'} />
+
+      <Paper radius={6} style={{ width: 200 }}>
+        <MenuItem
+          icon={<Icon name={'content-cut'} />}
+          keyboardCommand={
+            <Text style={{ fontSize: 12, color: '#6e6e6e' }}>&#8984;X</Text>
+          }>
+          Cut
+        </MenuItem>
+        <MenuItem
+          icon={<Icon name={'content-copy'} />}
+          keyboardCommand={
+            <Text style={{ fontSize: 12, color: '#6e6e6e' }}>&#8984;C</Text>
+          }>
+          Copy
+        </MenuItem>
+        <MenuItem
+          icon={<Icon name={'content-paste'} />}
+          keyboardCommand={
+            <Text style={{ fontSize: 12, color: '#6e6e6e' }}>&#8984;V</Text>
+          }>
+          Paste
+        </MenuItem>
       </Paper>
     </Container>
   ));

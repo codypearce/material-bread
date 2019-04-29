@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import PropTypes from 'prop-types';
-import { Text, Platform } from 'react-native';
+import { Text, Platform, View } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import styles from './MenuItem.styles';
 import { Ripple, Hoverable } from '../../../';
@@ -14,6 +14,7 @@ class MenuItem extends Component {
     style: PropTypes.object,
     textStyle: PropTypes.object,
     icon: PropTypes.node,
+    keyboardCommand: PropTypes.node,
   };
   static defaultProps = {
     disabled: false,
@@ -39,8 +40,26 @@ class MenuItem extends Component {
     });
   }
 
+  _renderKeyboardCommand() {
+    const { keyboardCommand } = this.props;
+    return (
+      <Fragment>
+        <View style={{ flex: 1 }} />
+        {keyboardCommand}
+      </Fragment>
+    );
+  }
+
   render() {
-    const { children, disabled, onPress, style, textStyle, icon } = this.props;
+    const {
+      children,
+      disabled,
+      onPress,
+      style,
+      textStyle,
+      icon,
+      keyboardCommand,
+    } = this.props;
     const { stateBackgroundColor } = this.state;
 
     return (
@@ -69,6 +88,7 @@ class MenuItem extends Component {
             ]}>
             {children}
           </Text>
+          {keyboardCommand ? this._renderKeyboardCommand() : null}
         </Ripple>
       </Hoverable>
     );
