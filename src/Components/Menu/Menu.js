@@ -148,7 +148,7 @@ class Menu extends Component {
       height: menuHeight,
       width: menuWidth,
       opacity: opacity,
-      top: buttonPositionY - 10,
+      top: buttonPositionY - 14,
     };
 
     if (modalMenuWidth > 0) {
