@@ -7,6 +7,9 @@ import styles from './MenuItem.styles';
 import { Ripple, Hoverable } from '../../../';
 
 class MenuItem extends Component {
+  constructor(props) {
+    super(props);
+  }
   static propTypes = {
     children: PropTypes.node,
     disabled: PropTypes.bool,
