@@ -27,6 +27,14 @@ class Menu extends Component {
     expanded: false,
   };
 
+  componentDidMount() {
+    const { visible } = this.props;
+
+    if (visible) {
+      this.toggle();
+    }
+  }
+
   componentDidUpdate(prevProps) {
     const { visible } = this.props;
 

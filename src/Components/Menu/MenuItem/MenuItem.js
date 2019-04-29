@@ -13,6 +13,7 @@ class MenuItem extends Component {
     onPress: PropTypes.func,
     style: PropTypes.object,
     textStyle: PropTypes.object,
+    icon: PropTypes.node,
   };
   static defaultProps = {
     disabled: false,
@@ -30,8 +31,16 @@ class MenuItem extends Component {
     this.setState({ stateBackgroundColor: implementedColor });
   }
 
+  _renderIcon() {
+    const { icon } = this.props;
+    return React.cloneElement(icon, {
+      size: 24,
+      color: '#6e6e6e',
+    });
+  }
+
   render() {
-    const { children, disabled, onPress, style, textStyle } = this.props;
+    const { children, disabled, onPress, style, textStyle, icon } = this.props;
     const { stateBackgroundColor } = this.state;
 
     return (
@@ -46,12 +55,16 @@ class MenuItem extends Component {
             { backgroundColor: stateBackgroundColor },
             style,
           ]}>
+          {icon ? this._renderIcon() : null}
           <Text
             ellipsizeMode={Platform.OS === 'ios' ? 'clip' : 'tail'}
             numberOfLines={1}
             style={[
               styles.title,
-              { color: disabled ? 'rgba(0,0,0,.50)' : 'rgba(0,0,0,.87)' },
+              {
+                color: disabled ? 'rgba(0,0,0,.50)' : 'rgba(0,0,0,.87)',
+                marginLeft: icon ? 20 : 0,
+              },
               textStyle,
             ]}>
             {children}

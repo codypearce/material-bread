@@ -63,6 +63,9 @@ export {
 } from '../../Components/IconButton/IconButton.stories.js';
 export { default as List } from '../../Components/List/List.stories.js';
 export { default as Menu } from '../../Components/Menu/Menu.stories.js';
+export {
+  default as MenuItem,
+} from '../../Components/Menu/MenuItem/MenuItem.stories.js';
 export { default as Paper } from '../../Components/Paper/Paper.stories.js';
 export {
   default as ProgressBar,

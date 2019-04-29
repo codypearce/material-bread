@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     left: 10,
     top: 10,
     backgroundColor: 'white',
+    minWidth: 112,
     zIndex: 200,
     ...shadow(5),
   },
