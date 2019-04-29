@@ -170,10 +170,7 @@ const components = [
     title: 'Searchbar',
     path: '/components/searchbar',
   },
-  {
-    title: 'Searchfield',
-    path: '/components/searchfield',
-  },
+
   {
     title: 'Select',
     path: '/components/select',
@@ -189,6 +186,11 @@ const components = [
   {
     title: 'Textfield',
     path: '/components/textfield',
+  },
+  {
+    title: 'Searchfield',
+    path: '/components/searchfield',
+    subsubItem: true,
   },
   {
     title: 'ToggleButton',

@@ -76,7 +76,7 @@ export {
 } from '../../Components/Searchbar/Searchbar.stories.js';
 export {
   default as Searchfield,
-} from '../../Components/Searchfield/Searchfield.stories.js';
+} from '../../Components/TextField/Searchfield/Searchfield.stories.js';
 export { default as Dropdown } from '../../Components/Select/Select.stories.js';
 export {
   default as Snackbar,
