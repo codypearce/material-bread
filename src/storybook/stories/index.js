@@ -73,7 +73,7 @@ export {
 export { default as Ripple } from '../../Components/Ripple/Ripple.stories.js';
 export {
   default as Searchbar,
-} from '../../Components/Searchbar/Searchbar.stories.js';
+} from '../../Components/Appbar/Searchbar/Searchbar.stories.js';
 export {
   default as Searchfield,
 } from '../../Components/TextField/Searchfield/Searchfield.stories.js';

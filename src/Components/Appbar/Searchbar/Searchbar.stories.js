@@ -1,17 +1,17 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import { Searchbar } from '../../';
+import { Searchbar } from '../../..';
 import { State, Store } from '@sambego/storybook-state';
-import Header from '../../storybook/components/Header';
-import Container from '../../storybook/components/Container';
-import { storiesOf } from '../../storybook/helpers/storiesOf';
+import Header from '../../../storybook/components/Header';
+import Container from '../../../storybook/components/Container';
+import { storiesOf } from '../../../storybook/helpers/storiesOf';
 
 const store = new Store({
   searchOne: '',
 });
 
-export default storiesOf('Components|Searchbar', module)
+export default storiesOf('Components|Appbar/Searchbar', module)
   .addParameters({ jest: ['Searchbar'] })
   .add('Simple', () => (
     <Container>
