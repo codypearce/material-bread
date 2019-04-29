@@ -5,16 +5,6 @@ import withTheme from '../../../Theme/withTheme';
 import ProgressCircleDeterminate from './ProgressCircleDeterminate';
 
 class ProgressCircle extends PureComponent {
-  static defaultProps = {
-    color: 'rgb(0, 0, 0)',
-    size: 48,
-    easing: Easing.bezier(0.4, 0.0, 0.7, 1.0),
-    animationEasing: Easing.linear,
-    animationDuration: 2400,
-    visible: true,
-    determinate: false,
-  };
-
   static propTypes = {
     color: PropTypes.string,
     size: PropTypes.number,
@@ -24,6 +14,16 @@ class ProgressCircle extends PureComponent {
     animationEasing: PropTypes.func,
     visible: PropTypes.bool,
     determinate: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    color: 'rgb(0, 0, 0)',
+    size: 48,
+    easing: Easing.bezier(0.4, 0.0, 0.7, 1.0),
+    animationEasing: Easing.linear,
+    animationDuration: 2400,
+    visible: true,
+    determinate: false,
   };
 
   constructor(props) {

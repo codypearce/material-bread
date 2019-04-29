@@ -65,8 +65,11 @@ export { default as List } from '../../Components/List/List.stories.js';
 export { default as Menu } from '../../Components/Menu/Menu.stories.js';
 export { default as Paper } from '../../Components/Paper/Paper.stories.js';
 export {
-  default as Progress,
-} from '../../Components/Progress/Progress.stories.js';
+  default as ProgressBar,
+} from '../../Components/Progress/ProgressBar/ProgressBar.stories.js';
+export {
+  default as ProgressCircle,
+} from '../../Components/Progress/ProgressCircle/ProgressCircle.stories.js';
 export {
   default as RadioButton,
 } from '../../Components/RadioButton/RadioButton.stories.js';

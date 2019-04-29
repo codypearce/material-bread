@@ -16,6 +16,12 @@ const propData = [
     'number',
     '0',
   ],
+  [
+    'shouldAnimateFirstValue',
+    'Wether the determinatee value should animate at start',
+    'bool',
+    'true',
+  ],
   ['size', 'Diameter of circle', 'number', '48'],
   ['style', 'Styles root element', 'object', ''],
   ['trackStyle', 'Styles track containing the indicator', 'object', ''],

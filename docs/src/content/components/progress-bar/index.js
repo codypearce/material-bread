@@ -4,8 +4,15 @@ import ComponentPageLayout from '../../../components/ComponentPage/ComponentPage
 import MainDemo from './MainDemo';
 import Usage from './Usage';
 import Props from './Props';
+import Demos from './Demos';
 
-const sections = [{ name: 'Component' }, { name: 'Usage' }, { name: 'Props' }];
+const sections = [
+  { name: 'Component' },
+  { name: 'Usage' },
+  { name: 'Props' },
+  { name: 'Demos' },
+  { name: 'determinate', sub: true },
+];
 
 export default class DataTableHeaderPage extends Component {
   render() {
@@ -23,6 +30,7 @@ export default class DataTableHeaderPage extends Component {
           <MainDemo pageHref={'/components/progress-bar'} />
           <Usage pageHref={'/components/progress-bar'} />
           <Props pageHref={'/components/progress-bar'} />
+          <Demos pageHref={'/components/progress-bar'} />
         </ComponentPageLayout>
       </div>
     );

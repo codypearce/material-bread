@@ -4,22 +4,6 @@ import { View, Animated, StyleSheet } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 
 class ProgressCircleDeterminate extends Component {
-  static defaultProps = {
-    value: 0,
-    size: 64,
-    thickness: 7,
-    color: '#4c90ff',
-    unfilledColor: 'transparent',
-    noTrackColor: true,
-    style: {},
-    children: null,
-    animationMethod: null,
-    animationConfig: { duration: 200 },
-    shouldAnimateFirstValue: false,
-    onChange() {},
-    onChangeAnimationEnd() {},
-  };
-
   static propTypes = {
     value: PropTypes.number,
     size: PropTypes.number,
@@ -34,6 +18,22 @@ class ProgressCircleDeterminate extends Component {
     onChange: PropTypes.func,
     onChangeAnimationEnd: PropTypes.func,
     noTrackColor: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    value: 0,
+    size: 64,
+    thickness: 4,
+    color: '#4c90ff',
+    unfilledColor: 'transparent',
+    noTrackColor: true,
+    style: {},
+    children: null,
+    animationMethod: null,
+    animationConfig: { duration: 200 },
+    shouldAnimateFirstValue: false,
+    onChange() {},
+    onChangeAnimationEnd() {},
   };
 
   state = {

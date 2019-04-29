@@ -1,55 +1,30 @@
 import React from 'react';
 import { View, Image } from 'react-native';
-import { ComponentMainDemo } from '@components';
+import { ComponentMainDemo, CodeInline } from '@components';
 import { ProgressBar, Button } from '../../../../../src/index';
 
 export const code = `class ProgressBarDemo extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      visible2: true,
-      value2: 50
-    }
   }
   render() {
     return (
       <View>
+        <ProgressBar visible />
         <ProgressBar
-          value={50}
-          animationDuration={2000}
-          trackStyle={{ marginTop: 40 }}
           visible
+          indcatorStartPosition={100}
+          trackStyle={{ marginTop: 20 }}
+          color={'#E91E63'}
         />
         <ProgressBar
-          determinate
-          value={this.state.value2}
-          animationDuration={2000}
-          trackStyle={{ marginTop: 40 }}
-          visible={this.state.visible2}
-        />
-        <Button
-          type="outlined"
-          style={{ marginTop: 20 }}
-          onPress={() => {
-            this.setState({
-              value2: Math.floor(Math.random() * Math.floor(100)),
-            });
-          }}
-          text={'Change Value'}
-        />
-
-        <Button
-          type="outlined"
-          style={{ marginTop: 20 }}
-          animationDuration={500}
-          onPress={() => {
-            this.setState({
-              visible2: !this.state.visible2,
-            });
-          }}
-          text={'Hide / Show Animate'}
-        />
-         
+          visible
+          indcatorStartPosition={100}
+          trackStyle={{ marginTop: 20 }}
+          color={'#009688'}
+          animationDuration={4000}
+          height={6}
+        /> 
       </View>
     );
   }
@@ -58,7 +33,15 @@ export const code = `class ProgressBarDemo extends React.Component {
 const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
-    description={`Progress bars can be determinate or indeterminate. If determinate you must provide a value for the animation to stop at.`}
+    description={
+      <div>
+        <CodeInline code="ProgressBar" type="element" />s can be{' '}
+        <CodeInline code="determinate" type="value" /> or{' '}
+        <CodeInline code="indeterminate" type="value" />. You can customize the
+        height of the bar, the color of the track, color of the indicator and
+        much more.
+      </div>
+    }
     code={code}
     scope={{ View, ProgressBar, Button, Image }}
   />
