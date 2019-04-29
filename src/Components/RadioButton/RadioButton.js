@@ -12,7 +12,7 @@ class RadioButton extends Component {
     onPress: PropTypes.func,
     rippleColor: PropTypes.string,
     radioButtonColor: PropTypes.string,
-    radioButtonBorderColor: PropTypes.string,
+    uncheckedBorderColor: PropTypes.string,
     style: PropTypes.object,
   };
 
@@ -23,6 +23,7 @@ class RadioButton extends Component {
       onPress,
       rippleColor,
       radioButtonColor,
+      uncheckedBorderColor,
       style,
     } = this.props;
 
@@ -30,6 +31,9 @@ class RadioButton extends Component {
     let radioButtonColorApplied = radioButtonColor
       ? radioButtonColor
       : 'rgba(33, 150, 243, 1)';
+    let uncheckedBorderColorApplied = uncheckedBorderColor
+      ? uncheckedBorderColor
+      : 'rgba(0,0,0,.5)';
 
     if (disabled) {
       radioButtonColorApplied = 'rgba(0,0,0,.5)';
@@ -47,7 +51,9 @@ class RadioButton extends Component {
           style={[
             styles.radio,
             {
-              borderColor: checked ? radioButtonColorApplied : 'rgba(0,0,0,.5)',
+              borderColor: checked
+                ? radioButtonColorApplied
+                : uncheckedBorderColorApplied,
             },
           ]}>
           {checked ? (
