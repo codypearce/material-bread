@@ -14,11 +14,11 @@ export default storiesOf('Components|Menu/MenuItem', module)
       <Header title={'Menu Item'} />
 
       <Paper radius={6} style={{ width: 200 }}>
-        <MenuItem>Menu item 1</MenuItem>
-        <MenuItem>Menu item 2</MenuItem>
+        <MenuItem text="Menu Item 1" />
+        <MenuItem text="Menu Item 2" />
         <Divider />
-        <MenuItem disabled>Menu item 3</MenuItem>
-        <MenuItem>Menu item 2</MenuItem>
+        <MenuItem disabled text="Menu Item 3" />
+        <MenuItem text="Menu Item 4" />
       </Paper>
     </Container>
   ))
@@ -27,12 +27,12 @@ export default storiesOf('Components|Menu/MenuItem', module)
       <Header title={'Menu icons'} />
 
       <Paper radius={6} style={{ width: 200 }}>
-        <MenuItem icon={<Icon name={'remove-red-eye'} />}>Preview</MenuItem>
-        <MenuItem icon={<Icon name={'person-add'} />}>Share</MenuItem>
-        <MenuItem icon={<Icon name={'link'} />}>Get Link</MenuItem>
+        <MenuItem text={'Preview'} icon={<Icon name={'remove-red-eye'} />} />
+        <MenuItem text={'Share'} icon={<Icon name={'person-add'} />} />
+        <MenuItem text={'Get Link'} icon={<Icon name={'link'} />} />
         <Divider />
-        <MenuItem icon={<Icon name={'content-copy'} />}>Preview</MenuItem>
-        <MenuItem icon={<Icon name={'file-download'} />}>Download</MenuItem>
+        <MenuItem text={'Preview'} icon={<Icon name={'content-copy'} />} />
+        <MenuItem text={'Download'} icon={<Icon name={'file-download'} />} />
       </Paper>
     </Container>
   ))
@@ -42,26 +42,28 @@ export default storiesOf('Components|Menu/MenuItem', module)
 
       <Paper radius={6} style={{ width: 200 }}>
         <MenuItem
+          text={'Cut'}
           icon={<Icon name={'content-cut'} />}
           keyboardCommand={
             <Text style={{ fontSize: 12, color: '#6e6e6e' }}>&#8984;X</Text>
-          }>
-          Cut
-        </MenuItem>
+          }
+        />
+
         <MenuItem
+          text={'Copy'}
           icon={<Icon name={'content-copy'} />}
           keyboardCommand={
             <Text style={{ fontSize: 12, color: '#6e6e6e' }}>&#8984;C</Text>
-          }>
-          Copy
-        </MenuItem>
+          }
+        />
+
         <MenuItem
+          text={'Paste'}
           icon={<Icon name={'content-paste'} />}
           keyboardCommand={
             <Text style={{ fontSize: 12, color: '#6e6e6e' }}>&#8984;V</Text>
-          }>
-          Paste
-        </MenuItem>
+          }
+        />
       </Paper>
     </Container>
   ));

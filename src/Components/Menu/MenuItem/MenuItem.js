@@ -15,6 +15,7 @@ class MenuItem extends Component {
     textStyle: PropTypes.object,
     icon: PropTypes.node,
     keyboardCommand: PropTypes.node,
+    text: PropTypes.string,
   };
   static defaultProps = {
     disabled: false,
@@ -50,13 +51,31 @@ class MenuItem extends Component {
     );
   }
 
+  _renderText() {
+    const { disabled, textStyle, text, icon } = this.props;
+    return (
+      <Text
+        ellipsizeMode={Platform.OS === 'ios' ? 'clip' : 'tail'}
+        numberOfLines={1}
+        style={[
+          styles.title,
+          {
+            color: disabled ? 'rgba(0,0,0,.50)' : 'rgba(0,0,0,.87)',
+            marginLeft: icon ? 20 : 0,
+          },
+          textStyle,
+        ]}>
+        {text}
+      </Text>
+    );
+  }
+
   render() {
     const {
       children,
       disabled,
       onPress,
       style,
-      textStyle,
       icon,
       keyboardCommand,
     } = this.props;
@@ -75,19 +94,7 @@ class MenuItem extends Component {
             style,
           ]}>
           {icon ? this._renderIcon() : null}
-          <Text
-            ellipsizeMode={Platform.OS === 'ios' ? 'clip' : 'tail'}
-            numberOfLines={1}
-            style={[
-              styles.title,
-              {
-                color: disabled ? 'rgba(0,0,0,.50)' : 'rgba(0,0,0,.87)',
-                marginLeft: icon ? 20 : 0,
-              },
-              textStyle,
-            ]}>
-            {children}
-          </Text>
+          {children ? children : this._renderText()}
           {keyboardCommand ? this._renderKeyboardCommand() : null}
         </Ripple>
       </Hoverable>

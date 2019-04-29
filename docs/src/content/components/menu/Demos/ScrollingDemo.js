@@ -24,24 +24,13 @@ export const code = `class Demo extends React.Component {
               }}
               type="contained" />
           }>
-          <MenuItem onPress={() => this.setState({ visible: false })}>
-            Menu item 1
-          </MenuItem>
-          <MenuItem onPress={() => this.setState({ visible: false })}>
-            Menu item 2
-          </MenuItem>
-          <MenuItem onPress={() => this.setState({ visible: false })} disabled>
-            Menu item 3
-          </MenuItem>
-          <MenuItem onPress={() => this.setState({ visible: false })}>
-            Menu item 4
-          </MenuItem>
-          <MenuItem onPress={() => this.setState({ visible: false })}>
-            Menu item 5
-          </MenuItem>
-          <MenuItem onPress={() => this.setState({ visible: false })}>
-            Menu item 6
-          </MenuItem>
+          <MenuItem text={'Menu item 1'} onPress={() => this.setState({ visible: false })} />
+          <MenuItem text={'Menu item 2'} onPress={() => this.setState({ visible: false })} />
+          <MenuItem text={'Menu item 3'} onPress={() => this.setState({ visible: false })} />
+          <MenuItem text={'Menu item 4'} onPress={() => this.setState({ visible: false })} />
+          <MenuItem text={'Menu item 5'} onPress={() => this.setState({ visible: false })} />
+          <MenuItem text={'Menu item 6'} onPress={() => this.setState({ visible: false })} />
+          <MenuItem text={'Menu item 7'} onPress={() => this.setState({ visible: false })} />
         </Menu>
       </View>
     );

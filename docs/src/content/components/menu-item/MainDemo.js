@@ -1,42 +1,28 @@
 import React from 'react';
-import { View, Image } from 'react-native';
-import { ComponentMainDemo } from '@components';
-import { Menu, MenuItem, Button } from '../../../../../src/index';
+import { View } from 'react-native';
+import { ComponentMainDemo, CodeInline } from '@components';
+import {
+  Menu,
+  MenuItem,
+  Button,
+  Paper,
+  Divider,
+} from '../../../../../src/index';
 
 export const code = `class MenuPage extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      visible: false
-    }
   }
   render() {
-    return (
-      <View style={{marginBottom: 200}}>
-        <Menu
-          visible={this.state.visible}
-          button={
-            <Button
-              text={'Show menu'}
-              onPress={() => {
-                this.setState({ visible: !this.state.visible });
-              }}
-              type="contained" />
-          }>
-          <MenuItem onPress={() => this.setState({ visible: false })}>
-            Menu item 1
-          </MenuItem>
-          <MenuItem onPress={() => this.setState({ visible: false })}>
-            Menu item 2
-          </MenuItem>
-          <MenuItem onPress={() => this.setState({ visible: false })} disabled>
-            Menu item 3
-          </MenuItem>
-          <MenuItem onPress={() => this.setState({ visible: false })}>
-            Menu item 2
-          </MenuItem>
-        </Menu>
-      </View>
+    return (    
+      <Paper radius={6} style={{ width: 200 }}>
+     
+        <MenuItem text={'Menu Item 1'} />
+        <MenuItem text={'Menu Item 2'} />
+        <Divider />
+        <MenuItem disabled text={'Menu Item 3'} />
+        <MenuItem text={'Menu Item 4'} />
+      </Paper>
     );
   }
 }`;
@@ -44,9 +30,14 @@ export const code = `class MenuPage extends React.Component {
 const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
-    description={`Menu Items can content any content necesary, but usuallay content icons and text.`}
+    description={
+      <div>
+        <CodeInline code="MenuItem" type="element" />s can contain text or
+        icons. You can create a more custom one by replacing the children.
+      </div>
+    }
     code={code}
-    scope={{ View, Menu, MenuItem, Button, Image }}
+    scope={{ View, Menu, MenuItem, Button, Paper, Divider }}
   />
 );
 export default MainDemo;
