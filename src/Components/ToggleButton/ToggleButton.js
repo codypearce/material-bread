@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
-import Icon from '../Icon/Icon';
 import Ripple from '../Ripple/Ripple';
 
 import { ToggleButtonContext } from './ToggleButtonGroup/ToggleButtonGroup';
@@ -10,11 +9,13 @@ class ToggleButton extends Component {
   static propTypes = {
     style: PropTypes.object,
     active: PropTypes.bool,
-    icon: PropTypes.string,
     onPress: PropTypes.func,
-    color: PropTypes.string,
-    size: PropTypes.number,
     value: PropTypes.string,
+    activeNode: PropTypes.node,
+    inActiveNode: PropTypes.node,
+    rippleColor: PropTypes.string,
+    size: PropTypes.number,
+    rippleContainerBorderRadius: PropTypes.number,
   };
   state = {
     isActive: false,
@@ -43,15 +44,27 @@ class ToggleButton extends Component {
   }
 
   render() {
-    const { style, icon, color, size, value } = this.props;
+    const {
+      style,
+      size,
+      rippleColor,
+      value,
+      activeNode,
+      inActiveNode,
+      rippleContainerBorderRadius,
+    } = this.props;
     const { isActive } = this.state;
 
     return (
       <ToggleButtonContext.Consumer>
         {context => (
           <Ripple
-            rippleContainerBorderRadius={100}
-            rippleColor={color ? color : 'rgb(0, 0, 0)'}
+            rippleContainerBorderRadius={
+              rippleContainerBorderRadius || rippleContainerBorderRadius == 0
+                ? rippleContainerBorderRadius
+                : 100
+            }
+            rippleColor={rippleColor ? rippleColor : 'rgb(0, 0, 0)'}
             onPress={() => {
               if (context && context.updateActive) {
                 return context.updateActive(value);
@@ -59,19 +72,16 @@ class ToggleButton extends Component {
                 return this.handleToggle();
               }
             }}
-            style={{
-              height: size * 1.2,
-              width: size * 1.2,
-              justifyContent: 'center',
-              alignItems: 'center',
-              opacity: isActive || context.active == value ? 1 : 0.4,
-            }}>
-            <Icon
-              name={icon}
-              color={color}
-              size={size}
-              style={[{ backgroundColor: 'transparent' }, style]}
-            />
+            style={[
+              style,
+              {
+                height: size * 1.2,
+                width: size * 1.2,
+                justifyContent: 'center',
+                alignItems: 'center',
+              },
+            ]}>
+            {isActive || context.active == value ? activeNode : inActiveNode}
           </Ripple>
         )}
       </ToggleButtonContext.Consumer>

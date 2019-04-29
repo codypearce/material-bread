@@ -3,8 +3,15 @@ import ComponentPageLayout from '../../../components/ComponentPage/ComponentPage
 import MainDemo from './MainDemo';
 import Usage from './Usage';
 import Props from './Props';
+import Demos from './Demos';
 
-const sections = [{ name: 'Component' }, { name: 'Usage' }, { name: 'Props' }];
+const sections = [
+  { name: 'Component' },
+  { name: 'Usage' },
+  { name: 'Props' },
+  { name: 'Demos' },
+  { name: 'custom', sub: true },
+];
 
 export default class ToggleButtonPage extends Component {
   render() {
@@ -19,6 +26,7 @@ export default class ToggleButtonPage extends Component {
           <MainDemo pageHref={'/components/togglebutton'} />
           <Usage pageHref={'/components/togglebutton'} />
           <Props pageHref={'/components/togglebutton'} />
+          <Demos pageHref={'/components/togglebutton'} />
         </ComponentPageLayout>
       </div>
     );
