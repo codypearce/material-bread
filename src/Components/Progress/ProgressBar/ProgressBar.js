@@ -3,6 +3,7 @@ import React, { PureComponent } from 'react';
 import { Animated, Easing } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import styles from './ProgressBar.styles';
+import { default as colorTool } from 'color';
 
 class ProgressBar extends PureComponent {
   static propTypes = {
@@ -15,6 +16,8 @@ class ProgressBar extends PureComponent {
     animationDuration: PropTypes.number,
     value: PropTypes.number,
     visible: PropTypes.bool,
+    style: PropTypes.object,
+    theme: PropTypes.object,
   };
 
   static defaultProps = {
@@ -34,16 +37,19 @@ class ProgressBar extends PureComponent {
   };
 
   componentDidMount() {
-    const { visible } = this.props;
+    const { visible, determinate } = this.props;
     if (visible) {
       this.animateTrackHeight();
+    }
+    if (determinate) {
+      this.startDeterminateAnimation();
     }
   }
 
   componentDidUpdate(prevProps) {
-    const { value, visible } = this.props;
+    const { value, visible, determinate } = this.props;
 
-    if (value != prevProps.value) {
+    if (value != prevProps.value && determinate) {
       this.startDeterminateAnimation();
     }
 
@@ -79,7 +85,9 @@ class ProgressBar extends PureComponent {
   startDeterminateAnimation() {
     const { indicatorWidth, trackWidth } = this.state;
     const { animationDuration, value } = this.props;
-
+    if (trackWidth == 0) {
+      setTimeout(() => this.startDeterminateAnimation(), 100);
+    }
     Animated.parallel([
       Animated.timing(indicatorWidth, {
         toValue: trackWidth * (value / 100),
@@ -91,7 +99,9 @@ class ProgressBar extends PureComponent {
   startIndeterminateAnimation() {
     const { indicatorPosition, indicatorScaleX, trackWidth } = this.state;
     const { animationDuration, easing } = this.props;
-
+    if (trackWidth == 0) {
+      setTimeout(() => this.startIndeterminateAnimation(), 100);
+    }
     Animated.loop(
       Animated.parallel([
         Animated.timing(indicatorPosition, {
@@ -122,7 +132,7 @@ class ProgressBar extends PureComponent {
   };
 
   render() {
-    const { height, color, trackStyle, determinate } = this.props;
+    const { height, color, trackStyle, determinate, theme } = this.props;
     const {
       indicatorPosition,
       indicatorScaleX,
@@ -131,8 +141,14 @@ class ProgressBar extends PureComponent {
       trackOpacity,
     } = this.state;
 
-    const trackColor = color ? color : 'rgba(66, 165, 245, .6)'; // .6 alpha of indicator
-    const indicatorColor = color ? color : 'rgba(66, 165, 245, 1)';
+    const trackColor = color
+      ? colorTool(color)
+          .fade(0.4)
+          .string()
+      : colorTool(theme.primary.main)
+          .fade(0.4)
+          .string(); // .6 alpha of indicator
+    const indicatorColor = color ? color : theme.primary.main;
 
     return (
       <Animated.View
