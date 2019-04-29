@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import { ProgressCircle, ProgressBar, Button } from '../../..';
+import { ProgressBar, Button } from '../../..';
 import { State, Store } from '@sambego/storybook-state';
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
@@ -57,43 +57,6 @@ export default storiesOf('Components|Progress', module)
               onPress={() => {
                 store.set({
                   visible2: !state.visible2,
-                });
-              }}
-            />
-          </View>
-        )}
-      </State>
-    </Container>
-  ))
-  .add('Progress Circle', () => (
-    <Container>
-      <Header title={'Progress Circle'} />
-      <State store={store} style={{ flex: 1 }}>
-        {state => (
-          <View>
-            <ProgressCircle />
-            <ProgressCircle color={'blue'} style={{ marginTop: 40 }} />
-
-            <ProgressCircle
-              value={state.circleValue3}
-              size={48}
-              thickness={4}
-              color="#2b80ff"
-              unfilledColor="#f2f2f2"
-              animationMethod="timing"
-              animationConfig={{ speed: 1 }}
-              shouldAnimateFirstValue
-              determinate
-            />
-
-            <Button
-              type="outlined"
-              style={{ marginTop: 20 }}
-              animationDuration={500}
-              text={'Change Value'}
-              onPress={() => {
-                store.set({
-                  circleValue3: Math.floor(Math.random() * Math.floor(100)),
                 });
               }}
             />

@@ -68,6 +68,9 @@ export {
   default as Progress,
 } from '../../Components/Progress/Progress.stories.js';
 export {
+  default as ProgressCircle,
+} from '../../Components/Progress/ProgressCircle/ProgressCircle.stories.js';
+export {
   default as RadioButton,
 } from '../../Components/RadioButton/RadioButton.stories.js';
 export { default as Ripple } from '../../Components/Ripple/Ripple.stories.js';
