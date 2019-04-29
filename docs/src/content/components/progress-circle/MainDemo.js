@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Image } from 'react-native';
-import { ComponentMainDemo } from '@components';
+import { ComponentMainDemo, CodeInline } from '@components';
 import { ProgressCircle, Button } from '../../../../../src/index';
 
 export const code = `class ProgressCircleDemo extends React.Component {
@@ -11,33 +11,13 @@ export const code = `class ProgressCircleDemo extends React.Component {
     }
   }
   render() {
-    return (
-      <View>
-          <ProgressCircle color={'#E91E63'} />
-
-          <ProgressCircle
-            value={this.state.circleValue3}
-            size={48}
-            thickness={4}
-            color="#2b80ff"
-            unfilledColor="#f2f2f2"
-            animationMethod="timing"
-            animationConfig={{ speed: 1 }}
-            shouldAnimateFirstValue
-            determinate
-          />
-
-          <Button
-            type="outlined"
-            style={{ marginTop: 20 }}
-            onPress={() => {
-              this.setState({
-                circleValue3: Math.floor(Math.random() * Math.floor(100)),
-              });
-            }}
-            text={'Change Value'}
-            />
-      </View>
+    return (   
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
+        <ProgressCircle  />
+        <ProgressCircle color={'#03A9F4'} animationDuration={1200} />
+        <ProgressCircle color={'#E91E63'} animationDuration={3800} />
+        <ProgressCircle color={'#009688'} animationDuration={4800} />
+    </View>
     );
   }
 }`;
@@ -45,7 +25,15 @@ export const code = `class ProgressCircleDemo extends React.Component {
 const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
-    description={`Progress circles can be determinate or indeterminate. If determinate you must provide a value for the animation to stop at.`}
+    description={
+      <div>
+        <CodeInline code="ProgressCircle" type="element" />s can be{' '}
+        <CodeInline code="determinate" type="value" /> or{' '}
+        <CodeInline code="indeterminate" type="value" />. You can customize the
+        size of the circle, the color of the track, color of the indicator and
+        much more.
+      </div>
+    }
     code={code}
     scope={{ View, ProgressCircle, Button, Image }}
   />
