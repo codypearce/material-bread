@@ -3,8 +3,15 @@ import ComponentPageLayout from '../../../components/ComponentPage/ComponentPage
 import MainDemo from './MainDemo';
 import Usage from './Usage';
 import Props from './Props';
+import Demos from './Demos';
 
-const sections = [{ name: 'Component' }, { name: 'Usage' }, { name: 'Props' }];
+const sections = [
+  { name: 'Component' },
+  { name: 'Usage' },
+  { name: 'Props' },
+  { name: 'Demos' },
+  { name: 'scrolling', sub: true },
+];
 
 export default class MenuPage extends Component {
   render() {
@@ -20,6 +27,7 @@ export default class MenuPage extends Component {
           <MainDemo pageHref={'/components/menu'} />
           <Usage pageHref={'/components/menu'} />
           <Props pageHref={'/components/menu'} />
+          <Demos pageHref={'/components/menu'} />
         </ComponentPageLayout>
       </div>
     );
