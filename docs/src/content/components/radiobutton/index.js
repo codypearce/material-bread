@@ -3,8 +3,15 @@ import ComponentPageLayout from '../../../components/ComponentPage/ComponentPage
 import MainDemo from './MainDemo';
 import Usage from './Usage';
 import Props from './Props';
+import Demos from './Demos';
 
-const sections = [{ name: 'Component' }, { name: 'Usage' }, { name: 'Props' }];
+const sections = [
+  { name: 'Component' },
+  { name: 'Usage' },
+  { name: 'Props' },
+  { name: 'Demos' },
+  { name: 'labels', sub: true },
+];
 
 export default class RadioButtonPage extends Component {
   render() {
@@ -22,6 +29,7 @@ export default class RadioButtonPage extends Component {
           <MainDemo pageHref={'/components/radiobutton'} />
           <Usage pageHref={'/components/radiobutton'} />
           <Props pageHref={'/components/radiobutton'} />
+          <Demos pageHref={'/components/radiobutton'} />
         </ComponentPageLayout>
       </div>
     );

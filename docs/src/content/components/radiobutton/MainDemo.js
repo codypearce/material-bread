@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Image } from 'react-native';
-import { ComponentMainDemo } from '@components';
+import { ComponentMainDemo, CodeInline } from '@components';
 import { RadioButton } from '../../../../../src/index';
 
 export const code = `class RadioButtonDemo extends React.Component {
@@ -12,18 +12,23 @@ export const code = `class RadioButtonDemo extends React.Component {
   }
   render() {
     return (
-      <View>
+      <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
         <RadioButton
           checked={this.state.checked == 1}
           onPress={() => this.setState({ checked: 1 })}
         />
         <RadioButton
           checked={this.state.checked == 2}
+          radioButtonColor={'#E91E63'}
+          rippleColor={'#E91E63'}
           onPress={() => this.setState({ checked: 2 })}
         />
         <RadioButton
           checked={this.state.checked == 3}
           onPress={() => this.setState({ checked: 3 })}
+          uncheckedBorderColor={'#009688'}
+          radioButtonColor={'#009688'}
+          rippleColor={'#009688'}
         />
       </View>
     );
@@ -33,7 +38,12 @@ export const code = `class RadioButtonDemo extends React.Component {
 const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
-    description={`Radio buttons can be fully cutsomized using various props.`}
+    description={
+      <div>
+        <CodeInline code="RadioButton" type="element" />s can has custom color,
+        ripple, or border color.
+      </div>
+    }
     code={code}
     scope={{ View, RadioButton, Image }}
   />
