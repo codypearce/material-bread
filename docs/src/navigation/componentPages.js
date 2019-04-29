@@ -195,6 +195,11 @@ const components = [
     path: '/components/togglebutton',
   },
   {
+    title: 'ToggleButtonGroup',
+    path: '/components/togglebutton-group',
+    subsubItem: true,
+  },
+  {
     title: 'Typography',
     path: '/components/typography',
   },
