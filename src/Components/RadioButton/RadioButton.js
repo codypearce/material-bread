@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated } from 'react-native';
+import { Animated, TouchableWithoutFeedback, View, Text } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import Ripple from '../Ripple/Ripple';
 import styles from './RadioButton.styles';
@@ -14,7 +14,27 @@ class RadioButton extends Component {
     radioButtonColor: PropTypes.string,
     uncheckedBorderColor: PropTypes.string,
     style: PropTypes.object,
+
+    label: PropTypes.string,
+    labelStyle: PropTypes.object,
+    labelPos: PropTypes.string,
   };
+
+  static defaultProps = {
+    labelPos: 'right',
+  };
+
+  _renderLabel() {
+    const { label, labelStyle, onPress } = this.props;
+    if (!label) return null;
+    return (
+      <TouchableWithoutFeedback onPress={onPress}>
+        <View>
+          <Text style={[styles.label, labelStyle]}>{label}</Text>
+        </View>
+      </TouchableWithoutFeedback>
+    );
+  }
 
   render() {
     const {
@@ -25,6 +45,7 @@ class RadioButton extends Component {
       radioButtonColor,
       uncheckedBorderColor,
       style,
+      labelPos,
     } = this.props;
 
     const rippleColorApplied = rippleColor ? rippleColor : 'rgba(0,0,0,.8)';
@@ -40,32 +61,36 @@ class RadioButton extends Component {
     }
 
     return (
-      <Ripple
-        rippleColor={rippleColorApplied}
-        rippleContainerBorderRadius={18}
-        onPress={onPress}
-        style={[styles.ripple, style]}
-        rippleCentered={true}
-        disabled={disabled}>
-        <Animated.View
-          style={[
-            styles.radio,
-            {
-              borderColor: checked
-                ? radioButtonColorApplied
-                : uncheckedBorderColorApplied,
-            },
-          ]}>
-          {checked ? (
-            <Animated.View
-              style={[
-                styles.radioDot,
-                { backgroundColor: radioButtonColorApplied },
-              ]}
-            />
-          ) : null}
-        </Animated.View>
-      </Ripple>
+      <View style={[styles.container, style]}>
+        {labelPos === 'left' ? this._renderLabel() : null}
+        <Ripple
+          rippleColor={rippleColorApplied}
+          rippleContainerBorderRadius={18}
+          onPress={onPress}
+          style={[styles.ripple]}
+          rippleCentered={true}
+          disabled={disabled}>
+          <Animated.View
+            style={[
+              styles.radio,
+              {
+                borderColor: checked
+                  ? radioButtonColorApplied
+                  : uncheckedBorderColorApplied,
+              },
+            ]}>
+            {checked ? (
+              <Animated.View
+                style={[
+                  styles.radioDot,
+                  { backgroundColor: radioButtonColorApplied },
+                ]}
+              />
+            ) : null}
+          </Animated.View>
+        </Ripple>
+        {labelPos === 'right' ? this._renderLabel() : null}
+      </View>
     );
   }
 }
