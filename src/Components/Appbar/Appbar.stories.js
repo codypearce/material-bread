@@ -449,9 +449,9 @@ const ExampleMenu = () => {
                   type="text"
                 />
               }>
-              <MenuItem onPress={dismissMenu}>Menu item 1</MenuItem>
-              <MenuItem onPress={dismissMenu}>Menu item 2</MenuItem>
-              <MenuItem onPress={dismissMenu}>Menu item 3</MenuItem>
+              <MenuItem text={'Menu Item 1'} onPress={dismissMenu} />
+              <MenuItem text={'Menu Item 2'} onPress={dismissMenu} />
+              <MenuItem text={'Menu Item 3'} onPress={dismissMenu} />
             </Menu>
           </View>
         );
@@ -481,9 +481,9 @@ const ExampleOverflowMenu = () => {
                   color={'white'}
                 />
               }>
-              <MenuItem onPress={dismissMenu}>Menu item 1</MenuItem>
-              <MenuItem onPress={dismissMenu}>Menu item 2</MenuItem>
-              <MenuItem onPress={dismissMenu}>Menu item 3</MenuItem>
+              <MenuItem text={'Menu Item 1'} onPress={dismissMenu} />
+              <MenuItem text={'Menu Item 2'} onPress={dismissMenu} />
+              <MenuItem text={'Menu Item 3'} onPress={dismissMenu} />
             </Menu>
           </View>
         );

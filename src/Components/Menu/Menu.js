@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, View, Easing, Platform } from 'react-native';
+import { Animated, View, Easing, Platform, ScrollView } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import styles from './Menu.styles';
 import ModelMenu from './ModalMenu';
@@ -26,6 +26,14 @@ class Menu extends Component {
     animationDuration: 300,
     expanded: false,
   };
+
+  componentDidMount() {
+    const { visible } = this.props;
+
+    if (visible) {
+      this.toggle();
+    }
+  }
 
   componentDidUpdate(prevProps) {
     const { visible } = this.props;
@@ -148,7 +156,7 @@ class Menu extends Component {
       height: menuHeight,
       width: menuWidth,
       opacity: opacity,
-      top: buttonPositionY - 10,
+      top: buttonPositionY - 14,
     };
 
     if (modalMenuWidth > 0) {
@@ -166,7 +174,8 @@ class Menu extends Component {
           onLayout={this.onButtonLayout}
           ref={ref => {
             this.marker = ref;
-          }}>
+          }}
+          style={{ alignSelf: 'flex-start' }}>
           {button}
         </View>
         <ModelMenu
@@ -183,7 +192,9 @@ class Menu extends Component {
                 menuStyle,
               ]}
               onLayout={this.onMenuLayout}>
-              {children}
+              <ScrollView contentContainerStyle={{ paddingVertical: 8 }}>
+                {children}
+              </ScrollView>
             </View>
           </Animated.View>
         </ModelMenu>

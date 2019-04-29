@@ -42,15 +42,9 @@ class AppbarDemo extends React.Component {
                 type="text"
               />
           }>
-            <MenuItem onPress={() => this.setState({ visibleOne: false })}>
-              Menu item 1
-            </MenuItem>
-            <MenuItem onPress={() => this.setState({ visibleOne: false })}>
-              Menu item 2
-            </MenuItem>
-            <MenuItem onPress={() => this.setState({ visibleOne: false })}>
-              Menu item 3
-            </MenuItem>
+            <MenuItem text={'Menu item 1'} onPress={() => this.setState({ visible: false })} />
+            <MenuItem text={'Menu item 2'} onPress={() => this.setState({ visible: false })} />
+            <MenuItem text={'Menu item 3'} onPress={() => this.setState({ visible: false })} />
           </Menu>,
         ]}
       />

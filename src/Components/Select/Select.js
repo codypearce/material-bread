@@ -86,10 +86,10 @@ class Select extends Component {
             return (
               <MenuItem
                 key={item.id}
+                text={item.name}
                 onPress={() => this.onSelect(item)}
-                style={{ flex: 1 }}>
-                <Text>{item.name}</Text>
-              </MenuItem>
+                style={{ flex: 1 }}
+              />
             );
           }}
         />
