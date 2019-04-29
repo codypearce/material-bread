@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, View, Easing, Platform } from 'react-native';
+import { Animated, View, Easing, Platform, ScrollView } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import styles from './Menu.styles';
 import ModelMenu from './ModalMenu';
@@ -166,7 +166,8 @@ class Menu extends Component {
           onLayout={this.onButtonLayout}
           ref={ref => {
             this.marker = ref;
-          }}>
+          }}
+          style={{ alignSelf: 'flex-start' }}>
           {button}
         </View>
         <ModelMenu
@@ -183,7 +184,9 @@ class Menu extends Component {
                 menuStyle,
               ]}
               onLayout={this.onMenuLayout}>
-              {children}
+              <ScrollView contentContainerStyle={{ paddingVertical: 8 }}>
+                {children}
+              </ScrollView>
             </View>
           </Animated.View>
         </ModelMenu>

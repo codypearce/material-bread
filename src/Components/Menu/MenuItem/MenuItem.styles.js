@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     height: 48,
+    minHeight: 48,
     justifyContent: 'center',
     width: '100%',
     minWidth: 124,
