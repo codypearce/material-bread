@@ -1,14 +1,11 @@
 import React from 'react';
 import { View, Image } from 'react-native';
-import { ComponentMainDemo } from '@components';
+import { ComponentMainDemo, CodeInline } from '@components';
 import { ToggleButton, Icon } from '../../../../../src/index';
 
 export const code = `class Demo extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-
-    }
   }
   render() {
     return (
@@ -33,10 +30,15 @@ export const code = `class Demo extends React.Component {
           size={32}
         />
         <ToggleButton
-          activeNode={<Icon name="arrow-back" size={32} color={'orange'} />}
+          activeNode={<Icon name="favorite" size={32} />}
+          inActiveNode={<Icon name="favorite-border" size={32} />}
+          size={32}
+        />
+        <ToggleButton
+          activeNode={<Icon name="label" size={32} color={'orange'} />}
           inActiveNode={
             <Icon
-              name="arrow-back"
+              name="label-outline"
               size={32}
               style={{ opacity: 0.5 }}
               color={'orange'}
@@ -52,8 +54,16 @@ export const code = `class Demo extends React.Component {
 const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
-    description={''}
     code={code}
+    description={
+      <div>
+        Pass arbitrary components to{' '}
+        <CodeInline code="activeNode" type="prop" /> and{' '}
+        <CodeInline code="inActiveNode" type="prop" /> and the component will
+        switch when clicked. A common use case is simple opacity shown below,
+        however these can be any.
+      </div>
+    }
     scope={{ View, ToggleButton, Icon, Image }}
   />
 );

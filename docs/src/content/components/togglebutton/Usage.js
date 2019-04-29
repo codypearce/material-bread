@@ -15,9 +15,13 @@ class Demo extends React.Component {
   render() {
     return (
       <View>
-        <ToggleButton icon="alarm" size={32} />
-        <ToggleButton icon="face" size={32} color={'purple'} />
-        <ToggleButton icon="arrow-back" size={32} color={'orange'} />
+        <ToggleButton
+          activeNode={<Icon name="alarm" size={32} />}
+          inActiveNode={
+            <Icon name="alarm" size={32} style={{ opacity: 0.5 }} />
+          }
+          size={32}
+          />
       </View>
     );
   }
