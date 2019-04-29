@@ -3,18 +3,18 @@ import { View } from 'react-native';
 import { ComponentDemo } from '@components';
 import { ProgressCircle, Button } from '../../../../../../src/index';
 
-export const code = `class DialogPage extends React.Component {
+export const code = `class Demo extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-        circleValue3: 10,
+        value: 10,
     }
   }
   render() {
     return (
       <View >    
         <ProgressCircle
-            value={this.state.circleValue3}
+            value={this.state.value}
             size={48}
             thickness={4}
             color="#2b80ff"
@@ -47,6 +47,7 @@ const SubtitleDemo = pageHref => (
     sectionHref={`${pageHref}#determinate`}
     sectionId={'determinate'}
     code={code}
+    description={'You must provide a value for the animation to stop at.'}
     scope={{ View, ProgressCircle, Button }}
   />
 );

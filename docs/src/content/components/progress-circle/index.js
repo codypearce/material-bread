@@ -9,7 +9,7 @@ const sections = [
   { name: 'Component' },
   { name: 'Usage' },
   { name: 'Props' },
-  { name: 'Props' },
+  { name: 'Demos' },
   { name: 'determinate', sub: true },
 ];
 
