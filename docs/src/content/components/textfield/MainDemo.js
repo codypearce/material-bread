@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Image } from 'react-native';
-import { ComponentMainDemo } from '@components';
+import { ComponentMainDemo, CodeInline } from '@components';
 import { TextField } from '../../../../../src/index';
 
 export const code = `class Demo extends React.Component {
@@ -42,7 +42,16 @@ export const code = `class Demo extends React.Component {
 const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
-    description={`TextFields can come in various types: flat, filled, or outlined. There are many options for additional customizing as well.`}
+    description={
+      <div>
+        <CodeInline code="TextField" type={'element'} /> components can either
+        be <CodeInline code="flat" type={'value'} />,{' '}
+        <CodeInline code="filled" type={'value'} />, or{' '}
+        <CodeInline code="outlined" type={'value'} />. You can also pass any
+        native <CodeInline code="TextInput" type={'element'} /> props and it
+        will be applied to the native element.
+      </div>
+    }
     code={code}
     scope={{ View, TextField, Image }}
   />
