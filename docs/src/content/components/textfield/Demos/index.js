@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ComponentDemoHeader } from '@components';
 
 import LeadingIconDemo from './LeadingIconDemo';
+import TrailingIconDemo from './TrailingIconDemo';
 
 export default class Demos extends Component {
   static propTypes = {
@@ -14,6 +15,7 @@ export default class Demos extends Component {
       <div>
         <ComponentDemoHeader pageHref={pageHref} />
         <LeadingIconDemo pageHref={pageHref} />
+        <TrailingIconDemo pageHref={pageHref} />
       </div>
     );
   }

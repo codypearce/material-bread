@@ -47,7 +47,7 @@ class TextFieldFlat extends Component {
     const { trailingIcon } = this.props;
 
     return (
-      <View style={{ position: 'absolute', right: 8, top: 16 }}>
+      <View style={{ position: 'absolute', right: 12, top: 16 }}>
         {React.cloneElement(trailingIcon, {
           size: trailingIcon.props.size ? trailingIcon.props.size : 24,
         })}
@@ -100,7 +100,7 @@ class TextFieldFlat extends Component {
               paddingTop: rest.multiline ? 24 : 16,
               outline: 'none',
               paddingLeft: leadingIcon ? 44 : 0,
-              paddingRight: trailingIcon ? 32 : 0,
+              paddingRight: trailingIcon ? 36 : 0,
             },
             style,
           ]}
