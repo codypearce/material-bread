@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
@@ -16,6 +16,7 @@ class ListItem extends Component {
     text: PropTypes.string,
     media: PropTypes.node,
     icon: PropTypes.node,
+    actionItem: PropTypes.node,
   };
 
   _renderText() {
@@ -26,11 +27,21 @@ class ListItem extends Component {
 
   _renderIcon() {
     const { icon } = this.props;
-    console.log(icon);
     return React.cloneElement(icon, {
       size: icon.props.size ? icon.props.size : 16,
       color: icon.props.color ? icon.props.color : '#6e6e6e',
     });
+  }
+
+  _renderActionitem() {
+    const { actionItem } = this.props;
+
+    return (
+      <Fragment>
+        <View style={{ flex: 1 }} />
+        {actionItem}
+      </Fragment>
+    );
   }
 
   render() {
@@ -42,6 +53,7 @@ class ListItem extends Component {
       children,
       media,
       icon,
+      actionItem,
     } = this.props;
 
     let contentMargin = media ? 16 : 0;
@@ -72,6 +84,7 @@ class ListItem extends Component {
         <View style={{ marginLeft: contentMargin }}>
           {children ? children : this._renderText()}
         </View>
+        {actionItem ? this._renderActionitem() : null}
       </Ripple>
     );
   }
