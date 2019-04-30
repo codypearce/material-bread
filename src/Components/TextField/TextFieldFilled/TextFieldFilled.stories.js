@@ -16,7 +16,7 @@ const store = new Store({
 export default storiesOf('Components|TextField/Filled', module)
   .addParameters({ jest: ['TextFieldFilled'] })
 
-  .add('Simple', () => (
+  .add('simple', () => (
     <Container>
       <Header title={'Filled TextField'} />
       <State store={store} style={{ flex: 1 }}>
@@ -44,7 +44,7 @@ export default storiesOf('Components|TextField/Filled', module)
       </State>
     </Container>
   ))
-  .add('Multiline', () => (
+  .add('multiline', () => (
     <Container>
       <Header title={'Filled TextField'} />
       <State store={store} style={{ flex: 1 }}>
@@ -99,6 +99,35 @@ export default storiesOf('Components|TextField/Filled', module)
               }
               value={state.filledTwo}
               onChangeText={value => store.set({ filledTwo: value })}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
+  ))
+  .add('with helperText', () => (
+    <Container>
+      <Header title={'Filled TextField'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <TextField
+              type={'filled'}
+              containerStyle={{ marginTop: 20 }}
+              label={'Label'}
+              value={state.filledOne}
+              onChangeText={value => store.set({ filledOne: value })}
+              helperText={'Some helper text'}
+            />
+
+            <TextField
+              type={'filled'}
+              containerStyle={{ marginTop: 20 }}
+              label={'Label'}
+              error={true}
+              value={state.filledThree}
+              onChangeText={value => store.set({ filledThree: value })}
+              helperText={'This is the error text that will show'}
             />
           </View>
         )}

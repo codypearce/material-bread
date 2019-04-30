@@ -15,7 +15,7 @@ const store = new Store({
 
 export default storiesOf('Components|TextField/Flat', module)
   .addParameters({ jest: ['TextFieldFlat'] })
-  .add('Flat', () => (
+  .add('simple', () => (
     <Container>
       <Header title={'Flat TextField'} />
       <State store={store} style={{ flex: 1 }}>
@@ -33,13 +33,23 @@ export default storiesOf('Components|TextField/Flat', module)
               value={state.flatTwo}
               onChangeText={value => store.set({ flatTwo: value })}
             />
+          </View>
+        )}
+      </State>
+    </Container>
+  ))
+  .add('multiline', () => (
+    <Container>
+      <Header title={'Flat TextField'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
             <TextField
               containerStyle={{ marginTop: 20 }}
-              label={'Label'}
-              error={true}
-              value={state.flatThree}
-              onChangeText={value => store.set({ flatThree: value })}
-              helperText={'There is an error'}
+              label={'Multiline'}
+              multiline
+              value={state.flatTwo}
+              onChangeText={value => store.set({ flatTwo: value })}
             />
           </View>
         )}
@@ -82,6 +92,32 @@ export default storiesOf('Components|TextField/Flat', module)
               }
               value={state.flatOne}
               onChangeText={value => store.set({ flatOne: value })}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
+  ))
+  .add('with helperText', () => (
+    <Container>
+      <Header title={'Flat TextField'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <TextField
+              label={'Label'}
+              value={state.flatOne}
+              onChangeText={value => store.set({ flatOne: value })}
+              helperText={'This is some helper text'}
+            />
+
+            <TextField
+              containerStyle={{ marginTop: 20 }}
+              label={'Label'}
+              error={true}
+              value={state.flatThree}
+              onChangeText={value => store.set({ flatThree: value })}
+              helperText={'There is an error'}
             />
           </View>
         )}

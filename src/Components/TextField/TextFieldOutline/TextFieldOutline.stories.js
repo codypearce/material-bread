@@ -29,14 +29,7 @@ export default storiesOf('Components|TextField/Outlined', module)
               value={state.outlinedOne}
               onChangeText={value => store.set({ outlinedOne: value })}
             />
-            <TextField
-              type={'outlined'}
-              containerStyle={{ marginTop: 20 }}
-              label={'Multiline'}
-              multiline
-              value={state.outlinedTwo}
-              onChangeText={value => store.set({ outlinedTwo: value })}
-            />
+
             <TextField
               type={'outlined'}
               containerStyle={{ marginTop: 20 }}
@@ -45,6 +38,25 @@ export default storiesOf('Components|TextField/Outlined', module)
               value={state.outlinedhree}
               onChangeText={value => store.set({ outlinedhree: value })}
               helperText={'There is an error'}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
+  ))
+  .add('multiline', () => (
+    <Container>
+      <Header title={'Outlined TextField'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <TextField
+              type={'outlined'}
+              containerStyle={{ marginTop: 20 }}
+              label={'Multiline'}
+              multiline
+              value={state.outlinedTwo}
+              onChangeText={value => store.set({ outlinedTwo: value })}
             />
           </View>
         )}
@@ -87,6 +99,35 @@ export default storiesOf('Components|TextField/Outlined', module)
               }
               value={state.outlinedOne}
               onChangeText={value => store.set({ outlinedOne: value })}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
+  ))
+  .add('with helperText', () => (
+    <Container>
+      <Header title={'Outlined TextField'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <TextField
+              type={'outlined'}
+              containerStyle={{ marginTop: 20 }}
+              label={'Label'}
+              value={state.outlinedOne}
+              onChangeText={value => store.set({ outlinedOne: value })}
+              helperText={'This is some helper text'}
+            />
+
+            <TextField
+              type={'outlined'}
+              containerStyle={{ marginTop: 20 }}
+              label={'Label'}
+              error={true}
+              value={state.outlinedhree}
+              onChangeText={value => store.set({ outlinedhree: value })}
+              helperText={'There is an error'}
             />
           </View>
         )}

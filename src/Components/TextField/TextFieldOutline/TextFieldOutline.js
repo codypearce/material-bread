@@ -28,6 +28,10 @@ class TextFieldOutlined extends Component {
     trailingIcon: PropTypes.node,
   };
 
+  static defaultProps = {
+    helperVisible: true,
+  };
+
   _renderLeadingIcon() {
     const { leadingIcon } = this.props;
 
@@ -74,7 +78,15 @@ class TextFieldOutlined extends Component {
     if (error) borderColor = 'red';
 
     return (
-      <View style={{ ...styles.containerStyle, ...containerStyle }}>
+      <View
+        style={[
+          styles.containerStyle,
+          {
+            marginBottom: helperText && helperVisible ? 20 : 0,
+            marginTop: 8,
+          },
+          containerStyle,
+        ]}>
         <TextFieldLabel
           label={label}
           focused={focused}

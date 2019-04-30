@@ -12,6 +12,7 @@ const sections = [
   { name: 'Demos' },
   { name: 'leading icon', sub: true },
   { name: 'trailing icon', sub: true },
+  { name: 'helper text', sub: true },
 ];
 
 export default class TextFieldPage extends Component {

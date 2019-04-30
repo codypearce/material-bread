@@ -31,6 +31,10 @@ class TextFieldFlat extends Component {
     trailingIcon: PropTypes.node,
   };
 
+  static defaultProps = {
+    helperVisible: true,
+  };
+
   _renderLeadingIcon() {
     const { leadingIcon } = this.props;
 
@@ -77,7 +81,12 @@ class TextFieldFlat extends Component {
     } = this.props;
 
     return (
-      <View style={{ ...styles.containerStyle, ...containerStyle }}>
+      <View
+        style={[
+          styles.containerStyle,
+          { marginBottom: helperText && helperVisible ? 20 : 0 },
+          containerStyle,
+        ]}>
         <TextFieldLabel
           label={label}
           focused={focused}
