@@ -15,7 +15,7 @@ const store = new Store({
 });
 
 export default storiesOf('Components|List/ListItem', module)
-  .addParameters({ jest: ['List'] })
+  .addParameters({ jest: ['ListItem'] })
   .add('with text', () => (
     <Container>
       <Header title={'Text List'} />

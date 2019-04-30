@@ -6,7 +6,7 @@ import Container from '../../../storybook/components/Container';
 import { storiesOf } from '../../../storybook/helpers/storiesOf';
 
 export default storiesOf('Components|List/ListSection', module)
-  .addParameters({ jest: ['List'] })
+  .addParameters({ jest: ['ListSection'] })
   .add('with label', () => (
     <Container>
       <Header title={'Label List'} />
