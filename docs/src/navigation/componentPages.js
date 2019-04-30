@@ -143,6 +143,11 @@ const components = [
     path: '/components/list',
   },
   {
+    title: 'ListExpand',
+    path: '/components/list-expand',
+    subsubItem: true,
+  },
+  {
     title: 'Menu',
     path: '/components/menu',
   },
