@@ -1,6 +1,14 @@
 import React from 'react';
 
-import { List, ListItem, ListExpanded, Icon, Avatar, Checkbox } from '../../';
+import {
+  List,
+  ListItem,
+  ListExpanded,
+  Icon,
+  Avatar,
+  Checkbox,
+  IconButton,
+} from '../../';
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
 import { storiesOf } from '../../storybook/helpers/storiesOf';
@@ -192,6 +200,71 @@ export default storiesOf('Components|List', module)
               }
               onPress={() => store.set({ checkedFour: !state.checkedFour })}
               actionItem={
+                <Checkbox
+                  checked={state.checkedFour}
+                  onPress={() => store.set({ checkedFour: !state.checkedFour })}
+                />
+              }
+            />
+          </List>
+        )}
+      </State>
+    </Container>
+  ))
+  .add('with leadingAction', () => (
+    <Container>
+      <Header title={'Text and Leading Action List'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <List style={{ width: 300 }}>
+            <ListItem
+              text={'Janet Perkins'}
+              onPress={() => store.set({ checkedOne: !state.checkedOne })}
+              actionItem={
+                <IconButton name="comment" size={24} color="#6e6e6e" />
+              }
+              leadingActionItem={
+                <Checkbox
+                  checked={state.checkedOne}
+                  onPress={() => store.set({ checkedOne: !state.checkedOne })}
+                />
+              }
+            />
+            <ListItem
+              text={'Mary Perkins'}
+              onPress={() => store.set({ checkedTwo: !state.checkedTwo })}
+              actionItem={
+                <IconButton name="comment" size={24} color="#6e6e6e" />
+              }
+              leadingActionItem={
+                <Checkbox
+                  checked={state.checkedTwo}
+                  onPress={() => store.set({ checkedTwo: !state.checkedTwo })}
+                />
+              }
+            />
+            <ListItem
+              text={'Peter Carlsson'}
+              onPress={() => store.set({ checkedThree: !state.checkedThree })}
+              actionItem={
+                <IconButton name="comment" size={24} color="#6e6e6e" />
+              }
+              leadingActionItem={
+                <Checkbox
+                  checked={state.checkedThree}
+                  onPress={() =>
+                    store.set({ checkedThree: !state.checkedThree })
+                  }
+                />
+              }
+            />
+            <ListItem
+              text={'Trevor Hansen'}
+              onPress={() => store.set({ checkedFour: !state.checkedFour })}
+              actionItem={
+                <IconButton name="comment" size={24} color="#6e6e6e" />
+              }
+              leadingActionItem={
                 <Checkbox
                   checked={state.checkedFour}
                   onPress={() => store.set({ checkedFour: !state.checkedFour })}

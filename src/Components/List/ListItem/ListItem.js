@@ -17,6 +17,7 @@ class ListItem extends Component {
     media: PropTypes.node,
     icon: PropTypes.node,
     actionItem: PropTypes.node,
+    leadingActionItem: PropTypes.node,
   };
 
   _renderText() {
@@ -44,6 +45,11 @@ class ListItem extends Component {
     );
   }
 
+  _renderLeadingActionItem() {
+    const { leadingActionItem } = this.props;
+    return leadingActionItem;
+  }
+
   render() {
     const {
       style,
@@ -54,10 +60,11 @@ class ListItem extends Component {
       media,
       icon,
       actionItem,
+      leadingActionItem,
     } = this.props;
 
     let contentMargin = media ? 16 : 0;
-    if (icon) contentMargin = 32;
+    if (icon || leadingActionItem) contentMargin = 32;
 
     return (
       <Ripple
@@ -79,6 +86,7 @@ class ListItem extends Component {
           },
           style,
         ]}>
+        {leadingActionItem ? this._renderLeadingActionItem() : null}
         {icon ? this._renderIcon() : null}
         {media ? media : null}
         <View style={{ marginLeft: contentMargin }}>
