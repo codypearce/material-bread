@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { List, ListItem, ListExpanded, Icon } from '../../';
+import { List, ListItem, ListExpanded, Icon, Avatar } from '../../';
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
 import { storiesOf } from '../../storybook/helpers/storiesOf';
@@ -45,6 +45,62 @@ export default storiesOf('Components|List', module)
         <ListItem
           text={'Promotions'}
           icon={<Icon name={'loyalty'} size={24} />}
+        />
+      </List>
+    </Container>
+  ))
+  .add('with media', () => (
+    <Container>
+      <Header title={'Text and Media List'} />
+
+      <List style={{ width: 300 }}>
+        <ListItem
+          text={'Janet Perkins'}
+          media={
+            <Avatar
+              type="icon"
+              content="person"
+              contentColor={'#ececec'}
+              color={'#a3a3a3'}
+              size={40}
+            />
+          }
+        />
+        <ListItem
+          text={'Mary Perkins'}
+          media={
+            <Avatar
+              type="icon"
+              content="person"
+              contentColor={'#ececec'}
+              color={'#a3a3a3'}
+              size={40}
+            />
+          }
+        />
+        <ListItem
+          text={'Peter Carlsson'}
+          media={
+            <Avatar
+              type="icon"
+              content="person"
+              contentColor={'#ececec'}
+              color={'#a3a3a3'}
+              size={40}
+            />
+          }
+        />
+        <ListItem
+          text={'Trevor Hansen'}
+          media={
+            <Avatar
+              type="icon"
+              content="person"
+              contentColor={'#ececec'}
+              color={'#a3a3a3'}
+              size={40}
+            />
+          }
         />
       </List>
     </Container>
