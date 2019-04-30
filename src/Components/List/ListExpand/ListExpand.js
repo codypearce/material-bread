@@ -76,7 +76,7 @@ class ListExpand extends Component {
 
   renderExpandedContent() {
     const { children, icon } = this.props;
-    const { menuHeight } = this.state;
+    const { menuHeight, initialHeight } = this.state;
 
     return (
       <Animated.View
@@ -85,9 +85,15 @@ class ListExpand extends Component {
           overflow: 'hidden',
           width: icon ? 'calc(100% - 56px)' : '100%',
           marginLeft: icon ? 56 : 0,
+          zIndex: 100,
         }}>
         <View
-          style={{ position: 'absolute', width: '100%' }}
+          style={{
+            position: 'absolute',
+            width: '100%',
+            height: initialHeight,
+            zIndex: 100,
+          }}
           onLayout={this.onMenuLayout}>
           {children}
         </View>
