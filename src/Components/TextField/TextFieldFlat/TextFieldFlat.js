@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, TextInput, StyleSheet } from 'react-native';
+import { View, TextInput } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import TextFieldUnderline from '../TextFieldUnderline/TextFieldUnderline';
 import TextFieldLabel from '../TextFieldLabel/TextFieldLabel';
 import TextFieldHelperText from '../TextFieldHelperText/TextFieldHelperText';
+import styles from './TextFieldFlat.styles';
 
 class TextFieldFlat extends Component {
   constructor(props) {
@@ -91,18 +92,5 @@ class TextFieldFlat extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  containerStyle: {
-    position: 'relative',
-  },
-  textField: {
-    height: 56,
-    textAlignVertical: 'bottom',
-    paddingTop: 16,
-  },
-
-  flatInput: {},
-});
 
 export default withTheme(TextFieldFlat);

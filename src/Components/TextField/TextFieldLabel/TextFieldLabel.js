@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, StyleSheet, Easing } from 'react-native';
+import { Animated, Easing } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
+import styles from './TextFieldLabel.styles';
 
 class TextFieldLabel extends Component {
   constructor(props) {
@@ -127,12 +128,5 @@ class TextFieldLabel extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  label: {
-    position: 'absolute',
-    zIndex: 10,
-  },
-});
 
 export default withTheme(TextFieldLabel);

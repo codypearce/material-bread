@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, TextInput, StyleSheet } from 'react-native';
+import { View, TextInput } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import TextFieldLabel from '../TextFieldLabel/TextFieldLabel';
 import TextFieldHelperText from '../TextFieldHelperText/TextFieldHelperText';
+import styles from './TextFieldOutline.styles';
 
 class TextFieldOutlined extends Component {
   constructor(props) {
@@ -83,17 +84,5 @@ class TextFieldOutlined extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  containerStyle: {},
-  textField: {
-    height: 56,
-    paddingHorizontal: 12,
-  },
-  outlinedInput: {
-    borderWidth: 1,
-    borderRadius: 4,
-  },
-});
 
 export default withTheme(TextFieldOutlined);
