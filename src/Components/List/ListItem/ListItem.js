@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withTheme from '../../../Theme/withTheme';
-import Ripple from '../../Ripple/Ripple';
+import { BodyText, Ripple } from '../../..';
+import styles from './ListItem.styles';
 
 class ListItem extends Component {
   static propTypes = {
@@ -10,9 +11,17 @@ class ListItem extends Component {
     onPress: PropTypes.func,
     disabled: PropTypes.bool,
     selected: PropTypes.bool,
+    text: PropTypes.string,
   };
+
+  _renderText() {
+    const { text } = this.props;
+
+    return <BodyText style={styles.listText}>{text}</BodyText>;
+  }
+
   render() {
-    const { style, onPress, disabled, selected } = this.props;
+    const { style, onPress, disabled, selected, children } = this.props;
     return (
       <Ripple
         onAnimationEnd={onPress}
@@ -33,7 +42,7 @@ class ListItem extends Component {
           },
           style,
         ]}>
-        {this.props.children}
+        {children ? children : this._renderText()}
       </Ripple>
     );
   }

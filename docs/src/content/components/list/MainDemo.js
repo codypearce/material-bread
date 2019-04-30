@@ -1,13 +1,7 @@
 import React from 'react';
 import { View, Image } from 'react-native';
 import { ComponentMainDemo } from '@components';
-import {
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  ListExpanded,
-} from '../../../../../src/index';
+import { List, ListItem, ListExpanded } from '../../../../../src/index';
 
 export const code = `class ListPage extends React.Component {
   constructor(props) {
@@ -20,15 +14,14 @@ export const code = `class ListPage extends React.Component {
     return (
       <List>
         <ListItem>
-          <ListItemIcon icon={'alarm'} />
-          <ListItemText primary={'This is a list Item'} />
+
         </ListItem>
         <ListExpanded title="Expanded">
           <ListItem>
-            <ListItemText primary={'This is a list Item'} />
+
           </ListItem>
           <ListItem>
-            <ListItemText primary={'This is a list Item'} />
+
           </ListItem>
         </ListExpanded>
       </List>
@@ -45,8 +38,6 @@ const MainDemo = pageHref => (
       View,
       List,
       ListItem,
-      ListItemIcon,
-      ListItemText,
       ListExpanded,
       Image,
     }}

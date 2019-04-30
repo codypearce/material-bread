@@ -7,13 +7,13 @@ class List extends Component {
   static propTypes = {
     children: PropTypes.node,
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-    elevation: PropTypes.number,
+    shadow: PropTypes.number,
   };
   render() {
-    const { style, elevation } = this.props;
+    const { style, shadow } = this.props;
     return (
       <Paper
-        elevation={elevation ? elevation : 0}
+        shadow={shadow ? shadow : 0}
         style={[{ backgroundColor: '#fff' }, style]}>
         {this.props.children}
       </Paper>

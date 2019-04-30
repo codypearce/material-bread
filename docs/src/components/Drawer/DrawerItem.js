@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Text } from 'react-native';
 import { navigate } from '@reach/router';
-import { ListItem, ListItemText } from '../../../../src';
+import { ListItem } from '../../../../src';
 
 export class DrawerItem extends Component {
   static propTypes = {
@@ -26,15 +27,15 @@ export class DrawerItem extends Component {
     if (subsubItem) paddingLeft = 24;
     return (
       <ListItem onPress={this.handleClick} selected={selected}>
-        <ListItemText
-          primary={label}
+        <Text
           style={{
             fontSize: 12,
             fontWeight: '500',
             paddingLeft,
             color: '#000',
-          }}
-        />
+          }}>
+          {label}
+        </Text>
       </ListItem>
     );
   }

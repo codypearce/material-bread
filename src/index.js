@@ -67,21 +67,7 @@ export {
   default as ListExpanded,
 } from './Components/List/ListExpanded/ListExpanded';
 export { default as ListItem } from './Components/List/ListItem/ListItem';
-export {
-  default as ListItemAvatar,
-} from './Components/List/ListItemAvatar/ListItemAvatar';
-export {
-  default as ListItemIcon,
-} from './Components/List/ListItemIcon/ListItemIcon';
-export {
-  default as ListItemText,
-} from './Components/List/ListItemText/ListItemText';
-export {
-  default as ListSecondaryAction,
-} from './Components/List/ListSecondaryAction/ListSecondaryAction';
-export {
-  default as ListSubheader,
-} from './Components/List/ListSubheader/ListSubheader';
+
 export { default as Menu } from './Components/Menu/Menu';
 export { default as MenuItem } from './Components/Menu/MenuItem/MenuItem';
 export { default as Paper } from './Components/Paper/Paper';
