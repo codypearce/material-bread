@@ -133,7 +133,9 @@ export default storiesOf('Components|Drawer', module)
               drawerContent={<DrawerContent />}
               onClose={() => store.set({ isOpen: false })}
               appbar={<AppbarContent isOpen={state.isOpen} />}>
-              <PageContent />
+              <View style={styles.body}>
+                <PageContent />
+              </View>
             </Drawer>
           </View>
         )}
@@ -314,7 +316,9 @@ export default storiesOf('Components|Drawer', module)
                   }
                   actionItems={[{ name: 'search' }, { name: 'more-vert' }]}
                 />
-                <PageContent />
+                <View style={styles.body}>
+                  <PageContent />
+                </View>
               </View>
             </Drawer>
           </View>
@@ -352,7 +356,9 @@ export default storiesOf('Components|Drawer', module)
                 style={{
                   width: '100%',
                 }}>
-                <PageContent />
+                <View style={styles.body}>
+                  <PageContent />
+                </View>
               </View>
             </Drawer>
           </View>
@@ -367,7 +373,6 @@ const styles = StyleSheet.create({
     position: 'relative',
   },
   body: {
-    backgroundColor: '#eee',
     width: pageWidth,
     height: 500,
   },

@@ -101,6 +101,10 @@ const components = [
     title: 'Divider',
     path: '/components/divider',
   },
+  {
+    title: 'Drawer',
+    path: '/components/drawer',
+  },
 
   {
     title: 'DrawerHeader',
