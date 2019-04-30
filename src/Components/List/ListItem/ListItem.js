@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
 import withTheme from '../../../Theme/withTheme';
-import { BodyText, Ripple } from '../../..';
+import { BodyText, Caption, Ripple } from '../../..';
 import styles from './ListItem.styles';
 
 class ListItem extends Component {
@@ -14,6 +14,7 @@ class ListItem extends Component {
     disabled: PropTypes.bool,
     selected: PropTypes.bool,
     text: PropTypes.string,
+    secondaryText: PropTypes.string,
     media: PropTypes.node,
     icon: PropTypes.node,
     actionItem: PropTypes.node,
@@ -21,9 +22,14 @@ class ListItem extends Component {
   };
 
   _renderText() {
-    const { text } = this.props;
+    const { text, secondaryText } = this.props;
 
-    return <BodyText style={styles.listText}>{text}</BodyText>;
+    return (
+      <View>
+        <BodyText style={styles.listItemText}>{text}</BodyText>
+        <Caption style={styles.listItemSecondaryText}>{secondaryText}</Caption>
+      </View>
+    );
   }
 
   _renderIcon() {

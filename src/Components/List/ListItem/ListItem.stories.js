@@ -1,14 +1,6 @@
 import React from 'react';
 
-import {
-  List,
-  ListItem,
-  ListExpanded,
-  Icon,
-  Avatar,
-  Checkbox,
-  IconButton,
-} from '../../../';
+import { List, ListItem, Icon, Avatar, Checkbox, IconButton } from '../../../';
 import Header from '../../../storybook/components/Header';
 import Container from '../../../storybook/components/Container';
 import { storiesOf } from '../../../storybook/helpers/storiesOf';
@@ -276,58 +268,66 @@ export default storiesOf('Components|List/ListItem', module)
       </State>
     </Container>
   ))
-  .add('with subheader', () => (
+  .add('with secondary text', () => (
     <Container>
-      <Header title={'List subheader'} />
+      <Header title={'Text and secondary text List'} />
 
-      <List subheader={'Favorites'} style={{ width: 300 }}>
+      <List style={{ width: 300 }}>
         <ListItem
-          text={'Janet Perkins'}
+          text={'Photos'}
+          secondaryText={'Jan 9, 2018'}
           media={
             <Avatar
               type="icon"
-              content="person"
+              content="folder"
               contentColor={'#ececec'}
               color={'#a3a3a3'}
               size={40}
             />
           }
+          actionItem={<IconButton name="error" size={24} color="#6e6e6e" />}
         />
         <ListItem
-          text={'Mary Perkins'}
+          text={'Recipes'}
+          secondaryText={'Jan 17, 2018'}
           media={
             <Avatar
               type="icon"
-              content="person"
+              content="folder"
               contentColor={'#ececec'}
               color={'#a3a3a3'}
               size={40}
             />
           }
+          actionItem={<IconButton name="error" size={24} color="#6e6e6e" />}
         />
         <ListItem
-          text={'Peter Carlsson'}
+          text={'Work'}
+          secondaryText={'Jan 28, 2018'}
           media={
             <Avatar
               type="icon"
-              content="person"
+              content="folder"
               contentColor={'#ececec'}
               color={'#a3a3a3'}
               size={40}
             />
           }
+          actionItem={<IconButton name="error" size={24} color="#6e6e6e" />}
         />
         <ListItem
-          text={'Trevor Hansen'}
+          text={'Vacation'}
+          secondaryText={'Jan, 31, 2018'}
           media={
             <Avatar
               type="icon"
-              content="person"
+              content="folder"
               contentColor={'#ececec'}
               color={'#a3a3a3'}
               size={40}
             />
           }
+          actionItem={<IconButton name="error" size={24} color="#6e6e6e" />}
         />
       </List>
     </Container>

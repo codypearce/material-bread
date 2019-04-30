@@ -2,8 +2,13 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   listItemText: {
-    color: 'rgba(0,0,13,0.05)',
+    color: 'rgba(0,0,0,0.87)',
     fontSize: 16,
+  },
+  listItemSecondaryText: {
+    fontSize: 14,
+    color: 'rgba(0,0,0,0.57)',
+    marginTop: 4,
   },
 });
 

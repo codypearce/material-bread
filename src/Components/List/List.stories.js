@@ -7,9 +7,9 @@ import { storiesOf } from '../../storybook/helpers/storiesOf';
 
 export default storiesOf('Components|List', module)
   .addParameters({ jest: ['List'] })
-  .add('with text', () => (
+  .add('simple', () => (
     <Container>
-      <Header title={'Text List'} />
+      <Header title={'Simple text List'} />
 
       <List style={{ width: 300 }}>
         <ListItem text={'Attractions'} />
