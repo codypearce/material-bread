@@ -153,6 +153,11 @@ const components = [
     subsubItem: true,
   },
   {
+    title: 'ListSection',
+    path: '/components/list-section',
+    subsubItem: true,
+  },
+  {
     title: 'Menu',
     path: '/components/menu',
   },
