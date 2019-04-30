@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextFieldUnderline Renders 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgba(0, 0, 0, 0.42)",
+      "bottom": 0,
+      "height": 2,
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "transform": Array [
+        Object {
+          "scaleY": 0.5,
+        },
+      ],
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(33, 150, 243, 1)",
+        "bottom": 0,
+        "height": 2,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "transform": Array [
+          Object {
+            "scaleX": 0,
+          },
+          Object {
+            "scaleY": 2,
+          },
+        ],
+      }
+    }
+  />
+</View>
+`;

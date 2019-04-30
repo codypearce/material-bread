@@ -5,7 +5,7 @@ import withTheme from '../../../Theme/withTheme';
 import TextFieldUnderline from '../TextFieldUnderline/TextFieldUnderline';
 import TextFieldLabel from '../TextFieldLabel/TextFieldLabel';
 import TextFieldHelperText from '../TextFieldHelperText/TextFieldHelperText';
-import styles from './TextFilledFilled.styles';
+import styles from './TextFieldFilled.styles';
 
 class TextFieldFilled extends Component {
   constructor(props) {
