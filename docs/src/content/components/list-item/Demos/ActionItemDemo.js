@@ -52,7 +52,7 @@ export const code = `class DialogPage extends React.Component {
                 />
               }
             />
-          </List>
+        </List>
     );
   }
 }

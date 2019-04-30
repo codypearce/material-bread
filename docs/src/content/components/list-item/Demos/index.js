@@ -4,6 +4,7 @@ import { ComponentDemoHeader } from '@components';
 
 import ActionItemDemo from './ActionItemDemo';
 import LeadingActionDemo from './LeadingActionDemo';
+import SecondaryDemo from './SecondaryDemo';
 
 export default class Demos extends Component {
   static propTypes = {
@@ -16,6 +17,7 @@ export default class Demos extends Component {
         <ComponentDemoHeader pageHref={pageHref} />
         <ActionItemDemo pageHref={pageHref} />
         <LeadingActionDemo pageHref={pageHref} />
+        <SecondaryDemo pageHref={pageHref} />
       </div>
     );
   }
