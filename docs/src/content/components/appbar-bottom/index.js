@@ -12,6 +12,7 @@ const sections = [
   { name: 'Demos' },
   { name: 'end fab', sub: true },
   { name: 'no fab', sub: true },
+  { name: 'speeddial', sub: true },
   { name: 'custom', sub: true },
 ];
 

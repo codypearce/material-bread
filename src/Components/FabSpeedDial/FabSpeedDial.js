@@ -10,9 +10,13 @@ class FabSpeedDial extends Component {
     super(props);
   }
   static propTypes = {
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+    fabStyles: PropTypes.object,
     onPress: PropTypes.func,
     actions: PropTypes.array,
+    elevation: PropTypes.number,
+    icon: PropTypes.string,
+    backgroundColor: PropTypes.string,
   };
 
   state = {
@@ -40,7 +44,7 @@ class FabSpeedDial extends Component {
   }
 
   animateActions() {
-    const { open } = this.state;
+    const { open, onPress } = this.state;
 
     this.setState({
       open: !open,
@@ -51,6 +55,8 @@ class FabSpeedDial extends Component {
     } else {
       this.closeAnimation();
     }
+
+    if (onPress) onPress();
   }
 
   openAnimation() {
@@ -132,10 +138,17 @@ class FabSpeedDial extends Component {
   }
 
   render() {
+    const { icon, elevation, backgroundColor, style, fabStyles } = this.props;
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, style]}>
         {this.renderActions()}
-        <Fab onPress={() => this.animateActions()} />
+        <Fab
+          onPress={() => this.animateActions()}
+          icon={icon}
+          elevation={elevation}
+          backgroundColor={backgroundColor}
+          style={fabStyles}
+        />
       </View>
     );
   }

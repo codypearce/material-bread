@@ -7,6 +7,7 @@ const propData = [
     '',
   ],
 
+  ['fabStyles', 'Styles the fab directly', 'object', ''],
   [
     'onPress',
     'Call back on main fab, this will activate animation as well',

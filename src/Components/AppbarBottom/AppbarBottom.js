@@ -2,9 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import withTheme from '../../Theme/withTheme';
-import Paper from '../Paper/Paper';
-import IconButton from '../IconButton/IconButton';
-import Fab from '../Fab/Fab';
+import { Fab, FabSpeedDial, IconButton, Paper } from '../../';
 import styles from './AppbarBottom.styles';
 
 class AppbarBottom extends Component {
@@ -18,6 +16,7 @@ class AppbarBottom extends Component {
     fabCutout: PropTypes.bool,
     fabStyles: PropTypes.object,
     fabIcon: PropTypes.string,
+    fabActions: PropTypes.array,
     onFab: PropTypes.func,
 
     navigation: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
@@ -55,6 +54,7 @@ class AppbarBottom extends Component {
       fabStyles,
       onFab,
       fabIcon,
+      fabActions,
     } = this.props;
     if (!fab) return null;
 
@@ -66,10 +66,28 @@ class AppbarBottom extends Component {
     };
     const fabPosStyles = fabPosition === 'end' ? fabRightStyle : fabCenterStyle;
 
+    if (fabActions) {
+      return (
+        <FabSpeedDial
+          actions={fabActions}
+          elevation={fabCutout ? 8 : 6}
+          style={[styles.fabPos, fabPosStyles]}
+          fabStyles={fabStyles}
+          onPress={onFab}
+          icon={fabIcon}
+        />
+      );
+    }
+
     return (
       <Fab
         elevation={fabCutout ? 8 : 6}
-        style={[styles.fabPos, fabPosStyles, fabStyles]}
+        style={[
+          styles.fabPos,
+          fabPosStyles,
+          { backgroundColor: 'black' },
+          fabStyles,
+        ]}
         onPress={onFab}
         icon={fabIcon}
       />
