@@ -110,7 +110,7 @@ class TextFieldLabel extends Component {
     }
 
     let marginLeft = leadingIcon ? 32 : 0;
-    if (type == 'flat') {
+    if (type == 'flat' && leadingIcon) {
       marginLeft = 42;
     }
 

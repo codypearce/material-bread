@@ -3,8 +3,15 @@ import ComponentPageLayout from '../../../components/ComponentPage/ComponentPage
 import MainDemo from './MainDemo';
 import Usage from './Usage';
 import Props from './Props';
+import Demos from './Demos';
 
-const sections = [{ name: 'Component' }, { name: 'Usage' }, { name: 'Props' }];
+const sections = [
+  { name: 'Component' },
+  { name: 'Usage' },
+  { name: 'Props' },
+  { name: 'Demos' },
+  { name: 'leading icon', sub: true },
+];
 
 export default class TextFieldPage extends Component {
   render() {
@@ -20,6 +27,7 @@ export default class TextFieldPage extends Component {
           <MainDemo pageHref={'/components/textfield'} />
           <Usage pageHref={'/components/textfield'} />
           <Props pageHref={'/components/textfield'} />
+          <Demos pageHref={'/components/textfield'} />
         </ComponentPageLayout>
       </div>
     );
