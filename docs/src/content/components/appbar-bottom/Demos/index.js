@@ -4,6 +4,7 @@ import { ComponentDemoHeader } from '@components';
 
 import EndFabDemo from './EndFabDemo';
 import NoFabDemo from './NoFabDemo';
+import SpeedDialDemo from './SpeedDialDemo';
 import CustomDemo from './CustomDemo';
 
 export default class Demos extends Component {
@@ -18,6 +19,7 @@ export default class Demos extends Component {
 
         <EndFabDemo pageHref={pageHref} />
         <NoFabDemo pageHref={pageHref} />
+        <SpeedDialDemo pageHref={pageHref} />
         <CustomDemo pageHref={pageHref} />
       </div>
     );

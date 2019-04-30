@@ -9,6 +9,7 @@ const propData = [
   ['appbarStyles', 'Styles appbar around content', 'object', ''],
   ['color', `Component's background color`, 'string', 'primary'],
   ['fab', `Displays fab or not`, 'bool', 'false'],
+  ['fabActions', `Array of actions for speedial`, 'array', ''],
   ['fabCutout', `Displays cutout on appbar for fab`, 'bool', 'false'],
   ['fabIcon', `Name of Fab Icon`, 'string', ''],
   ['fabPosition', `Describes position of fab`, 'string: center, end', 'center'],
