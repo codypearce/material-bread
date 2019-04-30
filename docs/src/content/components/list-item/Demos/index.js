@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ComponentDemoHeader } from '@components';
 
-import SubheaderDemo from './SubheaderDemo';
+import ActionItemDemo from './ActionItemDemo';
 
 export default class Demos extends Component {
   static propTypes = {
@@ -13,7 +13,7 @@ export default class Demos extends Component {
     return (
       <div>
         <ComponentDemoHeader pageHref={pageHref} />
-        <SubheaderDemo pageHref={pageHref} />
+        <ActionItemDemo pageHref={pageHref} />
       </div>
     );
   }
