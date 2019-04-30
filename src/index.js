@@ -64,6 +64,9 @@ export { default as Icon } from './Components/Icon/Icon';
 export { default as IconButton } from './Components/IconButton/IconButton';
 export { default as List } from './Components/List/List';
 export {
+  default as ListSection,
+} from './Components/List/ListSection/ListSection';
+export {
   default as ListExpanded,
 } from './Components/List/ListExpanded/ListExpanded';
 export { default as ListItem } from './Components/List/ListItem/ListItem';
