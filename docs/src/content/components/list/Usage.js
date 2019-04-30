@@ -3,29 +3,22 @@ import { ComponentUsage } from '@components';
 
 export const code = `import React, { Component } from 'react';
 import { View } from 'react-native';
-import { List, ListItem, ListExpanded,} from 'material-bread';
+import { List, ListItem } from 'material-bread';
 
 class ListPage extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-
-    }
   }
   render() {
     return (
-      <List>
-        <ListItem>
-   
-        </ListItem>
-        <ListExpanded title="Expanded">
-          <ListItem>
-
-          </ListItem>
-          <ListItem>
-
-          </ListItem>
-        </ListExpanded>
+      <List style={{ width: 300 }}>
+        <ListItem text={'Attractions'} />
+        <ListItem text={'Dining'} />
+        <ListItem text={'Education'} />
+        <ListItem text={'Health'} />
+        <ListItem text={'Family'} />
+        <ListItem text={'Office'} />
+        <ListItem text={'Promotions'} />
       </List>
     );
   }
