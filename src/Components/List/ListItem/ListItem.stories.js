@@ -12,6 +12,7 @@ const store = new Store({
   checkedThree: false,
   checkedFour: false,
   checkedFive: false,
+  selected: 2,
 });
 
 export default storiesOf('Components|List/ListItem', module)
@@ -330,5 +331,46 @@ export default storiesOf('Components|List/ListItem', module)
           actionItem={<IconButton name="error" size={24} color="#6e6e6e" />}
         />
       </List>
+    </Container>
+  ))
+  .add('selected', () => (
+    <Container>
+      <Header title={'Selected Item'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <List style={{ width: 300 }}>
+            <ListItem
+              text={'Attractions'}
+              icon={<Icon name={'local-movies'} size={24} />}
+              onPress={() => store.set({ selected: 1 })}
+              selected={state.selected == 1}
+            />
+            <ListItem
+              text={'Dining'}
+              icon={<Icon name={'local-dining'} size={24} />}
+              onPress={() => store.set({ selected: 2 })}
+              selected={state.selected == 2}
+            />
+            <ListItem
+              text={'Education'}
+              icon={<Icon name={'edit'} size={24} />}
+              onPress={() => store.set({ selected: 3 })}
+              selected={state.selected == 3}
+            />
+            <ListItem
+              text={'Health'}
+              icon={<Icon name={'favorite'} size={24} />}
+              onPress={() => store.set({ selected: 4 })}
+              selected={state.selected == 4}
+            />
+            <ListItem
+              text={'Family'}
+              icon={<Icon name={'group'} size={24} />}
+              onPress={() => store.set({ selected: 5 })}
+              selected={state.selected == 5}
+            />
+          </List>
+        )}
+      </State>
     </Container>
   ));
