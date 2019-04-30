@@ -27,7 +27,14 @@ class TextFieldFilled extends Component {
     helperTextStyle: PropTypes.object,
     underlineColor: PropTypes.string,
     underlineActiveColor: PropTypes.string,
+    leadingIcon: PropTypes.node,
   };
+
+  _renderLeadingIcon() {
+    const { leadingIcon } = this.props;
+
+    return leadingIcon;
+  }
 
   render() {
     const {
@@ -45,6 +52,7 @@ class TextFieldFilled extends Component {
       helperTextStyle,
       underlineColor,
       underlineActiveColor,
+      leadingIcon,
       ...rest
     } = this.props;
 
@@ -58,6 +66,7 @@ class TextFieldFilled extends Component {
           labelColor={labelColor}
           style={labelStyle}
         />
+        {leadingIcon ? this._renderLeadingIcon() : null}
         <TextInput
           style={[
             styles.textField,
@@ -67,6 +76,7 @@ class TextFieldFilled extends Component {
               height: rest.multiline || rest.numberOfLines > 1 ? 'auto' : 56,
               paddingBottom: rest.multiline ? 8 : 0,
               paddingTop: rest.multiline ? 24 : 16,
+              outline: 'none',
             },
             style,
           ]}

@@ -99,9 +99,17 @@ export {
 } from '../../Components/Snackbar/Snackbar.stories.js';
 
 export { default as Switch } from '../../Components/Switch/Switch.stories.js';
+
 export {
-  default as TextField,
-} from '../../Components/TextField/TextField.stories.js';
+  default as TextFieldFilled,
+} from '../../Components/TextField/TextFieldFilled/TextFieldFilled.stories.js';
+export {
+  default as TextFieldFlat,
+} from '../../Components/TextField/TextFieldFlat/TextFieldFlat.stories.js';
+export {
+  default as TextFieldOutline,
+} from '../../Components/TextField/TextFieldOutline/TextFieldOutline.stories.js';
+
 export {
   default as ToggleButton,
 } from '../../Components/ToggleButton/ToggleButton.stories.js';

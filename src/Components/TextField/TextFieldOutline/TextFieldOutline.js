@@ -67,6 +67,7 @@ class TextFieldOutlined extends Component {
               height: rest.multiline || rest.numberOfLines > 1 ? 'auto' : 56,
               paddingBottom: rest.multiline ? 8 : 0,
               paddingTop: rest.multiline ? 20 : 0,
+              outline: 'none',
             },
             style,
           ]}
