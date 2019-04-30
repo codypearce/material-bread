@@ -3,7 +3,7 @@ import { ComponentUsage } from '@components';
 
 export const code = `import React, { Component } from 'react';
 import { View } from 'react-native';
-import { List, ListItem } from 'material-bread';
+import { List, ListItem, ListSection, Icon } from 'material-bread';
 
 class ListPage extends React.Component {
   constructor(props) {
@@ -12,13 +12,16 @@ class ListPage extends React.Component {
   render() {
     return (
       <List style={{ width: 300 }}>
-        <ListItem text={'Attractions'} />
-        <ListItem text={'Dining'} />
-        <ListItem text={'Education'} />
-        <ListItem text={'Health'} />
-        <ListItem text={'Family'} />
-        <ListItem text={'Office'} />
-        <ListItem text={'Promotions'} />
+        <ListSection label={'Entertainment'}>
+          <ListItem
+            text={'Attractions'}
+            icon={<Icon name={'local-movies'} size={24} />}
+          />
+          <ListItem
+            text={'Dining'}
+            icon={<Icon name={'local-dining'} size={24} />}
+          />
+        </ListSection>
       </List>
     );
   }

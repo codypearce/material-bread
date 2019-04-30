@@ -12,7 +12,7 @@ const sections = [
   { name: 'Usage' },
   { name: 'Props' },
   { name: 'Demos' },
-  { name: 'subheader', sub: true },
+  { name: 'icon', sub: true },
 ];
 
 export default class ListPage extends Component {
@@ -20,16 +20,16 @@ export default class ListPage extends Component {
     return (
       <div>
         <ComponentPageLayout
-          componentName={'list'}
-          title={'List'}
-          description={`Lists are continuous, vertical indexes of text or images.`}
-          importCode={`import { List } from 'material-bread';`}
+          componentName={'list-expand'}
+          title={'ListExpand'}
+          description={`ListExpand reveals more list items on press.`}
+          importCode={`import { ListExpand } from 'material-bread';`}
           docsLink={'https://material.io/design/components/lists.html'}
           sideScrollMenuItems={sections}>
-          <MainDemo pageHref={'/components/list'} />
-          <Usage pageHref={'/components/list'} />
-          <Props pageHref={'/components/list'} />
-          <Demos pageHref={'/components/list'} />
+          <MainDemo pageHref={'/components/list-expand'} />
+          <Usage pageHref={'/components/list-expand'} />
+          <Props pageHref={'/components/list-expand'} />
+          <Demos pageHref={'/components/list-expand'} />
         </ComponentPageLayout>
       </div>
     );

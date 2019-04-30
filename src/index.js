@@ -64,24 +64,11 @@ export { default as Icon } from './Components/Icon/Icon';
 export { default as IconButton } from './Components/IconButton/IconButton';
 export { default as List } from './Components/List/List';
 export {
-  default as ListExpanded,
-} from './Components/List/ListExpanded/ListExpanded';
+  default as ListSection,
+} from './Components/List/ListSection/ListSection';
+export { default as ListExpand } from './Components/List/ListExpand/ListExpand';
 export { default as ListItem } from './Components/List/ListItem/ListItem';
-export {
-  default as ListItemAvatar,
-} from './Components/List/ListItemAvatar/ListItemAvatar';
-export {
-  default as ListItemIcon,
-} from './Components/List/ListItemIcon/ListItemIcon';
-export {
-  default as ListItemText,
-} from './Components/List/ListItemText/ListItemText';
-export {
-  default as ListSecondaryAction,
-} from './Components/List/ListSecondaryAction/ListSecondaryAction';
-export {
-  default as ListSubheader,
-} from './Components/List/ListSubheader/ListSubheader';
+
 export { default as Menu } from './Components/Menu/Menu';
 export { default as MenuItem } from './Components/Menu/MenuItem/MenuItem';
 export { default as Paper } from './Components/Paper/Paper';
