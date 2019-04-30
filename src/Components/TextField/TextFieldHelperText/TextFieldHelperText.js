@@ -8,9 +8,10 @@ class TextFieldHelperText extends Component {
     error: PropTypes.bool,
     children: PropTypes.node,
     visible: PropTypes.bool,
+    style: PropTypes.object,
   };
   render() {
-    const { children, visible, error } = this.props;
+    const { children, visible, error, style } = this.props;
 
     if (!visible) return null;
 
@@ -19,6 +20,7 @@ class TextFieldHelperText extends Component {
         style={[
           styles.helper,
           { color: error ? '#E53935' : 'rgba(0,0,0,0.6)' },
+          style,
         ]}>
         {children}
       </Text>

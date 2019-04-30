@@ -16,11 +16,16 @@ class TextFieldFilled extends Component {
     containerStyle: PropTypes.object,
     error: PropTypes.bool,
     label: PropTypes.string,
+    labelColor: PropTypes.string,
+    labelStyle: PropTypes.object,
     handleFocus: PropTypes.func,
     handleBlur: PropTypes.func,
     focused: PropTypes.bool,
     helperText: PropTypes.string,
     helperVisible: PropTypes.bool,
+    helperTextStyle: PropTypes.object,
+    underlineColor: PropTypes.string,
+    underlineActiveColor: PropTypes.string,
   };
 
   render() {
@@ -29,11 +34,16 @@ class TextFieldFilled extends Component {
       containerStyle,
       error,
       label,
+      labelColor,
+      labelStyle,
       handleFocus,
       handleBlur,
       focused,
       helperText,
       helperVisible,
+      helperTextStyle,
+      underlineColor,
+      underlineActiveColor,
       ...rest
     } = this.props;
 
@@ -44,6 +54,8 @@ class TextFieldFilled extends Component {
           focused={focused}
           error={error}
           value={rest.value}
+          labelColor={labelColor}
+          style={labelStyle}
         />
         <TextInput
           style={[
@@ -62,9 +74,17 @@ class TextFieldFilled extends Component {
           {...rest}
         />
 
-        <TextFieldUnderline focused={focused} error={error} />
+        <TextFieldUnderline
+          focused={focused}
+          error={error}
+          underlineColor={underlineColor}
+          underlineActiveColor={underlineActiveColor}
+        />
 
-        <TextFieldHelperText error={error} visible={helperVisible || error}>
+        <TextFieldHelperText
+          error={error}
+          visible={helperVisible || error}
+          style={helperTextStyle}>
           {helperText}
         </TextFieldHelperText>
       </View>

@@ -15,11 +15,14 @@ class TextFieldOutlined extends Component {
     containerStyle: PropTypes.object,
     error: PropTypes.bool,
     label: PropTypes.string,
+    labelColor: PropTypes.string,
+    labelStyle: PropTypes.object,
     handleFocus: PropTypes.func,
     handleBlur: PropTypes.func,
     focused: PropTypes.bool,
     helperText: PropTypes.string,
     helperVisible: PropTypes.bool,
+    helperTextStyle: PropTypes.object,
   };
 
   render() {
@@ -28,11 +31,14 @@ class TextFieldOutlined extends Component {
       containerStyle,
       error,
       label,
+      labelColor,
+      labelStyle,
       handleFocus,
       handleBlur,
       focused,
       helperText,
       helperVisible,
+      helperTextStyle,
       ...rest
     } = this.props;
 
@@ -47,6 +53,8 @@ class TextFieldOutlined extends Component {
           error={error}
           value={rest.value}
           type={'outlined'}
+          labelColor={labelColor}
+          style={labelStyle}
         />
         <TextInput
           style={[
@@ -65,7 +73,10 @@ class TextFieldOutlined extends Component {
           onBlur={handleBlur}
           {...rest}
         />
-        <TextFieldHelperText error={error} visible={helperVisible || error}>
+        <TextFieldHelperText
+          error={error}
+          visible={helperVisible || error}
+          style={helperTextStyle}>
           {helperText}
         </TextFieldHelperText>
       </View>
