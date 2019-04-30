@@ -6,7 +6,7 @@ import Ripple from '../../Ripple/Ripple';
 import Icon from '../../Icon/Icon';
 import styles from './ListExpand.styles';
 
-class ListExpanded extends Component {
+class ListExpand extends Component {
   static propTypes = {
     expanded: PropTypes.bool,
     onPress: PropTypes.func,
@@ -14,6 +14,8 @@ class ListExpanded extends Component {
     style: PropTypes.object,
     title: PropTypes.string,
     titleStyle: PropTypes.object,
+    theme: PropTypes.object,
+    icon: PropTypes.node,
   };
 
   state = {
@@ -40,6 +42,11 @@ class ListExpanded extends Component {
   toggleMenu = () => {
     const { onPress } = this.props;
     const { isOpen, animationDuration, menuHeight, initialHeight } = this.state;
+
+    if (initialHeight == 0) {
+      setTimeout(() => this.toggleMenu(), 100);
+      return;
+    }
 
     let height = initialHeight;
     if (isOpen) height = 0;
@@ -68,11 +75,17 @@ class ListExpanded extends Component {
   };
 
   renderExpandedContent() {
-    const { children } = this.props;
+    const { children, icon } = this.props;
     const { menuHeight } = this.state;
+
     return (
       <Animated.View
-        style={{ height: menuHeight, overflow: 'hidden', width: '100%' }}>
+        style={{
+          height: menuHeight,
+          overflow: 'hidden',
+          width: icon ? 'calc(100% - 56px)' : '100%',
+          marginLeft: icon ? 56 : 0,
+        }}>
         <View
           style={{ position: 'absolute', width: '100%' }}
           onLayout={this.onMenuLayout}>
@@ -82,8 +95,17 @@ class ListExpanded extends Component {
     );
   }
 
+  _renderIcon() {
+    const { icon } = this.props;
+
+    return React.cloneElement(icon, {
+      size: icon.props.size ? icon.props.size : 24,
+      color: icon.props.color ? icon.props.color : '#6e6e6e',
+    });
+  }
+
   render() {
-    const { title, style, titleStyle } = this.props;
+    const { title, style, titleStyle, icon } = this.props;
     const { isOpen } = this.state;
 
     return (
@@ -92,7 +114,12 @@ class ListExpanded extends Component {
           style={[styles.container, style]}
           onPress={this.toggleMenu}
           rippleDuration={100}>
-          <Text style={[styles.title, titleStyle]}>{title}</Text>
+          {icon ? this._renderIcon() : null}
+          <Text
+            style={[styles.title, { marginLeft: icon ? 32 : 0 }, titleStyle]}>
+            {title}
+          </Text>
+          <View style={{ flex: 1 }} />
           <Icon name={isOpen ? 'expand-less' : 'expand-more'} size={24} />
         </Ripple>
         {this.renderExpandedContent()}
@@ -101,4 +128,4 @@ class ListExpanded extends Component {
   }
 }
 
-export default withTheme(ListExpanded);
+export default withTheme(ListExpand);
