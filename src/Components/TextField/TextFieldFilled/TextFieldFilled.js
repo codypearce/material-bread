@@ -29,7 +29,9 @@ class TextFieldFilled extends Component {
     underlineActiveColor: PropTypes.string,
     leadingIcon: PropTypes.node,
     trailingIcon: PropTypes.node,
+    dense: PropTypes.bool,
   };
+
   static defaultProps = {
     helperVisible: true,
   };
@@ -76,8 +78,16 @@ class TextFieldFilled extends Component {
       underlineActiveColor,
       leadingIcon,
       trailingIcon,
+      dense,
       ...rest
     } = this.props;
+
+    let height = rest.multiline || rest.numberOfLines > 1 ? 'auto' : 56;
+    let paddingTop = rest.multiline ? 24 : 12;
+    if (dense) {
+      height = label ? 52 : 40;
+      paddingTop = 6;
+    }
 
     return (
       <View
@@ -94,6 +104,7 @@ class TextFieldFilled extends Component {
           labelColor={labelColor}
           style={labelStyle}
           leadingIcon={leadingIcon}
+          dense={dense}
         />
         {leadingIcon ? this._renderLeadingIcon() : null}
         <TextInput
@@ -101,10 +112,10 @@ class TextFieldFilled extends Component {
             styles.textField,
             styles.filledInput,
             {
-              minHeight: rest.dense ? 40 : 56,
-              height: rest.multiline || rest.numberOfLines > 1 ? 'auto' : 56,
+              minHeight: dense ? 40 : 56,
+              height: height,
               paddingBottom: rest.multiline ? 8 : 0,
-              paddingTop: rest.multiline ? 24 : 12,
+              paddingTop: paddingTop,
               outline: 'none',
               paddingLeft: leadingIcon ? 44 : 12,
               paddingRight: trailingIcon ? 36 : 0,

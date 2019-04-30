@@ -18,6 +18,7 @@ class TextFieldLabel extends Component {
     type: PropTypes.string,
     value: PropTypes.string,
     leadingIcon: PropTypes.bool,
+    dense: PropTypes.bool,
   };
 
   state = {
@@ -26,6 +27,14 @@ class TextFieldLabel extends Component {
     animationDuration: 200,
     animationEasing: Easing.ease,
   };
+
+  componentDidMount() {
+    const { type, dense } = this.props;
+
+    if (type == 'outlined' && dense) {
+      this.setState({ translateYAnimation: new Animated.Value(11) });
+    }
+  }
 
   componentDidUpdate(prevProps) {
     const { focused, type } = this.props;
@@ -67,7 +76,7 @@ class TextFieldLabel extends Component {
   }
 
   _handleLabelOutlinedAnimation() {
-    const { focused, value } = this.props;
+    const { focused, value, dense } = this.props;
     const {
       translateYAnimation,
       scaleAnimation,
@@ -79,6 +88,8 @@ class TextFieldLabel extends Component {
 
     let position = focused ? -10 : 20;
     let scale = focused ? 0.75 : 1;
+
+    if (dense) position = focused ? -10 : 11;
 
     Animated.parallel([
       Animated.timing(translateYAnimation, {

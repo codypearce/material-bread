@@ -123,4 +123,29 @@ export default storiesOf('Components|TextField/Flat', module)
         )}
       </State>
     </Container>
+  ))
+  .add('dense', () => (
+    <Container>
+      <Header title={'Flat TextField'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <TextField
+              label={'Label'}
+              value={state.flatOne}
+              onChangeText={value => store.set({ flatOne: value })}
+              dense
+            />
+
+            <TextField
+              containerStyle={{ marginTop: 20 }}
+              placeholder={'Placeholder'}
+              value={state.flatThree}
+              onChangeText={value => store.set({ flatThree: value })}
+              dense
+            />
+          </View>
+        )}
+      </State>
+    </Container>
   ));

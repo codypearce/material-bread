@@ -133,4 +133,32 @@ export default storiesOf('Components|TextField/Outlined', module)
         )}
       </State>
     </Container>
+  ))
+  .add('dense', () => (
+    <Container>
+      <Header title={'Outlined TextField'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <TextField
+              type={'outlined'}
+              containerStyle={{ marginTop: 20 }}
+              label={'Label'}
+              value={state.outlinedOne}
+              onChangeText={value => store.set({ outlinedOne: value })}
+              dense
+            />
+
+            <TextField
+              type={'outlined'}
+              containerStyle={{ marginTop: 20 }}
+              error={true}
+              value={state.outlinedhree}
+              onChangeText={value => store.set({ outlinedhree: value })}
+              dense
+            />
+          </View>
+        )}
+      </State>
+    </Container>
   ));

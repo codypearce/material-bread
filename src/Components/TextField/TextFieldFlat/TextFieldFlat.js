@@ -29,6 +29,7 @@ class TextFieldFlat extends Component {
     underlineActiveColor: PropTypes.string,
     leadingIcon: PropTypes.node,
     trailingIcon: PropTypes.node,
+    dense: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -77,8 +78,15 @@ class TextFieldFlat extends Component {
       underlineActiveColor,
       leadingIcon,
       trailingIcon,
+      dense,
       ...rest
     } = this.props;
+
+    let height = rest.multiline || rest.numberOfLines > 1 ? 'auto' : 56;
+
+    if (dense) {
+      height = 40;
+    }
 
     return (
       <View
@@ -96,6 +104,7 @@ class TextFieldFlat extends Component {
           labelColor={labelColor}
           style={labelStyle}
           leadingIcon={leadingIcon}
+          dense={dense}
         />
         {leadingIcon ? this._renderLeadingIcon() : null}
         <TextInput
@@ -103,8 +112,8 @@ class TextFieldFlat extends Component {
             styles.textField,
             styles.flatInput,
             {
-              minHeight: rest.dense ? 40 : 56,
-              height: rest.multiline || rest.numberOfLines > 1 ? 'auto' : 56,
+              minHeight: dense ? 40 : 56,
+              height: height,
               paddingBottom: rest.multiline ? 8 : 0,
               paddingTop: rest.multiline ? 24 : 16,
               outline: 'none',

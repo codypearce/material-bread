@@ -26,6 +26,7 @@ class TextFieldOutlined extends Component {
     helperTextStyle: PropTypes.object,
     leadingIcon: PropTypes.node,
     trailingIcon: PropTypes.node,
+    dense: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -71,11 +72,18 @@ class TextFieldOutlined extends Component {
       helperTextStyle,
       leadingIcon,
       trailingIcon,
+      dense,
       ...rest
     } = this.props;
 
     let borderColor = focused ? 'rgba(33, 150, 243, 1)' : 'rgb(192, 192, 192)';
     if (error) borderColor = 'red';
+
+    let height = rest.multiline || rest.numberOfLines > 1 ? 'auto' : 56;
+
+    if (dense) {
+      height = 40;
+    }
 
     return (
       <View
@@ -96,6 +104,7 @@ class TextFieldOutlined extends Component {
           labelColor={labelColor}
           style={labelStyle}
           leadingIcon={leadingIcon}
+          dense={dense}
         />
         {leadingIcon ? this._renderLeadingIcon() : null}
         <TextInput
@@ -104,8 +113,8 @@ class TextFieldOutlined extends Component {
             styles.outlinedInput,
             {
               borderColor,
-              minHeight: rest.dense ? 40 : 56,
-              height: rest.multiline || rest.numberOfLines > 1 ? 'auto' : 56,
+              minHeight: dense ? 40 : 56,
+              height: height,
               paddingBottom: rest.multiline ? 8 : 0,
               paddingTop: rest.multiline ? 20 : 0,
               outline: 'none',

@@ -133,4 +133,31 @@ export default storiesOf('Components|TextField/Filled', module)
         )}
       </State>
     </Container>
+  ))
+  .add('dense', () => (
+    <Container>
+      <Header title={'Filled TextField'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <TextField
+              type={'filled'}
+              containerStyle={{ marginTop: 20 }}
+              label={'With Label'}
+              value={state.filledOne}
+              onChangeText={value => store.set({ filledOne: value })}
+              dense
+            />
+
+            <TextField
+              type={'filled'}
+              containerStyle={{ marginTop: 20 }}
+              value={state.filledThree}
+              onChangeText={value => store.set({ filledThree: value })}
+              dense
+            />
+          </View>
+        )}
+      </State>
+    </Container>
   ));
