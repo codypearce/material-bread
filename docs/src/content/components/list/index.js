@@ -5,8 +5,15 @@ import ComponentPageLayout from '../../../components/ComponentPage/ComponentPage
 import MainDemo from './MainDemo';
 import Usage from './Usage';
 import Props from './Props';
+import Demos from './Demos';
 
-const sections = [{ name: 'Component' }, { name: 'Usage' }, { name: 'Props' }];
+const sections = [
+  { name: 'Component' },
+  { name: 'Usage' },
+  { name: 'Props' },
+  { name: 'Demos' },
+  { name: 'subheader', sub: true },
+];
 
 export default class ListPage extends Component {
   render() {
@@ -22,6 +29,7 @@ export default class ListPage extends Component {
           <MainDemo pageHref={'/components/list'} />
           <Usage pageHref={'/components/list'} />
           <Props pageHref={'/components/list'} />
+          <Demos pageHref={'/components/list'} />
         </ComponentPageLayout>
       </div>
     );
