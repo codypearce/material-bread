@@ -373,4 +373,19 @@ export default storiesOf('Components|List/ListItem', module)
         )}
       </State>
     </Container>
+  ))
+  .add('disabled', () => (
+    <Container>
+      <Header title={'Text List'} />
+
+      <List style={{ width: 300 }}>
+        <ListItem text={'Attractions'} />
+        <ListItem text={'Dining'} />
+        <ListItem text={'Education'} disabled />
+        <ListItem text={'Health'} />
+        <ListItem text={'Family'} disabled />
+        <ListItem text={'Office'} disabled />
+        <ListItem text={'Promotions'} />
+      </List>
+    </Container>
   ));

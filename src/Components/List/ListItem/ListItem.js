@@ -22,11 +22,17 @@ class ListItem extends Component {
   };
 
   _renderText() {
-    const { text, secondaryText } = this.props;
+    const { text, secondaryText, disabled } = this.props;
 
     return (
       <View>
-        <BodyText style={styles.listItemText}>{text}</BodyText>
+        <BodyText
+          style={[
+            styles.listItemText,
+            { color: disabled ? 'rgba(0,0,0,0.47)' : 'rgba(0,0,0,0.87)' },
+          ]}>
+          {text}
+        </BodyText>
         <Caption style={styles.listItemSecondaryText}>{secondaryText}</Caption>
       </View>
     );
