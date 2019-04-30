@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { ComponentDemo } from '@components';
 import { List, ListItem, Avatar, Checkbox } from '../../../../../../src/index';
 
-export const code = `class DialogPage extends React.Component {
+export const code = `class Page extends React.Component {
   constructor(props) {
     super(props)
     this.state = {

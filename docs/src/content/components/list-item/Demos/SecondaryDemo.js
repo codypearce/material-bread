@@ -8,13 +8,9 @@ import {
   IconButton,
 } from '../../../../../../src/index';
 
-export const code = `class DialogPage extends React.Component {
+export const code = `class Page extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-        checkedOne: true,
-        checkedTwo: false
-    }
   }
   render() {
     return (
