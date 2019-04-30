@@ -66,9 +66,7 @@ export { default as List } from './Components/List/List';
 export {
   default as ListSection,
 } from './Components/List/ListSection/ListSection';
-export {
-  default as ListExpanded,
-} from './Components/List/ListExpanded/ListExpanded';
+export { default as ListExpand } from './Components/List/ListExpand/ListExpand';
 export { default as ListItem } from './Components/List/ListItem/ListItem';
 
 export { default as Menu } from './Components/Menu/Menu';

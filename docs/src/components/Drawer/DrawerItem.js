@@ -29,7 +29,7 @@ export class DrawerItem extends Component {
       <ListItem onPress={this.handleClick} selected={selected}>
         <Text
           style={{
-            fontSize: 12,
+            fontSize: 11,
             fontWeight: '500',
             paddingLeft,
             color: '#000',

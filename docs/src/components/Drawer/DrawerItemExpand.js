@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { List, ListExpanded } from '../../../../src';
+import { List, ListExpand } from '../../../../src';
 import DrawerItem from './DrawerItem';
 
 class DrawerItemExpand extends Component {
@@ -76,14 +76,14 @@ class DrawerItemExpand extends Component {
 
     return (
       <Fragment>
-        <ListExpanded
+        <ListExpand
           title={label}
-          titleStyle={{ fontSize: 12, fontWeight: '500' }}>
+          titleStyle={{ fontSize: 11, fontWeight: '500' }}>
           <List>
             {this.renderMarkdownMenuItems()}
             {this.renderReactMenuItems()}
           </List>
-        </ListExpanded>
+        </ListExpand>
       </Fragment>
     );
   }
