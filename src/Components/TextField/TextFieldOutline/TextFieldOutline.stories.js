@@ -71,4 +71,25 @@ export default storiesOf('Components|TextField/Outlined', module)
         )}
       </State>
     </Container>
+  ))
+  .add('with trailingIcon', () => (
+    <Container>
+      <Header title={'Outlined TextField'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <TextField
+              type={'outlined'}
+              containerStyle={{ marginTop: 20 }}
+              label={'Icon'}
+              trailingIcon={
+                <Icon name={'date-range'} size={24} color={'#6e6e6e'} />
+              }
+              value={state.outlinedOne}
+              onChangeText={value => store.set({ outlinedOne: value })}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
   ));

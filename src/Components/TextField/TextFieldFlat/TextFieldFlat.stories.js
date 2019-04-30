@@ -66,4 +66,25 @@ export default storiesOf('Components|TextField/Flat', module)
         )}
       </State>
     </Container>
+  ))
+  .add('with trailingIcon', () => (
+    <Container>
+      <Header title={'Flat TextField'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <TextField
+              type={'flat'}
+              containerStyle={{ marginTop: 20 }}
+              label={'Icon'}
+              trailingIcon={
+                <Icon name={'date-range'} size={24} color={'#6e6e6e'} />
+              }
+              value={state.flatOne}
+              onChangeText={value => store.set({ flatOne: value })}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
   ));

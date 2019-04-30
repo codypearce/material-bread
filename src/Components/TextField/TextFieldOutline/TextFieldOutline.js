@@ -25,6 +25,7 @@ class TextFieldOutlined extends Component {
     helperVisible: PropTypes.bool,
     helperTextStyle: PropTypes.object,
     leadingIcon: PropTypes.node,
+    trailingIcon: PropTypes.node,
   };
 
   _renderLeadingIcon() {
@@ -38,7 +39,17 @@ class TextFieldOutlined extends Component {
       </View>
     );
   }
-  s;
+  _renderTrailingIcon() {
+    const { trailingIcon } = this.props;
+
+    return (
+      <View style={{ position: 'absolute', right: 8, top: 16 }}>
+        {React.cloneElement(trailingIcon, {
+          size: trailingIcon.props.size ? trailingIcon.props.size : 24,
+        })}
+      </View>
+    );
+  }
 
   render() {
     const {
@@ -55,6 +66,7 @@ class TextFieldOutlined extends Component {
       helperVisible,
       helperTextStyle,
       leadingIcon,
+      trailingIcon,
       ...rest
     } = this.props;
 
@@ -86,6 +98,7 @@ class TextFieldOutlined extends Component {
               paddingTop: rest.multiline ? 20 : 0,
               outline: 'none',
               paddingLeft: leadingIcon ? 44 : 12,
+              paddingRight: trailingIcon ? 32 : 0,
             },
             style,
           ]}
@@ -93,6 +106,8 @@ class TextFieldOutlined extends Component {
           onBlur={handleBlur}
           {...rest}
         />
+        {trailingIcon ? this._renderTrailingIcon() : null}
+
         <TextFieldHelperText
           error={error}
           visible={helperVisible || error}

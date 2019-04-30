@@ -83,4 +83,25 @@ export default storiesOf('Components|TextField/Filled', module)
         )}
       </State>
     </Container>
+  ))
+  .add('with trailingIcon', () => (
+    <Container>
+      <Header title={'Filled TextField'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <TextField
+              type={'filled'}
+              containerStyle={{ marginTop: 20 }}
+              label={'Icon'}
+              trailingIcon={
+                <Icon name={'date-range'} size={24} color={'#6e6e6e'} />
+              }
+              value={state.filledTwo}
+              onChangeText={value => store.set({ filledTwo: value })}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
   ));

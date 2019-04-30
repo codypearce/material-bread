@@ -28,6 +28,7 @@ class TextFieldFlat extends Component {
     underlineColor: PropTypes.string,
     underlineActiveColor: PropTypes.string,
     leadingIcon: PropTypes.node,
+    trailingIcon: PropTypes.node,
   };
 
   _renderLeadingIcon() {
@@ -37,6 +38,18 @@ class TextFieldFlat extends Component {
       <View style={{ position: 'absolute', left: 8, top: 16 }}>
         {React.cloneElement(leadingIcon, {
           size: leadingIcon.props.size ? leadingIcon.props.size : 24,
+        })}
+      </View>
+    );
+  }
+
+  _renderTrailingIcon() {
+    const { trailingIcon } = this.props;
+
+    return (
+      <View style={{ position: 'absolute', right: 8, top: 16 }}>
+        {React.cloneElement(trailingIcon, {
+          size: trailingIcon.props.size ? trailingIcon.props.size : 24,
         })}
       </View>
     );
@@ -59,6 +72,7 @@ class TextFieldFlat extends Component {
       underlineColor,
       underlineActiveColor,
       leadingIcon,
+      trailingIcon,
       ...rest
     } = this.props;
 
@@ -86,6 +100,7 @@ class TextFieldFlat extends Component {
               paddingTop: rest.multiline ? 24 : 16,
               outline: 'none',
               paddingLeft: leadingIcon ? 44 : 0,
+              paddingRight: trailingIcon ? 32 : 0,
             },
             style,
           ]}
@@ -93,6 +108,7 @@ class TextFieldFlat extends Component {
           onBlur={handleBlur}
           {...rest}
         />
+        {trailingIcon ? this._renderTrailingIcon() : null}
 
         <TextFieldUnderline
           focused={focused}
