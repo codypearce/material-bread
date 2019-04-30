@@ -27,7 +27,20 @@ class TextFieldFlat extends Component {
     helperTextStyle: PropTypes.object,
     underlineColor: PropTypes.string,
     underlineActiveColor: PropTypes.string,
+    leadingIcon: PropTypes.node,
   };
+
+  _renderLeadingIcon() {
+    const { leadingIcon } = this.props;
+
+    return (
+      <View style={{ position: 'absolute', left: 8, top: 16 }}>
+        {React.cloneElement(leadingIcon, {
+          size: leadingIcon.props.size ? leadingIcon.props.size : 24,
+        })}
+      </View>
+    );
+  }
 
   render() {
     const {
@@ -45,6 +58,7 @@ class TextFieldFlat extends Component {
       helperTextStyle,
       underlineColor,
       underlineActiveColor,
+      leadingIcon,
       ...rest
     } = this.props;
 
@@ -58,7 +72,9 @@ class TextFieldFlat extends Component {
           type={'flat'}
           labelColor={labelColor}
           style={labelStyle}
+          leadingIcon={leadingIcon}
         />
+        {leadingIcon ? this._renderLeadingIcon() : null}
         <TextInput
           style={[
             styles.textField,
@@ -69,6 +85,7 @@ class TextFieldFlat extends Component {
               paddingBottom: rest.multiline ? 8 : 0,
               paddingTop: rest.multiline ? 24 : 16,
               outline: 'none',
+              paddingLeft: leadingIcon ? 44 : 0,
             },
             style,
           ]}

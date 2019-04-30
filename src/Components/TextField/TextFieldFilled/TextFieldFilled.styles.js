@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
   },
   textField: {
     textAlignVertical: 'bottom',
-    paddingTop: 16,
     paddingHorizontal: 12,
     outline: 'none',
   },

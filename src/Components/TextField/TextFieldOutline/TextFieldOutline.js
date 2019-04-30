@@ -24,7 +24,21 @@ class TextFieldOutlined extends Component {
     helperText: PropTypes.string,
     helperVisible: PropTypes.bool,
     helperTextStyle: PropTypes.object,
+    leadingIcon: PropTypes.node,
   };
+
+  _renderLeadingIcon() {
+    const { leadingIcon } = this.props;
+
+    return (
+      <View style={{ position: 'absolute', left: 8, top: 16 }}>
+        {React.cloneElement(leadingIcon, {
+          size: leadingIcon.props.size ? leadingIcon.props.size : 24,
+        })}
+      </View>
+    );
+  }
+  s;
 
   render() {
     const {
@@ -40,6 +54,7 @@ class TextFieldOutlined extends Component {
       helperText,
       helperVisible,
       helperTextStyle,
+      leadingIcon,
       ...rest
     } = this.props;
 
@@ -56,7 +71,9 @@ class TextFieldOutlined extends Component {
           type={'outlined'}
           labelColor={labelColor}
           style={labelStyle}
+          leadingIcon={leadingIcon}
         />
+        {leadingIcon ? this._renderLeadingIcon() : null}
         <TextInput
           style={[
             styles.textField,
@@ -68,6 +85,7 @@ class TextFieldOutlined extends Component {
               paddingBottom: rest.multiline ? 8 : 0,
               paddingTop: rest.multiline ? 20 : 0,
               outline: 'none',
+              paddingLeft: leadingIcon ? 44 : 12,
             },
             style,
           ]}

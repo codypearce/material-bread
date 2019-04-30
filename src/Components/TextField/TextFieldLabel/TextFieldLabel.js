@@ -17,6 +17,7 @@ class TextFieldLabel extends Component {
     label: PropTypes.string,
     type: PropTypes.string,
     value: PropTypes.string,
+    leadingIcon: PropTypes.bool,
   };
 
   state = {
@@ -94,7 +95,7 @@ class TextFieldLabel extends Component {
   }
 
   render() {
-    let { error, labelColor, label, focused, type } = this.props;
+    let { error, labelColor, label, focused, type, leadingIcon } = this.props;
     const { translateYAnimation, scaleAnimation } = this.state;
 
     const translateX = type == 'flat' ? -1 : 11;
@@ -108,6 +109,11 @@ class TextFieldLabel extends Component {
       label = 'Error';
     }
 
+    let marginLeft = leadingIcon ? 32 : 0;
+    if (type == 'flat') {
+      marginLeft = 42;
+    }
+
     return (
       <Animated.Text
         style={[
@@ -116,6 +122,7 @@ class TextFieldLabel extends Component {
             color: labelColor,
             backgroundColor: type == 'outlined' ? 'white' : 'transparent',
             paddingHorizontal: type == 'outlined' ? 4 : 0,
+            marginLeft: marginLeft,
             transform: [
               { scale: scaleAnimation },
               { translateY: translateYAnimation },

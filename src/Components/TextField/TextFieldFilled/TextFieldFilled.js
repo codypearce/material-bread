@@ -33,7 +33,13 @@ class TextFieldFilled extends Component {
   _renderLeadingIcon() {
     const { leadingIcon } = this.props;
 
-    return leadingIcon;
+    return (
+      <View style={{ position: 'absolute', left: 8, top: 16 }}>
+        {React.cloneElement(leadingIcon, {
+          size: leadingIcon.props.size ? leadingIcon.props.size : 24,
+        })}
+      </View>
+    );
   }
 
   render() {
@@ -65,6 +71,7 @@ class TextFieldFilled extends Component {
           value={rest.value}
           labelColor={labelColor}
           style={labelStyle}
+          leadingIcon={leadingIcon}
         />
         {leadingIcon ? this._renderLeadingIcon() : null}
         <TextInput
@@ -75,8 +82,9 @@ class TextFieldFilled extends Component {
               minHeight: rest.dense ? 40 : 56,
               height: rest.multiline || rest.numberOfLines > 1 ? 'auto' : 56,
               paddingBottom: rest.multiline ? 8 : 0,
-              paddingTop: rest.multiline ? 24 : 16,
+              paddingTop: rest.multiline ? 24 : 12,
               outline: 'none',
+              paddingLeft: leadingIcon ? 44 : 12,
             },
             style,
           ]}
