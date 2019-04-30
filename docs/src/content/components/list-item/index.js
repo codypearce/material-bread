@@ -13,6 +13,7 @@ const sections = [
   { name: 'Props' },
   { name: 'Demos' },
   { name: 'actionitem', sub: true },
+  { name: 'leadingaction', sub: true },
 ];
 
 export default class ListPage extends Component {
