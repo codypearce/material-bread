@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     zIndex: 10,
     transform: [{ translateY: -25 }],
-    backgroundColor: 'black',
   },
   centerCut: {
     position: 'absolute',

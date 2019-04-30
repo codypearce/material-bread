@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '../../storybook/helpers/storiesOf';
 
-import { AppbarBottom, Badge, IconButton } from '../..';
+import { AppbarBottom, Badge, IconButton, Fab } from '../..';
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
 
@@ -282,4 +282,30 @@ export default storiesOf('Components|AppbarBottom', module)
         style={{ marginBottom: 50 }}
       />
     </Container>
+  ))
+  .add('with speeddial', () => (
+    <Container scroll>
+      <Header title={'SpeedDial'} />
+
+      <AppbarBottom
+        fab
+        fabCutout
+        fabPosition={'end'}
+        fabActions={actions}
+        navigation={'arrow-back'}
+        fabStyles={{ backgroundColor: '#E91E63' }}
+        actionItems={[
+          { name: 'search', onPress: () => console.log('onSearch') },
+          { name: 'more-vert' },
+        ]}
+        style={{ marginTop: 300 }}
+      />
+    </Container>
   ));
+
+const actions = [
+  <Fab key={1} backgroundColor={'#E91E63'} icon={'archive'} />,
+  <Fab key={2} backgroundColor={'#F44336'} icon={'delete'} />,
+  <Fab key={3} backgroundColor={'#009688'} icon={'edit'} />,
+  <Fab key={4} backgroundColor={'black'} icon={'attach-money'} />,
+];
