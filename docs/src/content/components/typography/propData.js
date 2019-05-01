@@ -5,6 +5,7 @@ const propData = [
   ['gutterBottom', 'Adds marginBottom 10 to create space', 'bool', 'false'],
 
   ['style', 'Styles root element', 'object', ''],
+  ['text', 'Renders a Text string', 'string', ''],
 ];
 
 export default createTableData(propData);
