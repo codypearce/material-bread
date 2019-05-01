@@ -16,7 +16,7 @@ const store = new Store({
 export default storiesOf('Components|TextField/Outlined', module)
   .addParameters({ jest: ['TextFieldOutlined'] })
 
-  .add('Outlined', () => (
+  .add('simple', () => (
     <Container>
       <Header title={'Outlined TextField'} />
       <State store={store} style={{ flex: 1 }}>
