@@ -6,7 +6,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
 
-    flex: 0,
     alignSelf: 'flex-start',
   },
   track: {
