@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, StyleSheet, Easing } from 'react-native';
+import { Animated, Easing } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
+import styles from './TextFieldUnderline.styles';
 
 class TextFieldUnderline extends Component {
   constructor(props) {
@@ -82,15 +83,5 @@ class TextFieldUnderline extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  underline: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-    height: 2,
-  },
-});
 
 export default withTheme(TextFieldUnderline);

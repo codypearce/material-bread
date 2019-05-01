@@ -30,7 +30,7 @@ export const code = `class Demo extends React.Component {
             style={{ marginTop: 20 }}
             onPress={() => {
                 this.setState({
-                circleValue3: Math.floor(Math.random() * Math.floor(100)),
+                  value: Math.floor(Math.random() * Math.floor(100)),
                 });
             }}
             text={'Change Value'}

@@ -1,0 +1,215 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextFieldOutline Renders 1`] = `
+<View
+  style={
+    Array [
+      Object {},
+      Object {
+        "marginBottom": 0,
+        "marginTop": 8,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      Object {
+        "backgroundColor": "white",
+        "color": "rgba(0, 0, 0, 0.54)",
+        "marginLeft": 0,
+        "paddingHorizontal": 4,
+        "position": "absolute",
+        "transform": Array [
+          Object {
+            "scale": 1,
+          },
+          Object {
+            "translateY": 20,
+          },
+          Object {
+            "translateX": 11,
+          },
+        ],
+        "zIndex": 10,
+      }
+    }
+  />
+  <TextInput
+    allowFontScaling={true}
+    onContentSizeChange={[Function]}
+    rejectResponderTermination={true}
+    style={
+      Array [
+        Object {
+          "height": 56,
+          "paddingHorizontal": 12,
+        },
+        Object {
+          "borderRadius": 4,
+          "borderWidth": 1,
+        },
+        Object {},
+        Object {
+          "borderColor": "rgb(192, 192, 192)",
+          "height": 56,
+          "minHeight": 56,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 0,
+          "paddingTop": 0,
+        },
+        undefined,
+      ]
+    }
+    theme={
+      Object {
+        "action": Object {
+          "active": "rgba(0, 0, 0, 0.54)",
+          "disabled": "rgba(0, 0, 0, 0.26)",
+          "disabledBackground": "rgba(0, 0, 0, 0.12)",
+          "hover": "rgba(0, 0, 0, 0.08)",
+          "hoverOpacity": 0.08,
+          "selected": "rgba(0, 0, 0, 0.14)",
+        },
+        "background": Object {
+          "default": "#fafafa",
+        },
+        "bodyText": Object {
+          "fontSize": 16,
+          "letterSpacing": 0.5,
+          "lineHeight": 16,
+        },
+        "bodyTextTwo": Object {
+          "fontSize": 14,
+          "letterSpacing": 0.25,
+          "lineHeight": 14,
+        },
+        "button": Object {
+          "borderRadius": 4,
+          "padding": 8,
+        },
+        "buttonText": Object {
+          "color": "#2196f3",
+          "fontSize": 14,
+          "fontWeight": "500",
+          "letterSpacing": 0.5,
+        },
+        "caption": Object {
+          "fontSize": 12,
+          "letterSpacing": 0.4,
+          "lineHeight": 12,
+        },
+        "containedButton": Object {
+          "backgroundColor": "#2196f3",
+          "paddingHorizontal": 16,
+        },
+        "divider": Object {
+          "backgroundColor": "rgba(0,0,0,.12)",
+          "width": "100%",
+        },
+        "error": Object {
+          "dark": "#d32f2f",
+          "light": "#e57373",
+          "main": "#f44336",
+        },
+        "headingFive": Object {
+          "fontSize": 24,
+          "lineHeight": 24,
+        },
+        "headingFour": Object {
+          "fontSize": 34,
+          "letterSpacing": 0.25,
+          "lineHeight": 34,
+        },
+        "headingOne": Object {
+          "fontSize": 96,
+          "fontWeight": "300",
+          "letterSpacing": -1.5,
+          "lineHeight": 96,
+        },
+        "headingSix": Object {
+          "fontSize": 20,
+          "fontWeight": "500",
+          "letterSpacing": 0.15,
+          "lineHeight": 20,
+        },
+        "headingThree": Object {
+          "fontSize": 48,
+          "lineHeight": 48,
+        },
+        "headingTwo": Object {
+          "fontSize": 60,
+          "fontWeight": "300",
+          "letterSpacing": -0.5,
+          "lineHeight": 60,
+        },
+        "outlinedButton": Object {
+          "borderColor": "rgba(0,0,0,.29)",
+          "borderWidth": 0.5,
+          "paddingHorizontal": 16,
+        },
+        "overline": Object {
+          "fontSize": 10,
+          "letterSpacing": 1.5,
+          "lineHeight": 10,
+          "textTransform": "uppercase",
+        },
+        "paper": Object {
+          "backgroundColor": "white",
+          "borderRadius": 2,
+        },
+        "primary": Object {
+          "dark": "#005cb2",
+          "light": "#6ab7ff",
+          "main": "#1e88e5",
+        },
+        "secondary": Object {
+          "dark": "#c51162",
+          "light": "#ff4081",
+          "main": "#f50057",
+        },
+        "subtitleOne": Object {
+          "fontSize": 16,
+          "letterSpacing": 0.15,
+          "lineHeight": 16,
+        },
+        "subtitleTwo": Object {
+          "fontSize": 14,
+          "fontWeight": "500",
+          "letterSpacing": 0.1,
+          "lineHeight": 14,
+        },
+        "text": Object {
+          "disabled": "rgba(0, 0, 0, 0.38)",
+          "hint": "rgba(0, 0, 0, 0.38)",
+          "primary": "rgba(0, 0, 0, 0.87)",
+          "secondary": "rgba(0, 0, 0, 0.54)",
+        },
+      }
+    }
+    underlineColorAndroid="transparent"
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "bottom": -20,
+          "color": "rgba(0,0,0,0.6)",
+          "fontSize": 12,
+          "height": 16,
+          "marginLeft": 12,
+          "position": "absolute",
+          "width": "100%",
+          "zIndex": 10,
+        },
+        Object {
+          "color": "rgba(0,0,0,0.6)",
+        },
+        undefined,
+      ]
+    }
+  />
+</View>
+`;

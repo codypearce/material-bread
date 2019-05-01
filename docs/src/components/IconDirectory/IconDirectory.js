@@ -92,6 +92,5 @@ const styles = {
     padding: 12,
     backgroundColor: '#f0f0f0',
     borderRadius: 3,
-    outline: 0,
   },
 };
