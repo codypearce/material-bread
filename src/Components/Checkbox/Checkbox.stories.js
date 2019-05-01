@@ -3,9 +3,9 @@ import { storiesOf } from '../../storybook/helpers/storiesOf';
 import { View } from 'react-native';
 
 import { Checkbox } from '../../';
-import { State, Store } from '@sambego/storybook-state';
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
+import { State, Store } from '@sambego/storybook-state';
 
 const store = new Store({
   checkedOne: true,

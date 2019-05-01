@@ -13,7 +13,9 @@ const propData = [
   ['leadingIcon', 'Render arbitrary node on the left the input', 'node', ''],
   ['onBlur', 'Callback on input blur', 'func', ''],
   ['onFocus', 'Callback on input focus', 'func', ''],
+  ['prefix', 'Renders text node on the far leeft', 'node', ''],
   ['style', 'Styles input element', 'object', ''],
+  ['suffix', 'Renders text node on the far right', 'node', ''],
   ['trailingIcon', 'Render arbitrary node on the right the input', 'node', ''],
   ['underlineColor', 'Color of underline when inactive', 'string', ''],
   [

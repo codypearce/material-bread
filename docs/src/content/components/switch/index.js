@@ -3,8 +3,16 @@ import ComponentPageLayout from '../../../components/ComponentPage/ComponentPage
 import MainDemo from './MainDemo';
 import Usage from './Usage';
 import Props from './Props';
+import Demos from './Demos';
 
-const sections = [{ name: 'Component' }, { name: 'Usage' }, { name: 'Props' }];
+const sections = [
+  { name: 'Component' },
+  { name: 'Usage' },
+  { name: 'Props' },
+  { name: 'Demos' },
+  { name: 'loader', sub: true },
+  { name: 'labels', sub: true },
+];
 
 export default class SwitchPage extends Component {
   render() {
@@ -22,6 +30,7 @@ export default class SwitchPage extends Component {
           <MainDemo pageHref={'/components/switch'} />
           <Usage pageHref={'/components/switch'} />
           <Props pageHref={'/components/switch'} />
+          <Demos pageHref={'/components/switch'} />
         </ComponentPageLayout>
       </div>
     );
