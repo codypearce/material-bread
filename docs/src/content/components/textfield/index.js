@@ -14,6 +14,7 @@ const sections = [
   { name: 'trailing icon', sub: true },
   { name: 'helper text', sub: true },
   { name: 'dense', sub: true },
+  { name: 'prefix suffix', sub: true },
 ];
 
 export default class TextFieldPage extends Component {

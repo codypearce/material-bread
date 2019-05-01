@@ -6,6 +6,7 @@ import LeadingIconDemo from './LeadingIconDemo';
 import TrailingIconDemo from './TrailingIconDemo';
 import HelperTextDemo from './HelperTextDemo';
 import DenseDemo from './DenseDemo';
+import PrefixSuffixDemo from './PrefixSuffixDemo';
 
 export default class Demos extends Component {
   static propTypes = {
@@ -20,6 +21,7 @@ export default class Demos extends Component {
         <TrailingIconDemo pageHref={pageHref} />
         <HelperTextDemo pageHref={pageHref} />
         <DenseDemo pageHref={pageHref} />
+        <PrefixSuffixDemo pageHref={pageHref} />
       </div>
     );
   }
