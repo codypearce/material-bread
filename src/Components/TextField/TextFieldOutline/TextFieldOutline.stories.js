@@ -115,7 +115,7 @@ export default storiesOf('Components|TextField/Outlined', module)
               type={'outlined'}
               containerStyle={{ marginTop: 20 }}
               label={'Pounds'}
-              prefix={<BodyText>$</BodyText>}
+              prefix={<BodyText text="$" />}
               value={state.outlinedOne}
               onChangeText={value => store.set({ outlinedOne: value })}
             />
@@ -134,7 +134,7 @@ export default storiesOf('Components|TextField/Outlined', module)
               type={'outlined'}
               containerStyle={{ marginTop: 20 }}
               label={'Pounds'}
-              suffix={<Caption>lbs</Caption>}
+              suffix={<Caption text="lbs" />}
               value={state.outlinedOne}
               onChangeText={value => store.set({ outlinedOne: value })}
             />

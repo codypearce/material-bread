@@ -19,13 +19,13 @@ export const code = `class Page extends React.Component {
             leadingActionItem={<IconButton name="local-offer" size={24} color="#6e6e6e" />} 
             text={'Two Line'} 
             secondaryText={'Secondary Text'} 
-            actionItem={<Caption>01</Caption>}
+            actionItem={<Caption text={'01'} />}
         />
         <ListItem
             leadingActionItem={<IconButton name="local-offer" size={24} color="#6e6e6e" />} 
             text={'Two Line'} 
             secondaryText={'Secondary Text'} 
-            actionItem={<Caption>02</Caption>}
+            actionItem={<Caption text={'02'} />}
         />
       </List>
           

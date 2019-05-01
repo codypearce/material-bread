@@ -42,8 +42,8 @@ export const code = `class DrawerPage extends React.Component {
           <Heading type={4} style={{ marginBottom: 20 }}>
             This is a page
           </Heading>
-          <BodyText>Click the menu button to open the drawer</BodyText>
-          <BodyText>Click outside the drawer to close it</BodyText>
+          <BodyText text={'Click the menu button to open the drawer'} />
+          <BodyText text={'Click outside the drawer to close it'} />
         </View>
       );
     };

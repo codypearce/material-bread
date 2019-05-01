@@ -87,7 +87,7 @@ export default storiesOf('Components|TextField/Flat', module)
               type={'flat'}
               containerStyle={{ marginTop: 20 }}
               label={'Pounds'}
-              prefix={<BodyText>$</BodyText>}
+              prefix={<BodyText text="$" />}
               value={state.flatOne}
               onChangeText={value => store.set({ flatOne: value })}
             />
@@ -106,7 +106,7 @@ export default storiesOf('Components|TextField/Flat', module)
               type={'flat'}
               containerStyle={{ marginTop: 20 }}
               label={'Pounds'}
-              suffix={<Caption>lbs</Caption>}
+              suffix={<Caption text="lbs" />}
               value={state.flatOne}
               onChangeText={value => store.set({ flatOne: value })}
             />

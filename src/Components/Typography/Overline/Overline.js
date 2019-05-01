@@ -7,13 +7,14 @@ class Overline extends Component {
   static propTypes = {
     children: PropTypes.node,
     theme: PropTypes.object,
+    text: PropTypes.string,
   };
 
   render() {
-    const { theme } = this.props;
+    const { theme, children, text } = this.props;
     return (
       <BaseText typographyStyles={theme.overline} {...this.props}>
-        {this.props.children}
+        {children ? children : text}
       </BaseText>
     );
   }
