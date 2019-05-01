@@ -9,6 +9,7 @@ const propData = [
     '',
   ],
   ['labelPos', 'Determines the position of the label', 'right'],
+  ['loading', 'Toggles loading state in thumb', 'false'],
   ['onPress', 'Callback when thumb or label is pressed', 'func', ''],
   ['style', 'Styles root element', 'object', ''],
   ['trackStyle', 'Styles the track element', 'object', ''],
