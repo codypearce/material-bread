@@ -1,27 +1,69 @@
 import React, { Component } from 'react';
-import { Animated } from 'react-native';
+import { Animated, View, TouchableWithoutFeedback } from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
-import Ripple from '../Ripple/Ripple';
+
+import { Ripple } from '../../';
 import styles from './Switch.styles';
+import colorTool from 'color';
 
 class Switch extends Component {
-  static propTypes = { active: PropTypes.bool, style: PropTypes.object };
+  static propTypes = {
+    checked: PropTypes.bool,
+    onPress: PropTypes.func,
+    style: PropTypes.object,
+    trackStyle: PropTypes.object,
+    thumbStyle: PropTypes.object,
+    label: PropTypes.node,
+    labelPos: PropTypes.string,
+    theme: PropTypes.object,
+    color: PropTypes.string,
+  };
 
-  static defaultProps = {};
+  static defaultProps = { labelPos: 'right' };
 
   state = {
     thumbTranslateX: new Animated.Value(0),
-    isActive: false,
   };
 
+  componentDidMount() {
+    if (this.props.checked) {
+      this.setState({ thumbTranslateX: new Animated.Value(18) });
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    const { checked } = this.props;
+    if (checked != prevProps.checked) {
+      this.handleSwitch();
+    }
+  }
+
+  _renderLabel() {
+    const { label, labelPos, onPress } = this.props;
+
+    return (
+      <TouchableWithoutFeedback onPress={() => onPress()}>
+        <View
+          style={{
+            marginLeft: labelPos == 'right' ? 8 : 0,
+            marginRight: labelPos == 'left' ? 8 : 0,
+          }}>
+          {label}
+        </View>
+      </TouchableWithoutFeedback>
+    );
+  }
+
   handleSwitch() {
-    const { thumbTranslateX, isActive } = this.state;
+    const { thumbTranslateX } = this.state;
+    const { checked } = this.props;
+
     let xValue = 18;
-    if (isActive) {
+    if (!checked) {
       xValue = 0;
     }
-    this.setState({ isActive: !isActive });
+
     Animated.parallel([
       Animated.timing(thumbTranslateX, {
         toValue: xValue,
@@ -31,34 +73,54 @@ class Switch extends Component {
   }
 
   render() {
-    const { thumbTranslateX, isActive } = this.state;
+    const { thumbTranslateX } = this.state;
+    const {
+      label,
+      labelPos,
+      style,
+      trackStyle,
+      thumbStyle,
+      theme,
+      color,
+      checked,
+      onPress,
+    } = this.props;
+
+    let trackColor = color
+      ? colorTool(color).alpha(0.54)
+      : colorTool(theme.primary.main).alpha(0.54);
+    let thumbColor = color ? color : theme.primary.main;
 
     return (
-      <Animated.View
-        style={[
-          styles.track,
-          {
-            backgroundColor: isActive
-              ? 'rgba(30, 136, 229, .54)'
-              : 'rgba(0,0,0,.38)',
-          },
-        ]}
-        onPress={() => this.handleSwitch()}>
-        <Ripple
-          rippleContainerBorderRadius={100}
+      <View style={[styles.container, style]}>
+        {labelPos == 'left' && label ? this._renderLabel() : null}
+        <Animated.View
           style={[
-            styles.thumbRipple,
-            { transform: [{ translateX: thumbTranslateX }] },
+            styles.track,
+            {
+              backgroundColor: checked ? trackColor : 'rgba(0,0,0,.38)',
+            },
+            trackStyle,
           ]}
-          onPress={() => this.handleSwitch()}>
-          <Animated.View
+          onPress={onPress}>
+          <Ripple
+            rippleContainerBorderRadius={100}
             style={[
-              styles.thumb,
-              { backgroundColor: isActive ? '#1e88e5' : 'white' },
+              styles.thumbRipple,
+              { transform: [{ translateX: thumbTranslateX }] },
             ]}
-          />
-        </Ripple>
-      </Animated.View>
+            onPress={onPress}>
+            <Animated.View
+              style={[
+                styles.thumb,
+                { backgroundColor: checked ? thumbColor : 'white' },
+                thumbStyle,
+              ]}
+            />
+          </Ripple>
+        </Animated.View>
+        {labelPos == 'right' && label ? this._renderLabel() : null}
+      </View>
     );
   }
 }

@@ -2,6 +2,13 @@ import { StyleSheet } from 'react-native';
 import { shadow } from '../..';
 
 const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+
+    flex: 0,
+    alignSelf: 'flex-start',
+  },
   track: {
     width: 36,
     height: 14,
