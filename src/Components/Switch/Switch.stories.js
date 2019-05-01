@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import { Switch, BodyText } from '../../';
+import { Switch, BodyText, Button } from '../../';
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
 import { storiesOf } from '../../storybook/helpers/storiesOf';
@@ -13,11 +13,12 @@ const store = new Store({
   checkedThree: true,
   checkedFour: true,
   checkedFive: true,
+  isLoading: true,
 });
 
 export default storiesOf('Components|Switch', module)
   .addParameters({ jest: ['Switch'] })
-  .add('Simple', () => (
+  .add('simple', () => (
     <Container>
       <Header title={'Switch'} />
       <State store={store} style={{ flex: 1 }}>
@@ -44,7 +45,43 @@ export default storiesOf('Components|Switch', module)
       </State>
     </Container>
   ))
-  .add('Label', () => (
+  .add('loading', () => (
+    <Container>
+      <Header title={'Switch'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <Switch
+              onPress={() => store.set({ checkedOne: !state.checkedOne })}
+              checked={state.checkedOne}
+              loading={state.isLoading}
+              style={{ marginBottom: 16 }}
+            />
+            <Switch
+              onPress={() => store.set({ checkedOne: !state.checkedOne })}
+              checked={state.checkedOne}
+              loading={state.isLoading}
+              style={{ marginBottom: 16 }}
+              color={'#E91E63'}
+            />
+            <Switch
+              onPress={() => store.set({ checkedOne: !state.checkedOne })}
+              checked={state.checkedOne}
+              loading={state.isLoading}
+              style={{ marginBottom: 16 }}
+              color={'#9C27B0'}
+            />
+            <Button
+              text={'Toggle Loading'}
+              type="outlined"
+              onPress={() => store.set({ isLoading: !state.isLoading })}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
+  ))
+  .add('label', () => (
     <Container>
       <Header title={'Switch'} />
 

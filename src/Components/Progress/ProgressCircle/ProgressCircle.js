@@ -14,6 +14,7 @@ class ProgressCircle extends PureComponent {
     animationEasing: PropTypes.func,
     visible: PropTypes.bool,
     determinate: PropTypes.bool,
+    widthOfBorder: PropTypes.number,
   };
 
   static defaultProps = {
@@ -24,6 +25,7 @@ class ProgressCircle extends PureComponent {
     animationDuration: 2400,
     visible: true,
     determinate: false,
+    widthOfBorder: 10,
   };
 
   constructor(props) {
@@ -145,7 +147,7 @@ class ProgressCircle extends PureComponent {
   }
 
   render() {
-    const { style, size, color, determinate } = this.props;
+    const { style, size, color, determinate, widthOfBorder } = this.props;
 
     const layerStyle = this.getLayerStyle();
 
@@ -161,7 +163,7 @@ class ProgressCircle extends PureComponent {
       width: size,
       height: size,
       borderColor: color,
-      borderWidth: size / 10,
+      borderWidth: size / widthOfBorder,
       borderRadius: size / 2,
     };
 

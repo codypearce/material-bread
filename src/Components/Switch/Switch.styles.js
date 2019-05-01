@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   track: {
     width: 36,
     height: 14,
-    backgroundColor: 'rgba(0,0,0,.38)',
+    backgroundColor: 'rgba(0,0,0,.20)',
     borderRadius: 10,
     position: 'relative',
   },
@@ -30,6 +30,8 @@ const styles = StyleSheet.create({
     height: 20,
     ...shadow(3),
     borderRadius: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 

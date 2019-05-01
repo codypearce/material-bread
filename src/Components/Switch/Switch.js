@@ -3,7 +3,7 @@ import { Animated, View, TouchableWithoutFeedback } from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
 
-import { Ripple } from '../../';
+import { Ripple, ProgressCircle } from '../../';
 import styles from './Switch.styles';
 import colorTool from 'color';
 
@@ -18,6 +18,7 @@ class Switch extends Component {
     labelPos: PropTypes.string,
     theme: PropTypes.object,
     color: PropTypes.string,
+    loading: PropTypes.bool,
   };
 
   static defaultProps = { labelPos: 'right' };
@@ -84,6 +85,7 @@ class Switch extends Component {
       color,
       checked,
       onPress,
+      loading,
     } = this.props;
 
     let trackColor = color
@@ -98,7 +100,8 @@ class Switch extends Component {
           style={[
             styles.track,
             {
-              backgroundColor: checked ? trackColor : 'rgba(0,0,0,.38)',
+              backgroundColor:
+                checked && !loading ? trackColor : 'rgba(0,0,0,.30)',
             },
             trackStyle,
           ]}
@@ -113,10 +116,17 @@ class Switch extends Component {
             <Animated.View
               style={[
                 styles.thumb,
-                { backgroundColor: checked ? thumbColor : 'white' },
+                { backgroundColor: checked && !loading ? thumbColor : 'white' },
                 thumbStyle,
-              ]}
-            />
+              ]}>
+              {loading ? (
+                <ProgressCircle
+                  color={thumbColor}
+                  size={14}
+                  widthOfBorder={6}
+                />
+              ) : null}
+            </Animated.View>
           </Ripple>
         </Animated.View>
         {labelPos == 'right' && label ? this._renderLabel() : null}
