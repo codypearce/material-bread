@@ -5,7 +5,7 @@ import { State, Store } from '@sambego/storybook-state';
 import Header from '../../../storybook/components/Header';
 import Container from '../../../storybook/components/Container';
 import { storiesOf } from '../../../storybook/helpers/storiesOf';
-import { TextField, Icon } from '../../../';
+import { TextField, Icon, Caption, BodyText } from '../../../';
 
 const store = new Store({
   outlinedOne: '',
@@ -97,6 +97,44 @@ export default storiesOf('Components|TextField/Outlined', module)
               trailingIcon={
                 <Icon name={'date-range'} size={24} color={'#6e6e6e'} />
               }
+              value={state.outlinedOne}
+              onChangeText={value => store.set({ outlinedOne: value })}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
+  ))
+  .add('with prefix', () => (
+    <Container>
+      <Header title={'Outlined TextField'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <TextField
+              type={'outlined'}
+              containerStyle={{ marginTop: 20 }}
+              label={'Pounds'}
+              prefix={<BodyText>$</BodyText>}
+              value={state.outlinedOne}
+              onChangeText={value => store.set({ outlinedOne: value })}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
+  ))
+  .add('with suffix', () => (
+    <Container>
+      <Header title={'Outlined TextField'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <TextField
+              type={'outlined'}
+              containerStyle={{ marginTop: 20 }}
+              label={'Pounds'}
+              suffix={<Caption>lbs</Caption>}
               value={state.outlinedOne}
               onChangeText={value => store.set({ outlinedOne: value })}
             />

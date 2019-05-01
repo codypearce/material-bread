@@ -5,7 +5,7 @@ import { State, Store } from '@sambego/storybook-state';
 import Header from '../../../storybook/components/Header';
 import Container from '../../../storybook/components/Container';
 import { storiesOf } from '../../../storybook/helpers/storiesOf';
-import { TextField, Icon } from '../../../';
+import { TextField, Icon, Caption, BodyText } from '../../../';
 
 const store = new Store({
   flatOne: '',
@@ -77,6 +77,45 @@ export default storiesOf('Components|TextField/Flat', module)
       </State>
     </Container>
   ))
+  .add('with prefix', () => (
+    <Container>
+      <Header title={'Flat TextField'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <TextField
+              type={'flat'}
+              containerStyle={{ marginTop: 20 }}
+              label={'Pounds'}
+              prefix={<BodyText>$</BodyText>}
+              value={state.flatOne}
+              onChangeText={value => store.set({ flatOne: value })}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
+  ))
+  .add('with suffix', () => (
+    <Container>
+      <Header title={'Flat TextField'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <TextField
+              type={'flat'}
+              containerStyle={{ marginTop: 20 }}
+              label={'Pounds'}
+              suffix={<Caption>lbs</Caption>}
+              value={state.flatOne}
+              onChangeText={value => store.set({ flatOne: value })}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
+  ))
+
   .add('with trailingIcon', () => (
     <Container>
       <Header title={'Flat TextField'} />

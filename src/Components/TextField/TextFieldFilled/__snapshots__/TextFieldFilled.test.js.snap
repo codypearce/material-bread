@@ -3,9 +3,15 @@
 exports[`TextFieldFilled Renders 1`] = `
 <View
   style={
-    Object {
-      "position": "relative",
-    }
+    Array [
+      Object {
+        "position": "relative",
+      },
+      Object {
+        "marginBottom": 0,
+      },
+      undefined,
+    ]
   }
 >
   <Text
@@ -13,6 +19,7 @@ exports[`TextFieldFilled Renders 1`] = `
       Object {
         "backgroundColor": "transparent",
         "color": "rgba(0, 0, 0, 0.54)",
+        "marginLeft": 0,
         "paddingHorizontal": 0,
         "position": "absolute",
         "transform": Array [
@@ -32,12 +39,12 @@ exports[`TextFieldFilled Renders 1`] = `
   />
   <TextInput
     allowFontScaling={true}
+    onContentSizeChange={[Function]}
     rejectResponderTermination={true}
     style={
       Array [
         Object {
           "paddingHorizontal": 12,
-          "paddingTop": 16,
           "textAlignVertical": "bottom",
         },
         Object {
@@ -45,11 +52,14 @@ exports[`TextFieldFilled Renders 1`] = `
           "borderTopLeftRadius": 4,
           "borderTopRightRadius": 4,
         },
+        Object {},
         Object {
           "height": 56,
           "minHeight": 56,
           "paddingBottom": 0,
-          "paddingTop": 16,
+          "paddingLeft": 12,
+          "paddingRight": 0,
+          "paddingTop": 12,
         },
         undefined,
       ]
@@ -220,5 +230,25 @@ exports[`TextFieldFilled Renders 1`] = `
       }
     />
   </View>
+  <Text
+    style={
+      Array [
+        Object {
+          "bottom": -20,
+          "color": "rgba(0,0,0,0.6)",
+          "fontSize": 12,
+          "height": 16,
+          "marginLeft": 12,
+          "position": "absolute",
+          "width": "100%",
+          "zIndex": 10,
+        },
+        Object {
+          "color": "rgba(0,0,0,0.6)",
+        },
+        undefined,
+      ]
+    }
+  />
 </View>
 `;

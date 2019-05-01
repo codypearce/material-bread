@@ -19,6 +19,8 @@ class TextFieldLabel extends Component {
     value: PropTypes.string,
     leadingIcon: PropTypes.bool,
     dense: PropTypes.bool,
+    prefix: PropTypes.bool,
+    theme: PropTypes.object,
   };
 
   state = {
@@ -26,14 +28,17 @@ class TextFieldLabel extends Component {
     scaleAnimation: new Animated.Value(1),
     animationDuration: 200,
     animationEasing: Easing.ease,
+    canAnimate: true,
   };
 
   componentDidMount() {
-    const { type, dense } = this.props;
+    const { type, dense, prefix } = this.props;
 
     if (type == 'outlined' && dense) {
       this.setState({ translateYAnimation: new Animated.Value(11) });
     }
+
+    if (prefix) this._handlePrefix();
   }
 
   componentDidUpdate(prevProps) {
@@ -47,6 +52,20 @@ class TextFieldLabel extends Component {
     }
   }
 
+  _handlePrefix() {
+    const { type } = this.props;
+    let translateYAnimation = 10;
+    if (type == 'outlined') {
+      translateYAnimation = -10;
+    }
+
+    this.setState({
+      canAnimate: false,
+      translateYAnimation: new Animated.Value(translateYAnimation),
+      scaleAnimation: new Animated.Value(0.75),
+    });
+  }
+
   _handleLabelAnimation() {
     const { focused, value } = this.props;
     const {
@@ -54,7 +73,9 @@ class TextFieldLabel extends Component {
       scaleAnimation,
       animationEasing,
       animationDuration,
+      canAnimate,
     } = this.state;
+    if (!canAnimate) return;
 
     if (value && value.length > 0) return;
 
@@ -82,7 +103,9 @@ class TextFieldLabel extends Component {
       scaleAnimation,
       animationEasing,
       animationDuration,
+      canAnimate,
     } = this.state;
+    if (!canAnimate) return;
 
     if (value && value.length > 0) return;
 
@@ -106,14 +129,23 @@ class TextFieldLabel extends Component {
   }
 
   render() {
-    let { error, labelColor, label, focused, type, leadingIcon } = this.props;
+    let {
+      error,
+      labelColor,
+      label,
+      focused,
+      type,
+      leadingIcon,
+      prefix,
+      theme,
+    } = this.props;
     const { translateYAnimation, scaleAnimation } = this.state;
 
     const translateX = type == 'flat' ? -1 : 11;
 
     if (!labelColor) labelColor = 'rgba(0, 0, 0, 0.54)';
 
-    if (focused) labelColor = 'rgba(33, 150, 243, 1)';
+    if (focused) labelColor = theme.primary.main;
 
     if (error) {
       labelColor = 'red';
@@ -123,6 +155,8 @@ class TextFieldLabel extends Component {
     let marginLeft = leadingIcon ? 32 : 0;
     if (type == 'flat' && leadingIcon) {
       marginLeft = 42;
+    } else if (type == 'filled' && prefix) {
+      marginLeft = 6;
     }
 
     return (

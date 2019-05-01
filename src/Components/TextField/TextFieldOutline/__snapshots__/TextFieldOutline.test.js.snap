@@ -2,13 +2,23 @@
 
 exports[`TextFieldOutline Renders 1`] = `
 <View
-  style={Object {}}
+  style={
+    Array [
+      Object {},
+      Object {
+        "marginBottom": 0,
+        "marginTop": 8,
+      },
+      undefined,
+    ]
+  }
 >
   <Text
     style={
       Object {
         "backgroundColor": "white",
         "color": "rgba(0, 0, 0, 0.54)",
+        "marginLeft": 0,
         "paddingHorizontal": 4,
         "position": "absolute",
         "transform": Array [
@@ -28,6 +38,7 @@ exports[`TextFieldOutline Renders 1`] = `
   />
   <TextInput
     allowFontScaling={true}
+    onContentSizeChange={[Function]}
     rejectResponderTermination={true}
     style={
       Array [
@@ -39,11 +50,14 @@ exports[`TextFieldOutline Renders 1`] = `
           "borderRadius": 4,
           "borderWidth": 1,
         },
+        Object {},
         Object {
           "borderColor": "rgb(192, 192, 192)",
           "height": 56,
           "minHeight": 56,
           "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 0,
           "paddingTop": 0,
         },
         undefined,
@@ -176,6 +190,26 @@ exports[`TextFieldOutline Renders 1`] = `
       }
     }
     underlineColorAndroid="transparent"
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "bottom": -20,
+          "color": "rgba(0,0,0,0.6)",
+          "fontSize": 12,
+          "height": 16,
+          "marginLeft": 12,
+          "position": "absolute",
+          "width": "100%",
+          "zIndex": 10,
+        },
+        Object {
+          "color": "rgba(0,0,0,0.6)",
+        },
+        undefined,
+      ]
+    }
   />
 </View>
 `;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, TextInput } from 'react-native';
+import { View, TextInput, Platform } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import TextFieldUnderline from '../TextFieldUnderline/TextFieldUnderline';
 import TextFieldLabel from '../TextFieldLabel/TextFieldLabel';
@@ -32,6 +32,8 @@ class TextFieldFilled extends Component {
     dense: PropTypes.bool,
     value: PropTypes.bool,
     multiline: PropTypes.bool,
+    suffix: PropTypes.node,
+    prefix: PropTypes.node,
   };
 
   static defaultProps = {
@@ -72,6 +74,31 @@ class TextFieldFilled extends Component {
       </View>
     );
   }
+  _renderPrefix() {
+    const { prefix } = this.props;
+
+    return (
+      <View style={{ position: 'absolute', left: 16, top: 26 }}>
+        {React.cloneElement(prefix, {
+          color: prefix.props.color ? prefix.props.color : 'rgba(0, 0, 0, .57)',
+          fontSize: prefix.props.fontSize ? prefix.props.fontSize : 16,
+        })}
+      </View>
+    );
+  }
+
+  _renderSuffix() {
+    const { suffix } = this.props;
+
+    return (
+      <View style={{ position: 'absolute', right: 16, top: 28 }}>
+        {React.cloneElement(suffix, {
+          color: suffix.props.color ? suffix.props.color : 'rgba(0, 0, 0, .57)',
+          fontSize: suffix.props.fontSize ? suffix.props.fontSize : 14,
+        })}
+      </View>
+    );
+  }
 
   _updateTextInputHeight = e => {
     if (!this.props.multiline) return;
@@ -102,6 +129,8 @@ class TextFieldFilled extends Component {
       leadingIcon,
       trailingIcon,
       dense,
+      suffix,
+      prefix,
       ...rest
     } = this.props;
 
@@ -113,6 +142,10 @@ class TextFieldFilled extends Component {
       paddingTop = 6;
     }
 
+    let paddingLeft = leadingIcon ? 44 : 12;
+    if (prefix) paddingLeft = 32;
+
+    const platformStyles = Platform.OS == 'web' ? { outlineWidth: 0 } : {};
     return (
       <View
         style={[
@@ -129,20 +162,23 @@ class TextFieldFilled extends Component {
           style={labelStyle}
           leadingIcon={leadingIcon}
           dense={dense}
+          prefix={prefix}
+          type={'filled'}
         />
         {leadingIcon ? this._renderLeadingIcon() : null}
+        {prefix ? this._renderPrefix() : null}
         <TextInput
           style={[
             styles.textField,
             styles.filledInput,
+            platformStyles,
             {
               minHeight: dense ? 40 : 56,
               height: height,
               paddingBottom: rest.multiline ? 8 : 0,
               paddingTop: paddingTop,
-              outlineWidth: 0,
-              paddingLeft: leadingIcon ? 44 : 12,
-              paddingRight: trailingIcon ? 36 : 0,
+              paddingLeft: paddingLeft,
+              paddingRight: trailingIcon || suffix ? 36 : 0,
             },
             style,
           ]}
@@ -152,6 +188,7 @@ class TextFieldFilled extends Component {
           {...rest}
         />
         {trailingIcon ? this._renderTrailingIcon() : null}
+        {suffix ? this._renderSuffix() : null}
 
         <TextFieldUnderline
           focused={focused}

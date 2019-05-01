@@ -5,7 +5,7 @@ import { State, Store } from '@sambego/storybook-state';
 import Header from '../../../storybook/components/Header';
 import Container from '../../../storybook/components/Container';
 import { storiesOf } from '../../../storybook/helpers/storiesOf';
-import { TextField, Icon } from '../../../';
+import { TextField, Icon, Caption, BodyText } from '../../../';
 
 const store = new Store({
   filledOne: '',
@@ -97,6 +97,44 @@ export default storiesOf('Components|TextField/Filled', module)
               trailingIcon={
                 <Icon name={'date-range'} size={24} color={'#6e6e6e'} />
               }
+              value={state.filledTwo}
+              onChangeText={value => store.set({ filledTwo: value })}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
+  ))
+  .add('with prefix', () => (
+    <Container>
+      <Header title={'Filled TextField'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <TextField
+              type={'filled'}
+              containerStyle={{ marginTop: 20 }}
+              label={'Pounds'}
+              prefix={<BodyText>$</BodyText>}
+              value={state.filledTwo}
+              onChangeText={value => store.set({ filledTwo: value })}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
+  ))
+  .add('with suffix', () => (
+    <Container>
+      <Header title={'Filled TextField'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <TextField
+              type={'filled'}
+              containerStyle={{ marginTop: 20 }}
+              label={'Pounds'}
+              suffix={<Caption>lbs</Caption>}
               value={state.filledTwo}
               onChangeText={value => store.set({ filledTwo: value })}
             />
