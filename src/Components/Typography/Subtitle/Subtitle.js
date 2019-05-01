@@ -8,6 +8,7 @@ class Subtitle extends Component {
     type: PropTypes.number,
     children: PropTypes.node,
     theme: PropTypes.object,
+    text: PropTypes.string,
   };
 
   numberToStyle(num) {
@@ -17,7 +18,7 @@ class Subtitle extends Component {
   }
 
   render() {
-    const { type, theme } = this.props;
+    const { type, theme, children, text } = this.props;
     let textStyle;
     if (type < 1 && type > 2) {
       textStyle = theme.subtitleOne;
@@ -26,7 +27,7 @@ class Subtitle extends Component {
 
     return (
       <BaseText typographyStyles={textStyle} {...this.props}>
-        {this.props.children}
+        {children ? children : text}
       </BaseText>
     );
   }

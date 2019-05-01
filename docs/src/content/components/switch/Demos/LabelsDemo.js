@@ -19,7 +19,7 @@ export const code = `class Demo extends React.Component {
               onPress={() => this.setState({ checkedOne: !this.state.checkedOne })}
               checked={this.state.checkedOne}
               style={{ marginRight: 8 }}
-              label={<BodyText>Label</BodyText>}
+              label={<BodyText text={'$'} />}
             />
             <Switch
               color={'#E91E63'}
@@ -32,7 +32,7 @@ export const code = `class Demo extends React.Component {
               color={'#009688'}
               onPress={() => this.setState({ checkedThree: !this.state.checkedThree })}
               checked={this.state.checkedThree}
-              label={<BodyText>Label</BodyText>}
+              label={<BodyText text={'$'} />}
               labelPos={'left'}
               style={{ marginLeft: 16 }}
             />

@@ -115,7 +115,7 @@ export default storiesOf('Components|TextField/Filled', module)
               type={'filled'}
               containerStyle={{ marginTop: 20 }}
               label={'Pounds'}
-              prefix={<BodyText>$</BodyText>}
+              prefix={<BodyText text={'$'} />}
               value={state.filledTwo}
               onChangeText={value => store.set({ filledTwo: value })}
             />
@@ -134,7 +134,7 @@ export default storiesOf('Components|TextField/Filled', module)
               type={'filled'}
               containerStyle={{ marginTop: 20 }}
               label={'Pounds'}
-              suffix={<Caption>lbs</Caption>}
+              suffix={<Caption text="lbs" />}
               value={state.filledTwo}
               onChangeText={value => store.set({ filledTwo: value })}
             />

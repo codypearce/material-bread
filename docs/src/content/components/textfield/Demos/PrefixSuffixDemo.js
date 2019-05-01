@@ -19,8 +19,8 @@ export const code = `class Page extends React.Component {
                 type={'flat'}
                 containerStyle={{ marginTop: 20 }}
                 label={'Icon'}
-                prefix={<BodyText>$</BodyText>}
-                suffix={ <Caption>lbs</Caption>}
+                prefix={<BodyText text={'$'} />}
+                suffix={<Caption text="lbs" />}
                 value={this.state.one}
                 onChangeText={value => this.setState({ one: value })}
             />
@@ -28,8 +28,8 @@ export const code = `class Page extends React.Component {
                 type={'filled'}
                 containerStyle={{ marginTop: 20 }}
                 label={'Icon'}
-                prefix={<BodyText>$</BodyText>}
-                suffix={ <Caption>lbs</Caption>}
+                prefix={<BodyText text={'$'} />}
+                suffix={<Caption text="lbs" />}
                 value={this.state.two}
                 onChangeText={value => this.setState({ two: value })}
             />
@@ -37,8 +37,8 @@ export const code = `class Page extends React.Component {
                 type={'outlined'}
                 containerStyle={{ marginTop: 20 }}
                 label={'Icon'}
-                prefix={<BodyText>$</BodyText>}
-                suffix={ <Caption>lbs</Caption>}
+                prefix={<BodyText text={'$'} />}
+                suffix={<Caption text="lbs" />}
                 value={this.state.three}
                 onChangeText={value => this.setState({ three: value })}
             />

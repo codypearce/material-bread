@@ -14,18 +14,18 @@ export default storiesOf('Components|Typography', module)
     <Container>
       <Header title={'Typography'} />
       <View style={{ marginTop: 50 }}>
-        <Heading type={1}>h1</Heading>
-        <Heading type={2}>h2</Heading>
-        <Heading type={3}>h3</Heading>
-        <Heading type={4}>h4</Heading>
-        <Heading type={5}>h5</Heading>
-        <Heading type={6}>h6</Heading>
-        <Subtitle type={1}>Subtitle One</Subtitle>
-        <Subtitle type={2}>Subtitle Two</Subtitle>
-        <BodyText type={1}>Body 1</BodyText>
-        <BodyText type={2}>Body 2</BodyText>
-        <Caption>Caption</Caption>
-        <Overline>Overline</Overline>
+        <Heading type={1} text="h1" />
+        <Heading type={2} text="h2" />
+        <Heading type={3} text="h3" />
+        <Heading type={4} text="h4" />
+        <Heading type={5} text="h5" />
+        <Heading type={6} text="h6" />
+        <Subtitle type={1} text="Subtitle 1" />
+        <Subtitle type={2} text="Subtitle 2" />
+        <BodyText type={1} text="Body 2" />
+        <BodyText type={2} text="Body 2" />
+        <Caption text="Caption" />
+        <Overline text="Overline" />
       </View>
     </Container>
   ));

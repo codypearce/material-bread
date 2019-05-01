@@ -34,7 +34,7 @@ export const code = `class Demo extends React.Component {
                 color={'#009688'}
                 onPress={() => this.setState({ checkedThree: !this.state.checkedThree })}
                 checked={this.state.checkedThree}
-                label={<BodyText>Label</BodyText>}
+                label={<BodyText text={'$'} />}
                 labelPos={'left'}
                 loading={this.state.isLoading}
                 />
