@@ -27,11 +27,24 @@ class TextFieldOutlined extends Component {
     leadingIcon: PropTypes.node,
     trailingIcon: PropTypes.node,
     dense: PropTypes.bool,
+    value: PropTypes.bool,
+    multiline: PropTypes.bool,
   };
 
   static defaultProps = {
     helperVisible: true,
   };
+
+  state = {
+    height: 56,
+  };
+
+  componentDidUpdate(prevProps) {
+    const { value, multiline } = this.props;
+    if (value.length < 1 && prevProps.value.length > 0 && multiline) {
+      this.setState({ height: 56 });
+    }
+  }
 
   _renderLeadingIcon() {
     const { leadingIcon } = this.props;
@@ -56,6 +69,16 @@ class TextFieldOutlined extends Component {
     );
   }
 
+  _updateTextInputHeight = e => {
+    if (!this.props.multiline) return;
+
+    const nativeHeight = e.nativeEvent.contentSize.height;
+
+    this.setState({
+      height: nativeHeight,
+    });
+  };
+
   render() {
     const {
       style,
@@ -79,7 +102,8 @@ class TextFieldOutlined extends Component {
     let borderColor = focused ? 'rgba(33, 150, 243, 1)' : 'rgb(192, 192, 192)';
     if (error) borderColor = 'red';
 
-    let height = rest.multiline || rest.numberOfLines > 1 ? 'auto' : 56;
+    let height =
+      rest.multiline || rest.numberOfLines > 1 ? this.state.height : 56;
 
     if (dense) {
       height = 40;
@@ -117,7 +141,7 @@ class TextFieldOutlined extends Component {
               height: height,
               paddingBottom: rest.multiline ? 8 : 0,
               paddingTop: rest.multiline ? 20 : 0,
-              outline: 'none',
+              outlineWidth: 0,
               paddingLeft: leadingIcon ? 44 : 12,
               paddingRight: trailingIcon ? 36 : 0,
             },
@@ -125,6 +149,7 @@ class TextFieldOutlined extends Component {
           ]}
           onFocus={handleFocus}
           onBlur={handleBlur}
+          onContentSizeChange={e => this._updateTextInputHeight(e)}
           {...rest}
         />
         {trailingIcon ? this._renderTrailingIcon() : null}

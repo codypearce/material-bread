@@ -121,10 +121,7 @@ const components = [
     path: '/components/drawer-section',
     subsubItem: true,
   },
-  {
-    title: 'Dropdown',
-    path: '/components/dropdown',
-  },
+
   {
     title: 'Fab',
     path: '/components/fab',

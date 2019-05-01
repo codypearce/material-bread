@@ -30,11 +30,24 @@ class TextFieldFlat extends Component {
     leadingIcon: PropTypes.node,
     trailingIcon: PropTypes.node,
     dense: PropTypes.bool,
+    value: PropTypes.bool,
+    multiline: PropTypes.bool,
   };
 
   static defaultProps = {
     helperVisible: true,
   };
+
+  state = {
+    height: 56,
+  };
+
+  componentDidUpdate(prevProps) {
+    const { value, multiline } = this.props;
+    if (value.length < 1 && prevProps.value.length > 0 && multiline) {
+      this.setState({ height: 56 });
+    }
+  }
 
   _renderLeadingIcon() {
     const { leadingIcon } = this.props;
@@ -60,6 +73,16 @@ class TextFieldFlat extends Component {
     );
   }
 
+  _updateTextInputHeight = e => {
+    if (!this.props.multiline) return;
+
+    const nativeHeight = e.nativeEvent.contentSize.height;
+
+    this.setState({
+      height: nativeHeight,
+    });
+  };
+
   render() {
     const {
       style,
@@ -82,7 +105,8 @@ class TextFieldFlat extends Component {
       ...rest
     } = this.props;
 
-    let height = rest.multiline || rest.numberOfLines > 1 ? 'auto' : 56;
+    let height =
+      rest.multiline || rest.numberOfLines > 1 ? this.state.height : 56;
 
     if (dense) {
       height = 40;
@@ -116,7 +140,7 @@ class TextFieldFlat extends Component {
               height: height,
               paddingBottom: rest.multiline ? 8 : 0,
               paddingTop: rest.multiline ? 24 : 16,
-              outline: 'none',
+              outlineWidth: 0,
               paddingLeft: leadingIcon ? 44 : 0,
               paddingRight: trailingIcon ? 36 : 0,
             },
@@ -124,6 +148,7 @@ class TextFieldFlat extends Component {
           ]}
           onFocus={handleFocus}
           onBlur={handleBlur}
+          onContentSizeChange={e => this._updateTextInputHeight(e)}
           {...rest}
         />
         {trailingIcon ? this._renderTrailingIcon() : null}
