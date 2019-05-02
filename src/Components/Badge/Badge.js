@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Text, View } from 'react-native';
+import { Text, View, Animated } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import Ripple from '../Ripple/Ripple';
 import styles from './Badge.styles';
@@ -24,6 +24,8 @@ class Badge extends Component {
     right: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     left: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     top: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+
+    visible: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -31,11 +33,30 @@ class Badge extends Component {
     size: 16,
     right: 0,
     left: 'auto',
+    visible: true,
   };
+
   state = {
     childrenWidth: 0,
     childrenHeight: 0,
+    scale: new Animated.Value(0),
   };
+
+  componentDidMount() {
+    const { visible } = this.props;
+
+    if (visible) {
+      this._animateBadge();
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    const { visible } = this.props;
+
+    if (visible != prevProps.visible) {
+      this._animateBadge();
+    }
+  }
 
   getFontSize() {
     const { content, size } = this.props;
@@ -54,6 +75,18 @@ class Badge extends Component {
       childrenHeight: height,
     });
   };
+
+  _animateBadge() {
+    const { visible } = this.props;
+    const { scale } = this.state;
+
+    const scaleValue = visible ? 1 : 0;
+
+    Animated.timing(scale, {
+      toValue: scaleValue,
+      duration: 400,
+    }).start();
+  }
 
   _renderBadge() {
     const {
@@ -85,7 +118,7 @@ class Badge extends Component {
     if (left) positionStyle.left = left;
 
     return (
-      <View
+      <Animated.View
         style={[
           {
             height: size,
@@ -97,6 +130,7 @@ class Badge extends Component {
             justifyContent: 'center',
             position: children ? 'absolute' : 'relative',
             top: top ? top : 0,
+            transform: [{ scale: this.state.scale }],
           },
           positionStyle,
           style,
@@ -113,13 +147,14 @@ class Badge extends Component {
           ]}>
           {content}
         </Text>
-      </View>
+      </Animated.View>
     );
   }
 
   render() {
     const { children, containerStyle, onPress } = this.props;
     const { childrenHeight, childrenWidth } = this.state;
+
     return (
       <View
         style={[
