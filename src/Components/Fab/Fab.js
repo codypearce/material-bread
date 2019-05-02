@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Animated } from 'react-native';
 
 import withTheme from '../../Theme/withTheme';
-import { Icon, Ripple } from '../../';
+import { Icon, Ripple, BodyText } from '../../';
 import shadowTool from '../../Utils/Shadow/shadow';
 import styles from './Fab.styles';
 
@@ -26,6 +26,7 @@ export class Fab extends Component {
     visible: PropTypes.bool,
     initialScale: PropTypes.number,
     animated: PropTypes.bool,
+    label: PropTypes.string,
   };
 
   static defaultProps = {
@@ -66,10 +67,37 @@ export class Fab extends Component {
     }).start();
   }
 
+  _renderContent() {
+    const { icon, label } = this.props;
+
+    return (
+      <Fragment>
+        {icon ? this._renderIcon() : null}
+        {label ? this._renderLabel() : null}
+      </Fragment>
+    );
+  }
+
+  _renderLabel() {
+    const { label, disabled } = this.props;
+
+    return (
+      <BodyText
+        text={label}
+        style={{
+          color: disabled ? 'rgba(0, 0, 0, 0.26)' : 'white',
+          fontSize: 14,
+          marginLeft: 8,
+        }}
+      />
+    );
+  }
+
   _renderIcon() {
     const { disabled, icon } = this.props;
 
     const color = disabled ? 'rgba(0, 0, 0, 0.26)' : 'white';
+
     if (typeof icon == 'string' || icon instanceof String || !icon) {
       return <Icon name={icon ? icon : 'add'} size={24} color={color} />;
     } else {
@@ -91,6 +119,7 @@ export class Fab extends Component {
       mini,
       theme,
       children,
+      label,
       ...props
     } = this.props;
     const { scale } = this.state;
@@ -100,6 +129,13 @@ export class Fab extends Component {
       : theme.primary.main;
 
     if (disabled) backgroundColorApplied = 'rgba(0, 0, 0, 0.12)';
+
+    let size = mini ? 40 : 56;
+    let width = size;
+    if (label) {
+      size = 48;
+      width = 'auto';
+    }
 
     return (
       <Animated.View style={{ transform: [{ scale: scale }] }}>
@@ -111,15 +147,18 @@ export class Fab extends Component {
           style={[
             styles.button,
             {
-              height: mini ? 40 : 56,
-              width: mini ? 40 : 56,
+              minHeight: size,
+              minWidth: width,
+              height: size,
+              width: width,
+              paddingHorizontal: label ? 12 : 0,
               backgroundColor: backgroundColorApplied,
             },
             shadowTool(disabled ? 0 : shadow || 10),
             style,
           ]}
           {...props}>
-          {children ? children : this._renderIcon()}
+          {children ? children : this._renderContent()}
         </Ripple>
       </Animated.View>
     );

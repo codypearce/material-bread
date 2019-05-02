@@ -4,7 +4,7 @@ import { ComponentDemo } from '@components';
 import { Fab, Button } from '../../../../../../src/index';
 
 export const code = `<View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
-    <Fab mini />
+    <Fab mini icon={'add'} />
     <Fab mini backgroundColor={'#E91E63'} icon={'archive'} />
     <Fab mini backgroundColor={'#F44336'} icon={'delete'} />
     <Fab mini backgroundColor={'#009688'} icon={'edit'} />

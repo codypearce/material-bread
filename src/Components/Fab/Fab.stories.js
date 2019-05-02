@@ -16,7 +16,7 @@ export default storiesOf('Components|Fab', module)
     <Container>
       <Header title={'Fab'} />
       <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-        <Fab />
+        <Fab icon={'add'} />
         <Fab backgroundColor={'#E91E63'} icon={'archive'} />
         <Fab backgroundColor={'#F44336'} icon={'delete'} />
         <Fab backgroundColor={'#009688'} icon={'edit'} />
@@ -32,7 +32,7 @@ export default storiesOf('Components|Fab', module)
         {state => (
           <View>
             <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-              <Fab animated visible={state.visible} />
+              <Fab animated visible={state.visible} icon={'add'} />
               <Fab
                 animated
                 visible={state.visible}
@@ -81,12 +81,30 @@ export default storiesOf('Components|Fab', module)
     <Container>
       <Header title={'Fab'} />
       <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-        <Fab mini />
+        <Fab mini icon={'add'} />
         <Fab mini backgroundColor={'#E91E63'} icon={'archive'} />
         <Fab mini backgroundColor={'#F44336'} icon={'delete'} />
         <Fab mini backgroundColor={'#009688'} icon={'edit'} />
         <Fab mini backgroundColor={'black'} icon={'attach-money'} />
         <Fab mini disabled backgroundColor={'#009688'} icon={'delete'} />
+      </View>
+    </Container>
+  ))
+  .add('extended', () => (
+    <Container>
+      <Header title={'Fab'} />
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
+        <Fab icon={'add'} label={'Add'} />
+        <Fab backgroundColor={'#E91E63'} icon={'archive'} label={'Archive'} />
+        <Fab backgroundColor={'#F44336'} icon={'delete'} label={'Delete'} />
+        <Fab backgroundColor={'#009688'} icon={'edit'} label={'Edit'} />
+        <Fab backgroundColor={'black'} icon={'attach-money'} label={'Buy'} />
+        <Fab
+          disabled
+          backgroundColor={'#009688'}
+          icon={'delete'}
+          label={'Disabled'}
+        />
       </View>
     </Container>
   ));

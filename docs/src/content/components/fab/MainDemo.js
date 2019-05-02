@@ -4,7 +4,7 @@ import { ComponentMainDemo, CodeInline } from '@components';
 import { Fab } from '../../../../../src/index';
 
 export const code = `<View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
-  <Fab />
+  <Fab icon={'add'}/>
   <Fab backgroundColor={'#E91E63'} icon={'archive'} />
   <Fab backgroundColor={'#F44336'} icon={'delete'} />
   <Fab backgroundColor={'#009688'} icon={'edit'} />

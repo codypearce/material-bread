@@ -14,7 +14,7 @@ export const code = `class Page extends React.Component {
       return (
         <View>
            <View style={{flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap'}}>
-            <Fab animated visible={this.state.visible} />
+            <Fab animated visible={this.state.visible} icon={'add'} />
             <Fab
                 animated
                 visible={this.state.visible}
