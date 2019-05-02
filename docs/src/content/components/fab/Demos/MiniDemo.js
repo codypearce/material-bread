@@ -9,6 +9,7 @@ export const code = `<View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
     <Fab mini backgroundColor={'#F44336'} icon={'delete'} />
     <Fab mini backgroundColor={'#009688'} icon={'edit'} />
     <Fab mini backgroundColor={'black'} icon={'attach-money'} />
+    <Fab mini disabled backgroundColor={'#009688'} icon={'delete'} />
 </View>`;
 
 const SubtitleDemo = pageHref => (

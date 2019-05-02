@@ -21,6 +21,7 @@ export class Fab extends Component {
     icon: PropTypes.string,
     shadow: PropTypes.number,
     mini: PropTypes.bool,
+    theme: PropTypes.object,
   };
   render() {
     const {
@@ -32,8 +33,15 @@ export class Fab extends Component {
       icon,
       shadow,
       mini,
+      theme,
       ...props
     } = this.props;
+
+    let backgroundColorApplied = backgroundColor
+      ? backgroundColor
+      : theme.primary.main;
+
+    if (disabled) backgroundColorApplied = 'rgba(0, 0, 0, 0.12)';
 
     return (
       <Ripple
@@ -46,15 +54,17 @@ export class Fab extends Component {
           {
             height: mini ? 40 : 56,
             width: mini ? 40 : 56,
-            backgroundColor: backgroundColor
-              ? backgroundColor
-              : 'rgba(33, 150, 243, 1)',
+            backgroundColor: backgroundColorApplied,
           },
-          shadowTool(shadow || 10),
+          shadowTool(disabled ? 0 : shadow || 10),
           style,
         ]}
         {...props}>
-        <Icon name={icon ? icon : 'add'} size={24} color={'white'} />
+        <Icon
+          name={icon ? icon : 'add'}
+          size={24}
+          color={disabled ? 'rgba(0, 0, 0, 0.26)' : 'white'}
+        />
       </Ripple>
     );
   }

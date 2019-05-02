@@ -17,6 +17,7 @@ export default storiesOf('Components|Fab', module)
         <Fab backgroundColor={'#F44336'} icon={'delete'} />
         <Fab backgroundColor={'#009688'} icon={'edit'} />
         <Fab backgroundColor={'black'} icon={'attach-money'} />
+        <Fab disabled backgroundColor={'#009688'} icon={'delete'} />
       </View>
     </Container>
   ))
@@ -29,6 +30,7 @@ export default storiesOf('Components|Fab', module)
         <Fab mini backgroundColor={'#F44336'} icon={'delete'} />
         <Fab mini backgroundColor={'#009688'} icon={'edit'} />
         <Fab mini backgroundColor={'black'} icon={'attach-money'} />
+        <Fab mini disabled backgroundColor={'#009688'} icon={'delete'} />
       </View>
     </Container>
   ));

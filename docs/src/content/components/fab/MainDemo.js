@@ -9,6 +9,7 @@ export const code = `<View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
   <Fab backgroundColor={'#F44336'} icon={'delete'} />
   <Fab backgroundColor={'#009688'} icon={'edit'} />
   <Fab backgroundColor={'black'} icon={'attach-money'} />
+  <Fab disabled backgroundColor={'#009688'} icon={'delete'} />
 </View>`;
 
 const MainDemo = pageHref => (
