@@ -1,11 +1,14 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import { Badge, Icon, IconButton } from '../..';
+import { Badge, Icon, IconButton, Button } from '../..';
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
 import { storiesOf } from '../../storybook/helpers/storiesOf';
-
+import { State, Store } from '@sambego/storybook-state';
+const store = new Store({
+  visible: true,
+});
 export default storiesOf('Components|Badge', module)
   .addParameters({ jest: ['Badge'] })
   .add('Standalone', () => (
@@ -120,6 +123,49 @@ export default storiesOf('Components|Badge', module)
           <IconButton name="favorite" size={64} color={'#9C27B0'} />
         </Badge>
       </View>
+    </Container>
+  ))
+  .add('Animated', () => (
+    <Container>
+      <Header title={'On Icons'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <View
+              style={{
+                flex: 1,
+                flexDirection: 'row',
+                alignItems: 'center',
+                marginBottom: 80,
+              }}>
+              <Badge size={14} content={4} visible={state.visible}>
+                <Icon name="favorite" size={24} />
+              </Badge>
+              <Badge
+                size={16}
+                content={77}
+                color={'red'}
+                visible={state.visible}>
+                <IconButton name="mail" size={32} />
+              </Badge>
+              <Badge size={8} position={'left'} visible={state.visible}>
+                <IconButton name="message" size={32} color={'#8BC34A'} />
+              </Badge>
+              <Badge
+                size={24}
+                content={99}
+                color={'black'}
+                textColor={'#E91E63'}
+                visible={state.visible}
+              />
+            </View>
+            <Button
+              text={'Toggle visibility'}
+              onPress={() => store.set({ visible: !state.visible })}
+            />
+          </View>
+        )}
+      </State>
     </Container>
   ))
   .add('custom', () => (

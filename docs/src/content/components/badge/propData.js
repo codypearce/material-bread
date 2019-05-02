@@ -24,6 +24,7 @@ const propData = [
   ['top', 'Top position', 'number', '0'],
 
   ['style', 'Styles badge element', 'object', ''],
+  ['visible', 'Toggle visibility, triggers animation', 'bool', 'true'],
 ];
 
 export default createTableData(propData);
