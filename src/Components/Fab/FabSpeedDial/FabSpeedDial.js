@@ -120,7 +120,11 @@ class FabSpeedDial extends Component {
     const { actions } = this.props;
 
     return (
-      <View style={{ marginBottom: 24 }}>
+      <View
+        style={{
+          marginBottom: 24,
+          alignItems: 'flex-end',
+        }}>
         {actions.map((item, index) => {
           return (
             <Animated.View
