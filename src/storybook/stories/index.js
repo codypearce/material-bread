@@ -56,7 +56,7 @@ export {
 export { default as Fab } from '../../Components/Fab/Fab.stories.js';
 export {
   default as FabSpeedDial,
-} from '../../Components/FabSpeedDial/FabSpeedDial.stories.js';
+} from '../../Components/Fab/FabSpeedDial/FabSpeedDial.stories.js';
 export { default as Icons } from '../../Components/Icon/Icons.stories.js';
 export {
   default as IconButton,

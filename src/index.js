@@ -59,7 +59,7 @@ export { default as Divider } from './Components/Divider/Divider';
 export { default as Fab } from './Components/Fab/Fab';
 export {
   default as FabSpeedDial,
-} from './Components/FabSpeedDial/FabSpeedDial';
+} from './Components/Fab/FabSpeedDial/FabSpeedDial';
 export { default as Icon } from './Components/Icon/Icon';
 export { default as IconButton } from './Components/IconButton/IconButton';
 export { default as List } from './Components/List/List';

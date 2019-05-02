@@ -25,24 +25,25 @@ exports[`Badge Renders 1`] = `
   <View
     numberOfLines={1}
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#1e88e5",
-          "borderRadius": 16,
-          "height": 16,
-          "justifyContent": "center",
-          "position": "relative",
-          "top": 0,
-          "width": 16,
-        },
-        Object {
-          "left": "auto",
-          "right": "auto",
-        },
-        undefined,
-      ]
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#1e88e5",
+        "borderRadius": 16,
+        "height": 16,
+        "justifyContent": "center",
+        "left": "auto",
+        "position": "relative",
+        "right": "auto",
+        "top": 0,
+        "transform": Array [
+          Object {
+            "scale": 0,
+          },
+        ],
+        "width": 16,
+      }
     }
+    visible={true}
   >
     <Text
       style={

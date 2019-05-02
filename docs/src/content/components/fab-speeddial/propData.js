@@ -7,7 +7,12 @@ const propData = [
     '',
   ],
 
-  ['fabStyles', 'Styles the fab directly', 'object', ''],
+  [
+    'fab',
+    'String adds the name of the icon, node should be full fab',
+    'string || node',
+    '',
+  ],
   [
     'onPress',
     'Call back on main fab, this will activate animation as well',

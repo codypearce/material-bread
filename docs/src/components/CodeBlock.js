@@ -45,7 +45,7 @@ class CodeBlock extends Component {
       <pre
         className={'CodeBlock'}
         style={{
-          width: small ? 'auto' : '100%',
+          width: small ? 'auto' : 'auto',
           paddingRight: small ? 44 : 16,
           ...style,
         }}>
