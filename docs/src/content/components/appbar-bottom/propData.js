@@ -8,7 +8,12 @@ const propData = [
   ],
   ['appbarStyles', 'Styles appbar around content', 'object', ''],
   ['color', `Component's background color`, 'string', 'primary'],
-  ['fab', `Displays fab or not`, 'bool', 'false'],
+  [
+    'fab',
+    `Renders an arbitrary Fab node where the position is indicated`,
+    'node',
+    '',
+  ],
   ['fabCutout', `Displays cutout on appbar for fab`, 'bool', 'false'],
   ['fabPosition', `Describes position of fab`, 'string: center, end', 'center'],
   [
