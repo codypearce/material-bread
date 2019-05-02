@@ -1,10 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import { Fab, FabSpeedDial } from '../../';
-import Header from '../../storybook/components/Header';
-import Container from '../../storybook/components/Container';
-import { storiesOf } from '../../storybook/helpers/storiesOf';
+import { Fab, FabSpeedDial } from '../../../';
+import Header from '../../../storybook/components/Header';
+import Container from '../../../storybook/components/Container';
+import { storiesOf } from '../../../storybook/helpers/storiesOf';
 
 const actions = [
   <Fab key={1} backgroundColor={'#E91E63'} icon={'archive'} />,
@@ -13,7 +13,7 @@ const actions = [
   <Fab key={4} backgroundColor={'black'} icon={'attach-money'} />,
 ];
 
-export default storiesOf('Components|FabSpeedDial', module)
+export default storiesOf('Components|Fab/FabSpeedDial', module)
   .addParameters({ jest: ['FabSpeedDial'] })
   .add('Simple', () => (
     <Container>
