@@ -13,6 +13,7 @@ const sections = [
   { name: 'Props' },
   { name: 'Demos' },
   { name: 'mini', sub: true },
+  { name: 'animated', sub: true },
 ];
 
 export default class FabPage extends Component {
