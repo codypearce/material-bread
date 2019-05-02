@@ -31,6 +31,7 @@ export class Fab extends Component {
 
   static defaultProps = {
     visible: true,
+    icon: 'add',
   };
 
   state = {
@@ -138,7 +139,7 @@ export class Fab extends Component {
     }
 
     return (
-      <Animated.View style={{ transform: [{ scale: scale }] }}>
+      <Animated.View style={{ transform: [{ scale: scale }], zIndex: 100 }}>
         <Ripple
           onPress={onPress}
           disabled={disabled}

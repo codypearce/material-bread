@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '../../storybook/helpers/storiesOf';
 
-import { AppbarBottom, Badge, IconButton, Fab } from '../..';
+import { AppbarBottom, Badge, IconButton, Fab, FabSpeedDial } from '../..';
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
 
@@ -12,40 +12,32 @@ export default storiesOf('Components|AppbarBottom', module)
     <Container scroll>
       <Header title={'Center Fab'} />
       <AppbarBottom
-        fab
-        onFab={() => console.log('onFab')}
+        fab={<Fab backgroundColor={'black'} />}
         style={{ marginBottom: 50 }}
       />
       <AppbarBottom
-        fab
+        fab={<Fab backgroundColor={'black'} />}
         fabCutout
-        onFab={() => console.log('onFab')}
         style={{ marginBottom: 50 }}
       />
       <AppbarBottom
-        fab
+        fab={<Fab icon={'change-history'} backgroundColor={'#009688'} />}
         fabPosition={'center'}
-        fabIcon={'change-history'}
-        fabStyles={{ backgroundColor: '#009688' }}
         navigation={'menu'}
         color={'#E91E63'}
         style={{ marginBottom: 50 }}
       />
       <AppbarBottom
-        fab
+        fab={<Fab icon={'change-history'} backgroundColor={'#009688'} />}
         fabCutout
         fabPosition={'center'}
-        fabIcon={'change-history'}
-        fabStyles={{ backgroundColor: '#009688' }}
         navigation={'menu'}
         color={'#E91E63'}
         style={{ marginBottom: 50 }}
       />
       <AppbarBottom
-        fab
+        fab={<Fab icon={'drafts'} backgroundColor={'#8BC34A'} />}
         fabPosition={'center'}
-        fabIcon={'drafts'}
-        fabStyles={{ backgroundColor: '#8BC34A' }}
         navigation={'arrow-back'}
         actionItems={[
           { name: 'search', onPress: () => console.log('onSearch') },
@@ -55,11 +47,9 @@ export default storiesOf('Components|AppbarBottom', module)
         style={{ marginBottom: 50 }}
       />
       <AppbarBottom
-        fab
+        fab={<Fab icon={'drafts'} backgroundColor={'#8BC34A'} />}
         fabCutout
         fabPosition={'center'}
-        fabIcon={'drafts'}
-        fabStyles={{ backgroundColor: '#8BC34A' }}
         navigation={'arrow-back'}
         actionItems={[
           { name: 'search', onPress: () => console.log('onSearch') },
@@ -69,10 +59,8 @@ export default storiesOf('Components|AppbarBottom', module)
         style={{ marginBottom: 50 }}
       />
       <AppbarBottom
-        fab
+        fab={<Fab icon={'favorite'} backgroundColor={'#E91E63'} />}
         fabPosition={'center'}
-        fabIcon={'favorite'}
-        fabStyles={{ backgroundColor: '#E91E63' }}
         navigation={'menu'}
         actionItems={[
           <Badge
@@ -91,11 +79,9 @@ export default storiesOf('Components|AppbarBottom', module)
         style={{ marginBottom: 50 }}
       />
       <AppbarBottom
-        fab
+        fab={<Fab icon={'favorite'} backgroundColor={'#E91E63'} />}
         fabPosition={'center'}
-        fabIcon={'favorite'}
         fabCutout
-        fabStyles={{ backgroundColor: '#E91E63' }}
         navigation={'menu'}
         actionItems={[
           <Badge
@@ -119,42 +105,34 @@ export default storiesOf('Components|AppbarBottom', module)
     <Container scroll>
       <Header title={'End Fab'} />
       <AppbarBottom
-        fab
+        fab={<Fab />}
         fabPosition={'end'}
-        onFab={() => console.log('onFab')}
         style={{ marginBottom: 50 }}
       />
       <AppbarBottom
-        fab
+        fab={<Fab />}
         fabCutout
         fabPosition={'end'}
-        onFab={() => console.log('onFab')}
         style={{ marginBottom: 50 }}
       />
       <AppbarBottom
-        fab
+        fab={<Fab icon={'change-history'} backgroundColor={'#009688'} />}
         fabPosition={'end'}
-        fabIcon={'change-history'}
-        fabStyles={{ backgroundColor: '#009688' }}
         navigation={'menu'}
         color={'#E91E63'}
         style={{ marginBottom: 50 }}
       />
       <AppbarBottom
-        fab
+        fab={<Fab icon={'change-history'} backgroundColor={'#009688'} />}
         fabCutout
         fabPosition={'end'}
-        fabIcon={'change-history'}
-        fabStyles={{ backgroundColor: '#009688' }}
         navigation={'menu'}
         color={'#E91E63'}
         style={{ marginBottom: 50 }}
       />
       <AppbarBottom
-        fab
+        fab={<Fab icon={'drafts'} backgroundColor={'#8BC34A'} />}
         fabPosition={'end'}
-        fabIcon={'drafts'}
-        fabStyles={{ backgroundColor: '#8BC34A' }}
         navigation={'arrow-back'}
         actionItems={[
           { name: 'search', onPress: () => console.log('onSearch') },
@@ -164,11 +142,9 @@ export default storiesOf('Components|AppbarBottom', module)
         style={{ marginBottom: 50 }}
       />
       <AppbarBottom
-        fab
+        fab={<Fab icon={'drafts'} backgroundColor={'#8BC34A'} />}
         fabCutout
         fabPosition={'end'}
-        fabIcon={'drafts'}
-        fabStyles={{ backgroundColor: '#8BC34A' }}
         navigation={'arrow-back'}
         actionItems={[
           { name: 'search', onPress: () => console.log('onSearch') },
@@ -178,10 +154,8 @@ export default storiesOf('Components|AppbarBottom', module)
         style={{ marginBottom: 50 }}
       />
       <AppbarBottom
-        fab
+        fab={<Fab icon={'favorite'} backgroundColor={'#E91E63'} />}
         fabPosition={'end'}
-        fabIcon={'favorite'}
-        fabStyles={{ backgroundColor: '#E91E63' }}
         navigation={'menu'}
         actionItems={[
           <Badge
@@ -200,11 +174,9 @@ export default storiesOf('Components|AppbarBottom', module)
         style={{ marginBottom: 50 }}
       />
       <AppbarBottom
-        fab
+        fab={<Fab icon={'favorite'} backgroundColor={'#E91E63'} />}
         fabPosition={'end'}
-        fabIcon={'favorite'}
         fabCutout
-        fabStyles={{ backgroundColor: '#E91E63' }}
         navigation={'menu'}
         actionItems={[
           <Badge
@@ -228,7 +200,6 @@ export default storiesOf('Components|AppbarBottom', module)
     <Container scroll>
       <Header title={'No Fab'} />
       <AppbarBottom
-        onFab={() => console.log('onFab')}
         style={{ marginBottom: 50 }}
         actionItems={[
           { name: 'add' },
@@ -288,12 +259,16 @@ export default storiesOf('Components|AppbarBottom', module)
       <Header title={'SpeedDial'} />
 
       <AppbarBottom
-        fab
+        fab={
+          <FabSpeedDial
+            actions={actions}
+            fab={<Fab backgroundColor={'#E91E63'} />}
+          />
+        }
         fabCutout
         fabPosition={'end'}
-        fabActions={actions}
         navigation={'arrow-back'}
-        fabStyles={{ backgroundColor: '#E91E63' }}
+        fabStyles={{}}
         actionItems={[
           { name: 'search', onPress: () => console.log('onSearch') },
           { name: 'more-vert' },

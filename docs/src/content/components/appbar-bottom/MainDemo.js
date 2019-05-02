@@ -1,12 +1,11 @@
 import React from 'react';
 import { ComponentMainDemo } from '@components';
-import { AppbarBottom } from '../../../../../src/index';
+import { AppbarBottom, Fab } from '../../../../../src/index';
 
 export const code = `<AppbarBottom 
-    fab 
+    fab={<Fab backgroundColor={'black'} />}
     fabPosition={'center'} 
     fabCutout
-    onFab={() => console.log('onFab')}
     navigation={'menu'}
     actionItems={[
         {name: 'search', onPress: () => console.log('onSearch')},
@@ -27,7 +26,7 @@ const MainDemo = pageHref => (
       </div>
     }
     code={code}
-    scope={{ AppbarBottom }}
+    scope={{ AppbarBottom, Fab }}
   />
 );
 export default MainDemo;

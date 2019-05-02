@@ -1,14 +1,11 @@
 import React from 'react';
 import { ComponentDemo } from '@components';
-import { AppbarBottom, Fab } from '../../../../../../src/index';
+import { AppbarBottom, Fab, FabSpeedDial } from '../../../../../../src/index';
 
 export const code = `
-class FabPage extends React.Component {
+class Page extends React.Component {
     constructor(props) {
       super(props)
-      this.state = {
-  
-      }
     }
     render() {
       const actions = [
@@ -19,12 +16,15 @@ class FabPage extends React.Component {
       ];
       return (
         <AppbarBottom
-            fab
+            fab={
+              <FabSpeedDial
+                actions={actions}
+                fab={<Fab backgroundColor={'black'} />}
+              />
+            }
             fabCutout
             fabPosition={'end'}
-            fabActions={actions}
             navigation={'arrow-back'}
-            fabStyles={{ backgroundColor: '#E91E63' }}
             actionItems={[
             { name: 'search', onPress: () => console.log('onSearch') },
             { name: 'more-vert' },
@@ -41,7 +41,7 @@ const SubtitleDemo = pageHref => (
     sectionHref={`${pageHref}#speeddial`}
     sectionId={'speeddial'}
     code={code}
-    scope={{ AppbarBottom, Fab }}
+    scope={{ AppbarBottom, Fab, FabSpeedDial }}
   />
 );
 export default SubtitleDemo;
