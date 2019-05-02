@@ -3,21 +3,13 @@ import { View } from 'react-native';
 import { ComponentMainDemo } from '@components';
 import { Fab } from '../../../../../src/index';
 
-export const code = `class FabPage extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-
-    }
-  }
-  render() {
-    return (
-      <View>
-        <Fab />
-      </View>
-    );
-  }
-}`;
+export const code = `<View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
+  <Fab />
+  <Fab backgroundColor={'#E91E63'} icon={'archive'} />
+  <Fab backgroundColor={'#F44336'} icon={'delete'} />
+  <Fab backgroundColor={'#009688'} icon={'edit'} />
+  <Fab backgroundColor={'black'} icon={'attach-money'} />
+</View>`;
 
 const MainDemo = pageHref => (
   <ComponentMainDemo
