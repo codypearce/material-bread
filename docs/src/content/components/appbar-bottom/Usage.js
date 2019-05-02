@@ -3,14 +3,14 @@ import { ComponentUsage, CodeInline, Link } from '@components';
 
 export const code = `import React, { Component } from 'react';
 import { View } from 'react-native';
-import { AppbarBottom } from 'material-bread';
+import { AppbarBottom, Fab } from 'material-bread';
 
 export default class Page extends Component {
   render() {
     return (
       <View style={{position: 'relative'}}>
         <AppbarBottom 
-            fab 
+            fab={<Fab />}
             fabPosition={'center'} 
             fabCutout
             navigation={'menu'}

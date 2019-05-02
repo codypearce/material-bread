@@ -1,9 +1,9 @@
 import React from 'react';
 import { CodeInline, ComponentDemo } from '@components';
-import { AppbarBottom } from '../../../../../../src/index';
+import { AppbarBottom, Fab } from '../../../../../../src/index';
 
 export const code = `<AppbarBottom 
-    fab 
+    fab={<Fab backgroundColor={'black'} />}
     fabPosition={'end'} 
     fabIcon={'reply'}
     actionItems={[
@@ -31,7 +31,7 @@ const SubtitleDemo = pageHref => (
       </div>
     }
     code={code}
-    scope={{ AppbarBottom }}
+    scope={{ AppbarBottom, Fab }}
   />
 );
 export default SubtitleDemo;

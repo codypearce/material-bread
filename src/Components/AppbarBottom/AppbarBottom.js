@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import withTheme from '../../Theme/withTheme';
-import { Fab, FabSpeedDial, IconButton, Paper } from '../../';
+import { IconButton, Paper } from '../../';
 import styles from './AppbarBottom.styles';
 
 class AppbarBottom extends Component {
@@ -11,13 +11,9 @@ class AppbarBottom extends Component {
     style: PropTypes.object,
     theme: PropTypes.object,
 
-    fab: PropTypes.bool,
+    fab: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     fabPosition: PropTypes.string,
     fabCutout: PropTypes.bool,
-    fabStyles: PropTypes.object,
-    fabIcon: PropTypes.string,
-    fabActions: PropTypes.array,
-    onFab: PropTypes.func,
 
     navigation: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     onNavigation: PropTypes.func,
@@ -47,15 +43,7 @@ class AppbarBottom extends Component {
   }
 
   _renderFab() {
-    const {
-      fab,
-      fabPosition,
-      fabCutout,
-      fabStyles,
-      onFab,
-      fabIcon,
-      fabActions,
-    } = this.props;
+    const { fab, fabPosition, fabCutout } = this.props;
     if (!fab) return null;
 
     const fabRightStyle = {
@@ -66,32 +54,10 @@ class AppbarBottom extends Component {
     };
     const fabPosStyles = fabPosition === 'end' ? fabRightStyle : fabCenterStyle;
 
-    if (fabActions) {
-      return (
-        <FabSpeedDial
-          actions={fabActions}
-          elevation={fabCutout ? 8 : 6}
-          style={[styles.fabPos, fabPosStyles]}
-          fabStyles={fabStyles}
-          onPress={onFab}
-          icon={fabIcon}
-        />
-      );
-    }
-
-    return (
-      <Fab
-        elevation={fabCutout ? 8 : 6}
-        style={[
-          styles.fabPos,
-          fabPosStyles,
-          { backgroundColor: 'black' },
-          fabStyles,
-        ]}
-        onPress={onFab}
-        icon={fabIcon}
-      />
-    );
+    return React.cloneElement(fab, {
+      shadow: fabCutout ? 8 : 6,
+      style: [styles.fabPos, fabPosStyles],
+    });
   }
 
   _renderCutout() {

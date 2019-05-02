@@ -1,12 +1,11 @@
 import React from 'react';
-import { ComponentMainDemo } from '@components';
-import { AppbarBottom } from '../../../../../src/index';
+import { ComponentMainDemo, CodeInline } from '@components';
+import { AppbarBottom, Fab } from '../../../../../src/index';
 
 export const code = `<AppbarBottom 
-    fab 
+    fab={<Fab backgroundColor={'black'} />}
     fabPosition={'center'} 
     fabCutout
-    onFab={() => console.log('onFab')}
     navigation={'menu'}
     actionItems={[
         {name: 'search', onPress: () => console.log('onSearch')},
@@ -20,14 +19,16 @@ const MainDemo = pageHref => (
     pageHref={pageHref}
     description={
       <div>
-        AppbarBottom is made up of three parts: left actions, fab, and right
-        actions. Numerous combinations can be created with these components,
-        however you can replace any part as needed. Below is a simple live
-        example.
+        <CodeInline code={'AppbarBottom'} type={'element'} /> is made up of
+        three separate parts: <CodeInline code={'navgiation'} type={'prop'} />,{' '}
+        <CodeInline code={'prop'} type={'prop'} />, and{' '}
+        <CodeInline code={'actionItems'} type={'prop'} />. Many combinations can
+        be created with these props, however you can replace them with anything
+        you want.
       </div>
     }
     code={code}
-    scope={{ AppbarBottom }}
+    scope={{ AppbarBottom, Fab }}
   />
 );
 export default MainDemo;

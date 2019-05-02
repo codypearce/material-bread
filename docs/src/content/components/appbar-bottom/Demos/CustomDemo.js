@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 
 import { CodeInline, ComponentDemo } from '@components';
-import { AppbarBottom, Button } from '../../../../../../src/index';
+import { AppbarBottom, Button, Fab } from '../../../../../../src/index';
 
 export const code = `const styles = {
     appbar: {
@@ -26,7 +26,7 @@ export const code = `const styles = {
   }
   
   render(
-  <AppbarBottom appbarStyles={styles.appbar} fab fabPosition="end" fabStyles={styles.fabStyle} >
+  <AppbarBottom appbarStyles={styles.appbar} fab={<Fab />} fabPosition="end" fabStyles={styles.fabStyle} >
     <View style={styles.left}>
       <Button type="contained" containerStyle={[styles.button, {height: 34}]} text={'menu'}  style={{height:30}}/>
       <Button textColor="white" style={styles.button} text={'install'} />
@@ -48,7 +48,7 @@ const SubtitleDemo = pageHref => (
       </div>
     }
     code={code}
-    scope={{ AppbarBottom, View, Button }}
+    scope={{ AppbarBottom, View, Button, Fab }}
     noInline
   />
 );
