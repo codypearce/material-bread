@@ -5,8 +5,17 @@ import ComponentPageLayout from '../../../components/ComponentPage/ComponentPage
 import MainDemo from './MainDemo';
 import Usage from './Usage';
 import Props from './Props';
+import Demos from './Demos';
 
-const sections = [{ name: 'Component' }, { name: 'Usage' }, { name: 'Props' }];
+const sections = [
+  { name: 'Component' },
+  { name: 'Usage' },
+  { name: 'Props' },
+  { name: 'Demos' },
+  { name: 'extended', sub: true },
+  { name: 'mini', sub: true },
+  { name: 'animated', sub: true },
+];
 
 export default class FabPage extends Component {
   render() {
@@ -24,6 +33,7 @@ export default class FabPage extends Component {
           <MainDemo pageHref={'/components/fab'} />
           <Usage pageHref={'/components/fab'} />
           <Props pageHref={'/components/fab'} />
+          <Demos pageHref={'/components/fab'} />
         </ComponentPageLayout>
       </div>
     );
