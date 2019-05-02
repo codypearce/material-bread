@@ -5,7 +5,8 @@ const propData = [
 
   ['checked', 'Wether the checkbox is filled or not', 'bool', 'false'],
   ['checkedIcon', 'Renders checked icon', 'string || node', 'check-box'],
-  ['disabled', 'Toggles whether the checkbox can be toggled', 'bool', ''],
+  ['disabled', 'Toggles whether the checkbox can be changed', 'bool', ''],
+  ['error', 'Toggles error state', 'bool', ''],
   [
     'icon',
     'Renders unchecked icon',
