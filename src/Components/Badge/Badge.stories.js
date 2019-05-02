@@ -9,6 +9,7 @@ import { State, Store } from '@sambego/storybook-state';
 const store = new Store({
   visible: true,
 });
+
 export default storiesOf('Components|Badge', module)
   .addParameters({ jest: ['Badge'] })
   .add('Standalone', () => (

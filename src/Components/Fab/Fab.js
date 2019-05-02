@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Animated } from 'react-native';
 
 import withTheme from '../../Theme/withTheme';
-import Ripple from '../Ripple/Ripple';
-import Icon from '../Icon/Icon';
+import { Icon, Ripple } from '../../';
 import shadowTool from '../../Utils/Shadow/shadow';
 import styles from './Fab.styles';
 
@@ -23,7 +23,48 @@ export class Fab extends Component {
     mini: PropTypes.bool,
     theme: PropTypes.object,
     children: PropTypes.node,
+    visible: PropTypes.bool,
+    initialScale: PropTypes.number,
+    animated: PropTypes.bool,
   };
+
+  static defaultProps = {
+    visible: true,
+  };
+
+  state = {
+    scale: new Animated.Value(0),
+  };
+
+  componentDidMount() {
+    const { visible, animated } = this.props;
+
+    if (visible && animated) {
+      this._animate();
+    } else if (visible) {
+      this.setState({ scale: new Animated.Value(1) });
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    const { visible, animated } = this.props;
+
+    if (visible != prevProps.visible && animated) {
+      this._animate();
+    }
+  }
+
+  _animate() {
+    const { visible } = this.props;
+    const { scale } = this.state;
+
+    const scaleValue = visible ? 1 : 0;
+
+    Animated.spring(scale, {
+      toValue: scaleValue,
+      speed: 7,
+    }).start();
+  }
 
   _renderIcon() {
     const { disabled, icon } = this.props;
@@ -52,6 +93,7 @@ export class Fab extends Component {
       children,
       ...props
     } = this.props;
+    const { scale } = this.state;
 
     let backgroundColorApplied = backgroundColor
       ? backgroundColor
@@ -60,24 +102,26 @@ export class Fab extends Component {
     if (disabled) backgroundColorApplied = 'rgba(0, 0, 0, 0.12)';
 
     return (
-      <Ripple
-        onPress={onPress}
-        disabled={disabled}
-        rippleColor={rippleColor ? rippleColor : 'rgba(0,0,0,.8)'}
-        rippleContainerBorderRadius={100}
-        style={[
-          styles.button,
-          {
-            height: mini ? 40 : 56,
-            width: mini ? 40 : 56,
-            backgroundColor: backgroundColorApplied,
-          },
-          shadowTool(disabled ? 0 : shadow || 10),
-          style,
-        ]}
-        {...props}>
-        {children ? children : this._renderIcon()}
-      </Ripple>
+      <Animated.View style={{ transform: [{ scale: scale }] }}>
+        <Ripple
+          onPress={onPress}
+          disabled={disabled}
+          rippleColor={rippleColor ? rippleColor : 'rgba(0,0,0,.8)'}
+          rippleContainerBorderRadius={100}
+          style={[
+            styles.button,
+            {
+              height: mini ? 40 : 56,
+              width: mini ? 40 : 56,
+              backgroundColor: backgroundColorApplied,
+            },
+            shadowTool(disabled ? 0 : shadow || 10),
+            style,
+          ]}
+          {...props}>
+          {children ? children : this._renderIcon()}
+        </Ripple>
+      </Animated.View>
     );
   }
 }
