@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { ComponentMainDemo } from '@components';
+import { ComponentMainDemo, CodeInline } from '@components';
 import { Fab } from '../../../../../src/index';
 
 export const code = `<View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
@@ -15,7 +15,14 @@ export const code = `<View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
 const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
-    description={`Fabs can have different icons, color, or inner content.`}
+    description={
+      <div>
+        <CodeInline code="Fab" type="element" />s usually display icons in the
+        middle, you can pass a string for the name of the icon or pass an icon
+        node to the <CodeInline code="icon" type="prop" /> prop. You can also
+        replace it entirely with children.
+      </div>
+    }
     code={code}
     scope={{ View, Fab }}
   />

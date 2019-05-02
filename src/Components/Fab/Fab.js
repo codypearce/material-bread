@@ -18,11 +18,27 @@ export class Fab extends Component {
     onPress: PropTypes.func,
     disabled: PropTypes.bool,
     rippleColor: PropTypes.string,
-    icon: PropTypes.string,
+    icon: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     shadow: PropTypes.number,
     mini: PropTypes.bool,
     theme: PropTypes.object,
+    children: PropTypes.node,
   };
+
+  _renderIcon() {
+    const { disabled, icon } = this.props;
+
+    const color = disabled ? 'rgba(0, 0, 0, 0.26)' : 'white';
+    if (typeof icon == 'string' || icon instanceof String || !icon) {
+      return <Icon name={icon ? icon : 'add'} size={24} color={color} />;
+    } else {
+      return React.cloneElement(icon, {
+        size: icon.props.size ? icon.props.size : 24,
+        color: icon.props.color ? icon.props.color : color,
+      });
+    }
+  }
+
   render() {
     const {
       style,
@@ -30,10 +46,10 @@ export class Fab extends Component {
       onPress,
       disabled,
       rippleColor,
-      icon,
       shadow,
       mini,
       theme,
+      children,
       ...props
     } = this.props;
 
@@ -60,11 +76,7 @@ export class Fab extends Component {
           style,
         ]}
         {...props}>
-        <Icon
-          name={icon ? icon : 'add'}
-          size={24}
-          color={disabled ? 'rgba(0, 0, 0, 0.26)' : 'white'}
-        />
+        {children ? children : this._renderIcon()}
       </Ripple>
     );
   }
