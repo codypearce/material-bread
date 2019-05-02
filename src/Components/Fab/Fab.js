@@ -20,6 +20,7 @@ export class Fab extends Component {
     rippleColor: PropTypes.string,
     icon: PropTypes.string,
     elevation: PropTypes.number,
+    mini: PropTypes.bool,
   };
   render() {
     const {
@@ -30,6 +31,7 @@ export class Fab extends Component {
       rippleColor,
       icon,
       elevation,
+      mini,
       ...props
     } = this.props;
 
@@ -42,6 +44,8 @@ export class Fab extends Component {
         style={[
           styles.button,
           {
+            height: mini ? 40 : 56,
+            width: mini ? 40 : 56,
             backgroundColor: backgroundColor
               ? backgroundColor
               : 'rgba(33, 150, 243, 1)',
