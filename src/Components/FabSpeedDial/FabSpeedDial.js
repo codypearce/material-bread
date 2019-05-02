@@ -11,12 +11,13 @@ class FabSpeedDial extends Component {
   }
   static propTypes = {
     style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-    fabStyles: PropTypes.object,
     onPress: PropTypes.func,
     actions: PropTypes.array,
-    elevation: PropTypes.number,
-    icon: PropTypes.string,
-    backgroundColor: PropTypes.string,
+    fab: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  };
+
+  static defaultProps = {
+    fab: 'add',
   };
 
   state = {
@@ -137,18 +138,25 @@ class FabSpeedDial extends Component {
     );
   }
 
+  _renderFab() {
+    const { fab } = this.props;
+
+    if (typeof fab == 'string' || fab instanceof String || !fab) {
+      return <Fab icon={fab} onPress={() => this.animateActions()} />;
+    } else {
+      return React.cloneElement(fab, {
+        color: fab.props.color ? fab.props.color : 'white',
+        onPress: () => this.animateActions(),
+      });
+    }
+  }
+
   render() {
-    const { icon, elevation, backgroundColor, style, fabStyles } = this.props;
+    const { style } = this.props;
     return (
       <View style={[styles.container, style]}>
         {this.renderActions()}
-        <Fab
-          onPress={() => this.animateActions()}
-          icon={icon}
-          elevation={elevation}
-          backgroundColor={backgroundColor}
-          style={fabStyles}
-        />
+        {this._renderFab()}
       </View>
     );
   }
