@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
 import Ripple from '../Ripple/Ripple';
 import Icon from '../Icon/Icon';
-import shadow from '../../Utils/Shadow/shadow';
+import shadowTool from '../../Utils/Shadow/shadow';
 import styles from './Fab.styles';
 
 export class Fab extends Component {
@@ -19,7 +19,7 @@ export class Fab extends Component {
     disabled: PropTypes.bool,
     rippleColor: PropTypes.string,
     icon: PropTypes.string,
-    elevation: PropTypes.number,
+    shadow: PropTypes.number,
     mini: PropTypes.bool,
   };
   render() {
@@ -30,7 +30,7 @@ export class Fab extends Component {
       disabled,
       rippleColor,
       icon,
-      elevation,
+      shadow,
       mini,
       ...props
     } = this.props;
@@ -50,7 +50,7 @@ export class Fab extends Component {
               ? backgroundColor
               : 'rgba(33, 150, 243, 1)',
           },
-          shadow(elevation || 10),
+          shadowTool(shadow || 10),
           style,
         ]}
         {...props}>
