@@ -82,9 +82,9 @@ class Badge extends Component {
 
     const scaleValue = visible ? 1 : 0;
 
-    Animated.timing(scale, {
+    Animated.spring(scale, {
       toValue: scaleValue,
-      duration: 400,
+      speed: 7,
     }).start();
   }
 
