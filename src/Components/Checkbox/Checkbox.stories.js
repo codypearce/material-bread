@@ -53,10 +53,17 @@ export default storiesOf('Components|Checkbox', module)
             />
             <Checkbox
               indeterminate
-              checkboxColor={'#F44336'}
+              checkboxColor={'#795548'}
               checked={state.checkedFourPrime}
               onPress={() =>
                 store.set({ checkedFourPrime: !state.checkedFourPrime })
+              }
+            />
+            <Checkbox
+              error
+              checked={state.checkedFivePrime}
+              onPress={() =>
+                store.set({ checkedFivePrime: !state.checkedFivePrime })
               }
             />
           </View>
@@ -89,9 +96,14 @@ export default storiesOf('Components|Checkbox', module)
             />
             <Checkbox
               indeterminate
-              checkboxColor={'#F44336'}
+              checkboxColor={'#795548'}
               checked={state.checkedFour}
               onPress={() => store.set({ checkedFour: !state.checkedFour })}
+            />
+            <Checkbox
+              error
+              checked={state.checkedFive}
+              onPress={() => store.set({ checkedFive: !state.checkedFive })}
             />
           </View>
         )}
@@ -132,11 +144,18 @@ export default storiesOf('Components|Checkbox', module)
             />
             <Checkbox
               indeterminate
-              checkboxColor={'#F44336'}
-              unCheckedColor={'#F44336'}
+              checkboxColor={'#795548'}
+              unCheckedColor={'#795548'}
               checked={state.checkedFourPrime}
               onPress={() =>
                 store.set({ checkedFourPrime: !state.checkedFourPrime })
+              }
+            />
+            <Checkbox
+              error
+              checked={state.checkedFivePrime}
+              onPress={() =>
+                store.set({ checkedFivePrime: !state.checkedFivePrime })
               }
             />
           </View>
@@ -172,9 +191,15 @@ export default storiesOf('Components|Checkbox', module)
             <Checkbox
               disabled
               indeterminate
-              checkboxColor={'#F44336'}
+              checkboxColor={'#795548'}
               checked={state.checkedFour}
               onPress={() => store.set({ checkedFour: !state.checkedFour })}
+            />
+            <Checkbox
+              error
+              disabled
+              checked={state.checkedFive}
+              onPress={() => store.set({ checkedFive: !state.checkedFive })}
             />
           </View>
         )}
@@ -514,6 +539,15 @@ export default storiesOf('Components|Checkbox', module)
               checked={state.checkedFour}
               label={'Disabled'}
               onPress={() => store.set({ checkedFour: !state.checkedFour })}
+            />
+            <Checkbox
+              ios
+              error
+              rippleMatchesCheckbox
+              checkboxColor={'#009688'}
+              checked={state.checkedFive}
+              label={'Error'}
+              onPress={() => store.set({ checkedFive: !state.checkedFive })}
             />
           </View>
         )}

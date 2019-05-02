@@ -36,6 +36,14 @@ export const code = `class CheckboxPage extends React.Component {
               label={'Disabled'}
               checked={this.state.checkedThree}
               onPress={() => this.setState({ checkedThree: !this.state.checkedThree })}
+          /> 
+          <Checkbox
+              ios
+              error
+              checkboxColor={'#E91E63'}
+              label={'Error'}
+              checked={this.state.checkedFour}
+              onPress={() => this.setState({ checkedFour: !this.state.checkedFour })}
           />    
       </View>
     );

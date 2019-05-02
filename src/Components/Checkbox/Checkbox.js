@@ -29,6 +29,8 @@ class Checkbox extends Component {
     checkedIcon: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 
     ios: PropTypes.bool,
+
+    error: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -40,25 +42,27 @@ class Checkbox extends Component {
   };
 
   _getRippleColor() {
-    const { rippleColor, rippleMatchesCheckbox } = this.props;
+    const { rippleColor, rippleMatchesCheckbox, error, theme } = this.props;
     const checkboxColor = this._getCheckBoxColor();
 
     let rippleColorApplied = rippleColor;
 
     if (rippleMatchesCheckbox) rippleColorApplied = checkboxColor;
 
+    if (error) rippleColorApplied = theme.error.main;
+
     return rippleColorApplied;
   }
 
   _getCheckBoxColor() {
-    const { disabled, checkboxColor, theme } = this.props;
+    const { disabled, checkboxColor, theme, error } = this.props;
     let checkboxColorApplied = checkboxColor
       ? checkboxColor
       : theme.primary.main;
 
-    if (disabled) {
-      checkboxColorApplied = 'rgba(0,0,0,.5)';
-    }
+    if (error) checkboxColorApplied = theme.error.main;
+
+    if (disabled) checkboxColorApplied = 'rgba(0,0,0,.5)';
 
     return checkboxColorApplied;
   }
@@ -66,6 +70,7 @@ class Checkbox extends Component {
   _renderLabel() {
     const { label, labelStyle, onPress } = this.props;
     if (!label) return null;
+
     return (
       <TouchableWithoutFeedback onPress={onPress}>
         <View>
@@ -101,6 +106,8 @@ class Checkbox extends Component {
       indeterminate,
       checked,
       ios,
+      theme,
+      error,
     } = this.props;
 
     const checkboxColor = this._getCheckBoxColor();
@@ -131,11 +138,15 @@ class Checkbox extends Component {
 
     if (!checked && ios) opacity = 0;
 
+    let unCheckedColorApplied = unCheckedColor;
+
+    if (error) unCheckedColorApplied = theme.error.main;
+
     return (
       <Icon
         name={iconName}
         size={24}
-        color={checked ? checkboxColor : unCheckedColor}
+        color={checked ? checkboxColor : unCheckedColorApplied}
         style={{ opacity }}
       />
     );
