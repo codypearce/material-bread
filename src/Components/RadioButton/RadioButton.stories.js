@@ -12,6 +12,7 @@ const store = new Store({
   checked1: 2,
   checked2: 3,
   checked3: 1,
+  checked4: 1,
 });
 
 export default storiesOf('Components|Radio Button', module)
@@ -105,6 +106,27 @@ export default storiesOf('Components|Radio Button', module)
               checked={state.checked3 == 1}
               onPress={() => store.set({ checked2: 3 })}
               disabled
+            />
+          </View>
+        )}
+      </State>
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
+            <RadioButton
+              checked={state.checked4 == 1}
+              onPress={() => store.set({ checked4: 1 })}
+              error
+            />
+            <RadioButton
+              checked={state.checked4 == 2}
+              onPress={() => store.set({ checked4: 2 })}
+              error
+            />
+            <RadioButton
+              checked={state.checked4 == 3}
+              onPress={() => store.set({ checked4: 3 })}
+              error
             />
           </View>
         )}

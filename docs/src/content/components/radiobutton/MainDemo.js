@@ -30,6 +30,22 @@ export const code = `class RadioButtonDemo extends React.Component {
           radioButtonColor={'#009688'}
           rippleColor={'#009688'}
         />
+        <RadioButton
+          checked={true}
+          disabled
+          onPress={() => this.setState({ checked: 3 })}
+          uncheckedBorderColor={'#009688'}
+          radioButtonColor={'#009688'}
+          rippleColor={'#009688'}
+        />
+        <RadioButton
+          checked={this.state.checked == 4}
+          error
+          onPress={() => this.setState({ checked: 4 })}
+          uncheckedBorderColor={'#009688'}
+          radioButtonColor={'#009688'}
+          rippleColor={'#009688'}
+        />
       </View>
     );
   }
