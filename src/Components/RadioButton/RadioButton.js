@@ -18,6 +18,9 @@ class RadioButton extends Component {
     label: PropTypes.string,
     labelStyle: PropTypes.object,
     labelPos: PropTypes.string,
+
+    error: PropTypes.bool,
+    theme: PropTypes.object,
   };
 
   static defaultProps = {
@@ -46,6 +49,8 @@ class RadioButton extends Component {
       uncheckedBorderColor,
       style,
       labelPos,
+      error,
+      theme,
     } = this.props;
 
     const rippleColorApplied = rippleColor ? rippleColor : 'rgba(0,0,0,.8)';
@@ -56,6 +61,10 @@ class RadioButton extends Component {
       ? uncheckedBorderColor
       : 'rgba(0,0,0,.5)';
 
+    if (error) {
+      radioButtonColorApplied = theme.error.main;
+      uncheckedBorderColorApplied = theme.error.main;
+    }
     if (disabled) {
       radioButtonColorApplied = 'rgba(0,0,0,.5)';
     }
