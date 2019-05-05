@@ -3,8 +3,15 @@ import ComponentPageLayout from '../../../components/ComponentPage/ComponentPage
 import MainDemo from './MainDemo';
 import Usage from './Usage';
 import Props from './Props';
+import Demos from './Demos';
 
-const sections = [{ name: 'Component' }, { name: 'Usage' }, { name: 'Props' }];
+const sections = [
+  { name: 'Component' },
+  { name: 'Usage' },
+  { name: 'Props' },
+  { name: 'Demos' },
+  { name: 'sorting icon', sub: true },
+];
 
 export default class DataTableCellPage extends Component {
   render() {
@@ -20,6 +27,7 @@ export default class DataTableCellPage extends Component {
           <MainDemo pageHref={'/components/datatable-cell'} />
           <Usage pageHref={'/components/datatable-cell'} />
           <Props pageHref={'/components/datatable-cell'} />
+          <Demos pageHref={'/components/datatable-cell'} />
         </ComponentPageLayout>
       </div>
     );

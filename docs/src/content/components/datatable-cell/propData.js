@@ -10,6 +10,7 @@ const propData = [
   ],
   ['onPress', 'Call back on cell', 'func', ''],
   ['right', 'Displays cell data on the right', 'bool', 'false'],
+  ['sortingIcon', 'Toggles sorting icon', 'string: up, down', 'down'],
   ['style', 'Styles root element', 'object', ''],
   ['text', 'Text content for cell', 'object', ''],
   [
