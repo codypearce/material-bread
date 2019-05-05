@@ -103,6 +103,7 @@ export default storiesOf('Components|Data Table/Pagination', module)
               numberOfRows={data.length}
               perPage={state.perPage}
               onChangePage={page => store.set({ page: page })}
+              onChangeRowsPerPage={perPage => store.set({ perPage: perPage })}
             />
           </DataTable>
         )}

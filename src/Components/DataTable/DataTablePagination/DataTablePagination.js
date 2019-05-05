@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import { View, Text } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
-import IconButton from '../../IconButton/IconButton';
-import Icon from '../../Icon/Icon';
+
+import { Menu, MenuItem, Ripple, Icon, IconButton } from '../../../';
 import styles from './DataTablePagination.styles';
 
 class DataTablePagination extends Component {
@@ -16,18 +16,55 @@ class DataTablePagination extends Component {
     numberOfRows: PropTypes.number,
     page: PropTypes.number,
     perPage: PropTypes.number,
+    possibleNumberOfPages: PropTypes.number,
+    onChangeRowsPerPage: PropTypes.func,
   };
 
+  state = { visible: false };
+
+  _handleChangeRowsPerPage(item) {
+    const { onChangeRowsPerPage } = this.props;
+    this.setState({ visible: false });
+    onChangeRowsPerPage(item);
+  }
+
+  _renderPossiblePagesPerRow() {
+    const { possibleNumberOfPages } = this.props;
+    let rows = possibleNumberOfPages ? possibleNumberOfPages : [2, 5, 10, 15];
+
+    return rows.map(item => (
+      <MenuItem
+        key={item}
+        text={item}
+        onPress={() => this._handleChangeRowsPerPage(item)}
+      />
+    ));
+  }
   _renderRowsPerPage() {
     const { perPage } = this.props;
+    const { visible } = this.state;
+
     return (
       <View style={styles.rowsPerPage}>
         <Text style={styles.rowsPerPageText} numberOfLines={1}>
           {'Rows per page:'}
         </Text>
-
-        <Text style={styles.text}>{perPage}</Text>
-        <Icon name={'arrow-drop-down'} size={24} color={'rgba(0,0,0,.6)'} />
+        <Menu
+          visible={visible}
+          button={
+            <Ripple
+              onPress={() => this.setState({ visible: true })}
+              style={styles.menuButton}>
+              <Text style={styles.text}>{perPage}</Text>
+              <Icon
+                name={'arrow-drop-down'}
+                size={24}
+                color={'rgba(0,0,0,.6)'}
+              />
+            </Ripple>
+          }>
+          {this._renderPossiblePagesPerRow()}
+        </Menu>
       </View>
     );
   }
