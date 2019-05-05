@@ -16,7 +16,7 @@ class DataTablePagination extends Component {
     numberOfRows: PropTypes.number,
     page: PropTypes.number,
     perPage: PropTypes.number,
-    possibleNumberOfPages: PropTypes.number,
+    possibleNumberPerPage: PropTypes.number,
     onChangeRowsPerPage: PropTypes.func,
   };
 
@@ -29,8 +29,8 @@ class DataTablePagination extends Component {
   }
 
   _renderPossiblePagesPerRow() {
-    const { possibleNumberOfPages } = this.props;
-    let rows = possibleNumberOfPages ? possibleNumberOfPages : [2, 5, 10, 15];
+    const { possibleNumberPerPage } = this.props;
+    let rows = possibleNumberPerPage ? possibleNumberPerPage : [2, 5, 10, 15];
 
     return rows.map(item => (
       <MenuItem
@@ -92,7 +92,7 @@ class DataTablePagination extends Component {
           onPress={() => onChangePage(page - 1)}
           size={24}
           style={{ marginRight: 24 }}
-          color={page === 0 ? 'rgba(0,0,0,.57)' : 'rgba(0,0,0,.87)'}
+          color={page === 0 ? 'rgba(0,0,0,.37)' : 'rgba(0,0,0,.87)'}
         />
         <IconButton
           name={'chevron-right'}
@@ -100,7 +100,7 @@ class DataTablePagination extends Component {
           onPress={() => onChangePage(page + 1)}
           size={24}
           color={
-            page === numberOfPages - 1 ? 'rgba(0,0,0,.57)' : 'rgba(0,0,0,.87)'
+            page === numberOfPages - 1 ? 'rgba(0,0,0,.37)' : 'rgba(0,0,0,.87)'
           }
         />
       </Fragment>
