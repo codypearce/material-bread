@@ -38,6 +38,15 @@ export {
   default as DataTable,
 } from '../../Components/DataTable/DataTable.stories.js';
 export {
+  default as DataTableCell,
+} from '../../Components/DataTable/DataTableCell/DataTableCell.stories.js';
+export {
+  default as DataTableHeader,
+} from '../../Components/DataTable/DataTableHeader/DataTableHeader.stories.js';
+export {
+  default as DataTableRow,
+} from '../../Components/DataTable/DataTableRow/DataTableRow.stories.js';
+export {
   default as DataTablePagination,
 } from '../../Components/DataTable/DataTablePagination/DataTablePagination.stories.js';
 export { default as Dialog } from '../../Components/Dialog/Dialog.stories.js';

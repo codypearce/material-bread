@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { DataTable, DataTableCell, DataTableRow } from '../../';
-import Header from '../../storybook/components/Header';
-import Container from '../../storybook/components/Container';
-import { storiesOf } from '../../storybook/helpers/storiesOf';
+import { DataTable, DataTableCell, DataTableRow } from '../../..';
+import Header from '../../../storybook/components/Header';
+import Container from '../../../storybook/components/Container';
+import { storiesOf } from '../../../storybook/helpers/storiesOf';
 
-export default storiesOf('Components|Data Table', module)
-  .addParameters({ jest: ['DataTable'] })
-  .add('Simple', () => (
+export default storiesOf('Components|Data Table/Row', module)
+  .addParameters({ jest: ['DataTableRow'] })
+
+  .add('Row', () => (
     <Container>
-      <Header title={'DataTable'} />
-
+      <Header title={'DataTable Row'} />
       <DataTable>
         <DataTableRow>
           <DataTableCell text={'Desert'} type={'header'} borderRight flex={2} />

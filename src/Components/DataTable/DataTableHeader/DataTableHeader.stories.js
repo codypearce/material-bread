@@ -1,19 +1,28 @@
 import React from 'react';
 
-import { DataTable, DataTableCell, DataTableRow } from '../../';
-import Header from '../../storybook/components/Header';
-import Container from '../../storybook/components/Container';
-import { storiesOf } from '../../storybook/helpers/storiesOf';
+import {
+  DataTable,
+  DataTableHeader,
+  DataTableCell,
+  DataTableRow,
+} from '../../../';
+import Header from '../../../storybook/components/Header';
+import Container from '../../../storybook/components/Container';
+import { storiesOf } from '../../../storybook/helpers/storiesOf';
 
-export default storiesOf('Components|Data Table', module)
-  .addParameters({ jest: ['DataTable'] })
-  .add('Simple', () => (
+export default storiesOf('Components|Data Table/Header', module)
+  .addParameters({ jest: ['DataTableHeader'] })
+
+  .add('Header', () => (
     <Container>
-      <Header title={'DataTable'} />
-
+      <Header title={'DataTable Header'} />
       <DataTable>
+        <DataTableHeader
+          title={'Nutrition'}
+          rightActions={[{ name: 'filter-list' }, { name: 'more-vert' }]}
+        />
         <DataTableRow>
-          <DataTableCell text={'Desert'} type={'header'} borderRight flex={2} />
+          <DataTableCell text={'Desert'} type={'header'} flex={2} />
           <DataTableCell text={'Calories'} type={'header'} right />
           <DataTableCell text={'Fat (g)'} type={'header'} right />
           <DataTableCell text={'Carbs (g)'} type={'header'} right />
@@ -27,7 +36,7 @@ export default storiesOf('Components|Data Table', module)
           <DataTableCell text={'4'} right />
         </DataTableRow>
         <DataTableRow>
-          <DataTableCell text={'Ice Cream Sandwich'} borderRight flex={2} />
+          <DataTableCell text={'Ice Cream Sandwhich'} borderRight flex={2} />
           <DataTableCell text={'237'} right />
           <DataTableCell text={'9.0'} right />
           <DataTableCell text={'37'} right />
