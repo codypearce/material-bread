@@ -51,7 +51,7 @@ export default storiesOf('Components|Data Table/Row', module)
       </DataTable>
     </Container>
   ))
-  .add('with Checkbox', () => (
+  .add('with checkbox', () => (
     <Container>
       <Header title={'DataTable Row'} />
       <State store={store} style={{ flex: 1 }}>
@@ -99,6 +99,56 @@ export default storiesOf('Components|Data Table/Row', module)
               onPressCheckBox={() =>
                 store.set({ checkedThree: !state.checkedThree })
               }>
+              <DataTableCell text={'Eclair'} borderRight flex={2} />
+              <DataTableCell text={'262'} right />
+              <DataTableCell text={'16.0'} right />
+              <DataTableCell text={'24'} right />
+              <DataTableCell text={'6.0'} right />
+            </DataTableRow>
+          </DataTable>
+        )}
+      </State>
+    </Container>
+  ))
+  .add('selected', () => (
+    <Container>
+      <Header title={'DataTable Row'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <DataTable>
+            <DataTableRow>
+              <DataTableCell
+                text={'Desert'}
+                type={'header'}
+                borderRight
+                flex={2}
+              />
+              <DataTableCell text={'Calories'} type={'header'} right />
+              <DataTableCell text={'Fat (g)'} type={'header'} right />
+              <DataTableCell text={'Carbs (g)'} type={'header'} right />
+              <DataTableCell text={'Protein (g)'} type={'header'} right />
+            </DataTableRow>
+            <DataTableRow
+              selected={state.checkedOne}
+              onPress={() => store.set({ checkedOne: !state.checkedOne })}>
+              <DataTableCell text={'Frozen yogurt'} borderRight flex={2} />
+              <DataTableCell text={'159'} right />
+              <DataTableCell text={'6.0'} right />
+              <DataTableCell text={'24'} right />
+              <DataTableCell text={'4'} right />
+            </DataTableRow>
+            <DataTableRow
+              selected={state.checkedTwo}
+              onPress={() => store.set({ checkedTwo: !state.checkedTwo })}>
+              <DataTableCell text={'Ice Cream Sandwich'} borderRight flex={2} />
+              <DataTableCell text={'237'} right />
+              <DataTableCell text={'9.0'} right />
+              <DataTableCell text={'37'} right />
+              <DataTableCell text={'4.3'} right />
+            </DataTableRow>
+            <DataTableRow
+              selected={state.checkedThree}
+              onPress={() => store.set({ checkedThree: !state.checkedThree })}>
               <DataTableCell text={'Eclair'} borderRight flex={2} />
               <DataTableCell text={'262'} right />
               <DataTableCell text={'16.0'} right />
