@@ -1,6 +1,7 @@
 import { createTableData } from '../../../utils/createPropData';
 const propData = [
-  ['checked', `Whether row's chebox is selected`, 'bool', ''],
+  ['hover', `Will show background on hover`, 'bool', 'false'],
+
   ['onPressCheckBox', 'Call back on checkbox', 'func', ''],
   [
     'onPress',
@@ -8,6 +9,7 @@ const propData = [
     'func',
     '',
   ],
+  ['selected', `Whether row and checbkox is selected`, 'bool', ''],
   ['showcheckBox', 'Toggle checkbox display', 'bool', ''],
   ['style', 'Styles root element', 'object', ''],
 ];
