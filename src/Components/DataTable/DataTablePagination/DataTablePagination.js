@@ -11,8 +11,9 @@ class DataTablePagination extends Component {
   static propTypes = {
     children: PropTypes.node,
     style: PropTypes.object,
-    changePage: PropTypes.func,
+    onChangePage: PropTypes.func,
     numberOfPages: PropTypes.number,
+    numberOfRows: PropTypes.number,
     page: PropTypes.number,
     perPage: PropTypes.number,
   };
@@ -32,33 +33,38 @@ class DataTablePagination extends Component {
   }
 
   _renderCurrentPage() {
-    const { perPage, numberOfPages } = this.props;
+    const { page, perPage, numberOfRows } = this.props;
+    const startRange = numberOfRows === 0 ? 0 : page * perPage + 1;
+    const endRange = Math.min(numberOfRows, (page + 1) * perPage);
+
     return (
       <Text
         style={
           styles.currentNumber
-        }>{`1-${perPage} of ${numberOfPages} `}</Text>
+        }>{`${startRange}-${endRange} of ${numberOfRows} `}</Text>
     );
   }
 
   _renderNavigation() {
-    const { page, numberOfPages, changePage } = this.props;
+    const { page, numberOfPages, onChangePage } = this.props;
     return (
       <Fragment>
         <IconButton
           name={'chevron-left'}
           disabled={page === 0}
-          onPress={() => changePage(page - 1)}
+          onPress={() => onChangePage(page - 1)}
           size={24}
           style={{ marginRight: 24 }}
-          color={'rgba(0,0,0,.87)'}
+          color={page === 0 ? 'rgba(0,0,0,.57)' : 'rgba(0,0,0,.87)'}
         />
         <IconButton
           name={'chevron-right'}
           disabled={page === numberOfPages - 1}
-          onPress={() => changePage(page + 1)}
+          onPress={() => onChangePage(page + 1)}
           size={24}
-          color={'rgba(0,0,0,.87)'}
+          color={
+            page === numberOfPages - 1 ? 'rgba(0,0,0,.57)' : 'rgba(0,0,0,.87)'
+          }
         />
       </Fragment>
     );

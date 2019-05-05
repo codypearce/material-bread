@@ -37,6 +37,9 @@ export { default as Chip } from '../../Components/Chip/Chip.stories.js';
 export {
   default as DataTable,
 } from '../../Components/DataTable/DataTable.stories.js';
+export {
+  default as DataTablePagination,
+} from '../../Components/DataTable/DataTablePagination/DataTablePagination.stories.js';
 export { default as Dialog } from '../../Components/Dialog/Dialog.stories.js';
 
 export { default as Drawer } from '../../Components/Drawer/Drawer.stories.js';
