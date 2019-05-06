@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import { Select } from '../../..';
+import { Select, Icon } from '../../..';
 import { State, Store } from '@sambego/storybook-state';
 import Header from '../../../storybook/components/Header';
 import Container from '../../../storybook/components/Container';
@@ -77,6 +77,30 @@ export default storiesOf('Components|Select/Outlined', module)
               textFieldProps={{
                 error: true,
                 dense: true,
+              }}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
+  ))
+  .add('leading icon', () => (
+    <Container>
+      <Header title={'Outlined Select'} />
+
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <Select
+              type={'outlined'}
+              label={'Select'}
+              menuItems={data}
+              onSelect={value => store.set({ selectedItem: value.name })}
+              selectedItem={state.selectedItem}
+              textFieldProps={{
+                leadingIcon: (
+                  <Icon name={'date-range'} size={24} color={'#6e6e6e'} />
+                ),
               }}
             />
           </View>
