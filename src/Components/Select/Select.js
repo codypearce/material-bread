@@ -1,101 +1,75 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { TouchableHighlight, View, FlatList, Text } from 'react-native';
-
-import Menu from '../Menu/Menu';
-import MenuItem from '../Menu/MenuItem/MenuItem';
-import Icon from '../Icon/Icon';
 import withTheme from '../../Theme/withTheme';
-import styles from './Select.styles';
+import SelectOutlined from './SelectOutlined/SelectOutlined';
+import SelectFlat from './SelectFlat/SelectFlat';
+import SelectFilled from './SelectFilled/SelectFilled';
 
-class Select extends Component {
+class TextField extends Component {
   static propTypes = {
-    onSelect: PropTypes.func,
-    buttonStyle: PropTypes.object,
-    label: PropTypes.string,
-    selectedItem: PropTypes.node,
-    menuItems: PropTypes.array,
-    visible: PropTypes.bool,
+    type: PropTypes.string,
+    onFocus: PropTypes.func,
+    onBlur: PropTypes.func,
+    disabled: PropTypes.bool,
   };
 
   state = {
-    visible: false,
+    focused: false,
   };
 
-  onSelect = item => {
-    this.props.onSelect(item);
-    this.hideMenu();
+  handleFocus = (...args) => {
+    const { disabled, onFocus } = this.props;
+
+    if (disabled) return;
+
+    this.setState({ focused: true });
+
+    if (onFocus) onFocus(...args);
   };
 
-  showMenu() {
-    this.setState({
-      visible: true,
-    });
-  }
+  handleBlur = (...args) => {
+    const { disabled, onBlur } = this.props;
 
-  hideMenu() {
-    this.setState({
-      visible: false,
-    });
-  }
+    if (disabled) return;
+
+    this.setState({ focused: false });
+
+    if (onBlur) onBlur(...args);
+  };
 
   render() {
-    const { buttonStyle, label, selectedItem, menuItems } = this.props;
+    const { type, ...rest } = this.props;
+    const { focused } = this.state;
 
-    const { visible } = this.state;
-    return (
-      <Menu
-        style={[styles.menu, { flex: 1 }]}
-        sameWidth
-        visible={visible}
-        button={
-          <TouchableHighlight
-            onPress={() => this.showMenu()}
-            style={[styles.button, buttonStyle]}
-            underlayColor={'transparent'}>
-            <View style={styles.innerView}>
-              <Text
-                style={[
-                  styles.textSelected,
-                  { opacity: selectedItem ? 1 : 0 },
-                ]}>
-                {label}
-              </Text>
-
-              <Text
-                style={[
-                  styles.buttonText,
-                  { color: selectedItem ? 'black' : 'rgba(0,0,0,0.6)' },
-                ]}>
-                {selectedItem ? selectedItem : label}
-              </Text>
-
-              <Icon
-                name="arrow-drop-down"
-                size={24}
-                color={'#757575'}
-                style={styles.icon}
-              />
-            </View>
-          </TouchableHighlight>
-        }>
-        <FlatList
-          data={menuItems}
-          style={{ flex: 1 }}
-          renderItem={({ item }) => {
-            return (
-              <MenuItem
-                key={item.id}
-                text={item.name}
-                onPress={() => this.onSelect(item)}
-                style={{ flex: 1 }}
-              />
-            );
-          }}
+    if (type == 'outlined') {
+      return (
+        <SelectOutlined
+          handleFocus={this.handleFocus}
+          handleBlur={this.handleBlur}
+          focused={focused}
+          {...rest}
         />
-      </Menu>
-    );
+      );
+    } else if (type == 'filled') {
+      return (
+        <SelectFilled
+          handleFocus={this.handleFocus}
+          handleBlur={this.handleBlur}
+          focused={focused}
+          {...rest}
+        />
+      );
+    } else {
+      return (
+        <SelectFlat
+          handleFocus={this.handleFocus}
+          handleBlur={this.handleBlur}
+          focused={focused}
+          {...rest}
+        />
+      );
+    }
   }
 }
 
-export default withTheme(Select);
+export default withTheme(TextField);

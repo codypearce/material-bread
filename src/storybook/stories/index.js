@@ -105,7 +105,9 @@ export {
 export {
   default as Searchfield,
 } from '../../Components/TextField/Searchfield/Searchfield.stories.js';
-export { default as Dropdown } from '../../Components/Select/Select.stories.js';
+export {
+  default as SelectOutlined,
+} from '../../Components/Select/SelectOutlined/SelectOutlined.stories.js';
 export {
   default as Snackbar,
 } from '../../Components/Snackbar/Snackbar.stories.js';
