@@ -27,6 +27,12 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: 'rgba(0,0,0,.6)',
   },
+  menuButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    padding: 4,
+  },
 });
 
 export default styles;

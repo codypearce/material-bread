@@ -8,15 +8,15 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
     minWidth: 'auto',
     flex: 1,
+    wordBreak: 'break-all',
   },
   text: {
     fontSize: 13,
-    color: 'rgba(0,0,0,.87)',
+
     flexShrink: 0,
     flex: 1,
   },
   textHeader: {
-    color: 'rgba(0,0,0,.54)',
     height: 24,
     lineHeight: 24,
     fontSize: 12,
@@ -24,6 +24,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexShrink: 0,
     flex: 1,
+  },
+  sortingIcon: {
+    marginRight: 4,
   },
 });
 

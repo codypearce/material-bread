@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableWithoutFeedback } from 'react-native';
+import { Text, View, TouchableWithoutFeedback, Animated } from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../../Theme/withTheme';
+import { Icon } from '../../../';
 import styles from './DataTableCell.styles';
 
 class TableCell extends Component {
@@ -15,13 +16,55 @@ class TableCell extends Component {
     text: PropTypes.string,
     onPress: PropTypes.func,
     type: PropTypes.string,
+    sortingIcon: PropTypes.string,
   };
 
-  _renderText() {
-    const { text, type } = this.props;
-    const style = type == 'header' ? styles.textHeader : styles.text;
+  state = {
+    roateIcon: new Animated.Value(0),
+  };
 
-    return <Text style={style}>{text}</Text>;
+  componentDidUpdate(prevProps) {
+    const { sortingIcon } = this.props;
+    if (sortingIcon == 'up' && prevProps.sortingIcon == 'down') {
+      this.animateSortingIcon('up');
+    } else if (sortingIcon == 'down' && prevProps.sortingIcon == 'up') {
+      this.animateSortingIcon('down');
+    }
+  }
+
+  animateSortingIcon(type) {
+    const value = type == 'up' ? 1 : 0;
+    Animated.timing(this.state.roateIcon, {
+      toValue: value,
+      duration: 200,
+    }).start();
+  }
+
+  _renderSortingIcon() {
+    return (
+      <Animated.View
+        style={{
+          transform: [
+            {
+              rotate: this.state.roateIcon.interpolate({
+                inputRange: [0, 1],
+                outputRange: ['0deg', '180deg'],
+              }),
+            },
+          ],
+        }}>
+        <Icon name={'arrow-downward'} size={18} style={styles.sortingIcon} />
+      </Animated.View>
+    );
+  }
+
+  _renderText() {
+    const { text, type, sortingIcon } = this.props;
+    const style = type == 'header' ? styles.textHeader : styles.text;
+    let color = type == 'header' ? 'rgba(0,0,0,.54)' : 'rgba(0,0,0,.87)';
+    if (sortingIcon == 'down' || sortingIcon == 'up') color = 'black';
+
+    return <Text style={[style, { color }]}>{text}</Text>;
   }
   render() {
     const {
@@ -32,6 +75,7 @@ class TableCell extends Component {
       borderLeft,
       flex,
       onPress,
+      sortingIcon,
     } = this.props;
 
     return (
@@ -50,6 +94,7 @@ class TableCell extends Component {
             },
             style,
           ]}>
+          {sortingIcon ? this._renderSortingIcon() : null}
           {children ? children : this._renderText()}
         </View>
       </TouchableWithoutFeedback>

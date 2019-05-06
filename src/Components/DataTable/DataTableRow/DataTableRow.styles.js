@@ -10,6 +10,10 @@ const styles = StyleSheet.create({
     width: '100%',
     minWidth: 'auto',
   },
+  checkboxOffset: {
+    width: 36,
+    marginRight: 12,
+  },
 });
 
 export default styles;

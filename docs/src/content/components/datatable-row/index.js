@@ -3,8 +3,16 @@ import ComponentPageLayout from '../../../components/ComponentPage/ComponentPage
 import MainDemo from './MainDemo';
 import Usage from './Usage';
 import Props from './Props';
+import Demos from './Demos';
 
-const sections = [{ name: 'Component' }, { name: 'Usage' }, { name: 'Props' }];
+const sections = [
+  { name: 'Component' },
+  { name: 'Usage' },
+  { name: 'Props' },
+  { name: 'Demos' },
+  { name: 'checkbox', sub: true },
+  { name: 'selected', sub: true },
+];
 
 export default class DataTableRowPage extends Component {
   render() {
@@ -12,7 +20,7 @@ export default class DataTableRowPage extends Component {
       <div>
         <ComponentPageLayout
           componentName={'dataTable-row'}
-          title={'Data Table Row'}
+          title={'DataTableRow'}
           description={`Data Table Rows display a row composed of Cells`}
           importCode={`import { DataTableHeader } from 'material-bread';`}
           docsLink={'https://material.io/design/components/data-tables.html'}
@@ -20,6 +28,7 @@ export default class DataTableRowPage extends Component {
           <MainDemo pageHref={'/components/datatable-row'} />
           <Usage pageHref={'/components/datatable-row'} />
           <Props pageHref={'/components/datatable-row'} />
+          <Demos pageHref={'/components/datatable-row'} />
         </ComponentPageLayout>
       </div>
     );
