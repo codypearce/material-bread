@@ -11,12 +11,7 @@ import {
   SideScrollMenu,
 } from '@components';
 import { DataTable, DataTableCell, DataTableRow } from '../../../../src';
-const sections = [
-  { name: 'Started' },
-  { name: 'Setup' },
-  { name: 'Developing' },
-  { name: 'Storybook' },
-];
+const sections = [{ name: 'Started' }, { name: 'Setup' }];
 
 class Index extends Component {
   componentDidMount() {
