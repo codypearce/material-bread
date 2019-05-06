@@ -11,7 +11,7 @@ class DataTableRow extends Component {
     style: PropTypes.object,
     borderBottomColor: PropTypes.string,
     selected: PropTypes.bool,
-    onPressCheckBox: PropTypes.func,
+    onPressCheckbox: PropTypes.func,
     showCheckbox: PropTypes.bool,
     checkboxOffset: PropTypes.bool,
     onPress: PropTypes.func,
@@ -34,7 +34,7 @@ class DataTableRow extends Component {
       borderBottomColor,
       onPress,
       selected,
-      onPressCheckBox,
+      onPressCheckbox,
       showCheckbox,
       hover,
       checkboxOffset,
@@ -47,8 +47,8 @@ class DataTableRow extends Component {
 
     return (
       <TouchableWithoutFeedback
-        onPress={showCheckbox ? onPressCheckBox : onPress}
-        disabled={!onPressCheckBox && !onPress}>
+        onPress={showCheckbox ? onPressCheckbox : onPress}
+        disabled={!onPressCheckbox && !onPress}>
         <View
           style={[
             styles.container,
@@ -61,7 +61,7 @@ class DataTableRow extends Component {
           {showCheckbox ? (
             <Checkbox
               checked={selected}
-              onPress={onPressCheckBox}
+              onPress={onPressCheckbox}
               size={24}
               style={{ marginRight: 12 }}
             />

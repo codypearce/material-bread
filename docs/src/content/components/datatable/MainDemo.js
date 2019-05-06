@@ -13,6 +13,9 @@ export const code = `class Table extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      checkedOne: false,
+      checkedTwo: false,
+      checkedThree: false
     }
   }
   render() {
@@ -25,7 +28,7 @@ export const code = `class Table extends React.Component {
               {name: 'more-vert'},
             ]} 
           />
-          <DataTableRow>
+          <DataTableRow checkboxOffset>
             <DataTableCell text={'Desert'} type={'header'} borderRight flex={2} />
             <DataTableCell
               text={'Calories'}
@@ -37,8 +40,9 @@ export const code = `class Table extends React.Component {
           </DataTableRow>
           <DataTableRow
             hover 
+            showCheckbox
             selected={this.state.checkedOne}
-            onPress={() =>
+            onPressCheckbox={() =>
                 this.setState({ checkedOne: !this.state.checkedOne })
             }>
             <DataTableCell text={'Frozen yogurt'} borderRight flex={2} />
@@ -49,8 +53,9 @@ export const code = `class Table extends React.Component {
           </DataTableRow>
           <DataTableRow
               hover
+              showCheckbox
               selected={this.state.checkedTwo}
-              onPress={() =>
+              onPressCheckbox={() =>
                   this.setState({ checkedTwo: !this.state.checkedTwo })
               }>
               <DataTableCell text={'Ice Cream Sandwich'} borderRight flex={2} />
@@ -61,8 +66,9 @@ export const code = `class Table extends React.Component {
           </DataTableRow>
           <DataTableRow
               hover
+              showCheckbox
               selected={this.state.checkedThree}
-              onPress={() =>
+              onPressCheckbox={() =>
                   this.setState({ checkedThree: !this.state.checkedThree })
               }>
               <DataTableCell text={'Eclair'} borderRight flex={2} />

@@ -72,7 +72,7 @@ export default storiesOf('Components|Data Table/Row', module)
             <DataTableRow
               showCheckbox
               selected={state.checkedOne}
-              onPressCheckBox={() =>
+              onPressCheckbox={() =>
                 store.set({ checkedOne: !state.checkedOne })
               }>
               <DataTableCell text={'Frozen yogurt'} borderRight flex={2} />
@@ -84,7 +84,7 @@ export default storiesOf('Components|Data Table/Row', module)
             <DataTableRow
               showCheckbox
               selected={state.checkedTwo}
-              onPressCheckBox={() =>
+              onPressCheckbox={() =>
                 store.set({ checkedTwo: !state.checkedTwo })
               }>
               <DataTableCell text={'Ice Cream Sandwich'} borderRight flex={2} />
@@ -96,7 +96,7 @@ export default storiesOf('Components|Data Table/Row', module)
             <DataTableRow
               showCheckbox
               selected={state.checkedThree}
-              onPressCheckBox={() =>
+              onPressCheckbox={() =>
                 store.set({ checkedThree: !state.checkedThree })
               }>
               <DataTableCell text={'Eclair'} borderRight flex={2} />
@@ -182,7 +182,7 @@ export default storiesOf('Components|Data Table/Row', module)
               hover
               showCheckbox
               selected={state.checkedOne}
-              onPressCheckBox={() =>
+              onPressCheckbox={() =>
                 store.set({ checkedOne: !state.checkedOne })
               }>
               <DataTableCell text={'Frozen yogurt'} borderRight flex={2} />
@@ -195,7 +195,7 @@ export default storiesOf('Components|Data Table/Row', module)
               hover
               showCheckbox
               selected={state.checkedTwo}
-              onPressCheckBox={() =>
+              onPressCheckbox={() =>
                 store.set({ checkedTwo: !state.checkedTwo })
               }>
               <DataTableCell text={'Ice Cream Sandwich'} borderRight flex={2} />
@@ -208,7 +208,7 @@ export default storiesOf('Components|Data Table/Row', module)
               hover
               showCheckbox
               selected={state.checkedThree}
-              onPressCheckBox={() =>
+              onPressCheckbox={() =>
                 store.set({ checkedThree: !state.checkedThree })
               }>
               <DataTableCell text={'Eclair'} borderRight flex={2} />

@@ -1,11 +1,17 @@
 import { createTableData } from '../../../utils/createPropData';
 const propData = [
+  [
+    'checkboxOffset',
+    'Offsets rows without checkboxes to align with ones that do',
+    'bool',
+    '',
+  ],
   ['hover', `Will show background on hover`, 'bool', 'false'],
 
-  ['onPressCheckBox', 'Call back on checkbox', 'func', ''],
+  ['onPressCheckbox', 'Call back on checkbox', 'func', ''],
   [
     'onPress',
-    'Call back on whole row, will default to onPressCheckBox if provided',
+    'Call back on whole row, will default to onPressCheckbox if provided',
     'func',
     '',
   ],

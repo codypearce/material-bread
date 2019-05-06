@@ -18,7 +18,7 @@ export const code = `class Table extends React.Component {
   render() {
     return (
         <DataTable>
-            <DataTableRow>
+            <DataTableRow checkboxOffset>
                 <DataTableCell
                     text={'Desert'}
                     type={'header'}
@@ -34,7 +34,7 @@ export const code = `class Table extends React.Component {
                 hover
                 showCheckbox
                 selected={this.state.checkedOne}
-                onPressCheckBox={() =>
+                onPressCheckbox={() =>
                     this.setState({ checkedOne: !this.state.checkedOne })
                 }>
                 <DataTableCell text={'Frozen yogurt'} borderRight flex={2} />
@@ -47,7 +47,7 @@ export const code = `class Table extends React.Component {
                 hover
                 showCheckbox
                 selected={this.state.checkedTwo}
-                onPressCheckBox={() =>
+                onPressCheckbox={() =>
                     this.setState({ checkedTwo: !this.state.checkedTwo })
                 }>
                 <DataTableCell text={'Ice Cream Sandwich'} borderRight flex={2} />
@@ -60,7 +60,7 @@ export const code = `class Table extends React.Component {
                 hover
                 showCheckbox
                 selected={this.state.checkedThree}
-                onPressCheckBox={() =>
+                onPressCheckbox={() =>
                     this.setState({ checkedThree: !this.state.checkedThree })
                 }>
                 <DataTableCell text={'Eclair'} borderRight flex={2} />
