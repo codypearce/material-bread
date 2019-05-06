@@ -13,6 +13,7 @@ class DataTableRow extends Component {
     selected: PropTypes.bool,
     onPressCheckBox: PropTypes.func,
     showCheckbox: PropTypes.bool,
+    checkboxOffset: PropTypes.bool,
     onPress: PropTypes.func,
     hover: PropTypes.bool,
     type: PropTypes.string,
@@ -36,6 +37,7 @@ class DataTableRow extends Component {
       onPressCheckBox,
       showCheckbox,
       hover,
+      checkboxOffset,
     } = this.props;
     const { backgroundColor } = this.state;
 
@@ -64,6 +66,7 @@ class DataTableRow extends Component {
               style={{ marginRight: 12 }}
             />
           ) : null}
+          {checkboxOffset ? <View style={styles.checkboxOffset} /> : null}
           {children}
         </View>
       </TouchableWithoutFeedback>

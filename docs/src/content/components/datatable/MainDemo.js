@@ -25,7 +25,7 @@ export const code = `class Table extends React.Component {
               {name: 'more-vert'},
             ]} 
           />
-          <DataTableRow  showCheckbox>
+          <DataTableRow>
             <DataTableCell text={'Desert'} type={'header'} borderRight flex={2} />
             <DataTableCell
               text={'Calories'}
@@ -36,10 +36,9 @@ export const code = `class Table extends React.Component {
             <DataTableCell text={'Protein (g)'}  type={'header'}  right />
           </DataTableRow>
           <DataTableRow
-            hover
-            showCheckbox
+            hover 
             selected={this.state.checkedOne}
-            onPressCheckBox={() =>
+            onPress={() =>
                 this.setState({ checkedOne: !this.state.checkedOne })
             }>
             <DataTableCell text={'Frozen yogurt'} borderRight flex={2} />
@@ -50,9 +49,8 @@ export const code = `class Table extends React.Component {
           </DataTableRow>
           <DataTableRow
               hover
-              showCheckbox
               selected={this.state.checkedTwo}
-              onPressCheckBox={() =>
+              onPress={() =>
                   this.setState({ checkedTwo: !this.state.checkedTwo })
               }>
               <DataTableCell text={'Ice Cream Sandwich'} borderRight flex={2} />
@@ -63,9 +61,8 @@ export const code = `class Table extends React.Component {
           </DataTableRow>
           <DataTableRow
               hover
-              showCheckbox
               selected={this.state.checkedThree}
-              onPressCheckBox={() =>
+              onPress={() =>
                   this.setState({ checkedThree: !this.state.checkedThree })
               }>
               <DataTableCell text={'Eclair'} borderRight flex={2} />
