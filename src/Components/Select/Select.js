@@ -16,6 +16,7 @@ class Select extends Component {
     menuItems: PropTypes.array,
     visible: PropTypes.bool,
     textFieldProps: PropTypes.object,
+    menuProps: PropTypes.object,
     type: PropTypes.string,
     onBackdropPress: PropTypes.func,
     theme: PropTypes.object,
@@ -49,6 +50,7 @@ class Select extends Component {
       selectedItem,
       menuItems,
       textFieldProps,
+      menuProps,
       type,
       theme,
     } = this.props;
@@ -64,7 +66,7 @@ class Select extends Component {
         sameWidth
         visible={visible}
         modalMenuStyle={{
-          marginTop: textFieldProps && textFieldProps.dense ? 60 : 72,
+          marginTop: textFieldProps && textFieldProps.dense ? 60 : 71,
         }}
         onBackdropPress={() => this.hideMenu()}
         button={
@@ -95,7 +97,8 @@ class Select extends Component {
               />
             </View>
           </TouchableHighlight>
-        }>
+        }
+        {...menuProps}>
         <FlatList
           data={menuItems}
           style={{ flex: 1 }}
