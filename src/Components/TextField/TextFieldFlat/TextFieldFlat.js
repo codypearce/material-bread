@@ -46,7 +46,7 @@ class TextFieldFlat extends Component {
 
   componentDidUpdate(prevProps) {
     const { value, multiline } = this.props;
-    if (value.length < 1 && prevProps.value.length > 0 && multiline) {
+    if (value && value.length < 1 && prevProps.value.length > 0 && multiline) {
       this.setState({ height: 56 });
     }
   }

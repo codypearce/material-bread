@@ -46,7 +46,7 @@ class TextFieldFilled extends Component {
 
   componentDidUpdate(prevProps) {
     const { value, multiline } = this.props;
-    if (value.length < 1 && prevProps.value.length > 0 && multiline) {
+    if (value && value.length < 1 && prevProps.value.length > 0 && multiline) {
       this.setState({ height: 56 });
     }
   }
@@ -157,7 +157,7 @@ class TextFieldFilled extends Component {
           label={label}
           focused={focused}
           error={error}
-          value={rest.value}
+          value={rest.value && rest.value.length > 0}
           labelColor={labelColor}
           style={labelStyle}
           leadingIcon={leadingIcon}

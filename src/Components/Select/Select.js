@@ -57,7 +57,9 @@ class Select extends Component {
         style={[styles.menu, { flex: 1 }]}
         sameWidth
         visible={visible}
-        modalMenuStyle={{ marginTop: 72 }}
+        modalMenuStyle={{
+          marginTop: textFieldProps && textFieldProps.dense ? 60 : 72,
+        }}
         onBackdropPress={() => this.hideMenu()}
         button={
           <TouchableHighlight

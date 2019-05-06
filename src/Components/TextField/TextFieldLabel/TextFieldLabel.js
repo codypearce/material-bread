@@ -32,13 +32,21 @@ class TextFieldLabel extends Component {
   };
 
   componentDidMount() {
-    const { type, dense, prefix } = this.props;
+    const { type, dense, prefix, value } = this.props;
 
     if (type == 'outlined' && dense) {
       this.setState({ translateYAnimation: new Animated.Value(11) });
     }
 
     if (prefix) this._handlePrefix();
+
+    if (value) {
+      if (type == 'outlined') {
+        this._handleLabelOutlinedAnimation();
+      } else {
+        this._handleLabelAnimation();
+      }
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -77,10 +85,8 @@ class TextFieldLabel extends Component {
     } = this.state;
     if (!canAnimate) return;
 
-    if (value && value.length > 0) return;
-
-    let position = focused ? 10 : 20;
-    let scale = focused ? 0.75 : 1;
+    let position = focused || value ? 10 : 20;
+    let scale = focused || value ? 0.75 : 1;
 
     Animated.parallel([
       Animated.timing(translateYAnimation, {

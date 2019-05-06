@@ -49,4 +49,37 @@ export default storiesOf('Components|Select/Flat', module)
         )}
       </State>
     </Container>
+  ))
+  .add('dense', () => (
+    <Container>
+      <Header title={'Flat Select'} />
+
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <Select
+              type={'flat'}
+              label={'Select'}
+              menuItems={data}
+              onSelect={value => store.set({ selectedItem: value.name })}
+              selectedItem={state.selectedItem}
+              textFieldProps={{
+                dense: true,
+              }}
+            />
+            <Select
+              type={'flat'}
+              label={'Select'}
+              menuItems={data}
+              onSelect={value => store.set({ selectedItemTwo: value.name })}
+              selectedItem={state.selectedItemTwo}
+              textFieldProps={{
+                error: true,
+                dense: true,
+              }}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
   ));
