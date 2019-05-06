@@ -80,7 +80,7 @@ const SubtitleDemo = pageHref => (
     description={
       <div>
         If you just want selected rows without checkboxes, then remove
-        <CodeInline code="showcheckBox" type="prop" /> and change{' '}
+        <CodeInline code="showCheckbox" type="prop" /> and change{' '}
         <CodeInline code="onPressCheckBox" type="prop" /> to simply{' '}
         <CodeInline code="onPress" type="prop" />
       </div>

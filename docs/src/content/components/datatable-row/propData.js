@@ -10,7 +10,7 @@ const propData = [
     '',
   ],
   ['selected', `Whether row and checbkox is selected`, 'bool', ''],
-  ['showcheckBox', 'Toggle checkbox display', 'bool', ''],
+  ['showCheckbox', 'Toggle checkbox display', 'bool', ''],
   ['style', 'Styles root element', 'object', ''],
 ];
 

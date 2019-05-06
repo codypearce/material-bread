@@ -32,7 +32,7 @@ export const code = `class Table extends React.Component {
             </DataTableRow>
             <DataTableRow
                 hover
-                showcheckBox
+                showCheckbox
                 selected={this.state.checkedOne}
                 onPressCheckBox={() =>
                     this.setState({ checkedOne: !this.state.checkedOne })
@@ -45,7 +45,7 @@ export const code = `class Table extends React.Component {
             </DataTableRow>
             <DataTableRow
                 hover
-                showcheckBox
+                showCheckbox
                 selected={this.state.checkedTwo}
                 onPressCheckBox={() =>
                     this.setState({ checkedTwo: !this.state.checkedTwo })
@@ -58,7 +58,7 @@ export const code = `class Table extends React.Component {
             </DataTableRow>
             <DataTableRow
                 hover
-                showcheckBox
+                showCheckbox
                 selected={this.state.checkedThree}
                 onPressCheckBox={() =>
                     this.setState({ checkedThree: !this.state.checkedThree })
