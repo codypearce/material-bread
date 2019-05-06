@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
-
     marginTop: 8,
     borderRadius: 4,
     position: 'relative',
@@ -20,6 +19,9 @@ const styles = StyleSheet.create({
     height: 56,
     position: 'relative',
     zIndex: 2,
+  },
+  textField: {
+    cursor: 'pointer',
   },
 });
 

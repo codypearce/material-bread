@@ -67,6 +67,10 @@ class Select extends Component {
                 value={selectedItem}
                 focused={visible}
                 editable={false}
+                style={[
+                  styles.textField,
+                  textFieldProps && textFieldProps.style,
+                ]}
                 trailingIcon={
                   <Icon
                     name="arrow-drop-down"

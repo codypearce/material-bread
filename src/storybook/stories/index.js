@@ -106,6 +106,9 @@ export {
   default as Searchfield,
 } from '../../Components/TextField/Searchfield/Searchfield.stories.js';
 export {
+  default as SelectFlat,
+} from '../../Components/Select/SelectFlat/SelectFlat.stories.js';
+export {
   default as SelectOutlined,
 } from '../../Components/Select/SelectOutlined/SelectOutlined.stories.js';
 export {
