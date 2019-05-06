@@ -18,7 +18,7 @@ const data = [
 
 export default storiesOf('Components|Select/Outlined', module)
   .addParameters({ jest: ['SelectOutlined'] })
-  .add('Outlined', () => (
+  .add('simple', () => (
     <Container>
       <Header title={'Outlined Select'} />
 
