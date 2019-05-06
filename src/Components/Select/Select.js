@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { TouchableHighlight, View, FlatList, Text } from 'react-native';
+import { TouchableHighlight, View, FlatList, Platform } from 'react-native';
 
-import Menu from '../Menu/Menu';
-import MenuItem from '../Menu/MenuItem/MenuItem';
-import Icon from '../Icon/Icon';
+import { Menu, MenuItem, Icon, TextField } from '../../..';
+
 import withTheme from '../../Theme/withTheme';
 import styles from './Select.styles';
 
@@ -16,6 +15,11 @@ class Select extends Component {
     selectedItem: PropTypes.node,
     menuItems: PropTypes.array,
     visible: PropTypes.bool,
+    textFieldProps: PropTypes.object,
+    menuProps: PropTypes.object,
+    type: PropTypes.string,
+    onBackdropPress: PropTypes.func,
+    theme: PropTypes.object,
   };
 
   state = {
@@ -40,45 +44,65 @@ class Select extends Component {
   }
 
   render() {
-    const { buttonStyle, label, selectedItem, menuItems } = this.props;
+    const {
+      buttonStyle,
+      label,
+      selectedItem,
+      menuItems,
+      textFieldProps,
+      menuProps,
+      type,
+      theme,
+    } = this.props;
 
     const { visible } = this.state;
+
+    let iconColor = visible ? theme.primary.main : '#757575';
+    if (textFieldProps && textFieldProps.error) iconColor = theme.error.main;
+
+    const platformStyles =
+      Platform.OS == 'web'
+        ? {
+            cursor: 'pointer',
+          }
+        : {};
+
     return (
       <Menu
         style={[styles.menu, { flex: 1 }]}
         sameWidth
         visible={visible}
+        modalMenuStyle={{
+          marginTop: textFieldProps && textFieldProps.dense ? 60 : 71,
+        }}
+        onBackdropPress={() => this.hideMenu()}
         button={
           <TouchableHighlight
             onPress={() => this.showMenu()}
             style={[styles.button, buttonStyle]}
             underlayColor={'transparent'}>
             <View style={styles.innerView}>
-              <Text
-                style={[
-                  styles.textSelected,
-                  { opacity: selectedItem ? 1 : 0 },
-                ]}>
-                {label}
-              </Text>
-
-              <Text
-                style={[
-                  styles.buttonText,
-                  { color: selectedItem ? 'black' : 'rgba(0,0,0,0.6)' },
-                ]}>
-                {selectedItem ? selectedItem : label}
-              </Text>
-
-              <Icon
-                name="arrow-drop-down"
-                size={24}
-                color={'#757575'}
-                style={styles.icon}
+              <TextField
+                type={type ? type : 'flat'}
+                label={label}
+                value={selectedItem}
+                focused={visible}
+                editable={false}
+                style={[platformStyles, textFieldProps && textFieldProps.style]}
+                trailingIcon={
+                  <Icon
+                    name="arrow-drop-down"
+                    size={24}
+                    color={iconColor}
+                    style={styles.icon}
+                  />
+                }
+                {...textFieldProps}
               />
             </View>
           </TouchableHighlight>
-        }>
+        }
+        {...menuProps}>
         <FlatList
           data={menuItems}
           style={{ flex: 1 }}

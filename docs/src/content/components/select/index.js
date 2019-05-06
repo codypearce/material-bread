@@ -3,8 +3,15 @@ import ComponentPageLayout from '../../../components/ComponentPage/ComponentPage
 import MainDemo from './MainDemo';
 import Usage from './Usage';
 import Props from './Props';
+import Demos from './Demos';
 
-const sections = [{ name: 'Component' }, { name: 'Usage' }, { name: 'Props' }];
+const sections = [
+  { name: 'Component' },
+  { name: 'Usage' },
+  { name: 'Props' },
+  { name: 'Demos' },
+  { name: 'textfield props', sub: true },
+];
 
 export default class DropdownPage extends Component {
   render() {
@@ -22,6 +29,7 @@ export default class DropdownPage extends Component {
           <MainDemo pageHref={'/components/select'} />
           <Usage pageHref={'/components/select'} />
           <Props pageHref={'/components/select'} />
+          <Demos pageHref={'/components/select'} />
         </ComponentPageLayout>
       </div>
     );

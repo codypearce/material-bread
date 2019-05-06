@@ -15,6 +15,7 @@ class Menu extends Component {
     menuStyle: PropTypes.object,
     sameWidth: PropTypes.bool,
     onBackdropPress: PropTypes.func,
+    modalMenuStyle: PropTypes.object,
   };
 
   state = {
@@ -147,6 +148,7 @@ class Menu extends Component {
       button,
       children,
       menuStyle,
+      modalMenuStyle,
       sameWidth,
       visible,
       onBackdropPress,
@@ -184,7 +186,8 @@ class Menu extends Component {
           visible={visible}
           onBackdropPress={onBackdropPress}
           transparent>
-          <Animated.View style={[styles.menuContainer, menuContainerStyle]}>
+          <Animated.View
+            style={[styles.menuContainer, menuContainerStyle, modalMenuStyle]}>
             <View
               style={[
                 styles.menu,
