@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { TouchableHighlight, View, FlatList, Text } from 'react-native';
+import { TouchableHighlight, View, FlatList } from 'react-native';
 
-import { Menu, MenuItem, Icon } from '../../..';
+import { Menu, MenuItem, Icon, TextField } from '../../..';
 
 import withTheme from '../../../Theme/withTheme';
 import styles from './SelectFilled.styles';
@@ -15,6 +15,7 @@ class Select extends Component {
     selectedItem: PropTypes.node,
     menuItems: PropTypes.array,
     visible: PropTypes.bool,
+    textFieldProps: PropTypes.object,
   };
 
   state = {
@@ -39,7 +40,13 @@ class Select extends Component {
   }
 
   render() {
-    const { buttonStyle, label, selectedItem, menuItems } = this.props;
+    const {
+      buttonStyle,
+      label,
+      selectedItem,
+      menuItems,
+      textFieldProps,
+    } = this.props;
 
     const { visible } = this.state;
     return (
@@ -47,33 +54,32 @@ class Select extends Component {
         style={[styles.menu, { flex: 1 }]}
         sameWidth
         visible={visible}
+        modalMenuStyle={{ marginTop: 72 }}
         button={
           <TouchableHighlight
             onPress={() => this.showMenu()}
             style={[styles.button, buttonStyle]}
             underlayColor={'transparent'}>
             <View style={styles.innerView}>
-              <Text
+              <TextField
+                type={'filled'}
+                label={label}
+                value={selectedItem}
+                focused={visible}
+                editable={false}
                 style={[
-                  styles.textSelected,
-                  { opacity: selectedItem ? 1 : 0 },
-                ]}>
-                {label}
-              </Text>
-
-              <Text
-                style={[
-                  styles.buttonText,
-                  { color: selectedItem ? 'black' : 'rgba(0,0,0,0.6)' },
-                ]}>
-                {selectedItem ? selectedItem : label}
-              </Text>
-
-              <Icon
-                name="arrow-drop-down"
-                size={24}
-                color={'#757575'}
-                style={styles.icon}
+                  styles.textField,
+                  textFieldProps && textFieldProps.style,
+                ]}
+                trailingIcon={
+                  <Icon
+                    name="arrow-drop-down"
+                    size={24}
+                    color={'#757575'}
+                    style={styles.icon}
+                  />
+                }
+                {...textFieldProps}
               />
             </View>
           </TouchableHighlight>
