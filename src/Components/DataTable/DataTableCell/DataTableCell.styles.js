@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
     minWidth: 'auto',
     flex: 1,
-    wordBreak: 'break-all',
   },
   text: {
     fontSize: 13,

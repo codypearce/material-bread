@@ -6,6 +6,9 @@ import { Checkbox, Hoverable } from '../../../';
 import styles from './DataTableRow.styles';
 
 class DataTableRow extends Component {
+  constructor(props) {
+    super(props);
+  }
   static propTypes = {
     children: PropTypes.node,
     style: PropTypes.object,

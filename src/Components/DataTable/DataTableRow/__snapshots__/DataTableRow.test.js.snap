@@ -22,6 +22,7 @@ exports[`DataTableRow Renders 1`] = `
         "width": "100%",
       },
       Object {
+        "backgroundColor": "transparent",
         "borderBottomColor": "rgb(224, 224, 224)",
       },
       undefined,

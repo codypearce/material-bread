@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableWithoutFeedback, Animated } from 'react-native';
+import {
+  Text,
+  View,
+  TouchableWithoutFeedback,
+  Animated,
+  Platform,
+} from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../../Theme/withTheme';
 import { Icon } from '../../../';
 import styles from './DataTableCell.styles';
 
 class TableCell extends Component {
+  constructor(props) {
+    super(props);
+  }
   static propTypes = {
     children: PropTypes.node,
     style: PropTypes.object,
@@ -78,6 +87,9 @@ class TableCell extends Component {
       sortingIcon,
     } = this.props;
 
+    const platformStyles =
+      Platform.OS == 'web' ? { wordBreak: 'break-all' } : {};
+
     return (
       <TouchableWithoutFeedback
         disabled={!onPress}
@@ -92,6 +104,7 @@ class TableCell extends Component {
               borderRightWidth: borderRight ? 1 : 0,
               borderLeftWidth: borderLeft ? 1 : 0,
             },
+            platformStyles,
             style,
           ]}>
           {sortingIcon ? this._renderSortingIcon() : null}
