@@ -18,6 +18,7 @@ class Select extends Component {
     textFieldProps: PropTypes.object,
     type: PropTypes.string,
     onBackdropPress: PropTypes.func,
+    theme: PropTypes.object,
   };
 
   state = {
@@ -49,9 +50,14 @@ class Select extends Component {
       menuItems,
       textFieldProps,
       type,
+      theme,
     } = this.props;
 
     const { visible } = this.state;
+
+    let iconColor = visible ? theme.primary.main : '#757575';
+    if (textFieldProps && textFieldProps.error) iconColor = theme.error.main;
+
     return (
       <Menu
         style={[styles.menu, { flex: 1 }]}
@@ -81,7 +87,7 @@ class Select extends Component {
                   <Icon
                     name="arrow-drop-down"
                     size={24}
-                    color={'#757575'}
+                    color={iconColor}
                     style={styles.icon}
                   />
                 }

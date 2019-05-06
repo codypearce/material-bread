@@ -113,12 +113,10 @@ class TextFieldLabel extends Component {
     } = this.state;
     if (!canAnimate) return;
 
-    if (value && value.length > 0) return;
+    let position = focused || value ? -10 : 20;
+    let scale = focused || value ? 0.75 : 1;
 
-    let position = focused ? -10 : 20;
-    let scale = focused ? 0.75 : 1;
-
-    if (dense) position = focused ? -10 : 11;
+    if (dense) position = focused || value ? -10 : 11;
 
     Animated.parallel([
       Animated.timing(translateYAnimation, {

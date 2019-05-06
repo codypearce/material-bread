@@ -50,4 +50,37 @@ export default storiesOf('Components|Select/Outlined', module)
         )}
       </State>
     </Container>
+  ))
+  .add('dense', () => (
+    <Container>
+      <Header title={'Outlined Select'} />
+
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <Select
+              type={'outlined'}
+              label={'Select'}
+              menuItems={data}
+              onSelect={value => store.set({ selectedItem: value.name })}
+              selectedItem={state.selectedItem}
+              textFieldProps={{
+                dense: true,
+              }}
+            />
+            <Select
+              type={'outlined'}
+              label={'Select'}
+              menuItems={data}
+              onSelect={value => store.set({ selectedItemTwo: value.name })}
+              selectedItem={state.selectedItemTwo}
+              textFieldProps={{
+                error: true,
+                dense: true,
+              }}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
   ));
