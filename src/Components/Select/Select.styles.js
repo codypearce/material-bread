@@ -20,9 +20,6 @@ const styles = StyleSheet.create({
     position: 'relative',
     zIndex: 2,
   },
-  textField: {
-    cursor: 'pointer',
-  },
 });
 
 export default styles;

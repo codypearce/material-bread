@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { TouchableHighlight, View, FlatList } from 'react-native';
+import { TouchableHighlight, View, FlatList, Platform } from 'react-native';
 
 import { Menu, MenuItem, Icon, TextField } from '../../..';
 
@@ -60,6 +60,13 @@ class Select extends Component {
     let iconColor = visible ? theme.primary.main : '#757575';
     if (textFieldProps && textFieldProps.error) iconColor = theme.error.main;
 
+    const platformStyles =
+      Platform.OS == 'web'
+        ? {
+            cursor: 'pointer',
+          }
+        : {};
+
     return (
       <Menu
         style={[styles.menu, { flex: 1 }]}
@@ -81,10 +88,7 @@ class Select extends Component {
                 value={selectedItem}
                 focused={visible}
                 editable={false}
-                style={[
-                  styles.textField,
-                  textFieldProps && textFieldProps.style,
-                ]}
+                style={[platformStyles, textFieldProps && textFieldProps.style]}
                 trailingIcon={
                   <Icon
                     name="arrow-drop-down"
