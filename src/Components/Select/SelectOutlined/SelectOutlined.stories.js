@@ -1,4 +1,5 @@
 import React from 'react';
+import { View } from 'react-native';
 
 import { Select } from '../../..';
 import { State, Store } from '@sambego/storybook-state';
@@ -8,6 +9,7 @@ import { storiesOf } from '../../../storybook/helpers/storiesOf';
 
 const store = new Store({
   selectedItem: '',
+  selectedItemTwo: '',
 });
 
 const data = [
@@ -24,14 +26,27 @@ export default storiesOf('Components|Select/Outlined', module)
 
       <State store={store} style={{ flex: 1 }}>
         {state => (
-          <Select
-            type={'outlined'}
-            label={'Select'}
-            menuItems={data}
-            onSelect={value => store.set({ selectedItem: value.name })}
-            selectedItem={state.selectedItem}
-            onBackdropPress={() => store.set({ selectedItem: false })}
-          />
+          <View>
+            <Select
+              type={'outlined'}
+              label={'Select'}
+              menuItems={data}
+              onSelect={value => store.set({ selectedItem: value.name })}
+              selectedItem={state.selectedItem}
+            />
+            <Select
+              type={'outlined'}
+              label={'Select'}
+              menuItems={data}
+              onSelect={value => store.set({ selectedItemTwo: value.name })}
+              selectedItem={state.selectedItemTwo}
+              textFieldProps={{
+                error: true,
+                helperText: 'error',
+                containerStyle: { marginTop: 40 },
+              }}
+            />
+          </View>
         )}
       </State>
     </Container>
