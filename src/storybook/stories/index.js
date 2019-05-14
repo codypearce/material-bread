@@ -119,6 +119,9 @@ export {
   default as SheetBottom,
 } from '../../Components/SheetBottom/SheetBottom.stories.js';
 export {
+  default as SheetSide,
+} from '../../Components/SheetSide/SheetSide.stories.js';
+export {
   default as Snackbar,
 } from '../../Components/Snackbar/Snackbar.stories.js';
 
