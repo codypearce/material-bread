@@ -193,6 +193,10 @@ const components = [
     path: '/components/select',
   },
   {
+    title: 'SheetBottom',
+    path: '/components/sheet-bottom',
+  },
+  {
     title: 'Snackbar',
     path: '/components/snackbar',
   },

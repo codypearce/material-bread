@@ -28,11 +28,11 @@ class SheetBottom extends Component {
     style: PropTypes.object,
     visible: PropTypes.bool,
     cardVerticalPadding: PropTypes.number,
-    containerHeight: PropTypes.number,
+    pageHeight: PropTypes.number,
   };
 
   static defaultProps = {
-    duration: 300,
+    duration: 200,
     cardVerticalPadding: 20,
   };
 
@@ -46,7 +46,7 @@ class SheetBottom extends Component {
   };
 
   componentDidMount() {
-    const { visible, containerHeight } = this.props;
+    const { visible, pageHeight } = this.props;
     const { pan } = this.state;
     if (visible) {
       this._open();
@@ -54,9 +54,7 @@ class SheetBottom extends Component {
     this.createPanResponder(this.props);
     pan.setValue({ x: 0, y: 200 });
     this.setState({
-      fullHeight: containerHeight
-        ? containerHeight
-        : Dimensions.get('screen').height,
+      fullHeight: pageHeight ? pageHeight : Dimensions.get('window').height,
     });
   }
 
@@ -91,7 +89,7 @@ class SheetBottom extends Component {
   };
 
   animateSheet(visible) {
-    const { cardVerticalPadding } = this.props;
+    const { cardVerticalPadding, duration } = this.props;
     const { initialHeight, fullHeight, pan } = this.state;
 
     if (visible) {
@@ -110,7 +108,7 @@ class SheetBottom extends Component {
     } else {
       Animated.timing(pan, {
         toValue: { x: 0, y: fullHeight },
-        duration: 200,
+        duration: duration,
       }).start(() => {
         this.setState({ internalVisible: false });
       });
@@ -170,7 +168,8 @@ class SheetBottom extends Component {
           transparent
           animationType={'none'}
           visible={internalVisible}
-          onRequestClose={this._close}>
+          onRequestClose={this._close}
+          style={{ margin: 0 }}>
           {this._renderContent()}
         </WebModal>
       );

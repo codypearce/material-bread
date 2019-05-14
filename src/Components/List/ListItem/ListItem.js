@@ -25,7 +25,7 @@ class ListItem extends Component {
     const { text, secondaryText, disabled } = this.props;
 
     return (
-      <View style={{ alitItems: 'center' }}>
+      <View style={{ alignItems: 'center' }}>
         <BodyText
           style={[
             styles.listItemText,

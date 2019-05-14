@@ -27,7 +27,7 @@ export default storiesOf('Components|SheetBottom', module)
             />
             <SheetBottom
               visible={state.visible}
-              containerHeight={Platform.OS == 'web' ? 600 : null}
+              pageHeight={Platform.OS == 'web' ? 600 : null}
               onBackdropPress={() => store.set({ visible: false })}
               onSwipeDown={() => store.set({ visible: false })}>
               <List>
