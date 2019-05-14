@@ -197,6 +197,10 @@ const components = [
     path: '/components/sheet-bottom',
   },
   {
+    title: 'SheetSide',
+    path: '/components/sheet-side',
+  },
+  {
     title: 'Snackbar',
     path: '/components/snackbar',
   },
