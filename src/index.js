@@ -85,6 +85,7 @@ export {
   default as Searchfield,
 } from './Components/TextField/Searchfield/Searchfield';
 export { default as Searchbar } from './Components/Appbar/Searchbar/Searchbar';
+export { default as SheetBottom } from './Components/SheetBottom/SheetBottom';
 export { default as Snackbar } from './Components/Snackbar/Snackbar';
 export { default as Switch } from './Components/Switch/Switch';
 export { default as TextField } from './Components/TextField/TextField';
