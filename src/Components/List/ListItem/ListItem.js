@@ -25,7 +25,7 @@ class ListItem extends Component {
     const { text, secondaryText, disabled } = this.props;
 
     return (
-      <View>
+      <View style={{ alitItems: 'center' }}>
         <BodyText
           style={[
             styles.listItemText,
@@ -33,7 +33,11 @@ class ListItem extends Component {
           ]}>
           {text}
         </BodyText>
-        <Caption style={styles.listItemSecondaryText}>{secondaryText}</Caption>
+        {secondaryText ? (
+          <Caption style={styles.listItemSecondaryText}>
+            {secondaryText}
+          </Caption>
+        ) : null}
       </View>
     );
   }
