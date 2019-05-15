@@ -16,6 +16,10 @@ class Menu extends Component {
     sameWidth: PropTypes.bool,
     onBackdropPress: PropTypes.func,
     modalMenuStyle: PropTypes.object,
+    contentContainerStyle: PropTypes.object,
+    noBackDrop: PropTypes.bool,
+    tooltip: PropTypes.bool,
+    tooltipPosition: PropTypes.string,
   };
 
   state = {
@@ -96,8 +100,9 @@ class Menu extends Component {
       animationDuration,
       buttonWidth,
     } = this.state;
+
     if (!initialHeight || !initialWidth) {
-      setTimeout(this.toggle, 100);
+      setTimeout(() => this.toggle(), 100);
       return;
     }
 
@@ -143,6 +148,8 @@ class Menu extends Component {
       buttonPositionY,
       buttonPositionX,
       modalMenuWidth,
+      initialWidth,
+      initialHeight,
     } = this.state;
     const {
       button,
@@ -152,13 +159,17 @@ class Menu extends Component {
       sameWidth,
       visible,
       onBackdropPress,
+      contentContainerStyle,
+      tooltip,
+      tooltipPosition,
+      noBackDrop,
     } = this.props;
 
     const menuContainerStyle = {
       height: menuHeight,
       width: menuWidth,
       opacity: opacity,
-      top: buttonPositionY - 14,
+      top: buttonPositionY ? buttonPositionY - 14 : 0,
     };
 
     if (modalMenuWidth > 0) {
@@ -168,6 +179,33 @@ class Menu extends Component {
       } else {
         menuContainerStyle.left = buttonPositionX - 10;
       }
+    }
+
+    if (tooltip) {
+      menuContainerStyle.top = buttonPositionY - initialHeight - 12;
+      menuContainerStyle.left =
+        buttonPositionX - 8 + buttonWidth / 2 - initialWidth / 2;
+
+      if (tooltipPosition == 'bottom') {
+        menuContainerStyle.top =
+          buttonPositionY + initialHeight + (Platform.OS == 'web' ? 4 : -4);
+      } else if (tooltipPosition == 'right') {
+        menuContainerStyle.top =
+          buttonPositionY - (Platform.OS == 'web' ? 4 : 8);
+        menuContainerStyle.left = buttonPositionX - 8 + buttonWidth;
+      } else if (tooltipPosition == 'left') {
+        menuContainerStyle.top =
+          buttonPositionY - (Platform.OS == 'web' ? 4 : 8);
+        menuContainerStyle.left = buttonPositionX - 12 - initialWidth;
+      }
+    }
+
+    if (
+      Number.isNaN(menuContainerStyle.top) ||
+      Number.isNaN(menuContainerStyle.left)
+    ) {
+      menuContainerStyle.top = 0;
+      menuContainerStyle.left = 0;
     }
 
     return (
@@ -185,6 +223,7 @@ class Menu extends Component {
           animationType={'none'}
           visible={visible}
           onBackdropPress={onBackdropPress}
+          noBackDrop={noBackDrop}
           transparent>
           <Animated.View
             style={[styles.menuContainer, menuContainerStyle, modalMenuStyle]}>
@@ -195,7 +234,11 @@ class Menu extends Component {
                 menuStyle,
               ]}
               onLayout={this.onMenuLayout}>
-              <ScrollView contentContainerStyle={{ paddingVertical: 8 }}>
+              <ScrollView
+                contentContainerStyle={[
+                  { paddingVertical: 8 },
+                  contentContainerStyle,
+                ]}>
                 {children}
               </ScrollView>
             </View>

@@ -13,7 +13,7 @@
  * https://github.com/rayandrews/react-native-web-modal
  */
 
-import warning from 'warning';
+// import warning from 'warning';
 import { canUseDOM } from './utils';
 
 let globalElement = null;
@@ -39,16 +39,16 @@ export function setElement(element) {
 
 export function validateElement(appElement) {
   if (!appElement && !globalElement) {
-    warning(
-      false,
-      [
-        'modal-react-native-web: App element is not defined.',
-        'Please use `Modal.setAppElement(el)` or set `appElement={el}`.',
-        "This is needed so screen readers don't see main content",
-        'when modal is opened. It is not recommended, but you can opt-out',
-        'by setting `ariaHideApp={false}`.',
-      ].join(' '),
-    );
+    // warning(
+    //   false,
+    //   [
+    //     'modal-react-native-web: App element is not defined.',
+    //     'Please use `Modal.setAppElement(el)` or set `appElement={el}`.',
+    //     "This is needed so screen readers don't see main content",
+    //     'when modal is opened. It is not recommended, but you can opt-out',
+    //     'by setting `ariaHideApp={false}`.',
+    //   ].join(' '),
+    // );
 
     return false;
   }

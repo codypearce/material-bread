@@ -141,6 +141,9 @@ export {
   default as ToggleButton,
 } from '../../Components/ToggleButton/ToggleButton.stories.js';
 export {
+  default as Tooltip,
+} from '../../Components/Tooltip/Tooltip.stories.js';
+export {
   default as Typography,
 } from '../../Components/Typography/Typography.stories.js';
 

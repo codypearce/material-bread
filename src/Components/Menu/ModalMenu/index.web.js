@@ -37,6 +37,7 @@ export default class Modal extends Component {
     containerStyle: PropTypes.object,
     onBackdropPress: PropTypes.func,
     onLayout: PropTypes.func,
+    noBackDrop: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -254,6 +255,7 @@ export default class Modal extends Component {
       children,
       visible,
       onLayout,
+      noBackDrop,
     } = this.props;
     return (
       <ModalPortal visible={visible}>
@@ -269,17 +271,20 @@ export default class Modal extends Component {
             },
             containerStyle,
           ]}>
-          <TouchableWithoutFeedback onPress={onBackdropPress}>
-            <View
-              style={{
-                height: visible ? '100%' : 0,
-                width: visible ? '100%' : 0,
-                position: 'fixed',
-                top: 0,
-                zIndex: visible ? 10 : -10,
-              }}
-            />
-          </TouchableWithoutFeedback>
+          {noBackDrop ? null : (
+            <TouchableWithoutFeedback onPress={onBackdropPress}>
+              <View
+                style={{
+                  height: visible ? '100%' : 0,
+                  width: visible ? '100%' : 0,
+                  position: 'fixed',
+                  top: 0,
+                  zIndex: visible ? 10 : -10,
+                }}
+              />
+            </TouchableWithoutFeedback>
+          )}
+
           {children}
         </Animated.View>
       </ModalPortal>

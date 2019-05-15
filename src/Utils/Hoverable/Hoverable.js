@@ -1,60 +1,53 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { isHoverEnabled } from './HoverState';
+import createHoverMonitor from './HoverState';
+const hover = createHoverMonitor();
 
-export default class Hoverable extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  state = {
-    isHovered: false,
-    showHover: true,
-  };
+class Hoverable extends Component {
+  static displayName = 'Hoverable';
 
   static propTypes = {
-    children: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
+    children: PropTypes.isRequired,
     onHoverIn: PropTypes.func,
     onHoverOut: PropTypes.func,
   };
 
+  state = { isHovered: false };
+
   _handleMouseEnter = () => {
-    if (isHoverEnabled() && !this.state.isHovered) {
+    if (hover.isEnabled && !this.state.isHovered) {
       const { onHoverIn } = this.props;
-      if (onHoverIn) onHoverIn();
-      this.setState(state => ({ ...state, isHovered: true }));
+      if (onHoverIn) {
+        onHoverIn();
+      }
+      this.setState(() => ({ isHovered: true }));
     }
   };
 
   _handleMouseLeave = () => {
     if (this.state.isHovered) {
       const { onHoverOut } = this.props;
-      if (onHoverOut) onHoverOut();
-      this.setState(state => ({ ...state, isHovered: false }));
+      if (onHoverOut) {
+        onHoverOut();
+      }
+      this.setState(() => ({ isHovered: false }));
     }
-  };
-
-  _handleGrant = () => {
-    this.setState(state => ({ ...state, showHover: false }));
-  };
-
-  _handleRelease = () => {
-    this.setState(state => ({ ...state, showHover: true }));
   };
 
   render() {
     const { children } = this.props;
+
     const child =
       typeof children === 'function'
-        ? children(this.state.showHover && this.state.isHovered)
+        ? children(this.state.isHovered)
         : children;
 
     return React.cloneElement(React.Children.only(child), {
       onMouseEnter: this._handleMouseEnter,
       onMouseLeave: this._handleMouseLeave,
-      onResponderGrant: this._handleGrant,
-      onResponderRelease: this._handleRelease,
     });
   }
 }
+
+export default Hoverable;
