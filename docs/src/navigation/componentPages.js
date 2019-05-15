@@ -121,6 +121,10 @@ const components = [
     path: '/components/drawer-section',
     subsubItem: true,
   },
+  {
+    title: 'DrawerBottom',
+    path: '/components/drawer-bottom',
+  },
 
   {
     title: 'Fab',
