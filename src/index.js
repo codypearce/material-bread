@@ -99,7 +99,7 @@ export {
 export {
   default as ToggleButtonGroup,
 } from './Components/ToggleButton/ToggleButtonGroup/ToggleButtonGroup';
-
+export { default as Tooltip } from './Components/Tooltip/Tooltip';
 export {
   Heading,
   Subtitle,

@@ -27,10 +27,6 @@ class Modal extends Component {
     visible: false,
   };
 
-  state = {
-    show: false,
-  };
-
   render() {
     const {
       onRequestClose,
@@ -39,9 +35,8 @@ class Modal extends Component {
       containerStyle,
       children,
       NativeModalProps,
+      visible,
     } = this.props;
-
-    const { show } = this.state;
 
     const deviceWidth = Dimensions.get('window').width;
     const deviceHeight = Dimensions.get('window').height;
@@ -50,7 +45,7 @@ class Modal extends Component {
       <NativeModal
         animationType={'none'}
         transparent={true}
-        visible={show}
+        visible={visible}
         onRequestClose={onRequestClose}
         onShow={onShow}
         {...NativeModalProps}>
