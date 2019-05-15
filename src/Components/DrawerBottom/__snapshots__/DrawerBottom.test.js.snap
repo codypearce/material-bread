@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DrawerBottom Renders 1`] = `
+<Modal
+  animationType="none"
+  hardwareAccelerated={false}
+  onRequestClose={[Function]}
+  transparent={true}
+  visible={false}
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#00000077",
+          "flex": 1,
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "height": "100%",
+          "left": 0,
+          "opacity": 1,
+          "position": "absolute",
+          "top": 0,
+          "width": "100%",
+          "zIndex": -1,
+        }
+      }
+    />
+    <View
+      onMoveShouldSetResponder={[Function]}
+      onMoveShouldSetResponderCapture={[Function]}
+      onResponderEnd={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderReject={[Function]}
+      onResponderRelease={[Function]}
+      onResponderStart={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      onStartShouldSetResponderCapture={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "height": "100%",
+          "overflow": "hidden",
+          "paddingVertical": 20,
+          "transform": Array [
+            Object {
+              "translateY": 200,
+            },
+          ],
+          "width": "100%",
+          "zIndex": 1000,
+        }
+      }
+    >
+      <View
+        onLayout={[Function]}
+      />
+    </View>
+  </View>
+</Modal>
+`;
