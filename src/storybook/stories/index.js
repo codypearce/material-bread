@@ -61,7 +61,9 @@ export {
 export {
   default as DrawerItem,
 } from '../../Components/Drawer/DrawerItem/DrawerItem.stories.js';
-
+export {
+  default as DrawerBottom,
+} from '../../Components/DrawerBottom/DrawerBottom.stories.js';
 export {
   default as Divider,
 } from '../../Components/Divider/Divider.stories.js';

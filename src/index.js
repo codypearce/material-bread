@@ -55,6 +55,9 @@ export {
 export {
   default as DrawerSection,
 } from './Components/Drawer/DrawerSection/DrawerSection';
+export {
+  default as DrawerBottom,
+} from './Components/DrawerBottom/DrawerBottom';
 export { default as Divider } from './Components/Divider/Divider';
 export { default as Fab } from './Components/Fab/Fab';
 export {
