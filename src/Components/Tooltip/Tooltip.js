@@ -9,8 +9,6 @@ import styles from './Tooltip.styles';
 
 class Tooltip extends Component {
   static propTypes = {
-    visible: PropTypes.bool,
-    animationDuration: PropTypes.number,
     children: PropTypes.node,
     style: PropTypes.object,
     content: PropTypes.string,

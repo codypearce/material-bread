@@ -227,6 +227,10 @@ const components = [
     subsubItem: true,
   },
   {
+    title: 'Tooltip',
+    path: '/components/tooltip',
+  },
+  {
     title: 'Typography',
     path: '/components/typography',
   },
