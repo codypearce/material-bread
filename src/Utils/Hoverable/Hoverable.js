@@ -6,6 +6,9 @@ const hover = createHoverMonitor();
 
 class Hoverable extends Component {
   static displayName = 'Hoverable';
+  constructor(props) {
+    super(props);
+  }
 
   static propTypes = {
     children: PropTypes.isRequired,
