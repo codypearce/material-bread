@@ -67,13 +67,20 @@ class Tab extends Component {
     );
   }
 
+  getHeight() {
+    const { icon, label } = this.props;
+    let height = icon && label ? 72 : 48;
+
+    return height;
+  }
+
   render() {
-    const { onPress, tabWidth, icon, label, rippleProps, style } = this.props;
+    const { onPress, tabWidth, rippleProps, style } = this.props;
 
     return (
       <Ripple
         onPress={onPress}
-        style={[{ width: tabWidth, height: icon && label ? 72 : 48 }, style]}
+        style={[{ width: tabWidth, height: this.getHeight() }, style]}
         {...rippleProps}>
         {this._renderTab()}
       </Ripple>

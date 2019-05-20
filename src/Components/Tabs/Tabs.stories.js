@@ -74,4 +74,27 @@ export default storiesOf('Components|Tabs', module)
         )}
       </State>
     </Container>
+  ))
+  .add('scrollable', () => (
+    <Container>
+      <Header title={'Tabs'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <Tabs
+              selectedIndex={state.selectedTab}
+              handleChange={index => store.set({ selectedTab: index })}
+              scrollEnabled
+              actionItems={[
+                { icon: 'phone', label: 'Recents' },
+                { icon: 'favorite', label: 'Favorites' },
+                { icon: 'map', label: 'Nearby' },
+                { icon: 'account-circle', label: 'Account' },
+                { icon: 'album', label: 'Music' },
+              ]}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
   ));

@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 12,
-    maxWidth: 360,
     minHeight: 48,
     maxHeight: 72,
   },
