@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ComponentDemoHeader } from '@components';
 
-import TextFieldPropsDemo from './TextFieldPropsDemo';
+import RangedDemo from './RangedDemo';
 
 export default class Demos extends Component {
   static propTypes = {
@@ -13,7 +13,7 @@ export default class Demos extends Component {
     return (
       <div>
         <ComponentDemoHeader pageHref={pageHref} />
-        <TextFieldPropsDemo pageHref={pageHref} />
+        <RangedDemo pageHref={pageHref} />
       </div>
     );
   }

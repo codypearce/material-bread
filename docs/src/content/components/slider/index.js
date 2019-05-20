@@ -10,7 +10,7 @@ const sections = [
   { name: 'Usage' },
   { name: 'Props' },
   { name: 'Demos' },
-  { name: 'textfield props', sub: true },
+  { name: 'ranged', sub: true },
 ];
 
 export default class DropdownPage extends Component {
