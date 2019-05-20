@@ -263,6 +263,7 @@ export default class Ripple extends PureComponent {
       nativeID,
       accessible,
       accessibilityLabel,
+      panResponder,
       ...props
     } = this.props;
 
@@ -289,7 +290,7 @@ export default class Ripple extends PureComponent {
     };
 
     return (
-      <TouchableWithoutFeedback {...touchableProps}>
+      <TouchableWithoutFeedback {...touchableProps} {...panResponder}>
         <Animated.View {...props} pointerEvents="box-only">
           {children}
           <View style={[styles.container, containerStyle]}>
