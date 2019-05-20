@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { ComponentMainDemo } from '@components';
+import { ComponentMainDemo, CodeInline } from '@components';
 import {
   BottomNavigation,
   BottomNavigationItem,
@@ -63,7 +63,14 @@ export const code = `class BottomTabs extends React.Component {
 const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
-    description={`Passing in an object means you don't have to worry about the internal logic, however passing in the component directly gives you more granular control. Below is example utitilizing some useful props to control the component more directly.`}
+    description={
+      <div>
+        You can have only <CodeInline code="icon" type="value" />s or{' '}
+        <CodeInline code="label" type="value" />
+        s, or both together. You can also mix and match components and objects
+        in the array.
+      </div>
+    }
     code={code}
     scope={{ View, BottomNavigationItem, BottomNavigation, Badge }}
   />
