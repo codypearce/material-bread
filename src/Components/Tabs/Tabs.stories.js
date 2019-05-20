@@ -52,4 +52,24 @@ export default storiesOf('Components|Tabs', module)
         )}
       </State>
     </Container>
+  ))
+  .add('icon + label', () => (
+    <Container>
+      <Header title={'Tabs'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <Tabs
+              selectedIndex={state.selectedTab}
+              handleChange={index => store.set({ selectedTab: index })}
+              actionItems={[
+                { icon: 'phone', label: 'Recents' },
+                { icon: 'favorite', label: 'Favorites' },
+                { icon: 'map', label: 'Nearby' },
+              ]}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
   ));

@@ -13,10 +13,12 @@ class Tab extends Component {
     activeTextColor: PropTypes.string,
     inActiveTextColor: PropTypes.string,
     textStyle: PropTypes.object,
+    iconStyles: PropTypes.object,
     onPress: PropTypes.func,
     tabWidth: PropTypes.number,
     style: PropTypes.object,
     icon: PropTypes.string,
+    rippleProps: PropTypes.object,
   };
 
   static defaultProps = {
@@ -25,18 +27,19 @@ class Tab extends Component {
   };
 
   _renderIcon(color) {
-    const { icon } = this.props;
-    return <Icon name={icon} size={24} color={color} />;
+    const { icon, iconStyles } = this.props;
+    return <Icon name={icon} size={24} color={color} style={iconStyles} />;
   }
 
   _renderText(color) {
-    const { label, textStyle } = this.props;
+    const { label, icon, textStyle } = this.props;
     return (
       <Text
         style={[
           styles.text,
           {
             color: color,
+            marginTop: icon ? 4 : 0,
           },
           textStyle,
         ]}>
@@ -65,10 +68,13 @@ class Tab extends Component {
   }
 
   render() {
-    const { onPress, tabWidth, style } = this.props;
+    const { onPress, tabWidth, icon, label, rippleProps, style } = this.props;
 
     return (
-      <Ripple onPress={onPress} style={[{ width: tabWidth }, style]}>
+      <Ripple
+        onPress={onPress}
+        style={[{ width: tabWidth, height: icon && label ? 72 : 48 }, style]}
+        {...rippleProps}>
         {this._renderTab()}
       </Ripple>
     );

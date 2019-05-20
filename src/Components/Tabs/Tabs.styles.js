@@ -2,11 +2,13 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    height: 48,
+    minHeight: 48,
+    maxHeight: 72,
   },
   tabsWrapper: {
     flexDirection: 'row',
-    height: 48,
+    minHeight: 48,
+    maxHeight: 72,
   },
 });
 

@@ -2,10 +2,12 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    height: 48,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingHorizontal: 12,
+    padding: 12,
+    maxWidth: 360,
+    minHeight: 48,
+    maxHeight: 72,
   },
   text: {
     fontSize: 14,
