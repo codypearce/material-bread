@@ -49,9 +49,6 @@ export default storiesOf('Components|Slider', module)
               values={[state.sliderOne, state.sliderTwo]}
               sliderLength={280}
               onValueChange={value => store.set({ slider: value })}
-              min={0}
-              max={100}
-              step={1}
               allowOverlap
             />
             <Slider
