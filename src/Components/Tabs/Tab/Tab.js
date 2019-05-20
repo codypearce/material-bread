@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { View, Text } from 'react-native';
-import { Ripple } from '../../../';
+import { Ripple, Icon } from '../../../';
 import withTheme from '../../../Theme/withTheme';
 import styles from './Tab.styles';
 
 class Tab extends Component {
   static propTypes = {
-    content: PropTypes.string,
+    label: PropTypes.string,
     active: PropTypes.bool,
     activeTextColor: PropTypes.string,
     inActiveTextColor: PropTypes.string,
@@ -16,6 +16,7 @@ class Tab extends Component {
     onPress: PropTypes.func,
     tabWidth: PropTypes.number,
     style: PropTypes.object,
+    icon: PropTypes.string,
   };
 
   static defaultProps = {
@@ -23,17 +24,13 @@ class Tab extends Component {
     activeTextColor: '#fff',
   };
 
-  _renderTab() {
-    const {
-      content,
-      active,
-      activeTextColor,
-      inActiveTextColor,
-      textStyle,
-    } = this.props;
+  _renderIcon(color) {
+    const { icon } = this.props;
+    return <Icon name={icon} size={24} color={color} />;
+  }
 
-    const color = active ? activeTextColor : inActiveTextColor;
-
+  _renderText(color) {
+    const { label, textStyle } = this.props;
     return (
       <Text
         style={[
@@ -43,8 +40,27 @@ class Tab extends Component {
           },
           textStyle,
         ]}>
-        {content ? content.toUpperCase() : null}
+        {label ? label.toUpperCase() : null}
       </Text>
+    );
+  }
+
+  _renderTab() {
+    const {
+      label,
+      active,
+      activeTextColor,
+      inActiveTextColor,
+      icon,
+    } = this.props;
+
+    const color = active ? activeTextColor : inActiveTextColor;
+
+    return (
+      <View style={styles.container}>
+        {icon ? this._renderIcon(color) : null}
+        {label ? this._renderText(color) : null}
+      </View>
     );
   }
 
@@ -53,7 +69,7 @@ class Tab extends Component {
 
     return (
       <Ripple onPress={onPress} style={[{ width: tabWidth }, style]}>
-        <View style={styles.container}>{this._renderTab()}</View>
+        {this._renderTab()}
       </Ripple>
     );
   }

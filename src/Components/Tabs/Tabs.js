@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
+
 import { Animated, ScrollView, View } from 'react-native';
 import Tab from './Tab/Tab';
 import Underline from './Underline/Underline';
@@ -10,7 +11,7 @@ class Tabs extends Component {
   static propTypes = {
     actionItems: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     selectedIndex: PropTypes.number,
-    color: PropTypes.string,
+    backgroundColor: PropTypes.string,
     underlineColor: PropTypes.string,
     scrollEnabled: PropTypes.bool,
     handleChange: PropTypes.func,
@@ -117,8 +118,10 @@ class Tabs extends Component {
   }
 
   getColor() {
-    const { color, theme } = this.props;
-    let implementedColor = color ? color : theme.primary.main;
+    const { backgroundColor, theme } = this.props;
+    let implementedColor = backgroundColor
+      ? backgroundColor
+      : theme.primary.main;
 
     return implementedColor;
   }
@@ -133,12 +136,16 @@ class Tabs extends Component {
     const { tabWidth, barWidth } = this.state;
 
     return actionItems.map((item, index) => {
-      if (typeof item === 'string') {
+      if (!item.props) {
         return (
           <Tab
             key={index}
-            content={item}
-            onPress={() => handleChange(index)}
+            label={item.label}
+            icon={item.icon}
+            onPress={() => {
+              handleChange(index);
+              if (item.onPress) item.onPress();
+            }}
             active={index === selectedIndex}
             tabWidth={!scrollEnabled ? tabWidth : barWidth * 0.4}
           />
@@ -152,19 +159,12 @@ class Tabs extends Component {
     });
   }
 
-  _renderScrollView() {
+  _renderContent() {
     const { scrollEnabled, underlineColor } = this.props;
     const { tabWidth, indicatorPosition, barWidth } = this.state;
 
     return (
-      <ScrollView
-        horizontal
-        ref={ref => {
-          this.scrollView = ref;
-        }}
-        showsHorizontalScrollIndicator={false}
-        keyboardShouldPersistTaps={'never'}
-        scrollEnabled={scrollEnabled}>
+      <Fragment>
         <View style={styles.tabsWrapper}>{this._renderTabs()}</View>
 
         <Underline
@@ -172,8 +172,29 @@ class Tabs extends Component {
           value={indicatorPosition}
           tabWidth={!scrollEnabled ? tabWidth : barWidth * 0.4}
         />
-      </ScrollView>
+      </Fragment>
     );
+  }
+
+  _renderScrollView() {
+    const { scrollEnabled } = this.props;
+
+    if (scrollEnabled) {
+      return (
+        <ScrollView
+          horizontal
+          ref={ref => {
+            this.scrollView = ref;
+          }}
+          showsHorizontalScrollIndicator={false}
+          keyboardShouldPersistTaps={'never'}
+          scrollEnabled={scrollEnabled}>
+          {this._renderContent()}
+        </ScrollView>
+      );
+    } else {
+      return this._renderContent();
+    }
   }
 
   render() {

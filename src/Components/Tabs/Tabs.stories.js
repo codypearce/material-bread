@@ -13,16 +13,40 @@ const store = new Store({
 
 export default storiesOf('Components|Tabs', module)
   .addParameters({ jest: ['Tabs'] })
-  .add('simple', () => (
+  .add('label', () => (
     <Container>
       <Header title={'Tabs'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <View>
             <Tabs
-              actionItems={['One', 'Two', 'Three', 'Four', 'Five']}
               selectedIndex={state.selectedTab}
               handleChange={index => store.set({ selectedTab: index })}
+              actionItems={[
+                { label: 'Dogs' },
+                { label: 'Cats' },
+                { label: 'Birds' },
+              ]}
+            />
+          </View>
+        )}
+      </State>
+    </Container>
+  ))
+  .add('icon', () => (
+    <Container>
+      <Header title={'Tabs'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View>
+            <Tabs
+              selectedIndex={state.selectedTab}
+              handleChange={index => store.set({ selectedTab: index })}
+              actionItems={[
+                { icon: 'phone' },
+                { icon: 'favorite' },
+                { icon: 'map' },
+              ]}
             />
           </View>
         )}
