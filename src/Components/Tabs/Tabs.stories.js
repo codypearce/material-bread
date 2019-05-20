@@ -42,6 +42,7 @@ export default storiesOf('Components|Tabs', module)
             <Tabs
               selectedIndex={state.selectedTab}
               handleChange={index => store.set({ selectedTab: index })}
+              backgroundColor={'#009688'}
               actionItems={[
                 { icon: 'phone' },
                 { icon: 'favorite' },
@@ -62,6 +63,7 @@ export default storiesOf('Components|Tabs', module)
             <Tabs
               selectedIndex={state.selectedTab}
               handleChange={index => store.set({ selectedTab: index })}
+              backgroundColor={'#9C27B0'}
               actionItems={[
                 { icon: 'phone', label: 'Recents' },
                 { icon: 'favorite', label: 'Favorites' },

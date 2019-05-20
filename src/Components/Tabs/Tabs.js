@@ -6,6 +6,7 @@ import Tab from './Tab/Tab';
 import Underline from './Underline/Underline';
 import withTheme from '../../Theme/withTheme';
 import styles from './Tabs.styles';
+export const TabsContext = React.createContext();
 
 class Tabs extends Component {
   static propTypes = {
@@ -154,6 +155,11 @@ class Tabs extends Component {
         return React.cloneElement(item, {
           key: index,
           active: index === selectedIndex,
+          tabWidth: !scrollEnabled ? tabWidth : barWidth * 0.4,
+          onPress: () => {
+            handleChange(index);
+            if (item.props.onPress) item.onPress();
+          },
         });
       }
     });
@@ -201,20 +207,22 @@ class Tabs extends Component {
     const { style } = this.props;
 
     return (
-      <View
-        style={[
-          styles.container,
-          {
-            backgroundColor: this.getColor(),
-          },
-          style,
-        ]}
-        ref={ref => {
-          this.container = ref;
-        }}
-        onLayout={event => this.getTabWidth(event.nativeEvent.layout.width)}>
-        {this._renderScrollView()}
-      </View>
+      <TabsContext.Provider>
+        <View
+          style={[
+            styles.container,
+            {
+              backgroundColor: this.getColor(),
+            },
+            style,
+          ]}
+          ref={ref => {
+            this.container = ref;
+          }}
+          onLayout={event => this.getTabWidth(event.nativeEvent.layout.width)}>
+          {this._renderScrollView()}
+        </View>
+      </TabsContext.Provider>
     );
   }
 }

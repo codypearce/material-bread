@@ -128,6 +128,7 @@ export {
 } from '../../Components/Snackbar/Snackbar.stories.js';
 
 export { default as Switch } from '../../Components/Switch/Switch.stories.js';
+export { default as Tab } from '../../Components/Tabs/Tab/Tab.stories.js';
 export { default as Tabs } from '../../Components/Tabs/Tabs.stories.js';
 export {
   default as TextFieldFilled,
