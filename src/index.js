@@ -92,6 +92,8 @@ export { default as SheetBottom } from './Components/SheetBottom/SheetBottom';
 export { default as SheetSide } from './Components/SheetSide/SheetSide';
 export { default as Snackbar } from './Components/Snackbar/Snackbar';
 export { default as Switch } from './Components/Switch/Switch';
+export { default as Tabs } from './Components/Tabs/Tabs';
+export { default as Tab } from './Components/Tabs/Tab/Tab';
 export { default as TextField } from './Components/TextField/TextField';
 export {
   default as TextFieldHelperText,

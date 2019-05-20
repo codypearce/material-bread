@@ -213,6 +213,15 @@ const components = [
     path: '/components/switch',
   },
   {
+    title: 'Tabs',
+    path: '/components/tabs',
+  },
+  {
+    title: 'Tab',
+    path: '/components/tab',
+    subsubItem: true,
+  },
+  {
     title: 'Textfield',
     path: '/components/textfield',
   },
