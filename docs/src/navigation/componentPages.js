@@ -205,6 +205,10 @@ const components = [
     path: '/components/sheet-side',
   },
   {
+    title: 'Slider',
+    path: '/components/slider',
+  },
+  {
     title: 'Snackbar',
     path: '/components/snackbar',
   },

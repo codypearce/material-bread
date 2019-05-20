@@ -123,6 +123,7 @@ export {
 export {
   default as SheetSide,
 } from '../../Components/SheetSide/SheetSide.stories.js';
+export { default as Slider } from '../../Components/Slider/Slider.stories.js';
 export {
   default as Snackbar,
 } from '../../Components/Snackbar/Snackbar.stories.js';
