@@ -22,6 +22,7 @@ class Slider extends Component {
     trackColor: PropTypes.string,
     markerColor: PropTypes.string,
     allowOverlap: PropTypes.bool,
+    style: PropTypes.object,
   };
 
   static defaultProps = {
@@ -30,7 +31,7 @@ class Slider extends Component {
     onValuesChangeEnd: () => {},
     step: 1,
     min: 0,
-    max: 10,
+    max: 100,
     sliderLength: 280,
     disableOne: false,
     disableTwo: false,
@@ -331,16 +332,17 @@ class Slider extends Component {
         positionOne={positionOne}
         trackColor={trackColor}
         bothDisabled={disableOne && disableTwo}
+        oneDisabled={disableOne}
       />
     );
   }
 
   render() {
-    const { sliderLength, values } = this.props;
+    const { sliderLength, values, style } = this.props;
     const twoMarkers = values.length == 2;
 
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, style]}>
         <View style={[styles.fullTrack, { width: sliderLength }]}>
           {this._renderTracks()}
           {this._renderMarkerLeft()}

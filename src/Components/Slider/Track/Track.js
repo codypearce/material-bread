@@ -14,6 +14,7 @@ class Track extends Component {
     theme: PropTypes.object,
     trackColor: PropTypes.string,
     bothDisabled: PropTypes.bool,
+    oneDisabled: PropTypes.bool,
   };
 
   render() {
@@ -25,6 +26,7 @@ class Track extends Component {
       theme,
       trackColor,
       bothDisabled,
+      oneDisabled,
     } = this.props;
 
     const selectedColor = trackColor ? trackColor : theme.primary.main;
@@ -41,7 +43,8 @@ class Track extends Component {
             styles.track,
             {
               width: trackOneLength,
-              backgroundColor: twoMarkers ? unselectedColor : selectedColor,
+              backgroundColor:
+                twoMarkers || oneDisabled ? unselectedColor : selectedColor,
             },
           ]}
         />
