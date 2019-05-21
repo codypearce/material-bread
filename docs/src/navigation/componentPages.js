@@ -17,6 +17,10 @@ const components = [
     path: '/components/avatar',
   },
   {
+    title: 'Backdrop',
+    path: '/components/backdrop',
+  },
+  {
     title: 'Badge',
     path: '/components/badge',
   },

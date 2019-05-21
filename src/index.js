@@ -9,6 +9,7 @@ export {
   default as AppbarBottom,
 } from './Components/AppbarBottom/AppbarBottom';
 export { default as Avatar } from './Components/Avatar/Avatar';
+export { default as Backdrop } from './Components/Backdrop/Backdrop';
 export { default as Badge } from './Components/Badge/Badge';
 export { default as Banner } from './Components/Banner/Banner';
 export {
