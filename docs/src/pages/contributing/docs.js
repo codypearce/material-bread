@@ -109,7 +109,7 @@ class Index extends Component {
                   </li>
                   <li>
                     Start up Gatsby{' '}
-                    <CodeInline code="npm run develops" type={''} />
+                    <CodeInline code="npm run develop" type={''} />
                   </li>
                 </ol>
                 Wait for the project to build and it should be running at
