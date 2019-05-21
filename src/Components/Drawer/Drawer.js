@@ -216,9 +216,9 @@ class Drawer extends PureComponent {
       );
     }
     return (
-      <View style={contentContainerStyle}>
+      <View style={[{ height: '100%' }, contentContainerStyle]}>
         {appbar ? this._renderAppBar() : null}
-        <View>{children}</View>
+        <View style={{ height: '100%' }}>{children}</View>
       </View>
     );
   }

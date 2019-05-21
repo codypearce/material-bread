@@ -19,6 +19,22 @@ export const code = `class DrawerPage extends React.Component {
       }
     }
     render() {
+      const styles = {
+        container: {
+          zIndex: 1,
+          border: '1px solid rgba(0,0,0,.12)'
+        },
+        body: {
+          backgroundColor: '#eee',
+          height: 400,
+          minHeight: 400,
+          width: '100%', 
+          flex: 1,
+          paddingTop: 20, 
+          alignItems: 'center', 
+        },
+      };
+
       const DrawerContent = () => {
         return (
           <View>
@@ -56,20 +72,6 @@ export const code = `class DrawerPage extends React.Component {
         );
       };
       
-      const styles = {
-        container: {
-          zIndex: 1,
-          border: '1px solid rgba(0,0,0,.12)'
-        },
-        body: {
-          backgroundColor: '#eee',
-          height: 300,
-          width: '100%', 
-          flex: 1,
-          paddingTop: 20, 
-          alignItems: 'center', 
-        },
-      };
       return (
         <View style={styles.container}>
             <Drawer

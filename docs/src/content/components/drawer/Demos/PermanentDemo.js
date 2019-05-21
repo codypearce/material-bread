@@ -63,7 +63,8 @@ export const code = `class DrawerPage extends React.Component {
         },
         body: {
           backgroundColor: '#eee',
-          height: 300,
+          height: 400,
+          minHeight: 400,
           width: '100%', 
           flex: 1,
           alignItems: 'center',
