@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Image } from 'react-native';
-import { ComponentMainDemo } from '@components';
+import { ComponentMainDemo, CodeInline } from '@components';
 import { IconButton, Badge } from '../../../../../src/index';
 
 export const code = `class IconPage extends React.Component {
@@ -38,7 +38,11 @@ const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
     description={
-      'IconButtons are convenient components for adding onPress and Ripple to icons.'
+      <div>
+        <CodeInline code="IconButtons" type="element" /> are convenient
+        components for adding <CodeInline code="onPress" type="prop" /> and{' '}
+        <CodeInline code="Ripple" type="element" /> to icons.
+      </div>
     }
     code={code}
     scope={{ View, IconButton, Badge, Image }}

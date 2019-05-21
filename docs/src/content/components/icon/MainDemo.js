@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Image } from 'react-native';
-import { ComponentMainDemo } from '@components';
+import { ComponentMainDemo, CodeInline } from '@components';
 import { Icon, Badge } from '../../../../../src/index';
 
 export const code = `class IconPage extends React.Component {
@@ -32,7 +32,11 @@ const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
     description={
-      'Icons are provided by react-native-vector-icons, you can learn more about these icons in the style section on icons'
+      <div>
+        <CodeInline code="Icon" type="element" />s are provided by
+        <CodeInline code="react-native-vector-icons" type="" />, you can learn
+        more about these icons in the style section on icons.
+      </div>
     }
     code={code}
     scope={{ View, Icon, Image, Badge }}

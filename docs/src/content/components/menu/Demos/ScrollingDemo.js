@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { ComponentDemo } from '@components';
+import { ComponentDemo, CodeInline } from '@components';
 import { Menu, MenuItem, Button } from '../../../../../../src/index';
 
 export const code = `class Demo extends React.Component {
@@ -44,7 +44,12 @@ const SubtitleDemo = pageHref => (
     sectionHref={`${pageHref}#scrolling`}
     sectionId={'scrolling'}
     code={code}
-    description={'Prived a maxheight to scroll the content.'}
+    description={
+      <div>
+        Provide <CodeInline code="maxheight" type="prop" /> to scroll the
+        content.
+      </div>
+    }
     scope={{ View, Menu, MenuItem, Button }}
   />
 );

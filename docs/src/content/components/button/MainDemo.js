@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { ComponentMainDemo } from '@components';
+import { ComponentMainDemo, CodeInline } from '@components';
 import { Button, Icon } from '../../../../../src/index';
 
 export const code = `<View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap'}}>
@@ -16,7 +16,14 @@ const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
     description={
-      'There are a few types of buttons: contained, outlined, and text. Each can have text, icons, or have their children completely replaced. See demos for more variations.'
+      <div>
+        The <CodeInline code="Button" type="element" /> component has four
+        variations: <CodeInline code="contained" type="value" />,{' '}
+        <CodeInline code="outlined" type="value" />,
+        <CodeInline code="flat" type="value" /> and,{' '}
+        <CodeInline code="text" type="value" />. Each can have text, icons, or
+        have their children completely replaced. See demos for more variations.
+      </div>
     }
     code={code}
     scope={{ View, Button, Icon }}

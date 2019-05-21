@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { ComponentMainDemo } from '@components';
+import { ComponentMainDemo, CodeInline } from '@components';
 import { Avatar, Banner, Button } from '../../../../../src/index';
 
 export const code = `class Header extends React.Component {
@@ -43,7 +43,14 @@ const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
     description={
-      'Banners show important information at the top of a page, you can add an icon or other media, text, and action buttons. A simple web multiline example is shown below.'
+      <div>
+        <CodeInline code="Banner" type="element" />s show important information
+        at the top of a page, you can add an{' '}
+        <CodeInline code="icon" type="value" /> or other{' '}
+        <CodeInline code="media" type="props" />, text, and
+        <CodeInline code="actionItems" type="prop" />. A simple web multiline
+        example is shown below.
+      </div>
     }
     code={code}
     scope={{ View, Banner, Avatar, Button }}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Image } from 'react-native';
-import { ComponentMainDemo } from '@components';
+import { ComponentMainDemo, CodeInline } from '@components';
 import { Paper } from '../../../../../src/index';
 
 export const code = `class PaperDemo extends React.Component {
@@ -43,7 +43,12 @@ export const code = `class PaperDemo extends React.Component {
 const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
-    description={`Paper is a base component for displaying surfaces with shadow.`}
+    description={
+      <div>
+        The <CodeInline code="Paper" type="element" /> copmonent is a base
+        component for displaying surfaces with shadow.
+      </div>
+    }
     code={code}
     scope={{ View, Paper, Image }}
   />

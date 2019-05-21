@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Image } from 'react-native';
-import { ComponentMainDemo } from '@components';
+import { ComponentMainDemo, CodeInline } from '@components';
 import { Badge, IconButton, Icon } from '../../../../../src/index';
 
 export const code = `<View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -24,7 +24,10 @@ const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
     description={
-      'Badges can be used in two ways: standalone or wrapping a component.'
+      <div>
+        <CodeInline code="Badge" type="element" />s can be used in two ways:
+        standalone or wrapping a component.
+      </div>
     }
     code={code}
     scope={{ IconButton, View, Image, Badge, Icon }}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Image } from 'react-native';
-import { ComponentMainDemo } from '@components';
+import { ComponentMainDemo, CodeInline } from '@components';
 import { Checkbox } from '../../../../../src/index';
 
 export const code = `class CheckboxPage extends React.Component {
@@ -55,7 +55,12 @@ export const code = `class CheckboxPage extends React.Component {
 const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
-    description={'Checkboxes can have labels, custom icons, and custom colors.'}
+    description={
+      <div>
+        The <CodeInline code="Checkbox" type="element" /> component can have
+        labels, custom icons, and custom colors.
+      </div>
+    }
     code={code}
     scope={{ View, Checkbox, Image }}
   />

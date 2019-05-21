@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Image } from 'react-native';
-import { ComponentMainDemo } from '@components';
+import { ComponentMainDemo, CodeInline } from '@components';
 import { Menu, MenuItem, Button } from '../../../../../src/index';
 
 export const code = `class MenuPage extends React.Component {
@@ -36,7 +36,15 @@ export const code = `class MenuPage extends React.Component {
 const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
-    description={`Menus are built with MenuItems and Buttons. Pass a button to activate the menu and it will attach to that component.`}
+    description={
+      <div>
+        The <CodeInline code="Menu" type="element" /> component is built with
+        <CodeInline code="MenuItem" type="element" />s and{' '}
+        <CodeInline code="Button" type="element" />
+        s. Pass a <CodeInline code="Button" type="element" /> to activate the
+        menu and it will attach to that component.
+      </div>
+    }
     code={code}
     scope={{ View, Menu, MenuItem, Button, Image }}
   />
