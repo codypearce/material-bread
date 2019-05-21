@@ -10,8 +10,7 @@ const sections = [
   { name: 'Usage' },
   { name: 'Props' },
   { name: 'Demos' },
-  { name: 'dot', sub: true },
-  { name: 'animated', sub: true },
+  { name: 'subheader', sub: true },
 ];
 
 export default class BackdropPage extends Component {
