@@ -136,12 +136,12 @@ export default class Ripple extends PureComponent {
     this.isPressingIn = false;
   }
 
-  onAnimationEnd() {
+  onAnimationEnd(event) {
     if (this.props.displayUntilPressOut && this.isPressingIn) {
       this.animationWaitingForEnd = true;
       return;
     }
-    if ('function' === typeof this.props.onAnimationEnd) {
+    if (this.props.onAnimationEnd) {
       this.props.onAnimationEnd(event);
     }
 

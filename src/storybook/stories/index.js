@@ -6,6 +6,9 @@ export {
   default as AppbarBottom,
 } from '../../Components/AppbarBottom/AppbarBottom.stories.js';
 export { default as Avatar } from '../../Components/Avatar/Avatar.stories.js';
+export {
+  default as Backdrop,
+} from '../../Components/Backdrop/Backdrop.stories.js';
 export { default as Badge } from '../../Components/Badge/Badge.stories.js';
 export { default as Banner } from '../../Components/Banner/Banner.stories.js';
 export {

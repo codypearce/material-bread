@@ -19,17 +19,19 @@ class ListItem extends Component {
     icon: PropTypes.node,
     actionItem: PropTypes.node,
     leadingActionItem: PropTypes.node,
+    textStyle: PropTypes.object,
   };
 
   _renderText() {
-    const { text, secondaryText, disabled } = this.props;
+    const { text, secondaryText, disabled, textStyle } = this.props;
 
     return (
-      <View style={{ alignItems: 'center' }}>
+      <View style={{ alignItems: 'flex-start' }}>
         <BodyText
           style={[
             styles.listItemText,
             { color: disabled ? 'rgba(0,0,0,0.47)' : 'rgba(0,0,0,0.87)' },
+            textStyle,
           ]}>
           {text}
         </BodyText>

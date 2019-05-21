@@ -27,6 +27,7 @@ const propData = [
     'false',
   ],
   ['styles', 'Styles root container', 'object', ''],
+  ['textStyle', 'Styles for the text component', 'object', ''],
   ['unCheckedColor', 'Custom color for unchecked icon', 'string', ''],
 ];
 
