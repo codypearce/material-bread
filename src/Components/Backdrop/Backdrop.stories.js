@@ -23,11 +23,11 @@ export default storiesOf('Components|Backdrop', module)
           width: '100%',
         }}>
         <Backdrop
-          backLayerConcealed={() => (
+          backLayerConcealed={
             <View style={styles.backdropHeader}>
               <Text style={styles.backdropHeaderTitle}>App</Text>
             </View>
-          )}
+          }
           backLayerRevealed={
             <View style={{ flex: 1, width: '100%' }}>
               <View style={styles.backdropHeader}>
@@ -155,11 +155,11 @@ export default storiesOf('Components|Backdrop', module)
         }}>
         <Backdrop
           subheader={'Music'}
-          backLayerConcealed={() => (
+          backLayerConcealed={
             <View style={styles.backdropHeader}>
               <Text style={styles.backdropHeaderTitle}>App</Text>
             </View>
-          )}
+          }
           backLayerRevealed={
             <View style={{ flex: 1, width: '100%' }}>
               <View style={styles.backdropHeader}>

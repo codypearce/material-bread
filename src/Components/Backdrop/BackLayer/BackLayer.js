@@ -30,7 +30,7 @@ class BackLayer extends Component {
 
     return (
       <Animated.View style={[styles.backLayer, { opacity }]}>
-        {backLayerConcealed()}
+        {backLayerConcealed}
       </Animated.View>
     );
   };
