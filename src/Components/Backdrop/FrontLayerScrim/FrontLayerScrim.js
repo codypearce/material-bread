@@ -6,6 +6,9 @@ import withTheme from '../../../Theme/withTheme';
 import styles from './FrontLayerScrim.styles';
 
 class FrontLayerScrim extends Component {
+  constructor(props) {
+    super(props);
+  }
   static propTypes = {
     backRevealed: PropTypes.bool,
     toggleLayout: PropTypes.func,

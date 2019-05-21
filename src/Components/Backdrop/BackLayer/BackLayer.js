@@ -5,6 +5,9 @@ import withTheme from '../../../Theme/withTheme';
 import styles from './BackLayer.styles';
 
 class BackLayer extends Component {
+  constructor(props) {
+    super(props);
+  }
   static propTypes = {
     backLayerConcealed: PropTypes.node,
     backLayerRevealed: PropTypes.node,

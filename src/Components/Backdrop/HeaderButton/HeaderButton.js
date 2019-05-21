@@ -6,6 +6,9 @@ import withTheme from '../../../Theme/withTheme';
 import styles from './HeaderButton.styles';
 
 class HeaderButton extends Component {
+  constructor(props) {
+    super(props);
+  }
   static propTypes = {
     headerButtonStyle: PropTypes.object,
     toggleLayout: PropTypes.func,

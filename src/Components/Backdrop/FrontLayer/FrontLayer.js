@@ -9,6 +9,9 @@ import { Subtitle } from '../../..';
 const IOS = Platform.OS === 'ios';
 
 class FrontLayer extends PureComponent {
+  constructor(props) {
+    super(props);
+  }
   static propTypes = {
     offset: PropTypes.number,
     initialOffset: PropTypes.number,

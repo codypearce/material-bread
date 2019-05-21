@@ -146,7 +146,7 @@ export default storiesOf('Components|Backdrop', module)
       </View>
     </Container>
   ))
-  .add('Subtitle', () => (
+  .add('Subheader', () => (
     <Container style={{ flex: 1, padding: 0 }}>
       <View
         style={{
