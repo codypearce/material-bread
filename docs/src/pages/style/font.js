@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import Section from '../../components/Section';
-import PageTitle from '../../components/PageTitle';
-import CodeBlock from '../../components/CodeBlock';
-import Link from '../../components/Link';
-import P from '../../components/P';
+
+import { CodeBlock, Section, PageTitle, Link, P, Helmet } from '@components';
 
 export default class FontPage extends Component {
   render() {
     return (
       <div>
+        <Helmet title={'Material Font Roboto'} />
         <PageTitle>Font</PageTitle>
         <P>
           The default font for Material Design and this package is Roboto,

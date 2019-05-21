@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ComponentPageLayout from '../../../components/ComponentPage/ComponentPageLayout';
+import { ComponentPageLayout } from '@components';
 import MainDemo from './MainDemo';
 import Usage from './Usage';
 import Props from './Props';

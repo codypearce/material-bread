@@ -6,6 +6,7 @@ import {
   ComponentSubtitle,
   Section,
   ComponentDescription,
+  Helmet,
 } from '@components';
 
 class Index extends Component {
@@ -15,6 +16,7 @@ class Index extends Component {
   render() {
     return (
       <div style={styles.container}>
+        <Helmet title={'About'} />
         <PageTitle>About</PageTitle>
         <ComponentSubtitle
           description={

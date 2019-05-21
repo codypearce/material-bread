@@ -10,6 +10,7 @@ import {
   PageTitle,
   ComponentSubtitle,
   CodeInline,
+  Helmet,
 } from '@components';
 
 const sections = [
@@ -90,6 +91,7 @@ class Index extends Component {
   render() {
     return (
       <div style={styles.container}>
+        <Helmet title={'React Native web starter'} />
         <PageTitle>Web</PageTitle>
         <ComponentSubtitle
           description={'Run React Native components on the web'}

@@ -9,6 +9,7 @@ import {
   CodeInline,
   Link,
   SideScrollMenu,
+  Helmet,
 } from '@components';
 import { DataTable, DataTableCell, DataTableRow } from '../../../../src';
 const sections = [{ name: 'Started' }, { name: 'Setup' }];
@@ -20,6 +21,7 @@ class Index extends Component {
   render() {
     return (
       <div style={styles.container}>
+        <Helmet title={'Contribute to docs'} />
         <PageTitle>Contributing to Docs</PageTitle>
         <ComponentSubtitle
           description={

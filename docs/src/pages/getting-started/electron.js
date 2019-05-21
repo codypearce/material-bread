@@ -10,6 +10,7 @@ import {
   PageTitle,
   ComponentSubtitle,
   CodeInline,
+  Helmet,
 } from '@components';
 
 const sections = [
@@ -206,6 +207,7 @@ class Index extends Component {
   render() {
     return (
       <div style={styles.container}>
+        <Helmet title={'React Native Electron'} />
         <PageTitle>Electron</PageTitle>
         <ComponentSubtitle
           description={

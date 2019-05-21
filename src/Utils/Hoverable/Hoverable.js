@@ -11,7 +11,7 @@ class Hoverable extends Component {
   }
 
   static propTypes = {
-    children: PropTypes.isRequired,
+    children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
     onHoverIn: PropTypes.func,
     onHoverOut: PropTypes.func,
   };

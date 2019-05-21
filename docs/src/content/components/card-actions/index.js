@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ComponentPageLayout from '../../../components/ComponentPage/ComponentPageLayout';
+import { ComponentPageLayout } from '@components';
 import MainDemo from './MainDemo';
 import Usage from './Usage';
 import Props from './Props';
@@ -21,7 +21,7 @@ export default class CardPage extends Component {
           componentName={'card-actions'}
           title={'Card Actions'}
           description={
-            'Card action buttons displayed at the bottom of most the cards'
+            'Card action buttons displayed at the bottom of most the cards.'
           }
           importCode={`import { CardActions } from 'material-bread';`}
           sideScrollMenuItems={sections}>

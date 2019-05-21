@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
-import Section from '../../components/Section';
-import PageTitle from '../../components/PageTitle';
-import CodeBlock from '../../components/CodeBlock';
-import CodeInline from '../../components/CodeInline';
+
 import { defaultTheme } from '../../../../src/index';
-import P from '../../components/P';
+
+import {
+  CodeInline,
+  Section,
+  PageTitle,
+  CodeBlock,
+  P,
+  Helmet,
+} from '@components';
+
 const themeCode = `import * as React from 'react';
 import { BreadProvider, Colors } from 'material-bread';
 import App from './App';
@@ -43,6 +49,7 @@ export default class IconPage extends Component {
   render() {
     return (
       <div>
+        <Helmet title={'Material Theme'} />
         <PageTitle>Theme</PageTitle>
         <P>
           The theme defines both global and component specific styles for color,

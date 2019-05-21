@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
-import Section from '../../components/Section';
-import PageTitle from '../../components/PageTitle';
-import CodeInline from '../../components/CodeInline';
 import IconDirectory from '../../components/IconDirectory/IconDirectory';
-import Link from '../../components/Link';
-import P from '../../components/P';
-
+import { CodeInline, Section, PageTitle, Link, P, Helmet } from '@components';
 export default class IconPage extends Component {
   render() {
     return (
       <div>
+        <Helmet title={'Material Icons'} />
         <PageTitle>Icons</PageTitle>
         <P>
           Material Icons are provided by{' '}

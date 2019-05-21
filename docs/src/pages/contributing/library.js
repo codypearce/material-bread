@@ -9,6 +9,7 @@ import {
   CodeInline,
   Link,
   SideScrollMenu,
+  Helmet,
 } from '@components';
 import { DataTable, DataTableCell, DataTableRow } from '../../../../src';
 const sections = [
@@ -25,6 +26,7 @@ class Index extends Component {
   render() {
     return (
       <div style={styles.container}>
+        <Helmet title={'Contribute to component library'} />
         <PageTitle>Contributing to Library</PageTitle>
         <ComponentSubtitle
           description={

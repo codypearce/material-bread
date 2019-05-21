@@ -6,6 +6,7 @@ export { default as Section } from './Section';
 export { default as SectionHeader } from './SectionHeader';
 export { default as CodeInline } from './CodeInline';
 export { default as CodeBlock } from './CodeBlock';
+export { default as Helmet } from './Helmet';
 
 // COLOR PALLETE
 export { default as ColorPalette } from './ColorPalette/ColorPalette';

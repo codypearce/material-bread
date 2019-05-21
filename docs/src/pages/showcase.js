@@ -7,6 +7,7 @@ import {
   Section,
   ComponentDescription,
   PlatformButton,
+  Helmet,
 } from '@components';
 import materialBread from '../assets/material-bread-docs.png';
 
@@ -17,6 +18,7 @@ class Index extends Component {
   render() {
     return (
       <div style={styles.container}>
+        <Helmet title={'Showcase'} />
         <PageTitle>Showcase</PageTitle>
         <ComponentSubtitle description={'Apps using Material Bread'} />
 

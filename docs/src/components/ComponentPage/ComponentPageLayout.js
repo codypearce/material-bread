@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import ComponentHeader from './ComponentHeader';
 import SideScrollMenu from '../SideScrollMenu';
-
+import { Helmet } from '@components';
 import Prism from 'prismjs';
 
 require('prismjs/components/prism-jsx.min');
@@ -40,6 +40,7 @@ class ComponentPageLayout extends Component {
 
     return (
       <div style={{ marginBottom: 24, position: 'relative' }}>
+        <Helmet title={title} description={description} />
         <SideScrollMenu items={sideScrollMenuItems} />
         <ComponentHeader
           title={title}
