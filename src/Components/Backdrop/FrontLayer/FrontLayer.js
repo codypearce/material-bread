@@ -4,6 +4,7 @@ import { Platform, Animated } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import styles from './FrontLayer.styles';
 import FrontLayerScrim from '../FrontLayerScrim/FrontLayerScrim';
+import { Subtitle } from '../../..';
 
 const IOS = Platform.OS === 'ios';
 
@@ -21,6 +22,7 @@ class FrontLayer extends PureComponent {
     isInternalAnimate: PropTypes.bool,
     internalOffsetAnimate: PropTypes.object,
     window: PropTypes.object,
+    subheader: PropTypes.string,
   };
 
   getFrontLayerTranslateY = () => {
@@ -60,6 +62,7 @@ class FrontLayer extends PureComponent {
       animate,
       frontLayerStyle,
       backRevealed,
+      subheader,
     } = this.props;
 
     const translateY = this.getFrontLayerTranslateY();
@@ -71,6 +74,7 @@ class FrontLayer extends PureComponent {
           frontLayerStyle,
           { transform: [{ translateY }] },
         ]}>
+        <Subtitle text={subheader} style={styles.subheader} />
         {children}
         <FrontLayerScrim
           toggleLayout={() => toggleLayout()}

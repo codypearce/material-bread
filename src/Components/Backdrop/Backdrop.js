@@ -18,6 +18,7 @@ class Backdrop extends PureComponent {
     backLayerConcealed: PropTypes.func,
     headerButtonStyle: PropTypes.object,
     theme: PropTypes.object,
+    subheader: PropTypes.string,
   };
 
   static defaultProps = {
@@ -78,6 +79,7 @@ class Backdrop extends PureComponent {
       backLayerRevealed,
       backLayerConcealed,
       theme,
+      subheader,
     } = this.props;
     const { backConcealed, backRevealed, window, iconName } = this.state;
 
@@ -106,7 +108,8 @@ class Backdrop extends PureComponent {
           backRevealed={backRevealed}
           backLayerRevealed={backLayerRevealed}
           internalOffsetAnimate={this.internalOffsetAnimate}
-          isInternalAnimate={this.isInternalAnimate}>
+          isInternalAnimate={this.isInternalAnimate}
+          subheader={subheader}>
           {children}
         </FrontLayer>
         <HeaderButton
