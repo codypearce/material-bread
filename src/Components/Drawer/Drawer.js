@@ -172,6 +172,7 @@ class Drawer extends PureComponent {
             width: screenWidth,
             height: screenHeight,
             top: appbarHeight,
+            position: 'fixed',
           },
         ]}>
         <TouchableWithoutFeedback onPress={this.props.onClose}>
