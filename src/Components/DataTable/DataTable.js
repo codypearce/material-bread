@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import shadow from '../../Utils/Shadow/shadow';
 
@@ -13,21 +13,22 @@ class DataTable extends Component {
     const { children, style } = this.props;
 
     return (
-      <View
-        style={[
-          {
-            width: '100%',
-            backgroundColor: 'white',
-            borderRadius: 4,
-            overflowX: 'auto',
-            minWidth: 'auto',
-            minHeight: 'auto',
-            ...shadow(4),
-          },
-          style,
-        ]}>
-        {children}
-      </View>
+      <ScrollView
+        scrollEnabled={true}
+        horizontal={true}
+        contentContainerStyle={{ minWidth: '100%' }}>
+        <View
+          style={[
+            {
+              flex: 1,
+              borderRadius: 4,
+              ...shadow(4),
+            },
+            style,
+          ]}>
+          {children}
+        </View>
+      </ScrollView>
     );
   }
 }

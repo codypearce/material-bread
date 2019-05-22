@@ -16,7 +16,7 @@ export const code = `class ChipPage extends React.Component {
                 text={'Desert'}
                 type={'header'}
                 borderRight
-                flex={2}
+                relativeWidth={2}
             />
             <DataTableCell
                 text={'Calories'}

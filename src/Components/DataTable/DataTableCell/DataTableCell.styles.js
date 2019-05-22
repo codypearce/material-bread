@@ -6,13 +6,13 @@ const styles = StyleSheet.create({
     borderColor: 'rgb(224, 224, 224)',
     paddingHorizontal: 16,
     paddingVertical: 4,
-    minWidth: 'auto',
-    flex: 1,
+    // minWidth: 'auto',
+    // flex: 1,
   },
   text: {
     fontSize: 13,
 
-    flexShrink: 0,
+    flexShrink: 1,
     flex: 1,
   },
   textHeader: {
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: '500',
     alignItems: 'center',
-    flexShrink: 0,
+    flexShrink: 1,
     flex: 1,
   },
   sortingIcon: {

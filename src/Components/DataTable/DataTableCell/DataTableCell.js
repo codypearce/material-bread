@@ -21,11 +21,16 @@ class TableCell extends Component {
     right: PropTypes.bool,
     borderRight: PropTypes.bool,
     borderLeft: PropTypes.bool,
-    flex: PropTypes.number,
+    minWidth: PropTypes.number,
     text: PropTypes.string,
     onPress: PropTypes.func,
     type: PropTypes.string,
     sortingIcon: PropTypes.string,
+    relativeWidth: PropTypes.number,
+  };
+  static defaultProps = {
+    relativeWidth: 1,
+    minWidth: 100,
   };
 
   state = {
@@ -82,13 +87,15 @@ class TableCell extends Component {
       right,
       borderRight,
       borderLeft,
-      flex,
       onPress,
       sortingIcon,
+      minWidth,
+      relativeWidth,
     } = this.props;
 
-    const platformStyles =
-      Platform.OS == 'web' ? { wordBreak: 'break-all' } : {};
+    const minWidthImplemented = minWidth + minWidth * (relativeWidth - 1);
+
+    const platformStyles = Platform.OS == 'web' ? {} : {};
 
     return (
       <TouchableWithoutFeedback
@@ -99,10 +106,13 @@ class TableCell extends Component {
           style={[
             styles.dataTableItem,
             {
-              flex: flex ? flex : 1,
+              flex: 1,
               justifyContent: right ? 'flex-end' : 'flex-start',
               borderRightWidth: borderRight ? 1 : 0,
               borderLeftWidth: borderLeft ? 1 : 0,
+              minHeight: 25,
+              minWidth: minWidthImplemented,
+              flexWrap: 'wrap',
             },
             platformStyles,
             style,

@@ -29,7 +29,7 @@ export const code = `class Table extends React.Component {
             ]} 
           />
           <DataTableRow checkboxOffset>
-            <DataTableCell text={'Desert'} type={'header'} borderRight flex={2} />
+            <DataTableCell text={'Desert'} type={'header'} borderRight relativeWidth={2} />
             <DataTableCell
               text={'Calories'}
               type={'header'}  right
@@ -45,7 +45,7 @@ export const code = `class Table extends React.Component {
             onPressCheckbox={() =>
                 this.setState({ checkedOne: !this.state.checkedOne })
             }>
-            <DataTableCell text={'Frozen yogurt'} borderRight flex={2} />
+            <DataTableCell text={'Frozen yogurt'} borderRight relativeWidth={2} />
             <DataTableCell text={'159'} right />
             <DataTableCell text={'6.0'} right />
             <DataTableCell text={'24'} right />
@@ -58,7 +58,7 @@ export const code = `class Table extends React.Component {
               onPressCheckbox={() =>
                   this.setState({ checkedTwo: !this.state.checkedTwo })
               }>
-              <DataTableCell text={'Ice Cream Sandwich'} borderRight flex={2} />
+              <DataTableCell text={'Ice Cream Sandwich'} borderRight relativeWidth={2} />
               <DataTableCell text={'237'} right />
               <DataTableCell text={'9.0'} right />
               <DataTableCell text={'37'} right />
@@ -71,7 +71,7 @@ export const code = `class Table extends React.Component {
               onPressCheckbox={() =>
                   this.setState({ checkedThree: !this.state.checkedThree })
               }>
-              <DataTableCell text={'Eclair'} borderRight flex={2} />
+              <DataTableCell text={'Eclair'} borderRight relativeWidth={2} />
               <DataTableCell text={'262'} right />
               <DataTableCell text={'16.0'} right />
               <DataTableCell text={'24'} right />

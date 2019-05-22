@@ -4,10 +4,10 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderBottomWidth: StyleSheet.hairlineWidth,
     minHeight: 48,
-    flex: 1,
+
     flexDirection: 'row',
     alignItems: 'stretch',
-    width: '100%',
+    // width: '100%',
     minWidth: 'auto',
   },
   checkboxOffset: {

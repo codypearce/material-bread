@@ -66,7 +66,7 @@ export const code = `class Table extends React.Component {
     return (
       <DataTable>
           <DataTableRow>
-              <DataTableCell text={'Desert'} type={'header'} borderRight flex={2} />
+              <DataTableCell text={'Desert'} type={'header'} borderRight relativeWidth={2} />
               <DataTableCell text={'Calories'}  type={'header'}  right />
               <DataTableCell text={'Fat (g)'}  type={'header'}  right />
               <DataTableCell text={'Carbs (g)'}  type={'header'}  right />
@@ -79,7 +79,7 @@ export const code = `class Table extends React.Component {
             )
             .map(row => (
               <DataTableRow key={row.name}>
-                <DataTableCell text={row.name} borderRight flex={2} />
+                <DataTableCell text={row.name} borderRight relativeWidth={2} />
                 <DataTableCell text={row.calories} right />
                 <DataTableCell text={row.fat} right />
                 <DataTableCell text={row.carbs} right />
