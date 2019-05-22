@@ -64,10 +64,8 @@ export default storiesOf('Docs|Start Here', module).add('Home', () => (
     <View style={styles.initialText}>
       <BodyText style={styles.bodyText}>
         This is the Storybook environment for Material Bread which is a highly
-        customizable cross-platform React Native Material Library. Change the
-        background, change the viewport to other devices, see console logs in
-        actions, see jest tests, story JS source, or accessbility tests. Visit
-        the docs to see the full component API.
+        customizable cross-platform React Native Material Library. Visit the
+        docs to see the full component API.
       </BodyText>
       <View style={styles.buttonRow}>
         <Anchor url={'http://material-bread.org/'} target={'_parent'}>

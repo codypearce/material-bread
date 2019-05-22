@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, Text } from 'react-native';
+import { View, Text, Platform } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 
 import { Divider } from '../../..';
@@ -36,7 +36,8 @@ class ListSection extends Component {
         {bottomDivider ? (
           <Divider
             style={{
-              width: inset ? 'calc(100% - 72px)' : '100%',
+              width:
+                inset && Platform.OS == 'web' ? 'calc(100% - 72px)' : '100%',
               marginLeft: inset ? 72 : 0,
               marginTop: 0,
               marginBottom: 0,

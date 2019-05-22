@@ -10,9 +10,9 @@ import { storiesOf } from '../../storybook/helpers/storiesOf';
 export default storiesOf('Components|Ripple', module)
   .addParameters({ jest: ['Ripple'] })
   .add('from click', () => (
-    <Container>
+    <Container scroll>
       <Header title={'Ripple from where it was clicked'} />
-      <View style={{ flexDirection: 'row' }}>
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
         <Ripple
           rippleColor={'blue'}
           style={{
@@ -39,7 +39,7 @@ export default storiesOf('Components|Ripple', module)
           </Card>
         </Ripple>
       </View>
-      <View style={{ flexDirection: 'row', marginTop: 40 }}>
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginTop: 40 }}>
         <Ripple
           rippleColor={'#E91E63'}
           rippleContainerBorderRadius={100}
@@ -73,9 +73,9 @@ export default storiesOf('Components|Ripple', module)
     </Container>
   ))
   .add('from center', () => (
-    <Container>
+    <Container scroll>
       <Header title={'Ripple form center'} />
-      <View style={{ flexDirection: 'row' }}>
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
         <Ripple
           rippleColor={'blue'}
           rippleCentered
@@ -108,12 +108,12 @@ export default storiesOf('Components|Ripple', module)
     </Container>
   ))
   .add('sequential', () => (
-    <Container>
+    <Container scroll>
       <Header title={'Sequential Ripple'} />
       <Text style={{ marginBottom: 40 }}>
         Try clicking quickly versus other demos
       </Text>
-      <View style={{ flexDirection: 'row' }}>
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
         <Ripple
           rippleColor={'blue'}
           rippleSequential
@@ -147,10 +147,10 @@ export default storiesOf('Components|Ripple', module)
     </Container>
   ))
   .add('speed', () => (
-    <Container>
+    <Container scroll>
       <Header title={'Speed Ripple'} />
 
-      <View style={{ flexDirection: 'row' }}>
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
         <Ripple
           rippleColor={'blue'}
           rippleDuration={250}

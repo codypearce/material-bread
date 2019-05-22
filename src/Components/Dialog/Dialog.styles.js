@@ -1,13 +1,15 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import shadow from '../../Utils/Shadow/shadow';
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#ffffff',
     width: '100%',
+
     borderRadius: 4,
     paddingTop: 24,
-    maxWidth: 560,
-    maxHeight: 'calc(100vh - 20px)',
+    maxWidth: Platform.OS == 'web' ? 560 : '100%',
+
+    maxHeight: Platform.OS == 'web' ? 'calc(100vh - 20px)' : '100%',
     overflow: 'hidden',
 
     ...shadow(12),
@@ -16,10 +18,10 @@ const styles = StyleSheet.create({
     paddingLeft: 24,
     paddingRight: 24,
     paddingBottom: 8,
-    flex: 1,
   },
   title: {
     fontSize: 20,
+    lineHeight: 20,
     fontWeight: '500',
     color: 'rgba(0, 0, 0, 0.87)',
     marginBottom: 20,

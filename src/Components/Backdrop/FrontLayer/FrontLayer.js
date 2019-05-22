@@ -16,7 +16,7 @@ class FrontLayer extends PureComponent {
     offset: PropTypes.number,
     initialOffset: PropTypes.number,
     children: PropTypes.node,
-    backLayerRevealed: PropTypes.array,
+    backLayerRevealed: PropTypes.object,
     frontLayerStyle: PropTypes.object,
     theme: PropTypes.object,
     toggleLayout: PropTypes.func,

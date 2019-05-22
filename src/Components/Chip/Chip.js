@@ -56,7 +56,7 @@ class Chip extends Component {
     let displayedColor = themeColor || color ? 'white' : 'rgba(0, 0, 0, 0.87)';
 
     if (chipStyle == 'outlined' && (themeColor || color))
-      displayedColor = theme[themeColor].main;
+      displayedColor = theme[themeColor || 'primary'].main;
 
     return (
       <Text

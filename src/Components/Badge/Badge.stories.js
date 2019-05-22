@@ -30,9 +30,9 @@ export default storiesOf('Components|Badge', module)
       </View>
 
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-        <Badge size={12} content={24} color={'black'} t textColor={'E91E63'} />
+        <Badge size={12} content={24} color={'black'} textColor={'#E91E63'} />
         <Badge size={24} content={99} color={'black'} textColor={'#E91E63'} />
-        <Badge size={36} content={2} color={'black'} t textColor={'#9C27B0'} />
+        <Badge size={36} content={2} color={'black'} textColor={'#9C27B0'} />
         <Badge
           size={48}
           content={102}
@@ -40,7 +40,7 @@ export default storiesOf('Components|Badge', module)
           t
           textColor={'#009688'}
         />
-        <Badge size={60} content={35} color={'black'} ttextColor={'#3F51B5'} />
+        <Badge size={60} content={35} color={'black'} textColor={'#3F51B5'} />
       </View>
     </Container>
   ))

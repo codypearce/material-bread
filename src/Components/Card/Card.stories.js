@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '../../storybook/helpers/storiesOf';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, ScrollView } from 'react-native';
 
 import {
   Card,
@@ -172,103 +172,104 @@ export default storiesOf('Components|Card', module)
   .add('clickable', () => (
     <Container scroll>
       <Header title={'Clickable Card'} />
-
-      <View style={{ flexDirection: 'row' }}>
-        <Card
-          style={{
-            maxWidth: 150,
-            width: '100%',
-            marginBottom: 50,
-            marginRight: 4,
-          }}
-          shadow={4}
-          onPress={() => console.log('clicked dog')}>
-          <CardMedia
-            image={
-              <Image
-                style={{ flex: 1, width: '100%' }}
-                source={{
-                  uri:
-                    'https://images.pexels.com/photos/86405/penguin-funny-blue-water-86405.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-                }}
-                resizeMode="cover"
-              />
-            }
-          />
-          <CardContent>
-            <Text
-              style={{
-                color: 'rgba(0,0,0,.6)',
-                fontSize: 16,
-                fontWeight: '600',
-                marginBottom: 6,
-              }}>
-              Penguin
-            </Text>
-          </CardContent>
-        </Card>
-        <Card
-          style={{
-            maxWidth: 150,
-            width: '100%',
-            marginBottom: 50,
-            marginRight: 4,
-          }}
-          shadow={4}
-          onPress={() => console.log('clicked dog')}>
-          <CardMedia
-            image={
-              <Image
-                style={{ flex: 1, width: '100%' }}
-                source={{
-                  uri:
-                    'https://images.pexels.com/photos/460823/pexels-photo-460823.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-                }}
-                resizeMode="cover"
-              />
-            }
-          />
-          <CardContent>
-            <Text
-              style={{
-                color: 'rgba(0,0,0,.6)',
-                fontSize: 16,
-                fontWeight: '600',
-                marginBottom: 6,
-              }}>
-              Pup
-            </Text>
-          </CardContent>
-        </Card>
-        <Card
-          style={{ maxWidth: 150, width: '100%', marginBottom: 50 }}
-          shadow={4}
-          onPress={() => console.log('clicked dog')}>
-          <CardMedia
-            image={
-              <Image
-                style={{ flex: 1, width: '100%' }}
-                source={{
-                  uri:
-                    'https://images.pexels.com/photos/1661535/pexels-photo-1661535.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-                }}
-                resizeMode="cover"
-              />
-            }
-          />
-          <CardContent>
-            <Text
-              style={{
-                color: 'rgba(0,0,0,.6)',
-                fontSize: 16,
-                fontWeight: '600',
-                marginBottom: 6,
-              }}>
-              Panda
-            </Text>
-          </CardContent>
-        </Card>
-      </View>
+      <ScrollView horizontal scrollEnabled={true}>
+        <View style={{ flexDirection: 'row' }}>
+          <Card
+            style={{
+              maxWidth: 150,
+              width: '100%',
+              marginBottom: 50,
+              marginRight: 4,
+            }}
+            shadow={4}
+            onPress={() => console.log('clicked dog')}>
+            <CardMedia
+              image={
+                <Image
+                  style={{ flex: 1, width: '100%' }}
+                  source={{
+                    uri:
+                      'https://images.pexels.com/photos/86405/penguin-funny-blue-water-86405.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                  }}
+                  resizeMode="cover"
+                />
+              }
+            />
+            <CardContent>
+              <Text
+                style={{
+                  color: 'rgba(0,0,0,.6)',
+                  fontSize: 16,
+                  fontWeight: '600',
+                  marginBottom: 6,
+                }}>
+                Penguin
+              </Text>
+            </CardContent>
+          </Card>
+          <Card
+            style={{
+              maxWidth: 150,
+              width: '100%',
+              marginBottom: 50,
+              marginRight: 4,
+            }}
+            shadow={4}
+            onPress={() => console.log('clicked dog')}>
+            <CardMedia
+              image={
+                <Image
+                  style={{ flex: 1, width: '100%' }}
+                  source={{
+                    uri:
+                      'https://images.pexels.com/photos/460823/pexels-photo-460823.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                  }}
+                  resizeMode="cover"
+                />
+              }
+            />
+            <CardContent>
+              <Text
+                style={{
+                  color: 'rgba(0,0,0,.6)',
+                  fontSize: 16,
+                  fontWeight: '600',
+                  marginBottom: 6,
+                }}>
+                Pup
+              </Text>
+            </CardContent>
+          </Card>
+          <Card
+            style={{ maxWidth: 150, width: '100%', marginBottom: 50 }}
+            shadow={4}
+            onPress={() => console.log('clicked dog')}>
+            <CardMedia
+              image={
+                <Image
+                  style={{ flex: 1, width: '100%' }}
+                  source={{
+                    uri:
+                      'https://images.pexels.com/photos/1661535/pexels-photo-1661535.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                  }}
+                  resizeMode="cover"
+                />
+              }
+            />
+            <CardContent>
+              <Text
+                style={{
+                  color: 'rgba(0,0,0,.6)',
+                  fontSize: 16,
+                  fontWeight: '600',
+                  marginBottom: 6,
+                }}>
+                Panda
+              </Text>
+            </CardContent>
+          </Card>
+        </View>
+      </ScrollView>
 
       <Card
         style={{ maxWidth: 300, width: '100%', marginBottom: 50 }}

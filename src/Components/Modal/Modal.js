@@ -4,8 +4,11 @@ import {
   TouchableWithoutFeedback,
   Dimensions,
   Animated,
+  Platform,
+  Modal as NativeModal,
 } from 'react-native';
-import NativeModal from 'modal-enhanced-react-native-web';
+import WebModal from 'modal-enhanced-react-native-web';
+const ImplementedModal = Platform.OS == 'web' ? WebModal : NativeModal;
 
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
@@ -106,7 +109,7 @@ class Modal extends Component {
     const deviceHeight = Dimensions.get('window').height;
 
     return (
-      <NativeModal
+      <ImplementedModal
         animationType={'none'}
         transparent={true}
         visible={show}
@@ -134,7 +137,7 @@ class Modal extends Component {
             {children}
           </Animated.View>
         </View>
-      </NativeModal>
+      </ImplementedModal>
     );
   }
 }
