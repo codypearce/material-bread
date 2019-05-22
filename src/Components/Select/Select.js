@@ -74,6 +74,8 @@ class Select extends Component {
         visible={visible}
         modalMenuStyle={{
           marginTop: textFieldProps && textFieldProps.dense ? 60 : 71,
+          width: '100%',
+          marginLeft: Platform.OS !== 'web' ? 6 : 0,
         }}
         onBackdropPress={() => this.hideMenu()}
         button={
@@ -88,7 +90,11 @@ class Select extends Component {
                 value={selectedItem}
                 focused={visible}
                 editable={false}
-                style={[platformStyles, textFieldProps && textFieldProps.style]}
+                style={[
+                  styles.textfield,
+                  platformStyles,
+                  textFieldProps && textFieldProps.style,
+                ]}
                 trailingIcon={
                   <Icon
                     name="arrow-drop-down"

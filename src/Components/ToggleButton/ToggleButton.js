@@ -21,6 +21,10 @@ class ToggleButton extends Component {
     isActive: false,
   };
 
+  static defaultProps = {
+    size: 30,
+  };
+
   componentDidMount() {
     const { active } = this.props;
     if (active) {

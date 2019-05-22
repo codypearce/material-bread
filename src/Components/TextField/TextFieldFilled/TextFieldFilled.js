@@ -55,9 +55,10 @@ class TextFieldFilled extends Component {
     const { leadingIcon } = this.props;
 
     return (
-      <View style={{ position: 'absolute', left: 8, top: 16 }}>
+      <View style={{ position: 'absolute', left: 8, top: 16, zIndex: 200 }}>
         {React.cloneElement(leadingIcon, {
           size: leadingIcon.props.size ? leadingIcon.props.size : 24,
+          zIndex: 200,
         })}
       </View>
     );
@@ -106,7 +107,7 @@ class TextFieldFilled extends Component {
     const nativeHeight = e.nativeEvent.contentSize.height;
 
     this.setState({
-      height: nativeHeight,
+      height: nativeHeight < 56 ? 56 : nativeHeight,
     });
   };
 

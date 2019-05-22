@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   button: {
     width: '100%',
+    minWidth: '100%',
     height: 56,
     alignItems: 'center',
     flexDirection: 'row',
@@ -19,6 +20,10 @@ const styles = StyleSheet.create({
     height: 56,
     position: 'relative',
     zIndex: 2,
+  },
+  textfield: {
+    width: '100%',
+    minWidth: '100%',
   },
 });
 

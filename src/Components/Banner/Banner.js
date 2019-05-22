@@ -23,7 +23,7 @@ class Banner extends Component {
     isWideScreen: false,
     width: 0,
     maxHeight: 0,
-    height: new Animated.Value(0),
+    height: new Animated.Value(10),
     shouldHide: false,
   };
 

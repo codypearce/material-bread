@@ -107,7 +107,7 @@ class TextFieldFlat extends Component {
     const nativeHeight = e.nativeEvent.contentSize.height;
 
     this.setState({
-      height: nativeHeight,
+      height: nativeHeight < 56 ? 56 : nativeHeight,
     });
   };
 

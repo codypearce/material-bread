@@ -216,14 +216,11 @@ class Appbar extends Component {
             style: [
               // For some reason importing styles here means they  don't get applied
               {
-                flex: 1,
                 position: 'absolute',
                 top: 0,
                 left: 0,
                 right: 0,
                 bottom: 0,
-                width: '100%',
-                height: '100%',
               },
             ],
           })}

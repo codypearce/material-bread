@@ -110,11 +110,11 @@ class BottomNavigationItem extends Component {
   }
 
   _renderContent(context) {
-    const { label, badgeProps } = this.props;
-    let icon = this._renderIcon(context);
+    const { label, badgeProps, icon } = this.props;
+    let iconImplemented = this._renderIcon(context);
 
     if (badgeProps) {
-      icon = (
+      iconImplemented = (
         <Badge
           containerStyle={{
             alignItems: 'center',
@@ -135,7 +135,7 @@ class BottomNavigationItem extends Component {
     }
     return (
       <Fragment>
-        {icon}
+        {icon ? iconImplemented : null}
         {label ? this._renderText(context.backgroundColor) : null}
       </Fragment>
     );

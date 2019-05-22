@@ -9,7 +9,7 @@ import Container from '../../storybook/components/Container';
 export default storiesOf('Components|Banner', module)
   .addParameters({ jest: ['Banner'] })
   .add('Single line', () => (
-    <Container>
+    <Container scroll>
       <Header title={'Banner Single Line'} />
 
       <Banner
@@ -37,7 +37,7 @@ export default storiesOf('Components|Banner', module)
     </Container>
   ))
   .add('Multi line', () => (
-    <Container>
+    <Container scroll>
       <Header title={'Banner Multi line'} />
       <Banner
         visible
