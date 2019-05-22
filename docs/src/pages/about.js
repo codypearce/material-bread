@@ -41,6 +41,22 @@ class Index extends Component {
             }
           />
         </Section>
+
+        <Section
+          name="Cross Platform"
+          id="cross-platform"
+          href="/about#cross-platform"
+          style={{ marginTop: 0 }}>
+          <ComponentDescription
+            text={
+              <div>
+                The goal is for all components to work cross platofrm on iOS,
+                Android, Web, and Electron.
+              </div>
+            }
+          />
+        </Section>
+
         <Section
           name="Highly Customizable"
           id="highly-customizable"
@@ -50,8 +66,8 @@ class Index extends Component {
             text={
               <div>
                 Having almost complete control over the styling of every
-                component is a crucial feature of UI libraries for the following
-                reasons:
+                component is an important feature of UI libraries for the
+                following reasons:
                 <ol>
                   <li>
                     There will always be something that needs to be slightly
