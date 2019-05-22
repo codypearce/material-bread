@@ -56,9 +56,10 @@ class Tabs extends Component {
     const { tabWidth, barWidth } = this.state;
 
     const index = selectedIndex;
-    const scrollValue = !scrollEnabled ? tabWidth : barWidth * 0.4;
+    let scrollValue = !scrollEnabled ? tabWidth : barWidth * 0.4;
+    if (scrollValue < 90) scrollValue = 90;
 
-    if (!scrollEnabled) {
+    if (!scrollEnabled && scrollValue > 90) {
       return {
         indicatorPosition: index === 0 ? 0 : index * scrollValue,
         scrollPosition: 0,
@@ -111,7 +112,11 @@ class Tabs extends Component {
     const { scrollEnabled, actionItems } = this.props;
 
     if (!scrollEnabled) {
-      this.setState({ tabWidth: width / actionItems.length });
+      let tabWidth = width / actionItems.length;
+
+      this.setState({
+        tabWidth: tabWidth,
+      });
     }
     this.setState({
       barWidth: width,
@@ -136,6 +141,9 @@ class Tabs extends Component {
     } = this.props;
     const { tabWidth, barWidth } = this.state;
 
+    let tabWidthImplemented = !scrollEnabled ? tabWidth : barWidth * 0.4;
+    if (tabWidthImplemented < 90) tabWidthImplemented = 90;
+
     return actionItems.map((item, index) => {
       if (!item.props) {
         return (
@@ -148,14 +156,14 @@ class Tabs extends Component {
               if (item.onPress) item.onPress();
             }}
             active={index === selectedIndex}
-            tabWidth={!scrollEnabled ? tabWidth : barWidth * 0.4}
+            tabWidth={tabWidthImplemented}
           />
         );
       } else {
         return React.cloneElement(item, {
           key: index,
           active: index === selectedIndex,
-          tabWidth: !scrollEnabled ? tabWidth : barWidth * 0.4,
+          tabWidth: tabWidthImplemented,
           onPress: () => {
             handleChange(index);
             if (item.props.onPress) item.onPress();
@@ -169,6 +177,9 @@ class Tabs extends Component {
     const { scrollEnabled, underlineColor } = this.props;
     const { tabWidth, indicatorPosition, barWidth } = this.state;
 
+    let tabWidthImplemented = !scrollEnabled ? tabWidth : barWidth * 0.4;
+    if (tabWidthImplemented < 90) tabWidthImplemented = 90;
+
     return (
       <Fragment>
         <View style={styles.tabsWrapper}>{this._renderTabs()}</View>
@@ -176,7 +187,7 @@ class Tabs extends Component {
         <Underline
           color={underlineColor}
           value={indicatorPosition}
-          tabWidth={!scrollEnabled ? tabWidth : barWidth * 0.4}
+          tabWidth={tabWidthImplemented}
         />
       </Fragment>
     );
@@ -184,8 +195,11 @@ class Tabs extends Component {
 
   _renderScrollView() {
     const { scrollEnabled } = this.props;
+    const { tabWidth, barWidth } = this.state;
 
-    if (scrollEnabled) {
+    const tabWidthImplemented = !scrollEnabled ? tabWidth : barWidth * 0.4;
+
+    if (scrollEnabled || tabWidthImplemented < 90) {
       return (
         <ScrollView
           horizontal
@@ -194,7 +208,7 @@ class Tabs extends Component {
           }}
           showsHorizontalScrollIndicator={false}
           keyboardShouldPersistTaps={'never'}
-          scrollEnabled={scrollEnabled}>
+          scrollEnabled={scrollEnabled || tabWidthImplemented < 90}>
           {this._renderContent()}
         </ScrollView>
       );
