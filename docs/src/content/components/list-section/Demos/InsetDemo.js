@@ -9,7 +9,7 @@ export const code = `class DialogPage extends React.Component {
   }
   render() {
     return (
-      <List style={{ width: 300 }}>
+      <List style={{ maxWidth: 300 }}>
         <ListSection inset bottomDivider>
           <ListItem
             text={'Attractions'}

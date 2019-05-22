@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { ComponentMainDemo } from '@components';
 import { Anchor, Heading, Button } from '../../../../../src/index';
 
-export const code = `<View style={{ flexDirection: 'row', alignItems: 'center' }}>
+export const code = `<View style={{ flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap' }}>
   <Anchor url={'http://material-bread.org/'} target={'_parent'}>
     <Button
       text={'Documentation'}

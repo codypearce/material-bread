@@ -12,7 +12,13 @@ class PageTitle extends Component {
 
   render() {
     return (
-      <h1 style={{ fontSize: 42, letterSpacing: 1.2, marginBottom: 0 }}>
+      <h1
+        style={{
+          fontSize: 42,
+          letterSpacing: 1.2,
+          marginBottom: 0,
+          wordBreak: 'break-all',
+        }}>
         {this.props.children}
       </h1>
     );

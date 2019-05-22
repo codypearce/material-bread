@@ -9,7 +9,7 @@ export const code = `class DialogPage extends React.Component {
   }
   render() {
     return (
-        <List subheader={'Favorites'} style={{ width: 300 }}>
+        <List subheader={'Favorites'} style={{ maxWidth: 300 }}>
             <ListItem
                 text={'Janet Perkins'}
                 media={

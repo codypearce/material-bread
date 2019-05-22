@@ -19,7 +19,7 @@ export const code = `class Page extends React.Component {
   }
   render() {
     return (
-        <List style={{ width: 300 }}>
+        <List style={{ maxWidth: 300 }}>
             <ListItem
               text={'Janet Perkins'}
               onPress={() => this.setState({ checkedOne: !this.state.checkedOne })}

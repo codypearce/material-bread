@@ -12,7 +12,7 @@ export const code = `class IconPage extends React.Component {
   }
   render() {
     return (
-      <View style={{flexDirection: 'row'}}>
+      <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
         <Icon name="adb" size={12} color={'#F44336'} />
         <Icon name="album" size={24} color={'#E91E63'} />
         <Icon name="battery-full" size={32} color={'#9C27B0'} />

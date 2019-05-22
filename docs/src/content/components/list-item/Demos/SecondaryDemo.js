@@ -14,7 +14,7 @@ export const code = `class Page extends React.Component {
   }
   render() {
     return (
-      <List style={{ width: 300 }}>
+      <List style={{ maxWidth: 300 }}>
         <ListItem
             leadingActionItem={<IconButton name="local-offer" size={24} color="#6e6e6e" />} 
             text={'Two Line'} 

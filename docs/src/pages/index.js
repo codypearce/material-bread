@@ -17,7 +17,7 @@ class Index extends Component {
           <LogoWithText subtitle style={{ width: '100%' }} />
         </div>
 
-        <div style={{ marginTop: 20, display: 'flex', flexDirection: 'row' }}>
+        <div className="Home__platformRow">
           <PlatformButton
             text="REACT NATIVE"
             img={iphone}

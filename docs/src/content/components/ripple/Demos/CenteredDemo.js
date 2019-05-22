@@ -9,7 +9,7 @@ export const code = `class DialogPage extends React.Component {
   }
   render() {
     return (
-        <View style={{ flexDirection: 'row' }}>
+        <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
             <Ripple
                 rippleColor={'blue'}
                 rippleCentered

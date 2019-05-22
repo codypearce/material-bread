@@ -138,11 +138,21 @@ body {
   padding-right: 0px;
 }
 .main--temporaryDrawer {
-  max-width: 100%;
-  width: 100%;
   margin-left: 0;
   margin-right: 0;
   padding-top: 60px;
   padding-left: 24px;
   padding-right: 24px;
+}
+
+.Home__platformRow {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 600px) {
+  .Home__platformRow {
+    flex-direction: column;
+  }
 }

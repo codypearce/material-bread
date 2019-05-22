@@ -9,7 +9,7 @@ export const code = `class ListPage extends React.Component {
   }
   render() {
     return (
-      <List style={{ width: 300 }}>
+      <List style={{ maxWidth: 300 }}>
         <ListItem
           text={'Photos'}
           secondaryText={'Jan 9, 2018'}
