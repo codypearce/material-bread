@@ -83,8 +83,23 @@ exports[`Drawer Renders 1`] = `
       }
     />
   </View>
-  <View>
-    <View />
+  <View
+    style={
+      Array [
+        Object {
+          "height": "100%",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "height": "100%",
+        }
+      }
+    />
   </View>
 </View>
 `;

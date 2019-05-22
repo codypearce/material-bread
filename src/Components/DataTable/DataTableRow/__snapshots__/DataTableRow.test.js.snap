@@ -15,11 +15,9 @@ exports[`DataTableRow Renders 1`] = `
         "alignItems": "stretch",
         "borderBottomWidth": 0.5,
         "borderStyle": "solid",
-        "flex": 1,
         "flexDirection": "row",
         "minHeight": 48,
         "minWidth": "auto",
-        "width": "100%",
       },
       Object {
         "backgroundColor": "transparent",

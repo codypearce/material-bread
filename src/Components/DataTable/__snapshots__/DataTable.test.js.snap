@@ -1,26 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataTable Renders 1`] = `
-<View
-  style={
-    Array [
-      Object {
-        "backgroundColor": "white",
-        "borderRadius": 4,
-        "minHeight": "auto",
-        "minWidth": "auto",
-        "overflowX": "auto",
-        "shadowColor": "#000",
-        "shadowOffset": Object {
-          "height": 2,
-          "width": 0,
-        },
-        "shadowOpacity": 0.23,
-        "shadowRadius": 2.62,
-        "width": "100%",
-      },
-      undefined,
-    ]
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "minWidth": "100%",
+    }
   }
-/>
+  horizontal={true}
+  scrollEnabled={true}
+>
+  <View>
+    <View
+      style={
+        Array [
+          Object {
+            "borderRadius": 4,
+            "flex": 1,
+            "shadowColor": "#000",
+            "shadowOffset": Object {
+              "height": 2,
+              "width": 0,
+            },
+            "shadowOpacity": 0.23,
+            "shadowRadius": 2.62,
+          },
+          undefined,
+        ]
+      }
+    />
+  </View>
+</RCTScrollView>
 `;

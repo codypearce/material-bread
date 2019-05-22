@@ -216,6 +216,7 @@ exports[`TextFieldFilled Renders 1`] = `
           "bottom": 0,
           "height": 2,
           "left": 0,
+          "opacity": 0,
           "position": "absolute",
           "right": 0,
           "transform": Array [
@@ -223,7 +224,7 @@ exports[`TextFieldFilled Renders 1`] = `
               "scaleX": 0,
             },
             Object {
-              "scaleY": 2,
+              "scaleY": 0,
             },
           ],
         }
