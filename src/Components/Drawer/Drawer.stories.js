@@ -17,7 +17,6 @@ import {
   Heading,
   Appbar,
 } from '../../';
-import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
 import { storiesOf } from '../../storybook/helpers/storiesOf';
 
@@ -71,7 +70,6 @@ export default storiesOf('Components|Drawer', module)
   .addParameters({ jest: ['Drawer'] })
   .add('Simple', () => (
     <Container scroll style={{ padding: 0 }}>
-      <Header title={'Drawer'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <View style={styles.container}>
@@ -99,7 +97,6 @@ export default storiesOf('Components|Drawer', module)
   ))
   .add('Over Appbar', () => (
     <Container scroll style={{ padding: 0 }}>
-      <Header title={'Drawer'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <View style={styles.container}>
@@ -122,7 +119,6 @@ export default storiesOf('Components|Drawer', module)
   ))
   .add('Under Appbar', () => (
     <Container scroll style={{ padding: 0 }}>
-      <Header title={'Drawer'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <View style={styles.container}>
@@ -144,7 +140,6 @@ export default storiesOf('Components|Drawer', module)
   ))
   .add('No Scrim', () => (
     <Container scroll style={{ padding: 0 }}>
-      <Header title={'Drawer'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <View style={styles.container}>
@@ -167,7 +162,6 @@ export default storiesOf('Components|Drawer', module)
   ))
   .add('Custom Scrim', () => (
     <Container scroll style={{ padding: 0 }}>
-      <Header title={'Drawer'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <View style={styles.container}>
@@ -191,7 +185,6 @@ export default storiesOf('Components|Drawer', module)
   ))
   .add('Scroll inner', () => (
     <Container scroll style={{ padding: 0 }}>
-      <Header title={'Drawer'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <View style={styles.container}>
@@ -244,7 +237,6 @@ export default storiesOf('Components|Drawer', module)
   ))
   .add('Push', () => (
     <Container scroll style={{ padding: 0 }}>
-      <Header title={'Drawer'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <View style={styles.container}>
@@ -267,7 +259,6 @@ export default storiesOf('Components|Drawer', module)
   ))
   .add('Push Under', () => (
     <Container scroll style={{ padding: 0 }}>
-      <Header title={'Drawer'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <View style={styles.container}>
@@ -290,7 +281,6 @@ export default storiesOf('Components|Drawer', module)
   ))
   .add('Permanent', () => (
     <Container scroll style={{ padding: 0 }}>
-      <Header title={'Drawer'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <View style={[styles.container, { width: 'auto' }]}>
@@ -328,7 +318,6 @@ export default storiesOf('Components|Drawer', module)
   ))
   .add('Permanent Under', () => (
     <Container scroll style={{ padding: 0 }}>
-      <Header title={'Drawer'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <View style={[styles.container, { width: 'auto' }]}>
