@@ -48,7 +48,7 @@ class TextFieldUnderline extends Component {
   }
 
   render() {
-    let { error, underlineColor, underlineActiveColor } = this.props;
+    let { error, underlineColor, underlineActiveColor, focused } = this.props;
     const { underLineXAnimation } = this.state;
 
     let baseUnderlineScale = 0.5;
@@ -75,7 +75,11 @@ class TextFieldUnderline extends Component {
             styles.underline,
             {
               backgroundColor: underlineActiveColor,
-              transform: [{ scaleX: underLineXAnimation }, { scaleY: 2 }],
+              opacity: focused && !error ? 1 : 0,
+              transform: [
+                { scaleX: underLineXAnimation },
+                { scaleY: focused ? 2 : 0 },
+              ],
             },
           ]}
         />
