@@ -129,7 +129,7 @@ export default class PageLayout extends Component {
           <link rel="shortcut icon" href={favicon} />
 
           <link
-            rel="stylesheet"
+            rel="stylesheet preload"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
           />
           <meta name="viewport" content="width=device-width, initial-scale=1" />

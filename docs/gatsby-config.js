@@ -5,6 +5,7 @@ module.exports = {
     author: `codypearce`,
     favicon: 'src/assets/favicon.ico',
     legacy: false,
+    siteUrl: 'https://material-bread.org/',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

@@ -75,3 +75,19 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
     });
   }
 };
+
+const fs = require('fs'); // native
+const zlib = require('zlib'); // native
+const path = require('path'); // native
+const glob = require('glob'); // native
+
+exports.onPostBuild = ({ pages, callback }) => {
+  const publicPath = path.join(__dirname, 'public');
+  const gzippable = glob.sync(`${publicPath}/**/?(*.html|*.js|*.css)`);
+  gzippable.forEach(file => {
+    const content = fs.readFileSync(file);
+    const zipped = zlib.gzipSync(content);
+    fs.writeFileSync(`${file}.gz`, zipped);
+  });
+  // callback();
+};
