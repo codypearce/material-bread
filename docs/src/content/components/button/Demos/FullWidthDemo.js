@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { ComponentDemo, CodeInline } from '@components';
-import { Button, Icon } from '../../../../../../src/index';
+import { Button, Icon } from '../../../../../../src/';
 
 export const code = `<View style={{flexDirection: 'column'}}>
     <Button fullWidth text={'Contained'} type="contained"  containerStyle={{marginBottom: 8}} />

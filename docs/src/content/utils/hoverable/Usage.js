@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentUsage } from '@components';
 
-export const code = `import React, { Component } from 'react';
+const code = `import React, { Component } from 'react';
 import { View } from 'react-native';
 import { Hoverable } from 'material-bread';
 
@@ -29,4 +29,5 @@ class Demo extends React.Component {
   }`;
 
 const Usage = pageHref => <ComponentUsage pageHref={pageHref} code={code} />;
+
 export default Usage;
