@@ -109,7 +109,10 @@ export default class PageLayout extends Component {
 
     return (
       <div style={{ width: '100%' }}>
-        <Helmet>
+        <Helmet
+          google-site-verification={
+            'pnInoKlqzLFjeCNTW6F-BnibL8xE4qnA7Tghks5dLwo'
+          }>
           <title>Material Bread</title>
           <meta charSet="utf-8" />
           <meta
@@ -129,7 +132,7 @@ export default class PageLayout extends Component {
           <link rel="shortcut icon" href={favicon} />
 
           <link
-            rel="stylesheet preload"
+            rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
           />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
