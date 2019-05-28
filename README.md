@@ -161,7 +161,7 @@ All contributions are welcome and encouraged. If you are reporting a bug, please
 Documentation is built using [GatsbyJs](https://github.com/gatsbyjs/gatsby) and all pages are built using react components. You can learn how to get the docs running locally here [here](https://material-bread.org/contributing/docs).
 
 #### Easy first contribution
-You can start contributing extremely easily by simply improving demos or adding more interesting demos to the docs or storybook. Having interesting, useful, and plentiful demos is a major goal of the project, so any help in that regard would be greatly appreciated.
+You can start contribute extremely easily by improving demos or adding more interesting demos to the docs or storybook. Interesting, useful, and plentiful demos is a major goal of the project, so any help in that regard would be greatly appreciated.
 
 ## Tests
 
