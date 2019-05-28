@@ -3,8 +3,6 @@
 </p>
 <h1 align="center" style="margin-top: 0px;">Material Bread</h1>
 
-
-  
 <p align="center" >Cross Platform React Native Material Design Components</p>
 
 <div align="center" >
@@ -13,40 +11,46 @@
 
 </div>
 
+<p align="center" style="margin-bottom: 0px !important;">
+  <img width="800" src="https://i.imgur.com/iaxwlvW.gif" alt="adf" align="center">
+</p>
+
 ### Features
 
-* Highly Customizable React Native Components.
-* Cross platform support: React Native (iOS, Android), React-native-web (Browsers), Electron (Windows, Mac, Linux).
-* Support for Material Design 2.0 components.
-* Live react native demos you can edit in in your browser.
-
+- Highly Customizable React Native Components.
+- Cross platform support: React Native (iOS, Android), React-native-web (Browsers), Electron (Windows, Mac, Linux).
+- Support for Material Design 2.0 components.
+- Live react native demos you can edit in in your browser.
 
 ## Table of Contents
-* [Quick Start](#quick-start)
-* [Documentation](#documentation)
-* [Getting Started](#getting-started)
-  * [Guides](#guides)
-  * [Example Repos](#example-repos)
-  * [Usage](#usage)
-* [Supported Components](#supported-components)
-* [Contributing](#contributing)
-  * [Library](#contribute-to-library)
-  * [Docs](#contribute-to-docs)
-  * [Easy Contribution](#easy-first-contribution)
-* [Tests](#tests)
-* [Accessibility](#accessibility)
-* [Copyright and License](#copyright-and-license)
+
+- [Quick Start](#quick-start)
+- [Documentation](#documentation)
+- [Getting Started](#getting-started)
+  - [Guides](#guides)
+  - [Example Repos](#example-repos)
+  - [Usage](#usage)
+- [Supported Components](#supported-components)
+- [Contributing](#contributing)
+  - [Library](#contribute-to-library)
+  - [Docs](#contribute-to-docs)
+  - [Easy Contribution](#easy-first-contribution)
+- [Tests](#tests)
+- [Accessibility](#accessibility)
+- [Copyright and License](#copyright-and-license)
 
 ## Quick Start
 
 1. `npm install material-bread` or `yarn add material-bread`
 2. Install and link [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
 3. Wrap your root `<App>` with a `<BreadProvider>`
+
 ```jsx
 <BreadProvider>
   <Root />
 </BreadProvider>
 ```
+
 4. Start developing!
 
 Read the [getting started](#getting-started) guides for your platform to learn more.
@@ -68,6 +72,7 @@ More demos for each component can be found at the component [Storybook](https://
 [Getting Started with Electron](http://material-bread.org/getting-started/electron)
 
 ### Example Repos
+
 Boilerplate projects with minimal configuration to get started on each platform.
 
 React Native: [material-bread-rn-example](https://github.com/codypearce/material-bread-rn-example)
@@ -89,15 +94,14 @@ function App() {
 }
 ```
 
-
-
 ## Supported Components
-A major goal of this library is to match all the components found in the material docs or provide enough demos/instructions that a developer can create a non-supported component from supported components. Keep in mind this still a work in progress so not all functionality from the Material Docs is supported yet. 
+
+A major goal of this library is to match all the components found in the material docs or provide enough demos/instructions that a developer can create a non-supported component from supported components. Keep in mind this still a work in progress so not all functionality from the Material Docs is supported yet.
 
 Currently there are 39 distinct components (though what is a full component and what is a subcomponent is somewhat arbitrary), each with many variations, and 4 utility components.
 
 | Name                                                                         | iOS | Android | Web | Electron |
-|------------------------------------------------------------------------------|-----|---------|-----|----------|
+| ---------------------------------------------------------------------------- | --- | ------- | --- | -------- |
 | [Appbar](https://material-bread.org/components/appbar)                       | ✓   | ✓       | ✓   | ✓        |
 | [AppbarBottom](https://material-bread.org/components/appbar-bottom)          | ✓   | ✓       | ✓   | ✓        |
 | [Avatar](https://material-bread.org/components/avatar)                       | ✓   | ✓       | ✓   | ✓        |
@@ -138,16 +142,14 @@ Currently there are 39 distinct components (though what is a full component and 
 | [Tooltip](https://material-bread.org/components/tooltip)                     | ✓   | ✓       | ✓   | ✓        |
 | [Typography](https://material-bread.org/components/typography)               | ✓   | ✓       | ✓   | ✓        |
 
-
 Utility components
 
 | Name                                                    | iOS | Android | Web | Electron |
-|---------------------------------------------------------|-----|---------|-----|----------|
+| ------------------------------------------------------- | --- | ------- | --- | -------- |
 | [Anchor](https://material-bread.org/utils/anchor)       | ✓   | ✓       | ✓   | ✓        |
 | [Color](https://material-bread.org/utils/color)         | ✓   | ✓       | ✓   | ✓        |
 | [Hoverable](https://material-bread.org/utils/hoverable) | ✓   | ✓       | ✓   | ✓        |
 | [Shadow](https://material-bread.org/utils/shadow)       | ✓   | ✓       | ✓   | ✓        |
-
 
 ## Contributing
 
@@ -158,9 +160,11 @@ All contributions are welcome and encouraged. If you are reporting a bug, please
 [Storybook](https://github.com/storybooks/storybook) is used as the dev environment for all components on all platforms. You can learn about how to get the storybook environment running locally for all platforms [here](http://material-bread.org/contributing/library). Please follow the conventions already in place. For example, most components follow the made up "props for prebuilt, children for custom" pattern. Addtionally, make sure you are testing your components across platforms before making a PR.
 
 #### Contribute to docs
+
 Documentation is built using [GatsbyJs](https://github.com/gatsbyjs/gatsby) and all pages are built using react components. You can learn how to get the docs running locally here [here](https://material-bread.org/contributing/docs).
 
 #### Easy first contribution
+
 You can start contribute extremely easily by improving demos or adding more interesting demos to the docs or storybook. Interesting, useful, and plentiful demos is a major goal of the project, so any help in that regard would be greatly appreciated.
 
 ## Tests
@@ -175,8 +179,7 @@ You can generate test coverage by running `npm run test:generate-output`, this w
 
 `react-native-web` describes how to write accessible react-native components on the web [here](https://github.com/necolas/react-native-web/blob/master/docs/guides/accessibility.md). Additionally, the storybook addon, [addon-a11y](https://www.npmjs.com/package/@storybook/addon-a11y), runs some simple accessibility tests on each component story. You can see the output of each accessibility test on the [Accessibility](https://codypearce.github.io/material-bread/?path=/story/components-buttons--custom) tab for each component. Please consider contributing to make accessibility even better.
 
-
 ## Copyright and License
 
-Copyright 2019 Material Bread. 
+Copyright 2019 Material Bread.
 Code released under the MIT license.
