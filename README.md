@@ -25,6 +25,7 @@
 * [Quick Start](#quick-start)
 * [Documentation](#documentation)
 * [Getting Started](#getting-started)
+  * [Guides](#guides)
   * [Example Repos](#example-repos)
   * [Usage](#usage)
 * [Contributing](#contributing)
@@ -51,21 +52,24 @@ More demos for each component can be found at the component [Storybook](https://
 
 ## Getting Started
 
-[React Native](http://material-bread.org/getting-started/react-native)
+### Guides
 
-[Web](http://material-bread.org/getting-started/web)
+[Getting Started with React Native](http://material-bread.org/getting-started/react-native)
 
-[Electron](http://material-bread.org/getting-started/electron)
+[Getting Started with Web](http://material-bread.org/getting-started/web)
+
+[Getting Started with Electron](http://material-bread.org/getting-started/electron)
 
 #### Example Repos
+Boilerplate projects with minimal configuration to get started on each platform.
 
-[React Native](https://github.com/codypearce/material-bread-rn-example)
+React Native: [material-bread-rn-example](https://github.com/codypearce/material-bread-rn-example)
 
-[Expo](https://github.com/codypearce/material-bread-expo-example)
+Expo: [material-bread-expo-example](https://github.com/codypearce/material-bread-expo-example)
 
-[React](https://github.com/codypearce/material-bread-react-example)
+React Web: [material-bread-react-example](https://github.com/codypearce/material-bread-react-example)
 
-[Electron](https://github.com/codypearce/material-bread-electron-example)
+Electron: [material-bread-electron-example](https://github.com/codypearce/material-bread-electron-example)
 
 #### Usage
 
