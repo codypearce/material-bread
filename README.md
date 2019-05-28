@@ -17,15 +17,16 @@
 
 * Highly Customizable React Native Components.
 * Cross platform support: React Native (iOS, Android), React-native-web (Browsers), Electron (Windows, Mac, Linux).
-* Support for most Material Design 2.0 components in docs.
+* Support for Material Design 2.0 components.
 * Live react native demos you can edit in in your browser.
 
 
 ## Table of Contents
 * [Quick Start](#quick-start)
 * [Documentation](#documentation)
-* [Example Repos](#example-repos)
-* [Usage](#usage)
+* [Getting Started](#getting-started)
+  * [Example Repos](#example-repos)
+  * [Usage](#usage)
 * [Contributing](#contributing)
 
 ## Quick Start
@@ -40,13 +41,7 @@
 ```
 4. Start developing!
 
-Read the getting started guides for your platform to learn more about configuring webpack, setting up fonts, customizing the theme, and more. See the [example repos](#example-repos) below for simple boilerplate.
-
-[React Native](http://material-bread.org/getting-started/react-native)
-
-[Web](http://material-bread.org/getting-started/web)
-
-[Electron](http://material-bread.org/getting-started/electron)
+Read the [getting started](#getting-started) guides for your platform to learn more.
 
 ## Documentation
 
@@ -54,9 +49,15 @@ The component API docs and curated demos can be found at [material-bread.org](ht
 
 More demos for each component can be found at the component [Storybook](https://codypearce.github.io/material-bread/). This environment is used for developing cross-platform, see the [contributing](#contributing) section to learn how to set it up locally.
 
+## Getting Started
 
+[React Native](http://material-bread.org/getting-started/react-native)
 
-## Example Repos
+[Web](http://material-bread.org/getting-started/web)
+
+[Electron](http://material-bread.org/getting-started/electron)
+
+#### Example Repos
 
 [React Native](https://github.com/codypearce/material-bread-rn-example)
 
@@ -66,7 +67,7 @@ More demos for each component can be found at the component [Storybook](https://
 
 [Electron](https://github.com/codypearce/material-bread-electron-example)
 
-## Usage
+#### Usage
 
 ```jsx
 import React from 'react';
