@@ -71,7 +71,7 @@ export {
   BodyText,
   Caption,
   Overline,
-} from './Components/Typography.js';
+} from './Components/Typography/index.js';
 
 // ==== Theme ====
 export ThemeContext from './Theme/ThemeContext.js';
@@ -80,4 +80,4 @@ export defaultTheme from './Theme/defaultTheme.js';
 
 // ==== Core ====
 export BreadProvider from './Core/BreadProvider.js';
-export Colors from './Core/colors.js';
+export Colors from './Core/colors/index.js';
