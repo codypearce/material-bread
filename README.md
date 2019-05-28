@@ -135,12 +135,12 @@ Currently there are 39 distinct components (though what is a full component and 
 
 Utility components
 
-| Name              | iOS | Android | Web | Electron |
-|-------------------|-----|---------|-----|----------|
-| Anchor            | ✓   | ✓       | ✓   | ✓        |
-| Color             | ✓   | ✓       | ✓   | ✓        |
-| Hoverable         | ✓   | ✓       | ✓   | ✓        |
-| Shadow            | ✓   | ✓       | ✓   | ✓        |
+| Name                                                    | iOS | Android | Web | Electron |
+|---------------------------------------------------------|-----|---------|-----|----------|
+| [Anchor](https://material-bread.org/utils/anchor)       | ✓   | ✓       | ✓   | ✓        |
+| [Color](https://material-bread.org/utils/color)         | ✓   | ✓       | ✓   | ✓        |
+| [Hoverable](https://material-bread.org/utils/hoverable) | ✓   | ✓       | ✓   | ✓        |
+| [Shadow](https://material-bread.org/utils/shadow)       | ✓   | ✓       | ✓   | ✓        |
 
 
 ## Contributing
