@@ -39,7 +39,7 @@
 
 ## Quick Start
 
-1. `npm install material-bread` or `yarn add material-bread`
+1. `npm install material-bread react-native-web react-dom` or `yarn add material-bread react-native-web react-dom`
 2. Install and link [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
 3. Wrap your root `<App>` with a `<BreadProvider>`
 ```jsx
