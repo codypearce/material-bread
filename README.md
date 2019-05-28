@@ -148,7 +148,17 @@ Utility components
 
 ## Contributing
 
-Any contributions are welcome, you can read more about [contributing in the docs](http://material-bread.org/contributing/library)
+All contributions are welcome and encouraged. If you are reporting a bug, please follow the bug issue template. If you are proposing an enhancement, please first search the backlogs before creating a new issue.
+
+#### Contributing to library
+
+[Storybook](https://github.com/storybooks/storybook) is used as the dev environment for all components on all platforms. You can learn about how to get the storybook environment running locally for all platforms [here](http://material-bread.org/contributing/library). Please follow the conventions already in place. For example, most components follow the made up "props for prebuilt, children for custom" pattern. Addtionally, make sure you are testing your components across platforms before making a PR.
+
+#### Contributing to docs
+Documentation is built using [GatsbyJs](https://github.com/gatsbyjs/gatsby) and all pages are built using react components. You can learn how to get the docs running locally here [here](https://material-bread.org/contributing/docs).
+
+#### Easy first contribution
+You can start extremely easily by simply improving demos or adding more interesting demos to the docs or storybook. Having interesting, useful, and plentiful demo's is a major goal of the project, so any help in that regard would be greatly appreciated.
 
 ## Tests
 
@@ -160,7 +170,7 @@ You can generate test coverage by running `npm run test:generate-output`, this w
 
 ## Accessibility
 
-`react-native-web` describes how to write accessible react-native components on the web [here](https://github.com/necolas/react-native-web/blob/master/docs/guides/accessibility.md). Additionally, the storybook addon, [addon-a11y](https://www.npmjs.com/package/@storybook/addon-a11y), runs some simple accessibility tests on each component story. Please consider contributing to make accessibility even better.
+`react-native-web` describes how to write accessible react-native components on the web [here](https://github.com/necolas/react-native-web/blob/master/docs/guides/accessibility.md). Additionally, the storybook addon, [addon-a11y](https://www.npmjs.com/package/@storybook/addon-a11y), runs some simple accessibility tests on each component story. You can see the output of each accessibility test on the [Accessibility](https://codypearce.github.io/material-bread/?path=/story/components-buttons--custom) tab for each component. Please consider contributing to make accessibility even better.
 
 
 ## Copyright and License
