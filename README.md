@@ -31,6 +31,7 @@
 * [Supported Components](#supported-components)
 * [Contributing](#contributing)
 * [Tests](#tests)
+* [Accessibility](#accessibility)
 * [Copyright and License](#copyright-and-license)
 
 ## Quick Start
@@ -151,11 +152,15 @@ Any contributions are welcome, you can read more about [contributing in the docs
 
 ## Tests
 
-[Jest](https://jestjs.io/) is the current test framework for all components. You can see the result of each component test in our [storybook environement](https://codypearce.github.io/material-bread/?path=/story/components-appbar--simple) under the "Tests" tab. Writing more comprehensive tests is on roadmap, but please consider contributing to speed this process up.
+[Jest](https://jestjs.io/) is the current test framework for all components. You can see the result of each component test in our [storybook environement](https://codypearce.github.io/material-bread/?path=/story/components-appbar--simple) under the "Tests" tab. Writing more comprehensive tests is on the roadmap, but please consider contributing to speed this process up.
 
 You can run tests locally using `npm test`.
 
 You can generate test coverage by running `npm run test:generate-output`, this will output a json file with coverage.
+
+## Accessibility
+
+`react-native-web` describes how to write accessible react-native components on the web [here](https://github.com/necolas/react-native-web/blob/master/docs/guides/accessibility.md). Additionally, the storybook addon, [addon-a11y](https://www.npmjs.com/package/@storybook/addon-a11y), runs some simple accessibility tests on each component story. Please consider contributing to make accessibility even better.
 
 
 ## Copyright and License
