@@ -30,6 +30,7 @@
   * [Usage](#usage)
 * [Supported Components](#supported-components)
 * [Contributing](#contributing)
+* [Copyright and License](#copyright-and-license)
 
 ## Quick Start
 
@@ -146,3 +147,8 @@ Utility components
 ## Contributing
 
 Any contributions are welcome, you can read more about [contributing in the docs](http://material-bread.org/contributing/library)
+
+## Copyright and License
+
+Copyright 2019 Material Bread. 
+Code released under the MIT license.
