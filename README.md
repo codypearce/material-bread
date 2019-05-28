@@ -29,6 +29,7 @@
   * [Example Repos](#example-repos)
   * [Usage](#usage)
 * [Contributing](#contributing)
+* [Supported Components](#supported-components)
 
 ## Quick Start
 
@@ -60,7 +61,7 @@ More demos for each component can be found at the component [Storybook](https://
 
 [Getting Started with Electron](http://material-bread.org/getting-started/electron)
 
-#### Example Repos
+### Example Repos
 Boilerplate projects with minimal configuration to get started on each platform.
 
 React Native: [material-bread-rn-example](https://github.com/codypearce/material-bread-rn-example)
@@ -71,7 +72,7 @@ React Web: [material-bread-react-example](https://github.com/codypearce/material
 
 Electron: [material-bread-electron-example](https://github.com/codypearce/material-bread-electron-example)
 
-#### Usage
+### Usage
 
 ```jsx
 import React from 'react';
@@ -85,3 +86,58 @@ function App() {
 ## Contributing
 
 Any contributions are welcome, you can read more about [contributing in the docs](http://material-bread.org/contributing/library)
+
+## Supported Components
+A major goal of this library is to match all the components found in the material docs or provide enough demos/instructions that a developer can create a non-supported component from supported components. Keep in mind this still a work in progress so not all functionality from the Material Docs is supported yet. Currently there are 39 distinct components, each with many variations, and 4 utility components.
+
+
+| Name              | iOS | Android | Web | Electron |
+|-------------------|-----|---------|-----|----------|
+| Appbar            | ✓   | ✓       | ✓   | ✓        |
+| AppbarBottom      | ✓   | ✓       | ✓   | ✓        |
+| Avatar            | ✓   | ✓       | ✓   | ✓        |
+| Backdrop          | ✓   | ✓       | ✓   | ✓        |
+| Badge             | ✓   | ✓       | ✓   | ✓        |
+| Banner            | ✓   | ✓       | ✓   | ✓        |
+| Bottom Navigation | ✓   | ✓       | ✓   | ✓        |
+| Button            | ✓   | ✓       | ✓   | ✓        |
+| Card              | ✓   | ✓       | ✓   | ✓        |
+| Checkbox          | ✓   | ✓       | ✓   | ✓        |
+| Chip              | ✓   | ✓       | ✓   | ✓        |
+| DataTable         | ✓   | ✓       | ✓   | ✓        |
+| Dialog            | ✓   | ✓       | ✓   | ✓        |
+| Divider           | ✓   | ✓       | ✓   | ✓        |
+| Drawer            | ✓   | ✓       | ✓   | ✓        |
+| DrawerBottom      | ✓   | ✓       | ✓   | ✓        |
+| Fab               | ✓   | ✓       | ✓   | ✓        |
+| FabSpeedial       | ✓   | ✓       | ✓   | ✓        |
+| Icon              | ✓   | ✓       | ✓   | ✓        |
+| IconButton        | ✓   | ✓       | ✓   | ✓        |
+| List              | ✓   | ✓       | ✓   | ✓        |
+| ListExpand        | ✓   | ✓       | ✓   | ✓        |
+| Menu              | ✓   | ✓       | ✓   | ✓        |
+| Paper             | ✓   | ✓       | ✓   | ✓        |
+| ProgressBar       | ✓   | ✓       | ✓   | ✓        |
+| ProgresssCircle   | ✓   | ✓       | ✓   | ✓        |
+| RadioButton       | ✓   | ✓       | ✓   | ✓        |
+| Ripple            | ✓   | ✓       | ✓   | ✓        |
+| Select            | ✓   | ✓       | ✓   | ✓        |
+| SheetBottom       | ✓   | ✓       | ✓   | ✓        |
+| SheetSide         | ✓   | ✓       | ✓   | ✓        |
+| Slider            | ✓   | ✓       | ✓   | ✓        |
+| Snackbar          | ✓   | ✓       | ✓   | ✓        |
+| Switch            | ✓   | ✓       | ✓   | ✓        |
+| Tabs              | ✓   | ✓       | ✓   | ✓        |
+| TextField         | ✓   | ✓       | ✓   | ✓        |
+| ToggleButton      | ✓   | ✓       | ✓   | ✓        |
+| Tooltip           | ✓   | ✓       | ✓   | ✓        |
+| Typography        | ✓   | ✓       | ✓   | ✓        |
+
+Utility components
+
+| Name              | iOS | Android | Web | Electron |
+|-------------------|-----|---------|-----|----------|
+| Anchor            | ✓   | ✓       | ✓   | ✓        |
+| Color             | ✓   | ✓       | ✓   | ✓        |
+| Hoverable         | ✓   | ✓       | ✓   | ✓        |
+| Shadow            | ✓   | ✓       | ✓   | ✓        |
