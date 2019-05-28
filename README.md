@@ -30,6 +30,7 @@
   * [Usage](#usage)
 * [Supported Components](#supported-components)
 * [Contributing](#contributing)
+* [Tests](#tests)
 * [Copyright and License](#copyright-and-license)
 
 ## Quick Start
@@ -147,6 +148,15 @@ Utility components
 ## Contributing
 
 Any contributions are welcome, you can read more about [contributing in the docs](http://material-bread.org/contributing/library)
+
+## Tests
+
+[Jest](https://jestjs.io/) is the current test framework for all components. You can see the result of each component test in our [storybook environement](https://codypearce.github.io/material-bread/?path=/story/components-appbar--simple) under the "Tests" tab. Writing more comprehensive tests is on roadmap, but please consider contributing to speed this process up.
+
+You can run tests locally using `npm test`.
+
+You can generate test coverage by running `npm run test:generate-output`, this will output a json file with coverage.
+
 
 ## Copyright and License
 
