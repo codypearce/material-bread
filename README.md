@@ -30,6 +30,9 @@
   * [Usage](#usage)
 * [Supported Components](#supported-components)
 * [Contributing](#contributing)
+  * [Library](#contribute-to-library)
+  * [Docs](#contribute-to-docs)
+  * [Easy Contribution](#easy-first-contribution)
 * [Tests](#tests)
 * [Accessibility](#accessibility)
 * [Copyright and License](#copyright-and-license)
@@ -150,15 +153,15 @@ Utility components
 
 All contributions are welcome and encouraged. If you are reporting a bug, please follow the bug issue template. If you are proposing an enhancement, please first search the backlogs before creating a new issue.
 
-#### Contributing to library
+#### Contribute to library
 
 [Storybook](https://github.com/storybooks/storybook) is used as the dev environment for all components on all platforms. You can learn about how to get the storybook environment running locally for all platforms [here](http://material-bread.org/contributing/library). Please follow the conventions already in place. For example, most components follow the made up "props for prebuilt, children for custom" pattern. Addtionally, make sure you are testing your components across platforms before making a PR.
 
-#### Contributing to docs
+#### Contribute to docs
 Documentation is built using [GatsbyJs](https://github.com/gatsbyjs/gatsby) and all pages are built using react components. You can learn how to get the docs running locally here [here](https://material-bread.org/contributing/docs).
 
 #### Easy first contribution
-You can start extremely easily by simply improving demos or adding more interesting demos to the docs or storybook. Having interesting, useful, and plentiful demo's is a major goal of the project, so any help in that regard would be greatly appreciated.
+You can start contributing extremely easily by simply improving demos or adding more interesting demos to the docs or storybook. Having interesting, useful, and plentiful demos is a major goal of the project, so any help in that regard would be greatly appreciated.
 
 ## Tests
 
