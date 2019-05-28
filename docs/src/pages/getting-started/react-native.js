@@ -76,20 +76,39 @@ class Index extends Component {
           name="Setup"
           id="setup"
           href="/getting-started/react-native#setup ">
-          <ComponentDescription
-            text={
-              <div>
-                If you're using Expo then you're all set to start using
-                components. If you're using native then you need to install and
-                link {'  '}
-                <Link href="https://github.com/oblador/react-native-vector-icons">
-                  {' '}
-                  react-native-vector-icons{' '}
-                </Link>
-                .
-              </div>
-            }
-          />
+          <div>
+            <h3 style={styles.h3}>React-native-vector-icons</h3>
+            <ComponentDescription
+              text={
+                <div>
+                  If you're using Expo then you're all set to start using
+                  components. If you're using native then you need to install
+                  and link {'  '}
+                  <Link href="https://github.com/oblador/react-native-vector-icons">
+                    {' '}
+                    react-native-vector-icons{' '}
+                  </Link>
+                  .
+                </div>
+              }
+            />
+          </div>
+          <div>
+            <h3 style={styles.h3}>React Native Web</h3>
+            <ComponentDescription
+              text={
+                <div>
+                  <CodeBlock
+                    code={'npm i react-native-web react-dom'}
+                    style={styles.code}
+                    fontSize={12}
+                    canCopy
+                    small
+                  />{' '}
+                </div>
+              }
+            />
+          </div>
         </Section>
         <Section
           name="Usage"

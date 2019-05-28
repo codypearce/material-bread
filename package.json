@@ -1,6 +1,6 @@
 {
   "name": "material-bread",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest -w 1 --forceExit",
@@ -16,9 +16,7 @@
   "dependencies": {
     "color": "^3.1.0",
     "modal-enhanced-react-native-web": "^0.2.0",
-    "react-native-vector-icons": "^6.2.0",
-    "react-dom": "^16.8.6",
-    "react-native-web": "^0.11.4"
+    "react-native-vector-icons": "^6.2.0"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^5.0.6",
@@ -64,7 +62,9 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "react-native-vector-icons": "*"
+    "react-native-vector-icons": "*",
+    "react-dom": "16.8.1",
+    "react-native-web": "0.11.2"
   },
   "main": "src/index.js",
   "jest": {
