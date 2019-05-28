@@ -4,21 +4,32 @@
 <h1 align="center" style="margin: 0px">Material Bread</h1>
 
 
-[![Build Status](https://img.shields.io/travis/codypearce/material-bread/master.svg?style=for-the-badge)](https://travis-ci.org/codypearce/material-bread) [![NPM registry](https://img.shields.io/npm/v/material-bread.svg?style=for-the-badge)](https://www.npmjs.com/package/material-bread) ![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=for-the-badge) ![NPM license](https://img.shields.io/badge/license-mit-red.svg?style=for-the-badge) 
+  
+<p align="center" >Cross Platform React Native Material Design Components</p>
 
-[![Storybook](https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg?style=for-the-badge)](https://codypearce.github.io/material-bread/)
+<div align="center" >
 
+[![Build Status](https://img.shields.io/travis/codypearce/material-bread/master.svg?style=for-the-badge)](https://travis-ci.org/codypearce/material-bread) [![NPM registry](https://img.shields.io/npm/v/material-bread.svg?style=for-the-badge)](https://www.npmjs.com/package/material-bread) ![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=for-the-badge) ![NPM license](https://img.shields.io/badge/license-mit-red.svg?style=for-the-badge) [![Storybook](https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg?style=for-the-badge)](https://codypearce.github.io/material-bread/)
 
-### [Docs](http://material-bread.org)
-
-### [Storybook](https://codypearce.github.io/material-bread/)
-
+</div>
 
 ### Features
 
 * Highly Customizable React Native Material Design Components
 * Cross platform support: React Native (iOS, Android), React-native-web (Browsers), Electron (Windows, Mac, Linux)
 * Numerous live demos you can edit in in your browser.
+
+### [Docs](http://material-bread.org)
+
+### [Storybook](https://codypearce.github.io/material-bread/)
+
+
+### Table Of Contents
+* [Installation](#installation)
+* [Getting Started](#getting-started)
+* [Example Repos](#example-repos)
+* [Usage](#usage)
+* [Contributing](#contributing)
 
 ## Installation
 
