@@ -28,6 +28,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
+    "react-github-btn": "^1.0.5",
     "react-helmet": "^5.2.0",
     "react-live": "^1.12.0",
     "react-native-vector-icons": "^6.4.2",
