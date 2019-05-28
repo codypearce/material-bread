@@ -18,7 +18,7 @@
 ### Features
 
 - Highly Customizable React Native Components.
-- Cross platform support: React Native (iOS, Android), React-native-web (Browsers), Electron (Windows, Mac, Linux).
+- Cross platform support: React Native (iOS, Android), React-native-web (Browsers), Electron (Windows, Mac, Linux), react-native-windows, react-native-macos
 - Support for Material Design 2.0 components.
 - Live react native demos you can edit in in your browser.
 
