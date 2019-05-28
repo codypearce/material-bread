@@ -1,7 +1,7 @@
-<p align="center">
-  <img width="250" src="http://material-bread.org/logo-shadow.svg" alt="Material Bread logo" align="center">
+<p align="center" style="margin-bottom: 0px !important;">
+  <img width="200" src="http://material-bread.org/logo-shadow.svg" alt="Material Bread logo" align="center">
 </p>
-<h1 align="center" style="margin: 0px">Material Bread</h1>
+<h1 align="center" style="margin-top: 0px;">Material Bread</h1>
 
 
   
@@ -15,8 +15,9 @@
 
 ### Features
 
-* Highly Customizable React Native Material Design Components
-* Cross platform support: React Native (iOS, Android), React-native-web (Browsers), Electron (Windows, Mac, Linux)
+* Highly Customizable React Native Components.
+* Cross platform support: React Native (iOS, Android), React-native-web (Browsers), Electron (Windows, Mac, Linux).
+* Support for most Material Design 2.0 components in docs.
 * Numerous live demos you can edit in in your browser.
 
 ### [Docs](http://material-bread.org)
@@ -25,23 +26,26 @@
 
 
 ### Table Of Contents
-* [Installation](#installation)
+* [Quick Start](#quick-start)
 * [Getting Started](#getting-started)
 * [Example Repos](#example-repos)
 * [Usage](#usage)
 * [Contributing](#contributing)
 
-## Installation
+## Quick Start
 
-```sh
-npm install material-bread
+1. `npm install material-bread` or `yarn add material-bread`
+2. Install and link [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
+3. Wrap your root `<App>` with a `<BreadProvider>`
+```jsx
+<BreadProvider>
+  <Root />
+</BreadProvider>
 ```
+4. Start developing!
 
-or
+Read the getting started guides for your platform below to learn more.
 
-```sh
-yarn add material-bread
-```
 
 ## Getting Started
 
