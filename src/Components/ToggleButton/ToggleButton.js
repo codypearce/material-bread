@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
-import Ripple from '../Ripple/Ripple';
+import Ripple from '../Ripple/Ripple.js';
 
 import { ToggleButtonContext } from './ToggleButtonGroup/ToggleButtonGroup';
 

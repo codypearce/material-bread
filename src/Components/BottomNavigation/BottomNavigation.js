@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import withTheme from '../../Theme/withTheme';
-import BottomNavigationItem from './BottomNavigationItem/BottomNavigationItem';
+import BottomNavigationItem from './BottomNavigationItem/BottomNavigationItem.js';
 import styles from './BottomNavigation.styles';
 
 export const BottomNavContext = React.createContext();

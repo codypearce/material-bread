@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, Platform, Dimensions, Animated } from 'react-native';
 import withTheme from '../../Theme/withTheme';
-import shadow from '../../Utils/Shadow/shadow';
+import shadow from '../../Utils/Shadow/shadow.js';
 import Button from '../Button/Button';
 import { BodyText } from '../../';
 import styles from './Banner.styles';

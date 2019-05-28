@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, ScrollView } from 'react-native';
 import withTheme from '../../Theme/withTheme';
-import shadow from '../../Utils/Shadow/shadow';
+import shadow from '../../Utils/Shadow/shadow.js';
 
 class DataTable extends Component {
   static propTypes = {

@@ -11,7 +11,7 @@ import {
 
 import withTheme from '../../Theme/withTheme';
 import styles from './Drawer.styles';
-import shadow from '../../Utils/Shadow/shadow';
+import shadow from '../../Utils/Shadow/shadow.js';
 
 const needsSafeArea = Platform.OS === 'ios' && parseInt(Platform.Version, 10);
 
