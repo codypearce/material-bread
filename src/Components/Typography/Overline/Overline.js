@@ -13,7 +13,7 @@ class Overline extends Component {
   render() {
     const { theme, children, text } = this.props;
     return (
-      <BaseText typographyStyles={theme.overline} {...this.props}>
+      <BaseText typographyStyles={theme.overline} theme={theme} {...this.props}>
         {children ? children : text}
       </BaseText>
     );

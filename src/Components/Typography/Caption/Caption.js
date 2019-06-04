@@ -12,7 +12,7 @@ class Caption extends Component {
   render() {
     const { theme, children, text } = this.props;
     return (
-      <BaseText typographyStyles={theme.caption} {...this.props}>
+      <BaseText typographyStyles={theme.caption} theme={theme} {...this.props}>
         {children ? children : text}
       </BaseText>
     );

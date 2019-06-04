@@ -17,7 +17,11 @@ class BodyText extends Component {
 
     const textStyle = type == 2 ? theme.bodyTextTwo : theme.bodyText;
     return (
-      <BaseText typographyStyles={textStyle} style={style} {...this.props}>
+      <BaseText
+        typographyStyles={textStyle}
+        style={style}
+        theme={theme}
+        {...this.props}>
         {children ? children : text}
       </BaseText>
     );
