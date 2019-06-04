@@ -8,7 +8,7 @@ class ProgressCircle extends PureComponent {
   static propTypes = {
     color: PropTypes.string,
     size: PropTypes.number,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     animationDuration: PropTypes.number,
     easing: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     animationEasing: PropTypes.func,

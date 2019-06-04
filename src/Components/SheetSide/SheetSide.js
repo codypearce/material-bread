@@ -28,7 +28,7 @@ class SheetSide extends Component {
     onSwipeRight: PropTypes.func,
     children: PropTypes.node,
     wrapperStyles: PropTypes.object,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     visible: PropTypes.bool,
     pageWidth: PropTypes.number,
     pageHeight: PropTypes.number,

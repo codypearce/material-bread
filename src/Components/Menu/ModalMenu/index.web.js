@@ -34,7 +34,7 @@ export default class Modal extends Component {
     children: PropTypes.node.isRequired,
     ariaHideApp: PropTypes.bool,
     appElement: PropTypes.instanceOf(SafeHTMLElement),
-    containerStyle: PropTypes.object,
+    containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     onBackdropPress: PropTypes.func,
     onLayout: PropTypes.func,
     noBackDrop: PropTypes.bool,

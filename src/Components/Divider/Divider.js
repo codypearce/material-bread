@@ -7,7 +7,7 @@ import styles from './Divider.styles';
 
 class Divider extends Component {
   static propTypes = {
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     theme: PropTypes.object,
     marginVertical: PropTypes.number,
     subheader: PropTypes.string,

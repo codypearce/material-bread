@@ -13,18 +13,18 @@ class TextFieldFilled extends Component {
   }
 
   static propTypes = {
-    style: PropTypes.object,
-    containerStyle: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     error: PropTypes.bool,
     label: PropTypes.string,
     labelColor: PropTypes.string,
-    labelStyle: PropTypes.object,
+    labelStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     handleFocus: PropTypes.func,
     handleBlur: PropTypes.func,
     focused: PropTypes.bool,
     helperText: PropTypes.string,
     helperVisible: PropTypes.bool,
-    helperTextStyle: PropTypes.object,
+    helperTextStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     underlineColor: PropTypes.string,
     underlineActiveColor: PropTypes.string,
     leadingIcon: PropTypes.node,

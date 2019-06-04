@@ -10,7 +10,7 @@ import { shadow } from '../../';
 class Appbar extends Component {
   static propTypes = {
     color: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     theme: PropTypes.object,
     barType: PropTypes.string,
     backgroundImage: PropTypes.node,

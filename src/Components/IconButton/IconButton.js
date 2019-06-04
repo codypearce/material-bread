@@ -6,7 +6,7 @@ import Ripple from '../Ripple/Ripple';
 
 class IconButton extends Component {
   static propTypes = {
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     theme: PropTypes.object,
     color: PropTypes.string,
     size: PropTypes.number,

@@ -21,7 +21,7 @@ class Modal extends Component {
     onRequestClose: PropTypes.func,
     onShow: PropTypes.func,
     onTouchOutside: PropTypes.func,
-    containerStyle: PropTypes.object,
+    containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     NativeModalProps: PropTypes.object,
     children: PropTypes.node,
   };

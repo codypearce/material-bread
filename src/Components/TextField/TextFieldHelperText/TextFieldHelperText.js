@@ -9,7 +9,7 @@ class TextFieldHelperText extends Component {
     error: PropTypes.bool,
     children: PropTypes.node,
     visible: PropTypes.bool,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   };
   render() {
     const { children, visible, error, style } = this.props;

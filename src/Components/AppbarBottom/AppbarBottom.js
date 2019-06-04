@@ -8,7 +8,7 @@ import styles from './AppbarBottom.styles';
 class AppbarBottom extends Component {
   static propTypes = {
     color: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     theme: PropTypes.object,
 
     fab: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),

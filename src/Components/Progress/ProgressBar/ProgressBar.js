@@ -9,14 +9,14 @@ class ProgressBar extends PureComponent {
   static propTypes = {
     color: PropTypes.string,
     height: PropTypes.number,
-    trackStyle: PropTypes.object,
+    trackStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     determinate: PropTypes.bool,
     indcatorStartPosition: PropTypes.number,
     easing: PropTypes.func,
     animationDuration: PropTypes.number,
     value: PropTypes.number,
     visible: PropTypes.bool,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     theme: PropTypes.object,
   };
 

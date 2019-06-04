@@ -31,7 +31,7 @@ class ButtonBase extends Component {
     disableRipple: PropTypes.bool,
 
     text: PropTypes.string,
-    textStyle: PropTypes.object,
+    textStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 
     typeTextColor: PropTypes.string,
     typeButtonStyles: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),

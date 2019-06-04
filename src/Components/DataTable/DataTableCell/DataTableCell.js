@@ -17,7 +17,7 @@ class TableCell extends Component {
   }
   static propTypes = {
     children: PropTypes.node,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     right: PropTypes.bool,
     borderRight: PropTypes.bool,
     borderLeft: PropTypes.bool,

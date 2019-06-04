@@ -9,12 +9,12 @@ import styles from './ListSection.styles';
 class ListSection extends Component {
   static propTypes = {
     children: PropTypes.node,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     label: PropTypes.string,
     topDivider: PropTypes.bool,
     bottomDivider: PropTypes.bool,
     inset: PropTypes.bool,
-    contentStyle: PropTypes.object,
+    contentStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   };
 
   render() {

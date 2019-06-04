@@ -11,9 +11,9 @@ class Switch extends Component {
   static propTypes = {
     checked: PropTypes.bool,
     onPress: PropTypes.func,
-    style: PropTypes.object,
-    trackStyle: PropTypes.object,
-    thumbStyle: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    trackStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    thumbStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     label: PropTypes.node,
     labelPos: PropTypes.string,
     theme: PropTypes.object,

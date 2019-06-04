@@ -8,7 +8,7 @@ import styles from './Searchfield.styles';
 class Searchfield extends Component {
   static propTypes = {
     value: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     onChangeText: PropTypes.func,
     onCloseIcon: PropTypes.func,
     onFocus: PropTypes.func,

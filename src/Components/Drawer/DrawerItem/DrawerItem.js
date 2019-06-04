@@ -9,7 +9,7 @@ import styles from './DrawerItem.styles';
 class DrawerItem extends Component {
   static propTypes = {
     children: PropTypes.node,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     text: PropTypes.string,
     icon: PropTypes.string,
     onPress: PropTypes.func,

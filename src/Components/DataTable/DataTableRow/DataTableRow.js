@@ -11,7 +11,7 @@ class DataTableRow extends Component {
   }
   static propTypes = {
     children: PropTypes.node,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     borderBottomColor: PropTypes.string,
     selected: PropTypes.bool,
     onPressCheckbox: PropTypes.func,

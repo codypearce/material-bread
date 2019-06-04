@@ -7,7 +7,7 @@ import { ToggleButtonContext } from './ToggleButtonGroup/ToggleButtonGroup';
 
 class ToggleButton extends Component {
   static propTypes = {
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     active: PropTypes.bool,
     onPress: PropTypes.func,
     value: PropTypes.string,

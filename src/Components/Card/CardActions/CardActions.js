@@ -9,7 +9,7 @@ import styles from './CardActions.styles';
 class CardActions extends Component {
   static propTypes = {
     children: PropTypes.node,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     leftActionItems: PropTypes.array,
     rightActionItems: PropTypes.array,
   };

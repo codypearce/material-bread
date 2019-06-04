@@ -11,10 +11,10 @@ import styles from './Chip.styles';
 class Chip extends Component {
   static propTypes = {
     children: PropTypes.node,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     theme: PropTypes.object,
 
-    chipStyle: PropTypes.string,
+    chipStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 
     color: PropTypes.string,
     themeColor: PropTypes.string,
@@ -25,7 +25,7 @@ class Chip extends Component {
     visible: PropTypes.bool,
 
     text: PropTypes.string,
-    textStyles: PropTypes.object,
+    textStyles: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 
     leftIcon: PropTypes.node,
     rightIcon: PropTypes.node,

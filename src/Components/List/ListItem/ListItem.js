@@ -9,7 +9,7 @@ import styles from './ListItem.styles';
 class ListItem extends Component {
   static propTypes = {
     children: PropTypes.node,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     onPress: PropTypes.func,
     disabled: PropTypes.bool,
     selected: PropTypes.bool,
@@ -19,7 +19,7 @@ class ListItem extends Component {
     icon: PropTypes.node,
     actionItem: PropTypes.node,
     leadingActionItem: PropTypes.node,
-    textStyle: PropTypes.object,
+    textStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   };
 
   _renderText() {

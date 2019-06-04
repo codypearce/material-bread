@@ -12,8 +12,8 @@ class CardHeader extends Component {
     title: PropTypes.string,
     titleStyles: PropTypes.object,
     subtitle: PropTypes.string,
-    subtitleStyles: PropTypes.string,
-    style: PropTypes.object,
+    subtitleStyles: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   };
 
   _renderAction() {

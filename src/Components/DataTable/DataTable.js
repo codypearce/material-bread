@@ -7,7 +7,7 @@ import shadow from '../../Utils/Shadow/shadow.js';
 class DataTable extends Component {
   static propTypes = {
     children: PropTypes.node,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   };
   render() {
     const { children, style } = this.props;

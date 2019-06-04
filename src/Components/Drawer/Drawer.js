@@ -41,9 +41,12 @@ class Drawer extends PureComponent {
     scrimColor: PropTypes.string,
     scrimOpacity: PropTypes.number,
 
-    style: PropTypes.object,
-    contentContainerStyle: PropTypes.object,
-    drawerStyle: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    contentContainerStyle: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.array,
+    ]),
+    drawerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   };
 
   static defaultProps = {

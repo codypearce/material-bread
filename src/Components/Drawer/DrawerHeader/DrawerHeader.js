@@ -7,7 +7,7 @@ import styles from './DrawerHeader.styles';
 class DrawerHeader extends Component {
   static propTypes = {
     children: PropTypes.node,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     title: PropTypes.string,
     subtitle: PropTypes.string,
     avatar: PropTypes.node,

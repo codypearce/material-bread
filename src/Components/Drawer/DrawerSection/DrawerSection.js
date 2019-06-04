@@ -8,7 +8,7 @@ import styles from './DrawerSection.styles';
 class DrawerSection extends Component {
   static propTypes = {
     children: PropTypes.node,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     label: PropTypes.string,
     topDivider: PropTypes.bool,
     bottomDivider: PropTypes.bool,

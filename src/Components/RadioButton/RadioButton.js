@@ -13,10 +13,10 @@ class RadioButton extends Component {
     rippleColor: PropTypes.string,
     radioButtonColor: PropTypes.string,
     uncheckedBorderColor: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 
     label: PropTypes.string,
-    labelStyle: PropTypes.object,
+    labelStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     labelPos: PropTypes.string,
 
     error: PropTypes.bool,

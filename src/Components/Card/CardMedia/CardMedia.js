@@ -8,11 +8,11 @@ class CardMedia extends Component {
   static propTypes = {
     children: PropTypes.node,
     image: PropTypes.node,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     title: PropTypes.string,
-    titleStyles: PropTypes.object,
+    titleStyles: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     subtitle: PropTypes.string,
-    subtitleStyles: PropTypes.string,
+    subtitleStyles: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     height: PropTypes.number,
   };
 

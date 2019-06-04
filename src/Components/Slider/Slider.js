@@ -22,7 +22,7 @@ class Slider extends Component {
     trackColor: PropTypes.string,
     markerColor: PropTypes.string,
     allowOverlap: PropTypes.bool,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   };
 
   static defaultProps = {

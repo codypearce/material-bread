@@ -8,7 +8,7 @@ import styles from './Dialog.styles';
 import { Button, BodyText } from '../..';
 class Dialog extends Component {
   static propTypes = {
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     children: PropTypes.node,
     visible: PropTypes.bool,
     onRequestClose: PropTypes.func,
@@ -17,7 +17,7 @@ class Dialog extends Component {
     actionItems: PropTypes.array,
     title: PropTypes.string,
     supportingText: PropTypes.string,
-    contentStyle: PropTypes.object,
+    contentStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   };
 
   _renderActionItems() {
