@@ -10,7 +10,7 @@ class TextFieldUnderline extends Component {
   }
 
   static propTypes = {
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     error: PropTypes.bool,
     underlineColor: PropTypes.string,
     underlineActiveColor: PropTypes.string,

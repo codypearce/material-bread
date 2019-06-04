@@ -11,9 +11,9 @@ class ListExpand extends Component {
     expanded: PropTypes.bool,
     onPress: PropTypes.func,
     children: PropTypes.node,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     title: PropTypes.string,
-    titleStyle: PropTypes.object,
+    titleStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     theme: PropTypes.object,
     icon: PropTypes.node,
   };

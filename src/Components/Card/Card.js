@@ -8,7 +8,7 @@ import Ripple from '../Ripple/Ripple';
 class Card extends Component {
   static propTypes = {
     children: PropTypes.node,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     outlined: PropTypes.bool,
     shadow: PropTypes.number,
     radius: PropTypes.number,

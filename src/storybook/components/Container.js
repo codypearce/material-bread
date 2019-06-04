@@ -5,7 +5,7 @@ import { BreadProvider } from '../..';
 
 export default class Container extends Component {
   static propTypes = {
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     children: PropTypes.node,
     scroll: PropTypes.bool,
   };

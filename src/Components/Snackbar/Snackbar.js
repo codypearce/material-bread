@@ -12,7 +12,7 @@ class Snackbar extends Component {
     visible: PropTypes.bool,
     animationDuration: PropTypes.number,
     children: PropTypes.node,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     onButtonPress: PropTypes.func,
     buttonLabel: PropTypes.string,
   };

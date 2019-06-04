@@ -10,7 +10,7 @@ import styles from './DataTablePagination.styles';
 class DataTablePagination extends Component {
   static propTypes = {
     children: PropTypes.node,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     onChangePage: PropTypes.func,
     numberOfPages: PropTypes.number,
     numberOfRows: PropTypes.number,

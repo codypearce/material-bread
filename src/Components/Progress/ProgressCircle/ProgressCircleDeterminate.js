@@ -10,7 +10,7 @@ class ProgressCircleDeterminate extends Component {
     thickness: PropTypes.number,
     color: PropTypes.string,
     unfilledColor: PropTypes.string,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     children: PropTypes.node,
     animationMethod: PropTypes.string,
     animationConfig: PropTypes.object,

@@ -10,7 +10,7 @@ class TextFieldLabel extends Component {
   }
 
   static propTypes = {
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     error: PropTypes.bool,
     labelColor: PropTypes.string,
     focused: PropTypes.bool,

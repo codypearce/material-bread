@@ -10,7 +10,7 @@ import styles from './Select.styles';
 class Select extends Component {
   static propTypes = {
     onSelect: PropTypes.func,
-    buttonStyle: PropTypes.object,
+    buttonStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     label: PropTypes.string,
     selectedItem: PropTypes.node,
     menuItems: PropTypes.array,

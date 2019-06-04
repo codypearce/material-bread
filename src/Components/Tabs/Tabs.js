@@ -16,7 +16,7 @@ class Tabs extends Component {
     underlineColor: PropTypes.string,
     scrollEnabled: PropTypes.bool,
     handleChange: PropTypes.func,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     theme: PropTypes.object,
   };
 

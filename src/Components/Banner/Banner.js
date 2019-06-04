@@ -10,7 +10,7 @@ import styles from './Banner.styles';
 class Banner extends Component {
   static propTypes = {
     mobileLayout: PropTypes.bool,
-    style: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     actionItems: PropTypes.array,
     singleLine: PropTypes.bool,
     media: PropTypes.node,

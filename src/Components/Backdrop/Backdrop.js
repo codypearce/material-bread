@@ -9,10 +9,10 @@ import BackLayer from './BackLayer/BackLayer';
 
 class Backdrop extends PureComponent {
   static propTypes = {
-    backLayerStyle: PropTypes.object,
-    frontLayerStyle: PropTypes.object,
-    headerButtonStyle: PropTypes.object,
-    style: PropTypes.object,
+    backLayerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    frontLayerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    headerButtonStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     backLayerConcealed: PropTypes.node,
     offset: PropTypes.number,
     initialOffset: PropTypes.number,

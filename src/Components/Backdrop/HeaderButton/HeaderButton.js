@@ -10,7 +10,7 @@ class HeaderButton extends Component {
     super(props);
   }
   static propTypes = {
-    headerButtonStyle: PropTypes.object,
+    headerButtonStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     toggleLayout: PropTypes.func,
     backConcealed: PropTypes.bool,
     iconName: PropTypes.string,

@@ -15,14 +15,14 @@ class Checkbox extends Component {
     rippleColor: PropTypes.string,
     checkboxColor: PropTypes.string,
     unCheckedColor: PropTypes.string,
-    style: PropTypes.object,
-    checkboxStyle: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    checkboxStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     theme: PropTypes.object,
     rippleMatchesCheckbox: PropTypes.bool,
     indeterminate: PropTypes.bool,
 
     label: PropTypes.string,
-    labelStyle: PropTypes.object,
+    labelStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     labelPos: PropTypes.string,
 
     icon: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
