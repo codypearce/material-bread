@@ -3,75 +3,85 @@
 exports[`MenuItem Renders 1`] = `
 <View
   accessible={true}
-  displayUntilPressOut={true}
-  onLayout={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
-  onRippleAnimation={[Function]}
   onStartShouldSetResponder={[Function]}
-  pointerEvents="box-only"
-  rippleCentered={false}
-  rippleColor="rgba(0, 0, 0, .87)"
-  rippleDuration={400}
-  rippleFades={true}
-  rippleOpacity={0.3}
-  rippleSequential={false}
-  rippleSize={0}
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": null,
-      "flex": 1,
-      "flexDirection": "row",
-      "height": 48,
-      "minHeight": 32,
-      "minWidth": 124,
-      "paddingHorizontal": 16,
-      "width": "100%",
-    }
-  }
 >
-  <Text
-    ellipsizeMode="clip"
-    numberOfLines={1}
-    style={
-      Array [
-        Object {
-          "color": "#6e6e6e",
-          "fontSize": 14,
-          "fontWeight": "400",
-        },
-        Object {
-          "color": "rgba(0,0,0,.87)",
-          "marginLeft": 0,
-        },
-        undefined,
-      ]
-    }
-  />
   <View
+    accessible={true}
+    displayUntilPressOut={true}
+    onLayout={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onRippleAnimation={[Function]}
+    onStartShouldSetResponder={[Function]}
+    pointerEvents="box-only"
+    rippleCentered={false}
+    rippleColor="rgba(0, 0, 0, .87)"
+    rippleDuration={400}
+    rippleFades={true}
+    rippleOpacity={0.3}
+    rippleSequential={false}
+    rippleSize={0}
     style={
-      Array [
-        Object {
-          "backgroundColor": "transparent",
-          "bottom": 0,
-          "left": 0,
-          "overflow": "hidden",
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-          "zIndex": 10,
-        },
-        Object {
-          "borderRadius": 0,
-        },
-      ]
+      Object {
+        "alignItems": "center",
+        "backgroundColor": null,
+        "flex": 1,
+        "flexDirection": "row",
+        "height": 48,
+        "minHeight": 32,
+        "minWidth": 124,
+        "paddingHorizontal": 16,
+        "width": "100%",
+      }
     }
-  />
+  >
+    <Text
+      ellipsizeMode="clip"
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#6e6e6e",
+            "fontSize": 14,
+            "fontWeight": "400",
+          },
+          Object {
+            "color": "rgba(0,0,0,.87)",
+            "marginLeft": 0,
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "bottom": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "zIndex": 10,
+          },
+          Object {
+            "borderRadius": 0,
+          },
+        ]
+      }
+    />
+  </View>
 </View>
 `;
