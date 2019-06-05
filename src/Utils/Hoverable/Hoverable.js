@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+import {
+  Platform,
+  Dimensions,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
 import PropTypes from 'prop-types';
 
 import createHoverMonitor from './HoverState';
@@ -16,7 +22,21 @@ class Hoverable extends Component {
     onHoverOut: PropTypes.func,
   };
 
-  state = { isHovered: false };
+  state = { isHovered: false, width: Dimensions.get('window').width };
+
+  componentDidMount() {
+    Dimensions.addEventListener('change', this.handleWindowWidth);
+    const width = Dimensions.get('window').width;
+    this.setState({ width });
+  }
+
+  componentWillUnmount() {
+    Dimensions.removeEventListener('change', this.handleWindowWidth);
+  }
+
+  handleWindowWidth = event => {
+    this.setState({ width: event.width });
+  };
 
   _handleMouseEnter = () => {
     if (hover.isEnabled && !this.state.isHovered) {
@@ -40,16 +60,25 @@ class Hoverable extends Component {
 
   render() {
     const { children } = this.props;
+    const { width } = this.state;
 
     const child =
       typeof children === 'function'
         ? children(this.state.isHovered)
         : children;
 
-    return React.cloneElement(React.Children.only(child), {
-      onMouseEnter: this._handleMouseEnter,
-      onMouseLeave: this._handleMouseLeave,
-    });
+    if (Platform.OS == 'web' && width > 450) {
+      return React.cloneElement(React.Children.only(child), {
+        onMouseEnter: this._handleMouseEnter,
+        onMouseLeave: this._handleMouseLeave,
+      });
+    } else {
+      return (
+        <TouchableWithoutFeedback onPress={this._toggle}>
+          <View />
+        </TouchableWithoutFeedback>
+      );
+    }
   }
 }
 
