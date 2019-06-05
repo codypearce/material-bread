@@ -1,8 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Switch Renders 1`] = `
-<View
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
-/>
+<TouchableWithoutFeedback
+  onPress={[Function]}
+>
+  <View>
+    <View
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    />
+  </View>
+</TouchableWithoutFeedback>
 `;
