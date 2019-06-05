@@ -7,9 +7,6 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 
-import createHoverMonitor from './HoverState';
-const hover = createHoverMonitor();
-
 class Hoverable extends Component {
   static displayName = 'Hoverable';
   constructor(props) {
@@ -35,11 +32,11 @@ class Hoverable extends Component {
   }
 
   handleWindowWidth = event => {
-    this.setState({ width: event.width });
+    this.setState({ width: event.window.width });
   };
 
   _handleMouseEnter = () => {
-    if (hover.isEnabled && !this.state.isHovered) {
+    if (!this.state.isHovered) {
       const { onHoverIn } = this.props;
       if (onHoverIn) {
         onHoverIn();
@@ -55,6 +52,14 @@ class Hoverable extends Component {
         onHoverOut();
       }
       this.setState(() => ({ isHovered: false }));
+    }
+  };
+
+  _toggle = () => {
+    if (this.state.isHovered) {
+      this._handleMouseLeave();
+    } else {
+      this._handleMouseEnter();
     }
   };
 
@@ -75,7 +80,12 @@ class Hoverable extends Component {
     } else {
       return (
         <TouchableWithoutFeedback onPress={this._toggle}>
-          <View />
+          <View>
+            {React.cloneElement(React.Children.only(child), {
+              onMouseEnter: this._handleMouseEnter,
+              onMouseLeave: this._handleMouseLeave,
+            })}
+          </View>
         </TouchableWithoutFeedback>
       );
     }
