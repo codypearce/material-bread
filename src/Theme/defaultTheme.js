@@ -16,12 +16,13 @@ export default {
     light: '#e57373',
     dark: '#d32f2f',
   },
-  text: {
+  textColor: {
     primary: 'rgba(0, 0, 0, 0.87)',
     secondary: 'rgba(0, 0, 0, 0.54)',
     disabled: 'rgba(0, 0, 0, 0.38)',
     hint: 'rgba(0, 0, 0, 0.38)',
   },
+  text: {},
   background: {
     default: '#fafafa',
   },

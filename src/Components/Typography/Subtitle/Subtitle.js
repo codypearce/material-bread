@@ -26,7 +26,7 @@ class Subtitle extends Component {
     textStyle = this.numberToStyle(type);
 
     return (
-      <BaseText typographyStyles={textStyle} {...this.props}>
+      <BaseText typographyStyles={textStyle} theme={theme} {...this.props}>
         {children ? children : text}
       </BaseText>
     );

@@ -7,6 +7,7 @@ exports[`Caption Renders 1`] = `
       Object {
         "color": "rgba(0, 0, 0, 0.87)",
       },
+      Object {},
       Object {
         "fontSize": 12,
         "letterSpacing": 0.4,

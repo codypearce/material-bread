@@ -7,6 +7,7 @@ exports[`BodyText Renders 1`] = `
       Object {
         "color": "rgba(0, 0, 0, 0.87)",
       },
+      Object {},
       Object {
         "fontSize": 16,
         "letterSpacing": 0.5,

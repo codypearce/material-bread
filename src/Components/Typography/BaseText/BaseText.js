@@ -16,6 +16,7 @@ export default class BaseText extends Component {
     align: PropTypes.string,
     color: PropTypes.string,
     gutterBottom: PropTypes.bool,
+    theme: PropTypes.object,
   };
 
   render() {
@@ -26,12 +27,14 @@ export default class BaseText extends Component {
       color,
       gutterBottom,
       children,
+      theme,
     } = this.props;
 
     return (
       <Text
         style={[
           styles.default,
+          theme.text,
           typographyStyles,
           {
             textAlign: align ? align : 'left',

@@ -181,7 +181,8 @@ exports[`TextFieldOutline Renders 1`] = `
           "letterSpacing": 0.1,
           "lineHeight": 14,
         },
-        "text": Object {
+        "text": Object {},
+        "textColor": Object {
           "disabled": "rgba(0, 0, 0, 0.38)",
           "hint": "rgba(0, 0, 0, 0.38)",
           "primary": "rgba(0, 0, 0, 0.87)",
