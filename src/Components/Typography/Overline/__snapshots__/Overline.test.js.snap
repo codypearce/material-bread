@@ -7,6 +7,7 @@ exports[`Overline Renders 1`] = `
       Object {
         "color": "rgba(0, 0, 0, 0.87)",
       },
+      Object {},
       Object {
         "fontSize": 10,
         "letterSpacing": 1.5,
