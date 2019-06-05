@@ -4,10 +4,18 @@ import ThemeContext from '../Theme/ThemeContext';
 
 export default class BreadProvider extends Component {
   static propTypes = {
-    children: PropTypes.node,
+    children: PropTypes.node.isRequired,
+    value: PropTypes.object,
   };
+
+  static defaultProps = {
+    value: {},
+  };
+
   render() {
-    const { children } = this.props;
-    return <ThemeContext.Provider value={{}}>{children}</ThemeContext.Provider>;
+    const { children, value } = this.props;
+    return (
+      <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+    );
   }
 }
