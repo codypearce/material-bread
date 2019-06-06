@@ -6,7 +6,7 @@ import withTheme from '../../Theme/withTheme';
 import Icon from '../Icon/Icon.js';
 import Ripple from '../Ripple/Ripple.js';
 import BodyText from '../Typography/BodyText/BodyText.js';
-import shadowTool from '../../Utils/Shadow/shadow';
+import shadowTool from '../../Utils/Shadow/shadow.js';
 import styles from './Fab.styles';
 
 export class Fab extends Component {

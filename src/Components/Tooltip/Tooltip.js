@@ -4,7 +4,7 @@ import { Platform, Text, View, TouchableWithoutFeedback } from 'react-native';
 
 import Paper from '../Paper/Paper.js';
 import Menu from '../Menu/Menu.js';
-import shadow from '../../Utils/Shadow/shadow';
+import shadow from '../../Utils/Shadow/shadow.js';
 import Hoverable from '../../Utils/Hoverable/Hoverable.js';
 
 import withTheme from '../../Theme/withTheme';
