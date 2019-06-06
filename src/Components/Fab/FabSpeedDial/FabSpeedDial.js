@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, Animated } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
-import { Fab } from '../../..';
+import Fab from '../Fab';
 import styles from './FabSpeedDial.styles';
 
 class FabSpeedDial extends Component {

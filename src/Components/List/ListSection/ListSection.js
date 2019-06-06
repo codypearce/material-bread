@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { View, Text, Platform } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 
-import { Divider } from '../../..';
+import Divider from '../../Divider/Divider';
 import styles from './ListSection.styles';
 
 class ListSection extends Component {

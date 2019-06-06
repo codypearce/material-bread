@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
 import withTheme from '../../../Theme/withTheme';
-import { BodyText, Caption, Ripple } from '../../..';
+import BodyText from '../../Typography/BodyText/BodyText';
+import Caption from '../../Typography/Caption/Caption';
+import Ripple from '../../Ripple/Ripple';
 import styles from './ListItem.styles';
 
 class ListItem extends Component {

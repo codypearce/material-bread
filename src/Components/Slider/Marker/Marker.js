@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import styles from './Marker.styles';
 import withTheme from '../../../Theme/withTheme';
-import { Ripple, Hoverable } from '../../..';
+import Ripple from '../../Ripple/Ripple';
+import Hoverable from '../../../Utils/Hoverable/Hoverable';
 import colorTool from 'color';
 
 class Marker extends Component {
