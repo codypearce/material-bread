@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
-import { SheetBottom } from '../../';
+import SheetBottom from '../SheetBottom/SheetBottom.js';
 
 class DrawerBottom extends Component {
   static propTypes = {

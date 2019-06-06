@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, Platform, StyleSheet } from 'react-native';
 import withTheme from '../../Theme/withTheme';
-import { BodyText } from '../..';
+import BodyText from '../Typography/BodyText/BodyText.js';
 import styles from './Divider.styles';
 
 class Divider extends Component {

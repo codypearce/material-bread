@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { TouchableHighlight, View, FlatList, Platform } from 'react-native';
 
-import { Menu, MenuItem, Icon, TextField } from '../../..';
+import Menu from '../Menu/Menu.js';
+import MenuItem from '../Menu/MenuItem/MenuItem.js';
+import Icon from '../Icon/Icon.js';
+import TextField from '../TextField/TextField.js';
 
 import withTheme from '../../Theme/withTheme';
 import styles from './Select.styles';

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { View, Text } from 'react-native';
-import { Ripple, Icon } from '../../../';
+import Ripple from '../../Ripple/Ripple.js';
+import Icon from '../../Icon/Icon.js';
 import withTheme from '../../../Theme/withTheme';
 import styles from './Tab.styles';
 

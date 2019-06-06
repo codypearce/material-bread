@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import { Animated } from 'react-native';
 
 import withTheme from '../../Theme/withTheme';
-import { Icon, Ripple, BodyText } from '../../';
-import shadowTool from '../../Utils/Shadow/shadow';
+import Icon from '../Icon/Icon.js';
+import Ripple from '../Ripple/Ripple.js';
+import BodyText from '../Typography/BodyText/BodyText.js';
+import shadowTool from '../../Utils/Shadow/shadow.js';
 import styles from './Fab.styles';
 
 export class Fab extends Component {
