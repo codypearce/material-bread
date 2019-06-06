@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Platform, Text, View, TouchableWithoutFeedback } from 'react-native';
 
-import Paper from '../Paper/Paper';
-import Menu from '../Menu/Menu';
+import Paper from '../Paper/Paper.js';
+import Menu from '../Menu/Menu.js';
 import shadow from '../../Utils/Shadow/shadow';
-import Hoverable from '../../Utils/Hoverable/Hoverable';
+import Hoverable from '../../Utils/Hoverable/Hoverable.js';
 
 import withTheme from '../../Theme/withTheme';
 import styles from './Tooltip.styles';

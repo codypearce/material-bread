@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import Modal from '../Modal/Modal.js';
 import withTheme from '../../Theme/withTheme';
 import styles from './Dialog.styles';
-import Button from '../Button/Button';
-import BodyText from '../Typography/BodyText/BodyText';
+import Button from '../Button/Button.js';
+import BodyText from '../Typography/BodyText/BodyText.js';
 class Dialog extends Component {
   static propTypes = {
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),

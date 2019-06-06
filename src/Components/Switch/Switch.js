@@ -3,8 +3,8 @@ import { Animated, View, TouchableWithoutFeedback } from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
 
-import Ripple from '../Ripple/Ripple';
-import ProgressCircle from '../Progress/ProgressCircle/ProgressCircle';
+import Ripple from '../Ripple/Ripple.js';
+import ProgressCircle from '../Progress/ProgressCircle/ProgressCircle.js';
 import styles from './Switch.styles';
 import colorTool from 'color';
 

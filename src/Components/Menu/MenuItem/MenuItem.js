@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { Text, Platform, View } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import styles from './MenuItem.styles';
-import Ripple from '../../Ripple/Ripple';
-import Hoverable from '../../../Utils/Hoverable/Hoverable';
+import Ripple from '../../Ripple/Ripple.js';
+import Hoverable from '../../../Utils/Hoverable/Hoverable.js';
 
 class MenuItem extends Component {
   constructor(props) {

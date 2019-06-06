@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
-import BodyText from '../Typography/BodyText/BodyText';
-import Paper from '../Paper/Paper';
+import BodyText from '../Typography/BodyText/BodyText.js';
+import Paper from '../Paper/Paper.js';
 import styles from './List.styles';
 
 class List extends Component {

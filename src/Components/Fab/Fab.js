@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Animated } from 'react-native';
 
 import withTheme from '../../Theme/withTheme';
-import Icon from '../Icon/Icon';
-import Ripple from '../Ripple/Ripple';
-import BodyText from '../Typography/BodyText/BodyText';
+import Icon from '../Icon/Icon.js';
+import Ripple from '../Ripple/Ripple.js';
+import BodyText from '../Typography/BodyText/BodyText.js';
 import shadowTool from '../../Utils/Shadow/shadow';
 import styles from './Fab.styles';
 
