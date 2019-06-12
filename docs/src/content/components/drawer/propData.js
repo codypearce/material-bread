@@ -41,6 +41,7 @@ const propData = [
   ['scrim', 'Whether scrim is shown', 'bool', 'true'],
   ['scrimColor', 'Color of scrim', 'object', 'black'],
   ['scrimOpacity', 'The ending opacity for the scim', 'number', '.4'],
+  ['scrimStyles', 'Styles for scrim', 'object', ''],
   [
     'type',
     'Determines the type of drawer from modal, push, and permanenent',

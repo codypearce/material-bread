@@ -47,6 +47,7 @@ class Drawer extends PureComponent {
       PropTypes.array,
     ]),
     drawerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    scrimStyles: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     testID: PropTypes.string,
   };
 
@@ -155,7 +156,7 @@ class Drawer extends PureComponent {
   }
 
   _renderScrim() {
-    const { open, scrim, scrimColor, type } = this.props;
+    const { open, scrim, scrimColor, type, scrimStyles } = this.props;
     const {
       backdropFade,
       screenWidth,
@@ -178,6 +179,7 @@ class Drawer extends PureComponent {
             top: appbarHeight,
             position: Platform.OS == 'web' ? 'fixed' : 'absolute',
           },
+          scrimStyles,
         ]}>
         <TouchableWithoutFeedback onPress={this.props.onClose}>
           <View

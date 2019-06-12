@@ -76,6 +76,7 @@ export const code = `class DrawerPage extends React.Component {
             <Drawer
                 open={this.state.isOpen}
                 pageHeight={500}
+                scrimStyles={{position: 'absolute'}}
                 drawerContent={<DrawerContent />}
                 onClose={() => store.set({ isOpen: false })}
                 type={'permanent'}
