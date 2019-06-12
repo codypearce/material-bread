@@ -31,7 +31,7 @@ const MainDemo = pageHref => (
   <ComponentMainDemo
     pageHref={pageHref}
     description={
-      'Wrap a component in Hoverable and activate a change when the user hovers over a component.'
+      'Wrap a component in Hoverable and activate a change when the user hovers over a component. On desktop it will activate on hover on mobile it will activate on touch.'
     }
     code={code}
     scope={{ View, Hoverable }}
