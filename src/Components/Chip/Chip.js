@@ -32,7 +32,7 @@ class Chip extends Component {
 
     selected: PropTypes.bool,
     disabled: PropTypes.bool,
-    testID: PropTypes.string,
+    testID: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   };
 
   static defaultProps = {

@@ -48,6 +48,7 @@ exports[`Chip Renders 1`] = `
         "height": "100%",
       }
     }
+    testID={[Function]}
   >
     <View
       style={

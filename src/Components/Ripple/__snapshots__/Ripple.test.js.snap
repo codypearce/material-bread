@@ -20,6 +20,7 @@ exports[`Ripple Renders 1`] = `
   rippleOpacity={0.3}
   rippleSequential={false}
   rippleSize={0}
+  testID={[Function]}
 >
   <View
     style={
