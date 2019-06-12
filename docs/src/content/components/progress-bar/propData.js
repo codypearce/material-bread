@@ -6,12 +6,13 @@ const propData = [
     'number',
     '1000',
   ],
-  ['color', 'Color of bar', 'sstring', ''],
+  ['animationEasing', 'Easing function for bar animation', 'func', ''],
+  ['color', 'Color of bar', 'string', ''],
   ['determinate', 'Whether bar continues to animate or not', 'bool', ''],
-  ['easing', 'Easing function for bar animation', 'func', ''],
+
   ['height', 'Height of track and indicator', 'number', '4'],
   [
-    'indcatorStartPosition',
+    'indicatorStartPosition',
     'Where the indicator starts before the animation begins',
     'number',
     '0',

@@ -11,7 +11,7 @@ const propData = [
   ['determinate', 'Whether bar continues to animate or not', 'bool', ''],
   ['easing', 'Easing function for bar animation', 'func', ''],
   [
-    'indcatorStartPosition',
+    'indicatorStartPosition',
     'Where the indicator starts before the animation begins',
     'number',
     '0',

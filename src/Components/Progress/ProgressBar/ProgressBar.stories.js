@@ -22,27 +22,27 @@ export default storiesOf('Components|Progress/ProgressBar', module)
       <ProgressBar visible />
       <ProgressBar
         visible
-        indcatorStartPosition={100}
+        indicatorStartPosition={100}
         trackStyle={{ marginTop: 20 }}
         color={'#E91E63'}
       />
       <ProgressBar
         visible
-        indcatorStartPosition={100}
+        indicatorStartPosition={100}
         trackStyle={{ marginTop: 20 }}
         color={'#009688'}
         animationDuration={2000}
       />
       <ProgressBar
         visible
-        indcatorStartPosition={100}
+        indicatorStartPosition={100}
         trackStyle={{ marginTop: 20 }}
         color={'#673AB7'}
         animationDuration={4000}
       />
       <ProgressBar
         visible
-        indcatorStartPosition={100}
+        indicatorStartPosition={100}
         trackStyle={{ marginTop: 20 }}
         color={'#8BC34A'}
         animationDuration={3000}
@@ -50,7 +50,7 @@ export default storiesOf('Components|Progress/ProgressBar', module)
       />
       <ProgressBar
         visible
-        indcatorStartPosition={100}
+        indicatorStartPosition={100}
         trackStyle={{ marginTop: 20 }}
         color={'#03A9F4'}
         animationDuration={4000}

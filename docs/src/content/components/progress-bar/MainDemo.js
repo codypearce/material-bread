@@ -13,13 +13,13 @@ export const code = `class ProgressBarDemo extends React.Component {
         <ProgressBar visible />
         <ProgressBar
           visible
-          indcatorStartPosition={100}
+          indicatorStartPosition={100}
           trackStyle={{ marginTop: 20 }}
           color={'#E91E63'}
         />
         <ProgressBar
           visible
-          indcatorStartPosition={100}
+          indicatorStartPosition={100}
           trackStyle={{ marginTop: 20 }}
           color={'#009688'}
           animationDuration={4000}

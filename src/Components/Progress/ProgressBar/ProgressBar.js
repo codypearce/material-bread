@@ -11,8 +11,8 @@ class ProgressBar extends PureComponent {
     height: PropTypes.number,
     trackStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     determinate: PropTypes.bool,
-    indcatorStartPosition: PropTypes.number,
-    easing: PropTypes.func,
+    indicatorStartPosition: PropTypes.number,
+    animationEasing: PropTypes.func,
     animationDuration: PropTypes.number,
     value: PropTypes.number,
     visible: PropTypes.bool,
@@ -23,12 +23,12 @@ class ProgressBar extends PureComponent {
 
   static defaultProps = {
     animationDuration: 1000,
-    indcatorStartPosition: 0,
-    easing: Easing.bezier(0.65, 0.815, 0.735, 0.395),
+    indicatorStartPosition: 0,
+    animationEasing: Easing.bezier(0.65, 0.815, 0.735, 0.395),
   };
 
   state = {
-    indicatorPosition: new Animated.Value(this.props.indcatorStartPosition),
+    indicatorPosition: new Animated.Value(this.props.indicatorStartPosition),
     indicatorScaleX: new Animated.Value(1),
     indicatorWidth: new Animated.Value(0),
     trackScaleY: new Animated.Value(0),
@@ -99,7 +99,7 @@ class ProgressBar extends PureComponent {
 
   startIndeterminateAnimation() {
     const { indicatorPosition, indicatorScaleX, trackWidth } = this.state;
-    const { animationDuration, easing } = this.props;
+    const { animationDuration, animationEasing } = this.props;
     if (trackWidth == 0) {
       setTimeout(() => this.startIndeterminateAnimation(), 100);
     }
@@ -108,12 +108,12 @@ class ProgressBar extends PureComponent {
         Animated.timing(indicatorPosition, {
           toValue: trackWidth,
           duration: animationDuration,
-          easing,
+          animationEasing,
         }),
         Animated.timing(indicatorScaleX, {
           toValue: 2,
           duration: animationDuration / 4,
-          easing,
+          animationEasing,
         }),
       ]),
 
