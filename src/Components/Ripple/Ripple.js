@@ -25,6 +25,7 @@ export default class Ripple extends PureComponent {
     displayUntilPressOut: true,
 
     onRippleAnimation: (animation, callback) => animation.start(callback),
+    testID: PropTypes.string,
   };
 
   static propTypes = {
@@ -290,7 +291,10 @@ export default class Ripple extends PureComponent {
     };
 
     return (
-      <TouchableWithoutFeedback {...touchableProps} {...panResponder}>
+      <TouchableWithoutFeedback
+        {...touchableProps}
+        {...panResponder}
+        testID={testID}>
         <Animated.View {...props} pointerEvents="box-only">
           {children}
           <View style={[styles.container, containerStyle]}>

@@ -13,9 +13,10 @@ class Icon extends Component {
     color: PropTypes.string,
     size: PropTypes.number,
     name: PropTypes.string,
+    testID: PropTypes.string,
   };
   render() {
-    const { style, name, color, size, ...rest } = this.props;
+    const { style, name, color, size, testID, ...rest } = this.props;
 
     return (
       <MaterialIcons
@@ -24,6 +25,7 @@ class Icon extends Component {
         color={color}
         size={size}
         style={[{ backgroundColor: 'transparent' }, style]}
+        testID={testID}
         {...rest}
       />
     );

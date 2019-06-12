@@ -31,6 +31,7 @@ class TextFieldOutlined extends Component {
     multiline: PropTypes.bool,
     suffix: PropTypes.node,
     prefix: PropTypes.node,
+    testID: PropTypes.string,
   };
 
   static defaultProps = {
@@ -126,6 +127,7 @@ class TextFieldOutlined extends Component {
       dense,
       suffix,
       prefix,
+      testID,
       ...rest
     } = this.props;
 
@@ -187,6 +189,7 @@ class TextFieldOutlined extends Component {
           ]}
           onFocus={handleFocus}
           onBlur={handleBlur}
+          testID={testID}
           onContentSizeChange={e => this._updateTextInputHeight(e)}
           {...rest}
         />

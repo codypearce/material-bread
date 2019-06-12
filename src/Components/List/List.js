@@ -11,6 +11,7 @@ class List extends Component {
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     shadow: PropTypes.number,
     subheader: PropTypes.string,
+    testID: PropTypes.string,
   };
 
   _renderSubheader() {
@@ -19,11 +20,12 @@ class List extends Component {
     return <BodyText style={styles.subheader}>{subheader}</BodyText>;
   }
   render() {
-    const { style, shadow, subheader } = this.props;
+    const { style, shadow, subheader, testID } = this.props;
     return (
       <Paper
         shadow={shadow ? shadow : 0}
-        style={[{ backgroundColor: '#fff' }, style]}>
+        style={[{ backgroundColor: '#fff' }, style]}
+        testID={testID}>
         {subheader ? this._renderSubheader() : null}
         {this.props.children}
       </Paper>

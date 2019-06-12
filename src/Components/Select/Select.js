@@ -23,6 +23,7 @@ class Select extends Component {
     type: PropTypes.string,
     onBackdropPress: PropTypes.func,
     theme: PropTypes.object,
+    testID: PropTypes.string,
   };
 
   state = {
@@ -56,6 +57,7 @@ class Select extends Component {
       menuProps,
       type,
       theme,
+      testID,
     } = this.props;
 
     const { visible } = this.state;
@@ -81,6 +83,7 @@ class Select extends Component {
           marginLeft: Platform.OS !== 'web' ? 6 : 0,
         }}
         onBackdropPress={() => this.hideMenu()}
+        testID={testID}
         button={
           <TouchableHighlight
             onPress={() => this.showMenu()}

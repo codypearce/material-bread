@@ -29,6 +29,7 @@ export class Fab extends Component {
     initialScale: PropTypes.number,
     animated: PropTypes.bool,
     label: PropTypes.string,
+    testID: PropTypes.string,
   };
 
   static defaultProps = {
@@ -123,6 +124,7 @@ export class Fab extends Component {
       theme,
       children,
       label,
+      testID,
       ...props
     } = this.props;
     const { scale } = this.state;
@@ -141,7 +143,9 @@ export class Fab extends Component {
     }
 
     return (
-      <Animated.View style={{ transform: [{ scale: scale }], zIndex: 100 }}>
+      <Animated.View
+        style={{ transform: [{ scale: scale }], zIndex: 100 }}
+        testID={testID}>
         <Ripple
           onPress={onPress}
           disabled={disabled}

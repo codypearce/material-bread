@@ -28,6 +28,7 @@ export default class BaseText extends Component {
       gutterBottom,
       children,
       theme,
+      ...props
     } = this.props;
 
     return (
@@ -42,7 +43,8 @@ export default class BaseText extends Component {
             marginBottom: gutterBottom ? 10 : 0,
           },
           style,
-        ]}>
+        ]}
+        {...props}>
         {children}
       </Text>
     );

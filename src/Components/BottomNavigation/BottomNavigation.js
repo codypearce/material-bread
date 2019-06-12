@@ -16,6 +16,7 @@ class BottomNavigation extends Component {
     showLabels: PropTypes.bool,
     handleChange: PropTypes.func,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    testID: PropTypes.string,
   };
 
   state = {
@@ -69,7 +70,7 @@ class BottomNavigation extends Component {
   }
 
   render() {
-    const { children, backgroundColor, style } = this.props;
+    const { children, backgroundColor, style, testID } = this.props;
 
     const backgroundColorActual = backgroundColor ? backgroundColor : '#2196f3';
 
@@ -81,7 +82,8 @@ class BottomNavigation extends Component {
             backgroundColor: backgroundColorActual,
           },
           style,
-        ]}>
+        ]}
+        testID={testID}>
         {children ? children : this._renderActionItems()}
       </View>
     );

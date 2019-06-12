@@ -15,6 +15,7 @@ class ProgressCircle extends PureComponent {
     visible: PropTypes.bool,
     determinate: PropTypes.bool,
     widthOfBorder: PropTypes.number,
+    testID: PropTypes.string,
   };
 
   static defaultProps = {
@@ -147,7 +148,14 @@ class ProgressCircle extends PureComponent {
   }
 
   render() {
-    const { style, size, color, determinate, widthOfBorder } = this.props;
+    const {
+      style,
+      size,
+      color,
+      determinate,
+      widthOfBorder,
+      testID,
+    } = this.props;
 
     const layerStyle = this.getLayerStyle();
 
@@ -170,7 +178,7 @@ class ProgressCircle extends PureComponent {
     if (determinate) return <ProgressCircleDeterminate {...this.props} />;
 
     return (
-      <View style={style}>
+      <View style={style} testID={testID}>
         <Animated.View style={layerStyle}>
           <Animated.View style={containerStyle} collapsable={false}>
             <Animated.View style={viewportStyle}>

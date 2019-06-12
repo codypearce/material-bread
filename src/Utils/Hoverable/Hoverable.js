@@ -17,6 +17,7 @@ class Hoverable extends Component {
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
     onHoverIn: PropTypes.func,
     onHoverOut: PropTypes.func,
+    testID: PropTypes.string,
   };
 
   state = { isHovered: false, width: Dimensions.get('window').width };
@@ -64,7 +65,7 @@ class Hoverable extends Component {
   };
 
   render() {
-    const { children } = this.props;
+    const { children, testID } = this.props;
     const { width } = this.state;
 
     const child =
@@ -79,7 +80,7 @@ class Hoverable extends Component {
       });
     } else {
       return (
-        <TouchableWithoutFeedback onPress={this._toggle}>
+        <TouchableWithoutFeedback onPress={this._toggle} testID={testID}>
           <View>
             {React.cloneElement(React.Children.only(child), {
               onMouseEnter: this._handleMouseEnter,

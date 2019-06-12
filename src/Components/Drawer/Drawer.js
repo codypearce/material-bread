@@ -47,6 +47,7 @@ class Drawer extends PureComponent {
       PropTypes.array,
     ]),
     drawerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    testID: PropTypes.string,
   };
 
   static defaultProps = {
@@ -270,7 +271,7 @@ class Drawer extends PureComponent {
   }
 
   render() {
-    const { style } = this.props;
+    const { style, testID } = this.props;
     const { screenWidth } = this.state;
 
     if (needsSafeArea) {
@@ -296,7 +297,8 @@ class Drawer extends PureComponent {
             overflow: 'hidden',
           },
           style,
-        ]}>
+        ]}
+        testID={testID}>
         {this._renderDrawer()}
       </View>
     );

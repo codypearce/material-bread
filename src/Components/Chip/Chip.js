@@ -32,6 +32,7 @@ class Chip extends Component {
 
     selected: PropTypes.bool,
     disabled: PropTypes.bool,
+    testID: PropTypes.string,
   };
 
   static defaultProps = {
@@ -144,6 +145,7 @@ class Chip extends Component {
       leftIcon,
       theme,
       radius,
+      testID,
     } = this.props;
 
     let borderWidth = 0;
@@ -181,6 +183,7 @@ class Chip extends Component {
           },
           style,
         ]}
+        testID={testID}
         shadow={0}>
         <Ripple
           rippleContainerBorderRadius={radius}

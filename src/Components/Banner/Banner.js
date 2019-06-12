@@ -17,6 +17,7 @@ class Banner extends Component {
     visible: PropTypes.bool,
     message: PropTypes.string,
     position: PropTypes.string,
+    testID: PropTypes.string,
   };
 
   state = {
@@ -202,7 +203,7 @@ class Banner extends Component {
   };
 
   render() {
-    const { style, position, visible } = this.props;
+    const { style, position, visible, testID } = this.props;
     const { shouldHide } = this.state;
     const appliedShadow = visible && !shouldHide ? 1 : 0;
 
@@ -216,7 +217,8 @@ class Banner extends Component {
             ...shadow(appliedShadow),
           },
           style,
-        ]}>
+        ]}
+        testID={testID}>
         <View onLayout={this._onLayout}>{this._renderBody()}</View>
       </Animated.View>
     );

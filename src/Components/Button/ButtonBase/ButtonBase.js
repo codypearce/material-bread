@@ -38,6 +38,7 @@ class ButtonBase extends Component {
     typeRippleColor: PropTypes.string,
     onPressIn: PropTypes.func,
     onPressOut: PropTypes.func,
+    testID: PropTypes.string,
   };
 
   static defaultProps = {
@@ -128,6 +129,7 @@ class ButtonBase extends Component {
       radius,
       icon,
       iconPosition,
+      testID,
       ...props
     } = this.props;
 
@@ -156,6 +158,7 @@ class ButtonBase extends Component {
           typeButtonStyles,
           style,
         ]}
+        testID={testID}
         {...props}
         onPressIn={onPressIn}
         onPressOut={onPressOut}>

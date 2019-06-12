@@ -8,9 +8,10 @@ class DataTable extends Component {
   static propTypes = {
     children: PropTypes.node,
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    testID: PropTypes.string,
   };
   render() {
-    const { children, style } = this.props;
+    const { children, style, testID } = this.props;
 
     return (
       <ScrollView
@@ -25,7 +26,8 @@ class DataTable extends Component {
               ...shadow(4),
             },
             style,
-          ]}>
+          ]}
+          testID={testID}>
           {children}
         </View>
       </ScrollView>

@@ -31,6 +31,7 @@ class Checkbox extends Component {
     ios: PropTypes.bool,
 
     error: PropTypes.bool,
+    testID: PropTypes.string,
   };
 
   static defaultProps = {
@@ -153,10 +154,10 @@ class Checkbox extends Component {
   }
 
   render() {
-    const { style, labelPos } = this.props;
+    const { style, labelPos, testID } = this.props;
 
     return (
-      <View style={[styles.container, style]}>
+      <View style={[styles.container, style]} testID={testID}>
         {labelPos === 'left' ? this._renderLabel() : null}
         {this._renderIconContainer()}
         {labelPos === 'right' ? this._renderLabel() : null}

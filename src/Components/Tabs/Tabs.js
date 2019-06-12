@@ -18,6 +18,7 @@ class Tabs extends Component {
     handleChange: PropTypes.func,
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     theme: PropTypes.object,
+    testID: PropTypes.string,
   };
 
   static defaultProps = {
@@ -218,7 +219,7 @@ class Tabs extends Component {
   }
 
   render() {
-    const { style } = this.props;
+    const { style, testID } = this.props;
 
     return (
       <TabsContext.Provider>
@@ -230,6 +231,7 @@ class Tabs extends Component {
             },
             style,
           ]}
+          testID={testID}
           ref={ref => {
             this.container = ref;
           }}

@@ -15,6 +15,7 @@ class Snackbar extends Component {
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     onButtonPress: PropTypes.func,
     buttonLabel: PropTypes.string,
+    testID: PropTypes.string,
   };
 
   static defaultProps = {
@@ -95,11 +96,13 @@ class Snackbar extends Component {
   }
 
   render() {
-    const { children, style, buttonLabel, visible } = this.props;
+    const { children, style, buttonLabel, visible, testID } = this.props;
     const { opacity, scaleAnimation } = this.state;
 
     return (
-      <View style={[styles.container, { zIndex: visible ? 10 : -1 }]}>
+      <View
+        style={[styles.container, { zIndex: visible ? 10 : -1 }]}
+        testID={testID}>
         <Paper
           style={[
             styles.card,

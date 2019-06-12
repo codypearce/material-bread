@@ -23,6 +23,7 @@ class Slider extends Component {
     markerColor: PropTypes.string,
     allowOverlap: PropTypes.bool,
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    testID: PropTypes.string,
   };
 
   static defaultProps = {
@@ -338,11 +339,11 @@ class Slider extends Component {
   }
 
   render() {
-    const { sliderLength, values, style } = this.props;
+    const { sliderLength, values, style, testID } = this.props;
     const twoMarkers = values.length == 2;
 
     return (
-      <View style={[styles.container, style]}>
+      <View style={[styles.container, style]} testID={testID}>
         <View style={[styles.fullTrack, { width: sliderLength }]}>
           {this._renderTracks()}
           {this._renderMarkerLeft()}

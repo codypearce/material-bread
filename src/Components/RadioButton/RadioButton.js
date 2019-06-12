@@ -21,6 +21,7 @@ class RadioButton extends Component {
 
     error: PropTypes.bool,
     theme: PropTypes.object,
+    testID: PropTypes.string,
   };
 
   static defaultProps = {
@@ -51,6 +52,7 @@ class RadioButton extends Component {
       labelPos,
       error,
       theme,
+      testID,
     } = this.props;
 
     const rippleColorApplied = rippleColor ? rippleColor : 'rgba(0,0,0,.8)';
@@ -70,7 +72,7 @@ class RadioButton extends Component {
     }
 
     return (
-      <View style={[styles.container, style]}>
+      <View style={[styles.container, style]} testID={testID}>
         {labelPos === 'left' ? this._renderLabel() : null}
         <Ripple
           rippleColor={rippleColorApplied}

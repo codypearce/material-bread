@@ -23,6 +23,7 @@ class Menu extends Component {
     noBackDrop: PropTypes.bool,
     tooltip: PropTypes.bool,
     tooltipPosition: PropTypes.string,
+    testID: PropTypes.string,
   };
 
   state = {
@@ -166,6 +167,7 @@ class Menu extends Component {
       tooltip,
       tooltipPosition,
       noBackDrop,
+      testID,
     } = this.props;
 
     const menuContainerStyle = {
@@ -212,7 +214,7 @@ class Menu extends Component {
     }
 
     return (
-      <View>
+      <View testID={testID}>
         <View
           onLayout={this.onButtonLayout}
           ref={ref => {

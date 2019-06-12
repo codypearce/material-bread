@@ -14,6 +14,7 @@ class Card extends Component {
     radius: PropTypes.number,
     onPress: PropTypes.func,
     rippleProps: PropTypes.object,
+    testID: PropTypes.string,
   };
 
   static defaultProps = {
@@ -31,7 +32,15 @@ class Card extends Component {
   }
 
   render() {
-    const { style, outlined, radius, onPress, shadow, children } = this.props;
+    const {
+      style,
+      outlined,
+      radius,
+      onPress,
+      shadow,
+      children,
+      testID,
+    } = this.props;
     return (
       <Paper
         shadow={shadow}
@@ -42,7 +51,8 @@ class Card extends Component {
             borderWidth: outlined ? StyleSheet.hairlineWidth : 0,
             borderBottomColor: 'rgba(0,0,0,.4)',
           },
-        ]}>
+        ]}
+        testID={testID}>
         {onPress ? this._renderRipple() : children}
       </Paper>
     );

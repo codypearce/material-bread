@@ -29,6 +29,7 @@ class SheetBottom extends Component {
     visible: PropTypes.bool,
     cardVerticalPadding: PropTypes.number,
     pageHeight: PropTypes.number,
+    testID: PropTypes.string,
   };
 
   static defaultProps = {
@@ -187,11 +188,17 @@ class SheetBottom extends Component {
   }
 
   _renderContent() {
-    const { children, wrapperStyles, style, cardVerticalPadding } = this.props;
+    const {
+      children,
+      wrapperStyles,
+      style,
+      cardVerticalPadding,
+      testID,
+    } = this.props;
     const { pan } = this.state;
 
     return (
-      <View style={[styles.wrapper, wrapperStyles]}>
+      <View style={[styles.wrapper, wrapperStyles]} testID={testID}>
         <TouchableOpacity
           style={styles.mask}
           activeOpacity={1}

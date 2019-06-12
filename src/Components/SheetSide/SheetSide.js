@@ -34,6 +34,7 @@ class SheetSide extends Component {
     pageHeight: PropTypes.number,
     widthPercentage: PropTypes.number,
     side: PropTypes.string,
+    testID: PropTypes.string,
   };
 
   static defaultProps = {
@@ -214,11 +215,17 @@ class SheetSide extends Component {
   }
 
   _renderContent() {
-    const { children, wrapperStyles, style, widthPercentage } = this.props;
+    const {
+      children,
+      wrapperStyles,
+      style,
+      widthPercentage,
+      testID,
+    } = this.props;
     const { pan, fullWidth } = this.state;
 
     return (
-      <View style={[styles.wrapper, wrapperStyles]}>
+      <View style={[styles.wrapper, wrapperStyles]} testID={testID}>
         <TouchableOpacity
           style={styles.mask}
           activeOpacity={1}

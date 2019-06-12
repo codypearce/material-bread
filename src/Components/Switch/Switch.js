@@ -20,6 +20,7 @@ class Switch extends Component {
     theme: PropTypes.object,
     color: PropTypes.string,
     loading: PropTypes.bool,
+    testID: PropTypes.string,
   };
 
   static defaultProps = { labelPos: 'right' };
@@ -87,6 +88,7 @@ class Switch extends Component {
       checked,
       onPress,
       loading,
+      testID,
     } = this.props;
 
     let trackColor = color
@@ -95,7 +97,7 @@ class Switch extends Component {
     let thumbColor = color ? color : theme.primary.main;
 
     return (
-      <View style={[styles.container, style]}>
+      <View style={[styles.container, style]} testID={testID}>
         {labelPos == 'left' && label ? this._renderLabel() : null}
         <Animated.View
           style={[

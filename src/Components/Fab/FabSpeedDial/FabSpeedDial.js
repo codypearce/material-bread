@@ -14,6 +14,7 @@ class FabSpeedDial extends Component {
     onPress: PropTypes.func,
     actions: PropTypes.array,
     fab: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    testID: PropTypes.string,
   };
 
   static defaultProps = {
@@ -156,9 +157,9 @@ class FabSpeedDial extends Component {
   }
 
   render() {
-    const { style } = this.props;
+    const { style, testID } = this.props;
     return (
-      <View style={[styles.container, style]}>
+      <View style={[styles.container, style]} testID={testID}>
         {this.renderActions()}
         {this._renderFab()}
       </View>

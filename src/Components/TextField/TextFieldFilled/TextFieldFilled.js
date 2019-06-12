@@ -34,6 +34,7 @@ class TextFieldFilled extends Component {
     multiline: PropTypes.bool,
     suffix: PropTypes.node,
     prefix: PropTypes.node,
+    testID: PropTypes.string,
   };
 
   static defaultProps = {
@@ -132,6 +133,7 @@ class TextFieldFilled extends Component {
       dense,
       suffix,
       prefix,
+      testID,
       ...rest
     } = this.props;
 
@@ -186,6 +188,7 @@ class TextFieldFilled extends Component {
           onContentSizeChange={e => this._updateTextInputHeight(e)}
           onFocus={handleFocus}
           onBlur={handleBlur}
+          testID={testID}
           {...rest}
         />
         {trailingIcon ? this._renderTrailingIcon() : null}

@@ -23,6 +23,8 @@ class Avatar extends Component {
 
     onPress: PropTypes.func,
     ripple: PropTypes.bool,
+    rippleProps: PropTypes.object,
+    testID: PropTypes.string,
 
     children: PropTypes.node,
   };
@@ -93,7 +95,7 @@ class Avatar extends Component {
   }
 
   _renderAvatarContent() {
-    const { style, color, size, children, theme, ...rest } = this.props;
+    const { style, color, size, children, theme } = this.props;
     return (
       <View
         style={[
@@ -106,22 +108,22 @@ class Avatar extends Component {
             justifyContent: 'center',
           },
           style,
-        ]}
-        {...rest}>
+        ]}>
         {children ? children : this._renderItem()}
       </View>
     );
   }
 
   render() {
-    const { onPress, ripple } = this.props;
+    const { onPress, ripple, rippleProps } = this.props;
 
     if (onPress) {
       return (
         <Ripple
           onPress={onPress}
           disable={!ripple}
-          rippleContainerBorderRadius={100}>
+          rippleContainerBorderRadius={100}
+          {...rippleProps}>
           {this._renderAvatarContent()}
         </Ripple>
       );

@@ -18,6 +18,7 @@ class ProgressBar extends PureComponent {
     visible: PropTypes.bool,
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     theme: PropTypes.object,
+    testID: PropTypes.string,
   };
 
   static defaultProps = {
@@ -132,7 +133,14 @@ class ProgressBar extends PureComponent {
   };
 
   render() {
-    const { height, color, trackStyle, determinate, theme } = this.props;
+    const {
+      height,
+      color,
+      trackStyle,
+      determinate,
+      theme,
+      testID,
+    } = this.props;
     const {
       indicatorPosition,
       indicatorScaleX,
@@ -162,7 +170,8 @@ class ProgressBar extends PureComponent {
             transform: [{ scaleY: trackScaleY }],
           },
           trackStyle,
-        ]}>
+        ]}
+        testID={testID}>
         <Animated.View
           style={[
             styles.indicator,

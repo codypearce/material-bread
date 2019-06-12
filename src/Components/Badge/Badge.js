@@ -26,6 +26,7 @@ class Badge extends Component {
     top: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 
     visible: PropTypes.bool,
+    testID: PropTypes.string,
   };
 
   static defaultProps = {
@@ -152,7 +153,7 @@ class Badge extends Component {
   }
 
   render() {
-    const { children, containerStyle, onPress } = this.props;
+    const { children, containerStyle, onPress, testID } = this.props;
     const { childrenHeight, childrenWidth } = this.state;
 
     return (
@@ -170,7 +171,8 @@ class Badge extends Component {
             minWidth: children ? childrenWidth : 'auto',
           },
           containerStyle,
-        ]}>
+        ]}
+        testID={testID}>
         <View onLayout={this.onChildrenLayout}>{children}</View>
         {onPress ? (
           <Ripple onPress>{this._renderBadge()}</Ripple>

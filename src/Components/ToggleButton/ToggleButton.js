@@ -16,6 +16,7 @@ class ToggleButton extends Component {
     rippleColor: PropTypes.string,
     size: PropTypes.number,
     rippleContainerBorderRadius: PropTypes.number,
+    testID: PropTypes.string,
   };
   state = {
     isActive: false,
@@ -56,6 +57,7 @@ class ToggleButton extends Component {
       activeNode,
       inActiveNode,
       rippleContainerBorderRadius,
+      testID,
     } = this.props;
     const { isActive } = this.state;
 
@@ -76,6 +78,7 @@ class ToggleButton extends Component {
                 return this.handleToggle();
               }
             }}
+            testID={testID}
             style={[
               style,
               {

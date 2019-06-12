@@ -20,6 +20,7 @@ class Backdrop extends PureComponent {
     backLayerRevealed: PropTypes.node,
     theme: PropTypes.object,
     subheader: PropTypes.string,
+    testID: PropTypes.string,
   };
 
   static defaultProps = {
@@ -81,6 +82,7 @@ class Backdrop extends PureComponent {
       backLayerConcealed,
       theme,
       subheader,
+      testID,
     } = this.props;
     const { backConcealed, backRevealed, window, iconName } = this.state;
 
@@ -90,7 +92,8 @@ class Backdrop extends PureComponent {
           styles.backLayerContainer,
           { backgroundColor: theme.primary.main },
           backLayerStyle,
-        ]}>
+        ]}
+        testID={testID}>
         <BackLayer
           backLayerConcealed={backLayerConcealed}
           animate={this.animate}

@@ -14,6 +14,7 @@ class IconButton extends Component {
     onPress: PropTypes.func,
     rippleColor: PropTypes.string,
     disabled: PropTypes.bool,
+    testID: PropTypes.string,
   };
   render() {
     const {
@@ -24,6 +25,7 @@ class IconButton extends Component {
       onPress,
       rippleColor,
       disabled,
+      testID,
     } = this.props;
     let rippleColorImplemented = color ? color : 'rgb(0, 0, 0)';
     if (rippleColor) rippleColorImplemented = rippleColor;
@@ -42,7 +44,8 @@ class IconButton extends Component {
             alignItems: 'center',
           },
           style,
-        ]}>
+        ]}
+        testID={testID}>
         <Icon
           name={name}
           color={color}

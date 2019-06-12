@@ -12,6 +12,7 @@ export default class Anchor extends Component {
     url: PropTypes.string,
     children: PropTypes.node,
     target: PropTypes.string,
+    testID: PropTypes.string,
   };
 
   handlePress = () => {
@@ -19,14 +20,15 @@ export default class Anchor extends Component {
   };
 
   render() {
-    const { url, children, target } = this.props;
+    const { url, children, target, testID } = this.props;
 
     if (Platform.OS === 'web') {
       return (
         <TouchableWithoutFeedback
           href={url}
           accessibilityRole="link"
-          target={target ? target : '_self'}>
+          target={target ? target : '_self'}
+          testID={testID}>
           <View>{children}</View>
         </TouchableWithoutFeedback>
       );

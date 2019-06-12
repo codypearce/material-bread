@@ -19,6 +19,7 @@ class Dialog extends Component {
     title: PropTypes.string,
     supportingText: PropTypes.string,
     contentStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    testID: PropTypes.string,
   };
 
   _renderActionItems() {
@@ -56,14 +57,21 @@ class Dialog extends Component {
   }
 
   render() {
-    const { visible, onRequestClose, onShow, onTouchOutside } = this.props;
+    const {
+      visible,
+      onRequestClose,
+      onShow,
+      onTouchOutside,
+      testID,
+    } = this.props;
 
     return (
       <Modal
         visible={visible}
         onRequestClose={onRequestClose}
         onShow={onShow}
-        onTouchOutside={onTouchOutside}>
+        onTouchOutside={onTouchOutside}
+        testID={testID}>
         {this._renderContent()}
       </Modal>
     );

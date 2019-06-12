@@ -16,6 +16,7 @@ class Tooltip extends Component {
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     content: PropTypes.string,
     tooltipPosition: PropTypes.string,
+    testID: PropTypes.string,
   };
 
   state = {
@@ -45,7 +46,7 @@ class Tooltip extends Component {
   };
 
   render() {
-    const { children, content, style, tooltipPosition } = this.props;
+    const { children, content, style, tooltipPosition, testID } = this.props;
     const { visible } = this.state;
 
     const platformTextStyles =
@@ -62,6 +63,7 @@ class Tooltip extends Component {
       <Menu
         tooltip
         visible={visible}
+        testID={testID}
         button={
           <Hoverable onHoverIn={this._toggle} onHoverOut={this._hide}>
             <TouchableWithoutFeedback onPress={this._toggle}>
