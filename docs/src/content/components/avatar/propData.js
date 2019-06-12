@@ -15,6 +15,7 @@ const propData = [
 
   ['onPress', 'Onpress callback', 'func', ''],
   ['ripple', 'enables ripple if onPress is provided', 'bool', 'false'],
+  ['rippleProps', 'Spreads ripple props to Ripple Component', 'object', ''],
   ['size', 'Size of avatar, content scales with size', 'number', '24'],
 
   ['type', 'Indicates which type of avatar', 'string: image, icon, text', ''],
