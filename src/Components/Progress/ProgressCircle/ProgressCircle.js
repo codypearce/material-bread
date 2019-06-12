@@ -10,7 +10,6 @@ class ProgressCircle extends PureComponent {
     size: PropTypes.number,
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     animationDuration: PropTypes.number,
-    easing: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     animationEasing: PropTypes.func,
     visible: PropTypes.bool,
     determinate: PropTypes.bool,
@@ -21,7 +20,6 @@ class ProgressCircle extends PureComponent {
   static defaultProps = {
     color: 'rgb(0, 0, 0)',
     size: 48,
-    easing: Easing.bezier(0.4, 0.0, 0.7, 1.0),
     animationEasing: Easing.linear,
     animationDuration: 2400,
     visible: true,
@@ -125,7 +123,7 @@ class ProgressCircle extends PureComponent {
   }
 
   getOutputRange() {
-    const { easing } = this.props;
+    const easing = Easing.bezier(0.4, 0.0, 0.7, 1.0);
     const { frames } = this.state;
 
     const outputRange = Array.from(

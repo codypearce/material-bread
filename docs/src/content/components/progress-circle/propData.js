@@ -7,9 +7,8 @@ const propData = [
     '1000',
   ],
   ['animationEasing', 'Easaing function', 'func', ''],
-  ['color', 'Color of bar', 'sstring', ''],
-  ['determinate', 'Whether bar continues to animate or not', 'bool', ''],
-  ['easing', 'Easing function for bar animation', 'func', ''],
+  ['color', 'Color of circle', 'string', ''],
+  ['determinate', 'Whether circle continues to animate or not', 'bool', ''],
   [
     'indicatorStartPosition',
     'Where the indicator starts before the animation begins',
@@ -18,7 +17,7 @@ const propData = [
   ],
   [
     'shouldAnimateFirstValue',
-    'Wether the determinatee value should animate at start',
+    'Whether the determinate value should animate at start',
     'bool',
     'true',
   ],
@@ -27,11 +26,11 @@ const propData = [
   ['trackStyle', 'Styles track containing the indicator', 'object', ''],
   [
     'value',
-    'Percent out of 100 the indcator should fill in determinate mode',
+    'Percent out of 100 the indicator should fill in determinate mode',
     'number',
     '',
   ],
-  ['visible', 'Whether bar is visible or not', 'bool', ''],
+  ['visible', 'Whether circle is visible or not', 'bool', ''],
 ];
 
 export default createTableData(propData);
