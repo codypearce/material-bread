@@ -22,10 +22,20 @@ class ListItem extends Component {
     actionItem: PropTypes.node,
     leadingActionItem: PropTypes.node,
     textStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    secondaryTextStyle: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.array,
+    ]),
   };
 
   _renderText() {
-    const { text, secondaryText, disabled, textStyle } = this.props;
+    const {
+      text,
+      secondaryText,
+      disabled,
+      textStyle,
+      secondaryTextStyle,
+    } = this.props;
 
     return (
       <View style={{ alignItems: 'flex-start' }}>
@@ -38,7 +48,12 @@ class ListItem extends Component {
           {text}
         </BodyText>
         {secondaryText ? (
-          <Caption style={styles.listItemSecondaryText}>
+          <Caption
+            style={[
+              styles.listItemSecondaryText,
+              { color: 'rgba(0,0,0,0.57)' },
+              secondaryTextStyle,
+            ]}>
             {secondaryText}
           </Caption>
         ) : null}
