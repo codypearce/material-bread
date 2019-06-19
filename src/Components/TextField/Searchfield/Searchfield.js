@@ -15,6 +15,7 @@ class Searchfield extends Component {
     onBlur: PropTypes.func,
     color: PropTypes.string,
     placeholder: PropTypes.string,
+    innerRef: PropTypes.func,
   };
 
   render() {
@@ -27,7 +28,12 @@ class Searchfield extends Component {
       onBlur,
       color,
       placeholder,
+      innerRef,
     } = this.props;
+
+    if (innerRef) {
+      innerRef(this.textInput);
+    }
 
     return (
       <View
@@ -39,6 +45,9 @@ class Searchfield extends Component {
         <IconButton name={'search'} size={20} color={'white'} />
 
         <TextInput
+          ref={ref => {
+            this.textInput = ref;
+          }}
           style={styles.searchInput}
           placeholder={placeholder ? placeholder : 'Search'}
           value={value}
