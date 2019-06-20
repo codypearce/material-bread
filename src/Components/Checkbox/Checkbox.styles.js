@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  labelContainer: { flexShrink: 1 },
   label: {},
 });
 
