@@ -14,7 +14,6 @@ const propData = [
     'node',
     '',
   ],
-  ['listItemText', 'Styles main text element', 'object', ''],
   ['media', 'Dispays arbitrary node to the left of text', 'node', ''],
   ['onPress', 'Callback on listItem', 'func', ''],
   ['secondaryText', 'Secondary text, show under the main text', 'string', ''],
@@ -22,6 +21,7 @@ const propData = [
   ['selected', 'Whether the item is selected', 'bool', ''],
   ['style', 'Styles root element', 'object', ''],
   ['text', 'Main text for item', 'string', ''],
+  ['textStyle', 'Styles main text element', 'object', ''],
 ];
 
 export default createTableData(propData);
