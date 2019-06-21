@@ -171,7 +171,10 @@ class TextFieldLabel extends Component {
     }
 
     const baseFontSize =
-      StyleSheet.flatten(style).fontSize || theme.subtitleOne.fontSize;
+      (StyleSheet.flatten(style) || {}).fontSize ||
+      theme.subtitleOne.fontSize ||
+      16;
+
     const fontStyle = {
       fontSize: fontSizeAnimation.interpolate({
         inputRange: [0, 1],
