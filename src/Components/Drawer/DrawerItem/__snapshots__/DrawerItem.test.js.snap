@@ -31,7 +31,7 @@ exports[`DrawerItem Renders 1`] = `
       "zIndex": 10,
     }
   }
-  testID={[Function]}
+  testID="mb-ripple"
 >
   <Text
     style={

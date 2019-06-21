@@ -25,7 +25,7 @@ export default class Ripple extends PureComponent {
     displayUntilPressOut: true,
 
     onRippleAnimation: (animation, callback) => animation.start(callback),
-    testID: PropTypes.string,
+    testID: 'mb-ripple',
   };
 
   static propTypes = {
@@ -44,6 +44,7 @@ export default class Ripple extends PureComponent {
     displayUntilPressOut: PropTypes.bool,
 
     onRippleAnimation: PropTypes.func,
+    testID: PropTypes.string,
   };
 
   constructor(props) {

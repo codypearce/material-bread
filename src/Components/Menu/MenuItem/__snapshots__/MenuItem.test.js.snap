@@ -44,7 +44,7 @@ exports[`MenuItem Renders 1`] = `
         "width": "100%",
       }
     }
-    testID={[Function]}
+    testID="mb-ripple"
   >
     <Text
       ellipsizeMode="clip"

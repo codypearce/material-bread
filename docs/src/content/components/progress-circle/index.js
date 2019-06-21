@@ -21,7 +21,7 @@ export default class DataTableHeaderPage extends Component {
           componentName={'progress-circle'}
           title={'Progress Circle'}
           description={`Progress indicators express an unspecified wait time or display the length of a process.`}
-          importCode={`import { ProgressBar } from 'material-bread';`}
+          importCode={`import { ProgressCircle } from 'material-bread';`}
           docsLink={
             'https://material.io/design/components/progress-indicators.html#circular-progress-indicators'
           }
