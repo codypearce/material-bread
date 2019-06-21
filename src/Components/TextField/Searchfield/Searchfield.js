@@ -15,7 +15,7 @@ class Searchfield extends Component {
     onBlur: PropTypes.func,
     color: PropTypes.string,
     placeholder: PropTypes.string,
-    innerRef: PropTypes.func,
+    inputRef: PropTypes.func,
   };
 
   render() {
@@ -28,11 +28,11 @@ class Searchfield extends Component {
       onBlur,
       color,
       placeholder,
-      innerRef,
+      inputRef,
     } = this.props;
 
-    if (innerRef) {
-      innerRef(this.textInput);
+    if (inputRef) {
+      inputRef(this.textInput);
     }
 
     return (
