@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import { Animated, Easing, StyleSheet } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import styles from './TextFieldLabel.styles';
+import {
+  nonOutlinedStops,
+  outlinedStops,
+  outlinedStopsDense,
+} from './TextFieldLabel.constants';
 
 class TextFieldLabel extends Component {
   constructor(props) {
@@ -24,7 +29,7 @@ class TextFieldLabel extends Component {
   };
 
   state = {
-    translateYAnimation: new Animated.Value(20),
+    translateYAnimation: new Animated.Value(nonOutlinedStops.initial),
     fontSizeAnimation: new Animated.Value(
       this.props.value || this.props.focused ? 1 : 0,
     ),
@@ -37,7 +42,9 @@ class TextFieldLabel extends Component {
     const { type, dense, prefix, value } = this.props;
 
     if (type == 'outlined' && dense) {
-      this.setState({ translateYAnimation: new Animated.Value(11) });
+      this.setState({
+        translateYAnimation: new Animated.Value(outlinedStopsDense.initial),
+      });
     }
 
     if (prefix) this._handlePrefix();
@@ -86,7 +93,8 @@ class TextFieldLabel extends Component {
     } = this.state;
     if (!canAnimate) return;
 
-    let position = focused || value ? 5 : 20;
+    let position =
+      focused || value ? nonOutlinedStops.active : nonOutlinedStops.initial;
     const fontVal = focused || value ? 1 : 0;
 
     Animated.parallel([
@@ -114,10 +122,15 @@ class TextFieldLabel extends Component {
     } = this.state;
     if (!canAnimate) return;
 
-    let position = focused || value ? -12 : 20;
+    let position =
+      focused || value ? outlinedStops.active : outlinedStops.initial;
     const fontVal = focused || value ? 1 : 0;
 
-    if (dense) position = focused || value ? -10 : 11;
+    if (dense)
+      position =
+        focused || value
+          ? outlinedStopsDense.active
+          : outlinedStopsDense.initial;
 
     Animated.parallel([
       Animated.timing(translateYAnimation, {
