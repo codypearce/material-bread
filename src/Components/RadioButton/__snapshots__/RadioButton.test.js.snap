@@ -40,7 +40,7 @@ exports[`RadioButton Renders 1`] = `
         "width": 40,
       }
     }
-    testID={[Function]}
+    testID="mb-ripple"
   >
     <View
       style={
