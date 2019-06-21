@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, Easing, StyleSheet, Text } from 'react-native';
+import { Animated, Easing, StyleSheet } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import styles from './TextFieldLabel.styles';
 
@@ -181,8 +181,6 @@ class TextFieldLabel extends Component {
         outputRange: [baseFontSize, baseFontSize * 0.75],
       }),
     };
-
-    console.log('TEST', fontStyle);
 
     return (
       <Animated.View
