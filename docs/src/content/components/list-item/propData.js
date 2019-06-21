@@ -14,10 +14,11 @@ const propData = [
     'node',
     '',
   ],
-
+  ['listItemText', 'Styles main text element', 'object', ''],
   ['media', 'Dispays arbitrary node to the left of text', 'node', ''],
   ['onPress', 'Callback on listItem', 'func', ''],
   ['secondaryText', 'Secondary text, show under the main text', 'string', ''],
+  ['secondaryTextStyle', 'Styles secondary text element', 'object', ''],
   ['selected', 'Whether the item is selected', 'bool', ''],
   ['style', 'Styles root element', 'object', ''],
   ['text', 'Main text for item', 'string', ''],
