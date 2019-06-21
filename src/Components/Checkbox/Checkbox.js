@@ -74,7 +74,7 @@ class Checkbox extends Component {
 
     return (
       <TouchableWithoutFeedback onPress={onPress}>
-        <View>
+        <View style={styles.labelContainer}>
           <Text style={[styles.label, labelStyle]}>{label}</Text>
         </View>
       </TouchableWithoutFeedback>
