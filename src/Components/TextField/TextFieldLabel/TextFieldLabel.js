@@ -29,7 +29,11 @@ class TextFieldLabel extends Component {
   };
 
   state = {
-    translateYAnimation: new Animated.Value(nonOutlinedStops.initial),
+    translateYAnimation: new Animated.Value(
+      this.props.type === 'outlined'
+        ? outlinedStops.initial
+        : nonOutlinedStops.initial,
+    ),
     fontSizeAnimation: new Animated.Value(
       this.props.value || this.props.focused ? 1 : 0,
     ),
