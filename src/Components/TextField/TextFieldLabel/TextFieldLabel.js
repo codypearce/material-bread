@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, Easing, StyleSheet } from 'react-native';
+import { Animated, Easing, StyleSheet, Platform } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import styles from './TextFieldLabel.styles';
 import {
@@ -74,15 +74,18 @@ class TextFieldLabel extends Component {
   }
 
   _handlePrefix() {
-    const { type } = this.props;
-    let translateYAnimation = 10;
+    const { type, dense } = this.props;
+    let translateYAnimation = nonOutlinedStops.active;
     if (type == 'outlined') {
-      translateYAnimation = -10;
+      translateYAnimation = dense
+        ? outlinedStopsDense.active
+        : outlinedStops.active;
     }
 
     this.setState({
       canAnimate: false,
       translateYAnimation: new Animated.Value(translateYAnimation),
+      fontSizeAnimation: new Animated.Value(1),
     });
   }
 
@@ -110,7 +113,7 @@ class TextFieldLabel extends Component {
       Animated.timing(fontSizeAnimation, {
         toValue: fontVal,
         duration: animationDuration,
-        easing: animationEasing,
+        easing: Platform.OS === 'web' ? null : animationEasing,
       }),
     ]).start();
   }
@@ -145,7 +148,7 @@ class TextFieldLabel extends Component {
       Animated.timing(fontSizeAnimation, {
         toValue: fontVal,
         duration: animationDuration,
-        easing: animationEasing,
+        easing: Platform.OS === 'web' ? null : animationEasing,
       }),
     ]).start();
   }
@@ -161,6 +164,7 @@ class TextFieldLabel extends Component {
       prefix,
       theme,
       style,
+      dense,
     } = this.props;
     const { translateYAnimation, fontSizeAnimation } = this.state;
 
@@ -168,7 +172,7 @@ class TextFieldLabel extends Component {
     if (type === 'flat') {
       translateX = -1;
     } else if (type === 'outlined') {
-      translateX = 8;
+      translateX = 10;
     }
 
     if (!labelColor) labelColor = 'rgba(0, 0, 0, 0.54)';
@@ -195,7 +199,7 @@ class TextFieldLabel extends Component {
     const fontStyle = {
       fontSize: fontSizeAnimation.interpolate({
         inputRange: [0, 1],
-        outputRange: [baseFontSize, baseFontSize * 0.75],
+        outputRange: [baseFontSize, baseFontSize * (dense ? 0.65 : 0.7)],
       }),
     };
 
@@ -214,13 +218,14 @@ class TextFieldLabel extends Component {
             {
               color: labelColor,
               backgroundColor: type == 'outlined' ? 'white' : 'transparent',
+              paddingHorizontal: type == 'outlined' ? 4 : 0,
               transform: [
                 { translateY: translateYAnimation },
                 { translateX: translateX },
               ],
             },
-            style,
             fontStyle,
+            style,
           ]}>
           {label}
         </Animated.Text>

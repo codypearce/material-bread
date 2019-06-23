@@ -17,6 +17,7 @@ exports[`TextFieldLabel Renders 1`] = `
         "backgroundColor": "transparent",
         "color": "rgba(0, 0, 0, 0.54)",
         "fontSize": 16,
+        "paddingHorizontal": 0,
         "transform": Array [
           Object {
             "translateY": 20,

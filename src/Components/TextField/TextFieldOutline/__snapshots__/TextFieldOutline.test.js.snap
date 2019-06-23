@@ -29,12 +29,13 @@ exports[`TextFieldOutline Renders 1`] = `
           "backgroundColor": "white",
           "color": "rgba(0, 0, 0, 0.54)",
           "fontSize": 16,
+          "paddingHorizontal": 4,
           "transform": Array [
             Object {
               "translateY": 20,
             },
             Object {
-              "translateX": 8,
+              "translateX": 10,
             },
           ],
         }
@@ -49,7 +50,7 @@ exports[`TextFieldOutline Renders 1`] = `
       Array [
         Object {
           "height": 56,
-          "paddingHorizontal": 12,
+          "paddingHorizontal": 14,
         },
         Object {
           "borderRadius": 4,
@@ -61,7 +62,7 @@ exports[`TextFieldOutline Renders 1`] = `
           "height": 56,
           "minHeight": 56,
           "paddingBottom": 0,
-          "paddingLeft": 12,
+          "paddingLeft": 14,
           "paddingRight": 0,
           "paddingTop": 0,
         },

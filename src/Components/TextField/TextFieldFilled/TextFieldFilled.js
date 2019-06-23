@@ -80,7 +80,7 @@ class TextFieldFilled extends Component {
     const { prefix } = this.props;
 
     return (
-      <View style={{ position: 'absolute', left: 16, top: 26 }}>
+      <View style={{ position: 'absolute', left: 16, top: 26, zIndex: 1 }}>
         {React.cloneElement(prefix, {
           color: prefix.props.color ? prefix.props.color : 'rgba(0, 0, 0, .57)',
           fontSize: prefix.props.fontSize ? prefix.props.fontSize : 16,
