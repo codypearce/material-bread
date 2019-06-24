@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, Easing, StyleSheet, Platform } from 'react-native';
+import { Animated, Easing, StyleSheet } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import styles from './TextFieldLabel.styles';
 import {
@@ -64,6 +64,7 @@ class TextFieldLabel extends Component {
 
   componentDidUpdate(prevProps) {
     const { focused, type } = this.props;
+
     if (focused !== prevProps.focused) {
       if (type == 'outlined') {
         this._handleLabelOutlinedAnimation();
@@ -113,7 +114,7 @@ class TextFieldLabel extends Component {
       Animated.timing(fontSizeAnimation, {
         toValue: fontVal,
         duration: animationDuration,
-        easing: Platform.OS === 'web' ? null : animationEasing,
+        easing: animationEasing,
       }),
     ]).start();
   }
@@ -148,7 +149,7 @@ class TextFieldLabel extends Component {
       Animated.timing(fontSizeAnimation, {
         toValue: fontVal,
         duration: animationDuration,
-        easing: Platform.OS === 'web' ? null : animationEasing,
+        easing: animationEasing,
       }),
     ]).start();
   }
@@ -199,7 +200,7 @@ class TextFieldLabel extends Component {
     const fontStyle = {
       fontSize: fontSizeAnimation.interpolate({
         inputRange: [0, 1],
-        outputRange: [baseFontSize, baseFontSize * (dense ? 0.65 : 0.7)],
+        outputRange: [baseFontSize, baseFontSize * (dense ? 0.65 : 0.75)],
       }),
     };
 
@@ -224,8 +225,8 @@ class TextFieldLabel extends Component {
                 { translateX: translateX },
               ],
             },
-            fontStyle,
             style,
+            fontStyle,
           ]}>
           {label}
         </Animated.Text>
