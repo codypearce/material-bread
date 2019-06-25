@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, Easing } from 'react-native';
+import { Animated, Easing, StyleSheet } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import styles from './TextFieldLabel.styles';
+import {
+  nonOutlinedStops,
+  outlinedStops,
+  outlinedStopsDense,
+} from './TextFieldLabel.constants';
 
 class TextFieldLabel extends Component {
   constructor(props) {
@@ -24,8 +29,14 @@ class TextFieldLabel extends Component {
   };
 
   state = {
-    translateYAnimation: new Animated.Value(20),
-    scaleAnimation: new Animated.Value(1),
+    translateYAnimation: new Animated.Value(
+      this.props.type === 'outlined'
+        ? outlinedStops.initial
+        : nonOutlinedStops.initial,
+    ),
+    fontSizeAnimation: new Animated.Value(
+      this.props.value || this.props.focused ? 1 : 0,
+    ),
     animationDuration: 200,
     animationEasing: Easing.ease,
     canAnimate: true,
@@ -35,7 +46,9 @@ class TextFieldLabel extends Component {
     const { type, dense, prefix, value } = this.props;
 
     if (type == 'outlined' && dense) {
-      this.setState({ translateYAnimation: new Animated.Value(11) });
+      this.setState({
+        translateYAnimation: new Animated.Value(outlinedStopsDense.initial),
+      });
     }
 
     if (prefix) this._handlePrefix();
@@ -51,6 +64,7 @@ class TextFieldLabel extends Component {
 
   componentDidUpdate(prevProps) {
     const { focused, type } = this.props;
+
     if (focused !== prevProps.focused) {
       if (type == 'outlined') {
         this._handleLabelOutlinedAnimation();
@@ -61,16 +75,18 @@ class TextFieldLabel extends Component {
   }
 
   _handlePrefix() {
-    const { type } = this.props;
-    let translateYAnimation = 10;
+    const { type, dense } = this.props;
+    let translateYAnimation = nonOutlinedStops.active;
     if (type == 'outlined') {
-      translateYAnimation = -10;
+      translateYAnimation = dense
+        ? outlinedStopsDense.active
+        : outlinedStops.active;
     }
 
     this.setState({
       canAnimate: false,
       translateYAnimation: new Animated.Value(translateYAnimation),
-      scaleAnimation: new Animated.Value(0.75),
+      fontSizeAnimation: new Animated.Value(1),
     });
   }
 
@@ -78,15 +94,16 @@ class TextFieldLabel extends Component {
     const { focused, value } = this.props;
     const {
       translateYAnimation,
-      scaleAnimation,
       animationEasing,
       animationDuration,
       canAnimate,
+      fontSizeAnimation,
     } = this.state;
     if (!canAnimate) return;
 
-    let position = focused || value ? 10 : 20;
-    let scale = focused || value ? 0.75 : 1;
+    let position =
+      focused || value ? nonOutlinedStops.active : nonOutlinedStops.initial;
+    const fontVal = focused || value ? 1 : 0;
 
     Animated.parallel([
       Animated.timing(translateYAnimation, {
@@ -94,8 +111,8 @@ class TextFieldLabel extends Component {
         duration: animationDuration,
         easing: animationEasing,
       }),
-      Animated.timing(scaleAnimation, {
-        toValue: scale,
+      Animated.timing(fontSizeAnimation, {
+        toValue: fontVal,
         duration: animationDuration,
         easing: animationEasing,
       }),
@@ -106,17 +123,22 @@ class TextFieldLabel extends Component {
     const { focused, value, dense } = this.props;
     const {
       translateYAnimation,
-      scaleAnimation,
       animationEasing,
       animationDuration,
+      fontSizeAnimation,
       canAnimate,
     } = this.state;
     if (!canAnimate) return;
 
-    let position = focused || value ? -10 : 20;
-    let scale = focused || value ? 0.75 : 1;
+    let position =
+      focused || value ? outlinedStops.active : outlinedStops.initial;
+    const fontVal = focused || value ? 1 : 0;
 
-    if (dense) position = focused || value ? -10 : 11;
+    if (dense)
+      position =
+        focused || value
+          ? outlinedStopsDense.active
+          : outlinedStopsDense.initial;
 
     Animated.parallel([
       Animated.timing(translateYAnimation, {
@@ -124,8 +146,8 @@ class TextFieldLabel extends Component {
         duration: animationDuration,
         easing: animationEasing,
       }),
-      Animated.timing(scaleAnimation, {
-        toValue: scale,
+      Animated.timing(fontSizeAnimation, {
+        toValue: fontVal,
         duration: animationDuration,
         easing: animationEasing,
       }),
@@ -142,10 +164,17 @@ class TextFieldLabel extends Component {
       leadingIcon,
       prefix,
       theme,
+      style,
+      dense,
     } = this.props;
-    const { translateYAnimation, scaleAnimation } = this.state;
+    const { translateYAnimation, fontSizeAnimation } = this.state;
 
-    const translateX = type == 'flat' ? -1 : 11;
+    let translateX = 12;
+    if (type === 'flat') {
+      translateX = -1;
+    } else if (type === 'outlined') {
+      translateX = 10;
+    }
 
     if (!labelColor) labelColor = 'rgba(0, 0, 0, 0.54)';
 
@@ -163,24 +192,45 @@ class TextFieldLabel extends Component {
       marginLeft = 6;
     }
 
+    const baseFontSize =
+      (StyleSheet.flatten(style) || {}).fontSize ||
+      theme.subtitleOne.fontSize ||
+      16;
+
+    const fontStyle = {
+      fontSize: fontSizeAnimation.interpolate({
+        inputRange: [0, 1],
+        outputRange: [baseFontSize, baseFontSize * (dense ? 0.65 : 0.75)],
+      }),
+    };
+
     return (
-      <Animated.Text
+      <Animated.View
         style={[
-          styles.label,
+          styles.container,
           {
-            color: labelColor,
-            backgroundColor: type == 'outlined' ? 'white' : 'transparent',
-            paddingHorizontal: type == 'outlined' ? 4 : 0,
             marginLeft: marginLeft,
-            transform: [
-              { scale: scaleAnimation },
-              { translateY: translateYAnimation },
-              { translateX: translateX },
-            ],
           },
-        ]}>
-        {label}
-      </Animated.Text>
+        ]}
+        pointerEvents="none">
+        <Animated.Text
+          style={[
+            styles.label,
+            {
+              color: labelColor,
+              backgroundColor: type == 'outlined' ? 'white' : 'transparent',
+              paddingHorizontal: type == 'outlined' ? 4 : 0,
+              transform: [
+                { translateY: translateYAnimation },
+                { translateX: translateX },
+              ],
+            },
+            style,
+            fontStyle,
+          ]}>
+          {label}
+        </Animated.Text>
+      </Animated.View>
     );
   }
 }

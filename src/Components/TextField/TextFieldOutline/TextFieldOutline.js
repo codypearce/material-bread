@@ -4,7 +4,7 @@ import { View, TextInput, Platform } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import TextFieldLabel from '../TextFieldLabel/TextFieldLabel';
 import TextFieldHelperText from '../TextFieldHelperText/TextFieldHelperText';
-import styles from './TextFieldOutline.styles';
+import styles, { OUTLINED_LEFT_PADDING } from './TextFieldOutline.styles';
 
 class TextFieldOutlined extends Component {
   constructor(props) {
@@ -141,7 +141,7 @@ class TextFieldOutlined extends Component {
       height = 40;
     }
 
-    let paddingLeft = leadingIcon ? 44 : 12;
+    let paddingLeft = leadingIcon ? 44 : OUTLINED_LEFT_PADDING;
     if (prefix) paddingLeft = 32;
 
     const platformStyles = Platform.OS == 'web' ? { outlineWidth: 0 } : {};
