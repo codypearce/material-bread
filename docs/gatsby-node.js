@@ -85,9 +85,13 @@ exports.onPostBuild = ({ pages, callback }) => {
   const publicPath = path.join(__dirname, 'public');
   const gzippable = glob.sync(`${publicPath}/**/?(*.html|*.js|*.css)`);
   gzippable.forEach(file => {
-    const content = fs.readFileSync(file);
-    const zipped = zlib.gzipSync(content);
-    fs.writeFileSync(`${file}.gz`, zipped);
+    try {
+      const content = fs.readFileSync(file);
+      const zipped = zlib.gzipSync(content);
+      fs.writeFileSync(`${file}.gz`, zipped);
+    } catch (err) {
+      console.log(err); // eslint-disable
+    }
   });
   // callback();
 };
