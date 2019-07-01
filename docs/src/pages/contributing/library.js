@@ -195,7 +195,7 @@ class Index extends Component {
                   <li>
                     Create component file in{' '}
                     <CodeInline
-                      code="src/Components/ComponentName.stroies.js"
+                      code="src/Components/ComponentName.stories.js"
                       type={'file'}
                     />{' '}
                     as shown in the other files
