@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 
 import PropTypes from 'prop-types';
-import Modal from '../Modal/Modal.js';
+import Modal from '../Modal/Modal';
 import withTheme from '../../Theme/withTheme';
 import styles from './Dialog.styles';
 import Button from '../Button/Button.js';
