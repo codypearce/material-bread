@@ -29,6 +29,7 @@ class TextFieldFlat extends Component {
     underlineActiveColor: PropTypes.oneOfType([
       PropTypes.object,
       PropTypes.array,
+      PropTypes.string,
     ]),
     leadingIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
     trailingIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
