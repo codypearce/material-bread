@@ -14,7 +14,7 @@ export const code = `class Page extends React.Component {
   }
   render() {
     return (
-        <View >      
+        <View >
             <TextField
                 type={'flat'}
                 containerStyle={{ marginTop: 20 }}
