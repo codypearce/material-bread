@@ -18,7 +18,7 @@ body {
 .SideMenu {
   position: fixed;
   right: 50px;
-  top: 80px;
+  top: 200px;
 }
 
 .SideMenu__ListItem {
@@ -146,7 +146,7 @@ body {
 }
 
 .Home__platformRow {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   display: flex;
   flex-direction: row;
 }
@@ -155,4 +155,117 @@ body {
   .Home__platformRow {
     flex-direction: column;
   }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+.browser {
+  width: 400px;
+  height: 300px;
+  background: #fff;
+  margin: 20px auto;
+  border-radius: 8px;
+  animation: bounceIn 0.7s linear 2s;
+  overflow: hidden;
+}
+.browser_bar {
+  width: 100%;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  height: 30px;
+  background: #efeeef;
+  display: flex;
+  align-items: center;
+}
+.browser_bar_btns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 4px;
+}
+.browser_bar_btn {
+  height: 10px;
+  width: 10px;
+  line-height: 10px;
+  padding: 0;
+  border-radius: 100%;
+  background-color: #e74c3c;
+  margin-right: 8px;
+  display: inline-block;
+}
+.browser_bar_btn:hover {
+  cursor: pointer;
+}
+.browser_bar_btn--mini {
+  background-color: #27ae60;
+}
+.browser_bar_btn--resize {
+  background-color: #f1c40f;
+}
+
+.browser_body {
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.browser_body_title {
+  margin-top: 50px;
+  font-size: 30px;
+  color: #444;
+  font-weight: bold;
+}
+.browser_body_content:nth-child(1) {
+  margin-top: 50px;
+}
+.browser_body_content:last-child {
+  margin-bottom: 50px;
+}
+.browser_body_content {
+  min-height: 20px;
+  border-radius: 20px;
+  background-color: #ccc;
+  margin-top: 40px;
+  display: flex;
+}
+.browser_body::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+.browser_body::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+.browser_body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #bbb;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translate3d(0, 0, 0);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(0.89);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+.browser__appbar {
+  height: 20px;
+  width: 100%;
+  background: #03a9f4;
 }

@@ -150,6 +150,7 @@ export default class PageLayout extends Component {
               isTemporary={isTemporary}
             />
             <main
+              style={{ background: '#0097A7', height: '100vh' }}
               className={`${
                 isTemporary ? 'main--temporaryDrawer' : 'main--permanentDrawer'
               }`}>
