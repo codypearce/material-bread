@@ -20,7 +20,7 @@ const sections = [
   { name: 'Examples' },
 ];
 
-const dependencies = `npm i material-bread electron react react-dom react-native-web @babel/core @babel/plugin-proposal-class-properties @babel/plugin-proposal-object-rest-spread @babel/plugin-transform-flow-strip-types @babel/plugin-transform-regenerator @babel/plugin-transform-runtime @babel/plugin-proposal-export-default-from css-loader file-loader style-loader webpack webpack-cli webpack-dev-server
+const dependencies = `npm i material-bread electron react react-dom react-native-web modal-enhanced-react-native-web @babel/core @babel/plugin-proposal-class-properties @babel/plugin-proposal-object-rest-spread @babel/plugin-transform-flow-strip-types @babel/plugin-transform-regenerator @babel/plugin-transform-runtime @babel/plugin-proposal-export-default-from css-loader file-loader style-loader webpack webpack-cli webpack-dev-server
 `;
 
 const code = `import React, { Component } from "react";
