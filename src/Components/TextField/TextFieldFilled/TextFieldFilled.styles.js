@@ -4,7 +4,6 @@ const styles = StyleSheet.create({
     position: 'relative',
   },
   textField: {
-    textAlignVertical: 'bottom',
     paddingHorizontal: 12,
   },
 
