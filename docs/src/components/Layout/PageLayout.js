@@ -97,8 +97,38 @@ export default class PageLayout extends Component {
     this.setState(state => ({ mobileOpen: !state.mobileOpen }));
   };
 
+  _renderMain() {
+    const { children, pageContext } = this.props;
+    const { isTemporary } = this.state;
+    if (pageContext.layout === 'home') {
+      return (
+        <main
+          style={{
+            background: '#0097A7',
+            height: 'calc(100vh - 56px)',
+            paddingTop: 0,
+            marginTop: 56,
+          }}
+          className={`${
+            isTemporary ? 'main--temporaryDrawer' : 'main--permanentDrawer'
+          }`}>
+          {children}
+        </main>
+      );
+    }
+
+    return (
+      <main
+        className={`${
+          isTemporary ? 'main--temporaryDrawer' : 'main--permanentDrawer'
+        }`}>
+        {children}
+      </main>
+    );
+  }
+
   render() {
-    const { posts, children } = this.props;
+    const { posts } = this.props;
     const { isTemporary } = this.state;
     if (!this.state.firstLoaded)
       return (
@@ -149,13 +179,7 @@ export default class PageLayout extends Component {
               handleDrawerToggle={this.handleDrawerToggle}
               isTemporary={isTemporary}
             />
-            <main
-              style={{ background: '#0097A7', height: '100vh' }}
-              className={`${
-                isTemporary ? 'main--temporaryDrawer' : 'main--permanentDrawer'
-              }`}>
-              {children}
-            </main>
+            {this._renderMain()}
           </Drawer>
         </div>
       </div>

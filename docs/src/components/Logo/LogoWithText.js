@@ -22,7 +22,8 @@ const styles = {
   container: {
     // maxWidth: 387,
     marginBottom: 20,
-    display: 'flex',
+    alignItems: 'center',
+    // display: 'flex',
   },
   title: {
     fontSize: 48,
@@ -44,6 +45,8 @@ const styles = {
 LogoWithText.propTypes = {
   subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   style: PropTypes.object,
+  height: PropTypes.number,
+  width: PropTypes.number,
 };
 
 export default LogoWithText;

@@ -1,17 +1,30 @@
 import React, { Component } from 'react';
 
 import Prism from 'prismjs';
-import { LogoWithText, PlatformButton } from '@components';
+import { LiveEdit, LogoWithText, PlatformButton } from '@components';
 import browser from '../assets/browser.svg';
 import iphone from '../assets/iphone.svg';
 import imac from '../assets/imac.svg';
 import GitHubButton from 'react-github-btn';
 import BrowserCSS from '../components/BrowserCSS';
+import { Button } from '../../../src/index';
+
+import HomeLiveEdit from '../components/HomeLiveEdit/HomeLiveEdit';
 class Index extends Component {
   componentDidMount() {
     Prism.highlightAll();
   }
+
+  state = {
+    preview: 'web',
+  };
+
+  changePreview(preview) {
+    this.setState({ preview });
+  }
+
   render() {
+    const { preview } = this.state;
     return (
       <div style={styles.container}>
         <div
@@ -19,8 +32,6 @@ class Index extends Component {
             padding: '0 120px',
             background: '#0097A7',
             display: 'flex',
-            marginTop: -6,
-            paddingBottom: 40,
           }}>
           <div
             style={{
@@ -36,7 +47,17 @@ class Index extends Component {
             <h2
               style={{
                 color: 'white',
-                marginTop: 280,
+
+                marginBottom: 40,
+                fontWeight: 400,
+                fontSize: 18,
+              }}>
+              React Native Components that work on all Platforms
+            </h2>
+            <h2
+              style={{
+                color: 'white',
+
                 fontWeight: 400,
                 fontSize: 20,
               }}>
@@ -69,17 +90,39 @@ class Index extends Component {
             </div>
           </div>
           <div style={{ width: '100%', marginTop: 40 }}>
-            <h2
-              style={{
-                color: 'white',
-                textAlign: 'center',
-                marginBottom: 40,
-                fontWeight: 400,
-                fontSize: 18,
-              }}>
-              The same components on all Platforms
-            </h2>
-            <BrowserCSS />
+            <div style={{ display: 'flex', flexDirection: 'row' }}>
+              <Button
+                text="Web"
+                type="outlined"
+                textColor="white"
+                onClick={() => this.changePreview('web')}
+              />
+              <Button
+                text="iOS"
+                type="outlined"
+                textColor="white"
+                onClick={() => this.changePreview('ios')}
+              />
+              <Button
+                text="Android"
+                type="outlined"
+                textColor="white"
+                onClick={() => this.changePreview('android')}
+              />
+              <Button
+                text="Desktop"
+                type="outlined"
+                textColor="white"
+                onClick={() => this.changePreview('desktop')}
+              />
+            </div>
+            <HomeLiveEdit
+              code={`<Button text="Button" type="outlined"/>`}
+              scope={{ Button }}
+              preview={preview}
+              // noInline={true}
+              // livePreviewBackground={livePreviewBackground}
+            />
           </div>
           {/* <div style={{ width: '100%', height: 200, background: 'white' }} /> */}
 
@@ -106,7 +149,6 @@ const styles = {
     // justifyContent: 'center',
     // alignItems: 'center',
     width: '100%',
-    paddingBottom: 60,
   },
   code: {},
 };

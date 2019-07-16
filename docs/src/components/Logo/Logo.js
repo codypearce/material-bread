@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import '../../styles/components/Logo.css';
 
 function Logo({ animated, width, height, style }) {
-  console.log(width);
   return (
     <svg
       width={width ? width : '387.502'}
