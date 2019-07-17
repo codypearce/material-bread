@@ -4,7 +4,7 @@ import { View, TextInput, Platform } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import TextFieldLabel from '../TextFieldLabel/TextFieldLabel';
 import TextFieldHelperText from '../TextFieldHelperText/TextFieldHelperText';
-import styles from './TextFieldOutline.styles';
+import styles, { OUTLINED_LEFT_PADDING } from './TextFieldOutline.styles';
 
 class TextFieldOutlined extends Component {
   constructor(props) {
@@ -24,8 +24,8 @@ class TextFieldOutlined extends Component {
     helperText: PropTypes.string,
     helperVisible: PropTypes.bool,
     helperTextStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-    leadingIcon: PropTypes.node,
-    trailingIcon: PropTypes.node,
+    leadingIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+    trailingIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
     dense: PropTypes.bool,
     value: PropTypes.bool,
     multiline: PropTypes.bool,
@@ -51,27 +51,25 @@ class TextFieldOutlined extends Component {
 
   _renderLeadingIcon() {
     const { leadingIcon } = this.props;
+    const isFunc = typeof leadingIcon === 'function';
 
     return (
       <View style={{ position: 'absolute', left: 8, top: 16 }}>
-        {React.cloneElement(leadingIcon, {
-          size: leadingIcon.props.size ? leadingIcon.props.size : 24,
-        })}
+        {isFunc ? leadingIcon() : leadingIcon}
       </View>
     );
   }
+
   _renderTrailingIcon() {
     const { trailingIcon } = this.props;
+    const isFunc = typeof trailingIcon === 'function';
 
     return (
       <View style={{ position: 'absolute', right: 12, top: 16 }}>
-        {React.cloneElement(trailingIcon, {
-          size: trailingIcon.props.size ? trailingIcon.props.size : 24,
-        })}
+        {isFunc ? trailingIcon() : trailingIcon}
       </View>
     );
   }
-
   _renderPrefix() {
     const { prefix } = this.props;
 
@@ -141,7 +139,7 @@ class TextFieldOutlined extends Component {
       height = 40;
     }
 
-    let paddingLeft = leadingIcon ? 44 : 12;
+    let paddingLeft = leadingIcon ? 44 : OUTLINED_LEFT_PADDING;
     if (prefix) paddingLeft = 32;
 
     const platformStyles = Platform.OS == 'web' ? { outlineWidth: 0 } : {};

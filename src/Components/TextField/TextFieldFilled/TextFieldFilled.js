@@ -27,8 +27,8 @@ class TextFieldFilled extends Component {
     helperTextStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     underlineColor: PropTypes.string,
     underlineActiveColor: PropTypes.string,
-    leadingIcon: PropTypes.node,
-    trailingIcon: PropTypes.node,
+    leadingIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+    trailingIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
     dense: PropTypes.bool,
     value: PropTypes.bool,
     multiline: PropTypes.bool,
@@ -54,25 +54,22 @@ class TextFieldFilled extends Component {
 
   _renderLeadingIcon() {
     const { leadingIcon } = this.props;
+    const isFunc = typeof leadingIcon === 'function';
 
     return (
-      <View style={{ position: 'absolute', left: 8, top: 16, zIndex: 200 }}>
-        {React.cloneElement(leadingIcon, {
-          size: leadingIcon.props.size ? leadingIcon.props.size : 24,
-          zIndex: 200,
-        })}
+      <View style={{ position: 'absolute', left: 8, top: 16 }}>
+        {isFunc ? leadingIcon() : leadingIcon}
       </View>
     );
   }
 
   _renderTrailingIcon() {
     const { trailingIcon } = this.props;
+    const isFunc = typeof trailingIcon === 'function';
 
     return (
       <View style={{ position: 'absolute', right: 12, top: 16 }}>
-        {React.cloneElement(trailingIcon, {
-          size: trailingIcon.props.size ? trailingIcon.props.size : 24,
-        })}
+        {isFunc ? trailingIcon() : trailingIcon}
       </View>
     );
   }
@@ -80,7 +77,7 @@ class TextFieldFilled extends Component {
     const { prefix } = this.props;
 
     return (
-      <View style={{ position: 'absolute', left: 16, top: 26 }}>
+      <View style={{ position: 'absolute', left: 16, top: 26, zIndex: 1 }}>
         {React.cloneElement(prefix, {
           color: prefix.props.color ? prefix.props.color : 'rgba(0, 0, 0, .57)',
           fontSize: prefix.props.fontSize ? prefix.props.fontSize : 16,

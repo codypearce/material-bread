@@ -1,6 +1,6 @@
 {
   "name": "material-bread",
-  "version": "0.1.8",
+  "version": "0.1.10",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest -w 1 --forceExit",
@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "color": "^3.1.0",
-    "modal-enhanced-react-native-web": "^0.2.0",
     "react-native-vector-icons": "^6.2.0"
   },
   "devDependencies": {
@@ -64,7 +63,8 @@
     "react-native": "*",
     "react-native-vector-icons": "*",
     "react-dom": "16.8.1",
-    "react-native-web": "0.11.2"
+    "react-native-web": "0.11.2",
+    "modal-enhanced-react-native-web": "^0.2.0"
   },
   "main": "src/index.js",
   "jest": {
@@ -78,11 +78,6 @@
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
     }
-  },
-  "rnpm": {
-    "assets": [
-      "./src/assets/fonts"
-    ]
   },
   "keywords": [
     "react native",

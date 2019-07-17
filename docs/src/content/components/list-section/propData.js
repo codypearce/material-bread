@@ -4,6 +4,7 @@ const propData = [
   ['contentStyle', 'Styles element wrapping the content', 'object', ''],
   ['inset', 'Insets the divider', 'bool', ''],
   ['label', 'Text as a section header', 'string', ''],
+  ['labelStyle', 'Styles label', 'object', ''],
   ['style', 'Styles root element', 'object', ''],
   ['topDivider', 'Adds a divider on the top of the section', 'bool', ''],
 ];

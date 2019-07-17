@@ -30,10 +30,10 @@ class TextFieldFlat extends Component {
       PropTypes.object,
       PropTypes.array,
     ]),
-    leadingIcon: PropTypes.node,
-    trailingIcon: PropTypes.node,
+    leadingIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+    trailingIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
     dense: PropTypes.bool,
-    value: PropTypes.bool,
+    value: PropTypes.string,
     multiline: PropTypes.bool,
     suffix: PropTypes.node,
     prefix: PropTypes.node,
@@ -57,24 +57,22 @@ class TextFieldFlat extends Component {
 
   _renderLeadingIcon() {
     const { leadingIcon } = this.props;
+    const isFunc = typeof leadingIcon === 'function';
 
     return (
       <View style={{ position: 'absolute', left: 8, top: 16 }}>
-        {React.cloneElement(leadingIcon, {
-          size: leadingIcon.props.size ? leadingIcon.props.size : 24,
-        })}
+        {isFunc ? leadingIcon() : leadingIcon}
       </View>
     );
   }
 
   _renderTrailingIcon() {
     const { trailingIcon } = this.props;
+    const isFunc = typeof trailingIcon === 'function';
 
     return (
       <View style={{ position: 'absolute', right: 12, top: 16 }}>
-        {React.cloneElement(trailingIcon, {
-          size: trailingIcon.props.size ? trailingIcon.props.size : 24,
-        })}
+        {isFunc ? trailingIcon() : trailingIcon}
       </View>
     );
   }

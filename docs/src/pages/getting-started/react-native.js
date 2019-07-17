@@ -93,22 +93,6 @@ class Index extends Component {
               }
             />
           </div>
-          <div>
-            <h3 style={styles.h3}>React Native Web</h3>
-            <ComponentDescription
-              text={
-                <div>
-                  <CodeBlock
-                    code={'npm i react-native-web react-dom'}
-                    style={styles.code}
-                    fontSize={12}
-                    canCopy
-                    small
-                  />{' '}
-                </div>
-              }
-            />
-          </div>
         </Section>
         <Section
           name="Usage"

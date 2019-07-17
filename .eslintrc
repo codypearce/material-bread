@@ -19,5 +19,12 @@
     "react/display-name": 0,
     "react/no-typos": 0
   },
-  "plugins": ["prettier", "react", "import"]
+  "plugins": ["prettier", "react", "import"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".ios.js", ".android.js", ".web.js", ".native.js"]
+      }
+    }
+  }
 }

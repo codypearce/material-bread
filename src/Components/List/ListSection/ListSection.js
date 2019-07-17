@@ -11,28 +11,34 @@ class ListSection extends Component {
     children: PropTypes.node,
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     label: PropTypes.string,
+    labelStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     topDivider: PropTypes.bool,
     bottomDivider: PropTypes.bool,
     inset: PropTypes.bool,
     contentStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    theme: PropTypes.object,
   };
 
   render() {
     const {
       children,
       label,
+      labelStyle,
       topDivider,
       bottomDivider,
       inset,
       style,
       contentStyle,
+      theme,
     } = this.props;
 
     return (
       <View style={([styles.container, { paddingTop: label ? 8 : 0 }], style)}>
         {topDivider ? <Divider /> : null}
-        {label ? <Text style={styles.label}>{label}</Text> : null}
-        <View style={[styles.content, contentStyle]}>{children}</View>
+        {label ? <Text style={[styles.label, labelStyle]}>{label}</Text> : null}
+        <View style={[theme.text, styles.content, contentStyle]}>
+          {children}
+        </View>
         {bottomDivider ? (
           <Divider
             style={{
