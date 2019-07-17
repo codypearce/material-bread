@@ -51,7 +51,6 @@ exports[`TextFieldFilled Renders 1`] = `
       Array [
         Object {
           "paddingHorizontal": 12,
-          "textAlignVertical": "bottom",
         },
         Object {
           "backgroundColor": "#d9d9d9",
