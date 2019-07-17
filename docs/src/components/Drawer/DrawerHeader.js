@@ -10,7 +10,7 @@ export default class DrawerContent extends React.PureComponent {
         <Logo width={77} height={64} style={{ width: 77 }} />
         <div style={styles.right}>
           <BodyText style={styles.title}>Material Bread</BodyText>
-          <BodyText style={styles.version}>v0.1.1</BodyText>
+          <BodyText style={styles.version}>v0.1.11</BodyText>
         </div>
       </div>
     );
