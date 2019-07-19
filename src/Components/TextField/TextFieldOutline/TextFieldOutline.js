@@ -27,7 +27,7 @@ class TextFieldOutlined extends Component {
     leadingIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
     trailingIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
     dense: PropTypes.bool,
-    value: PropTypes.bool,
+    value: PropTypes.string,
     multiline: PropTypes.bool,
     suffix: PropTypes.node,
     prefix: PropTypes.node,
