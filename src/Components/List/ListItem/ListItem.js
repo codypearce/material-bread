@@ -38,13 +38,14 @@ class ListItem extends Component {
     } = this.props;
 
     return (
-      <View style={{ alignItems: 'flex-start' }}>
+      <View style={{ alignItems: 'flex-start' }} ellipsizeMode="tail">
         <BodyText
           style={[
             styles.listItemText,
             { color: disabled ? 'rgba(0,0,0,0.47)' : 'rgba(0,0,0,0.87)' },
             textStyle,
-          ]}>
+          ]}
+          ellipsizeMode="tail">
           {text}
         </BodyText>
         {secondaryText ? (

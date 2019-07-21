@@ -13,7 +13,9 @@ const BrowserCSS = ({ children, preview }) => {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <div className="browser" style={{ height: 475, margin: 0 }}>
+        <div
+          className="browser"
+          style={{ height: 475, margin: 0, overflow: 'hidden' }}>
           <div className="browser_bar">
             <div className="browser_bar_btns">
               <div className="browser_bar_btn browser_bar_btn--close" />
@@ -45,9 +47,7 @@ const BrowserCSS = ({ children, preview }) => {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <IphoneX>
-          <div>{children}</div>
-        </IphoneX>
+        <IphoneX>{children}</IphoneX>
       </div>
     );
   } else if (preview == 'android') {
@@ -59,9 +59,7 @@ const BrowserCSS = ({ children, preview }) => {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <Pixel3xl>
-          <div>{children}</div>
-        </Pixel3xl>
+        <Pixel3xl>{children}</Pixel3xl>
       </div>
     );
   } else if (preview == 'desktop') {

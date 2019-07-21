@@ -105,7 +105,6 @@ export default class PageLayout extends Component {
         <main
           style={{
             background: '#0097A7',
-            height: 'calc(100vh - 56px)',
             paddingTop: 0,
             marginTop: 56,
           }}

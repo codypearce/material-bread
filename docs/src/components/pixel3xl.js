@@ -17,7 +17,6 @@ function Pixel3xl({ children }) {
       <div className="pixel__chin">
         <div className="pixel__speaker--bottom" />
       </div>
-      <div className="pixel__roundedscreen" />
     </div>
   );
 }

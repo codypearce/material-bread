@@ -21,10 +21,14 @@ class Appbar extends Component {
     onNavigation: PropTypes.func,
 
     title: PropTypes.string,
-    titleStyles: PropTypes.object,
+    titleStyles: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     onTitle: PropTypes.func,
     subtitle: PropTypes.string,
-    subtitleStyles: PropTypes.object,
+    subtitleStyles: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    textContainerStyles: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.array,
+    ]),
 
     actionItems: PropTypes.oneOfType([PropTypes.node, PropTypes.array]),
 
@@ -98,6 +102,7 @@ class Appbar extends Component {
       titleStyles,
       subtitle,
       subtitleStyles,
+      textContainerStyles,
     } = this.props;
 
     return (
@@ -112,6 +117,7 @@ class Appbar extends Component {
                 : 'center',
             zIndex: 100,
           },
+          textContainerStyles,
         ]}>
         <Text
           numberOfLines={

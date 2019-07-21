@@ -50,6 +50,13 @@ class Index extends Component {
               }}>
               React Native Components that work on all Platforms
             </h2>
+            <GitHubButton
+              href="https://github.com/codypearce/material-bread"
+              data-size="large"
+              data-show-count="true"
+              aria-label="Star codypearce/material-bread on GitHub">
+              Star
+            </GitHubButton>
             <h2
               style={{
                 color: 'white',
@@ -138,19 +145,7 @@ class Index extends Component {
               // livePreviewBackground={livePreviewBackground}
             />
           </div>
-          {/* <div style={{ width: '100%', height: 200, background: 'white' }} /> */}
-
-          {/* <GitHubButton
-            href="https://github.com/codypearce/material-bread"
-            data-size="large"
-            data-show-count="true"
-            aria-label="Star codypearce/material-bread on GitHub">
-            Star
-          </GitHubButton> */}
         </div>
-        {/* <h2 style={{ textAlign: 'center', marginTop: 70, fontSize: 38 }}>
-          Getting Started
-        </h2> */}
       </div>
     );
   }
@@ -160,8 +155,6 @@ const styles = {
   container: {
     display: 'flex',
     flexDirection: 'column',
-    // justifyContent: 'center',
-    // alignItems: 'center',
     width: '100%',
   },
   code: {},
