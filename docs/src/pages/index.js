@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 
 import Prism from 'prismjs';
-import { LiveEdit, LogoWithText, PlatformButton } from '@components';
+import { LogoWithText, PlatformButton } from '@components';
 import browser from '../assets/browser.svg';
 import iphone from '../assets/iphone.svg';
 import imac from '../assets/imac.svg';
 import GitHubButton from 'react-github-btn';
-import BrowserCSS from '../components/BrowserCSS';
 import { Button } from '../../../src/index';
 
 import HomeLiveEdit from '../components/HomeLiveEdit/HomeLiveEdit';
@@ -16,7 +15,7 @@ class Index extends Component {
   }
 
   state = {
-    preview: 'web',
+    preview: 'ios',
   };
 
   changePreview(preview) {
@@ -36,12 +35,9 @@ class Index extends Component {
           <div
             style={{
               marginTop: 40,
-              // backgroundColor: 'white',
               borderRadius: 2,
               width: '100%',
               minWidth: 600,
-              // boxShadow: '0 3px 6px rgba(0,0,0,0.12), 0 3px 6px rgba(0,0,0,0.16)',
-              // transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
             }}>
             <LogoWithText subtitle width={247} height={204} />
             <h2
@@ -66,11 +62,7 @@ class Index extends Component {
             <div
               className="Home__platformRow"
               style={{
-                // backgroundColor: 'white',
                 borderRadius: 2,
-
-                // width: '100%',
-                // justifyContent: 'center',
               }}>
               <PlatformButton
                 text="REACT NATIVE"
@@ -89,30 +81,52 @@ class Index extends Component {
               />
             </div>
           </div>
-          <div style={{ width: '100%', marginTop: 40 }}>
-            <div style={{ display: 'flex', flexDirection: 'row' }}>
-              <Button
-                text="Web"
-                type="outlined"
-                textColor="white"
-                onClick={() => this.changePreview('web')}
-              />
+          <div style={{ width: '100%', marginTop: 10 }}>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'center',
+              }}>
               <Button
                 text="iOS"
-                type="outlined"
-                textColor="white"
+                textColor="black"
+                textStyle={{
+                  fontWeight: preview == 'ios' ? 500 : 400,
+                  fontSize: preview == 'ios' ? 20 : 12,
+                }}
+                style={{ width: 130 }}
                 onClick={() => this.changePreview('ios')}
               />
+
               <Button
                 text="Android"
-                type="outlined"
-                textColor="white"
+                textColor="black"
+                textStyle={{
+                  fontWeight: preview == 'android' ? 500 : 400,
+                  fontSize: preview == 'android' ? 20 : 12,
+                }}
+                style={{ width: 130 }}
                 onClick={() => this.changePreview('android')}
               />
               <Button
+                text="Web"
+                textColor="black"
+                textStyle={{
+                  fontWeight: preview == 'web' ? 500 : 400,
+                  fontSize: preview == 'web' ? 20 : 12,
+                }}
+                style={{ width: 130 }}
+                onClick={() => this.changePreview('web')}
+              />
+              <Button
                 text="Desktop"
-                type="outlined"
-                textColor="white"
+                textColor="black"
+                textStyle={{
+                  fontWeight: preview == 'desktop' ? 500 : 400,
+                  fontSize: preview == 'desktop' ? 20 : 12,
+                }}
+                style={{ width: 130 }}
                 onClick={() => this.changePreview('desktop')}
               />
             </div>
