@@ -153,18 +153,20 @@ class TextFieldFilled extends Component {
           { marginBottom: helperText && helperVisible ? 20 : 0 },
           containerStyle,
         ]}>
-        <TextFieldLabel
-          label={label}
-          focused={focused}
-          error={error}
-          value={rest.value && rest.value.length > 0}
-          labelColor={labelColor}
-          style={labelStyle}
-          leadingIcon={leadingIcon}
-          dense={dense}
-          prefix={prefix}
-          type={'filled'}
-        />
+        {label ? (
+          <TextFieldLabel
+            label={label}
+            focused={focused}
+            error={error}
+            value={rest.value && rest.value.length > 0}
+            labelColor={labelColor}
+            style={labelStyle}
+            leadingIcon={leadingIcon}
+            dense={dense}
+            prefix={prefix}
+            type={'filled'}
+          />
+        ) : null}
         {leadingIcon ? this._renderLeadingIcon() : null}
         {prefix ? this._renderPrefix() : null}
         <TextInput

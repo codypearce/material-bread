@@ -153,18 +153,21 @@ class TextFieldOutlined extends Component {
           },
           containerStyle,
         ]}>
-        <TextFieldLabel
-          label={label}
-          focused={focused}
-          error={error}
-          value={rest.value}
-          type={'outlined'}
-          labelColor={labelColor}
-          style={labelStyle}
-          leadingIcon={leadingIcon}
-          dense={dense}
-          prefix={prefix}
-        />
+        {label ? (
+          <TextFieldLabel
+            label={label}
+            focused={focused}
+            error={error}
+            value={rest.value}
+            type={'outlined'}
+            labelColor={labelColor}
+            style={labelStyle}
+            leadingIcon={leadingIcon}
+            dense={dense}
+            prefix={prefix}
+          />
+        ) : null}
+
         {leadingIcon ? this._renderLeadingIcon() : null}
         {prefix ? this._renderPrefix() : null}
         <TextInput
