@@ -1,12 +1,18 @@
 import React from 'react';
-import {} from '../../../src/';
+import PropTypes from 'prop-types';
 import IphoneX from './Iphonex';
 import Pixel3xl from './Pixel3xl';
 
 const BrowserCSS = ({ children, preview }) => {
   if (preview == 'web') {
     return (
-      <div style={{ height: 550 }}>
+      <div
+        style={{
+          height: 550,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
         <div className="browser" style={{ height: 475, margin: 0 }}>
           <div className="browser_bar">
             <div className="browser_bar_btns">
@@ -32,15 +38,41 @@ const BrowserCSS = ({ children, preview }) => {
     );
   } else if (preview == 'ios') {
     return (
-      <IphoneX>
-        <div>{children}</div>
-      </IphoneX>
+      <div
+        style={{
+          height: 550,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <IphoneX>
+          <div>{children}</div>
+        </IphoneX>
+      </div>
     );
   } else if (preview == 'android') {
-    return <Pixel3xl>{children}</Pixel3xl>;
+    return (
+      <div
+        style={{
+          height: 550,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Pixel3xl>
+          <div>{children}</div>
+        </Pixel3xl>
+      </div>
+    );
   } else if (preview == 'desktop') {
     return (
-      <div style={{ height: 550 }}>
+      <div
+        style={{
+          height: 550,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
         <div className="browser" style={{ height: 475, margin: 0 }}>
           <div className="browser_bar browser__desktop__bar">
             <div className="browser_bar_btns">
@@ -56,6 +88,11 @@ const BrowserCSS = ({ children, preview }) => {
     );
   }
   return <div>{children}</div>;
+};
+
+BrowserCSS.propTypes = {
+  children: PropTypes.node,
+  preview: PropTypes.string,
 };
 
 export default BrowserCSS;
