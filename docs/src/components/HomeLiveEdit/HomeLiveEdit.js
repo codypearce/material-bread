@@ -50,11 +50,11 @@ class LiveEdit extends Component {
             style={{
               margin: 0,
               fontSize: 14,
-              borderBottomLeftRadius: 6,
-              borderBottomRightRadius: 6,
+              borderRadius: 6,
               paddingTop: 24,
               paddingBottom: 20,
               outline: 'none',
+              width: '100%',
             }}
           />
         </HomeLiveEditToolTip>
