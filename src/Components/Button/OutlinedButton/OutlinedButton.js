@@ -14,6 +14,7 @@ class OutlinedButton extends Component {
     rippleColor: PropTypes.string,
     theme: PropTypes.object,
     borderSize: PropTypes.number,
+    containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   };
 
   state = {
@@ -82,7 +83,8 @@ class OutlinedButton extends Component {
     return (
       <Hoverable
         onHoverIn={() => this.handleHover(true)}
-        onHoverOut={() => this.handleHover(false)}>
+        onHoverOut={() => this.handleHover(false)}
+        style={props.containerStyle}>
         {() => (
           <ButtonBase
             typeRippleColor={this.getRippleColor()}

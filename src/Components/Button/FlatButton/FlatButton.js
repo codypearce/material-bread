@@ -76,7 +76,8 @@ class FlatButton extends Component {
     return (
       <Hoverable
         onHoverIn={() => this.handleHover(true)}
-        onHoverOut={() => this.handleHover(false)}>
+        onHoverOut={() => this.handleHover(false)}
+        style={props.containerStyle}>
         {() => (
           <ButtonBase
             typeRippleColor={this.getRippleColor()}
