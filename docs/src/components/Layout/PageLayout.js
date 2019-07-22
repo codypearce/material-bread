@@ -177,7 +177,10 @@ export default class PageLayout extends Component {
           type={isTemporary ? 'modal' : 'permanent'}
           drawerContent={<DrawerContent posts={posts} />}
           position={'fixed'}
-          style={{ height: pageContext.layout === 'home' ? '100%' : 'auto' }}>
+          style={{
+            height: pageContext.layout === 'home' ? '100%' : 'auto',
+            background: '#f7f9fc',
+          }}>
           <Header
             handleDrawerToggle={this.handleDrawerToggle}
             isTemporary={isTemporary}
