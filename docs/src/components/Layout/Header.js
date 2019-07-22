@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 
 import { IconButton, Ripple } from '../../../../src';
 import github from '../../assets/github.svg';
+import githubWhite from '../../assets/github--white.svg';
 import { Appbar } from '../../../../src';
+import MediaQuery from 'react-responsive';
 
 class Header extends Component {
   constructor(props) {
@@ -77,7 +79,16 @@ class Header extends Component {
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}>
-                <img style={{ width: 28, height: 28 }} src={github} />
+                <MediaQuery maxWidth={1000}>
+                  {backgroundOverride && (
+                    <img style={{ width: 28, height: 28 }} src={githubWhite} />
+                  )}
+                </MediaQuery>
+                <MediaQuery minWidth={1000}>
+                  {backgroundOverride && (
+                    <img style={{ width: 28, height: 28 }} src={github} />
+                  )}
+                </MediaQuery>
               </Ripple>
             </a>,
           ]}
