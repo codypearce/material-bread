@@ -13,44 +13,6 @@ import {
   Avatar,
   Heading,
 } from '../../../../src';
-// const thiscode = `
-// class Header extends React.Component {
-
-//   render() {
-//     const ActionItems = [
-//       <IconButton
-//         name={'favorite'}
-//         size={18}
-//         color={'white'}
-//         style={{ marginRight: 6 }}
-//       />,
-//       <IconButton
-//         name={'more-vert'}
-//         size={18}
-//         color={'white'}
-//       />
-//     ];
-
-//     return (
-//       <View>
-//         <Appbar
-//           title={'App Title'}
-//           navigation={
-//             <IconButton
-//               name={'menu'}
-//               size={18}
-//               color={'white'}
-
-//           />}
-//           actionItems={ActionItems}
-//           textContainerStyles={{marginLeft: 6}}
-//           titleStyles={{fontSize: 12}}
-//           style={{height: 40, padding: 8}}
-//         />
-//       </View>
-//     );
-//   }
-// }`;
 
 const thiscode = `
 class Page extends React.Component {
@@ -177,6 +139,7 @@ class LiveEdit extends Component {
           borderRadius: 6,
           backgroundColor: 'transparent',
           maxWidth: 800,
+          margin: '0 auto',
         }}>
         <BrowserCSS preview={preview}>
           <LivePreview
@@ -189,21 +152,6 @@ class LiveEdit extends Component {
             }}
           />
         </BrowserCSS>
-
-        {/* <HomeLiveEditToolTip>
-          <LiveEditor
-            className={'language-jsx'}
-            style={{
-              margin: 0,
-              fontSize: 14,
-              borderRadius: 6,
-              paddingTop: 24,
-              paddingBottom: 20,
-              outline: 'none',
-              width: '100%',
-            }}
-          />
-        </HomeLiveEditToolTip> */}
 
         <LiveError
           style={{

@@ -104,7 +104,7 @@ export default class PageLayout extends Component {
       return (
         <main
           style={{
-            paddingTop: 0,
+            padding: 0,
             marginTop: 0,
             height: '100%',
           }}
