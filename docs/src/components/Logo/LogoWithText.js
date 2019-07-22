@@ -5,8 +5,13 @@ import PropTypes from 'prop-types';
 function LogoWithText({ subtitle, style, height, width }) {
   return (
     <div style={styles.container}>
-      <Logo animated height={height} width={width} style={{ ...style }} />
-      <div style={{ alignSelf: 'center', marginLeft: 20 }}>
+      <Logo
+        animated
+        height={height}
+        width={width}
+        style={{ width: '100%', ...style }}
+      />
+      <div style={{ alignSelf: 'center', textAlign: 'center' }}>
         <h1 style={styles.title} className={'Logo__title'}>
           Material Bread
         </h1>
@@ -23,13 +28,16 @@ const styles = {
     // maxWidth: 387,
     marginBottom: 20,
     alignItems: 'center',
+    justifyContent: 'center',
     // display: 'flex',
+    display: 'inline-block',
   },
   title: {
     fontSize: 48,
     marginTop: 10,
     marginBottom: 0,
     color: 'white',
+    textAlign: 'center',
   },
   subtitle: {
     fontSize: 16,

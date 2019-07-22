@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { IconButton, Ripple } from '../../../../src';
 import github from '../../assets/github.svg';
 import { Appbar } from '../../../../src';
-import BackgroundColors from '../BackgroundColors/BackgroundColors';
 
 class Header extends Component {
   constructor(props) {
@@ -45,11 +44,10 @@ class Header extends Component {
     const { backgroundOverride } = this.state;
 
     let backgroundColor = isTemporary ? '#eee' : 'transparent';
-    backgroundColor = backgroundOverride ? '#0097A7' : backgroundColor;
+    backgroundColor = backgroundOverride ? 'transparent' : backgroundColor;
 
     return (
       <div>
-        {/* <BackgroundColors isAppbar={!backgroundOverride && isTemporary} /> */}
         <Appbar
           position={'fixed'}
           color={backgroundColor}

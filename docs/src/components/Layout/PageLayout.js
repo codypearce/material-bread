@@ -104,9 +104,10 @@ export default class PageLayout extends Component {
       return (
         <main
           style={{
-            background: '#0097A7',
+            // background: '#0097A7',
             paddingTop: 0,
-            marginTop: 56,
+            marginTop: 0,
+            height: '100%',
           }}
           className={`${
             isTemporary ? 'main--temporaryDrawer' : 'main--permanentDrawer'
@@ -137,7 +138,7 @@ export default class PageLayout extends Component {
       );
 
     return (
-      <div style={{ width: '100%' }}>
+      <div style={{ width: '100%', height: '100%' }}>
         <Helmet
           google-site-verification={
             'pnInoKlqzLFjeCNTW6F-BnibL8xE4qnA7Tghks5dLwo'
@@ -162,7 +163,7 @@ export default class PageLayout extends Component {
 
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,900"
           />
           <link
             rel="stylesheet"
@@ -171,20 +172,19 @@ export default class PageLayout extends Component {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Helmet>
 
-        <div>
-          <Drawer
-            open={this.state.mobileOpen}
-            onClose={this.handleDrawerToggle}
-            type={isTemporary ? 'modal' : 'permanent'}
-            drawerContent={<DrawerContent posts={posts} />}
-            position={'fixed'}>
-            <Header
-              handleDrawerToggle={this.handleDrawerToggle}
-              isTemporary={isTemporary}
-            />
-            {this._renderMain()}
-          </Drawer>
-        </div>
+        <Drawer
+          open={this.state.mobileOpen}
+          onClose={this.handleDrawerToggle}
+          type={isTemporary ? 'modal' : 'permanent'}
+          drawerContent={<DrawerContent posts={posts} />}
+          position={'fixed'}
+          style={{ height: '100%' }}>
+          <Header
+            handleDrawerToggle={this.handleDrawerToggle}
+            isTemporary={isTemporary}
+          />
+          {this._renderMain()}
+        </Drawer>
       </div>
     );
   }

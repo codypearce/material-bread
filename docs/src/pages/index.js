@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 
 import Prism from 'prismjs';
-import { LogoWithText, PlatformButton } from '@components';
-import browser from '../assets/browser.svg';
-import iphone from '../assets/iphone.svg';
-import imac from '../assets/imac.svg';
-import GitHubButton from 'react-github-btn';
+import { Logo } from '@components';
+
 import { Button } from '../../../src/index';
 
 import HomeLiveEdit from '../components/HomeLiveEdit/HomeLiveEdit';
@@ -28,67 +25,70 @@ class Index extends Component {
       <div style={styles.container}>
         <div
           style={{
-            padding: '0 120px',
-            background: '#0097A7',
+            padding: '0 60px',
             display: 'flex',
+            height: '100%',
           }}>
+          <div className="home__half" />
+          <div className="home__half--right" />
           <div
+            className="home__half__content"
             style={{
-              marginTop: 40,
+              marginTop: 56,
               borderRadius: 2,
               width: '100%',
-              minWidth: 600,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
             }}>
-            <LogoWithText subtitle width={247} height={204} />
-            <h2
-              style={{
-                color: 'white',
+            <div>
+              <Logo
+                animated
+                width={246}
+                height={204}
+                style={{ marginLeft: 100, marginTop: 80 }}
+              />
+              <h1
+                style={{
+                  color: 'white',
+                  fontSize: 70,
+                  marginBottom: 10,
+                  fontWeight: 900,
+                  marginTop: 10,
+                }}>
+                {'  '}Material Bread
+              </h1>
 
-                marginBottom: 40,
-                fontWeight: 400,
-                fontSize: 18,
-              }}>
-              React Native Components that work on all Platforms
-            </h2>
-            <GitHubButton
-              href="https://github.com/codypearce/material-bread"
-              data-size="large"
-              data-show-count="true"
-              aria-label="Star codypearce/material-bread on GitHub">
-              Star
-            </GitHubButton>
-            <h2
-              style={{
-                color: 'white',
-
-                fontWeight: 400,
-                fontSize: 20,
-              }}>
-              Choose your platform
-            </h2>
-            <div
-              className="Home__platformRow"
-              style={{
-                borderRadius: 2,
-              }}>
-              <PlatformButton
-                text="REACT NATIVE"
-                img={iphone}
-                href={'/getting-started/react-native'}
-              />
-              <PlatformButton
-                text="REACT"
-                img={browser}
-                href={'/getting-started/web'}
-              />
-              <PlatformButton
-                text="ELECTRON"
-                img={imac}
-                href={'/getting-started/electron'}
-              />
+              <h2
+                style={{
+                  // color: '#555',
+                  color: 'white',
+                  marginBottom: 40,
+                  fontWeight: 400,
+                  fontSize: 18,
+                }}>
+                React Native Components that work on six platforms
+              </h2>
+              <div style={{ display: 'flex' }}>
+                <Button
+                  type={'contained'}
+                  text="React Native"
+                  color="#E91E63"
+                  containerStyle={{ marginRight: 8 }}
+                />
+                <Button
+                  type={'contained'}
+                  text="React"
+                  color="#009688"
+                  containerStyle={{ marginRight: 8 }}
+                />
+                <Button type={'contained'} color="#03A9F4" text="Electron" />
+              </div>
             </div>
           </div>
-          <div style={{ width: '100%', marginTop: 10 }}>
+          <div
+            style={{ width: '100%', margin: 'auto' }}
+            className="home__half__content">
             <div
               style={{
                 display: 'flex',
@@ -137,13 +137,7 @@ class Index extends Component {
                 onClick={() => this.changePreview('desktop')}
               />
             </div>
-            <HomeLiveEdit
-              code={`<Button text="Button" type="outlined"/>`}
-              scope={{ Button }}
-              preview={preview}
-              // noInline={true}
-              // livePreviewBackground={livePreviewBackground}
-            />
+            <HomeLiveEdit preview={preview} />
           </div>
         </div>
       </div>
@@ -156,6 +150,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
+    height: '100%',
   },
   code: {},
 };
