@@ -70,19 +70,31 @@ class Index extends Component {
                 React Native Components that work on six platforms
               </h2>
               <div style={{ display: 'flex' }}>
-                <Button
-                  type={'contained'}
-                  text="React Native"
-                  color="#E91E63"
-                  containerStyle={{ marginRight: 8 }}
-                />
-                <Button
-                  type={'contained'}
-                  text="React"
-                  color="#009688"
-                  containerStyle={{ marginRight: 8 }}
-                />
-                <Button type={'contained'} color="#03A9F4" text="Electron" />
+                <a
+                  href={'/getting-started/react-native'}
+                  style={{ textDecoration: 'none' }}>
+                  <Button
+                    type={'contained'}
+                    text="React Native"
+                    color="#E91E63"
+                    containerStyle={{ marginRight: 8 }}
+                  />
+                </a>
+                <a
+                  href={'/getting-started/web'}
+                  style={{ textDecoration: 'none' }}>
+                  <Button
+                    type={'contained'}
+                    text="React"
+                    color="#009688"
+                    containerStyle={{ marginRight: 8 }}
+                  />
+                </a>
+                <a
+                  href={'/getting-started/electron'}
+                  style={{ textDecoration: 'none' }}>
+                  <Button type={'contained'} color="#03A9F4" text="Electron" />
+                </a>
               </div>
             </div>
           </div>
