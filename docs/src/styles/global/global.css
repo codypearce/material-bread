@@ -671,6 +671,9 @@ div[role='group'][tabindex] {
   .home__subtitle {
     text-align: center;
   }
+  .home__title {
+    font-size: 58px;
+  }
   .home__buttons {
     justify-content: center;
   }
