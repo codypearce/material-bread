@@ -29,10 +29,9 @@ class CodeInline extends Component {
         <code
           style={{
             backgroundColor: '#f1f1f1',
-            boxShadow: '2px 2px 8px 0px rgba(46, 61, 73, 0.15)',
             color: color,
             fontFamily: 'monospace',
-            padding: 4,
+            padding: 5,
             borderRadius: 4,
             whiteSpace: 'nowrap',
             fontSize: 11,

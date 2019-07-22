@@ -17,11 +17,29 @@ export default class PropsTable extends Component {
     const { data } = this.props;
     return (
       <DataTable>
-        <DataTableRow style={{ backgroundColor: '#eee' }}>
-          <DataTableCell text={'Name'} type={'header'} borderRight />
-          <DataTableCell text={'Description'} type={'header'} flex={2} />
-          <DataTableCell text={'Type'} type={'header'} />
-          <DataTableCell text={'Default'} type={'header'} />
+        <DataTableRow style={{ backgroundColor: '#050342' }}>
+          <DataTableCell
+            text={'Name'}
+            type={'header'}
+            borderRight
+            textStyle={{ color: 'white' }}
+          />
+          <DataTableCell
+            text={'Description'}
+            type={'header'}
+            flex={2}
+            textStyle={{ color: 'white' }}
+          />
+          <DataTableCell
+            text={'Type'}
+            type={'header'}
+            textStyle={{ color: 'white' }}
+          />
+          <DataTableCell
+            text={'Default'}
+            type={'header'}
+            textStyle={{ color: 'white' }}
+          />
         </DataTableRow>
         {data.map(row => (
           <DataTableRow key={row.name}>

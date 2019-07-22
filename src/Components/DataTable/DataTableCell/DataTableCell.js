@@ -27,6 +27,7 @@ class TableCell extends Component {
     type: PropTypes.string,
     sortingIcon: PropTypes.string,
     relativeWidth: PropTypes.number,
+    textStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   };
   static defaultProps = {
     relativeWidth: 1,
@@ -73,12 +74,12 @@ class TableCell extends Component {
   }
 
   _renderText() {
-    const { text, type, sortingIcon } = this.props;
+    const { text, type, sortingIcon, textStyle } = this.props;
     const style = type == 'header' ? styles.textHeader : styles.text;
     let color = type == 'header' ? 'rgba(0,0,0,.54)' : 'rgba(0,0,0,.87)';
     if (sortingIcon == 'down' || sortingIcon == 'up') color = 'black';
 
-    return <Text style={[style, { color }]}>{text}</Text>;
+    return <Text style={[style, { color }, textStyle]}>{text}</Text>;
   }
   render() {
     const {
