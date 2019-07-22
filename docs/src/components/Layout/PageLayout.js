@@ -104,7 +104,6 @@ export default class PageLayout extends Component {
       return (
         <main
           style={{
-            // background: '#0097A7',
             paddingTop: 0,
             marginTop: 0,
             height: '100%',
@@ -128,7 +127,7 @@ export default class PageLayout extends Component {
   }
 
   render() {
-    const { posts } = this.props;
+    const { posts, pageContext } = this.props;
     const { isTemporary } = this.state;
     if (!this.state.firstLoaded)
       return (
@@ -178,7 +177,7 @@ export default class PageLayout extends Component {
           type={isTemporary ? 'modal' : 'permanent'}
           drawerContent={<DrawerContent posts={posts} />}
           position={'fixed'}
-          style={{ height: '100%' }}>
+          style={{ height: pageContext.layout === 'home' ? '100%' : 'auto' }}>
           <Header
             handleDrawerToggle={this.handleDrawerToggle}
             isTemporary={isTemporary}
