@@ -89,6 +89,10 @@ class Header extends Component {
                     <img style={{ width: 28, height: 28 }} src={github} />
                   )}
                 </MediaQuery>
+
+                {!backgroundOverride && (
+                  <img style={{ width: 28, height: 28 }} src={github} />
+                )}
               </Ripple>
             </a>,
           ]}
