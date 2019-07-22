@@ -139,7 +139,7 @@ div[role='group'][tabindex] {
 }
 
 .main {
-  max-width: 760px;
+  max-width: 860px;
   margin-left: 130px;
   margin-right: 40px;
   padding-top: 40px;
@@ -148,31 +148,19 @@ div[role='group'][tabindex] {
 }
 
 .main--permanentDrawer {
-  max-width: 760px;
-  margin-left: calc(130px);
+  max-width: 860px;
+  margin-left: calc(40px);
   margin-right: 40px;
-  padding-top: 40px;
+  padding-top: 100px;
   padding-left: 0px;
   padding-right: 0px;
 }
 .main--temporaryDrawer {
   margin-left: 0;
   margin-right: 0;
-  padding-top: 60px;
+  padding-top: 100px;
   padding-left: 24px;
   padding-right: 24px;
-}
-
-.Home__platformRow {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-}
-
-@media (max-width: 600px) {
-  .Home__platformRow {
-    flex-direction: column;
-  }
 }
 
 @import url('https://fonts.googleapis.com/css?family=Raleway');

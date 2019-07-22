@@ -56,6 +56,7 @@ class Header extends Component {
           style={{
             boxShadow: 'none',
             zIndex: 10,
+            paddingHorizontal: 34,
           }}
           navigation={
             <IconButton

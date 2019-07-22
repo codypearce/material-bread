@@ -13,6 +13,7 @@ class ComponentDemo extends Component {
     code: PropTypes.string,
     scope: PropTypes.object,
     noInline: PropTypes.bool,
+    livePreviewBackground: PropTypes.string,
   };
 
   render() {

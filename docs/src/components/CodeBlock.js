@@ -47,6 +47,7 @@ class CodeBlock extends Component {
         style={{
           width: small ? 'auto' : 'auto',
           paddingRight: small ? 44 : 16,
+          boxShadow: '2px 2px 8px 0px rgba(46, 61, 73, 0.15)',
           ...style,
         }}>
         <code

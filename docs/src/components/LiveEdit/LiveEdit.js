@@ -27,13 +27,14 @@ class LiveEdit extends Component {
         mountStylesheet={false}
         noInline={noInline}
         style={{
-          boxShadow: '0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23)',
           borderRadius: 6,
           backgroundColor: '#fafafa',
+          boxShadow: '2px 2px 8px 0px rgba(46, 61, 73, 0.15)',
         }}>
         <LivePreview
           style={{
             padding: 24,
+
             borderTopRightRadius: 6,
             borderTopLeftRadius: 6,
             backgroundColor: livePreviewBackground
