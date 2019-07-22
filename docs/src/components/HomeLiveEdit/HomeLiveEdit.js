@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { LiveProvider, LiveError, LivePreview } from 'react-live';
+// import HomeLiveEditToolTip from './HomeLiveEditToolTip';
+import BrowserCSS from '../BrowserCSS';
 import { View, Image, Text } from 'react-native';
-import { ComponentMainDemo, CodeInline } from '@components';
 import {
   Backdrop,
   List,
@@ -9,9 +12,9 @@ import {
   IconButton,
   Avatar,
   Heading,
-} from '../../../../../src/index';
+} from '../../../../src';
 
-export const code = `
+const thiscode = `
 class Page extends React.Component {
   render() {
     const styles = {
@@ -77,6 +80,9 @@ class Page extends React.Component {
           secondaryText={secondaryText} 
           media={album} 
           actionItem={iconFav} 
+          textStyle={{fontSize: 12, flex: 1}}
+          secondaryTextStyle={{fontSize: 10}}
+          style={{width: '100%', paddingLeft: 12, paddingRight: 12}}
         /> 
     );
 
@@ -86,54 +92,79 @@ class Page extends React.Component {
             <Heading text={'Albums'} style={{ marginLeft: 20, fontSize: 14,}} />
             <AlbumItem text={'Back in Black'} secondaryText={'AC/DC'} />
             <AlbumItem text={'Hotel California'} secondaryText={'Eagles'} />
-            <AlbumItem text={'Dark Side of the Moon'} secondaryText={'Pink Floyd'} />
+            <AlbumItem text={'Paranoid'} secondaryText={'Black Sabbath'} />
             <AlbumItem text={'Led Zeppelin IV'} secondaryText={'Led Zeppelin'} />
         </Backdrop>
       </View>
     );
   }
-}`;
+}
+`;
+class LiveEdit extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-const MainDemo = pageHref => (
-  <ComponentMainDemo
-    pageHref={pageHref}
-    description={
-      <div>
-        <div style={{}}>
-          The <CodeInline code="Backdrop" type="element" /> is composed of three
-          main parts: <CodeInline code="backLayerConcealed" type="prop" />,{' '}
-          <CodeInline code="backLayerRevealed" type="prop" />, and the{' '}
-          <CodeInline code="frontLayer" type="value" />.{' '}
-          <CodeInline code="backLayerConcealed" type="prop" /> renders the{' '}
-          backlayer when the <CodeInline code="frontLayer" type="value" /> is
-          showing. <CodeInline code="backLayerRevealed" type="prop" /> renders
-          the full backlayer.
-          <CodeInline code="children" type="prop" /> renders as the{' '}
-          <CodeInline code="frontLayer" type="value" />.
-        </div>
-        <div style={{ marginTop: 20 }}>
-          By default when the <CodeInline code="backLayer" type="value" /> is
-          activated it will take up the full height of the device with the{' '}
-          <CodeInline code="frontLayer" type="value" /> at the bottom. You can
-          customize this by passing a number to the{' '}
-          <CodeInline code="offset" type="prop" /> prop for the size the
-          backlayer should take up.
-        </div>
-      </div>
+  static propTypes = {
+    code: PropTypes.string,
+    scope: PropTypes.object,
+    syntax: PropTypes.string,
+    noInline: PropTypes.bool,
+    preview: PropTypes.string,
+  };
+
+  render() {
+    const { noInline, preview } = this.props;
+    if (typeof window == 'undefined') {
+      return null;
     }
-    code={code}
-    scope={{
-      Backdrop,
-      List,
-      ListItem,
-      Icon,
-      IconButton,
-      Avatar,
-      Heading,
-      View,
-      Image,
-      Text,
-    }}
-  />
-);
-export default MainDemo;
+    return (
+      <LiveProvider
+        code={thiscode}
+        scope={{
+          Backdrop,
+          List,
+          ListItem,
+          Icon,
+          IconButton,
+          Avatar,
+          Heading,
+          View,
+          Image,
+          Text,
+        }}
+        mountStylesheet={false}
+        noInline={noInline}
+        style={{
+          borderRadius: 6,
+          backgroundColor: 'transparent',
+          maxWidth: 800,
+          margin: '0 auto',
+        }}>
+        <BrowserCSS preview={preview}>
+          <LivePreview
+            style={{
+              width: '100%',
+              borderTopRightRadius: 6,
+              borderTopLeftRadius: 6,
+              backgroundColor: 'transparent',
+              height: '100%',
+            }}
+          />
+        </BrowserCSS>
+
+        <LiveError
+          style={{
+            backgroundColor: '#ffebeb',
+            color: '#EF5350',
+            padding: 24,
+            borderBottomLeftRadius: 6,
+            borderBottomRightRadius: 6,
+          }}
+        />
+      </LiveProvider>
+    );
+  }
+}
+
+export default LiveEdit;

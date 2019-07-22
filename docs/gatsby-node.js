@@ -18,47 +18,13 @@
 //   }
 // };
 
-// exports.createPages = ({ graphql, actions }) => {
-//   const { createPage } = actions;
-
-//   return graphql(`
-//     {
-//       allMarkdownRemark {
-//         edges {
-//           node {
-//             fields {
-//               slug
-//             }
-//             frontmatter {
-//               layout
-//               path
-//             }
-//           }
-//         }
-//       }
-//     }
-//   `).then(result => {
-//     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-//       if (node.frontmatter.layout == 'page') {
-//         createPage({
-//           path: node.frontmatter.path,
-//           component: path.resolve(`./src/templates/page.js`),
-//           context: {
-//             slug: node.fields.slug,
-//           },
-//         });
-//       } else if (node.frontmatter.layout == 'component') {
-//         createPage({
-//           path: node.frontmatter.path,
-//           component: path.resolve(`./src/templates/component.js`),
-//           context: {
-//             slug: node.fields.slug,
-//           },
-//         });
-//       }
-//     });
-//   });
-// };
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage } = actions;
+  if (page.path === '/') {
+    page.context.layout = 'home';
+    createPage(page);
+  }
+};
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === 'build-html') {

@@ -2,44 +2,59 @@ import React from 'react';
 import Logo from './Logo';
 import PropTypes from 'prop-types';
 
-function LogoWithText({ subtitle, style }) {
+function LogoWithText({ subtitle, style, height, width }) {
   return (
     <div style={styles.container}>
-      <Logo animated style={{ ...style }} />
-      <h1 style={styles.title} className={'Logo__title'}>
-        Material Bread
-      </h1>
-      {subtitle ? (
-        <h4 style={styles.subtitle}>One Component Library, Six Platforms</h4>
-      ) : null}
+      <Logo
+        animated
+        height={height}
+        width={width}
+        style={{ width: '100%', ...style }}
+      />
+      <div style={{ alignSelf: 'center', textAlign: 'center' }}>
+        <h1 style={styles.title} className={'Logo__title'}>
+          Material Bread
+        </h1>
+        {subtitle ? (
+          <h4 style={styles.subtitle}>One Component Library, Six Platforms</h4>
+        ) : null}
+      </div>
     </div>
   );
 }
 
 const styles = {
   container: {
-    maxWidth: 387,
+    // maxWidth: 387,
     marginBottom: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    // display: 'flex',
+    display: 'inline-block',
   },
   title: {
     fontSize: 48,
-    textAlign: 'center',
     marginTop: 10,
     marginBottom: 0,
+    color: 'white',
+    textAlign: 'center',
   },
   subtitle: {
     fontSize: 16,
-    color: 'rgba(10, 10, 10, 0.67)',
+    // color: 'rgba(10, 10, 10, 0.67)',
     fontWeight: 400,
     margin: 0,
     marginTop: 6,
-    textAlign: 'center',
+    marginBottom: 0,
+    color: 'white',
   },
 };
 
 LogoWithText.propTypes = {
   subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   style: PropTypes.object,
+  height: PropTypes.number,
+  width: PropTypes.number,
 };
 
 export default LogoWithText;

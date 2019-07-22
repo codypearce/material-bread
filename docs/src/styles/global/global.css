@@ -1,9 +1,27 @@
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 body {
   font-family: 'Roboto', sans-serif;
   background-color: white !important;
+  height: 100%;
+}
+
+#___gatsby {
+  height: 100%;
+}
+
+#___gatsby > div:first-child {
+  height: 100% !important;
+}
+
+#___gatsby > div:nth-child(2) {
+  height: 100%;
+}
+
+div[role='group'][tabindex] {
+  height: 100%;
 }
 
 .row {
@@ -18,7 +36,7 @@ body {
 .SideMenu {
   position: fixed;
   right: 50px;
-  top: 80px;
+  top: 200px;
 }
 
 .SideMenu__ListItem {
@@ -154,5 +172,516 @@ body {
 @media (max-width: 600px) {
   .Home__platformRow {
     flex-direction: column;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+.browser {
+  width: 400px;
+  height: 300px;
+  background: #f5f5f5;
+  margin: 20px auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.browser_bar {
+  width: 100%;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  height: 30px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+}
+.browser_bar_btns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 6px;
+}
+.browser_bar_btn {
+  height: 10px;
+  width: 10px;
+  line-height: 10px;
+  padding: 0;
+  border-radius: 100%;
+  background-color: #e74c3c;
+  margin-right: 8px;
+  display: inline-block;
+}
+.browser_bar_btn:hover {
+  cursor: pointer;
+}
+.browser_bar_btn--mini {
+  background-color: #27ae60;
+}
+.browser_bar_btn--resize {
+  background-color: #f1c40f;
+}
+
+.browser_body {
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: calc(100% - 30px);
+}
+.browser_body_title {
+  margin-top: 50px;
+  font-size: 30px;
+  color: #444;
+  font-weight: bold;
+}
+.browser_body_content:nth-child(1) {
+  margin-top: 50px;
+}
+.browser_body_content:last-child {
+  margin-bottom: 50px;
+}
+.browser_body_content {
+  min-height: 20px;
+  border-radius: 20px;
+  background-color: #ccc;
+  margin-top: 40px;
+  display: flex;
+}
+.browser_body::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+.browser_body::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+.browser_body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #bbb;
+}
+
+.browser__bar__search {
+  width: 225px;
+  height: 15px;
+  border-radius: 20px;
+  background: #ddd;
+  margin: 0 auto;
+}
+.browser__bar__plus {
+  font-size: 12px !important;
+  color: #888;
+  margin-right: 10px;
+}
+
+.browser__appbar {
+  height: 20px;
+  width: 100%;
+  background: #03a9f4;
+}
+
+.browser_bar_tabs {
+  display: flex;
+  flex-direction: flex-row;
+}
+.browser_bar_tab {
+  border-bottom: 30px solid #ddd;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  height: 0;
+  width: 50px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.browser_bar_tab:first-child {
+  margin-left: 10px;
+}
+.browser_bar_tab:nth-child(2) {
+  margin-left: -30px;
+}
+.browser_bar_tab:nth-child(3) {
+  margin-left: -30px;
+}
+.browser_bar_tab.active {
+  border-bottom: 30px solid #ccc;
+  z-index: 10;
+}
+.browser_bar_tab span {
+  position: absolute;
+  top: 6px;
+  font-size: 12px;
+  color: #333;
+}
+
+.browser__desktop__bar {
+  height: 20px;
+  position: relative;
+  border: 1px solid rgba(150, 150, 150, 0.3);
+  box-sizing: border-box;
+  background: #efeeef;
+}
+.browser__desktop__title {
+  text-align: center;
+  font-size: 11px;
+  color: #444;
+  position: absolute;
+  width: 100%;
+}
+
+.iphonex {
+  height: 475px;
+  width: 240px;
+  position: relative;
+}
+
+.iphonex__case {
+  position: absolute;
+  background: white;
+  width: 235px;
+  height: 475px;
+  border: 11px solid black;
+  box-sizing: border-box;
+  border-radius: 35px;
+  left: 3px;
+}
+
+.iphonex__top {
+  position: absolute;
+  background: transparent;
+  height: 15px;
+  width: 208px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+.iphonex__time {
+  position: absolute;
+  top: 3px;
+  left: 14px;
+  font-size: 10px;
+  font-weight: bold;
+  font-family: 'Roboto';
+}
+.iphonex__wifi {
+  position: absolute;
+  right: 25px;
+  font-size: 10px !important;
+
+  top: 3px;
+}
+.iphonex__battery {
+  position: absolute;
+  right: 8px;
+  font-size: 10px !important;
+  top: 3px;
+}
+
+.iphonex__notch {
+  background: black;
+  height: 15px;
+  width: 115px;
+  position: absolute;
+  left: 48px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.iphonex__speaker {
+  background: rgb(51, 51, 51);
+  width: 30px;
+  height: 6px;
+  border-radius: 8px;
+  position: absolute;
+  left: 43px;
+}
+
+.iphonex__camera {
+  background: rgb(51, 51, 51);
+  width: 7px;
+  height: 7px;
+  border-radius: 8px;
+  position: absolute;
+  left: 80px;
+}
+
+.iphonex__screen {
+  width: 213px;
+  height: 435px;
+  background: transparent;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  top: 20px;
+  position: absolute;
+  overflow: hidden;
+}
+
+.iphonex__power {
+  width: 3px;
+  height: 19px;
+  background: rgb(204, 204, 204);
+  position: absolute;
+  left: 0;
+  top: 62px;
+}
+.iphonex__volume {
+  width: 3px;
+  height: 32px;
+  background: rgb(204, 204, 204);
+  position: absolute;
+  left: 0px;
+  top: 98px;
+}
+.iphonex__volume--down {
+  top: 142px;
+}
+
+.pixel {
+  border: 9px solid #222;
+  height: 475px;
+  width: 229px;
+  border-radius: 25px;
+  transition: all 0.3s linear;
+  position: relative;
+  box-sizing: border-box;
+  background: #222;
+}
+.pixel__notch {
+  position: absolute;
+  height: 28px;
+  width: 74px;
+  background: #222;
+  left: 69px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.pixel__notch--background {
+  position: absolute;
+  height: 28px;
+  width: 100%;
+  background: #222;
+  left: 0px;
+}
+.pixel__notch--hole--left {
+  position: absolute;
+  height: 28px;
+  width: 71px;
+  background: white;
+  left: 0px;
+  top: 1px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 10px;
+}
+
+.pixel__notch--hole--right {
+  position: absolute;
+  height: 28px;
+  width: 71px;
+  background: white;
+  right: 0px;
+  top: 1px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 10px;
+}
+.pixel__notch--fill {
+  width: 100%;
+  height: 10px;
+  background: white;
+  position: absolute;
+  top: 20px;
+}
+.pixel__camera--left {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  background: white;
+  top: 9px;
+  left: 7px;
+  border-radius: 100px;
+}
+
+.pixel__camera--right {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  background: white;
+  top: 9px;
+  right: 7px;
+  border-radius: 100px;
+}
+
+.pixel__speaker--top {
+  position: absolute;
+  height: 5px;
+  width: 25px;
+  background: white;
+  top: 14px;
+  left: 24px;
+  border-radius: 2px;
+}
+.pixel__screen {
+  height: 397px;
+  left: 0;
+  top: 30px;
+  background: white;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+.pixel__chin {
+  width: 100%;
+  height: 32px;
+  background: #222;
+  position: absolute;
+  bottom: -2px;
+  z-index: 100;
+  border: 0;
+}
+.pixel__speaker--bottom {
+  height: 5px;
+  width: 67px;
+  background: white;
+  bottom: 5px;
+  left: 72px;
+  border-radius: 2px;
+  position: absolute;
+}
+
+.home__half {
+  transform: skewX(-14deg) translateX(-200px);
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #04023e;
+  width: calc(50% + 200px);
+  z-index: -1;
+
+  animation: 700ms slideIn cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.home__half--right {
+  transform: skewX(-14deg) translateX(140px);
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #f5f5f5;
+  width: calc(50% + 140px);
+  z-index: -1;
+
+  animation: 700ms slideInTop cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+@keyframes slideIn {
+  0% {
+    transform: skewX(-14deg) translateX(-200px) translateY(100%) scale(0.95);
+  }
+
+  100% {
+    transform: skewX(-14deg) translateX(-200px) translateY(0%) scale(1);
+  }
+}
+
+@keyframes slideInTop {
+  0% {
+    transform: skewX(-14deg) translateX(140px) translateY(-100%) scale(0.95);
+  }
+
+  100% {
+    transform: skewX(-14deg) translateX(140px) translateY(0%) scale(1);
+  }
+}
+
+.home__half__content {
+  animation: 1s 800ms opacity ease-in-out forwards;
+  opacity: 0;
+  margin: auto;
+  border-radius: 2px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 585px;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1260px) {
+  .home__half__content {
+    margin-bottom: auto;
+    margin-top: 56px;
+  }
+  .home__half__content--right {
+    margin-top: auto;
+    margin-bottom: 10px;
+  }
+}
+
+.home {
+  display: flex;
+  height: 100%;
+  overflow-y: auto;
+}
+.home__title {
+  color: white;
+  font-size: 70px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-weight: 900;
+}
+
+.home__subtitle {
+  color: white;
+  font-weight: 400;
+  margin-bottom: 40px;
+  font-size: 18px;
+}
+.home__buttons {
+  display: flex;
+}
+
+@media (max-width: 1000px) {
+  .home {
+    flex-direction: column;
+    background: #04023e;
+    padding: 0 8px;
+  }
+  .home__title,
+  .home__subtitle {
+    text-align: center;
+  }
+  .home__title {
+    font-size: 58px;
+  }
+  .home__buttons {
+    justify-content: center;
+  }
+  .home__half--right {
+    background: salmon;
+    opacity: 0;
+  }
+  .home__half {
+    opacity: 0;
   }
 }
