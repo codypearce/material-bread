@@ -57,7 +57,7 @@ class Header extends Component {
           }}
           navigation={
             <IconButton
-              color={'#263238'}
+              color={backgroundOverride ? 'white' : '#263238'}
               size={28}
               name={'menu'}
               onPress={handleDrawerToggle}
