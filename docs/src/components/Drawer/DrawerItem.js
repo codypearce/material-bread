@@ -25,7 +25,7 @@ export class DrawerItem extends Component {
   render() {
     const { label, selected, subItem, subsubItem, icon } = this.props;
     let marginLeft = subItem ? -6 : 0;
-    if (subsubItem) marginLeft = 0;
+    if (subsubItem) marginLeft = 8;
     return (
       <ListItem
         onPress={this.handleClick}
@@ -43,6 +43,7 @@ export class DrawerItem extends Component {
           marginLeft,
           paddingTop: subItem || subsubItem ? 12 : 16,
           paddingBottom: subItem || subsubItem ? 12 : 16,
+          width: subsubItem ? 'calc(100% - 8)' : '100%',
         }}
         rippleProps={{ rippleColor: '#fff', rippleContainerBorderRadius: 4 }}>
         <Text
