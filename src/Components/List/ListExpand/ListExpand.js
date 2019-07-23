@@ -16,6 +16,8 @@ class ListExpand extends Component {
     titleStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     theme: PropTypes.object,
     icon: PropTypes.node,
+    expandIconStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    rippleProps: PropTypes.object,
   };
 
   state = {
@@ -111,7 +113,14 @@ class ListExpand extends Component {
   }
 
   render() {
-    const { title, style, titleStyle, icon } = this.props;
+    const {
+      title,
+      style,
+      titleStyle,
+      icon,
+      expandIconStyle,
+      rippleProps,
+    } = this.props;
     const { isOpen } = this.state;
 
     return (
@@ -119,14 +128,19 @@ class ListExpand extends Component {
         <Ripple
           style={[styles.container, style]}
           onPress={this.toggleMenu}
-          rippleDuration={100}>
+          rippleDuration={100}
+          {...rippleProps}>
           {icon ? this._renderIcon() : null}
           <Text
             style={[styles.title, { marginLeft: icon ? 32 : 0 }, titleStyle]}>
             {title}
           </Text>
           <View style={{ flex: 1 }} />
-          <Icon name={isOpen ? 'expand-less' : 'expand-more'} size={24} />
+          <Icon
+            name={isOpen ? 'expand-less' : 'expand-more'}
+            size={24}
+            style={expandIconStyle}
+          />
         </Ripple>
         {this.renderExpandedContent()}
       </View>

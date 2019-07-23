@@ -21,11 +21,11 @@ const styles = {
   container: {
     padding: '12px 6px',
     paddingRight: 10,
-    backgroundColor: '#263238',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 10,
+    backgroundColor: '#04023d',
   },
   right: {
     marginLeft: 8,

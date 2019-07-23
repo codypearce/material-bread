@@ -26,6 +26,7 @@ class ListItem extends Component {
       PropTypes.object,
       PropTypes.array,
     ]),
+    rippleProps: PropTypes.object,
   };
 
   _renderText() {
@@ -97,6 +98,7 @@ class ListItem extends Component {
       icon,
       actionItem,
       leadingActionItem,
+      rippleProps,
     } = this.props;
 
     let contentMargin = media ? 16 : 0;
@@ -121,7 +123,8 @@ class ListItem extends Component {
             zIndex: 1,
           },
           style,
-        ]}>
+        ]}
+        {...rippleProps}>
         {leadingActionItem ? this._renderLeadingActionItem() : null}
         {icon ? this._renderIcon() : null}
         {media ? media : null}

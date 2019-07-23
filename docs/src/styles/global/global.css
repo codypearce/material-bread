@@ -30,25 +30,27 @@ div[role='group'][tabindex] {
 }
 
 .is-current .SideMenu__Link {
-  color: #222;
+  color: #04023e;
 }
 
 .SideMenu {
   position: fixed;
   right: 50px;
-  top: 200px;
+  top: 100px;
 }
 
 .SideMenu__ListItem {
   list-style: none;
+  margin-bottom: 12px;
 }
 .SideMenu__Link {
   text-decoration: none;
-  color: rgba(20, 20, 20, 0.5);
-  font-size: 16px;
+  color: rgba(4, 2, 62, 0.5);
+  font-size: 14px;
+  font-weight: 500;
 }
 .SideMenu__Link:hover {
-  color: rgba(20, 20, 20, 0.8);
+  color: rgba(4, 2, 62, 0.8);
 }
 
 .SideMenu__ListItem--sub {

@@ -43,7 +43,7 @@ export default class PropsTable extends Component {
           <DataTableCell
             text={'Default'}
             type={'header'}
-            textStyle={{ color: 'white' }}
+            textStyle={{ color: 'white', borderTopRightRadius: 6 }}
           />
         </DataTableRow>
         {data.map(row => (

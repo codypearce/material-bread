@@ -26,13 +26,16 @@ export class DrawerItem extends Component {
     let paddingLeft = subItem ? 12 : 0;
     if (subsubItem) paddingLeft = 24;
     return (
-      <ListItem onPress={this.handleClick} selected={selected}>
+      <ListItem
+        onPress={this.handleClick}
+        selected={selected}
+        style={{ backgroundColor: '#04023d' }}>
         <Text
           style={{
             fontSize: 11,
-            fontWeight: '500',
+            fontWeight: '400',
             paddingLeft,
-            color: '#000',
+            color: '#fff',
           }}>
           {label}
         </Text>

@@ -16,6 +16,7 @@ const propData = [
   ],
   ['media', 'Dispays arbitrary node to the left of text', 'node', ''],
   ['onPress', 'Callback on listItem', 'func', ''],
+  ['rippleProps', 'Ripple props spread', 'object', ''],
   ['secondaryText', 'Secondary text, show under the main text', 'string', ''],
   ['secondaryTextStyle', 'Styles secondary text element', 'object', ''],
   ['selected', 'Whether the item is selected', 'bool', ''],

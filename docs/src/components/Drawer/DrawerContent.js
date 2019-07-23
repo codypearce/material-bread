@@ -77,7 +77,7 @@ export default class DrawerContent extends React.PureComponent {
     const { itemSelected, sectionExpanded } = this.state;
 
     return (
-      <ScrollView>
+      <ScrollView style={{ backgroundColor: '#04023d' }}>
         <DrawerHeader />
         <div>
           <DrawerItem

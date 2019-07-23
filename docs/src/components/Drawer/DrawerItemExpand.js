@@ -77,7 +77,8 @@ class DrawerItemExpand extends Component {
     return (
       <ListExpand
         title={label}
-        titleStyle={{ fontSize: 11, fontWeight: '500' }}>
+        titleStyle={{ fontSize: 11, fontWeight: '400', color: '#fff' }}
+        expandIconStyle={{ color: '#fff', fontSize: 16 }}>
         {this.renderMarkdownMenuItems()}
         {this.renderReactMenuItems()}
       </ListExpand>

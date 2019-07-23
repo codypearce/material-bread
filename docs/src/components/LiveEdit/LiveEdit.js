@@ -13,6 +13,7 @@ class LiveEdit extends Component {
     scope: PropTypes.object,
     syntax: PropTypes.string,
     noInline: PropTypes.bool,
+    livePreviewBackground: PropTypes.string,
   };
 
   render() {
