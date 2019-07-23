@@ -106,7 +106,7 @@ class ListItem extends Component {
 
     return (
       <Ripple
-        onPress={onPress}
+        onAnimationEnd={onPress}
         rippleDuration={200}
         disabled={disabled}
         rippleColor={'rgba(0,0,0,.8)'}

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Text } from 'react-native';
 import { navigate } from '@reach/router';
 import { ListItem } from '../../../../src';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 export class DrawerItem extends Component {
   static propTypes = {

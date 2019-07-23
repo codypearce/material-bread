@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ListExpand } from '../../../../src';
 import DrawerItem from './DrawerItem';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 class DrawerItemExpand extends Component {
   static propTypes = {

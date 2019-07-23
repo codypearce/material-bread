@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, View, Text, Platform } from 'react-native';
+import { Animated, View, Text } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import Ripple from '../../Ripple/Ripple';
 import Icon from '../../Icon/Icon';
@@ -85,13 +85,13 @@ class ListExpand extends Component {
         style={{
           height: menuHeight,
           overflow: 'hidden',
-          width: icon && Platform.OS == 'web' ? 'calc(100% - 42px)' : '100%',
-          marginLeft: icon ? 42 : 0,
+          width: '100%',
+          paddingLeft: icon ? 42 : 0,
           zIndex: 100,
         }}>
         <View
           style={{
-            position: 'absolute',
+            // position: 'absolute',
             width: '100%',
             height: initialHeight,
             zIndex: 100,

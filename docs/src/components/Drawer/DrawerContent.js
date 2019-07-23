@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { ScrollView } from 'react-native';
-
 import DrawerItem from './DrawerItem';
 import DrawerItemExpand from './DrawerItemExpand';
 import {
