@@ -162,7 +162,7 @@ div[role='group'][tabindex] {
 
 .main--permanentDrawer {
   max-width: 860px;
-  margin-left: calc(40px);
+  margin-left: 80px;
   margin-right: 40px;
   padding-top: 100px;
   padding-left: 0px;
