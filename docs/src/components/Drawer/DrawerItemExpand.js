@@ -89,7 +89,7 @@ class DrawerItemExpand extends Component {
           ) : null
         }
         rippleProps={{ rippleColor: '#fff', rippleContainerBorderRadius: 4 }}
-        style={{ paddingTop: 16, paddingBottom: 16 }}>
+        style={{ paddingTop: 16, paddingBottom: 16, borderRadius: 4 }}>
         {this.renderMarkdownMenuItems()}
         {this.renderReactMenuItems()}
       </ListExpand>

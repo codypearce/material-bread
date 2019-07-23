@@ -4,6 +4,8 @@ import { Animated, View, Text } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import Ripple from '../../Ripple/Ripple';
 import Icon from '../../Icon/Icon';
+import Hoverable from '../../../Utils/Hoverable/Hoverable.js';
+import color from 'color';
 import styles from './ListExpand.styles';
 
 class ListExpand extends Component {
@@ -24,6 +26,7 @@ class ListExpand extends Component {
     isOpen: false,
     menuHeight: new Animated.Value(0),
     animationDuration: 150,
+    stateBackgroundColor: null,
   };
 
   componentDidMount() {
@@ -112,6 +115,34 @@ class ListExpand extends Component {
     });
   }
 
+  getBackgroundColor = () => {
+    const { stateBackgroundColor } = this.state;
+
+    let implementedBackgroundColor = 'transparent';
+
+    implementedBackgroundColor = stateBackgroundColor
+      ? stateBackgroundColor
+      : implementedBackgroundColor;
+
+    return implementedBackgroundColor;
+  };
+
+  handleHover(toggle) {
+    const { rippleProps } = this.props;
+
+    const hoveredColor =
+      rippleProps && rippleProps.rippleColor
+        ? color(rippleProps.rippleColor)
+            .alpha(0.12)
+            .rgb()
+            .string()
+        : 'rgba(0,0,0,.8)';
+
+    const stateBackgroundColor = toggle ? hoveredColor : 'transparent';
+
+    this.setState({ stateBackgroundColor: stateBackgroundColor });
+  }
+
   render() {
     const {
       title,
@@ -125,23 +156,31 @@ class ListExpand extends Component {
 
     return (
       <View>
-        <Ripple
-          style={[styles.container, style]}
-          onPress={this.toggleMenu}
-          rippleDuration={100}
-          {...rippleProps}>
-          {icon ? this._renderIcon() : null}
-          <Text
-            style={[styles.title, { marginLeft: icon ? 16 : 0 }, titleStyle]}>
-            {title}
-          </Text>
-          <View style={{ flex: 1 }} />
-          <Icon
-            name={isOpen ? 'expand-less' : 'expand-more'}
-            size={24}
-            style={expandIconStyle}
-          />
-        </Ripple>
+        <Hoverable
+          onHoverIn={() => this.handleHover(true)}
+          onHoverOut={() => this.handleHover(false)}>
+          <Ripple
+            style={[
+              styles.container,
+              { backgroundColor: this.getBackgroundColor() },
+              style,
+            ]}
+            onPress={this.toggleMenu}
+            rippleDuration={100}
+            {...rippleProps}>
+            {icon ? this._renderIcon() : null}
+            <Text
+              style={[styles.title, { marginLeft: icon ? 16 : 0 }, titleStyle]}>
+              {title}
+            </Text>
+            <View style={{ flex: 1 }} />
+            <Icon
+              name={isOpen ? 'expand-less' : 'expand-more'}
+              size={24}
+              style={expandIconStyle}
+            />
+          </Ripple>
+        </Hoverable>
         {this.renderExpandedContent()}
       </View>
     );

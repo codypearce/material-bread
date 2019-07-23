@@ -39,11 +39,11 @@ export class DrawerItem extends Component {
           ) : null
         }
         style={{
-          backgroundColor: '#04023d',
           marginLeft,
           paddingTop: subItem || subsubItem ? 12 : 16,
           paddingBottom: subItem || subsubItem ? 12 : 16,
           width: subsubItem ? 'calc(100% - 8)' : '100%',
+          borderRadius: 4,
         }}
         rippleProps={{ rippleColor: '#fff', rippleContainerBorderRadius: 4 }}>
         <Text
