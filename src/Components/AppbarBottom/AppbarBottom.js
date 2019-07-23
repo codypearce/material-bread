@@ -130,7 +130,6 @@ class AppbarBottom extends Component {
     const backgroundColor = color ? color : theme.primary.main;
     return (
       <View style={[styles.contianer, style]}>
-        {this._renderCutout()}
         {this._renderFab()}
 
         <Paper
@@ -146,6 +145,8 @@ class AppbarBottom extends Component {
           {...rest}>
           {children ? children : this._renderAppBarContent()}
         </Paper>
+
+        {this._renderCutout()}
       </View>
     );
   }
