@@ -60,6 +60,7 @@ export default class DrawerContent extends React.PureComponent {
   }
 
   selectItem = name => {
+    console.log(name);
     this.setState({
       itemSelected: name,
     });
@@ -73,7 +74,7 @@ export default class DrawerContent extends React.PureComponent {
 
   render() {
     const { itemSelected, sectionExpanded } = this.state;
-
+    console.log(itemSelected == 'showcase');
     return (
       <div
         style={{

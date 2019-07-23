@@ -95,7 +95,7 @@ class ListItem extends Component {
   }
 
   getBackgroundColor = () => {
-    const { backgroundColor, disabled } = this.props;
+    const { backgroundColor, selected, disabled, rippleProps } = this.props;
     const { stateBackgroundColor } = this.state;
 
     let implementedBackgroundColor = backgroundColor
@@ -104,6 +104,14 @@ class ListItem extends Component {
 
     implementedBackgroundColor = stateBackgroundColor
       ? stateBackgroundColor
+      : implementedBackgroundColor;
+
+    implementedBackgroundColor = selected
+      ? rippleProps &&
+        color(rippleProps.rippleColor)
+          .alpha(0.12)
+          .rgb()
+          .string()
       : implementedBackgroundColor;
 
     return disabled ? 'transparent' : implementedBackgroundColor;

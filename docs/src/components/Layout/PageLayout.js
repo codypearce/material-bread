@@ -179,7 +179,7 @@ export default class PageLayout extends Component {
           position={'fixed'}
           style={{
             height: pageContext.layout === 'home' ? '100%' : 'auto',
-            background: '#f7f9fc',
+            backgroundColor: '#f7f9fc',
           }}
           drawerStyle={{ borderRightWidth: 0 }}
           width={250}>
