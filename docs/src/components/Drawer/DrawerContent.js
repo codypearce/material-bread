@@ -51,16 +51,17 @@ export default class DrawerContent extends React.PureComponent {
   }
 
   handleSelectedItem(pathArray, pathName) {
-    let name = 'home';
+    var name = 'home';
     if (pathName !== '/') {
-      name = pathArray.pop();
+      name = pathArray[pathArray.length - 2];
     }
+
     const formatString = name.replace(/-/g, ' ');
+
     this.selectItem(formatString);
   }
 
   selectItem = name => {
-    console.log(name);
     this.setState({
       itemSelected: name,
     });
@@ -74,7 +75,7 @@ export default class DrawerContent extends React.PureComponent {
 
   render() {
     const { itemSelected, sectionExpanded } = this.state;
-    console.log(itemSelected == 'showcase');
+
     return (
       <div
         style={{

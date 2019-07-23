@@ -94,7 +94,6 @@ class ListExpand extends Component {
         }}>
         <View
           style={{
-            // position: 'absolute',
             width: '100%',
             height: initialHeight,
             zIndex: 100,
