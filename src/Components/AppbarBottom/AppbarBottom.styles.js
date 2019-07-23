@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   fabPos: {
     position: 'absolute',
     zIndex: 11,
-    elevation: Platform.OS === 'android' ? 10 : 0,
+    elevation: Platform.OS === 'android' ? 20 : 0,
     transform: [{ translateY: -25 }],
   },
   centerCut: {
