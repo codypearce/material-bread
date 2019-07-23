@@ -132,7 +132,7 @@ class ListExpand extends Component {
           {...rippleProps}>
           {icon ? this._renderIcon() : null}
           <Text
-            style={[styles.title, { marginLeft: icon ? 32 : 0 }, titleStyle]}>
+            style={[styles.title, { marginLeft: icon ? 16 : 0 }, titleStyle]}>
             {title}
           </Text>
           <View style={{ flex: 1 }} />

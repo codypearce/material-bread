@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ListExpand } from '../../../../src';
 import DrawerItem from './DrawerItem';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 class DrawerItemExpand extends Component {
   static propTypes = {
@@ -12,6 +13,7 @@ class DrawerItemExpand extends Component {
     sectionExpanded: PropTypes.bool,
     markdownMenuItems: PropTypes.array,
     reactPageMenuItems: PropTypes.array,
+    icon: PropTypes.string,
   };
   state = {
     open: false,
@@ -72,13 +74,21 @@ class DrawerItemExpand extends Component {
     });
   }
   render() {
-    const { label } = this.props;
+    const { label, icon } = this.props;
 
     return (
       <ListExpand
         title={label}
         titleStyle={{ fontSize: 11, fontWeight: '400', color: '#fff' }}
-        expandIconStyle={{ color: '#fff', fontSize: 16 }}>
+        expandIconStyle={{ color: '#fff', fontSize: 16 }}
+        icon={
+          <i
+            className={`fa fa-${icon}`}
+            style={{ fontSize: 20, color: 'white' }}
+          />
+        }
+        rippleProps={{ rippleColor: '#fff', rippleContainerBorderRadius: 4 }}
+        style={{ paddingTop: 16, paddingBottom: 16 }}>
         {this.renderMarkdownMenuItems()}
         {this.renderReactMenuItems()}
       </ListExpand>

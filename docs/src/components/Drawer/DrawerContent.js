@@ -77,11 +77,12 @@ export default class DrawerContent extends React.PureComponent {
     const { itemSelected, sectionExpanded } = this.state;
 
     return (
-      <ScrollView style={{ backgroundColor: '#04023d' }}>
+      <ScrollView style={{ backgroundColor: '#04023d', paddingHorizontal: 16 }}>
         <DrawerHeader />
         <div>
           <DrawerItem
             label="Home"
+            icon="home"
             link="/"
             selected={itemSelected == 'home'}
             selectItem={this.selectItem}
@@ -89,6 +90,7 @@ export default class DrawerContent extends React.PureComponent {
 
           <DrawerItemExpand
             label="Getting Started"
+            icon="rocket"
             reactPageMenuItems={gettingStartedPages}
             itemSelected={itemSelected}
             selectItem={this.selectItem}
@@ -97,6 +99,7 @@ export default class DrawerContent extends React.PureComponent {
           />
           <DrawerItemExpand
             label="Style"
+            icon="tint"
             reactPageMenuItems={stylePages}
             selectItem={this.selectItem}
             itemSelected={itemSelected}
@@ -105,6 +108,7 @@ export default class DrawerContent extends React.PureComponent {
           />
           <DrawerItemExpand
             label="Components"
+            icon="cube"
             reactPageMenuItems={componentPages}
             selectItem={this.selectItem}
             itemSelected={itemSelected}
@@ -113,6 +117,7 @@ export default class DrawerContent extends React.PureComponent {
           />
           <DrawerItemExpand
             label="Utils"
+            icon="wrench"
             reactPageMenuItems={utilsPages}
             selectItem={this.selectItem}
             itemSelected={itemSelected}
@@ -121,17 +126,20 @@ export default class DrawerContent extends React.PureComponent {
           />
           <DrawerItem
             label="Storybook"
+            icon="book"
             link="https://codypearce.github.io/material-bread/"
             selectItem={this.selectItem}
           />
           <DrawerItem
             label="Showcase"
+            icon="tablet-alt"
             link="/showcase"
             selectItem={this.selectItem}
             selected={itemSelected == 'showcase'}
           />
           <DrawerItemExpand
             label="Contributing"
+            icon="handshake"
             reactPageMenuItems={contributingPages}
             selectItem={this.selectItem}
             itemSelected={itemSelected}
@@ -141,6 +149,7 @@ export default class DrawerContent extends React.PureComponent {
 
           <DrawerItem
             label="About"
+            icon="id-card"
             link="/about"
             selectItem={this.selectItem}
             selected={itemSelected == 'about'}
