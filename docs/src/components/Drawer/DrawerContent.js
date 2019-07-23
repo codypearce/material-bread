@@ -77,7 +77,14 @@ export default class DrawerContent extends React.PureComponent {
     const { itemSelected, sectionExpanded } = this.state;
 
     return (
-      <ScrollView style={{ backgroundColor: '#04023d', paddingHorizontal: 16 }}>
+      <div
+        style={{
+          backgroundColor: '#04023d',
+          paddingLeft: 16,
+          paddingRight: 16,
+          overflow: 'overlay',
+          height: '100%',
+        }}>
         <DrawerHeader />
         <div>
           <DrawerItem
@@ -155,7 +162,7 @@ export default class DrawerContent extends React.PureComponent {
             selected={itemSelected == 'about'}
           />
         </div>
-      </ScrollView>
+      </div>
     );
   }
 }

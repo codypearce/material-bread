@@ -180,7 +180,9 @@ export default class PageLayout extends Component {
           style={{
             height: pageContext.layout === 'home' ? '100%' : 'auto',
             background: '#f7f9fc',
-          }}>
+          }}
+          drawerStyle={{ borderRightWidth: 0 }}
+          width={250}>
           <Header
             handleDrawerToggle={this.handleDrawerToggle}
             isTemporary={isTemporary}

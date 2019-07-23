@@ -85,8 +85,8 @@ class ListExpand extends Component {
         style={{
           height: menuHeight,
           overflow: 'hidden',
-          width: icon && Platform.OS == 'web' ? 'calc(100% - 56px)' : '100%',
-          marginLeft: icon ? 56 : 0,
+          width: icon && Platform.OS == 'web' ? 'calc(100% - 42px)' : '100%',
+          marginLeft: icon ? 42 : 0,
           zIndex: 100,
         }}>
         <View

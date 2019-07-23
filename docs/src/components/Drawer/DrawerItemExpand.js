@@ -82,10 +82,12 @@ class DrawerItemExpand extends Component {
         titleStyle={{ fontSize: 11, fontWeight: '400', color: '#fff' }}
         expandIconStyle={{ color: '#fff', fontSize: 16 }}
         icon={
-          <i
-            className={`fa fa-${icon}`}
-            style={{ fontSize: 20, color: 'white' }}
-          />
+          icon ? (
+            <i
+              className={`fa fa-${icon}`}
+              style={{ fontSize: 20, width: 20, color: 'white' }}
+            />
+          ) : null
         }
         rippleProps={{ rippleColor: '#fff', rippleContainerBorderRadius: 4 }}
         style={{ paddingTop: 16, paddingBottom: 16 }}>
