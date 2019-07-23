@@ -25,7 +25,6 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 10,
-    backgroundColor: '#04023d',
   },
   right: {
     marginLeft: 8,

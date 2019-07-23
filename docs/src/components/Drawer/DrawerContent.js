@@ -77,7 +77,9 @@ export default class DrawerContent extends React.PureComponent {
     return (
       <div
         style={{
-          backgroundColor: '#04023d',
+          background:
+            'linear-gradient(176deg, rgba(5,2,65,1) 0%, rgba(1,1,31,1) 100%)',
+
           paddingLeft: 16,
           paddingRight: 16,
           overflow: 'overlay',
