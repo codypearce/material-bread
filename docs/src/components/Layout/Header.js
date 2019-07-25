@@ -45,7 +45,7 @@ class Header extends Component {
     const { handleDrawerToggle, isTemporary } = this.props;
     const { backgroundOverride } = this.state;
 
-    let backgroundColor = isTemporary ? '#eee' : 'transparent';
+    let backgroundColor = isTemporary ? '#050342' : 'transparent';
     backgroundColor = backgroundOverride ? 'transparent' : backgroundColor;
 
     return (
@@ -60,7 +60,7 @@ class Header extends Component {
           }}
           navigation={
             <IconButton
-              color={backgroundOverride ? 'white' : '#263238'}
+              color={backgroundOverride || isTemporary ? 'white' : '#263238'}
               size={28}
               name={'menu'}
               onPress={handleDrawerToggle}
@@ -85,13 +85,20 @@ class Header extends Component {
                     <img style={{ width: 28, height: 28 }} src={githubWhite} />
                   )}
                 </MediaQuery>
+
                 <MediaQuery minWidth={1000}>
                   {backgroundOverride && (
                     <img style={{ width: 28, height: 28 }} src={github} />
                   )}
                 </MediaQuery>
 
-                {!backgroundOverride && (
+                <MediaQuery maxWidth={1180}>
+                  {isTemporary && !backgroundOverride && (
+                    <img style={{ width: 28, height: 28 }} src={githubWhite} />
+                  )}
+                </MediaQuery>
+
+                {!backgroundOverride && !isTemporary && (
                   <img style={{ width: 28, height: 28 }} src={github} />
                 )}
               </Ripple>
