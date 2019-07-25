@@ -107,7 +107,7 @@ export default class PageLayout extends Component {
           style={{
             padding: 0,
             marginTop: 0,
-            height: '100%',
+            minHeight: '100vh',
           }}
           className={`${
             isTemporary ? 'main--temporaryDrawer' : 'main--permanentDrawer'
@@ -179,7 +179,8 @@ export default class PageLayout extends Component {
           drawerContent={<DrawerContent posts={posts} />}
           position={'fixed'}
           style={{
-            height: pageContext.layout === 'home' ? '100%' : 'auto',
+            height: 'auto',
+            minHeight: '100%',
             backgroundColor: '#f7f9fc',
           }}
           drawerStyle={{

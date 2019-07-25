@@ -37,8 +37,7 @@ class Index extends Component {
         <Section
           name="Getting Started"
           id="started"
-          href="/contributing/library#tarted"
-          style={{ marginTop: 0 }}>
+          href="/contributing/library#tarted">
           <ComponentDescription
             text={
               <div>
@@ -83,11 +82,7 @@ class Index extends Component {
           />
         </Section>
 
-        <Section
-          name="Setup"
-          id="setup"
-          href="/contributing/library#setup"
-          style={{ marginTop: 0 }}>
+        <Section name="Setup" id="setup" href="/contributing/library#setup">
           <ComponentDescription
             text={
               <div>
@@ -147,11 +142,10 @@ class Index extends Component {
         <Section
           name="Developing"
           id="developing"
-          href="/contributing/library#developing"
-          style={{ marginTop: 0 }}>
+          href="/contributing/library#developing">
           <ComponentDescription
             text={
-              <div>
+              <div style={{ overflow: 'auto' }}>
                 <div>
                   Components all live in{' '}
                   <CodeInline code="src/Components" type={'file'} />, and
@@ -224,8 +218,7 @@ class Index extends Component {
         <Section
           name="Storybook Docs "
           id="storybook"
-          href="/contributing/library#storybook"
-          style={{ marginTop: 0 }}>
+          href="/contributing/library#storybook">
           <ComponentDescription
             text={
               <div>

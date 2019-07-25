@@ -631,21 +631,21 @@ div[role='group'][tabindex] {
 
 @keyframes slideIn {
   0% {
-    transform: skewX(-14deg) translateX(-200px) translateY(100%) scale(0.95);
+    transform: skewX(-14deg) translateX(-300px) translateY(100%) scale(0.95);
   }
 
   100% {
-    transform: skewX(-14deg) translateX(-200px) translateY(0%) scale(1);
+    transform: skewX(-14deg) translateX(-300px) translateY(0%) scale(1);
   }
 }
 
 @keyframes slideInTop {
   0% {
-    transform: skewX(-14deg) translateX(140px) translateY(-100%) scale(0.95);
+    transform: skewX(-14deg) translateX(230px) translateY(-100%) scale(0.95);
   }
 
   100% {
-    transform: skewX(-14deg) translateX(140px) translateY(0%) scale(1);
+    transform: skewX(-14deg) translateX(230px) translateY(0%) scale(1);
   }
 }
 
@@ -686,6 +686,7 @@ div[role='group'][tabindex] {
   display: flex;
   height: 100%;
   overflow-y: auto;
+  min-height: 100vh;
 }
 .home__title {
   color: white;

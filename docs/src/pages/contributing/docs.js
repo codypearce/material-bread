@@ -32,8 +32,7 @@ class Index extends Component {
         <Section
           name="Getting Started"
           id="started"
-          href="/contributing/docs#tarted"
-          style={{ marginTop: 0 }}>
+          href="/contributing/docs#tarted">
           <ComponentDescription
             text={
               <div>
@@ -83,14 +82,10 @@ class Index extends Component {
           />
         </Section>
 
-        <Section
-          name="Setup"
-          id="setup"
-          href="/contributing/docs#setup"
-          style={{ marginTop: 0 }}>
+        <Section name="Setup" id="setup" href="/contributing/docs#setup">
           <ComponentDescription
             text={
-              <div>
+              <div style={{ overflow: 'auto' }}>
                 <ol>
                   <li>Fork material-bread repo on github</li>
                   <li>
