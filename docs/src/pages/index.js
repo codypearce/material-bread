@@ -50,7 +50,8 @@ class Index extends Component {
                     type={'contained'}
                     text="React Native"
                     color="#E91E63"
-                    containerStyle={{ marginRight: 8 }}
+                    style={{ width: '100%' }}
+                    containerStyle={{ width: '100%' }}
                   />
                 </a>
                 <a
@@ -60,13 +61,20 @@ class Index extends Component {
                     type={'contained'}
                     text="React"
                     color="#009688"
-                    containerStyle={{ marginRight: 8 }}
+                    style={{ width: '100%' }}
+                    containerStyle={{ width: '100%' }}
                   />
                 </a>
                 <a
                   href={'/getting-started/electron'}
                   style={{ textDecoration: 'none' }}>
-                  <Button type={'contained'} color="#03A9F4" text="Electron" />
+                  <Button
+                    type={'contained'}
+                    color="#03A9F4"
+                    text="Electron"
+                    style={{ width: '100%' }}
+                    containerStyle={{ width: '100%' }}
+                  />
                 </a>
               </div>
             </div>
