@@ -122,28 +122,39 @@ class ListItem extends Component {
   };
 
   handleHover(toggle) {
+    const { rippleProps } = this.props;
     let bgColor = this.getBackgroundColor();
     let implementedColor;
 
-    if (color(bgColor).isDark()) {
-      implementedColor = toggle
-        ? color(bgColor)
-            .lighten(0.15)
-            .rgb()
-            .string()
-        : null;
+    if (bgColor == 'transparent') {
+      implementedColor = toggle ? 'rgba(0, 0, 0, 0.12)' : null;
     } else {
+      if (color(bgColor).isDark()) {
+        implementedColor = toggle
+          ? color(bgColor)
+              .lighten(0.15)
+              .rgb()
+              .string()
+          : null;
+      } else {
+        implementedColor = toggle
+          ? color(bgColor)
+              .darken(0.15)
+              .rgb()
+              .string()
+          : null;
+      }
+    }
+
+    if (rippleProps && rippleProps.rippleColor) {
       implementedColor = toggle
-        ? color(bgColor)
-            .darken(0.15)
+        ? color(rippleProps.rippleColor)
+            .alpha(0.12)
             .rgb()
             .string()
         : null;
     }
 
-    if (bgColor == 'transparent') {
-      implementedColor = 'rgba(0, 0, 0, 0.12)';
-    }
     this.setState({ stateBackgroundColor: implementedColor });
   }
 

@@ -127,27 +127,37 @@ class ListExpand extends Component {
   };
 
   handleHover(toggle) {
+    const { rippleProps } = this.props;
     let bgColor = this.getBackgroundColor();
     let implementedColor;
 
-    if (color(bgColor).isDark()) {
-      implementedColor = toggle
-        ? color(bgColor)
-            .lighten(0.15)
-            .rgb()
-            .string()
-        : null;
+    if (bgColor == 'transparent') {
+      implementedColor = toggle ? 'rgba(0, 0, 0, 0.12)' : null;
     } else {
-      implementedColor = toggle
-        ? color(bgColor)
-            .darken(0.15)
-            .rgb()
-            .string()
-        : null;
+      if (color(bgColor).isDark()) {
+        implementedColor = toggle
+          ? color(bgColor)
+              .lighten(0.15)
+              .rgb()
+              .string()
+          : null;
+      } else {
+        implementedColor = toggle
+          ? color(bgColor)
+              .darken(0.15)
+              .rgb()
+              .string()
+          : null;
+      }
     }
 
-    if (bgColor == 'transparent') {
-      implementedColor = 'rgba(0, 0, 0, 0.12)';
+    if (rippleProps && rippleProps.rippleColor) {
+      implementedColor = toggle
+        ? color(rippleProps.rippleColor)
+            .alpha(0.12)
+            .rgb()
+            .string()
+        : null;
     }
     this.setState({ stateBackgroundColor: implementedColor });
   }
