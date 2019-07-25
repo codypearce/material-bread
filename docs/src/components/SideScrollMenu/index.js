@@ -50,6 +50,7 @@ class SideScrollMenu extends Component {
   }
 
   animateSlideItem(id) {
+    if (!id) return;
     const items = this.handleLinks();
     const index = items.findIndex(item => item == id);
     this.setState({ slideTop: 30 * index });
@@ -72,7 +73,7 @@ class SideScrollMenu extends Component {
         />
 
         <Scrollspy
-          onUpdate={stuff => this.animateSlideItem(stuff.id)}
+          onUpdate={stuff => this.animateSlideItem(stuff && stuff.id)}
           items={this.handleLinks()}
           currentClassName="is-current"
           className="SideMenu">

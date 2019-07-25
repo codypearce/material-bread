@@ -16,7 +16,7 @@ export const code = `class FabPage extends React.Component {
         <Fab key={1} label="Archive" backgroundColor={'#E91E63'} icon={'archive'} />,
        ];
       return (
-        <View>
+        <View style={{marginTop: 350}}>
           <FabSpeedDial
             actions={actionsExtended}
             style={{ marginTop: 400 }}

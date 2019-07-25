@@ -213,6 +213,13 @@ div[role='group'][tabindex] {
   overflow-y: auto;
 }
 
+@media (max-width: 450px) {
+  .main--temporaryDrawer {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 .browser {
