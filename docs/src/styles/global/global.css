@@ -213,7 +213,8 @@ div[role='group'][tabindex] {
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 .browser {
-  width: 400px;
+  max-width: 400px;
+  width: 100%;
   height: 300px;
   background: #f5f5f5;
   margin: 20px auto;
