@@ -201,7 +201,7 @@ div[role='group'][tabindex] {
   margin-right: 40px;
   padding-top: 100px;
   padding-left: 0px;
-  padding-right: 0px;
+  padding-right: 16px;
   overflow-y: auto;
 }
 .main--temporaryDrawer {
