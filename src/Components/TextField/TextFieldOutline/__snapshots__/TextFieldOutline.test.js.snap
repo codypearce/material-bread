@@ -13,35 +13,6 @@ exports[`TextFieldOutline Renders 1`] = `
     ]
   }
 >
-  <View
-    pointerEvents="none"
-    style={
-      Object {
-        "marginLeft": 0,
-        "position": "absolute",
-        "zIndex": 10,
-      }
-    }
-  >
-    <Text
-      style={
-        Object {
-          "backgroundColor": "white",
-          "color": "rgba(0, 0, 0, 0.54)",
-          "fontSize": 16,
-          "paddingHorizontal": 4,
-          "transform": Array [
-            Object {
-              "translateY": 20,
-            },
-            Object {
-              "translateX": 10,
-            },
-          ],
-        }
-      }
-    />
-  </View>
   <TextInput
     allowFontScaling={true}
     onContentSizeChange={[Function]}
