@@ -106,12 +106,16 @@ class ListItem extends Component {
       ? stateBackgroundColor
       : implementedBackgroundColor;
 
+    const rippleColor =
+      rippleProps && rippleProps.rippleColor
+        ? color(rippleProps.rippleColor)
+            .alpha(0.12)
+            .rgb()
+            .string()
+        : 'rgba(0, 0, 0, 0.12)';
+
     implementedBackgroundColor = selected
-      ? rippleProps &&
-        color(rippleProps.rippleColor)
-          .alpha(0.12)
-          .rgb()
-          .string()
+      ? rippleColor
       : implementedBackgroundColor;
 
     return disabled ? 'transparent' : implementedBackgroundColor;
