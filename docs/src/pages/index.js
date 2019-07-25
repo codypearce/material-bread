@@ -105,7 +105,7 @@ class Index extends Component {
                       text="iOS"
                       textColor={'white'}
                       textStyle={{
-                        fontWeight: preview == 'ios' ? 500 : 400,
+                        fontWeight: preview == 'ios' ? '500' : '400',
                         fontSize: preview == 'ios' ? 18 : 12,
                       }}
                       style={{ width: 120 }}
@@ -116,7 +116,7 @@ class Index extends Component {
                       text="iOS"
                       textColor={'black'}
                       textStyle={{
-                        fontWeight: preview == 'ios' ? 500 : 400,
+                        fontWeight: preview == 'ios' ? '500' : '400',
                         fontSize: preview == 'ios' ? 18 : 12,
                       }}
                       style={{ width: 120 }}
@@ -133,7 +133,7 @@ class Index extends Component {
                       text="Android"
                       textColor="white"
                       textStyle={{
-                        fontWeight: preview == 'android' ? 500 : 400,
+                        fontWeight: preview == 'android' ? '500' : '400',
                         fontSize: preview == 'android' ? 18 : 12,
                       }}
                       style={{ width: 120 }}
@@ -144,7 +144,7 @@ class Index extends Component {
                       text="Android"
                       textColor="black"
                       textStyle={{
-                        fontWeight: preview == 'android' ? 500 : 400,
+                        fontWeight: preview == 'android' ? '500' : '400',
                         fontSize: preview == 'android' ? 18 : 12,
                       }}
                       style={{ width: 120 }}
@@ -160,7 +160,7 @@ class Index extends Component {
                       text="Web"
                       textColor="white"
                       textStyle={{
-                        fontWeight: preview == 'web' ? 500 : 400,
+                        fontWeight: preview == 'web' ? '500' : '400',
                         fontSize: preview == 'web' ? 18 : 12,
                       }}
                       style={{ width: 120 }}
@@ -171,7 +171,7 @@ class Index extends Component {
                       text="Web"
                       textColor="black"
                       textStyle={{
-                        fontWeight: preview == 'web' ? 500 : 400,
+                        fontWeight: preview == 'web' ? '500' : '400',
                         fontSize: preview == 'web' ? 18 : 12,
                       }}
                       style={{ width: 120 }}
@@ -187,7 +187,7 @@ class Index extends Component {
                       text="Desktop"
                       textColor="white"
                       textStyle={{
-                        fontWeight: preview == 'desktop' ? 500 : 400,
+                        fontWeight: preview == 'desktop' ? '500' : '400',
                         fontSize: preview == 'desktop' ? 18 : 12,
                       }}
                       style={{ width: 120 }}
@@ -198,7 +198,7 @@ class Index extends Component {
                       text="Desktop"
                       textColor="black"
                       textStyle={{
-                        fontWeight: preview == 'desktop' ? 500 : 400,
+                        fontWeight: preview == 'desktop' ? '500' : '400',
                         fontSize: preview == 'desktop' ? 17 : 12,
                       }}
                       style={{ width: 120 }}

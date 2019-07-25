@@ -38,9 +38,8 @@ class SideScrollMenu extends Component {
   renderMenuItems(item, index) {
     const link = this.formatLinkFromName(item.name);
     return (
-      <a className="SideMenu__Link" href={`#${link}`}>
+      <a className="SideMenu__Link" href={`#${link}`} key={index}>
         <li
-          key={index}
           className={`SideMenu__ListItem ${
             item.sub ? 'SideMenu__ListItem--sub' : ''
           }`}>

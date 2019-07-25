@@ -19,12 +19,13 @@ class Section extends Component {
     const { name, href, children, id, style } = this.props;
     return (
       <section
+        className="CardSection"
         style={{
           marginTop: 60,
           background: '#fefefe',
           boxShadow: '2px 2px 15px 0px rgba(46, 61, 73, 0.15)',
           borderRadius: 6,
-          padding: '30px 50px',
+
           ...style,
         }}
         id={id}>

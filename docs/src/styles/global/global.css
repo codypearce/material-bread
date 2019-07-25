@@ -751,3 +751,13 @@ div[role='group'][tabindex] {
     margin: 8px 0;
   }
 }
+
+.CardSection {
+  padding: 30px 50px;
+}
+
+@media (max-width: 500px) {
+  .CardSection {
+    padding: 20px 20px;
+  }
+}

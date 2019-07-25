@@ -417,13 +417,11 @@ class Index extends Component {
               </div>
             }
           />
-          <div className="row">
-            <Link
-              href="https://github.com/codypearce/material-bread-electron-example"
-              style={{ fontSize: 18 }}>
-              Minimal React Native Electron Example
-            </Link>
-          </div>
+          <Link
+            href="https://github.com/codypearce/material-bread-electron-example"
+            style={{ fontSize: 18, whitespace: 'wrap' }}>
+            Minimal React Native Electron Example
+          </Link>
         </Section>
       </div>
     );

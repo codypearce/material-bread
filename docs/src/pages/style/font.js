@@ -5,7 +5,7 @@ import { CodeBlock, Section, PageTitle, Link, P, Helmet } from '@components';
 export default class FontPage extends Component {
   render() {
     return (
-      <div>
+      <div style={{ paddingBottom: 60 }}>
         <Helmet title={'Material Font Roboto'} />
         <PageTitle>Font</PageTitle>
         <P>

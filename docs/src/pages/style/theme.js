@@ -48,7 +48,7 @@ export default withTheme(AppButton);`;
 export default class IconPage extends Component {
   render() {
     return (
-      <div>
+      <div style={{ paddingBottom: 60 }}>
         <Helmet title={'Material Theme'} />
         <PageTitle>Theme</PageTitle>
         <P>
