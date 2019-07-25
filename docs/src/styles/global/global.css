@@ -192,6 +192,7 @@ div[role='group'][tabindex] {
   padding-top: 40px;
   padding-left: 0px;
   padding-right: 0px;
+  overflow-y: auto;
 }
 
 .main--permanentDrawer {
@@ -201,6 +202,7 @@ div[role='group'][tabindex] {
   padding-top: 100px;
   padding-left: 0px;
   padding-right: 0px;
+  overflow-y: auto;
 }
 .main--temporaryDrawer {
   margin-left: 0;
@@ -208,6 +210,7 @@ div[role='group'][tabindex] {
   padding-top: 100px;
   padding-left: 24px;
   padding-right: 24px;
+  overflow-y: auto;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Raleway');
@@ -670,11 +673,12 @@ div[role='group'][tabindex] {
 @media (max-width: 1260px) {
   .home__half__content {
     margin-bottom: auto;
-    margin-top: 56px;
+    padding-top: 56px;
   }
   .home__half__content--right {
     margin-top: auto;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-top: 20px;
   }
 }
 
@@ -706,6 +710,10 @@ div[role='group'][tabindex] {
     flex-direction: column;
     background: #04023e;
     padding: 0 8px;
+  }
+  .home__half__content {
+    flex-shrink: 0;
+    height: auto;
   }
   .home__title,
   .home__subtitle {
