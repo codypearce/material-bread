@@ -20,6 +20,7 @@ class Header extends Component {
 
   state = {
     backgroundOverride: false,
+    isMobile: false,
   };
 
   componentDidMount() {
@@ -28,6 +29,21 @@ class Header extends Component {
     if (pathName == '/') {
       this.setState({ backgroundOverride: true });
     }
+
+    const mediaQuery = window.matchMedia('(min-width: 1000px)');
+
+    if (mediaQuery.matches) {
+      this.setState({ isMobile: false });
+    } else {
+      this.setState({ isMobile: true });
+    }
+    mediaQuery.addListener(mq => {
+      if (mq.matches) {
+        this.setState({ isMobile: false });
+      } else {
+        this.setState({ isMobile: true });
+      }
+    });
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -43,10 +59,14 @@ class Header extends Component {
 
   render() {
     const { handleDrawerToggle, isTemporary } = this.props;
-    const { backgroundOverride } = this.state;
+    const { backgroundOverride, isMobile } = this.state;
 
-    let backgroundColor = isTemporary ? '#050342' : 'transparent';
-    backgroundColor = backgroundOverride ? 'transparent' : backgroundColor;
+    let backgroundColor = isTemporary
+      ? 'linear-gradient(176deg, rgb(5, 2, 65) 0%, rgb(1, 1, 31) 100%)'
+      : 'transparent';
+
+    backgroundColor =
+      backgroundOverride && !isMobile ? 'transparent' : backgroundColor;
 
     return (
       <div>

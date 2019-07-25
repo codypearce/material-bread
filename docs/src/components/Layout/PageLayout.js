@@ -25,6 +25,7 @@ export default class PageLayout extends Component {
     mobileOpen: false,
     isTemporary: true,
     firstLoaded: false,
+    isMobile: false,
   };
 
   componentDidMount() {
@@ -128,7 +129,7 @@ export default class PageLayout extends Component {
 
   render() {
     const { posts, pageContext } = this.props;
-    const { isTemporary } = this.state;
+    const { isTemporary, isMobile } = this.state;
     if (!this.state.firstLoaded)
       return (
         <div
@@ -190,6 +191,7 @@ export default class PageLayout extends Component {
           <Header
             handleDrawerToggle={this.handleDrawerToggle}
             isTemporary={isTemporary}
+            isMobile={isMobile}
           />
           {this._renderMain()}
         </Drawer>
