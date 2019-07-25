@@ -181,7 +181,11 @@ export default class PageLayout extends Component {
             height: pageContext.layout === 'home' ? '100%' : 'auto',
             backgroundColor: '#f7f9fc',
           }}
-          drawerStyle={{ borderRightWidth: 0 }}
+          drawerStyle={{
+            borderRightWidth: 0,
+            height: '100%',
+          }}
+          scrimStyles={{ height: '100%' }}
           width={250}>
           <Header
             handleDrawerToggle={this.handleDrawerToggle}
