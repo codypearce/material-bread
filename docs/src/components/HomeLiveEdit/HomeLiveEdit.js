@@ -140,6 +140,7 @@ class LiveEdit extends Component {
           backgroundColor: 'transparent',
           maxWidth: 800,
           margin: '0 auto',
+          width: '100%',
         }}>
         <BrowserCSS preview={preview}>
           <LivePreview

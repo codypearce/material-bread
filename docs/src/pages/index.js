@@ -50,7 +50,8 @@ class Index extends Component {
                     type={'contained'}
                     text="React Native"
                     color="#E91E63"
-                    containerStyle={{ marginRight: 8 }}
+                    style={{ width: '100%' }}
+                    containerStyle={{ width: '100%' }}
                   />
                 </a>
                 <a
@@ -60,13 +61,20 @@ class Index extends Component {
                     type={'contained'}
                     text="React"
                     color="#009688"
-                    containerStyle={{ marginRight: 8 }}
+                    style={{ width: '100%' }}
+                    containerStyle={{ width: '100%' }}
                   />
                 </a>
                 <a
                   href={'/getting-started/electron'}
                   style={{ textDecoration: 'none' }}>
-                  <Button type={'contained'} color="#03A9F4" text="Electron" />
+                  <Button
+                    type={'contained'}
+                    color="#03A9F4"
+                    text="Electron"
+                    style={{ width: '100%' }}
+                    containerStyle={{ width: '100%' }}
+                  />
                 </a>
               </div>
             </div>
@@ -97,7 +105,7 @@ class Index extends Component {
                       text="iOS"
                       textColor={'white'}
                       textStyle={{
-                        fontWeight: preview == 'ios' ? 500 : 400,
+                        fontWeight: preview == 'ios' ? '500' : '400',
                         fontSize: preview == 'ios' ? 18 : 12,
                       }}
                       style={{ width: 120 }}
@@ -108,7 +116,7 @@ class Index extends Component {
                       text="iOS"
                       textColor={'black'}
                       textStyle={{
-                        fontWeight: preview == 'ios' ? 500 : 400,
+                        fontWeight: preview == 'ios' ? '500' : '400',
                         fontSize: preview == 'ios' ? 18 : 12,
                       }}
                       style={{ width: 120 }}
@@ -125,7 +133,7 @@ class Index extends Component {
                       text="Android"
                       textColor="white"
                       textStyle={{
-                        fontWeight: preview == 'android' ? 500 : 400,
+                        fontWeight: preview == 'android' ? '500' : '400',
                         fontSize: preview == 'android' ? 18 : 12,
                       }}
                       style={{ width: 120 }}
@@ -136,7 +144,7 @@ class Index extends Component {
                       text="Android"
                       textColor="black"
                       textStyle={{
-                        fontWeight: preview == 'android' ? 500 : 400,
+                        fontWeight: preview == 'android' ? '500' : '400',
                         fontSize: preview == 'android' ? 18 : 12,
                       }}
                       style={{ width: 120 }}
@@ -152,7 +160,7 @@ class Index extends Component {
                       text="Web"
                       textColor="white"
                       textStyle={{
-                        fontWeight: preview == 'web' ? 500 : 400,
+                        fontWeight: preview == 'web' ? '500' : '400',
                         fontSize: preview == 'web' ? 18 : 12,
                       }}
                       style={{ width: 120 }}
@@ -163,7 +171,7 @@ class Index extends Component {
                       text="Web"
                       textColor="black"
                       textStyle={{
-                        fontWeight: preview == 'web' ? 500 : 400,
+                        fontWeight: preview == 'web' ? '500' : '400',
                         fontSize: preview == 'web' ? 18 : 12,
                       }}
                       style={{ width: 120 }}
@@ -179,7 +187,7 @@ class Index extends Component {
                       text="Desktop"
                       textColor="white"
                       textStyle={{
-                        fontWeight: preview == 'desktop' ? 500 : 400,
+                        fontWeight: preview == 'desktop' ? '500' : '400',
                         fontSize: preview == 'desktop' ? 18 : 12,
                       }}
                       style={{ width: 120 }}
@@ -190,7 +198,7 @@ class Index extends Component {
                       text="Desktop"
                       textColor="black"
                       textStyle={{
-                        fontWeight: preview == 'desktop' ? 500 : 400,
+                        fontWeight: preview == 'desktop' ? '500' : '400',
                         fontSize: preview == 'desktop' ? 17 : 12,
                       }}
                       style={{ width: 120 }}
@@ -214,6 +222,7 @@ const styles = {
     flexDirection: 'column',
     width: '100%',
     height: '100%',
+    minHeight: '100vh',
   },
   code: {},
 };

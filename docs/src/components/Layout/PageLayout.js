@@ -25,6 +25,7 @@ export default class PageLayout extends Component {
     mobileOpen: false,
     isTemporary: true,
     firstLoaded: false,
+    isMobile: false,
   };
 
   componentDidMount() {
@@ -106,7 +107,7 @@ export default class PageLayout extends Component {
           style={{
             padding: 0,
             marginTop: 0,
-            height: '100%',
+            minHeight: '100vh',
           }}
           className={`${
             isTemporary ? 'main--temporaryDrawer' : 'main--permanentDrawer'
@@ -128,7 +129,7 @@ export default class PageLayout extends Component {
 
   render() {
     const { posts, pageContext } = this.props;
-    const { isTemporary } = this.state;
+    const { isTemporary, isMobile } = this.state;
     if (!this.state.firstLoaded)
       return (
         <div
@@ -166,7 +167,7 @@ export default class PageLayout extends Component {
           />
           <link
             rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
           />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Helmet>
@@ -177,10 +178,21 @@ export default class PageLayout extends Component {
           type={isTemporary ? 'modal' : 'permanent'}
           drawerContent={<DrawerContent posts={posts} />}
           position={'fixed'}
-          style={{ height: pageContext.layout === 'home' ? '100%' : 'auto' }}>
+          style={{
+            height: 'auto',
+            minHeight: '100%',
+            backgroundColor: '#f7f9fc',
+          }}
+          drawerStyle={{
+            borderRightWidth: 0,
+            height: '100%',
+          }}
+          scrimStyles={{ height: '100%' }}
+          width={250}>
           <Header
             handleDrawerToggle={this.handleDrawerToggle}
             isTemporary={isTemporary}
+            isMobile={isMobile}
           />
           {this._renderMain()}
         </Drawer>

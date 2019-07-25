@@ -23,13 +23,11 @@ class Index extends Component {
             'This is a React Native Material Component Library that aims to provide useful components across various platforms.'
           }
         />
-        <h2>Goals</h2>
 
         <Section
           name="All Components"
           id="all-components"
-          href="/about#all-components"
-          style={{ marginTop: 0 }}>
+          href="/about#all-components">
           <ComponentDescription
             text={
               <div>
@@ -45,13 +43,12 @@ class Index extends Component {
         <Section
           name="Cross Platform"
           id="cross-platform"
-          href="/about#cross-platform"
-          style={{ marginTop: 0 }}>
+          href="/about#cross-platform">
           <ComponentDescription
             text={
               <div>
                 The goal is for all components to work cross platofrm on iOS,
-                Android, Web, and Electron.
+                Android, Web, Electron, and other platforms.
               </div>
             }
           />
@@ -60,8 +57,7 @@ class Index extends Component {
         <Section
           name="Highly Customizable"
           id="highly-customizable"
-          href="/about#highly-customizable"
-          style={{ marginTop: 0 }}>
+          href="/about#highly-customizable">
           <ComponentDescription
             text={
               <div>
@@ -96,8 +92,7 @@ class Index extends Component {
         <Section
           name="Copious Demos "
           id="copious-demos"
-          href="/about#copious-demos"
-          style={{ marginTop: 0 }}>
+          href="/about#copious-demos">
           <ComponentDescription
             text={
               <div>

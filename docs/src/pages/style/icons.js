@@ -4,7 +4,7 @@ import { CodeInline, Section, PageTitle, Link, P, Helmet } from '@components';
 export default class IconPage extends Component {
   render() {
     return (
-      <div>
+      <div style={{ paddingBottom: 60 }}>
         <Helmet title={'Material Icons'} />
         <PageTitle>Icons</PageTitle>
         <P>

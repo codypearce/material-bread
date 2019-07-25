@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { ScrollView } from 'react-native';
-
 import DrawerItem from './DrawerItem';
 import DrawerItemExpand from './DrawerItemExpand';
 import {
@@ -53,11 +51,13 @@ export default class DrawerContent extends React.PureComponent {
   }
 
   handleSelectedItem(pathArray, pathName) {
-    let name = 'home';
+    var name = 'home';
     if (pathName !== '/') {
-      name = pathArray.pop();
+      name = pathArray[pathArray.length - 2];
     }
+
     const formatString = name.replace(/-/g, ' ');
+
     this.selectItem(formatString);
   }
 
@@ -77,11 +77,21 @@ export default class DrawerContent extends React.PureComponent {
     const { itemSelected, sectionExpanded } = this.state;
 
     return (
-      <ScrollView>
+      <div
+        style={{
+          background:
+            'linear-gradient(176deg, rgba(5,2,65,1) 0%, rgba(1,1,31,1) 100%)',
+
+          paddingLeft: 16,
+          paddingRight: 16,
+          overflow: 'overlay',
+          height: '100%',
+        }}>
         <DrawerHeader />
         <div>
           <DrawerItem
             label="Home"
+            icon="home"
             link="/"
             selected={itemSelected == 'home'}
             selectItem={this.selectItem}
@@ -89,6 +99,7 @@ export default class DrawerContent extends React.PureComponent {
 
           <DrawerItemExpand
             label="Getting Started"
+            icon="rocket"
             reactPageMenuItems={gettingStartedPages}
             itemSelected={itemSelected}
             selectItem={this.selectItem}
@@ -97,6 +108,7 @@ export default class DrawerContent extends React.PureComponent {
           />
           <DrawerItemExpand
             label="Style"
+            icon="tint"
             reactPageMenuItems={stylePages}
             selectItem={this.selectItem}
             itemSelected={itemSelected}
@@ -105,6 +117,7 @@ export default class DrawerContent extends React.PureComponent {
           />
           <DrawerItemExpand
             label="Components"
+            icon="cube"
             reactPageMenuItems={componentPages}
             selectItem={this.selectItem}
             itemSelected={itemSelected}
@@ -113,6 +126,7 @@ export default class DrawerContent extends React.PureComponent {
           />
           <DrawerItemExpand
             label="Utils"
+            icon="wrench"
             reactPageMenuItems={utilsPages}
             selectItem={this.selectItem}
             itemSelected={itemSelected}
@@ -121,17 +135,20 @@ export default class DrawerContent extends React.PureComponent {
           />
           <DrawerItem
             label="Storybook"
+            icon="book"
             link="https://codypearce.github.io/material-bread/"
             selectItem={this.selectItem}
           />
           <DrawerItem
             label="Showcase"
+            icon="tablet-alt"
             link="/showcase"
             selectItem={this.selectItem}
             selected={itemSelected == 'showcase'}
           />
           <DrawerItemExpand
             label="Contributing"
+            icon="handshake"
             reactPageMenuItems={contributingPages}
             selectItem={this.selectItem}
             itemSelected={itemSelected}
@@ -141,12 +158,13 @@ export default class DrawerContent extends React.PureComponent {
 
           <DrawerItem
             label="About"
+            icon="id-card"
             link="/about"
             selectItem={this.selectItem}
             selected={itemSelected == 'about'}
           />
         </div>
-      </ScrollView>
+      </div>
     );
   }
 }

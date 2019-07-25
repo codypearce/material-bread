@@ -20,6 +20,7 @@ class Header extends Component {
 
   state = {
     backgroundOverride: false,
+    isMobile: false,
   };
 
   componentDidMount() {
@@ -28,6 +29,21 @@ class Header extends Component {
     if (pathName == '/') {
       this.setState({ backgroundOverride: true });
     }
+
+    const mediaQuery = window.matchMedia('(min-width: 1000px)');
+
+    if (mediaQuery.matches) {
+      this.setState({ isMobile: false });
+    } else {
+      this.setState({ isMobile: true });
+    }
+    mediaQuery.addListener(mq => {
+      if (mq.matches) {
+        this.setState({ isMobile: false });
+      } else {
+        this.setState({ isMobile: true });
+      }
+    });
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -43,10 +59,14 @@ class Header extends Component {
 
   render() {
     const { handleDrawerToggle, isTemporary } = this.props;
-    const { backgroundOverride } = this.state;
+    const { backgroundOverride, isMobile } = this.state;
 
-    let backgroundColor = isTemporary ? '#eee' : 'transparent';
-    backgroundColor = backgroundOverride ? 'transparent' : backgroundColor;
+    let backgroundColor = isTemporary
+      ? 'linear-gradient(176deg, rgb(5, 2, 65) 0%, rgb(1, 1, 31) 100%)'
+      : 'transparent';
+
+    backgroundColor =
+      backgroundOverride && !isMobile ? 'transparent' : backgroundColor;
 
     return (
       <div>
@@ -56,10 +76,11 @@ class Header extends Component {
           style={{
             boxShadow: 'none',
             zIndex: 10,
+            paddingHorizontal: 34,
           }}
           navigation={
             <IconButton
-              color={backgroundOverride ? 'white' : '#263238'}
+              color={backgroundOverride || isTemporary ? 'white' : '#263238'}
               size={28}
               name={'menu'}
               onPress={handleDrawerToggle}
@@ -84,13 +105,20 @@ class Header extends Component {
                     <img style={{ width: 28, height: 28 }} src={githubWhite} />
                   )}
                 </MediaQuery>
+
                 <MediaQuery minWidth={1000}>
                   {backgroundOverride && (
                     <img style={{ width: 28, height: 28 }} src={github} />
                   )}
                 </MediaQuery>
 
-                {!backgroundOverride && (
+                <MediaQuery maxWidth={1180}>
+                  {isTemporary && !backgroundOverride && (
+                    <img style={{ width: 28, height: 28 }} src={githubWhite} />
+                  )}
+                </MediaQuery>
+
+                {!backgroundOverride && !isTemporary && (
                   <img style={{ width: 28, height: 28 }} src={github} />
                 )}
               </Ripple>

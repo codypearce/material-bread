@@ -13,6 +13,7 @@ export class DrawerItem extends Component {
     selected: PropTypes.bool,
     subItem: PropTypes.bool,
     subsubItem: PropTypes.bool,
+    icon: PropTypes.string,
   };
 
   handleClick = () => {
@@ -22,17 +23,35 @@ export class DrawerItem extends Component {
   };
 
   render() {
-    const { label, selected, subItem, subsubItem } = this.props;
-    let paddingLeft = subItem ? 12 : 0;
-    if (subsubItem) paddingLeft = 24;
+    const { label, selected, subItem, subsubItem, icon } = this.props;
+    let marginLeft = subItem ? -6 : 0;
+    if (subsubItem) marginLeft = 8;
     return (
-      <ListItem onPress={this.handleClick} selected={selected}>
+      <ListItem
+        onPress={this.handleClick}
+        selected={selected}
+        media={
+          icon ? (
+            <i
+              className={`fa fa-${icon}`}
+              style={{ fontSize: 20, width: 20, color: 'white' }}
+            />
+          ) : null
+        }
+        style={{
+          marginLeft,
+          paddingTop: subItem || subsubItem ? 12 : 16,
+          paddingBottom: subItem || subsubItem ? 12 : 16,
+          width: subsubItem ? 'calc(100% - 8)' : '100%',
+          borderRadius: 4,
+        }}
+        rippleProps={{ rippleColor: '#fff', rippleContainerBorderRadius: 4 }}>
         <Text
           style={{
             fontSize: 11,
-            fontWeight: '500',
-            paddingLeft,
-            color: '#000',
+            fontWeight: '400',
+            // paddingLeft,
+            color: '#fff',
           }}>
           {label}
         </Text>

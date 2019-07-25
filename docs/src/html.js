@@ -15,6 +15,7 @@ export default function HTML(props) {
           name="google-site-verification"
           content="pnInoKlqzLFjeCNTW6F-BnibL8xE4qnA7Tghks5dLwo"
         />
+
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>

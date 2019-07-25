@@ -18,6 +18,7 @@ class PageTitle extends Component {
           letterSpacing: 1.2,
           marginBottom: 0,
           wordBreak: 'break-all',
+          color: '#5a6484',
         }}>
         {this.props.children}
       </h1>

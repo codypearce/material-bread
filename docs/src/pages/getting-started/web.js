@@ -121,7 +121,7 @@ class Index extends Component {
             />
           </div>
         </Section>
-        z
+
         <Section name="Setup" id="setup" href="/getting-started/web#setup ">
           <ComponentDescription
             text={
