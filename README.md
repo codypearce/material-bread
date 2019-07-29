@@ -136,6 +136,7 @@ Currently there are 39 distinct components (though what is a full component and 
 | [SheetSide](https://material-bread.org/components/sheet-side)                | ✓   | ✓       | ✓   | ✓        |
 | [Slider](https://material-bread.org/components/slider)                       | ✓   | ✓       | ✓   | ✓        |
 | [Snackbar](https://material-bread.org/components/snackbar)                   | ✓   | ✓       | ✓   | ✓        |
+| [SwipeNav](https://material-bread.org/components/swipenav)                   | ✓   | ✓       | ✓   | ✓        |
 | [Switch](https://material-bread.org/components/switch)                       | ✓   | ✓       | ✓   | ✓        |
 | [Tabs](https://material-bread.org/components/tabs)                           | ✓   | ✓       | ✓   | ✓        |
 | [TextField](https://material-bread.org/components/textfield)                 | ✓   | ✓       | ✓   | ✓        |
