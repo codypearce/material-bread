@@ -101,6 +101,7 @@ export { default as SheetBottom } from './Components/SheetBottom/SheetBottom';
 export { default as SheetSide } from './Components/SheetSide/SheetSide';
 export { default as Slider } from './Components/Slider/Slider.js';
 export { default as Snackbar } from './Components/Snackbar/Snackbar.js';
+export { default as SwipeNav } from './Components/SwipeNav/SwipeNav.js';
 export { default as Switch } from './Components/Switch/Switch.js';
 export { default as Tabs } from './Components/Tabs/Tabs.js';
 export { default as Tab } from './Components/Tabs/Tab/Tab.js';
