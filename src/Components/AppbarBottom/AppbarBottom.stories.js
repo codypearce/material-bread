@@ -1,9 +1,30 @@
 import React from 'react';
 import { storiesOf } from '../../storybook/helpers/storiesOf';
-
-import { AppbarBottom, Badge, IconButton, Fab, FabSpeedDial } from '../..';
+import { View, Platform, Dimensions, StyleSheet } from 'react-native';
+import {
+  AppbarBottom,
+  Badge,
+  IconButton,
+  Fab,
+  FabSpeedDial,
+  Drawer,
+  DrawerItem,
+  DrawerHeader,
+  DrawerSection,
+  BodyText,
+  Heading,
+} from '../..';
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
+
+import { State, Store } from '@sambego/storybook-state';
+
+const store = new Store({
+  isOpen: false,
+  isOpenPermanent: true,
+});
+
+const pageWidth = Platform.OS == 'web' ? 600 : Dimensions.get('window').width;
 
 /*  eslint-disable no-console */
 export default storiesOf('Components|AppbarBottom', module)
@@ -276,7 +297,63 @@ export default storiesOf('Components|AppbarBottom', module)
         style={{ marginTop: 300 }}
       />
     </Container>
+  ))
+  .add('open sidebar', () => (
+    <State store={store} style={{ flex: 1 }}>
+      {state => (
+        <View style={styles.container}>
+          <Drawer
+            open={state.isOpen}
+            pageWidth={pageWidth}
+            pageHeight={400}
+            drawerContent={<DrawerContent />}
+            onClose={() => store.set({ isOpen: false })}
+            animationTime={250}
+            opacity={0.33}>
+            <View style={styles.body}>
+              <PageContent />
+              <AppbarBottom
+                fab={<Fab backgroundColor={'#E91E63'} />}
+                fabCutout
+                fabPosition={'center'}
+                navigation={'menu'}
+                onNavigation={() => store.set({ isOpen: !state.isOpen })}
+                actionItems={[
+                  { name: 'search', onPress: () => console.log('onSearch') },
+                  { name: 'more-vert' },
+                ]}
+              />
+            </View>
+          </Drawer>
+        </View>
+      )}
+    </State>
   ));
+
+const DrawerContent = () => {
+  return (
+    <View>
+      <DrawerHeader title={'Jon Snow'} subtitle={'Knows nothing'} />
+      <DrawerSection bottomDivider>
+        <DrawerItem text={'Inbox'} icon={'mail'} active />
+        <DrawerItem text={'Outbox'} icon={'send'} />
+        <DrawerItem text={'Favorites'} icon={'favorite'} />
+      </DrawerSection>
+    </View>
+  );
+};
+
+const PageContent = () => {
+  return (
+    <View style={{ marginTop: 20, alignItems: 'center', height: 325 }}>
+      <Heading type={4} style={{ marginBottom: 20 }}>
+        This is a page
+      </Heading>
+      <BodyText text="Click the menu button to open the drawer" />
+      <BodyText text="Click outside the drawer to close it" />
+    </View>
+  );
+};
 
 const actions = [
   <Fab key={1} backgroundColor={'#E91E63'} icon={'archive'} />,
@@ -284,3 +361,14 @@ const actions = [
   <Fab key={3} backgroundColor={'#009688'} icon={'edit'} />,
   <Fab key={4} backgroundColor={'black'} icon={'attach-money'} />,
 ];
+
+const styles = StyleSheet.create({
+  container: {
+    zIndex: 1,
+    position: 'relative',
+  },
+  body: {
+    width: pageWidth,
+    height: 400,
+  },
+});
