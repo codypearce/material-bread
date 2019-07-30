@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "color": "^3.1.0",
+    "react-native-svg": "^9.5.3",
     "react-native-vector-icons": "^6.2.0"
   },
   "devDependencies": {
