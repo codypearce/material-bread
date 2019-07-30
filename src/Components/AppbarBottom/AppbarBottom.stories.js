@@ -13,6 +13,7 @@ import {
   DrawerSection,
   BodyText,
   Heading,
+  DrawerBottom,
 } from '../..';
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
@@ -325,6 +326,41 @@ export default storiesOf('Components|AppbarBottom', module)
               />
             </View>
           </Drawer>
+        </View>
+      )}
+    </State>
+  ))
+  .add('open drawer bottom', () => (
+    <State store={store} style={{ flex: 1 }}>
+      {state => (
+        <View style={{ height: 500, position: 'relative' }}>
+          <AppbarBottom
+            fab={<Fab backgroundColor={'#E91E63'} />}
+            fabCutout
+            fabPosition={'center'}
+            navigation={'menu'}
+            style={{ marginTop: 300 }}
+            onNavigation={() =>
+              store.set({ isOpenBottom: !state.isOpenBottom })
+            }
+            actionItems={[
+              { name: 'search', onPress: () => console.log('onSearch') },
+              { name: 'more-vert' },
+            ]}
+          />
+          <DrawerBottom
+            visible={state.isOpenBottom}
+            onBackdropPress={() => store.set({ isOpenBottom: false })}
+            onSwipeDown={() => store.set({ isOpenBottom: false })}>
+            <View>
+              <DrawerHeader title={'Jon Snow'} subtitle={'Knows nothing'} />
+              <DrawerSection bottomDivider>
+                <DrawerItem text={'Inbox'} icon={'mail'} active />
+                <DrawerItem text={'Outbox'} icon={'send'} />
+                <DrawerItem text={'Favorites'} icon={'favorite'} />
+              </DrawerSection>
+            </View>
+          </DrawerBottom>
         </View>
       )}
     </State>
