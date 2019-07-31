@@ -6,6 +6,12 @@ const propData = [
   ['rippleColor', 'Icon rippleColor overrides ripple color', 'string', 'color'],
   ['size', 'Size of icon', 'number', ''],
   ['style', 'Styles root element', 'object', ''],
+  [
+    'iconComponent',
+    'One of the Icon components from react-native-vector-icons',
+    'function',
+    '',
+  ],
 ];
 
 export default createTableData(propData);
