@@ -10,6 +10,7 @@ export const code = `<AppbarBottom
         {name: 'label'},
         {name: 'delete'},
     ]}
+    style={{marginTop: 16}}
 />`;
 
 const SubtitleDemo = pageHref => (

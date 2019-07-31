@@ -16,7 +16,7 @@ import {
 } from '../..';
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
-import Svg, { G, Path, Circle, Rect, Defs, ClipPath } from 'react-native-svg';
+
 import { State, Store } from '@sambego/storybook-state';
 
 const store = new Store({
@@ -328,43 +328,8 @@ export default storiesOf('Components|AppbarBottom', module)
         </View>
       )}
     </State>
-  ))
-  .add('svg', () => (
-    <Container>
-      <View style={{ position: 'relative' }}>
-        <Svg
-          style={{
-            isolation: 'isolate',
-          }}
-          // viewBox="0 0 100 100"
-          // width="100%"
-          width={'100%'}
-          height={56}>
-          {/* <Defs>
-            <ClipPath id="prefix__a">
-              <Path d="M0 0h500v120H0z" />
-            </ClipPath>
-          </Defs> */}
-          <Rect height={56} width={50} fill={'red'} x={0} y={0} />
-          <G x={50}>
-            <Path
-              d="M500 0v120H0V0h180c11.08 0 20 8.92 20 20a49.999 49.999 0 0050 50c27.615 0 50-22.386 50-50 0-11.08 8.92-20 20-20h180z"
-              fillRule="evenodd"
-              style={{ left: 20 }}
-            />
-          </G>
-
-          <Rect height={56} width={50} fill={'red'} x={100} y={0} />
-        </Svg>
-        <Fab
-          icon={'change-history'}
-          backgroundColor={'#009688'}
-          containerStyle={{ position: 'absolute', top: 0 }}
-        />
-      </View>
-    </Container>
   ));
-const width = Dimensions.get('window').width;
+
 const DrawerContent = () => {
   return (
     <View>
