@@ -30,6 +30,7 @@ export class Fab extends Component {
     animated: PropTypes.bool,
     label: PropTypes.string,
     testID: PropTypes.string,
+    containerStyle: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   };
 
   static defaultProps = {

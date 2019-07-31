@@ -2,6 +2,7 @@ import { createTableData } from '../../../utils/createPropData';
 const propData = [
   ['animated', 'Whether to animate when changing visible prop', 'bool', ''],
   ['backgroundColor', 'Background color for fab circle', 'object', ''],
+  ['containerStyle', 'Styles wrapping element', 'object', ''],
   ['disabled', 'Whether fab is disabled', 'bool', 'false'],
   ['icon', 'Name of icon to show or an icon node', 'string || node', ''],
   ['label', 'String to show as extended fab', 'string', ''],
