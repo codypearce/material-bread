@@ -44,6 +44,23 @@ export default storiesOf('Components|Badge', module)
       </View>
     </Container>
   ))
+  .add('With Max Value', () => (
+    <Container>
+      <Header title={'Standalone'} />
+
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginBottom: 40,
+        }}>
+        <Badge size={36} content={'MB'} maxValue={99} />
+        <Badge size={36} content={99} />
+        <Badge size={36} content={100} maxValue={99} />
+        <Badge size={36} content={1000} maxValue={999} />
+      </View>
+    </Container>
+  ))
   .add('On Icons', () => (
     <Container>
       <Header title={'On Icons'} />

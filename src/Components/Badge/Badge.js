@@ -13,6 +13,7 @@ class Badge extends Component {
     color: PropTypes.string,
     textColor: PropTypes.string,
     content: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    maxValue: PropTypes.number,
     children: PropTypes.node,
     size: PropTypes.number,
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
@@ -59,13 +60,21 @@ class Badge extends Component {
     }
   }
 
-  getFontSize() {
-    const { content, size } = this.props;
+  getFontSize(content, maxed) {
+    const { size } = this.props;
     let scaleFactor = 0.5;
-    if (content && String(content).length > 3) {
+    if (content && String(content).length > 3 && !maxed) {
       scaleFactor = 0.3;
     }
     return size * scaleFactor;
+  }
+
+  getBadgeWidth(content) {
+    const { size } = this.props;
+    const isLong = String(content).length > 3;
+    let scaleFactor = isLong ? 1.75 : 1.5;
+
+    return scaleFactor * size;
   }
 
   onChildrenLayout = e => {
@@ -102,6 +111,7 @@ class Badge extends Component {
       right,
       left,
       top,
+      maxValue = 0,
       ...rest
     } = this.props;
 
@@ -118,12 +128,16 @@ class Badge extends Component {
     if (right) positionStyle.right = right;
     if (left) positionStyle.left = left;
 
+    let maxedContent = parseInt(content, 10);
+    const maxed = !isNaN(maxedContent) && maxValue && maxedContent > maxValue;
+    maxedContent = maxed ? `${maxValue}+` : content;
+
     return (
       <Animated.View
         style={[
           {
             height: size,
-            width: size,
+            width: maxed ? this.getBadgeWidth(maxedContent) : size,
             borderRadius: size,
             backgroundColor: color ? color : theme.primary.main,
 
@@ -142,11 +156,11 @@ class Badge extends Component {
           style={[
             styles.content,
             {
-              fontSize: this.getFontSize(),
+              fontSize: this.getFontSize(maxedContent, maxed),
               color: textColor ? textColor : 'white',
             },
           ]}>
-          {content}
+          {maxedContent}
         </Text>
       </Animated.View>
     );
