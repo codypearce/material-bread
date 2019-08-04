@@ -182,7 +182,7 @@ class ListItem extends Component {
         onHoverOut={() => this.handleHover(false)}>
         <Ripple
           onAnimationEnd={() => {
-            if (isPressed) {
+            if (isPressed && onPress) {
               onPress();
               this.setState({ isPressed: false });
             }
