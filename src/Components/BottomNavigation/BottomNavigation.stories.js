@@ -16,7 +16,7 @@ const store = new Store({
 export default storiesOf('Components|Bottom Navigation', module)
   .addParameters({ jest: ['BottomNavigation'] })
   .add('Label', () => (
-    <Container>
+    <Container scroll>
       <Header title={'Bottom Navigation'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
@@ -55,10 +55,11 @@ export default storiesOf('Components|Bottom Navigation', module)
         {state => (
           <BottomNavigation
             style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
-            value={state.four}
+            value={state.three}
             showLabels
-            handleChange={value => store.set({ four: value })}
+            handleChange={value => store.set({ three: value })}
             backgroundColor={'#9C27B0'}
+            horizontalWhenLandscape
             actionItems={[
               { label: 'Home' },
               { label: 'Favorite' },
@@ -74,8 +75,8 @@ export default storiesOf('Components|Bottom Navigation', module)
           <BottomNavigation
             style={{ maxWidth: 672, width: '100%' }}
             backgroundColor={'black'}
-            value={state.five}
-            handleChange={value => store.set({ five: value })}
+            value={state.four}
+            handleChange={value => store.set({ four: value })}
             showLabels
             actionItems={[
               <BottomNavigationItem key={1} label={'Home'} />,
@@ -89,7 +90,7 @@ export default storiesOf('Components|Bottom Navigation', module)
     </Container>
   ))
   .add('Icons', () => (
-    <Container>
+    <Container scroll>
       <Header title={'Bottom Navigation'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
@@ -139,6 +140,24 @@ export default storiesOf('Components|Bottom Navigation', module)
           />
         )}
       </State>
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <BottomNavigation
+            style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
+            value={state.four}
+            handleChange={value => store.set({ four: value })}
+            backgroundColor={'#009688'}
+            horizontalWhenLandscape
+            actionItems={[
+              { icon: 'home' },
+              { icon: 'attach-money' },
+              { icon: 'favorite' },
+              { icon: 'info' },
+              <BottomNavigationItem key={4} icon={'settings'} />,
+            ]}
+          />
+        )}
+      </State>
 
       <State store={store} style={{ flex: 1 }}>
         {state => (
@@ -175,104 +194,128 @@ export default storiesOf('Components|Bottom Navigation', module)
       </State>
     </Container>
   ))
-  .add('Icon + Label', () => (
-    <Container>
-      <Header title={'Bottom Navigation'} />
-      <State store={store} style={{ flex: 1 }}>
-        {state => (
-          <BottomNavigation
-            style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
-            value={state.one}
-            handleChange={value => store.set({ one: value })}
-            showLabels
-            actionItems={[
-              { icon: 'home', label: 'Home' },
-              { icon: 'favorite', label: 'Favorite' },
-              { icon: 'info', label: 'Info' },
-              <BottomNavigationItem
-                key={4}
-                icon={'settings'}
-                label={'Settings'}
-              />,
-            ]}
-          />
-        )}
-      </State>
-      <State store={store} style={{ flex: 1 }}>
-        {state => (
-          <BottomNavigation
-            style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
-            value={state.two}
-            handleChange={value => store.set({ two: value })}
-            backgroundColor={'#E91E63'}
-            actionItems={[
-              { icon: 'home', label: 'Home' },
-              { icon: 'favorite', label: 'Favorite' },
-              { icon: 'info', label: 'Info' },
-            ]}
-          />
-        )}
-      </State>
-      <State store={store} style={{ flex: 1 }}>
-        {state => (
-          <BottomNavigation
-            style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
-            value={state.four}
-            handleChange={value => store.set({ four: value })}
-            backgroundColor={'#9C27B0'}
-            actionItems={[
-              { icon: 'home', label: 'Home' },
-              { icon: 'attach-money', label: 'Buy' },
-              { icon: 'favorite', label: 'Favorite' },
-              { icon: 'info', label: 'Info' },
-              <BottomNavigationItem
-                key={4}
-                icon={'settings'}
-                label={'Settings'}
-              />,
-            ]}
-          />
-        )}
-      </State>
-      <State store={store} style={{ flex: 1 }}>
-        {state => (
-          <BottomNavigation
-            style={{ maxWidth: 672, width: '100%' }}
-            backgroundColor={'black'}
-            value={state.five}
-            handleChange={value => store.set({ five: value })}
-            actionItems={[
-              <BottomNavigationItem key={1} icon={'home'} label={'Home'} />,
-              <BottomNavigationItem
-                key={2}
-                icon={'favorite'}
-                label={'Favorite'}
-                badgeProps={{
-                  size: 7,
-                  color: 'red',
-                  right: 1,
-                  top: 2,
-                }}
-              />,
-              <BottomNavigationItem key={3} icon={'info'} label={'Info'} />,
-              <BottomNavigationItem
-                key={4}
-                icon={'settings'}
-                label={'Settings'}
-                badgeProps={{
-                  content: 72,
-                  size: 14,
-                  color: 'red',
-                }}
-              />,
-            ]}
-          />
-        )}
-      </State>
-    </Container>
-  ))
+  .add('Icon + Label', () => {
+    return (
+      <Container scroll>
+        <Header title={'Bottom Navigation'} />
+        <State store={store} style={{ flex: 1 }}>
+          {state => (
+            <BottomNavigation
+              style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
+              value={state.one}
+              handleChange={value => store.set({ one: value })}
+              showLabels
+              actionItems={[
+                { icon: 'home', label: 'Home' },
+                { icon: 'favorite', label: 'Favorite' },
+                { icon: 'info', label: 'Info' },
+                <BottomNavigationItem
+                  key={4}
+                  icon={'settings'}
+                  label={'Settings'}
+                />,
+              ]}
+            />
+          )}
+        </State>
+        <State store={store} style={{ flex: 1 }}>
+          {state => (
+            <BottomNavigation
+              style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
+              value={state.two}
+              handleChange={value => store.set({ two: value })}
+              backgroundColor={'#E91E63'}
+              actionItems={[
+                { icon: 'home', label: 'Home' },
+                { icon: 'favorite', label: 'Favorite' },
+                { icon: 'info', label: 'Info' },
+              ]}
+            />
+          )}
+        </State>
+        <State store={store} style={{ flex: 1 }}>
+          {state => (
+            <BottomNavigation
+              style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
+              value={state.three}
+              handleChange={value => store.set({ three: value })}
+              backgroundColor={'#9C27B0'}
+              actionItems={[
+                { icon: 'home', label: 'Home' },
+                { icon: 'attach-money', label: 'Buy' },
+                { icon: 'favorite', label: 'Favorite' },
+                { icon: 'info', label: 'Info' },
+                <BottomNavigationItem
+                  key={4}
+                  icon={'settings'}
+                  label={'Settings'}
+                />,
+              ]}
+            />
+          )}
+        </State>
+        <State store={store} style={{ flex: 1 }}>
+          {state => (
+            <BottomNavigation
+              style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
+              value={state.four}
+              handleChange={value => store.set({ four: value })}
+              backgroundColor={'#9C27B0'}
+              horizontalWhenLandscape
+              actionItems={[
+                { icon: 'home', label: 'Home' },
+                { icon: 'attach-money', label: 'Buy' },
+                { icon: 'favorite', label: 'Favorite' },
+                { icon: 'info', label: 'Info' },
+                <BottomNavigationItem
+                  key={4}
+                  icon={'settings'}
+                  label={'Settings'}
+                />,
+              ]}
+            />
+          )}
+        </State>
+        <State store={store} style={{ flex: 1 }}>
+          {state => (
+            <BottomNavigation
+              style={{ maxWidth: 672, width: '100%' }}
+              backgroundColor={'black'}
+              value={state.five}
+              handleChange={value => store.set({ five: value })}
+              actionItems={[
+                <BottomNavigationItem key={1} icon={'home'} label={'Home'} />,
+                <BottomNavigationItem
+                  key={2}
+                  icon={'favorite'}
+                  label={'Favorite'}
+                  badgeProps={{
+                    size: 7,
+                    color: 'red',
+                    right: 1,
+                    top: 2,
+                  }}
+                />,
+                <BottomNavigationItem key={3} icon={'info'} label={'Info'} />,
+                <BottomNavigationItem
+                  key={4}
+                  icon={'settings'}
+                  label={'Settings'}
+                  badgeProps={{
+                    content: 72,
+                    size: 14,
+                    color: 'red',
+                  }}
+                />,
+              ]}
+            />
+          )}
+        </State>
+      </Container>
+    );
+  })
   .add('Custom', () => (
-    <Container>
+    <Container scroll>
       <Header title={'Bottom Navigation'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
