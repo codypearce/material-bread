@@ -14,18 +14,26 @@ const AppbarBottomSVG = ({
     width = Dimensions.get('screen').width - paddingHorizontal;
   }
 
-  let rectWidth = width / 2 - 92 / 2;
-  let middlePosition = width / 2 - 92 / 2;
-  let rightPosition = width / 2 + 92 / 2;
+  const widthOfPath = 92;
+
+  let rectWidth = width / 2 - widthOfPath / 2;
+  let middlePosition = width / 2 - widthOfPath / 2;
+  let rightPosition = width / 2 + widthOfPath / 2;
 
   if (fabPosition == 'end') {
-    rectWidth = width - 92;
-    middlePosition = width - 92;
+    rectWidth = width - widthOfPath;
+    middlePosition = width - widthOfPath;
   }
 
   return (
     <Svg width={'100%'} height={56} style={{ position: 'absolute' }}>
-      <Rect height={56} width={rectWidth} fill={backgroundColor} x={0} y={0} />
+      <Rect
+        height={56}
+        width={rectWidth + 1}
+        fill={backgroundColor}
+        x={0}
+        y={0}
+      />
       <G x={middlePosition}>
         <Path
           fill={backgroundColor}
@@ -36,9 +44,9 @@ const AppbarBottomSVG = ({
       {fabPosition == 'end' ? null : (
         <Rect
           height={56}
-          width={rectWidth}
+          width={rectWidth + 1}
           fill={backgroundColor}
-          x={rightPosition}
+          x={rightPosition - 1}
           y={0}
         />
       )}
