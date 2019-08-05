@@ -159,7 +159,6 @@ class TextFieldLabel extends Component {
       error,
       labelColor,
       label,
-      focused,
       type,
       leadingIcon,
       prefix,
@@ -177,8 +176,6 @@ class TextFieldLabel extends Component {
     }
 
     if (!labelColor) labelColor = 'rgba(0, 0, 0, 0.54)';
-
-    if (focused) labelColor = theme.primary.main;
 
     if (error) {
       labelColor = 'red';

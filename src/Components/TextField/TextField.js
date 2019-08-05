@@ -8,6 +8,7 @@ import TextFieldFlat from './TextFieldFlat/TextFieldFlat.js';
 class TextField extends Component {
   static propTypes = {
     type: PropTypes.string,
+    error: PropTypes.string,
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,
     disabled: PropTypes.bool,
@@ -38,7 +39,7 @@ class TextField extends Component {
   };
 
   render() {
-    const { type, ...rest } = this.props;
+    const { type, error, ...rest } = this.props;
     const { focused } = this.state;
 
     if (type == 'outlined') {
@@ -47,6 +48,7 @@ class TextField extends Component {
           handleFocus={this.handleFocus}
           handleBlur={this.handleBlur}
           focused={focused}
+          error={Boolean(error)}
           {...rest}
         />
       );
@@ -56,6 +58,7 @@ class TextField extends Component {
           handleFocus={this.handleFocus}
           handleBlur={this.handleBlur}
           focused={focused}
+          error={Boolean(error)}
           {...rest}
         />
       );
@@ -65,6 +68,7 @@ class TextField extends Component {
           handleFocus={this.handleFocus}
           handleBlur={this.handleBlur}
           focused={focused}
+          error={Boolean(error)}
           {...rest}
         />
       );
