@@ -149,7 +149,7 @@ class Index extends Component {
                   First{' '}
                   <CodeBlock
                     code={
-                      'npm i react-native-web react-dom react-art modal-enhanced-react-native-web'
+                      'npm i react-native-web react-dom react-art modal-enhanced-react-native-web react-native-svg'
                     }
                     style={styles.code}
                     fontSize={12}

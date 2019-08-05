@@ -2,8 +2,9 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import withTheme from '../../Theme/withTheme';
-import { IconButton, Paper } from '../../';
+import { IconButton } from '../../';
 import styles from './AppbarBottom.styles';
+import AppbarBottomSVG from './AppbarBottom.svg.js';
 
 class AppbarBottom extends Component {
   static propTypes = {
@@ -22,6 +23,11 @@ class AppbarBottom extends Component {
 
     children: PropTypes.node,
     appbarStyles: PropTypes.object,
+  };
+
+  state = {
+    appbarWidth: 0,
+    appbarHeight: 0,
   };
 
   _renderNavigation() {
@@ -47,7 +53,7 @@ class AppbarBottom extends Component {
     if (!fab) return null;
 
     const fabRightStyle = {
-      right: fabCutout ? 24 : 16,
+      right: fabCutout ? 17 : 16,
     };
     const fabCenterStyle = {
       right: 'auto',
@@ -61,22 +67,17 @@ class AppbarBottom extends Component {
   }
 
   _renderCutout() {
-    const { fabCutout, fabPosition } = this.props;
-
+    const { fabCutout, fabPosition, color, theme } = this.props;
+    const backgroundColor = color ? color : theme.primary.main;
     if (!fabCutout) return null;
 
-    const fabRightStyle = {
-      right: 16,
-    };
-
-    const fabCenterStyle = {
-      alignSelf: 'center',
-    };
-
-    const cutoutStyles = fabPosition === 'end' ? fabRightStyle : fabCenterStyle;
-
     return (
-      <View style={[styles.centerCut, cutoutStyles]} pointerEvents="none" />
+      <AppbarBottomSVG
+        fabPosition={fabPosition}
+        paddingHorizontal={32}
+        backgroundColor={backgroundColor}
+        width={this.state.appbarWidth}
+      />
     );
   }
 
@@ -117,6 +118,15 @@ class AppbarBottom extends Component {
     );
   }
 
+  measureAppbar = e => {
+    const { width, height } = e.nativeEvent.layout;
+
+    this.setState({
+      appbarWidth: width,
+      appbarHeight: height,
+    });
+  };
+
   render() {
     const {
       color,
@@ -125,28 +135,31 @@ class AppbarBottom extends Component {
       appbarStyles,
       fabPosition,
       theme,
+      fabCutout,
       ...rest
     } = this.props;
+    const { appbarWidth } = this.state;
     const backgroundColor = color ? color : theme.primary.main;
-    return (
-      <View style={[styles.contianer, style]}>
-        {this._renderFab()}
 
-        <Paper
+    return (
+      <View
+        style={[styles.contianer, { opacity: appbarWidth == 0 ? 0 : 1 }, style]}
+        onLayout={this.measureAppbar}>
+        {this._renderFab()}
+        {this._renderCutout()}
+        <View
           style={[
             styles.appbar,
             {
               justifyContent:
                 fabPosition === 'end' ? 'flex-start' : 'space-between',
-              backgroundColor: backgroundColor,
+              backgroundColor: !fabCutout ? backgroundColor : 'transparent',
             },
             appbarStyles,
           ]}
           {...rest}>
           {children ? children : this._renderAppBarContent()}
-        </Paper>
-
-        {this._renderCutout()}
+        </View>
       </View>
     );
   }
