@@ -16,8 +16,10 @@ const propData = [
     '',
   ],
   ['title', 'Adds a dialog title at the top', 'string', ''],
+  ['titleStyle', 'Additional styles for title', 'object', ''],
   ['style', 'Styles container dialog', 'object', ''],
   ['supportingText', 'Adds styled text below title', 'string', ''],
+  ['supportingTextStyle', 'Additional styles for supportingText', 'object', ''],
   ['visible', 'Wether to show dialog or not', 'bool', ''],
 ];
 
