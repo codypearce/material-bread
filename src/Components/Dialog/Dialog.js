@@ -19,7 +19,12 @@ class Dialog extends Component {
       PropTypes.oneOfType([PropTypes.node, PropTypes.object]),
     ),
     title: PropTypes.string,
+    titleStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     supportingText: PropTypes.string,
+    supportingTextStyle: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.array,
+    ]),
     contentStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     testID: PropTypes.string,
   };
@@ -40,7 +45,9 @@ class Dialog extends Component {
     const {
       style,
       title,
+      titleStyle,
       supportingText,
+      supportingTextStyle,
       children,
       actionItems,
       contentStyle,
@@ -48,9 +55,13 @@ class Dialog extends Component {
     return (
       <View style={[styles.container, style]}>
         <View style={[styles.contentContainer, contentStyle]}>
-          {title ? <BodyText style={styles.title}>{title}</BodyText> : null}
+          {title ? (
+            <BodyText style={[styles.title, titleStyle]}>{title}</BodyText>
+          ) : null}
           {supportingText ? (
-            <BodyText style={styles.supportingText}>{supportingText}</BodyText>
+            <BodyText style={[styles.supportingText, supportingTextStyle]}>
+              {supportingText}
+            </BodyText>
           ) : null}
           {children}
         </View>
