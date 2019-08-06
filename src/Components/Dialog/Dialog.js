@@ -15,7 +15,9 @@ class Dialog extends Component {
     onRequestClose: PropTypes.func,
     onShow: PropTypes.func,
     onTouchOutside: PropTypes.func,
-    actionItems: PropTypes.array,
+    actionItems: PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.node, PropTypes.object]),
+    ),
     title: PropTypes.string,
     supportingText: PropTypes.string,
     contentStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
