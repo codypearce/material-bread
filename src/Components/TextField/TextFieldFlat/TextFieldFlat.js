@@ -6,6 +6,7 @@ import TextFieldUnderline from '../TextFieldUnderline/TextFieldUnderline';
 import TextFieldLabel from '../TextFieldLabel/TextFieldLabel';
 import TextFieldHelperText from '../TextFieldHelperText/TextFieldHelperText';
 import styles from './TextFieldFlat.styles';
+import { nonOutlinedStops } from '../TextFieldLabel/TextFieldLabel.constants';
 
 class TextFieldFlat extends Component {
   constructor(props) {
@@ -44,6 +45,7 @@ class TextFieldFlat extends Component {
 
   static defaultProps = {
     helperVisible: true,
+    labelHeight: 0,
   };
 
   state = {
@@ -106,14 +108,23 @@ class TextFieldFlat extends Component {
   }
 
   _updateTextInputHeight = e => {
+    const { labelHeight } = this.state;
     if (!this.props.multiline) return;
 
     const nativeHeight = e.nativeEvent.contentSize.height;
 
+    const heightOffset =
+      Platform.OS === 'ios' ? labelHeight + nonOutlinedStops.active + 8 : 0;
     this.setState({
-      height: nativeHeight < 56 ? 56 : nativeHeight,
+      height: nativeHeight < 56 ? 56 : nativeHeight + heightOffset,
     });
   };
+
+  _measureLabel = ({
+    nativeEvent: {
+      layout: { height },
+    },
+  }) => this.setState({ labelHeight: height });
 
   render() {
     const {
@@ -151,7 +162,13 @@ class TextFieldFlat extends Component {
     let paddingLeft = leadingIcon ? 44 : 0;
     if (prefix) paddingLeft = 16;
 
-    const platformStyles = Platform.OS == 'web' ? { outlineWidth: 0 } : {};
+    const platformStyles = Platform.select({
+      web: { outlineWidth: 0 },
+      ios: {
+        marginTop: 8,
+      },
+      android: {},
+    });
 
     return (
       <View
@@ -173,6 +190,7 @@ class TextFieldFlat extends Component {
             dense={dense}
             prefix={prefix}
             focusedLabelColor={focusedLabelColor}
+            onLayout={this._measureLabel}
           />
         ) : null}
         {leadingIcon ? this._renderLeadingIcon() : null}
@@ -193,6 +211,7 @@ class TextFieldFlat extends Component {
             style,
           ]}
           testID={testID}
+          scrollEnabled={false}
           onContentSizeChange={e => this._updateTextInputHeight(e)}
           {...rest}
           onFocus={handleFocus}
