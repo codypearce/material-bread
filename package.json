@@ -74,7 +74,7 @@
   "jest": {
     "preset": "react-native",
     "transformIgnorePatterns": [
-      "/node_modules/(?!(react-native|react-native-swipe-gestures|react-native-vector-icons)/)"
+      "/node_modules/(?!(react-native|react-native-swipe-gestures|react-native-vector-icons|react-native-svg)/)"
     ],
     "testMatch": [
       "<rootDir>/**/*.test.js"
