@@ -32,6 +32,7 @@ class TextFieldOutlined extends Component {
     suffix: PropTypes.node,
     prefix: PropTypes.node,
     testID: PropTypes.string,
+    focusedLabelColor: PropTypes.string,
   };
 
   static defaultProps = {
@@ -126,6 +127,7 @@ class TextFieldOutlined extends Component {
       suffix,
       prefix,
       testID,
+      focusedLabelColor,
       ...rest
     } = this.props;
 
@@ -165,6 +167,7 @@ class TextFieldOutlined extends Component {
             leadingIcon={leadingIcon}
             dense={dense}
             prefix={prefix}
+            focusedLabelColor={focusedLabelColor}
           />
         ) : null}
 
