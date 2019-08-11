@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { IconButton, Badge } from '../../';
 import Header from '../../storybook/components/Header';
@@ -36,6 +37,32 @@ export default storiesOf('Components|Icon Button', module)
         <IconButton name="directions-walk" size={48} color={'#8BC34A'} />
 
         <IconButton name="flash-on" size={64} color={'#FFEB3B'} />
+      </View>
+      <View style={{ flexDirection: 'row', marginBottom: 20 }}>
+        <IconButton
+          name="visual-studio-code"
+          size={24}
+          color={'#373177'}
+          iconComponent={MaterialCommunityIcons}
+        />
+        <IconButton
+          name="android-head"
+          size={32}
+          color={'#69B342'}
+          iconComponent={MaterialCommunityIcons}
+        />
+        <IconButton
+          name="apple-ios"
+          size={48}
+          color={'#000000'}
+          iconComponent={MaterialCommunityIcons}
+        />
+        <IconButton
+          name="react"
+          size={64}
+          color={'#5FDAFB'}
+          iconComponent={MaterialCommunityIcons}
+        />
       </View>
     </Container>
   ));

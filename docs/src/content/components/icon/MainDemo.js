@@ -23,6 +23,13 @@ export const code = `class IconPage extends React.Component {
         <Icon name="directions-walk" size={48} color={'#8BC34A'} />
 
         <Icon name="flash-on" size={64} color={'#FFEB3B'} />
+        
+        <Icon
+          name="react"
+          size={64}
+          color={'#5FDAFB'}
+          iconComponent={MaterialCommunityIcons}
+        />
       </View>
     );
   }
