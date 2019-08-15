@@ -8,19 +8,24 @@ import getStatusBarHeight from '../../helpers/statusBarHeight';
 class SwipeNav extends Component {
   static propTypes = {
     header: PropTypes.node,
+    footer: PropTypes.node,
     scrollViewProps: PropTypes.object,
     scrollComponent: PropTypes.node,
     style: PropTypes.object,
     headerContainerStyle: PropTypes.object,
+    footerContainerStyle: PropTypes.object,
     scrollViewStyle: PropTypes.object,
     children: PropTypes.node,
   };
 
   state = {
     headerHeight: 56,
+    footerHeight: 100,
     offsetY: 0,
     headerOffsetY: new Animated.Value(0),
     scrollPaddingTop: new Animated.Value(56),
+    footerOffsetY: new Animated.Value(0),
+    scrollPaddingBottom: new Animated.Value(100),
   };
 
   onHeaderLayout = e => {
@@ -29,7 +34,14 @@ class SwipeNav extends Component {
     });
   };
 
+  onFooterLayout = e => {
+    this.setState({
+      footeerHeight: e.nativeEvent.layout.height,
+    });
+  };
+
   onScroll = e => {
+    const { header, footer } = this.props;
     const offsetY = e.nativeEvent.contentOffset.y;
     const lastOffsetY = this.state.offsetY;
 
@@ -37,11 +49,18 @@ class SwipeNav extends Component {
       offsetY,
     });
 
-    if (offsetY - lastOffsetY > 20 || offsetY - lastOffsetY < -20) {
+    if ((header && offsetY - lastOffsetY > 20) || offsetY - lastOffsetY < -20) {
       if (offsetY > lastOffsetY) {
         this.animateHeader(true);
       } else {
         this.animateHeader(false);
+      }
+    }
+    if ((footer && offsetY - lastOffsetY < -20) || offsetY - lastOffsetY > 20) {
+      if (offsetY < lastOffsetY) {
+        this.animateFooter(true);
+      } else {
+        this.animateFooter(false);
       }
     }
   };
@@ -62,8 +81,30 @@ class SwipeNav extends Component {
     ]).start();
   }
 
+  animateFooter(hide) {
+    const { footerOffsetY, footerHeight, scrollPaddingBottom } = this.state;
+    const newFooterOffset = hide ? footerHeight : 0;
+    const newScrollPadding = hide ? 0 : footerHeight;
+    Animated.parallel([
+      Animated.timing(footerOffsetY, {
+        toValue: newFooterOffset,
+        duration: 100,
+      }),
+      Animated.timing(scrollPaddingBottom, {
+        toValue: newScrollPadding,
+        duration: 100,
+      }),
+    ]).start();
+  }
+
   renderScrollView() {
-    const { scrollViewStyle, scrollViewProps, children } = this.props;
+    const {
+      header,
+      footer,
+      scrollViewStyle,
+      scrollViewProps,
+      children,
+    } = this.props;
     return (
       <Animated.ScrollView
         scrollEventThrottle={16}
@@ -71,7 +112,10 @@ class SwipeNav extends Component {
         onScroll={this.onScroll}
         style={[
           styles.scroll,
-          { paddingTop: this.state.scrollPaddingTop },
+          {
+            paddingTop: header ? this.state.scrollPaddingTop : 0,
+            paddingBottom: footer ? this.state.paddingBottom : 0,
+          },
           scrollViewStyle,
         ]}>
         {children}
@@ -80,12 +124,15 @@ class SwipeNav extends Component {
   }
 
   renderCustomScrollView() {
-    const { scrollComponent, scrollViewStyle } = this.props;
+    const { header, footer, scrollComponent, scrollViewStyle } = this.props;
     return React.cloneElement(scrollComponent, {
       scrollEventThrottle: 16,
       style: [
         styles.scroll,
-        { paddingTop: this.state.scrollPaddingTop },
+        {
+          paddingTop: header ? this.state.scrollPaddingTop : 0,
+          paddingBottom: footer ? this.state.paddingBottom : 0,
+        },
         scrollViewStyle,
       ],
       onScroll: e => {
@@ -113,17 +160,36 @@ class SwipeNav extends Component {
     );
   }
 
+  _renderFooter() {
+    const { footer, footerContainerStyle } = this.props;
+
+    return (
+      <Animated.View
+        style={[
+          styles.footerContainer,
+          footerContainerStyle,
+          {
+            transform: [{ translateY: this.state.footerOffsetY }],
+          },
+        ]}
+        onLayout={this.onFooterLayout}>
+        {footer}
+      </Animated.View>
+    );
+  }
+
   render() {
-    const { scrollComponent, style } = this.props;
+    const { header, footer, scrollComponent, style } = this.props;
 
     return (
       <View style={[styles.container, style]}>
-        {this._renderHeader()}
+        {header ? this._renderHeader() : null}
         <View style={[styles.scrollContainer]}>
           {scrollComponent
             ? this.renderCustomScrollView()
             : this.renderScrollView()}
         </View>
+        {footer ? this._renderFooter() : null}
       </View>
     );
   }
