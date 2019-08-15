@@ -3,14 +3,21 @@ import PropTypes from 'prop-types';
 import { View, Text, Platform, SafeAreaView } from 'react-native';
 import { storiesOf } from '../../storybook/helpers/storiesOf';
 
-import { Appbar, Card, CardContent, BottomNavigation } from '../..';
+import {
+  Appbar,
+  Card,
+  CardContent,
+  BottomNavigation,
+  AppbarBottom,
+  Fab,
+} from '../..';
 
 import SwipeNav from './SwipeNav';
 
 export default storiesOf('Components|SwipeNav', module)
   .addParameters({ jest: ['SwipeNav'] })
 
-  .add('SwipeHeader', () => (
+  .add('Header', () => (
     <SafeAreaView>
       <View style={{ height: '100%', maxWidth: 500 }}>
         <SwipeNav
@@ -24,76 +31,12 @@ export default storiesOf('Components|SwipeNav', module)
             />
           }
           scrollViewStyle={{ height: Platform.OS == 'web' ? 500 : '100%' }}>
-          <View
-            style={{
-              backgroundColor: 'salmon',
-
-              paddingLeft: 8,
-              paddingRight: 8,
-            }}>
-            <SimpleCard
-              hours={'2 hours ago'}
-              title={'Woman Opens Two Chrome Tabs'}
-              description={
-                'After downloading 128GB of RAM on her custom desktop, Karen was able to open two Chrome tabs at the same time which experts have called "Revolutionary"'
-              }
-            />
-            <SimpleCard
-              hours={'3 hours ago'}
-              title={'Local developer wastes time'}
-              description={
-                'A local develop wastes his Sunday writing placeholder text for a demo instead of going outside'
-              }
-            />
-            <SimpleCard
-              hours={'4 hours ago'}
-              title={'Bitcoin dead again'}
-              description={
-                'Bitcoin has died yet again after falling .2% in 1 hour says leading economist.'
-              }
-            />
-            <SimpleCard
-              hours={'6 hours ago'}
-              title={'Bitcoin going to the moon'}
-              description={
-                'Bitcoin has risen 11.4% in the last 5 minutes which has some experts predicating the start of the next bull run'
-              }
-            />
-
-            <SimpleCard
-              hours={'8 hours ago'}
-              title={'U.S Tech Startups rebound'}
-              description={
-                'Favorable Business Conditions have allowed startups to secure more fundraising deals compared to last year.'
-              }
-            />
-            <SimpleCard
-              hours={'9 hours ago'}
-              title={"Asia's clean energy initiatives"}
-              description={
-                'China Plans to invest billions of dollars for the development of over 300 clean energy projects in SouthEast Asia'
-              }
-            />
-            <SimpleCard
-              hours={'10 hours ago'}
-              title={'Copper on the rise'}
-              description={
-                'Copper prices soar admid global market optimism and increasing demand'
-              }
-            />
-            <SimpleCard
-              hours={'11 hours ago'}
-              title={'Poverty to Empowerment in Chicago'}
-              description={
-                'How one woman is transforming the lives of underpriveledged children.'
-              }
-            />
-          </View>
+          <BodyContent />
         </SwipeNav>
       </View>
     </SafeAreaView>
   ))
-  .add('SwipeBottomNav', () => (
+  .add('Footer BottomNav', () => (
     <SafeAreaView>
       <View style={{ height: '100%', maxWidth: 500 }}>
         <SwipeNav
@@ -113,71 +56,28 @@ export default storiesOf('Components|SwipeNav', module)
             height: Platform.OS == 'web' ? 400 : '100%',
             overflow: 'hidden',
           }}>
-          <View
-            style={{
-              backgroundColor: 'salmon',
-
-              paddingLeft: 8,
-              paddingRight: 8,
-            }}>
-            <SimpleCard
-              hours={'2 hours ago'}
-              title={'Woman Opens Two Chrome Tabs'}
-              description={
-                'After downloading 128GB of RAM on her custom desktop, Karen was able to open two Chrome tabs at the same time which experts have called "Revolutionary"'
-              }
+          <BodyContent />
+        </SwipeNav>
+      </View>
+    </SafeAreaView>
+  ))
+  .add('Footer AppbarBottom', () => (
+    <SafeAreaView>
+      <View style={{ height: '100%', maxWidth: 500 }}>
+        <SwipeNav
+          footer={
+            <AppbarBottom
+              fab={<Fab icon={'change-history'} backgroundColor={'#009688'} />}
+              fabPosition={'center'}
+              navigation={'menu'}
+              color={'#E91E63'}
             />
-            <SimpleCard
-              hours={'3 hours ago'}
-              title={'Local developer wastes time'}
-              description={
-                'A local develop wastes his Sunday writing placeholder text for a demo instead of going outside'
-              }
-            />
-            <SimpleCard
-              hours={'4 hours ago'}
-              title={'Bitcoin dead again'}
-              description={
-                'Bitcoin has died yet again after falling .2% in 1 hour says leading economist.'
-              }
-            />
-            <SimpleCard
-              hours={'6 hours ago'}
-              title={'Bitcoin going to the moon'}
-              description={
-                'Bitcoin has risen 11.4% in the last 5 minutes which has some experts predicating the start of the next bull run'
-              }
-            />
-
-            <SimpleCard
-              hours={'8 hours ago'}
-              title={'U.S Tech Startups rebound'}
-              description={
-                'Favorable Business Conditions have allowed startups to secure more fundraising deals compared to last year.'
-              }
-            />
-            <SimpleCard
-              hours={'9 hours ago'}
-              title={"Asia's clean energy initiatives"}
-              description={
-                'China Plans to invest billions of dollars for the development of over 300 clean energy projects in SouthEast Asia'
-              }
-            />
-            <SimpleCard
-              hours={'10 hours ago'}
-              title={'Copper on the rise'}
-              description={
-                'Copper prices soar admid global market optimism and increasing demand'
-              }
-            />
-            <SimpleCard
-              hours={'11 hours ago'}
-              title={'Poverty to Empowerment in Chicago'}
-              description={
-                'How one woman is transforming the lives of underpriveledged children.'
-              }
-            />
-          </View>
+          }
+          scrollViewStyle={{
+            height: Platform.OS == 'web' ? 400 : '100%',
+            overflow: 'hidden',
+          }}>
+          <BodyContent />
         </SwipeNav>
       </View>
     </SafeAreaView>
@@ -201,6 +101,76 @@ const SimpleCard = ({ hours, title, description }) => {
         </Text>
       </CardContent>
     </Card>
+  );
+};
+
+const BodyContent = () => {
+  return (
+    <View
+      style={{
+        backgroundColor: 'salmon',
+
+        paddingLeft: 8,
+        paddingRight: 8,
+      }}>
+      <SimpleCard
+        hours={'2 hours ago'}
+        title={'Woman Opens Two Chrome Tabs'}
+        description={
+          'After downloading 128GB of RAM on her custom desktop, Karen was able to open two Chrome tabs at the same time which experts have called "Revolutionary"'
+        }
+      />
+      <SimpleCard
+        hours={'3 hours ago'}
+        title={'Local developer wastes time'}
+        description={
+          'A local develop wastes his Sunday writing placeholder text for a demo instead of going outside'
+        }
+      />
+      <SimpleCard
+        hours={'4 hours ago'}
+        title={'Bitcoin dead again'}
+        description={
+          'Bitcoin has died yet again after falling .2% in 1 hour says leading economist.'
+        }
+      />
+      <SimpleCard
+        hours={'6 hours ago'}
+        title={'Bitcoin going to the moon'}
+        description={
+          'Bitcoin has risen 11.4% in the last 5 minutes which has some experts predicating the start of the next bull run'
+        }
+      />
+
+      <SimpleCard
+        hours={'8 hours ago'}
+        title={'U.S Tech Startups rebound'}
+        description={
+          'Favorable Business Conditions have allowed startups to secure more fundraising deals compared to last year.'
+        }
+      />
+      <SimpleCard
+        hours={'9 hours ago'}
+        title={"Asia's clean energy initiatives"}
+        description={
+          'China Plans to invest billions of dollars for the development of over 300 clean energy projects in SouthEast Asia'
+        }
+      />
+      <SimpleCard
+        hours={'10 hours ago'}
+        title={'Copper on the rise'}
+        description={
+          'Copper prices soar admid global market optimism and increasing demand'
+        }
+      />
+      <SimpleCard
+        hours={'11 hours ago'}
+        title={'Poverty to Empowerment in Chicago'}
+        description={
+          'How one woman is transforming the lives of underpriveledged children.'
+        }
+      />
+    </View>
   );
 };
 
