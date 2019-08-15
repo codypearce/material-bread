@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Text, StyleSheet } from 'react-native';
-
-const styles = StyleSheet.create({
-  default: {
-    color: 'rgba(0, 0, 0, 0.87)',
-  },
-});
+import { Text } from 'react-native';
 
 export default class BaseText extends Component {
   static propTypes = {
@@ -17,6 +11,7 @@ export default class BaseText extends Component {
     color: PropTypes.string,
     gutterBottom: PropTypes.bool,
     theme: PropTypes.object,
+    themeColor: PropTypes.string,
   };
 
   render() {
@@ -28,18 +23,18 @@ export default class BaseText extends Component {
       gutterBottom,
       children,
       theme,
+      themeColor = 'primary',
       ...props
     } = this.props;
 
     return (
       <Text
         style={[
-          styles.default,
           theme.text,
           typographyStyles,
           {
             textAlign: align ? align : 'left',
-            color: color ? color : 'rgba(0,0,0, 87)',
+            color: color ? color : theme.textColor[themeColor],
             marginBottom: gutterBottom ? 10 : 0,
           },
           style,

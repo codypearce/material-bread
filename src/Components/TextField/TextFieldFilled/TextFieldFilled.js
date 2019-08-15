@@ -35,6 +35,7 @@ class TextFieldFilled extends Component {
     suffix: PropTypes.node,
     prefix: PropTypes.node,
     testID: PropTypes.string,
+    focusedLabelColor: PropTypes.string,
   };
 
   static defaultProps = {
@@ -131,6 +132,7 @@ class TextFieldFilled extends Component {
       suffix,
       prefix,
       testID,
+      focusedLabelColor,
       ...rest
     } = this.props;
 
@@ -165,6 +167,7 @@ class TextFieldFilled extends Component {
             dense={dense}
             prefix={prefix}
             type={'filled'}
+            focusedLabelColor={focusedLabelColor}
           />
         ) : null}
         {leadingIcon ? this._renderLeadingIcon() : null}
