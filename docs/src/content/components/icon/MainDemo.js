@@ -35,7 +35,9 @@ const MainDemo = pageHref => (
       <div>
         <CodeInline code="Icon" type="element" />s are provided by
         <CodeInline code="react-native-vector-icons" type="" />, you can learn
-        more about these icons in the style section on icons.
+        more about these icons in the style section on icons. The default icon
+        pack is MaterialIcons, but you can use aany that{' '}
+        <CodeInline code="react-native-vector-icons" type="" /> supports.
       </div>
     }
     code={code}
