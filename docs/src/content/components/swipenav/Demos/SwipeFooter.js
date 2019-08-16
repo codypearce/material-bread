@@ -1,7 +1,12 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { ComponentMainDemo, CodeInline } from '@components';
-import { SwipeNav, Appbar, Card, CardContent } from '../../../../../src/index';
+import { View, Text, Platform } from 'react-native';
+import { ComponentDemo } from '@components';
+import {
+  SwipeNav,
+  BottomNavigation,
+  Card,
+  CardContent,
+} from '../../../../../../src/index';
 
 const SimpleCard = ({ hours, title, description }) => {
   return (
@@ -95,55 +100,53 @@ const BodyContent = () => {
 };
 
 export const code = `class Demo extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-  render() {
-
-    return (
-      <View style={{ height: '100%', maxWidth: 500, overflowY: 'hidden' }}>
-        <SwipeNav
-          header={
-            <Appbar
-              barType={'normal'}
-              color={'#009688'}
-              navigation={'menu'}
-              title={'News'}
-              actionItems={[{ name: 'more-vert' }]}
-            />
-          }
-          scrollViewStyle={{ height: 500 }}>
-          <BodyContent />
-        </SwipeNav>
-      </View>
-    );
-  }
-}`;
-
-const MainDemo = pageHref => (
-  <ComponentMainDemo
-    pageHref={pageHref}
-    description={
-      <div>
-        <CodeInline code="SwipeNav" type="element" /> wraps your content with a{' '}
-        <CodeInline code="ScrollView" type="element" /> and hides the header or
-        footer. The header hides on scroll down and shows on scroll up while the
-        footer hides on scroll up and shows on scroll down. You can also pass in
-        a custom scroll componnt like a{' '}
-        <CodeInline code="FlatList" type="element" /> for more control.
-      </div>
+    constructor(props) {
+      super(props)
     }
+    render() {
+      return (
+        <View style={{ height: '100%', maxWidth: 500, overflowY: 'hidden' }}>
+          <SwipeNav
+            footer={
+            <BottomNavigation
+                style={{ maxWidth: 672, width: '100%' }}
+                value={true}
+                showLabels
+                actionItems={[
+                { label: 'Buy' },
+                { label: 'Sell' },
+                { label: 'Settings' },
+                ]}
+            />
+            }
+            scrollViewStyle={{
+                height: 400,
+                overflow: 'hidden',
+            }}>
+           <BodyContent />
+          </SwipeNav>
+        </View>
+      );
+    }
+  }`;
+
+const SubtitleDemo = pageHref => (
+  <ComponentDemo
+    sectionName={'Swipe Footer'}
+    sectionHref={`${pageHref}#footer`}
+    sectionId={'footer'}
     code={code}
     scope={{
       View,
       SwipeNav,
-      Appbar,
+      BottomNavigation,
       Card,
       CardContent,
       Text,
+      Platform,
       SimpleCard,
       BodyContent,
     }}
   />
 );
-export default MainDemo;
+export default SubtitleDemo;
