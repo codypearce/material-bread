@@ -4,11 +4,10 @@ import { ComponentDemo, CodeInline } from '@components';
 import { Badge } from '../../../../../../src/index';
 
 export const code = `
-<View
-    style={{
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginBottom: 40,
+<View style={{ 
+    flexDirection: 'row', 
+    alignItems: 'center', 
+    marginBottom: 40,
     }}
 >
     <Badge size={36} content={'MB'} maxValue={99} />
