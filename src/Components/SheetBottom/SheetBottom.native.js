@@ -13,7 +13,7 @@ import styles from './SheetBottom.styles';
 class SheetBottom extends Component {
   constructor(props) {
     super(props);
-    this.createPanResponder(this.props);
+    this.createPanResponder();
   }
 
   static propTypes = {
@@ -37,7 +37,6 @@ class SheetBottom extends Component {
 
   state = {
     internalVisible: false,
-    animatedPosition: new Animated.Value(0),
     pan: new Animated.ValueXY(),
     initialHeight: 0,
     initialWidth: 0,
@@ -50,10 +49,13 @@ class SheetBottom extends Component {
     if (visible) {
       this._open();
     }
-    this.createPanResponder(this.props);
-    pan.setValue({ x: 0, y: 200 });
+    this.createPanResponder();
+    const fullHeight = pageHeight
+      ? pageHeight
+      : Dimensions.get('window').height;
+    pan.setValue({ x: 0, y: fullHeight });
     this.setState({
-      fullHeight: pageHeight ? pageHeight : Dimensions.get('window').height,
+      fullHeight,
     });
   }
 
@@ -75,14 +77,16 @@ class SheetBottom extends Component {
     if (height == 0) return;
     if (height <= initialHeight) return;
 
+    const windowHeight = Dimensions.get('window').height;
+
     this.setState(
       {
         initialWidth: width,
         initialHeight: height,
       },
       () => {
-        pan.setValue({ x: 0, y: height });
-        this.createPanResponder(this.props);
+        pan.setValue({ x: 0, y: windowHeight });
+        this.createPanResponder();
       },
     );
   };
@@ -94,7 +98,7 @@ class SheetBottom extends Component {
     if (visible) {
       this.setState({ internalVisible: true }, () => {
         if (initialHeight == 0) {
-          setTimeout(() => this.animateSheet(true), 0);
+          setTimeout(() => this.animateSheet(true), 100);
           return;
         }
         Animated.spring(pan, {
@@ -181,7 +185,7 @@ class SheetBottom extends Component {
       cardVerticalPadding,
       testID,
     } = this.props;
-    const { pan } = this.state;
+    const { pan, fullHeight } = this.state;
 
     return (
       <View style={[styles.wrapper, wrapperStyles]} testID={testID}>
@@ -198,7 +202,7 @@ class SheetBottom extends Component {
             style,
 
             {
-              height: '100%',
+              height: fullHeight,
               paddingVertical: cardVerticalPadding,
               transform: [{ translateY: pan.y }],
             },

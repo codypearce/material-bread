@@ -29,6 +29,7 @@ class TextFieldFlat extends Component {
     underlineActiveColor: PropTypes.oneOfType([
       PropTypes.object,
       PropTypes.array,
+      PropTypes.string,
     ]),
     leadingIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
     trailingIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
@@ -38,6 +39,7 @@ class TextFieldFlat extends Component {
     suffix: PropTypes.node,
     prefix: PropTypes.node,
     testID: PropTypes.string,
+    focusedLabelColor: PropTypes.string,
   };
 
   static defaultProps = {
@@ -135,6 +137,7 @@ class TextFieldFlat extends Component {
       suffix,
       prefix,
       testID,
+      focusedLabelColor,
       ...rest
     } = this.props;
 
@@ -169,6 +172,7 @@ class TextFieldFlat extends Component {
             leadingIcon={leadingIcon}
             dense={dense}
             prefix={prefix}
+            focusedLabelColor={focusedLabelColor}
           />
         ) : null}
         {leadingIcon ? this._renderLeadingIcon() : null}

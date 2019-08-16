@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     zIndex: 11,
     elevation: Platform.OS === 'android' ? 10 : 0,
-    transform: [{ translateY: -25 }],
+    transform: [{ translateY: -28 }],
   },
   centerCut: {
     position: 'absolute',

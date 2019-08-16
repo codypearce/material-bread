@@ -34,6 +34,7 @@ class ListItem extends Component {
 
   state = {
     stateBackgroundColor: null,
+    isPressed: false,
   };
 
   _renderText() {
@@ -53,7 +54,7 @@ class ListItem extends Component {
             { color: disabled ? 'rgba(0,0,0,0.47)' : 'rgba(0,0,0,0.87)' },
             textStyle,
           ]}
-          ellipsizeMode="tail">
+          numberOfLines={1}>
           {text}
         </BodyText>
         {secondaryText ? (
@@ -62,7 +63,8 @@ class ListItem extends Component {
               styles.listItemSecondaryText,
               { color: 'rgba(0,0,0,0.57)' },
               secondaryTextStyle,
-            ]}>
+            ]}
+            numberOfLines={2}>
             {secondaryText}
           </Caption>
         ) : null}
@@ -170,6 +172,7 @@ class ListItem extends Component {
       leadingActionItem,
       rippleProps,
     } = this.props;
+    const { isPressed } = this.state;
 
     let contentMargin = media ? 16 : 0;
     if (icon || leadingActionItem) contentMargin = 32;
@@ -179,10 +182,16 @@ class ListItem extends Component {
         onHoverIn={() => this.handleHover(true)}
         onHoverOut={() => this.handleHover(false)}>
         <Ripple
-          onAnimationEnd={onPress}
+          onAnimationEnd={() => {
+            if (isPressed && onPress) {
+              onPress();
+              this.setState({ isPressed: false });
+            }
+          }}
           rippleDuration={200}
           disabled={disabled}
           rippleColor={'rgba(0,0,0,.8)'}
+          onPress={() => this.setState({ isPressed: true })}
           style={[
             {
               backgroundColor: this.getBackgroundColor(),
@@ -201,7 +210,7 @@ class ListItem extends Component {
           {leadingActionItem ? this._renderLeadingActionItem() : null}
           {icon ? this._renderIcon() : null}
           {media ? media : null}
-          <View style={{ marginLeft: contentMargin }}>
+          <View style={{ marginLeft: contentMargin, flexShrink: 1 }}>
             {children ? children : this._renderText()}
           </View>
           {actionItem ? this._renderActionitem() : null}

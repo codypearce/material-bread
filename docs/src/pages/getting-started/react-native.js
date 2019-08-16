@@ -77,7 +77,7 @@ class Index extends Component {
           id="setup"
           href="/getting-started/react-native#setup ">
           <div>
-            <h3 style={styles.h3}>React-native-vector-icons</h3>
+            <h3 style={styles.h3}>Dependencies</h3>
             <ComponentDescription
               text={
                 <div>
@@ -87,6 +87,11 @@ class Index extends Component {
                   <Link href="https://github.com/oblador/react-native-vector-icons">
                     {' '}
                     react-native-vector-icons{' '}
+                  </Link>{' '}
+                  and{' '}
+                  <Link href="https://github.com/oblador/react-native-vector-icons">
+                    {' '}
+                    react-native-svg{' '}
                   </Link>
                   .
                 </div>

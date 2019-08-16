@@ -4,6 +4,7 @@ import { ComponentDemoHeader } from '@components';
 
 import DotDemo from './DotDemo';
 import AnimatedDemo from './AnimatedDemo';
+import MaxDemo from './MaxDemo';
 
 export default class Demos extends Component {
   static propTypes = {
@@ -16,6 +17,7 @@ export default class Demos extends Component {
         <ComponentDemoHeader pageHref={pageHref} />
         <DotDemo pageHref={pageHref} />
         <AnimatedDemo pageHref={pageHref} />
+        <MaxDemo pageHref={pageHref} />
       </div>
     );
   }
