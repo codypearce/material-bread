@@ -23,13 +23,6 @@ export const code = `class IconPage extends React.Component {
         <Icon name="directions-walk" size={48} color={'#8BC34A'} />
 
         <Icon name="flash-on" size={64} color={'#FFEB3B'} />
-        
-        <Icon
-          name="react"
-          size={64}
-          color={'#5FDAFB'}
-          iconComponent={MaterialCommunityIcons}
-        />
       </View>
     );
   }
@@ -42,7 +35,9 @@ const MainDemo = pageHref => (
       <div>
         <CodeInline code="Icon" type="element" />s are provided by
         <CodeInline code="react-native-vector-icons" type="" />, you can learn
-        more about these icons in the style section on icons.
+        more about these icons in the style section on icons. The default icon
+        pack is MaterialIcons, but you can use aany that{' '}
+        <CodeInline code="react-native-vector-icons" type="" /> supports.
       </div>
     }
     code={code}

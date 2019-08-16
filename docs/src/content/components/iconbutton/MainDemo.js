@@ -27,15 +27,7 @@ export const code = `class IconPage extends React.Component {
         <IconButton name="create" size={24} color={'#00BCD4'} />
         <IconButton name="dashboard" size={32} color={'#607D8B'} />
         <IconButton name="directions-walk" size={48} color={'#8BC34A'} />
-
         <IconButton name="flash-on" size={64} color={'#FFEB3B'} />
-
-        <IconButton
-          name="react"
-          size={64}
-          color={'#5FDAFB'}
-          iconComponent={MaterialCommunityIcons}
-        />
       </View>
     );
   }

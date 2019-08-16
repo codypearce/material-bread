@@ -42,6 +42,12 @@ export default storiesOf('Components|Icons', module)
 
         <Icon name="flash-on" size={64} color={'#FFEB3B'} />
       </View>
+    </Container>
+  ))
+  .add('Another Source', () => (
+    <Container>
+      <Header title={'Icons from another source'} />
+
       <View style={{ flexDirection: 'row', marginBottom: 20 }}>
         <Icon
           name="visual-studio-code"
