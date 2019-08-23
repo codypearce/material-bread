@@ -169,7 +169,7 @@ class TextFieldFlat extends Component {
             type={'flat'}
             labelColor={labelColor}
             style={labelStyle}
-            leadingIcon={leadingIcon}
+            leadingIcon={!!leadingIcon}
             dense={dense}
             prefix={prefix}
             focusedLabelColor={focusedLabelColor}
