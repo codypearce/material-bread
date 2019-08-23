@@ -191,11 +191,11 @@ class TextFieldOutlined extends Component {
 
             style,
           ]}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
           testID={testID}
           onContentSizeChange={e => this._updateTextInputHeight(e)}
           {...rest}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
         />
         {trailingIcon ? this._renderTrailingIcon() : null}
         {suffix ? this._renderSuffix() : null}
