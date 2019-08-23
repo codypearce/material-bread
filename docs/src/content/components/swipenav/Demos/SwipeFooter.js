@@ -1,91 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { View, Text, Platform, SafeAreaView } from 'react-native';
-import { storiesOf } from '../../storybook/helpers/storiesOf';
-
+import { View, Text, Platform } from 'react-native';
+import { ComponentDemo } from '@components';
 import {
-  Appbar,
+  SwipeNav,
+  BottomNavigation,
   Card,
   CardContent,
-  BottomNavigation,
-  AppbarBottom,
-  Fab,
-} from '../..';
-
-import SwipeNav from './SwipeNav';
-
-export default storiesOf('Components|SwipeNav', module)
-  .addParameters({ jest: ['SwipeNav'] })
-
-  .add('Header', () => (
-    <SafeAreaView>
-      <View style={{ height: '100%', maxWidth: 500 }}>
-        <SwipeNav
-          header={
-            <Appbar
-              barType={'normal'}
-              color={'#009688'}
-              navigation={'menu'}
-              title={'News'}
-              actionItems={[{ name: 'more-vert' }]}
-            />
-          }
-          scrollViewStyle={{ height: Platform.OS == 'web' ? 500 : '100%' }}>
-          <BodyContent />
-        </SwipeNav>
-      </View>
-    </SafeAreaView>
-  ))
-  .add('Footer BottomNav', () => (
-    <SafeAreaView>
-      <View style={{ height: '100%', maxWidth: 500 }}>
-        <SwipeNav
-          footer={
-            <BottomNavigation
-              style={{ maxWidth: 672, width: '100%' }}
-              value={true}
-              showLabels
-              actionItems={[
-                { label: 'Buy' },
-                { label: 'Sell' },
-                { label: 'Settings' },
-              ]}
-            />
-          }
-          scrollViewStyle={{
-            height: Platform.OS == 'web' ? 400 : '100%',
-            overflow: 'hidden',
-          }}>
-          <BodyContent />
-        </SwipeNav>
-      </View>
-    </SafeAreaView>
-  ))
-  .add('Footer AppbarBottom', () => (
-    <SafeAreaView>
-      <View style={{ height: '100%', maxWidth: 500 }}>
-        <SwipeNav
-          footer={
-            <AppbarBottom
-              fab={<Fab icon={'change-history'} backgroundColor={'#009688'} />}
-              fabPosition={'center'}
-              navigation={'menu'}
-              color={'#E91E63'}
-            />
-          }
-          scrollViewStyle={{
-            height: Platform.OS == 'web' ? 400 : '100%',
-            overflow: 'hidden',
-          }}>
-          <BodyContent />
-        </SwipeNav>
-      </View>
-    </SafeAreaView>
-  ));
+} from '../../../../../../src/index';
 
 const SimpleCard = ({ hours, title, description }) => {
   return (
     <Card
+      shadow={3}
       style={{ maxWidth: 500, width: '100%', marginBottom: 6, marginTop: 6 }}>
       <CardContent>
         <Text
@@ -109,7 +35,6 @@ const BodyContent = () => {
     <View
       style={{
         backgroundColor: 'salmon',
-
         paddingLeft: 8,
         paddingRight: 8,
       }}>
@@ -174,8 +99,54 @@ const BodyContent = () => {
   );
 };
 
-SimpleCard.propTypes = {
-  hours: PropTypes.string,
-  title: PropTypes.string,
-  description: PropTypes.string,
-};
+export const code = `class Demo extends React.Component {
+    constructor(props) {
+      super(props)
+    }
+    render() {
+      return (
+        <View style={{ height: '100%', maxWidth: 500, overflowY: 'hidden' }}>
+          <SwipeNav
+            footer={
+            <BottomNavigation
+                style={{ maxWidth: 672, width: '100%' }}
+                value={true}
+                showLabels
+                actionItems={[
+                { label: 'Buy' },
+                { label: 'Sell' },
+                { label: 'Settings' },
+                ]}
+            />
+            }
+            scrollViewStyle={{
+                height: 400,
+                overflow: 'hidden',
+            }}>
+           <BodyContent />
+          </SwipeNav>
+        </View>
+      );
+    }
+  }`;
+
+const SubtitleDemo = pageHref => (
+  <ComponentDemo
+    sectionName={'Swipe Footer'}
+    sectionHref={`${pageHref}#footer`}
+    sectionId={'footer'}
+    code={code}
+    scope={{
+      View,
+      SwipeNav,
+      BottomNavigation,
+      Card,
+      CardContent,
+      Text,
+      Platform,
+      SimpleCard,
+      BodyContent,
+    }}
+  />
+);
+export default SubtitleDemo;

@@ -53,7 +53,7 @@ class AppbarBottom extends Component {
     if (!fab) return null;
 
     const fabRightStyle = {
-      right: fabCutout ? 17 : 16,
+      right: fabCutout ? 18 : 16,
     };
     const fabCenterStyle = {
       right: 'auto',

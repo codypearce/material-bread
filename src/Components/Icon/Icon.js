@@ -14,12 +14,23 @@ class Icon extends Component {
     size: PropTypes.number,
     name: PropTypes.string,
     testID: PropTypes.string,
+    iconComponent: PropTypes.func,
   };
   render() {
-    const { style, name, color, size, testID, ...rest } = this.props;
+    const {
+      style,
+      name,
+      color,
+      size,
+      testID,
+      iconComponent,
+      ...rest
+    } = this.props;
+
+    const IconComponent = iconComponent || MaterialIcons;
 
     return (
-      <MaterialIcons
+      <IconComponent
         pointerEvents="none"
         name={name}
         color={color}

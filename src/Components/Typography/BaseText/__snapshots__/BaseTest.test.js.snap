@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseText renders 1`] = `
+<Text
+  style={
+    Array [
+      Object {},
+      undefined,
+      Object {
+        "color": "red",
+        "marginBottom": 0,
+        "textAlign": "left",
+      },
+      undefined,
+    ]
+  }
+/>
+`;
+
+exports[`BaseText renders with different theme color 1`] = `
+<Text
+  style={
+    Array [
+      Object {},
+      undefined,
+      Object {
+        "color": "blue",
+        "marginBottom": 0,
+        "textAlign": "left",
+      },
+      undefined,
+    ]
+  }
+/>
+`;

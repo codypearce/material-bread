@@ -8,6 +8,8 @@ const propData = [
 
   ['left', 'Left position', 'number', 'auto'],
 
+  ['maxValue', 'Maximum numerial value', 'number', ''],
+
   ['onPress', 'Onpress callback', 'func', ''],
 
   [

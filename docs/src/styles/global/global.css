@@ -156,6 +156,10 @@ div[role='group'][tabindex] {
   src: url(../../../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf);
   font-family: MaterialIcons;
 }
+@font-face {
+  src: url(../../../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf);
+  font-family: MaterialCommunityIcons;
+}
 
 /**
  * Add back the container background-color, border-radius, padding, margin
