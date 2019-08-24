@@ -163,7 +163,7 @@ class TextFieldFilled extends Component {
             value={rest.value && rest.value.length > 0}
             labelColor={labelColor}
             style={labelStyle}
-            leadingIcon={leadingIcon}
+            leadingIcon={!!leadingIcon}
             dense={dense}
             prefix={prefix}
             type={'filled'}

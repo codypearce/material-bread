@@ -164,13 +164,12 @@ class TextFieldOutlined extends Component {
             type={'outlined'}
             labelColor={labelColor}
             style={labelStyle}
-            leadingIcon={leadingIcon}
+            leadingIcon={!!leadingIcon}
             dense={dense}
             prefix={prefix}
             focusedLabelColor={focusedLabelColor}
           />
         ) : null}
-
         {leadingIcon ? this._renderLeadingIcon() : null}
         {prefix ? this._renderPrefix() : null}
         <TextInput
@@ -188,7 +187,6 @@ class TextFieldOutlined extends Component {
               paddingLeft: paddingLeft,
               paddingRight: trailingIcon || suffix ? 36 : 0,
             },
-
             style,
           ]}
           testID={testID}
