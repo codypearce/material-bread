@@ -188,10 +188,10 @@ class TextFieldFilled extends Component {
             style,
           ]}
           onContentSizeChange={e => this._updateTextInputHeight(e)}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
           testID={testID}
           {...rest}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
         />
         {trailingIcon ? this._renderTrailingIcon() : null}
         {suffix ? this._renderSuffix() : null}
