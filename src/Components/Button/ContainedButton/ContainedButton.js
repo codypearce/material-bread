@@ -185,7 +185,8 @@ class ContainedButton extends Component {
     return (
       <Hoverable
         onHoverIn={() => this.handleHover(true)}
-        onHoverOut={() => this.handleHover(false)}>
+        onHoverOut={() => this.handleHover(false)}
+        style={containerStyle}>
         {() => (
           <Animated.View
             style={[
@@ -194,7 +195,6 @@ class ContainedButton extends Component {
                 alignSelf: fullWidth ? 'auto' : 'flex-start',
                 borderRadius: radius ? radius : theme.button.borderRadius,
               },
-              containerStyle,
             ]}>
             <ButtonBase
               typeRippleColor={this.getRippleColor()}
