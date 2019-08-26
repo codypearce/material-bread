@@ -173,6 +173,7 @@ class ListItem extends Component {
       actionItem,
       leadingActionItem,
       rippleProps,
+      ...rest
     } = this.props;
     const { isPressed } = this.state;
 
@@ -208,7 +209,8 @@ class ListItem extends Component {
             },
             style,
           ]}
-          {...rippleProps}>
+          {...rippleProps}
+          {...rest}>
           {leadingActionItem ? this._renderLeadingActionItem() : null}
           {icon ? this._renderIcon() : null}
           {media ? media : null}
