@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { Platform, Dimensions, TouchableWithoutFeedback } from 'react-native';
+import {
+  Platform,
+  Dimensions,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
 import PropTypes from 'prop-types';
 
 class Hoverable extends Component {
@@ -75,14 +80,13 @@ class Hoverable extends Component {
       });
     } else {
       return (
-        <TouchableWithoutFeedback
-          style={{ flex: 1 }}
-          onPress={this._toggle}
-          testID={testID}>
-          {React.cloneElement(React.Children.only(child), {
-            onMouseEnter: this._handleMouseEnter,
-            onMouseLeave: this._handleMouseLeave,
-          })}
+        <TouchableWithoutFeedback onPress={this._toggle} testID={testID}>
+          <View style={{ flex: 1 }}>
+            {React.cloneElement(React.Children.only(child), {
+              onMouseEnter: this._handleMouseEnter,
+              onMouseLeave: this._handleMouseLeave,
+            })}
+          </View>
         </TouchableWithoutFeedback>
       );
     }
