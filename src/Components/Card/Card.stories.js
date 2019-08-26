@@ -417,6 +417,56 @@ export default storiesOf('Components|Card', module)
           ]}
         />
       </Card>
+
+      <Card
+        style={{
+          maxWidth: 500,
+          width: 500,
+          boxSizing: 'borderbox',
+          marginTop: 40,
+        }}>
+        <CardContent>
+          <View style={{ flexDirection: 'row' }}>
+            <View style={{ flex: 1, padding: 8 }}>
+              <Text
+                style={{
+                  color: 'rgba(0,0,0,.6)',
+                  fontSize: 16,
+                  fontWeight: '600',
+                }}>
+                Jon
+              </Text>
+              <Text
+                style={{
+                  color: 'rgba(0,0,0,1)',
+                  fontSize: 20,
+                  fontWeight: '600',
+                  marginBottom: 10,
+                }}>
+                Stewart
+              </Text>
+              <Text
+                style={{
+                  color: 'rgba(0,0,0,.6)',
+                  fontSize: 14,
+                  flexWrap: 'wrap',
+                }}>
+                American comedian, writer, producer, director, activist,
+                political commentator, actor, and television host.
+              </Text>
+            </View>
+            <View style={{ flex: 1, overflow: 'hidden' }}>
+              <Image
+                style={{ width: 250, height: 200 }}
+                source={{
+                  uri:
+                    'https://www.biography.com/.image/t_share/MTE5NTU2MzE2NDkyNjI5NTE1/jon-stewart-16242282-1-402.jpg',
+                }}
+              />
+            </View>
+          </View>
+        </CardContent>
+      </Card>
     </Container>
   ))
 
