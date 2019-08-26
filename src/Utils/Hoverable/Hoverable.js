@@ -81,7 +81,7 @@ class Hoverable extends Component {
     } else {
       return (
         <TouchableWithoutFeedback onPress={this._toggle} testID={testID}>
-          <View style={{ flex: 1 }}>
+          <View>
             {React.cloneElement(React.Children.only(child), {
               onMouseEnter: this._handleMouseEnter,
               onMouseLeave: this._handleMouseLeave,
