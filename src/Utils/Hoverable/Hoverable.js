@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Platform,
-  Dimensions,
-  TouchableWithoutFeedback,
-  View,
-} from 'react-native';
+import { Platform, Dimensions, TouchableWithoutFeedback } from 'react-native';
 import PropTypes from 'prop-types';
 
 class Hoverable extends Component {
