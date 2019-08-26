@@ -1,6 +1,15 @@
 import React from 'react';
-
-import { List, ListItem, Icon, Avatar, Checkbox, IconButton } from '../../../';
+import { View } from 'react-native';
+import {
+  List,
+  ListItem,
+  Icon,
+  Avatar,
+  Checkbox,
+  IconButton,
+  Caption,
+  Chip,
+} from '../../../';
 import Header from '../../../storybook/components/Header';
 import Container from '../../../storybook/components/Container';
 import { storiesOf } from '../../../storybook/helpers/storiesOf';
@@ -386,6 +395,45 @@ export default storiesOf('Components|List/ListItem', module)
         <ListItem text={'Family'} disabled />
         <ListItem text={'Office'} disabled />
         <ListItem text={'Promotions'} />
+      </List>
+    </Container>
+  ))
+  .add('custom secondary text', () => (
+    <Container>
+      <Header title={'Custom secondary text'} />
+
+      <List style={{ width: 300 }}>
+        <ListItem
+          text={'New invoice'}
+          secondaryText={
+            <View>
+              <Caption
+                style={{
+                  fontSize: 14,
+                  lineHeight: 14,
+                  marginTop: 4,
+                  color: 'rgba(0,0,0,0.57)',
+                }}>
+                Example
+              </Caption>
+              <View style={{ paddingTop: 4 }}>
+                <Chip
+                  text="Invoice.pdf"
+                  leftIcon={<Icon name="picture-as-pdf" />}
+                />
+              </View>
+            </View>
+          }
+          media={
+            <Avatar
+              type="icon"
+              content="email"
+              contentColor={'#ececec'}
+              color={'#a3a3a3'}
+              size={40}
+            />
+          }
+        />
       </List>
     </Container>
   ));
