@@ -11483,6 +11483,11 @@ react-modal@^3.6.1:
     react-lifecycles-compat "^3.0.0"
     warning "^3.0.0"
 
+react-native-svg@^9.5.3:
+  version "9.7.0"
+  resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-9.7.0.tgz#2d0bf1d31d5f1dd061587215b50deb29e626df18"
+  integrity sha512-8E1snfe2YYbfu6SP5DOoQgRhCdv7D0F4VewUAV+IgAn+IScrA/uuLB8LCodRdO+9U4Rm5dJ4yIwsVhPHRtuBkw==
+
 react-native-swipe-gestures@^1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/react-native-swipe-gestures/-/react-native-swipe-gestures-1.0.3.tgz#4160f8d459627323f3a3d2770af4bcd82fd054f5"
