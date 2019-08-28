@@ -25,11 +25,11 @@ exports[`TextFieldOutline Renders 1`] = `
         },
         Object {
           "borderRadius": 4,
-          "borderWidth": 1,
         },
         Object {},
         Object {
           "borderColor": "rgb(192, 192, 192)",
+          "borderWidth": 1,
           "height": 56,
           "minHeight": 56,
           "paddingBottom": 0,
