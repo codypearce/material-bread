@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: OUTLINED_LEFT_PADDING,
   },
   outlinedInput: {
-    borderWidth: 1,
     borderRadius: 4,
   },
 });
