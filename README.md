@@ -159,11 +159,11 @@ All contributions are welcome and encouraged. If you are reporting a bug, please
 
 #### Contribute to library
 
-[Storybook](https://github.com/storybooks/storybook) is used as the dev environment for all components on all platforms. You can learn about how to get the storybook environment running locally for all platforms [here](http://material-bread.org/contributing/library). Please follow the conventions already in place. For example, most components follow the made up "props for prebuilt, children for custom" pattern. Addtionally, make sure you are testing your components across platforms before making a PR.
+[Storybook](https://github.com/storybooks/storybook) is used as the dev environment for all components on all platforms. You can learn about how to get the storybook environment running locally for all platforms [here](http://material-bread.org/contributing/library). Please follow the conventions already in place. For example, most components follow the made up "props for prebuilt, children for custom" pattern. Additionally, make sure you are testing your components across platforms before making a PR.
 
 #### Contribute to docs
 
-Documentation is built using [GatsbyJs](https://github.com/gatsbyjs/gatsby) and all pages are built using react components. You can learn how to get the docs running locally here [here](https://material-bread.org/contributing/docs).
+Documentation is built using [GatsbyJs](https://github.com/gatsbyjs/gatsby) and all pages are built using react components. You can learn how to get the docs running locally [here](https://material-bread.org/contributing/docs).
 
 #### Easy first contribution
 
