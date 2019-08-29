@@ -36,6 +36,7 @@ export default storiesOf('Components|Dialog', module)
                 },
                 {
                   text: 'Discard',
+                  type: 'contained',
                   onPress: () => store.set({ visible: false }),
                 },
               ]}

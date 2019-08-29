@@ -15,10 +15,16 @@ class PageTitle extends Component {
     const { name, href } = this.props;
     return (
       <h3
-        style={{ fontWeight: 400, fontSize: 28, marginBottom: 16 }}
+        style={{
+          fontWeight: 600,
+          fontSize: 32,
+          marginBottom: 16,
+          marginTop: 0,
+          color: '#5a6484',
+        }}
         className="Section__header">
         <span>{name}</span>{' '}
-        <a className="HashLink" href={href}>
+        <a style={{ color: '#5a6484' }} className="HashLink" href={href}>
           #
         </a>
       </h3>

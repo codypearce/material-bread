@@ -10,6 +10,7 @@ const propData = [
   ['sortingIcon', 'Toggles sorting icon', 'string: up, down', 'down'],
   ['style', 'Styles root element', 'object', ''],
   ['text', 'Text content for cell', 'object', ''],
+  ['textStyle', 'Styles text element', 'object', ''],
   [
     'type',
     'Whether it is a header or normal cell',

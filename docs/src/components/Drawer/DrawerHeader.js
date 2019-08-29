@@ -8,10 +8,8 @@ export default class DrawerContent extends React.PureComponent {
     return (
       <div style={styles.container}>
         <Logo width={77} height={64} style={{ width: 77 }} />
-        <div style={styles.right}>
-          <BodyText style={styles.title}>Material Bread</BodyText>
-          <BodyText style={styles.version}>v0.1.1</BodyText>
-        </div>
+        <BodyText style={styles.title}>Material Bread</BodyText>
+        <BodyText style={styles.version}>v0.2.0</BodyText>
       </div>
     );
   }
@@ -20,28 +18,25 @@ export default class DrawerContent extends React.PureComponent {
 const styles = {
   container: {
     padding: '12px 6px',
-    paddingRight: 10,
-    backgroundColor: '#263238',
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 10,
+    marginTop: 30,
   },
-  right: {
-    marginLeft: 8,
-    display: 'flex',
-    flexDirection: 'column',
-  },
+
   title: {
     color: 'rgba(255,255,255,1)',
-    fontWeight: '300',
+    fontWeight: '500',
     margin: 0,
+    marginTop: 20,
     letterSpacing: 1,
   },
   version: {
     margin: 0,
     color: 'rgba(255,255,255,.7)',
     fontSize: 12,
-    marginTop: 6,
+    marginTop: 8,
   },
 };

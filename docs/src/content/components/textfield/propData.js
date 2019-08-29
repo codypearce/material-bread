@@ -10,6 +10,7 @@ const propData = [
   ['label', 'Display label within textfield', 'string', ''],
   ['labelColor', 'Color of label within textfield', 'string', ''],
   ['labelStyle', 'Style of label within textfield', 'object', ''],
+  ['focusedLabelColor', 'Style of label when focused', 'string', ''],
   ['leadingIcon', 'Render arbitrary node on the left the input', 'node', ''],
   ['onBlur', 'Callback on input blur', 'func', ''],
   ['onFocus', 'Callback on input focus', 'func', ''],

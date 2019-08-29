@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 
 import PropTypes from 'prop-types';
-import Modal from '../Modal/Modal.js';
+import Modal from '../Modal/Modal';
 import withTheme from '../../Theme/withTheme';
 import styles from './Dialog.styles';
 import Button from '../Button/Button.js';
@@ -15,9 +15,16 @@ class Dialog extends Component {
     onRequestClose: PropTypes.func,
     onShow: PropTypes.func,
     onTouchOutside: PropTypes.func,
-    actionItems: PropTypes.array,
+    actionItems: PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.node, PropTypes.object]),
+    ),
     title: PropTypes.string,
+    titleStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     supportingText: PropTypes.string,
+    supportingTextStyle: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.array,
+    ]),
     contentStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     testID: PropTypes.string,
   };
@@ -27,7 +34,8 @@ class Dialog extends Component {
     return (
       <View style={styles.actionItems}>
         {actionItems.map((item, index) => {
-          return <Button key={index} text={item.text} onPress={item.onPress} />;
+          if (React.isValidElement(item)) return item;
+          return <Button key={index} {...item} />;
         })}
       </View>
     );
@@ -37,7 +45,9 @@ class Dialog extends Component {
     const {
       style,
       title,
+      titleStyle,
       supportingText,
+      supportingTextStyle,
       children,
       actionItems,
       contentStyle,
@@ -45,9 +55,13 @@ class Dialog extends Component {
     return (
       <View style={[styles.container, style]}>
         <View style={[styles.contentContainer, contentStyle]}>
-          {title ? <BodyText style={styles.title}>{title}</BodyText> : null}
+          {title ? (
+            <BodyText style={[styles.title, titleStyle]}>{title}</BodyText>
+          ) : null}
           {supportingText ? (
-            <BodyText style={styles.supportingText}>{supportingText}</BodyText>
+            <BodyText style={[styles.supportingText, supportingTextStyle]}>
+              {supportingText}
+            </BodyText>
           ) : null}
           {children}
         </View>

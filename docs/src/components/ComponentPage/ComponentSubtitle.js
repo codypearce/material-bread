@@ -24,7 +24,7 @@ class ComponentSubtitle extends Component {
   render() {
     const { description, docsLink } = this.props;
     return (
-      <p style={{ color: 'rgba(0, 0, 0, 0.57)', marginTop: 16 }}>
+      <p style={{ color: 'rgba(0, 0, 0, 0.67)', marginTop: 16 }}>
         {description}
         {docsLink ? this._renderDocsLink() : null}
       </p>

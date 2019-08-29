@@ -58,6 +58,7 @@ class Section extends Component {
                 letterSpacing: 1,
                 fontWeight: 400,
                 textAlign: 'center',
+                color: 'black',
               }}>
               {text}
             </h4>

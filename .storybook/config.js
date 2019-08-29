@@ -10,10 +10,15 @@ import results from '../.jest-test-results.json';
 import '@storybook/addon-console';
 
 // Generate required css
-const iconFont = require('react-native-vector-icons/Fonts/MaterialIcons.ttf');
+const materialIconFont = require('react-native-vector-icons/Fonts/MaterialIcons.ttf');
+const materialCommIconFont = require('react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf');
 const iconFontStyles = `@font-face {
-  src: url(${iconFont}); 
+  src: url(${materialIconFont}); 
   font-family: MaterialIcons;
+}
+@font-face {
+  src: url(${materialCommIconFont}); 
+  font-family: MaterialCommunityIcons;
 }`;
 
 addParameters({

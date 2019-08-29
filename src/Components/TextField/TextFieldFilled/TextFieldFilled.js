@@ -27,14 +27,15 @@ class TextFieldFilled extends Component {
     helperTextStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     underlineColor: PropTypes.string,
     underlineActiveColor: PropTypes.string,
-    leadingIcon: PropTypes.node,
-    trailingIcon: PropTypes.node,
+    leadingIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+    trailingIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
     dense: PropTypes.bool,
-    value: PropTypes.bool,
+    value: PropTypes.string,
     multiline: PropTypes.bool,
     suffix: PropTypes.node,
     prefix: PropTypes.node,
     testID: PropTypes.string,
+    focusedLabelColor: PropTypes.string,
   };
 
   static defaultProps = {
@@ -54,25 +55,22 @@ class TextFieldFilled extends Component {
 
   _renderLeadingIcon() {
     const { leadingIcon } = this.props;
+    const isFunc = typeof leadingIcon === 'function';
 
     return (
-      <View style={{ position: 'absolute', left: 8, top: 16, zIndex: 200 }}>
-        {React.cloneElement(leadingIcon, {
-          size: leadingIcon.props.size ? leadingIcon.props.size : 24,
-          zIndex: 200,
-        })}
+      <View style={{ position: 'absolute', left: 8, top: 16 }}>
+        {isFunc ? leadingIcon() : leadingIcon}
       </View>
     );
   }
 
   _renderTrailingIcon() {
     const { trailingIcon } = this.props;
+    const isFunc = typeof trailingIcon === 'function';
 
     return (
       <View style={{ position: 'absolute', right: 12, top: 16 }}>
-        {React.cloneElement(trailingIcon, {
-          size: trailingIcon.props.size ? trailingIcon.props.size : 24,
-        })}
+        {isFunc ? trailingIcon() : trailingIcon}
       </View>
     );
   }
@@ -134,6 +132,7 @@ class TextFieldFilled extends Component {
       suffix,
       prefix,
       testID,
+      focusedLabelColor,
       ...rest
     } = this.props;
 
@@ -156,18 +155,21 @@ class TextFieldFilled extends Component {
           { marginBottom: helperText && helperVisible ? 20 : 0 },
           containerStyle,
         ]}>
-        <TextFieldLabel
-          label={label}
-          focused={focused}
-          error={error}
-          value={rest.value && rest.value.length > 0}
-          labelColor={labelColor}
-          style={labelStyle}
-          leadingIcon={leadingIcon}
-          dense={dense}
-          prefix={prefix}
-          type={'filled'}
-        />
+        {label ? (
+          <TextFieldLabel
+            label={label}
+            focused={focused}
+            error={error}
+            value={rest.value && rest.value.length > 0}
+            labelColor={labelColor}
+            style={labelStyle}
+            leadingIcon={!!leadingIcon}
+            dense={dense}
+            prefix={prefix}
+            type={'filled'}
+            focusedLabelColor={focusedLabelColor}
+          />
+        ) : null}
         {leadingIcon ? this._renderLeadingIcon() : null}
         {prefix ? this._renderPrefix() : null}
         <TextInput
@@ -186,10 +188,10 @@ class TextFieldFilled extends Component {
             style,
           ]}
           onContentSizeChange={e => this._updateTextInputHeight(e)}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
           testID={testID}
           {...rest}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
         />
         {trailingIcon ? this._renderTrailingIcon() : null}
         {suffix ? this._renderSuffix() : null}

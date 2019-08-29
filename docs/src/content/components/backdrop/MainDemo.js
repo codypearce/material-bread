@@ -15,63 +15,50 @@ export const code = `
 class Page extends React.Component {
   render() {
     const styles = {
-      container: {
-        flex: 1,
-        paddingTop: 30,
-        alignItems: 'center',
-      },
       backdropHeader: {
         height: 56,
         flexDirection: 'row',
         alignItems: 'center',
+        borderRadius: 10
       },
       backdropHeaderTitle: {
         fontSize: 18,
         color: 'white',
-        fontWeight: '500',
         marginLeft: 72,
       },
     };
 
+    const NavItem = ({ text, icon, selected }) => {
+      return (
+        <ListItem
+          text={text}
+          textStyle={{ color: 'white' }}
+          selected={selected}
+          style={{ backgroundColor: 'transparent' }}
+          icon={<Icon name={icon} size={24} color={'white'} />}
+        />
+      )
+    }
+
     const backLayerRevealed = (
-      <View style={{ flex: 1, width: '100%' }}>
+      <View>
         <View style={styles.backdropHeader}>
           <Text style={styles.backdropHeaderTitle}>Navigation</Text>
         </View>
-
-        <List
-          style={{
-            width: '100%',
-            backgroundColor: 'transparent',
-          }}>
-          <ListItem
-            text={'Home'}
-            textStyle={{ color: 'white' }}
-            selected
-            style={{ backgroundColor: 'transparent' }}
-            icon={<Icon name={'home'} size={24} color={'white'} />}
-          />
-          <ListItem
-            text={'Music'}
-            textStyle={{ color: 'white' }}
-            style={{ backgroundColor: 'transparent' }}
-            icon={<Icon name={'music-note'} size={24} color={'white'} />}
-          />
-          <ListItem
-            text={'Favorites'}
-            textStyle={{ color: 'white' }}
-            style={{ backgroundColor: 'transparent' }}
-            icon={<Icon name={'favorite'} size={24} color={'white'} />}
-          />
-          <ListItem
-            text={'Settings'}
-            textStyle={{ color: 'white' }}
-            style={{ backgroundColor: 'transparent' }}
-            icon={<Icon name={'settings'} size={24} color={'white'} />}
-          />
+        <List style={{ backgroundColor: 'transparent' }}>
+          <NavItem text={'Home'} icon={'home'} selected />
+          <NavItem text={'Music'} icon={'music-note'} />
+          <NavItem text={'Favorites'} icon={'favorite'} />
+          <NavItem text={'Settings'} icon={'settings'} />
         </List>
       </View>
-    )
+    );
+
+    const backLayerConcealed = (
+      <View style={styles.backdropHeader}>
+        <Text style={styles.backdropHeaderTitle}>App</Text>
+      </View>
+    );
 
     const album = (
       <Avatar
@@ -79,55 +66,28 @@ class Page extends React.Component {
         content="album"
         contentColor={'#ececec'}
         color={'#a3a3a3'}
-        size={40}
+        size={30}
       />
-    )
+    );
     const iconFav = <IconButton name="favorite" size={24} color="#6e6e6e" />
     
+    const AlbumItem = ({ text, secondaryText }) => ( 
+        <ListItem 
+          text={text}
+          secondaryText={secondaryText} 
+          media={album} 
+          actionItem={iconFav} 
+        /> 
+    );
+
     return (
-      <View style={{marginBottom: 80}} >
-        <Backdrop
-          backLayerConcealed={
-            <View style={styles.backdropHeader}>
-              <Text style={styles.backdropHeaderTitle}>App</Text>
-            </View>
-          }
-          backLayerRevealed={backLayerRevealed}
-          offset={260}>
-          <View style={styles.container}>
-            <Heading
-              text={'Albums'}
-              style={{
-                alignSelf: 'flex-start',
-                marginLeft: 20,
-                fontSize: 20,
-              }}
-            />
-            <ListItem
-              text={'Back in Black'}
-              secondaryText={'AC/DC'}
-              media={album}
-              actionItem={iconFav}
-            />
-            <ListItem
-              text={'Hotel California'}
-              secondaryText={'Eagles'}
-              media={album}
-              actionItem={iconFav}
-            />
-            <ListItem
-              text={'Dark Side of the Moon'}
-              secondaryText={'Pink Floyd '}
-              media={album}
-              actionItem={iconFav}
-            />
-            <ListItem
-              text={'Led Zeppelin IV'}
-              secondaryText={'Led Zeppelin'}
-              media={album}
-              actionItem={iconFav}
-            />
-          </View>
+      <View style={{marginBottom: 80}}>
+        <Backdrop backLayerConcealed={backLayerConcealed} backLayerRevealed={backLayerRevealed} offset={249} >
+            <Heading text={'Albums'} style={{ marginLeft: 20, fontSize: 14,}} />
+            <AlbumItem text={'Back in Black'} secondaryText={'AC/DC'} />
+            <AlbumItem text={'Hotel California'} secondaryText={'Eagles'} />
+            <AlbumItem text={'Dark Side of the Moon'} secondaryText={'Pink Floyd'} />
+            <AlbumItem text={'Led Zeppelin IV'} secondaryText={'Led Zeppelin'} />
         </Backdrop>
       </View>
     );

@@ -18,6 +18,7 @@ export const code = `<View style={{flexDirection: 'row', alignItems: 'center'}}>
   </Badge>
   <Badge size={24} content={24} />
   <Badge size={16} content={99} />
+  <Badge size={36} content={100} maxValue={99} />
 </View>`;
 
 const MainDemo = pageHref => (

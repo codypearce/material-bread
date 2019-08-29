@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, View, Text, Platform } from 'react-native';
+import { Animated, View, Text } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import Ripple from '../../Ripple/Ripple';
 import Icon from '../../Icon/Icon';
+import Hoverable from '../../../Utils/Hoverable/Hoverable.js';
+import color from 'color';
 import styles from './ListExpand.styles';
 
 class ListExpand extends Component {
@@ -16,12 +18,15 @@ class ListExpand extends Component {
     titleStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     theme: PropTypes.object,
     icon: PropTypes.node,
+    expandIconStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    rippleProps: PropTypes.object,
   };
 
   state = {
     isOpen: false,
     menuHeight: new Animated.Value(0),
     animationDuration: 150,
+    stateBackgroundColor: null,
   };
 
   componentDidMount() {
@@ -83,13 +88,12 @@ class ListExpand extends Component {
         style={{
           height: menuHeight,
           overflow: 'hidden',
-          width: icon && Platform.OS == 'web' ? 'calc(100% - 56px)' : '100%',
-          marginLeft: icon ? 56 : 0,
+          width: '100%',
+          paddingLeft: icon ? 42 : 0,
           zIndex: 100,
         }}>
         <View
           style={{
-            position: 'absolute',
             width: '100%',
             height: initialHeight,
             zIndex: 100,
@@ -110,24 +114,92 @@ class ListExpand extends Component {
     });
   }
 
+  getBackgroundColor = () => {
+    const { stateBackgroundColor } = this.state;
+
+    let implementedBackgroundColor = 'transparent';
+
+    implementedBackgroundColor = stateBackgroundColor
+      ? stateBackgroundColor
+      : implementedBackgroundColor;
+
+    return implementedBackgroundColor;
+  };
+
+  handleHover(toggle) {
+    const { rippleProps } = this.props;
+    let bgColor = this.getBackgroundColor();
+    let implementedColor;
+
+    if (bgColor == 'transparent') {
+      implementedColor = toggle ? 'rgba(0, 0, 0, 0.12)' : null;
+    } else {
+      if (color(bgColor).isDark()) {
+        implementedColor = toggle
+          ? color(bgColor)
+              .lighten(0.15)
+              .rgb()
+              .string()
+          : null;
+      } else {
+        implementedColor = toggle
+          ? color(bgColor)
+              .darken(0.15)
+              .rgb()
+              .string()
+          : null;
+      }
+    }
+
+    if (rippleProps && rippleProps.rippleColor) {
+      implementedColor = toggle
+        ? color(rippleProps.rippleColor)
+            .alpha(0.12)
+            .rgb()
+            .string()
+        : null;
+    }
+    this.setState({ stateBackgroundColor: implementedColor });
+  }
+
   render() {
-    const { title, style, titleStyle, icon } = this.props;
+    const {
+      title,
+      style,
+      titleStyle,
+      icon,
+      expandIconStyle,
+      rippleProps,
+    } = this.props;
     const { isOpen } = this.state;
 
     return (
       <View>
-        <Ripple
-          style={[styles.container, style]}
-          onPress={this.toggleMenu}
-          rippleDuration={100}>
-          {icon ? this._renderIcon() : null}
-          <Text
-            style={[styles.title, { marginLeft: icon ? 32 : 0 }, titleStyle]}>
-            {title}
-          </Text>
-          <View style={{ flex: 1 }} />
-          <Icon name={isOpen ? 'expand-less' : 'expand-more'} size={24} />
-        </Ripple>
+        <Hoverable
+          onHoverIn={() => this.handleHover(true)}
+          onHoverOut={() => this.handleHover(false)}>
+          <Ripple
+            style={[
+              styles.container,
+              { backgroundColor: this.getBackgroundColor() },
+              style,
+            ]}
+            onPress={this.toggleMenu}
+            rippleDuration={100}
+            {...rippleProps}>
+            {icon ? this._renderIcon() : null}
+            <Text
+              style={[styles.title, { marginLeft: icon ? 16 : 0 }, titleStyle]}>
+              {title}
+            </Text>
+            <View style={{ flex: 1 }} />
+            <Icon
+              name={isOpen ? 'expand-less' : 'expand-more'}
+              size={24}
+              style={expandIconStyle}
+            />
+          </Ripple>
+        </Hoverable>
         {this.renderExpandedContent()}
       </View>
     );

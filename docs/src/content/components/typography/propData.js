@@ -6,6 +6,12 @@ const propData = [
 
   ['style', 'Styles root element', 'object', ''],
   ['text', 'Renders a Text string', 'string', ''],
+  [
+    'themeColor',
+    'The color value defined within the `textColor` theme property',
+    'string',
+    'primary',
+  ],
 ];
 
 export default createTableData(propData);

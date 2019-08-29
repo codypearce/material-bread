@@ -18,7 +18,7 @@ class Page extends React.Component {
       container: {
         flex: 1,
         paddingTop: 30,
-        alignItems: 'center',
+
       },
       backdropHeader: {
         height: 56,

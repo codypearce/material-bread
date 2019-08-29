@@ -1,4 +1,6 @@
 import React from 'react';
+import { View } from 'react-native';
+
 import { ComponentDemo } from '@components';
 import { AppbarBottom, Fab, FabSpeedDial } from '../../../../../../src/index';
 
@@ -15,21 +17,24 @@ class Page extends React.Component {
         <Fab backgroundColor={'black'} icon={'attach-money'} />,
       ];
       return (
-        <AppbarBottom
-            fab={
-              <FabSpeedDial
-                actions={actions}
-                fab={<Fab backgroundColor={'black'} />}
-              />
-            }
-            fabCutout
-            fabPosition={'end'}
-            navigation={'arrow-back'}
-            actionItems={[
-            { name: 'search', onPress: () => console.log('onSearch') },
-            { name: 'more-vert' },
-            ]}
-        />
+        <View style={{ marginTop: 300 }}>
+          <AppbarBottom
+              fab={
+                <FabSpeedDial
+                  actions={actions}
+                  fab={<Fab backgroundColor={'black'} />}
+                />
+              }
+              fabCutout
+              fabPosition={'end'}
+              navigation={'arrow-back'}
+              actionItems={[
+              { name: 'search', onPress: () => console.log('onSearch') },
+              { name: 'more-vert' },
+              ]}
+
+          />
+        </View>
       );
     }
   }
@@ -41,7 +46,7 @@ const SubtitleDemo = pageHref => (
     sectionHref={`${pageHref}#speeddial`}
     sectionId={'speeddial'}
     code={code}
-    scope={{ AppbarBottom, Fab, FabSpeedDial }}
+    scope={{ AppbarBottom, Fab, FabSpeedDial, View }}
   />
 );
 export default SubtitleDemo;

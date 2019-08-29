@@ -29,15 +29,17 @@ class TextFieldFlat extends Component {
     underlineActiveColor: PropTypes.oneOfType([
       PropTypes.object,
       PropTypes.array,
+      PropTypes.string,
     ]),
-    leadingIcon: PropTypes.node,
-    trailingIcon: PropTypes.node,
+    leadingIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+    trailingIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
     dense: PropTypes.bool,
-    value: PropTypes.bool,
+    value: PropTypes.string,
     multiline: PropTypes.bool,
     suffix: PropTypes.node,
     prefix: PropTypes.node,
     testID: PropTypes.string,
+    focusedLabelColor: PropTypes.string,
   };
 
   static defaultProps = {
@@ -57,24 +59,22 @@ class TextFieldFlat extends Component {
 
   _renderLeadingIcon() {
     const { leadingIcon } = this.props;
+    const isFunc = typeof leadingIcon === 'function';
 
     return (
       <View style={{ position: 'absolute', left: 8, top: 16 }}>
-        {React.cloneElement(leadingIcon, {
-          size: leadingIcon.props.size ? leadingIcon.props.size : 24,
-        })}
+        {isFunc ? leadingIcon() : leadingIcon}
       </View>
     );
   }
 
   _renderTrailingIcon() {
     const { trailingIcon } = this.props;
+    const isFunc = typeof trailingIcon === 'function';
 
     return (
       <View style={{ position: 'absolute', right: 12, top: 16 }}>
-        {React.cloneElement(trailingIcon, {
-          size: trailingIcon.props.size ? trailingIcon.props.size : 24,
-        })}
+        {isFunc ? trailingIcon() : trailingIcon}
       </View>
     );
   }
@@ -137,6 +137,7 @@ class TextFieldFlat extends Component {
       suffix,
       prefix,
       testID,
+      focusedLabelColor,
       ...rest
     } = this.props;
 
@@ -159,18 +160,21 @@ class TextFieldFlat extends Component {
           { marginBottom: helperText && helperVisible ? 20 : 0 },
           containerStyle,
         ]}>
-        <TextFieldLabel
-          label={label}
-          focused={focused}
-          error={error}
-          value={rest.value}
-          type={'flat'}
-          labelColor={labelColor}
-          style={labelStyle}
-          leadingIcon={leadingIcon}
-          dense={dense}
-          prefix={prefix}
-        />
+        {label ? (
+          <TextFieldLabel
+            label={label}
+            focused={focused}
+            error={error}
+            value={rest.value}
+            type={'flat'}
+            labelColor={labelColor}
+            style={labelStyle}
+            leadingIcon={!!leadingIcon}
+            dense={dense}
+            prefix={prefix}
+            focusedLabelColor={focusedLabelColor}
+          />
+        ) : null}
         {leadingIcon ? this._renderLeadingIcon() : null}
         {prefix ? this._renderPrefix() : null}
         <TextInput
@@ -188,11 +192,11 @@ class TextFieldFlat extends Component {
             },
             style,
           ]}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
           testID={testID}
           onContentSizeChange={e => this._updateTextInputHeight(e)}
           {...rest}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
         />
         {trailingIcon ? this._renderTrailingIcon() : null}
         {suffix ? this._renderSuffix() : null}

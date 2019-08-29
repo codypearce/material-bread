@@ -130,6 +130,9 @@ export { default as Slider } from '../../Components/Slider/Slider.stories.js';
 export {
   default as Snackbar,
 } from '../../Components/Snackbar/Snackbar.stories.js';
+export {
+  default as SwipeNav,
+} from '../../Components/SwipeNav/SwipeNav.stories.js';
 
 export { default as Switch } from '../../Components/Switch/Switch.stories.js';
 export { default as Tab } from '../../Components/Tabs/Tab/Tab.stories.js';

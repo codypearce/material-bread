@@ -6,6 +6,8 @@ import withTheme from '../../../Theme/withTheme';
 import BodyText from '../../Typography/BodyText/BodyText.js';
 import Caption from '../../Typography/Caption/Caption.js';
 import Ripple from '../../Ripple/Ripple.js';
+import Hoverable from '../../../Utils/Hoverable/Hoverable.js';
+import color from 'color';
 import styles from './ListItem.styles';
 
 class ListItem extends Component {
@@ -16,7 +18,7 @@ class ListItem extends Component {
     disabled: PropTypes.bool,
     selected: PropTypes.bool,
     text: PropTypes.string,
-    secondaryText: PropTypes.string,
+    secondaryText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     media: PropTypes.node,
     icon: PropTypes.node,
     actionItem: PropTypes.node,
@@ -26,6 +28,13 @@ class ListItem extends Component {
       PropTypes.object,
       PropTypes.array,
     ]),
+    rippleProps: PropTypes.object,
+    backgroundColor: PropTypes.string,
+  };
+
+  state = {
+    stateBackgroundColor: null,
+    isPressed: false,
   };
 
   _renderText() {
@@ -38,25 +47,29 @@ class ListItem extends Component {
     } = this.props;
 
     return (
-      <View style={{ alignItems: 'flex-start' }}>
+      <View style={{ alignItems: 'flex-start' }} ellipsizeMode="tail">
         <BodyText
           style={[
             styles.listItemText,
             { color: disabled ? 'rgba(0,0,0,0.47)' : 'rgba(0,0,0,0.87)' },
             textStyle,
-          ]}>
+          ]}
+          numberOfLines={1}>
           {text}
         </BodyText>
-        {secondaryText ? (
+        {typeof secondaryText === 'string' ? (
           <Caption
             style={[
               styles.listItemSecondaryText,
               { color: 'rgba(0,0,0,0.57)' },
               secondaryTextStyle,
-            ]}>
+            ]}
+            numberOfLines={2}>
             {secondaryText}
           </Caption>
-        ) : null}
+        ) : (
+          secondaryText
+        )}
       </View>
     );
   }
@@ -85,50 +98,128 @@ class ListItem extends Component {
     return leadingActionItem;
   }
 
+  getBackgroundColor = () => {
+    const { backgroundColor, selected, disabled, rippleProps } = this.props;
+    const { stateBackgroundColor } = this.state;
+
+    let implementedBackgroundColor = backgroundColor
+      ? backgroundColor
+      : 'transparent';
+
+    implementedBackgroundColor = stateBackgroundColor
+      ? stateBackgroundColor
+      : implementedBackgroundColor;
+
+    const rippleColor =
+      rippleProps && rippleProps.rippleColor
+        ? color(rippleProps.rippleColor)
+            .alpha(0.12)
+            .rgb()
+            .string()
+        : 'rgba(0, 0, 0, 0.12)';
+
+    implementedBackgroundColor = selected
+      ? rippleColor
+      : implementedBackgroundColor;
+
+    return disabled ? 'transparent' : implementedBackgroundColor;
+  };
+
+  handleHover(toggle) {
+    const { rippleProps } = this.props;
+    let bgColor = this.getBackgroundColor();
+    let implementedColor;
+
+    if (bgColor == 'transparent') {
+      implementedColor = toggle ? 'rgba(0, 0, 0, 0.12)' : null;
+    } else {
+      if (color(bgColor).isDark()) {
+        implementedColor = toggle
+          ? color(bgColor)
+              .lighten(0.15)
+              .rgb()
+              .string()
+          : null;
+      } else {
+        implementedColor = toggle
+          ? color(bgColor)
+              .darken(0.15)
+              .rgb()
+              .string()
+          : null;
+      }
+    }
+
+    if (rippleProps && rippleProps.rippleColor) {
+      implementedColor = toggle
+        ? color(rippleProps.rippleColor)
+            .alpha(0.12)
+            .rgb()
+            .string()
+        : null;
+    }
+
+    this.setState({ stateBackgroundColor: implementedColor });
+  }
+
   render() {
     const {
       style,
       onPress,
       disabled,
-      selected,
       children,
       media,
       icon,
       actionItem,
       leadingActionItem,
+      rippleProps,
+      ...rest
     } = this.props;
+    const { isPressed } = this.state;
 
     let contentMargin = media ? 16 : 0;
     if (icon || leadingActionItem) contentMargin = 32;
 
     return (
-      <Ripple
-        onAnimationEnd={onPress}
-        rippleDuration={200}
-        disabled={disabled}
-        rippleColor={'rgba(0,0,0,.8)'}
-        style={[
-          {
-            backgroundColor: selected ? '#eee' : '#fff',
-            flexDirection: 'row',
-            alignItems: 'center',
-            paddingHorizontal: 16,
-            paddingLeft: 16,
-            paddingRight: 16,
-            paddingVertical: 12,
-            width: '100%',
-            zIndex: 1,
-          },
-          style,
-        ]}>
-        {leadingActionItem ? this._renderLeadingActionItem() : null}
-        {icon ? this._renderIcon() : null}
-        {media ? media : null}
-        <View style={{ marginLeft: contentMargin }}>
-          {children ? children : this._renderText()}
-        </View>
-        {actionItem ? this._renderActionitem() : null}
-      </Ripple>
+      <Hoverable
+        onHoverIn={() => this.handleHover(true)}
+        onHoverOut={() => this.handleHover(false)}>
+        <Ripple
+          onAnimationEnd={() => {
+            if (isPressed && onPress) {
+              onPress();
+              this.setState({ isPressed: false });
+            }
+          }}
+          rippleDuration={200}
+          disabled={disabled}
+          rippleColor={'rgba(0,0,0,.8)'}
+          onPress={() => this.setState({ isPressed: true })}
+          style={[
+            {
+              backgroundColor: this.getBackgroundColor(),
+              flexDirection: 'row',
+              alignItems: 'center',
+              paddingHorizontal: 16,
+              paddingLeft: 16,
+              paddingRight: 16,
+              paddingVertical: 12,
+              width: '100%',
+              zIndex: 1,
+            },
+            style,
+          ]}
+          {...rippleProps}
+          {...rest}>
+          {leadingActionItem ? this._renderLeadingActionItem() : null}
+          {icon ? this._renderIcon() : null}
+          {media ? media : null}
+          <View style={{ marginLeft: contentMargin, flexShrink: 1 }}>
+            {children ? children : this._renderText()}
+          </View>
+          {actionItem ? this._renderActionitem() : null}
+        </Ripple>
+      </Hoverable>
     );
   }
 }

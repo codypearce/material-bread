@@ -25,6 +25,7 @@ export default class PageLayout extends Component {
     mobileOpen: false,
     isTemporary: true,
     firstLoaded: false,
+    isMobile: false,
   };
 
   componentDidMount() {
@@ -97,9 +98,38 @@ export default class PageLayout extends Component {
     this.setState(state => ({ mobileOpen: !state.mobileOpen }));
   };
 
-  render() {
-    const { posts, children } = this.props;
+  _renderMain() {
+    const { children, pageContext } = this.props;
     const { isTemporary } = this.state;
+    if (pageContext.layout === 'home') {
+      return (
+        <main
+          style={{
+            padding: 0,
+            marginTop: 0,
+            minHeight: '100vh',
+          }}
+          className={`${
+            isTemporary ? 'main--temporaryDrawer' : 'main--permanentDrawer'
+          }`}>
+          {children}
+        </main>
+      );
+    }
+
+    return (
+      <main
+        className={`${
+          isTemporary ? 'main--temporaryDrawer' : 'main--permanentDrawer'
+        }`}>
+        {children}
+      </main>
+    );
+  }
+
+  render() {
+    const { posts, pageContext } = this.props;
+    const { isTemporary, isMobile } = this.state;
     if (!this.state.firstLoaded)
       return (
         <div
@@ -108,7 +138,7 @@ export default class PageLayout extends Component {
       );
 
     return (
-      <div style={{ width: '100%' }}>
+      <div style={{ width: '100%', height: '100%' }}>
         <Helmet
           google-site-verification={
             'pnInoKlqzLFjeCNTW6F-BnibL8xE4qnA7Tghks5dLwo'
@@ -133,30 +163,39 @@ export default class PageLayout extends Component {
 
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,900"
+          />
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
           />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Helmet>
 
-        <div>
-          <Drawer
-            open={this.state.mobileOpen}
-            onClose={this.handleDrawerToggle}
-            type={isTemporary ? 'modal' : 'permanent'}
-            drawerContent={<DrawerContent posts={posts} />}
-            position={'fixed'}>
-            <Header
-              handleDrawerToggle={this.handleDrawerToggle}
-              isTemporary={isTemporary}
-            />
-            <main
-              className={`${
-                isTemporary ? 'main--temporaryDrawer' : 'main--permanentDrawer'
-              }`}>
-              {children}
-            </main>
-          </Drawer>
-        </div>
+        <Drawer
+          open={this.state.mobileOpen}
+          onClose={this.handleDrawerToggle}
+          type={isTemporary ? 'modal' : 'permanent'}
+          drawerContent={<DrawerContent posts={posts} />}
+          position={'fixed'}
+          style={{
+            height: 'auto',
+            minHeight: '100%',
+            backgroundColor: '#f7f9fc',
+          }}
+          drawerStyle={{
+            borderRightWidth: 0,
+            height: '100%',
+          }}
+          scrimStyles={{ height: '100%' }}
+          width={250}>
+          <Header
+            handleDrawerToggle={this.handleDrawerToggle}
+            isTemporary={isTemporary}
+            isMobile={isMobile}
+          />
+          {this._renderMain()}
+        </Drawer>
       </div>
     );
   }

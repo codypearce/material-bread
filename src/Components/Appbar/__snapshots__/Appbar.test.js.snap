@@ -48,6 +48,7 @@ exports[`Appbar Renders 1`] = `
             "marginLeft": 0,
             "zIndex": 100,
           },
+          undefined,
         ]
       }
     >

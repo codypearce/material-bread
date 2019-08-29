@@ -41,9 +41,10 @@
 
 ## Quick Start
 
-1. `npm install material-bread react-native-web react-dom` or `yarn add material-bread react-native-web react-dom`
-2. Install and link [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
-3. Wrap your root `<App>` with a `<BreadProvider>`
+1. `npm install material-bread` or `yarn add material-bread`
+2. Web only: `npm install modal-enhanced-react-native-web` or `yarn add modal-enhanced-react-native-web`
+3. Install and link [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) and [react-native-svg](https://github.com/react-native-community/react-native-svg)
+4. Wrap your root `<App>` with a `<BreadProvider>`
 
 ```jsx
 <BreadProvider>
@@ -51,7 +52,7 @@
 </BreadProvider>
 ```
 
-4. Start developing!
+5. Start developing!
 
 Read the [getting started](#getting-started) guides for your platform to learn more.
 
@@ -135,6 +136,7 @@ Currently there are 39 distinct components (though what is a full component and 
 | [SheetSide](https://material-bread.org/components/sheet-side)                | ✓   | ✓       | ✓   | ✓        |
 | [Slider](https://material-bread.org/components/slider)                       | ✓   | ✓       | ✓   | ✓        |
 | [Snackbar](https://material-bread.org/components/snackbar)                   | ✓   | ✓       | ✓   | ✓        |
+| [SwipeNav](https://material-bread.org/components/swipenav)                   | ✓   | ✓       | ✓   | ✓        |
 | [Switch](https://material-bread.org/components/switch)                       | ✓   | ✓       | ✓   | ✓        |
 | [Tabs](https://material-bread.org/components/tabs)                           | ✓   | ✓       | ✓   | ✓        |
 | [TextField](https://material-bread.org/components/textfield)                 | ✓   | ✓       | ✓   | ✓        |
@@ -157,11 +159,11 @@ All contributions are welcome and encouraged. If you are reporting a bug, please
 
 #### Contribute to library
 
-[Storybook](https://github.com/storybooks/storybook) is used as the dev environment for all components on all platforms. You can learn about how to get the storybook environment running locally for all platforms [here](http://material-bread.org/contributing/library). Please follow the conventions already in place. For example, most components follow the made up "props for prebuilt, children for custom" pattern. Addtionally, make sure you are testing your components across platforms before making a PR.
+[Storybook](https://github.com/storybooks/storybook) is used as the dev environment for all components on all platforms. You can learn about how to get the storybook environment running locally for all platforms [here](http://material-bread.org/contributing/library). Please follow the conventions already in place. For example, most components follow the made up "props for prebuilt, children for custom" pattern. Additionally, make sure you are testing your components across platforms before making a PR.
 
 #### Contribute to docs
 
-Documentation is built using [GatsbyJs](https://github.com/gatsbyjs/gatsby) and all pages are built using react components. You can learn how to get the docs running locally here [here](https://material-bread.org/contributing/docs).
+Documentation is built using [GatsbyJs](https://github.com/gatsbyjs/gatsby) and all pages are built using react components. You can learn how to get the docs running locally [here](https://material-bread.org/contributing/docs).
 
 #### Easy first contribution
 

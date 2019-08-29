@@ -31,7 +31,7 @@ class CodeInline extends Component {
             backgroundColor: '#f1f1f1',
             color: color,
             fontFamily: 'monospace',
-            padding: 4,
+            padding: 5,
             borderRadius: 4,
             whiteSpace: 'nowrap',
             fontSize: 11,

@@ -14,11 +14,11 @@ class Link extends Component {
   };
 
   state = {
-    color: '#00897B',
+    color: '#060443',
   };
 
   handleHover(toggle) {
-    this.setState({ color: toggle ? '#26A69A' : '#00897B' });
+    this.setState({ color: toggle ? '#1712b9' : '#060443' });
   }
 
   render() {

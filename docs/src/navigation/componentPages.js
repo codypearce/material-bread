@@ -217,6 +217,10 @@ const components = [
     path: '/components/snackbar',
   },
   {
+    title: 'SwipeNav',
+    path: '/components/swipenav',
+  },
+  {
     title: 'Switch',
     path: '/components/switch',
   },

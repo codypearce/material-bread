@@ -121,6 +121,7 @@ class Index extends Component {
             />
           </div>
         </Section>
+
         <Section name="Setup" id="setup" href="/getting-started/web#setup ">
           <ComponentDescription
             text={
@@ -147,7 +148,9 @@ class Index extends Component {
                 <div>
                   First{' '}
                   <CodeBlock
-                    code={'npm i react-native-web react-dom react-art'}
+                    code={
+                      'npm i react-native-web react-dom react-art modal-enhanced-react-native-web react-native-svg'
+                    }
                     style={styles.code}
                     fontSize={12}
                     canCopy

@@ -12,6 +12,7 @@ class DrawerItemExpand extends Component {
     sectionExpanded: PropTypes.bool,
     markdownMenuItems: PropTypes.array,
     reactPageMenuItems: PropTypes.array,
+    icon: PropTypes.string,
   };
   state = {
     open: false,
@@ -72,12 +73,23 @@ class DrawerItemExpand extends Component {
     });
   }
   render() {
-    const { label } = this.props;
+    const { label, icon } = this.props;
 
     return (
       <ListExpand
         title={label}
-        titleStyle={{ fontSize: 11, fontWeight: '500' }}>
+        titleStyle={{ fontSize: 11, fontWeight: '400', color: '#fff' }}
+        expandIconStyle={{ color: '#fff', fontSize: 16 }}
+        icon={
+          icon ? (
+            <i
+              className={`fa fa-${icon}`}
+              style={{ fontSize: 20, width: 20, color: 'white' }}
+            />
+          ) : null
+        }
+        rippleProps={{ rippleColor: '#fff', rippleContainerBorderRadius: 4 }}
+        style={{ paddingTop: 16, paddingBottom: 16, borderRadius: 4 }}>
         {this.renderMarkdownMenuItems()}
         {this.renderReactMenuItems()}
       </ListExpand>

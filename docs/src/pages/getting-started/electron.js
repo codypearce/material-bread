@@ -20,7 +20,7 @@ const sections = [
   { name: 'Examples' },
 ];
 
-const dependencies = `npm i material-bread electron react react-dom react-native-web @babel/core @babel/plugin-proposal-class-properties @babel/plugin-proposal-object-rest-spread @babel/plugin-transform-flow-strip-types @babel/plugin-transform-regenerator @babel/plugin-transform-runtime @babel/plugin-proposal-export-default-from css-loader file-loader style-loader webpack webpack-cli webpack-dev-server
+const dependencies = `npm i material-bread electron react react-dom react-native-web react-native-svg modal-enhanced-react-native-web @babel/core @babel/plugin-proposal-class-properties @babel/plugin-proposal-object-rest-spread @babel/plugin-transform-flow-strip-types @babel/plugin-transform-regenerator @babel/plugin-transform-runtime @babel/plugin-proposal-export-default-from css-loader file-loader style-loader webpack webpack-cli webpack-dev-server
 `;
 
 const code = `import React, { Component } from "react";
@@ -417,13 +417,11 @@ class Index extends Component {
               </div>
             }
           />
-          <div className="row">
-            <Link
-              href="https://github.com/codypearce/material-bread-electron-example"
-              style={{ fontSize: 18 }}>
-              Minimal React Native Electron Example
-            </Link>
-          </div>
+          <Link
+            href="https://github.com/codypearce/material-bread-electron-example"
+            style={{ fontSize: 18, whitespace: 'wrap' }}>
+            Minimal React Native Electron Example
+          </Link>
         </Section>
       </div>
     );
