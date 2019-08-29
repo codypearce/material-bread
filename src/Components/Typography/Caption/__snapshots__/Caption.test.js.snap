@@ -4,9 +4,6 @@ exports[`Caption Renders 1`] = `
 <Text
   style={
     Array [
-      Object {
-        "color": "rgba(0, 0, 0, 0.87)",
-      },
       Object {},
       Object {
         "fontSize": 12,
@@ -14,7 +11,7 @@ exports[`Caption Renders 1`] = `
         "lineHeight": 12,
       },
       Object {
-        "color": "rgba(0,0,0, 87)",
+        "color": "rgba(0, 0, 0, 0.87)",
         "marginBottom": 0,
         "textAlign": "left",
       },

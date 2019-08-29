@@ -7,6 +7,9 @@ import styles from './AppbarBottom.styles';
 import AppbarBottomSVG from './AppbarBottom.svg.js';
 
 class AppbarBottom extends Component {
+  constructor(props) {
+    super(props);
+  }
   static propTypes = {
     color: PropTypes.string,
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),

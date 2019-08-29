@@ -58,7 +58,7 @@ exports[`SheetBottom Renders 1`] = `
           },
           undefined,
           Object {
-            "height": "100%",
+            "height": 0,
             "paddingVertical": 20,
             "transform": Array [
               Object {

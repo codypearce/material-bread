@@ -57,12 +57,12 @@ exports[`DrawerBottom Renders 1`] = `
       style={
         Object {
           "backgroundColor": "#fff",
-          "height": "100%",
+          "height": 1334,
           "overflow": "hidden",
           "paddingVertical": 20,
           "transform": Array [
             Object {
-              "translateY": 200,
+              "translateY": 1334,
             },
           ],
           "width": "100%",
