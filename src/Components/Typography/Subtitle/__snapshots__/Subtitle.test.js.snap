@@ -4,13 +4,10 @@ exports[`Subtitle Renders 1`] = `
 <Text
   style={
     Array [
-      Object {
-        "color": "rgba(0, 0, 0, 0.87)",
-      },
       Object {},
       undefined,
       Object {
-        "color": "rgba(0,0,0, 87)",
+        "color": "rgba(0, 0, 0, 0.87)",
         "marginBottom": 0,
         "textAlign": "left",
       },

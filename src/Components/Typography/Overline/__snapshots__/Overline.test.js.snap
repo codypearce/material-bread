@@ -4,9 +4,6 @@ exports[`Overline Renders 1`] = `
 <Text
   style={
     Array [
-      Object {
-        "color": "rgba(0, 0, 0, 0.87)",
-      },
       Object {},
       Object {
         "fontSize": 10,
@@ -15,7 +12,7 @@ exports[`Overline Renders 1`] = `
         "textTransform": "uppercase",
       },
       Object {
-        "color": "rgba(0,0,0, 87)",
+        "color": "rgba(0, 0, 0, 0.87)",
         "marginBottom": 0,
         "textAlign": "left",
       },
