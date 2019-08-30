@@ -13,7 +13,6 @@ class TextButton extends Component {
     textColor: PropTypes.string,
     rippleColor: PropTypes.string,
     theme: PropTypes.object,
-    containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   };
 
   state = {
@@ -77,8 +76,7 @@ class TextButton extends Component {
     return (
       <Hoverable
         onHoverIn={() => this.handleHover(true)}
-        onHoverOut={() => this.handleHover(false)}
-        style={props.containerStyle}>
+        onHoverOut={() => this.handleHover(false)}>
         {() => (
           <ButtonBase
             typeRippleColor={this.getRippleColor()}
