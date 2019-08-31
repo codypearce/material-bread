@@ -12,7 +12,7 @@ const propData = [
     'string',
     'theme.primary.main',
   ],
-  ['containerStyle', 'Styles container of contained button', 'object', ''],
+  ['containerStyle', 'Styles container of the button', 'object', ''],
 
   ['dense', 'Toggle dense type, button will be smaller', 'bool', ''],
   ['disabled', 'Toggle disabled styles', 'bool', ''],

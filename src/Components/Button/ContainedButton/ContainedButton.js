@@ -185,7 +185,8 @@ class ContainedButton extends Component {
     return (
       <Hoverable
         onHoverIn={() => this.handleHover(true)}
-        onHoverOut={() => this.handleHover(false)}>
+        onHoverOut={() => this.handleHover(false)}
+        style={[containerStyle]}>
         {() => (
           <Animated.View
             style={[
