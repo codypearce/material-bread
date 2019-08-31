@@ -15,6 +15,7 @@ class Snackbar extends Component {
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     onButtonPress: PropTypes.func,
     buttonLabel: PropTypes.string,
+    buttonTextColor: PropTypes.string,
     testID: PropTypes.string,
   };
 
@@ -81,7 +82,7 @@ class Snackbar extends Component {
   }
 
   _renderButton() {
-    const { buttonLabel, onButtonPress } = this.props;
+    const { buttonLabel, buttonTextColor, onButtonPress } = this.props;
     if (buttonLabel) {
       return (
         <Button
@@ -89,6 +90,7 @@ class Snackbar extends Component {
           style={{ marginHorizontal: 8, marginVertical: 6 }}
           type="text"
           text={buttonLabel}
+          textColor={buttonTextColor || null}
         />
       );
     }
