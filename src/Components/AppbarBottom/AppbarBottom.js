@@ -151,7 +151,7 @@ class AppbarBottom extends Component {
     const backgroundColor = color ? color : theme.primary.main;
 
     return (
-      <View>
+      <>
         <View
           style={[
             styles.contianer,
@@ -174,8 +174,8 @@ class AppbarBottom extends Component {
             {children ? children : this._renderAppBarContent()}
           </View>
         </View>
-        {this._renderFab()}
-      </View>
+        <View>{this._renderFab()}</View>
+      </>
     );
   }
 }
