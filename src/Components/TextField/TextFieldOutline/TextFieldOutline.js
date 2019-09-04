@@ -33,6 +33,7 @@ class TextFieldOutlined extends Component {
     prefix: PropTypes.node,
     testID: PropTypes.string,
     focusedLabelColor: PropTypes.string,
+    focusedBorderColor: PropTypes.string,
   };
 
   static defaultProps = {
@@ -128,10 +129,14 @@ class TextFieldOutlined extends Component {
       prefix,
       testID,
       focusedLabelColor,
+      focusedBorderColor,
       ...rest
     } = this.props;
 
-    let borderColor = focused ? 'rgba(33, 150, 243, 1)' : 'rgb(192, 192, 192)';
+    let borderColor = focused
+      ? focusedBorderColor || 'rgba(33, 150, 243, 1)'
+      : 'rgb(192, 192, 192)';
+
     if (error) borderColor = 'red';
 
     let height =
