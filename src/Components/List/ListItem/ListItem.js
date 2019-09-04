@@ -18,7 +18,9 @@ class ListItem extends Component {
     disabled: PropTypes.bool,
     selected: PropTypes.bool,
     text: PropTypes.string,
+    textProps: PropTypes.object,
     secondaryText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+    secondaryTextProps: PropTypes.object,
     media: PropTypes.node,
     icon: PropTypes.node,
     actionItem: PropTypes.node,
@@ -40,7 +42,9 @@ class ListItem extends Component {
   _renderText() {
     const {
       text,
+      textProps = {},
       secondaryText,
+      secondaryTextProps = {},
       disabled,
       textStyle,
       secondaryTextStyle,
@@ -54,7 +58,8 @@ class ListItem extends Component {
             { color: disabled ? 'rgba(0,0,0,0.47)' : 'rgba(0,0,0,0.87)' },
             textStyle,
           ]}
-          numberOfLines={1}>
+          numberOfLines={1}
+          {...textProps}>
           {text}
         </BodyText>
         {typeof secondaryText === 'string' ? (
@@ -64,7 +69,8 @@ class ListItem extends Component {
               { color: 'rgba(0,0,0,0.57)' },
               secondaryTextStyle,
             ]}
-            numberOfLines={2}>
+            numberOfLines={2}
+            {...secondaryTextProps}>
             {secondaryText}
           </Caption>
         ) : (

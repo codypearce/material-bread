@@ -23,10 +23,17 @@ const propData = [
     'string || element',
     '',
   ],
+  [
+    'secondaryTextProps',
+    'Addtional props for the secondary text element',
+    'object',
+    '',
+  ],
   ['secondaryTextStyle', 'Styles secondary text element', 'object', ''],
   ['selected', 'Whether the item is selected', 'bool', ''],
   ['style', 'Styles root element', 'object', ''],
   ['text', 'Main text for item', 'string', ''],
+  ['textProps', 'Addtional props for the main text element', 'object', ''],
   ['textStyle', 'Styles main text element', 'object', ''],
 ];
 
