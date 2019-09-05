@@ -42,9 +42,8 @@
 ## Quick Start
 
 1. `npm install material-bread` or `yarn add material-bread`
-2. Web only: `npm install modal-enhanced-react-native-web` or `yarn add modal-enhanced-react-native-web`
-3. Install and link [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) and [react-native-svg](https://github.com/react-native-community/react-native-svg)
-4. Wrap your root `<App>` with a `<BreadProvider>`
+2. Install and link [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) and [react-native-svg](https://github.com/react-native-community/react-native-svg)
+3. Wrap your root `<App>` with a `<BreadProvider>`
 
 ```jsx
 <BreadProvider>
@@ -52,7 +51,7 @@
 </BreadProvider>
 ```
 
-5. Start developing!
+4. Start developing!
 
 Read the [getting started](#getting-started) guides for your platform to learn more.
 

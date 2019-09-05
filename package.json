@@ -11,14 +11,21 @@
     "build-storybook": "build-storybook -c .storybook -s ./public -o gh",
     "deploy-docs": "gh-pages -d gh",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
-    "see-npm-package": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz"
+    "see-npm-package": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
+    "build-package": "babel src --out-dir dist --ignore \"**/*.test.js\""
   },
   "dependencies": {
+    "@babel/runtime": "^7.5.5",
     "color": "^3.1.0",
-    "react-native-vector-icons": "^6.2.0"
+    "react-native-vector-icons": "^6.2.0",
+    "modal-enhanced-react-native-web": "^0.2.0",
+    "react-native-svg": "^9.5.3"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
     "@babel/plugin-transform-flow-strip-types": "^7.2.3",
@@ -66,11 +73,9 @@
     "react-native": "*",
     "react-native-vector-icons": "*",
     "react-dom": "16.8.1",
-    "react-native-web": "0.11.2",
-    "react-native-svg": "^9.5.3",
-    "modal-enhanced-react-native-web": "^0.2.0"
+    "react-native-web": "0.11.2"
   },
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "jest": {
     "preset": "react-native",
     "transformIgnorePatterns": [
