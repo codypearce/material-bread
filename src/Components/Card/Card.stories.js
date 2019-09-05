@@ -594,5 +594,28 @@ export default storiesOf('Components|Card', module)
           rightActionItems={[{ name: 'favorite' }, { name: 'share' }]}
         />
       </Card>
+
+      <Card style={{ maxWidth: 400, width: '100%', marginTop: 40 }}>
+        <CardMedia
+          title={'Flights now 30% off'}
+          image={
+            <Image
+              style={{ flex: 1, width: '100%' }}
+              source={{
+                uri:
+                  'https://images.pexels.com/photos/59519/pexels-photo-59519.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+              }}
+              resizeMode="cover"
+            />
+          }
+        />
+
+        <CardActions
+          rightActionItems={[
+            <Button key={1} text={'Learn More'} />,
+            <Button key={2} text={'Buy Now'} type="contained" />,
+          ]}
+        />
+      </Card>
     </Container>
   ));
