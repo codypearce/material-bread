@@ -50,7 +50,7 @@ class TextFieldFilled extends Component {
 
   componentDidUpdate(prevProps) {
     const { value, multiline } = this.props;
-    if (value && value.length < 1 && prevProps.value.length > 0 && multiline) {
+    if (value && !value.length && prevProps.value.length && multiline) {
       this.setState({ height: 56 });
     }
   }
@@ -111,7 +111,7 @@ class TextFieldFilled extends Component {
     const heightOffset =
       Platform.OS === 'ios' ? labelHeight + nonOutlinedStops.active + 8 : 0;
     this.setState({
-      height: nativeHeight < 56 ? 56 : nativeHeight + heightOffset,
+      height: Math.max(56, nativeHeight + heightOffset),
     });
   };
 
@@ -147,8 +147,8 @@ class TextFieldFilled extends Component {
       ...rest
     } = this.props;
 
-    let height =
-      rest.multiline || rest.numberOfLines > 1 ? this.state.height : 56;
+    let height = this.state.height;
+
     let paddingTop = rest.multiline ? 24 : 12;
     if (dense) {
       height = label ? 52 : 40;
@@ -158,13 +158,7 @@ class TextFieldFilled extends Component {
     let paddingLeft = leadingIcon ? 44 : 12;
     if (prefix) paddingLeft = 32;
 
-    const platformStyles = Platform.select({
-      web: { outlineWidth: 0 },
-      ios: {
-        marginTop: 8,
-      },
-      android: {},
-    });
+    const platformStyles = Platform.OS === 'web' ? { outlineWidth: 0 } : {};
     return (
       <View
         style={[

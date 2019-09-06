@@ -75,7 +75,8 @@
     "react-dom": "16.8.1",
     "react-native-web": "0.11.2"
   },
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "module": "src/index.js",
   "jest": {
     "preset": "react-native",
     "transformIgnorePatterns": [
