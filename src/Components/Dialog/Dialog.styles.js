@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
     ...shadow(12),
   },
   contentContainer: {
+    flex: Platform.OS == 'web' ? 1 : 0,
     paddingLeft: 24,
     paddingRight: 24,
     paddingBottom: 8,
