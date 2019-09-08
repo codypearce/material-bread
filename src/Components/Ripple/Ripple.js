@@ -213,6 +213,7 @@ export default class Ripple extends PureComponent {
       toValue: 1,
       easing: Easing.out(Easing.ease),
       duration: rippleDuration,
+      useNativeDriver: true,
     });
 
     onRippleAnimation(animation, this.onAnimationEnd);
@@ -296,12 +297,12 @@ export default class Ripple extends PureComponent {
         {...touchableProps}
         {...panResponder}
         testID={testID}>
-        <Animated.View {...props} pointerEvents="box-only">
+        <View {...props} pointerEvents="box-only">
           {children}
           <View style={[styles.container, containerStyle]}>
             {ripples.map(this.renderRipple)}
           </View>
-        </Animated.View>
+        </View>
       </TouchableWithoutFeedback>
     );
   }

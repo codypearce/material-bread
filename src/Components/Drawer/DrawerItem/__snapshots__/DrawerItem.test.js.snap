@@ -21,15 +21,19 @@ exports[`DrawerItem Renders 1`] = `
   rippleSequential={false}
   rippleSize={0}
   style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "transparent",
-      "borderRadius": 4,
-      "flexDirection": "row",
-      "height": 40,
-      "paddingHorizontal": 8,
-      "zIndex": 10,
-    }
+    Array [
+      Object {
+        "alignItems": "center",
+        "borderRadius": 4,
+        "flexDirection": "row",
+        "height": 40,
+        "paddingHorizontal": 8,
+        "zIndex": 10,
+      },
+      Object {
+        "backgroundColor": "transparent",
+      },
+    ]
   }
   testID="mb-ripple"
 >

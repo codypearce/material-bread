@@ -42,11 +42,15 @@ exports[`Chip Renders 1`] = `
     rippleSequential={false}
     rippleSize={0}
     style={
-      Object {
-        "borderRadius": 16,
-        "flexDirection": "row",
-        "height": "100%",
-      }
+      Array [
+        Object {
+          "flexDirection": "row",
+          "height": "100%",
+        },
+        Object {
+          "borderRadius": 16,
+        },
+      ]
     }
     testID="mb-ripple"
   >

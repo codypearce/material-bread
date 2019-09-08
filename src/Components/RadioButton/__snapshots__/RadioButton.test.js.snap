@@ -32,13 +32,15 @@ exports[`RadioButton Renders 1`] = `
     rippleSequential={false}
     rippleSize={0}
     style={
-      Object {
-        "alignItems": "center",
-        "borderRadius": 18,
-        "height": 40,
-        "justifyContent": "center",
-        "width": 40,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderRadius": 18,
+          "height": 40,
+          "justifyContent": "center",
+          "width": 40,
+        },
+      ]
     }
     testID="mb-ripple"
   >

@@ -1,32 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AppbarBottom Renders 1`] = `
-<View
-  onLayout={[Function]}
-  style={
-    Array [
-      Object {},
-      Object {
-        "opacity": 0,
-      },
-      undefined,
-    ]
-  }
->
+<View>
   <View
+    onLayout={[Function]}
     style={
       Array [
+        Object {},
         Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "height": 56,
-          "minWidth": "auto",
-          "padding": 16,
-          "position": "relative",
-        },
-        Object {
-          "backgroundColor": "#1e88e5",
-          "justifyContent": "space-between",
+          "opacity": 0,
         },
         undefined,
       ]
@@ -34,12 +16,32 @@ exports[`AppbarBottom Renders 1`] = `
   >
     <View
       style={
-        Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 56,
+            "minWidth": "auto",
+            "padding": 16,
+            "position": "relative",
+          },
+          Object {
+            "backgroundColor": "#1e88e5",
+            "justifyContent": "space-between",
+          },
+          undefined,
+        ]
       }
-    />
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      />
+    </View>
   </View>
 </View>
 `;

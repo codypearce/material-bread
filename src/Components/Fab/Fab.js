@@ -146,7 +146,14 @@ export class Fab extends Component {
 
     return (
       <Animated.View
-        style={[{ transform: [{ scale: scale }], zIndex: 100 }, containerStyle]}
+        style={[
+          {
+            transform: [{ scale: scale }],
+            elevation: 100,
+            zIndex: 100,
+          },
+          containerStyle,
+        ]}
         testID={testID}>
         <Ripple
           onPress={onPress}

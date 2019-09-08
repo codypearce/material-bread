@@ -10,6 +10,7 @@ class AppbarBottom extends Component {
   constructor(props) {
     super(props);
   }
+
   static propTypes = {
     color: PropTypes.string,
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
@@ -66,6 +67,11 @@ class AppbarBottom extends Component {
     return React.cloneElement(fab, {
       shadow: fabCutout ? 8 : 6,
       style: [styles.fabPos, fabPosStyles],
+      containerStyle: {
+        position: 'absolute',
+        width: '100%',
+        transform: [{ translateY: -29 }],
+      },
     });
   }
 
@@ -145,24 +151,30 @@ class AppbarBottom extends Component {
     const backgroundColor = color ? color : theme.primary.main;
 
     return (
-      <View
-        style={[styles.contianer, { opacity: appbarWidth == 0 ? 0 : 1 }, style]}
-        onLayout={this.measureAppbar}>
-        {this._renderFab()}
-        {this._renderCutout()}
+      <View>
         <View
           style={[
-            styles.appbar,
-            {
-              justifyContent:
-                fabPosition === 'end' ? 'flex-start' : 'space-between',
-              backgroundColor: !fabCutout ? backgroundColor : 'transparent',
-            },
-            appbarStyles,
+            styles.contianer,
+            { opacity: appbarWidth == 0 ? 0 : 1 },
+            style,
           ]}
-          {...rest}>
-          {children ? children : this._renderAppBarContent()}
+          onLayout={this.measureAppbar}>
+          {this._renderCutout()}
+          <View
+            style={[
+              styles.appbar,
+              {
+                justifyContent:
+                  fabPosition === 'end' ? 'flex-start' : 'space-between',
+                backgroundColor: !fabCutout ? backgroundColor : 'transparent',
+              },
+              appbarStyles,
+            ]}
+            {...rest}>
+            {children ? children : this._renderAppBarContent()}
+          </View>
         </View>
+        {this._renderFab()}
       </View>
     );
   }
