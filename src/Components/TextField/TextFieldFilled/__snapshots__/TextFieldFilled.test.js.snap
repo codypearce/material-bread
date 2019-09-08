@@ -18,6 +18,7 @@ exports[`TextFieldFilled Renders 1`] = `
     allowFontScaling={true}
     onContentSizeChange={[Function]}
     rejectResponderTermination={true}
+    scrollEnabled={false}
     style={
       Array [
         Object {
@@ -34,7 +35,7 @@ exports[`TextFieldFilled Renders 1`] = `
           "minHeight": 56,
           "paddingBottom": 0,
           "paddingLeft": 12,
-          "paddingRight": 0,
+          "paddingRight": 12,
           "paddingTop": 12,
         },
         undefined,
