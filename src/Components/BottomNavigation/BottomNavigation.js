@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { View, Dimensions } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import BottomNavigationItem from './BottomNavigationItem/BottomNavigationItem.js';
 import styles from './BottomNavigation.styles';
@@ -16,11 +16,48 @@ class BottomNavigation extends Component {
     showLabels: PropTypes.bool,
     handleChange: PropTypes.func,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    horizontalWhenLandscape: PropTypes.bool,
     testID: PropTypes.string,
   };
 
-  state = {
-    backgroundColor: '#2196f3',
+  static defaultProps = {
+    showLabels: true,
+  };
+
+  constructor(props) {
+    super(props);
+
+    const dimensions = Dimensions.get('window');
+    const isLandscape = this.isOrientationLandscape(dimensions);
+    const itemMaxWidth = this.getItemMaxWidth(isLandscape, dimensions);
+
+    this.state = {
+      backgroundColor: '#2196f3',
+      isLandscape,
+      itemMaxWidth,
+    };
+  }
+
+  componentDidMount = () => {
+    Dimensions.addEventListener('change', this.handleOrientationChange);
+  };
+
+  componentWillUnmount() {
+    Dimensions.removeEventListener('change', this.handleOrientationChange);
+  }
+
+  getItemMaxWidth = (isLandscape, { height, width }) => {
+    const { actionItems } = this.props;
+
+    return (isLandscape ? height : width) / actionItems.length;
+  };
+
+  isOrientationLandscape = ({ width, height }) => width > height;
+
+  handleOrientationChange = ({ window }) => {
+    const isLandscape = this.isOrientationLandscape(window);
+    const itemMaxWidth = this.getItemMaxWidth(isLandscape, window);
+    this.setState({ isLandscape, itemMaxWidth });
   };
 
   handleInternalChange = (value, backgroundColor) => {
@@ -30,7 +67,13 @@ class BottomNavigation extends Component {
   };
 
   _renderActionItems() {
-    const { backgroundColor, actionItems, showLabels } = this.props;
+    const {
+      backgroundColor,
+      actionItems,
+      showLabels,
+      horizontalWhenLandscape,
+    } = this.props;
+    const { isLandscape, itemMaxWidth } = this.state;
     const backgroundColorActual = backgroundColor ? backgroundColor : '#2196f3';
 
     return (
@@ -49,6 +92,9 @@ class BottomNavigation extends Component {
                 value={index || index === 0 ? index : item.value}
                 showLabels={this.props.showLabels}
                 active={index === this.props.value}
+                isLandscape={isLandscape}
+                maxWidth={itemMaxWidth}
+                horizontal={horizontalWhenLandscape}
               />
             );
           } else {
@@ -62,6 +108,9 @@ class BottomNavigation extends Component {
               active: item.props.active
                 ? item.props.active
                 : index === this.props.value,
+              isLandscape,
+              maxWidth: itemMaxWidth,
+              horizontal: horizontalWhenLandscape,
             });
           }
         })}

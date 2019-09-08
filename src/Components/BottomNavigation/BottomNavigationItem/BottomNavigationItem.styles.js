@@ -2,7 +2,10 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   bottomNavigationItem: {
     maxWidth: 168,
+    minWidth: 56,
     height: 56,
+    paddingTop: 8,
+    paddingBottom: 12,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',

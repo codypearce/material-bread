@@ -5,6 +5,7 @@ import { ComponentDemoHeader } from '@components';
 import LabelsDemo from './LabelsDemo';
 import ColoredDemo from './ColoredDemo';
 import IconsOnly from './IconsOnly';
+import LandscapeDemo from './LandscapeDemo';
 
 export default class Demos extends Component {
   static propTypes = {
@@ -15,7 +16,7 @@ export default class Demos extends Component {
     return (
       <div>
         <ComponentDemoHeader pageHref={pageHref} />
-
+        <LandscapeDemo pageHref={pageHref} />
         <LabelsDemo pageHref={pageHref} />
         <ColoredDemo pageHref={pageHref} />
         <IconsOnly pageHref={pageHref} />
