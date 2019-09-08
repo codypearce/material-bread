@@ -67,6 +67,11 @@ class AppbarBottom extends Component {
     return React.cloneElement(fab, {
       shadow: fabCutout ? 8 : 6,
       style: [styles.fabPos, fabPosStyles],
+      containerStyle: {
+        position: 'absolute',
+        width: '100%',
+        transform: [{ translateY: -29 }],
+      },
     });
   }
 
@@ -146,7 +151,7 @@ class AppbarBottom extends Component {
     const backgroundColor = color ? color : theme.primary.main;
 
     return (
-      <>
+      <View>
         <View
           style={[
             styles.contianer,
@@ -169,8 +174,8 @@ class AppbarBottom extends Component {
             {children ? children : this._renderAppBarContent()}
           </View>
         </View>
-        <View>{this._renderFab()}</View>
-      </>
+        {this._renderFab()}
+      </View>
     );
   }
 }
