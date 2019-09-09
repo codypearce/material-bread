@@ -11,8 +11,8 @@ export const code = `class DialogPage extends React.Component {
     return (
       <View >    
         <Divider subheader={'Subheader'} />
-        <Divider subheader={'Title'} inset={8} />
-        <Divider subheader={'Section'} inset={16} marginVertical={24} />
+        <Divider subheader={'Title'} insetHeader={8} />
+        <Divider subheader={'Section'} insetHeader={16} marginVertical={24} />
       </View>
     );
   }
