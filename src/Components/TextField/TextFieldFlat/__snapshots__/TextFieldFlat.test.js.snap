@@ -16,8 +16,10 @@ exports[`TextFieldFlat Renders 1`] = `
 >
   <TextInput
     allowFontScaling={true}
+    labelHeight={0}
     onContentSizeChange={[Function]}
     rejectResponderTermination={true}
+    scrollEnabled={false}
     style={
       Array [
         Object {
