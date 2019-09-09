@@ -64,8 +64,8 @@ class Dialog extends Component {
             </BodyText>
           ) : null}
           {children}
+          {actionItems ? this._renderActionItems() : null}
         </View>
-        {actionItems ? this._renderActionItems() : null}
       </View>
     );
   }
