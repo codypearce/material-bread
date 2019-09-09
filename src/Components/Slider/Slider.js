@@ -168,7 +168,7 @@ class Slider extends Component {
       sliderLength,
       onValuesChange,
     } = this.props;
-    const { pastOne, positionTwo, valueOne, valueTwo } = this.state;
+    const { pastOne, positionTwo, valueOne } = this.state;
 
     if (disableOne) {
       return;
@@ -198,7 +198,8 @@ class Slider extends Component {
           valueOne: value,
         },
         () => {
-          var change = [valueOne];
+          const { valueOne: newValOne, valueTwo } = this.state;
+          var change = [newValOne];
           if (valueTwo) {
             change.push(valueTwo);
           }
@@ -215,7 +216,7 @@ class Slider extends Component {
       sliderLength,
       onValuesChange,
     } = this.props;
-    const { pastTwo, positionOne, valueOne, valueTwo } = this.state;
+    const { pastTwo, positionOne, valueTwo } = this.state;
 
     if (disableTwo) {
       return;
@@ -243,7 +244,8 @@ class Slider extends Component {
           valueTwo: value,
         },
         () => {
-          onValuesChange([valueOne, valueTwo]);
+          const { valueOne, valueTwo: newValTwo } = this.state;
+          onValuesChange([valueOne, newValTwo]);
         },
       );
     }
@@ -251,13 +253,14 @@ class Slider extends Component {
 
   endMarkerLeft = () => {
     const { onValuesChangeEnd } = this.props;
-    const { positionOne, onePressed, valueOne, valueTwo } = this.state;
+    const { positionOne, onePressed } = this.state;
     this.setState(
       {
         pastOne: positionOne,
         onePressed: !onePressed,
       },
       () => {
+        const { valueOne, valueTwo } = this.state;
         var change = [valueOne];
         if (valueTwo) {
           change.push(valueTwo);
@@ -268,7 +271,7 @@ class Slider extends Component {
   };
 
   endMarkerRight = () => {
-    const { twoPressed, positionTwo, valueOne, valueTwo } = this.state;
+    const { twoPressed, positionTwo } = this.state;
 
     this.setState(
       {
@@ -276,6 +279,7 @@ class Slider extends Component {
         pastTwo: positionTwo,
       },
       () => {
+        const { valueOne, valueTwo } = this.state;
         this.props.onValuesChangeEnd([valueOne, valueTwo]);
       },
     );
