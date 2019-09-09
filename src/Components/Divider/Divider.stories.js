@@ -26,9 +26,9 @@ export default storiesOf('Components|Divider', module)
     </Container>
   ))
 
-  .add('inset', () => (
+  .add('insetLeft', () => (
     <Container>
-      <Header title={'Inset'} />
+      <Header title={'Inset Left'} />
 
       <List subheader={'Favorites'} style={{ width: 300 }}>
         <ListItem
@@ -56,7 +56,7 @@ export default storiesOf('Components|Divider', module)
             />
           }
         />
-        <Divider insetHeader={40} />
+        <Divider insetLeft={20} />
         <ListItem
           text={'Peter Carlsson'}
           media={
@@ -71,6 +71,31 @@ export default storiesOf('Components|Divider', module)
         />
         <ListItem
           text={'Trevor Hansen'}
+          media={
+            <Avatar
+              type="icon"
+              content="person"
+              contentColor={'#ececec'}
+              color={'#a3a3a3'}
+              size={40}
+            />
+          }
+        />
+        <Divider insetLeft={20} />
+        <ListItem
+          text={'Person McPerson'}
+          media={
+            <Avatar
+              type="icon"
+              content="person"
+              contentColor={'#ececec'}
+              color={'#a3a3a3'}
+              size={40}
+            />
+          }
+        />
+        <ListItem
+          text={'Wendy'}
           media={
             <Avatar
               type="icon"

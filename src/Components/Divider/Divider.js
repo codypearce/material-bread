@@ -12,6 +12,7 @@ class Divider extends Component {
     marginVertical: PropTypes.number,
     subheader: PropTypes.string,
     insetHeader: PropTypes.number,
+    insetLeft: PropTypes.number,
     testID: PropTypes.string,
   };
 
@@ -37,10 +38,13 @@ class Divider extends Component {
       marginVertical,
       subheader,
       testID,
+      insetLeft,
       ...rest
     } = this.props;
     let marginVerticalImplemented = marginVertical ? marginVertical : 8;
     if (subheader) marginVerticalImplemented = 0;
+    let width = insetLeft > 0 ? `calc(100% - ${insetLeft}px)` : '100%';
+    let marginLeft = insetLeft > 0 ? insetLeft : 0;
 
     return (
       <View
@@ -49,6 +53,8 @@ class Divider extends Component {
           {
             height: Platform.OS == 'web' ? 1 : StyleSheet.hairlineWidth,
             marginVertical: marginVerticalImplemented,
+            width,
+            marginLeft,
           },
           style,
         ]}
