@@ -11,19 +11,19 @@ class Divider extends Component {
     theme: PropTypes.object,
     marginVertical: PropTypes.number,
     subheader: PropTypes.string,
-    inset: PropTypes.number,
+    insetHeader: PropTypes.number,
     testID: PropTypes.string,
   };
 
   _renderSubheader() {
-    const { subheader, marginVertical, inset, testID } = this.props;
+    const { subheader, marginVertical, insetHeader, testID } = this.props;
 
     return (
       <View
         style={{ marginVertical: marginVertical ? marginVertical : 8 }}
         testID={testID}>
         {this._renderDivider()}
-        <BodyText style={[styles.subheader, { marginLeft: inset }]}>
+        <BodyText style={[styles.subheader, { marginLeft: insetHeader }]}>
           {subheader}
         </BodyText>
       </View>
