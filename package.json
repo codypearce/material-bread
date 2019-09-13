@@ -18,8 +18,7 @@
     "@babel/runtime": "^7.5.5",
     "color": "^3.1.0",
     "react-native-vector-icons": "^6.2.0",
-    "modal-enhanced-react-native-web": "^0.2.0",
-    "react-native-svg": "^9.5.3"
+    "modal-enhanced-react-native-web": "^0.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -73,7 +72,8 @@
     "react-native": "*",
     "react-native-vector-icons": "*",
     "react-dom": "16.8.1",
-    "react-native-web": "0.11.2"
+    "react-native-web": "0.11.2",
+    "react-native-svg": "^9.5.3"
   },
   "main": "dist/index.js",
   "jest": {
