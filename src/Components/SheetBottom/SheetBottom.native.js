@@ -155,6 +155,7 @@ class SheetBottom extends Component {
 
   _close = () => {
     this.animateSheet(false);
+    this.setState({ initialHeight: 0 });
   };
 
   _onBackdropPress = () => {
