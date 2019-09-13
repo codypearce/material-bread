@@ -297,12 +297,12 @@ export default class Ripple extends PureComponent {
         {...touchableProps}
         {...panResponder}
         testID={testID}>
-        <View {...props} pointerEvents="box-only">
+        <Animated.View {...props} pointerEvents="box-only">
           {children}
           <View style={[styles.container, containerStyle]}>
             {ripples.map(this.renderRipple)}
           </View>
-        </View>
+        </Animated.View>
       </TouchableWithoutFeedback>
     );
   }
