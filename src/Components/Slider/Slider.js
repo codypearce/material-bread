@@ -199,7 +199,7 @@ class Slider extends Component {
         },
         () => {
           const { valueOne: newValOne, valueTwo } = this.state;
-          var change = [newValOne];
+          let change = [newValOne];
           if (valueTwo) {
             change.push(valueTwo);
           }

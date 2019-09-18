@@ -32,22 +32,17 @@ exports[`MenuItem Renders 1`] = `
     rippleSequential={false}
     rippleSize={0}
     style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-          "height": 48,
-          "minHeight": 32,
-          "minWidth": 124,
-          "paddingHorizontal": 16,
-          "width": "100%",
-        },
-        Object {
-          "backgroundColor": null,
-        },
-        undefined,
-      ]
+      Object {
+        "alignItems": "center",
+        "backgroundColor": null,
+        "flex": 1,
+        "flexDirection": "row",
+        "height": 48,
+        "minHeight": 32,
+        "minWidth": 124,
+        "paddingHorizontal": 16,
+        "width": "100%",
+      }
     }
     testID="mb-ripple"
   >
