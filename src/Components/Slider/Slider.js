@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { PanResponder, View, I18nManager } from 'react-native';
+import { PanResponder, View, I18nManager, StyleSheet } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import MarkerContainer from './MarkerContainer/MarkerContainer';
 import Track from './Track/Track';
@@ -24,6 +24,9 @@ class Slider extends Component {
     allowOverlap: PropTypes.bool,
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     testID: PropTypes.string,
+    markerSize: PropTypes.number,
+    trackHeight: PropTypes.number,
+    trackStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   };
 
   static defaultProps = {
@@ -39,14 +42,26 @@ class Slider extends Component {
     allowOverlap: false,
     snapped: false,
     minMarkerOverlapDistance: 0,
+    markerSize: 12,
+    trackStyle: {},
   };
 
   constructor(props) {
     super(props);
-    const { sliderLength, values, min, max, step } = this.props;
+    const {
+      sliderLength,
+      values,
+      min,
+      max,
+      step,
+      trackHeight,
+      trackStyle,
+    } = this.props;
 
     this.optionsArray = createArray(min, max, step);
     this.stepLength = sliderLength / this.optionsArray.length;
+    this.finalTrackHeight =
+      trackHeight || StyleSheet.flatten(trackStyle).height || 2;
 
     let initialValues = values.map(value =>
       valueToPosition(value, this.optionsArray, sliderLength),
@@ -286,7 +301,13 @@ class Slider extends Component {
   };
 
   _renderMarkerRight() {
-    const { sliderLength, disableTwo, markerColor, onPress } = this.props;
+    const {
+      sliderLength,
+      disableTwo,
+      markerColor,
+      onPress,
+      markerSize,
+    } = this.props;
     const { positionTwo, twoPressed } = this.state;
 
     return (
@@ -298,12 +319,20 @@ class Slider extends Component {
         panResponder={this._panResponderTwo.panHandlers}
         color={markerColor}
         onPress={onPress}
+        markerSize={markerSize}
+        trackHeight={this.finalTrackHeight}
       />
     );
   }
 
   _renderMarkerLeft() {
-    const { sliderLength, disableOne, markerColor, onPress } = this.props;
+    const {
+      sliderLength,
+      disableOne,
+      markerColor,
+      onPress,
+      markerSize,
+    } = this.props;
     const { positionOne, onePressed } = this.state;
 
     return (
@@ -315,6 +344,8 @@ class Slider extends Component {
         panResponder={this._panResponderOne.panHandlers}
         color={markerColor}
         onPress={onPress}
+        markerSize={markerSize}
+        trackHeight={this.finalTrackHeight}
       />
     );
   }
@@ -326,6 +357,7 @@ class Slider extends Component {
       trackColor,
       disableOne,
       disableTwo,
+      trackStyle,
     } = this.props;
     const { positionOne, positionTwo } = this.state;
 
@@ -338,6 +370,8 @@ class Slider extends Component {
         trackColor={trackColor}
         bothDisabled={disableOne && disableTwo}
         oneDisabled={disableOne}
+        trackHeight={this.finalTrackHeight}
+        trackStyle={trackStyle}
       />
     );
   }

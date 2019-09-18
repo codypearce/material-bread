@@ -3,8 +3,6 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   markerContainer: {
     position: 'absolute',
-    width: 48,
-    height: 48,
     backgroundColor: 'transparent',
     justifyContent: 'center',
     alignItems: 'center',
