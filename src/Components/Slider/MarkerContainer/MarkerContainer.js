@@ -16,6 +16,8 @@ class MarkerContainer extends Component {
     position: PropTypes.number,
     panResponder: PropTypes.object,
     onPress: PropTypes.func,
+    markerSize: PropTypes.number,
+    trackHeight: PropTypes.number,
   };
   render() {
     const {
@@ -26,13 +28,20 @@ class MarkerContainer extends Component {
       color,
       panResponder,
       onPress,
+      markerSize,
+      trackHeight,
     } = this.props;
 
     return (
       <View
         style={[
           styles.markerContainer,
-          { top: -24, right: sliderLength - position - 24 },
+          {
+            top: -markerSize * 2 + trackHeight / 2,
+            right: sliderLength - position - markerSize * 2,
+            height: markerSize * 4,
+            width: markerSize * 4,
+          },
         ]}>
         <View style={[styles.touch]} {...panResponder}>
           <Marker
@@ -40,6 +49,7 @@ class MarkerContainer extends Component {
             disabled={disabled}
             color={color}
             onPress={onPress}
+            markerSize={markerSize}
           />
         </View>
       </View>
