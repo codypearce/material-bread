@@ -66,14 +66,13 @@ class Hoverable extends Component {
 
   render() {
     const { children, testID } = this.props;
-    const { width } = this.state;
 
     const child =
       typeof children === 'function'
         ? children(this.state.isHovered)
         : children;
 
-    if (Platform.OS == 'web' && width > 450) {
+    if (Platform.OS == 'web') {
       return React.cloneElement(React.Children.only(child), {
         onMouseEnter: this._handleMouseEnter,
         onMouseLeave: this._handleMouseLeave,
