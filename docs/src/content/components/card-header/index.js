@@ -11,6 +11,7 @@ const sections = [
   { name: 'Usage' },
   { name: 'Props' },
   { name: 'Demos' },
+  { name: 'More Actions', sub: true },
 ];
 
 export default class CardHeaderPage extends Component {

@@ -101,3 +101,8 @@ src/**/*.stories.js
 src/**/*.test.js
 src/storybook/**/*
 **/*/__snapshots__
+dist/**/*.test.js
+dist/**/*.stories.js
+dist/storybook/**/*
+media
+.github

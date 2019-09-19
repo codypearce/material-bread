@@ -41,6 +41,7 @@ class Card extends Component {
       children,
       testID,
     } = this.props;
+
     return (
       <Paper
         shadow={shadow}

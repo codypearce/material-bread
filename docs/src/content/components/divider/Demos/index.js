@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ComponentDemoHeader } from '@components';
 
 import SubheaderDemo from './SubheaderDemo';
+import InsetLeftDemo from './InsetLeftDemo';
 
 export default class Demos extends Component {
   static propTypes = {
@@ -10,11 +11,13 @@ export default class Demos extends Component {
   };
   render() {
     const { pageHref } = this.props;
+
     return (
       <div>
         <ComponentDemoHeader pageHref={pageHref} />
 
         <SubheaderDemo pageHref={pageHref} />
+        <InsetLeftDemo pageHref={pageHref} />
       </div>
     );
   }

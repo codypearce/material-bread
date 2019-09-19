@@ -89,6 +89,7 @@ class Switch extends Component {
       onPress,
       loading,
       testID,
+      ...rest
     } = this.props;
 
     let trackColor = color
@@ -97,7 +98,7 @@ class Switch extends Component {
     let thumbColor = color ? color : theme.primary.main;
 
     return (
-      <View style={[styles.container, style]} testID={testID}>
+      <View style={[styles.container, style]} testID={testID} {...rest}>
         {labelPos == 'left' && label ? this._renderLabel() : null}
         <Animated.View
           style={[

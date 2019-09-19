@@ -6,6 +6,7 @@ import TextFieldUnderline from '../TextFieldUnderline/TextFieldUnderline';
 import TextFieldLabel from '../TextFieldLabel/TextFieldLabel';
 import TextFieldHelperText from '../TextFieldHelperText/TextFieldHelperText';
 import styles from './TextFieldFilled.styles';
+import { nonOutlinedStops } from '../TextFieldLabel/TextFieldLabel.constants';
 
 class TextFieldFilled extends Component {
   constructor(props) {
@@ -44,11 +45,12 @@ class TextFieldFilled extends Component {
 
   state = {
     height: 56,
+    labelHeight: 0,
   };
 
   componentDidUpdate(prevProps) {
     const { value, multiline } = this.props;
-    if (value && value.length < 1 && prevProps.value.length > 0 && multiline) {
+    if (value && !value.length && prevProps.value.length && multiline) {
       this.setState({ height: 56 });
     }
   }
@@ -101,14 +103,23 @@ class TextFieldFilled extends Component {
   }
 
   _updateTextInputHeight = e => {
+    const { labelHeight } = this.state;
     if (!this.props.multiline) return;
 
     const nativeHeight = e.nativeEvent.contentSize.height;
 
+    const heightOffset =
+      Platform.OS === 'ios' ? labelHeight + nonOutlinedStops.active + 8 : 0;
     this.setState({
-      height: nativeHeight < 56 ? 56 : nativeHeight,
+      height: Math.max(56, nativeHeight + heightOffset),
     });
   };
+
+  _measureLabel = ({
+    nativeEvent: {
+      layout: { height },
+    },
+  }) => this.setState({ labelHeight: height });
 
   render() {
     const {
@@ -136,8 +147,8 @@ class TextFieldFilled extends Component {
       ...rest
     } = this.props;
 
-    let height =
-      rest.multiline || rest.numberOfLines > 1 ? this.state.height : 56;
+    let height = this.state.height;
+
     let paddingTop = rest.multiline ? 24 : 12;
     if (dense) {
       height = label ? 52 : 40;
@@ -147,7 +158,7 @@ class TextFieldFilled extends Component {
     let paddingLeft = leadingIcon ? 44 : 12;
     if (prefix) paddingLeft = 32;
 
-    const platformStyles = Platform.OS == 'web' ? { outlineWidth: 0 } : {};
+    const platformStyles = Platform.OS === 'web' ? { outlineWidth: 0 } : {};
     return (
       <View
         style={[
@@ -168,6 +179,7 @@ class TextFieldFilled extends Component {
             prefix={prefix}
             type={'filled'}
             focusedLabelColor={focusedLabelColor}
+            onLayout={this._measureLabel}
           />
         ) : null}
         {leadingIcon ? this._renderLeadingIcon() : null}
@@ -183,12 +195,13 @@ class TextFieldFilled extends Component {
               paddingBottom: rest.multiline ? 8 : 0,
               paddingTop: paddingTop,
               paddingLeft: paddingLeft,
-              paddingRight: trailingIcon || suffix ? 36 : 0,
+              paddingRight: trailingIcon || suffix ? 36 : 12,
             },
             style,
           ]}
           onContentSizeChange={e => this._updateTextInputHeight(e)}
           testID={testID}
+          scrollEnabled={false}
           {...rest}
           onFocus={handleFocus}
           onBlur={handleBlur}

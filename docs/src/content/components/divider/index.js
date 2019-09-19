@@ -11,6 +11,7 @@ const sections = [
   { name: 'Props' },
   { name: 'Demos' },
   { name: 'subheader', sub: true },
+  { name: 'insetLeft', sub: true },
 ];
 
 export default class DividerPage extends Component {

@@ -59,9 +59,7 @@ exports[`Badge Renders 1`] = `
           },
         ]
       }
-    >
-      NaN
-    </Text>
+    />
   </View>
 </View>
 `;

@@ -10,7 +10,9 @@ exports[`Divider Renders 1`] = `
       },
       Object {
         "height": 0.5,
+        "marginLeft": 0,
         "marginVertical": 8,
+        "width": "100%",
       },
       undefined,
     ]

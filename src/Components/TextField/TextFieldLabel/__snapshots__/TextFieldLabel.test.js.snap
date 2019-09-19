@@ -2,6 +2,7 @@
 
 exports[`TextFieldLabel Renders 1`] = `
 <View
+  onLayout={[Function]}
   pointerEvents="none"
   style={
     Object {

@@ -22,9 +22,22 @@ const propData = [
     '',
   ],
 
+  ['horizontal', 'Whether to layout an item horizontally', 'bool', ''],
+
   ['icon', 'Name of material icon displayed', 'string', ''],
 
+  ['isLandscape', 'Is the screen in landscape mode', 'bool', ''],
+
   ['label', 'Text to display underneath the icon', 'string', ''],
+
+  [
+    'maxWidth',
+    'The maximum width of the item',
+    'number',
+    'Min between {smallest window dimension/# of items} and 168',
+  ],
+
+  ['onItemLayout', 'Called when each item is rendered', 'func', ''],
 
   ['onPress', 'callBack to fire when clicking item', 'func', ''],
 

@@ -23,6 +23,10 @@ class BottomNavigationItem extends Component {
     badgeProps: PropTypes.object,
     rippleProps: PropTypes.object,
     testID: PropTypes.string,
+    isLandscape: PropTypes.bool,
+    onItemLayout: PropTypes.func,
+    maxWidth: PropTypes.number,
+    horizontal: PropTypes.bool,
   };
 
   state = {
@@ -61,6 +65,17 @@ class BottomNavigationItem extends Component {
   }
 
   _renderText(containerColor) {
+    const {
+      isLandscape,
+      horizontal,
+      showLabel,
+      showLabels,
+      active,
+      icon,
+    } = this.props;
+    const isHorizontal = isLandscape && horizontal;
+    const isLabelShown = showLabel || showLabels || active;
+
     let color = 'white';
 
     if (containerColor == 'white' || containerColor == '#fff')
@@ -72,6 +87,7 @@ class BottomNavigationItem extends Component {
         style={{
           color: color,
           fontSize: this.state.scaleText,
+          marginLeft: isHorizontal && isLabelShown && icon ? 12 : 0,
         }}>
         {label}
       </Animated.Text>
@@ -94,13 +110,34 @@ class BottomNavigationItem extends Component {
   };
 
   _renderWrapper(context) {
-    const { active, children, style, testID, rippleProps } = this.props;
+    const {
+      active,
+      children,
+      style,
+      testID,
+      rippleProps,
+      isLandscape,
+      maxWidth,
+      horizontal,
+    } = this.props;
+
+    const actualMaxWidth = Math.min(maxWidth, 168);
 
     return (
       <Ripple
         style={[
           styles.bottomNavigationItem,
           { opacity: active ? 1 : 0.6 },
+          isLandscape &&
+            !horizontal && [
+              styles.bottomNavigationItemLandscape,
+              { maxWidth: actualMaxWidth },
+            ],
+          isLandscape &&
+            horizontal && {
+              flexDirection: 'row',
+              paddingHorizontal: 12,
+            },
           style,
         ]}
         onPress={this.onChange}

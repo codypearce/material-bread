@@ -213,6 +213,7 @@ export default class Ripple extends PureComponent {
       toValue: 1,
       easing: Easing.out(Easing.ease),
       duration: rippleDuration,
+      useNativeDriver: true,
     });
 
     onRippleAnimation(animation, this.onAnimationEnd);

@@ -11,19 +11,20 @@ class Divider extends Component {
     theme: PropTypes.object,
     marginVertical: PropTypes.number,
     subheader: PropTypes.string,
-    inset: PropTypes.number,
+    insetHeader: PropTypes.number,
+    insetLeft: PropTypes.number,
     testID: PropTypes.string,
   };
 
   _renderSubheader() {
-    const { subheader, marginVertical, inset, testID } = this.props;
+    const { subheader, marginVertical, insetHeader, testID } = this.props;
 
     return (
       <View
         style={{ marginVertical: marginVertical ? marginVertical : 8 }}
         testID={testID}>
         {this._renderDivider()}
-        <BodyText style={[styles.subheader, { marginLeft: inset }]}>
+        <BodyText style={[styles.subheader, { marginLeft: insetHeader }]}>
           {subheader}
         </BodyText>
       </View>
@@ -37,10 +38,13 @@ class Divider extends Component {
       marginVertical,
       subheader,
       testID,
+      insetLeft,
       ...rest
     } = this.props;
     let marginVerticalImplemented = marginVertical ? marginVertical : 8;
     if (subheader) marginVerticalImplemented = 0;
+    let width = insetLeft > 0 ? `calc(100% - ${insetLeft}px)` : '100%';
+    let marginLeft = insetLeft > 0 ? insetLeft : 0;
 
     return (
       <View
@@ -49,6 +53,8 @@ class Divider extends Component {
           {
             height: Platform.OS == 'web' ? 1 : StyleSheet.hairlineWidth,
             marginVertical: marginVerticalImplemented,
+            width,
+            marginLeft,
           },
           style,
         ]}
