@@ -46,7 +46,8 @@ class FabSpeedDial extends Component {
   }
 
   animateActions() {
-    const { open, onPress } = this.state;
+    const { onPress } = this.props;
+    const { open } = this.state;
 
     this.setState({
       open: !open,
