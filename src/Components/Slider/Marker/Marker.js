@@ -15,7 +15,6 @@ class Marker extends Component {
     color: PropTypes.string,
     theme: PropTypes.object,
     onPress: PropTypes.func,
-    markerSize: PropTypes.number,
   };
 
   state = {
@@ -23,7 +22,7 @@ class Marker extends Component {
   };
 
   render() {
-    const { disabled, color, theme, markerSize } = this.props;
+    const { disabled, color, theme } = this.props;
     const { backgroundColorHover } = this.state;
 
     let backgroundColor = color ? color : theme.primary.main;
@@ -41,24 +40,12 @@ class Marker extends Component {
         }>
         <Ripple
           rippleColor={backgroundColor}
-          style={[
-            styles.ripple,
-            {
-              height: markerSize * 2.33,
-              width: markerSize * 2.33,
-              borderRadius: markerSize * 1.67,
-            },
-            { backgroundColor: backgroundColorHover },
-          ]}
+          style={[styles.ripple, { backgroundColor: backgroundColorHover }]}
           rippleContainerBorderRadius={100}>
           <View
             style={[
-              {
-                backgroundColor: backgroundColor,
-                height: markerSize,
-                width: markerSize,
-                borderRadius: markerSize,
-              },
+              styles.markerStyle,
+              { backgroundColor: backgroundColor },
               disabled && styles.disabled,
             ]}
           />

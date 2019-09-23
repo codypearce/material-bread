@@ -9,6 +9,6 @@ export const outlinedStopsDense = {
 };
 
 export const nonOutlinedStops = {
-  initial: 16,
+  initial: 20,
   active: 5,
 };
