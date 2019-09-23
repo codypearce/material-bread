@@ -8,8 +8,7 @@ export const code = `class Sliders extends React.Component {
     super(props)
     this.state = {
       slider: 40,
-      sliderTwo: 20,
-      sliderThree: 60
+      sliderTwo: 20
     }
   }
   render() {
@@ -28,16 +27,6 @@ export const code = `class Sliders extends React.Component {
           max={100}
           disableOne={true}
           onValueChange={value => this.setState({ sliderTwo: value })}
-        />
-
-        <Slider
-          values={[this.state.sliderThree]}
-          sliderLength={200}
-          max={100}
-          onValueChange={value => this.setState({ sliderThree: value })}
-          markerSize={16}
-          trackHeight={8}
-          trackStyle={{borderRadius: 99}}
         />
       </View>
     );

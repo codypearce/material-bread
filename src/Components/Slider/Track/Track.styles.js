@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   track: {
+    height: 2,
     backgroundColor: '#CECECE',
   },
   selectedTrack: {
