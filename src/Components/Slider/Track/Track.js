@@ -15,8 +15,6 @@ class Track extends Component {
     trackColor: PropTypes.string,
     bothDisabled: PropTypes.bool,
     oneDisabled: PropTypes.bool,
-    trackHeight: PropTypes.number,
-    trackStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   };
 
   render() {
@@ -29,8 +27,6 @@ class Track extends Component {
       trackColor,
       bothDisabled,
       oneDisabled,
-      trackHeight,
-      trackStyle,
     } = this.props;
 
     const selectedColor = trackColor ? trackColor : theme.primary.main;
@@ -40,13 +36,11 @@ class Track extends Component {
     const trackThreeLength = twoMarkers ? sliderLength - positionTwo : 0;
     const trackTwoLength = sliderLength - trackOneLength - trackThreeLength;
 
-    const commonStyles = [styles.track, trackStyle, { height: trackHeight }];
-
     return (
       <Fragment>
         <View
           style={[
-            ...commonStyles,
+            styles.track,
             {
               width: trackOneLength,
               backgroundColor:
@@ -56,7 +50,7 @@ class Track extends Component {
         />
         <View
           style={[
-            ...commonStyles,
+            styles.track,
             {
               width: trackTwoLength,
               backgroundColor:
@@ -67,7 +61,7 @@ class Track extends Component {
         {twoMarkers && (
           <View
             style={[
-              ...commonStyles,
+              styles.track,
               {
                 width: trackThreeLength,
                 backgroundColor: twoMarkers ? unselectedColor : selectedColor,
