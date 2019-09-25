@@ -98,6 +98,10 @@ export default class Ripple extends PureComponent {
 
     if ('function' === typeof onPress) {
       requestAnimationFrame(() => onPress(event));
+      let { locationX, locationY } = event.nativeEvent;
+      if (locationX != undefined && locationY != undefined) {
+        this.startRipple(event);
+      }
     }
   }
 
@@ -122,8 +126,6 @@ export default class Ripple extends PureComponent {
       if (onPressIn) {
         onPressIn(event);
       }
-
-      this.startRipple(event);
     }
   }
 
