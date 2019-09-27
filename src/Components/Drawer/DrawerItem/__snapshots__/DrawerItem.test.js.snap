@@ -12,7 +12,6 @@ exports[`DrawerItem Renders 1`] = `
   onResponderTerminationRequest={[Function]}
   onRippleAnimation={[Function]}
   onStartShouldSetResponder={[Function]}
-  pointerEvents="box-only"
   rippleCentered={false}
   rippleColor="rgba(0, 0, 0, .87)"
   rippleDuration={400}
@@ -50,6 +49,7 @@ exports[`DrawerItem Renders 1`] = `
     }
   />
   <View
+    pointerEvents="none"
     style={
       Array [
         Object {
