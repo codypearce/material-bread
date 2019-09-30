@@ -10,6 +10,7 @@ import {
   Helmet,
 } from '@components';
 import materialBread from '../assets/material-bread-docs.png';
+import rni from '../assets/rni.png';
 
 class Index extends Component {
   componentDidMount() {
@@ -28,11 +29,20 @@ class Index extends Component {
           href="/showcase#apps"
           style={{ marginTop: 0 }}>
           <ComponentDescription text={<div />} />
-          <View style={{ flexDirection: 'row' }}>
+          <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
             <PlatformButton
               href={'http://material-bread.org/'}
               img={materialBread}
               text={'Material Bread'}
+              width={250}
+              imgWidth={200}
+              height={200}
+            />
+
+            <PlatformButton
+              href={'https://www.reactnativeinfinity.com/'}
+              img={rni}
+              text={'React Native Infinity'}
               width={250}
               imgWidth={200}
               height={200}

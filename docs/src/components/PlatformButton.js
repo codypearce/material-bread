@@ -49,12 +49,17 @@ class Section extends Component {
             rippleContainerBorderRadius={10}>
             <img
               src={img}
-              style={{ width: imgWidth ? imgWidth : 100, margin: 'auto' }}
+              style={{
+                width: imgWidth ? imgWidth : 100,
+                margin: 'auto',
+                marginTop: 16,
+                marginBottom: 8,
+              }}
             />
             <h4
               style={{
                 margin: 0,
-                marginTop: 6,
+                marginTop: 4,
                 letterSpacing: 1,
                 fontWeight: 400,
                 textAlign: 'center',
