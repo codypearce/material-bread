@@ -220,7 +220,7 @@ class Menu extends Component {
           ref={ref => {
             this.marker = ref;
           }}
-          style={{ width:"100%",alignSelf: 'flex-start' }}>
+          style={{ width: '100%', alignSelf: 'flex-start' }}>
           {button}
         </View>
         <ModelMenu
