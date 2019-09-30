@@ -92,7 +92,6 @@ storybook
 App.js
 app.json
 babel.config.js
-./index.js
 package-lock.json
 rn-cli.config.js
 webpack.config.js
