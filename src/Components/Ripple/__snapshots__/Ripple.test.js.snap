@@ -12,7 +12,6 @@ exports[`Ripple Renders 1`] = `
   onResponderTerminationRequest={[Function]}
   onRippleAnimation={[Function]}
   onStartShouldSetResponder={[Function]}
-  pointerEvents="box-only"
   rippleCentered={false}
   rippleColor="rgba(0, 0, 0, .87)"
   rippleDuration={400}
@@ -23,6 +22,7 @@ exports[`Ripple Renders 1`] = `
   testID="mb-ripple"
 >
   <View
+    pointerEvents="none"
     style={
       Array [
         Object {
