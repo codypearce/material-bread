@@ -29,6 +29,7 @@ class Searchfield extends Component {
       color,
       placeholder,
       inputRef,
+      ...rest
     } = this.props;
 
     if (inputRef) {
@@ -55,6 +56,7 @@ class Searchfield extends Component {
           placeholderTextColor={'rgba(255,255,255,.57)'}
           onFocus={onFocus}
           onBlur={onBlur}
+          {...rest}
         />
 
         <IconButton
