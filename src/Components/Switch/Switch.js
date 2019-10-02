@@ -83,6 +83,7 @@ class Switch extends Component {
     return {
       height,
       trackDimensions: {
+        width,
         height: height * (7 / 16),
         borderRadius: height * (5 / 16),
       },
