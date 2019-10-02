@@ -26,6 +26,12 @@ const propData = [
     'bool',
     'false',
   ],
+  [
+    'size',
+    'Scale the default icons while maintaining Material proportions',
+    'number',
+    '24',
+  ],
   ['styles', 'Styles root container', 'object', ''],
   ['textStyle', 'Styles for the text component', 'object', ''],
   ['unCheckedColor', 'Custom color for unchecked icon', 'string', ''],
