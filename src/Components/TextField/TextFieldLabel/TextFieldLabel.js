@@ -201,10 +201,19 @@ class TextFieldLabel extends Component {
       theme.subtitleOne.fontSize ||
       16;
 
+    const baseLineHeight =
+      (StyleSheet.flatten(style) || {}).lineHeight ||
+      theme.subtitleOne.lineHeight ||
+      24;
+
     const fontStyle = {
       fontSize: fontSizeAnimation.interpolate({
         inputRange: [0, 1],
         outputRange: [baseFontSize, baseFontSize * (dense ? 0.65 : 0.75)],
+      }),
+      lineHeight: fontSizeAnimation.interpolate({
+        inputRange: [0, 1],
+        outputRange: [baseLineHeight, baseLineHeight * (dense ? 0.5 : 0.6)],
       }),
     };
 
