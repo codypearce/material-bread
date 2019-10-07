@@ -31,10 +31,6 @@ class Searchfield extends Component {
       inputRef,
     } = this.props;
 
-    if (inputRef) {
-      inputRef(this.textInput);
-    }
-
     return (
       <View
         style={[
@@ -45,9 +41,7 @@ class Searchfield extends Component {
         <IconButton name={'search'} size={20} color={'white'} />
 
         <TextInput
-          ref={ref => {
-            this.textInput = ref;
-          }}
+          ref={inputRef}
           style={styles.searchInput}
           placeholder={placeholder ? placeholder : 'Search'}
           value={value}
