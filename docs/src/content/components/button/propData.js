@@ -60,6 +60,13 @@ const propData = [
     'string: flat, text, outlined, contained',
     'text',
   ],
+
+  [
+    'useInputCasing',
+    'Use text casing as input and do not auto-capitalize',
+    'boolean',
+    'false',
+  ],
 ];
 
 export default createTableData(propData);
