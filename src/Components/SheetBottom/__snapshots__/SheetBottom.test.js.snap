@@ -5,6 +5,12 @@ exports[`SheetBottom Renders 1`] = `
   animationType="none"
   hardwareAccelerated={false}
   onRequestClose={[Function]}
+  supportedOrientations={
+    Array [
+      "portrait",
+      "landscape",
+    ]
+  }
   transparent={true}
   visible={false}
 >
@@ -69,7 +75,7 @@ exports[`SheetBottom Renders 1`] = `
         ]
       }
     >
-      <View
+      <SafeAreaView
         onLayout={[Function]}
       />
     </AnimatedComponent>
