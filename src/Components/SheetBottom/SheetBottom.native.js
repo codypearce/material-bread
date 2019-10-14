@@ -7,6 +7,7 @@ import {
   PanResponder,
   Modal,
   Dimensions,
+  SafeAreaView,
 } from 'react-native';
 import styles from './SheetBottom.styles';
 
@@ -83,6 +84,7 @@ class SheetBottom extends Component {
       {
         initialWidth: width,
         initialHeight: height,
+        fullHeight: windowHeight,
       },
       () => {
         pan.setValue({ x: 0, y: windowHeight });
@@ -172,7 +174,8 @@ class SheetBottom extends Component {
         transparent
         animationType={'none'}
         visible={internalVisible}
-        onRequestClose={this._close}>
+        onRequestClose={this._close}
+        supportedOrientations={['portrait', 'landscape']}>
         {this._renderContent()}
       </Modal>
     );
@@ -208,7 +211,7 @@ class SheetBottom extends Component {
               transform: [{ translateY: pan.y }],
             },
           ]}>
-          <View onLayout={this.onMenuLayout}>{children}</View>
+          <SafeAreaView onLayout={this.onMenuLayout}>{children}</SafeAreaView>
         </Animated.View>
       </View>
     );
