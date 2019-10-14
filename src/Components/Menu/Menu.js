@@ -24,6 +24,7 @@ class Menu extends Component {
     tooltip: PropTypes.bool,
     tooltipPosition: PropTypes.string,
     testID: PropTypes.string,
+    fullWidth: PropTypes.bool,
   };
 
   state = {
@@ -168,6 +169,7 @@ class Menu extends Component {
       tooltipPosition,
       noBackDrop,
       testID,
+      fullWidth,
     } = this.props;
 
     const menuContainerStyle = {
@@ -220,7 +222,10 @@ class Menu extends Component {
           ref={ref => {
             this.marker = ref;
           }}
-          style={{ alignSelf: 'flex-start' }}>
+          style={{
+            alignSelf: 'flex-start',
+            width: fullWidth ? '100%' : 'auto',
+          }}>
           {button}
         </View>
         <ModelMenu

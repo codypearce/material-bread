@@ -6,6 +6,7 @@ const propData = [
     'object',
     '',
   ],
+  ['fullWidth', 'Forces select button to be 100% width', 'bool', 'false'],
   ['label', 'Label for textinput', 'string', ''],
 
   ['menuItems', 'Items to display in menu dropdown', 'array', ''],
