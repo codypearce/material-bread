@@ -26,6 +26,7 @@ class Checkbox extends Component {
     labelPos: PropTypes.string,
 
     icon: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+    size: PropTypes.number,
     checkedIcon: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 
     ios: PropTypes.bool,
@@ -38,6 +39,7 @@ class Checkbox extends Component {
     unCheckedColor: 'rgba(0,0,0,.5)',
     rippleColor: 'rgba(0,0,0,.8)',
     icon: 'check-box-outline-blank',
+    size: 24,
     checkedIcon: 'check-box',
     labelPos: 'right',
   };
@@ -82,18 +84,23 @@ class Checkbox extends Component {
   }
 
   _renderIconContainer() {
-    const { disabled, onPress, checkboxStyle } = this.props;
+    const { disabled, onPress, checkboxStyle, size } = this.props;
 
     const rippleColor = this._getRippleColor();
+    const rippleSize = 1.5 * size;
 
     return (
       <Ripple
         onPress={onPress}
         disabled={disabled}
-        style={[styles.checkBoxRipple, checkboxStyle]}
+        style={[
+          styles.checkBoxRipple,
+          checkboxStyle,
+          { width: rippleSize, height: rippleSize, padding: rippleSize / 6 },
+        ]}
         rippleCentered={true}
         rippleColor={rippleColor}
-        rippleContainerBorderRadius={18}>
+        rippleContainerBorderRadius={rippleSize / 2}>
         {this._renderIcon()}
       </Ripple>
     );
@@ -102,6 +109,7 @@ class Checkbox extends Component {
   _renderIcon() {
     const {
       icon,
+      size,
       checkedIcon,
       unCheckedColor,
       indeterminate,
@@ -115,7 +123,7 @@ class Checkbox extends Component {
 
     if (icon && icon.props && icon.props.name && !checked) {
       return React.cloneElement(icon, {
-        size: icon.props.size ? icon.props.size : 24,
+        size: icon.props.size ? icon.props.size : size,
         color: checkboxColor,
       });
     } else if (
@@ -125,7 +133,7 @@ class Checkbox extends Component {
       checked
     ) {
       return React.cloneElement(checkedIcon, {
-        size: icon.props.size ? icon.props.size : 24,
+        size: icon.props.size ? icon.props.size : size,
         color: checkboxColor,
       });
     }
@@ -146,7 +154,7 @@ class Checkbox extends Component {
     return (
       <Icon
         name={iconName}
-        size={24}
+        size={size}
         color={checked ? checkboxColor : unCheckedColorApplied}
         style={{ opacity }}
       />
