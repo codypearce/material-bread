@@ -32,6 +32,7 @@ class ButtonBase extends Component {
 
     text: PropTypes.string,
     textStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    useInputCasing: PropTypes.bool,
 
     typeTextColor: PropTypes.string,
     typeButtonStyles: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
@@ -44,6 +45,7 @@ class ButtonBase extends Component {
   static defaultProps = {
     iconPosition: 'left',
     dense: false,
+    useInputCasing: false,
   };
 
   _renderText() {
@@ -54,6 +56,7 @@ class ButtonBase extends Component {
       theme,
       hideLabel,
       dense,
+      useInputCasing,
     } = this.props;
 
     if (hideLabel) return null;
@@ -69,7 +72,7 @@ class ButtonBase extends Component {
           },
           textStyle,
         ]}>
-        {text.toUpperCase()}
+        {useInputCasing ? text : text.toUpperCase()}
       </Text>
     );
   }
