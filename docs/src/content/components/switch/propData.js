@@ -14,6 +14,7 @@ const propData = [
   ['style', 'Styles root element', 'object', ''],
   ['trackStyle', 'Styles the track element', 'object', ''],
   ['thumbStyle', 'Styles the thumb element', 'object', ''],
+  ['width', 'Scales the switch based on the desired width', 'number', '36'],
 ];
 
 export default createTableData(propData);

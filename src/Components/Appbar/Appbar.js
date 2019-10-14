@@ -194,7 +194,10 @@ class Appbar extends Component {
     } = this.props;
 
     let backgroundColor = color ? color : theme.primary.main;
-    const implementedShadow = elevation ? shadow(shadow) : shadow(6);
+    const implementedShadow =
+      elevation != undefined || elevation != null
+        ? shadow(elevation)
+        : shadow(6);
 
     return (
       <Paper

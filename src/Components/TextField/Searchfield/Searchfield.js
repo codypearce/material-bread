@@ -7,28 +7,33 @@ import styles from './Searchfield.styles';
 
 class Searchfield extends Component {
   static propTypes = {
-    value: PropTypes.string,
-    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    color: PropTypes.string,
+    iconProps: PropTypes.object,
+    inputRef: PropTypes.func,
+    onBlur: PropTypes.func,
     onChangeText: PropTypes.func,
     onCloseIcon: PropTypes.func,
     onFocus: PropTypes.func,
-    onBlur: PropTypes.func,
-    color: PropTypes.string,
     placeholder: PropTypes.string,
-    inputRef: PropTypes.func,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    textStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    value: PropTypes.string,
   };
 
   render() {
     const {
-      style,
+      color,
+      iconProps,
+      inputRef,
+      onBlur,
       onChangeText,
       onCloseIcon,
-      value,
       onFocus,
-      onBlur,
-      color,
       placeholder,
-      inputRef,
+      style,
+      textStyle,
+      value,
+      ...rest
     } = this.props;
 
     return (
@@ -38,17 +43,18 @@ class Searchfield extends Component {
           { backgroundColor: color ? color : 'rgba(255,255,255,.15)' },
           style,
         ]}>
-        <IconButton name={'search'} size={20} color={'white'} />
+        <IconButton name={'search'} size={20} color={'white'} {...iconProps} />
 
         <TextInput
           ref={inputRef}
-          style={styles.searchInput}
+          style={[styles.searchInput, textStyle]}
           placeholder={placeholder ? placeholder : 'Search'}
           value={value}
           onChangeText={onChangeText}
           placeholderTextColor={'rgba(255,255,255,.57)'}
           onFocus={onFocus}
           onBlur={onBlur}
+          {...rest}
         />
 
         <IconButton
@@ -57,6 +63,7 @@ class Searchfield extends Component {
           style={{ opacity: !value || value.length < 1 ? 0 : 1 }}
           onPress={onCloseIcon}
           color={'white'}
+          {...iconProps}
         />
       </View>
     );
