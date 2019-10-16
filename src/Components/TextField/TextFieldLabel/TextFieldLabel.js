@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, Easing, StyleSheet } from 'react-native';
+import { Animated, Easing, I18nManager, StyleSheet } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import styles from './TextFieldLabel.styles';
 import {
@@ -227,7 +227,7 @@ class TextFieldLabel extends Component {
               paddingHorizontal: type == 'outlined' ? 4 : 0,
               transform: [
                 { translateY: translateYAnimation },
-                { translateX: translateX },
+                { translateX: I18nManager.isRTL ? -translateX : translateX },
               ],
             },
             style,
