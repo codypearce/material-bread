@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
   },
   label: {
     marginBottom: 8,
+    alignSelf: 'flex-start',
   },
 });
 
