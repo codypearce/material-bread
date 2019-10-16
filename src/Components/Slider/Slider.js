@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { PanResponder, View, I18nManager, StyleSheet } from 'react-native';
+import { PanResponder, View, StyleSheet } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import MarkerContainer from './MarkerContainer/MarkerContainer';
 import Track from './Track/Track';
@@ -190,10 +190,7 @@ class Slider extends Component {
     }
 
     const accumDistance = gestureState.dx;
-
-    const unconfined = I18nManager.isRTL
-      ? pastOne - accumDistance
-      : accumDistance + pastOne;
+    const unconfined = accumDistance + pastOne;
 
     var bottom = 0;
     var trueTop = positionTwo - (allowOverlap ? 0 : this.stepLength);
@@ -238,10 +235,8 @@ class Slider extends Component {
     }
 
     const accumDistance = gestureState.dx;
+    const unconfined = accumDistance + pastTwo;
 
-    const unconfined = I18nManager.isRTL
-      ? pastTwo - accumDistance
-      : accumDistance + pastTwo;
     var bottom = positionOne + (allowOverlap ? 0 : this.stepLength);
     var top = sliderLength;
     var confined =
