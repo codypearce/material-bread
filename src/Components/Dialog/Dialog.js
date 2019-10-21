@@ -18,6 +18,10 @@ class Dialog extends Component {
     actionItems: PropTypes.arrayOf(
       PropTypes.oneOfType([PropTypes.node, PropTypes.object]),
     ),
+    actionItemsContainerStyle: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.array,
+    ]),
     title: PropTypes.string,
     titleStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     supportingText: PropTypes.string,
@@ -30,9 +34,9 @@ class Dialog extends Component {
   };
 
   _renderActionItems() {
-    const { actionItems } = this.props;
+    const { actionItems, actionItemsContainerStyle } = this.props;
     return (
-      <View style={styles.actionItems}>
+      <View style={[styles.actionItems, actionItemsContainerStyle]}>
         {actionItems.map((item, index) => {
           if (React.isValidElement(item)) return item;
           return <Button key={index} {...item} />;

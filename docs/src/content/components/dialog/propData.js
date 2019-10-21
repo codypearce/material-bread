@@ -1,6 +1,7 @@
 import { createTableData } from '../../../utils/createPropData';
 const propData = [
   ['actionItems', 'Array of actions to show at the bottom right', 'array', ''],
+  ['actionItemsContainerStyle', 'Styles action items container', 'object', ''],
   [
     'contentStyle',
     'Styles content container excluding action items',
