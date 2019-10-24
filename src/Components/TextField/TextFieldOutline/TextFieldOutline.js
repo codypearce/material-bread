@@ -56,7 +56,7 @@ class TextFieldOutlined extends Component {
     const isFunc = typeof leadingIcon === 'function';
 
     return (
-      <View style={{ position: 'absolute', left: 8, top: 16 }}>
+      <View style={{ position: 'absolute', left: 12, top: 16 }}>
         {isFunc ? leadingIcon() : leadingIcon}
       </View>
     );

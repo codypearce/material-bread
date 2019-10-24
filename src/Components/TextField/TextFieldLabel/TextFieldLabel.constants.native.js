@@ -1,6 +1,6 @@
 export const outlinedStops = {
-  initial: 20,
-  active: -12,
+  initial: 18,
+  active: -8,
 };
 
 export const outlinedStopsDense = {
