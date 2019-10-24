@@ -120,26 +120,30 @@ class FabSpeedDial extends Component {
 
   renderActions() {
     const { actions } = this.props;
+    const { open } = this.state;
 
     return (
       <View
         style={{
-          marginBottom: 24,
+          marginBottom: open ? 24 : 0,
           alignItems: 'flex-end',
         }}>
-        {actions.map((item, index) => {
-          return (
-            <Animated.View
-              key={index}
-              style={{
-                marginTop: 16,
-                transform: [{ scale: this.state.actionAnimationsScale[index] }],
-                opacity: this.state.actionAnimationsOpacity[index],
-              }}>
-              {item}
-            </Animated.View>
-          );
-        })}
+        {open &&
+          actions.map((item, index) => {
+            return (
+              <Animated.View
+                key={index}
+                style={{
+                  marginTop: 16,
+                  transform: [
+                    { scale: this.state.actionAnimationsScale[index] },
+                  ],
+                  opacity: this.state.actionAnimationsOpacity[index],
+                }}>
+                {item}
+              </Animated.View>
+            );
+          })}
       </View>
     );
   }
