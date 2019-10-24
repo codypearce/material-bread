@@ -23,6 +23,7 @@ class FabSpeedDial extends Component {
 
   state = {
     open: false,
+    dialVisible: false,
     actionAnimationsScale: [
       new Animated.Value(0),
       new Animated.Value(0),
@@ -42,7 +43,7 @@ class FabSpeedDial extends Component {
   };
 
   toggleSpeedDial() {
-    this.setState({ open: !this.state.open });
+    this.setState({ open: !this.state.open, dialVisible: true });
   }
 
   animateActions() {
@@ -50,6 +51,7 @@ class FabSpeedDial extends Component {
 
     this.setState({
       open: !open,
+      dialVisible: true,
     });
 
     if (!open) {
@@ -114,31 +116,35 @@ class FabSpeedDial extends Component {
           }),
         ),
       ),
-    ]).start();
+    ]).start(() => this.setState({ dialVisible: false }));
   }
 
   renderActions() {
     const { actions } = this.props;
+    const { dialVisible } = this.state;
 
     return (
       <View
         style={{
-          marginBottom: 24,
+          marginBottom: dialVisible ? 24 : 0,
           alignItems: 'flex-end',
         }}>
-        {actions.map((item, index) => {
-          return (
-            <Animated.View
-              key={index}
-              style={{
-                marginTop: 16,
-                transform: [{ scale: this.state.actionAnimationsScale[index] }],
-                opacity: this.state.actionAnimationsOpacity[index],
-              }}>
-              {item}
-            </Animated.View>
-          );
-        })}
+        {dialVisible &&
+          actions.map((item, index) => {
+            return (
+              <Animated.View
+                key={index}
+                style={{
+                  marginTop: 16,
+                  transform: [
+                    { scale: this.state.actionAnimationsScale[index] },
+                  ],
+                  opacity: this.state.actionAnimationsOpacity[index],
+                }}>
+                {item}
+              </Animated.View>
+            );
+          })}
       </View>
     );
   }
