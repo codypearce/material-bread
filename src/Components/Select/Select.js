@@ -24,6 +24,7 @@ class Select extends Component {
     onBackdropPress: PropTypes.func,
     theme: PropTypes.object,
     testID: PropTypes.string,
+    fullWidth: PropTypes.bool,
   };
 
   state = {
@@ -58,6 +59,7 @@ class Select extends Component {
       type,
       theme,
       testID,
+      fullWidth,
     } = this.props;
 
     const { visible } = this.state;
@@ -77,6 +79,7 @@ class Select extends Component {
         style={[styles.menu, { flex: 1 }]}
         sameWidth
         visible={visible}
+        fullWidth={fullWidth}
         modalMenuStyle={{
           marginTop: textFieldProps && textFieldProps.dense ? 60 : 71,
           width: '100%',
@@ -87,7 +90,11 @@ class Select extends Component {
         button={
           <TouchableHighlight
             onPress={() => this.showMenu()}
-            style={[styles.button, buttonStyle]}
+            style={[
+              styles.button,
+              { width: fullWidth ? '100%' : 'auto' },
+              buttonStyle,
+            ]}
             underlayColor={'transparent'}>
             <View style={styles.innerView}>
               <TextField

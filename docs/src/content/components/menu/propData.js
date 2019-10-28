@@ -6,6 +6,7 @@ const propData = [
     'node',
     '',
   ],
+  ['fullWidth', 'Forces menu button to be 100% width', 'bool', 'false'],
   ['menuStyle', 'Styles the container to menu', 'object', ''],
   ['onHidden', 'Callback when menu is hidden', 'func', ''],
   ['onBackdropPress', 'Callback when clicking outside menu', 'func', ''],
