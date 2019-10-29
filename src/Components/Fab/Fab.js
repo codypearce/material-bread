@@ -129,7 +129,6 @@ export class Fab extends Component {
       containerStyle,
       ...props
     } = this.props;
-    const { scale } = this.state;
 
     let backgroundColorApplied = backgroundColor
       ? backgroundColor
@@ -148,7 +147,6 @@ export class Fab extends Component {
       <Animated.View
         style={[
           {
-            transform: [{ scale: scale }],
             elevation: 100,
             zIndex: 100,
           },
