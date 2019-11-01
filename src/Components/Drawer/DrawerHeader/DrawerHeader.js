@@ -20,10 +20,10 @@ class DrawerHeader extends Component {
   }
 
   render() {
-    const { avatar, title, subtitle } = this.props;
+    const { avatar, title, subtitle, style } = this.props;
 
     return (
-      <View style={styles.drawerHeader}>
+      <View style={[styles.drawerHeader, style]}>
         {avatar ? this._renderAvatar() : null}
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.subtitle}>{subtitle}</Text>
