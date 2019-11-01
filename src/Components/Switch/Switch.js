@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { Animated, View, TouchableWithoutFeedback } from 'react-native';
+import {
+  Animated,
+  I18nManager,
+  View,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
 
@@ -32,8 +37,11 @@ class Switch extends Component {
 
   componentDidMount() {
     const { checked, width } = this.props;
+    const { thumbTranslateX } = this.state;
+
     if (checked) {
-      this.setState({ thumbTranslateX: new Animated.Value(width / 2) });
+      const xValue = width / 2;
+      thumbTranslateX.setValue(I18nManager.isRTL ? -xValue : xValue);
     }
   }
 
@@ -71,7 +79,7 @@ class Switch extends Component {
 
     Animated.parallel([
       Animated.timing(thumbTranslateX, {
-        toValue: xValue,
+        toValue: I18nManager.isRTL ? -xValue : xValue,
         duration: 300,
       }),
     ]).start();
@@ -92,7 +100,7 @@ class Switch extends Component {
         top: height * -(9 / 32),
         left: width * -(2 / 9),
       },
-      tumbDimensions: {
+      thumbDimensions: {
         width: width * (5 / 9),
         height: height * (5 / 8),
       },
@@ -126,7 +134,7 @@ class Switch extends Component {
       height,
       trackDimensions,
       thumbRippleDimensions,
-      tumbDimensions,
+      thumbDimensions,
     } = this.getDimensions(width);
 
     return (
@@ -159,7 +167,7 @@ class Switch extends Component {
                 styles.thumb,
                 {
                   backgroundColor: checked && !loading ? thumbColor : 'white',
-                  ...tumbDimensions,
+                  ...thumbDimensions,
                 },
                 thumbStyle,
               ]}>
