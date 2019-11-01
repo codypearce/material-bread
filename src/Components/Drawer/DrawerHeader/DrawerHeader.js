@@ -9,7 +9,9 @@ class DrawerHeader extends Component {
     children: PropTypes.node,
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     title: PropTypes.string,
+    titleStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     subtitle: PropTypes.string,
+    subtitleStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     avatar: PropTypes.node,
   };
 
@@ -20,13 +22,20 @@ class DrawerHeader extends Component {
   }
 
   render() {
-    const { avatar, title, subtitle, style } = this.props;
+    const {
+      avatar,
+      title,
+      subtitle,
+      style,
+      titleStyle,
+      subtitleStyle,
+    } = this.props;
 
     return (
       <View style={[styles.drawerHeader, style]}>
         {avatar ? this._renderAvatar() : null}
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.subtitle}>{subtitle}</Text>
+        <Text style={[styles.title, titleStyle]}>{title}</Text>
+        <Text style={[styles.subtitle, subtitleStyle]}>{subtitle}</Text>
       </View>
     );
   }

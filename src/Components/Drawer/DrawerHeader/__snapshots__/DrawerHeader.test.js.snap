@@ -16,20 +16,26 @@ exports[`DrawerHeader Renders 1`] = `
 >
   <Text
     style={
-      Object {
-        "color": "rgba(0,0,0,.87)",
-        "fontSize": 20,
-        "fontWeight": "500",
-      }
+      Array [
+        Object {
+          "color": "rgba(0,0,0,.87)",
+          "fontSize": 20,
+          "fontWeight": "500",
+        },
+        undefined,
+      ]
     }
   />
   <Text
     style={
-      Object {
-        "color": "rgba(0,0,0,.67)",
-        "fontSize": 12,
-        "marginTop": 4,
-      }
+      Array [
+        Object {
+          "color": "rgba(0,0,0,.67)",
+          "fontSize": 12,
+          "marginTop": 4,
+        },
+        undefined,
+      ]
     }
   />
 </View>
