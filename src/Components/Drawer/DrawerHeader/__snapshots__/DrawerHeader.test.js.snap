@@ -20,7 +20,7 @@ exports[`DrawerHeader Renders 1`] = `
         "color": "rgba(0,0,0,.87)",
         "fontSize": 20,
         "fontWeight": "500",
-      },
+      }
     }
   />
   <Text
@@ -29,7 +29,7 @@ exports[`DrawerHeader Renders 1`] = `
         "color": "rgba(0,0,0,.67)",
         "fontSize": 12,
         "marginTop": 4,
-      },
+      }
     }
   />
 </View>
