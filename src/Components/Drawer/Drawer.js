@@ -49,6 +49,7 @@ class Drawer extends PureComponent {
     drawerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     scrimStyles: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     testID: PropTypes.string,
+    theme: PropTypes.object,
   };
 
   static defaultProps = {
@@ -238,6 +239,7 @@ class Drawer extends PureComponent {
       drawerStyle,
       fullHeight,
       position,
+      theme,
     } = this.props;
     const { drawerWidth, screenHeight, leftOffset, appbarHeight } = this.state;
 
@@ -251,7 +253,7 @@ class Drawer extends PureComponent {
       <Fragment>
         <Animated.View
           style={[
-            styles.drawer,
+            theme.drawer,
             {
               position: position,
               width: drawerWidth,

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
-import styles from './DrawerHeader.styles';
+// import styles from './DrawerHeader.styles';
 
 class DrawerHeader extends Component {
   static propTypes = {
@@ -11,22 +11,23 @@ class DrawerHeader extends Component {
     title: PropTypes.string,
     subtitle: PropTypes.string,
     avatar: PropTypes.node,
+    theme: PropTypes.object,
   };
 
   _renderAvatar() {
-    const { avatar } = this.props;
+    const { avatar, theme } = this.props;
 
-    return <View style={styles.avatarContainer}>{avatar}</View>;
+    return <View style={theme.drawerHeaderAvatarContainer}>{avatar}</View>;
   }
 
   render() {
-    const { avatar, title, subtitle, style } = this.props;
+    const { avatar, title, subtitle, style, theme } = this.props;
 
     return (
-      <View style={[styles.drawerHeader, style]}>
+      <View style={[theme.drawerHeader, style]}>
         {avatar ? this._renderAvatar() : null}
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.subtitle}>{subtitle}</Text>
+        <Text style={theme.drawerHeaderTitle}>{title}</Text>
+        <Text style={theme.drawerHeaderSubtitle}>{subtitle}</Text>
       </View>
     );
   }
