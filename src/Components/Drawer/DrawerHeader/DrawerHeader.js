@@ -9,9 +9,7 @@ class DrawerHeader extends Component {
     children: PropTypes.node,
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     title: PropTypes.string,
-    titleStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     subtitle: PropTypes.string,
-    subtitleStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     avatar: PropTypes.node,
     theme: PropTypes.object,
   };
