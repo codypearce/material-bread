@@ -53,8 +53,6 @@ class Drawer extends PureComponent {
   };
 
   static defaultProps = {
-    widthPercentage: 0.45,
-    width: 240,
     open: false,
     animationTime: 200,
     scrimOpacity: 0.4,
@@ -86,7 +84,7 @@ class Drawer extends PureComponent {
     if (pageWidth) screenWidth = pageWidth;
     if (pageHeight) screenHeight = pageHeight;
 
-    let drawerWidth = screenWidth * widthPercentage;
+    let drawerWidth = screenWidth * (widthPercentage || 0.45);
     if (width) drawerWidth = width;
 
     this.setState({
