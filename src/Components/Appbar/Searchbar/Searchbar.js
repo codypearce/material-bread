@@ -13,67 +13,69 @@ class Searchbar extends Component {
     onCloseIcon: PropTypes.func,
     onNavigation: PropTypes.func,
     placeholder: PropTypes.string,
-    navigationIcon: PropTypes.string,
+    navigationIcon: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     navigationIconComponent: PropTypes.func,
-    closeIcon: PropTypes.string,
+    closeIcon: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     closeIconComponent: PropTypes.func,
     theme: PropTypes.object,
   };
 
-  render() {
+  _renderNavigation() {
     const {
-      style,
-      onChangeText,
-      onCloseIcon,
+      navigationIcon = '',
       onNavigation,
-      value,
-      placeholder,
-      navigationIcon,
       navigationIconComponent,
-      closeIcon,
-      closeIconComponent,
       theme,
     } = this.props;
+
+    if (
+      typeof navigationIcon === 'string' ||
+      navigationIcon instanceof String
+    ) {
+      return (
+        <IconButton
+          name={navigationIcon || 'arrow-back'}
+          size={theme.searchBarNavigationIcon.size}
+          color={theme.searchBarNavigationIcon.color}
+          onPress={onNavigation}
+          iconComponent={navigationIconComponent}
+        />
+      );
+    } else {
+      return navigationIcon;
+    }
+  }
+
+  _renderClose() {
+    const { closeIcon, onCloseIcon, closeIconComponent, theme } = this.props;
+    // To hide close icon send closeIcon={false}
+    if (typeof closeIcon === 'string' || closeIcon instanceof String) {
+      return (
+        <IconButton
+          name={closeIcon || 'close'}
+          size={theme.searchBarcloseIcon.size}
+          color={theme.searchBarcloseIcon.color}
+          onPress={onCloseIcon}
+          iconComponent={closeIconComponent}
+        />
+      );
+    } else if (closeIcon) {
+      return closeIcon;
+    }
+  }
+
+  render() {
+    const { style, onChangeText, value, placeholder, theme } = this.props;
     return (
       <View style={[theme.searchBar, style]}>
-        {navigationIcon ? (
-          <IconButton
-            name={navigationIcon}
-            size={theme.searchBarNavigationIcon.size}
-            color={theme.searchBarNavigationIcon.color}
-            onPress={onNavigation}
-            iconComponent={navigationIconComponent}
-          />
-        ) : (
-          <IconButton
-            name="arrow-back"
-            size={theme.searchBarNavigationIcon.size}
-            color={theme.searchBarNavigationIcon.color}
-            onPress={onNavigation}
-          />
-        )}
+        {this._renderNavigation()}
         <TextInput
           style={theme.searchInput}
           placeholder={placeholder ? placeholder : 'Search'}
           onChangeText={onChangeText}
           value={value}
         />
-        {closeIcon ? (
-          <IconButton
-            name={closeIcon}
-            size={theme.searchBarcloseIcon.size}
-            color={theme.searchBarcloseIcon.color}
-            onPress={onCloseIcon}
-            iconComponent={closeIconComponent}
-          />
-        ) : (
-          <IconButton
-            name="close"
-            size={theme.searchBarcloseIcon.size}
-            color={theme.searchBarcloseIcon.color}
-            onPress={onCloseIcon}
-          />
-        )}
+        {this._renderClose()}
       </View>
     );
   }
