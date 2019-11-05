@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import shadow from '../Utils/Shadow/shadow';
 
 export default {
   primary: {
@@ -162,6 +163,29 @@ export default {
     lineHeight: 10,
     letterSpacing: 1.5,
     textTransform: 'uppercase',
+  },
+  searchBar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: '100%',
+    backgroundColor: 'rgba(255,255,255,1)',
+    height: 56,
+    paddingHorizontal: 16,
+  },
+  searchBarNavigationIcon: {
+    color: 'black',
+    size: 24,
+  },
+  searchBarcloseIcon: {
+    color: 'black',
+    size: 24,
+  },
+  searchInput: {
+    fontSize: 16,
+    flex: 1,
+    marginLeft: 8,
+    height: 30,
+    ...shadow(0),
   },
   subtitleOne: {
     fontSize: 16,

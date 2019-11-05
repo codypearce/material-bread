@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { View, TextInput } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import IconButton from '../../IconButton/IconButton';
-import styles from './Searchbar.styles';
+// import styles from './Searchbar.styles';
 
 class Searchbar extends Component {
   static propTypes = {
@@ -13,6 +13,11 @@ class Searchbar extends Component {
     onCloseIcon: PropTypes.func,
     onNavigation: PropTypes.func,
     placeholder: PropTypes.string,
+    navigationIcon: PropTypes.string,
+    navigationIconComponent: PropTypes.func,
+    closeIcon: PropTypes.string,
+    closeIconComponent: PropTypes.func,
+    theme: PropTypes.object,
   };
 
   render() {
@@ -23,27 +28,52 @@ class Searchbar extends Component {
       onNavigation,
       value,
       placeholder,
+      navigationIcon,
+      navigationIconComponent,
+      closeIcon,
+      closeIconComponent,
+      theme,
     } = this.props;
     return (
-      <View style={[styles.container, style]}>
-        <IconButton
-          name="arrow-back"
-          size={24}
-          color={'black'}
-          onPress={onNavigation}
-        />
+      <View style={[theme.searchBar, style]}>
+        {navigationIcon ? (
+          <IconButton
+            name={navigationIcon}
+            size={theme.searchBarNavigationIcon.size}
+            color={theme.searchBarNavigationIcon.color}
+            onPress={onNavigation}
+            iconComponent={navigationIconComponent}
+          />
+        ) : (
+          <IconButton
+            name="arrow-back"
+            size={theme.searchBarNavigationIcon.size}
+            color={theme.searchBarNavigationIcon.color}
+            onPress={onNavigation}
+          />
+        )}
         <TextInput
-          style={styles.searchInput}
+          style={theme.searchInput}
           placeholder={placeholder ? placeholder : 'Search'}
           onChangeText={onChangeText}
           value={value}
         />
-        <IconButton
-          name="close"
-          size={24}
-          color={'black'}
-          onPress={onCloseIcon}
-        />
+        {closeIcon ? (
+          <IconButton
+            name={navigationIcon}
+            size={theme.searchBarcloseIcon.size}
+            color={theme.searchBarcloseIcon.color}
+            onPress={onCloseIcon}
+            iconComponent={closeIconComponent}
+          />
+        ) : (
+          <IconButton
+            name="close"
+            size={theme.searchBarcloseIcon.size}
+            color={theme.searchBarcloseIcon.color}
+            onPress={onCloseIcon}
+          />
+        )}
       </View>
     );
   }
