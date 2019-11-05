@@ -60,7 +60,7 @@ class Searchbar extends Component {
         />
         {closeIcon ? (
           <IconButton
-            name={navigationIcon}
+            name={closeIcon}
             size={theme.searchBarcloseIcon.size}
             color={theme.searchBarcloseIcon.color}
             onPress={onCloseIcon}
