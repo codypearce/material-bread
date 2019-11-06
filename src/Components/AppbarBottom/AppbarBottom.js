@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { View, TouchableWithoutFeedback } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import { IconButton } from '../../';
 import styles from './AppbarBottom.styles';
@@ -9,6 +9,7 @@ import AppbarBottomSVG from './AppbarBottom.svg.js';
 class AppbarBottom extends Component {
   constructor(props) {
     super(props);
+    this.fab = React.createRef();
   }
 
   static propTypes = {
@@ -32,6 +33,7 @@ class AppbarBottom extends Component {
   state = {
     appbarWidth: 0,
     appbarHeight: 0,
+    maskVisible: false,
   };
 
   _renderNavigation() {
@@ -72,6 +74,8 @@ class AppbarBottom extends Component {
         width: '100%',
         transform: [{ translateY: -29 }],
       },
+      onPress: this._setMaskVisible,
+      ref: this.fab,
     });
   }
 
@@ -127,6 +131,14 @@ class AppbarBottom extends Component {
     );
   }
 
+  _setMaskVisible = () => {
+    this.setState(prevState => {
+      return {
+        maskVisible: !prevState.maskVisible,
+      };
+    });
+  };
+
   measureAppbar = e => {
     const { width, height } = e.nativeEvent.layout;
 
@@ -135,6 +147,8 @@ class AppbarBottom extends Component {
       appbarHeight: height,
     });
   };
+
+  onOverlayPressed = () => this.fab.current.fabPressed();
 
   render() {
     const {
@@ -147,11 +161,17 @@ class AppbarBottom extends Component {
       fabCutout,
       ...rest
     } = this.props;
-    const { appbarWidth } = this.state;
+    const { appbarWidth, maskVisible } = this.state;
     const backgroundColor = color ? color : theme.primary.main;
 
     return (
       <>
+        {maskVisible && (
+          <TouchableWithoutFeedback onPress={this.onOverlayPressed}>
+            <View style={styles.overlay}></View>
+          </TouchableWithoutFeedback>
+        )}
+
         <View
           style={[
             styles.contianer,
