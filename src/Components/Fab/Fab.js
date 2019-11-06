@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Animated } from 'react-native';
+import { Animated, View } from 'react-native';
 
 import withTheme from '../../Theme/withTheme';
 import Icon from '../Icon/Icon.js';
@@ -9,9 +9,12 @@ import BodyText from '../Typography/BodyText/BodyText.js';
 import shadowTool from '../../Utils/Shadow/shadow.js';
 import styles from './Fab.styles';
 
+const AnimatedIcon = Animated.createAnimatedComponent(Icon);
+
 export class Fab extends Component {
   constructor(props) {
     super(props);
+    this.animatedValue = new Animated.Value(0);
   }
 
   static propTypes = {
@@ -40,6 +43,7 @@ export class Fab extends Component {
 
   state = {
     scale: new Animated.Value(0),
+    onPressed: false,
   };
 
   componentDidMount() {
@@ -100,11 +104,26 @@ export class Fab extends Component {
 
   _renderIcon() {
     const { disabled, icon } = this.props;
+    const rotation = this.animatedValue.interpolate({
+      inputRange: [0, 1],
+      outputRange: ['0deg', '45deg'],
+    });
+
+    const animatedStyle = {
+      transform: [{ rotate: rotation }],
+    };
 
     const color = disabled ? 'rgba(0, 0, 0, 0.26)' : 'white';
 
     if (typeof icon == 'string' || icon instanceof String || !icon) {
-      return <Icon name={icon ? icon : 'add'} size={24} color={color} />;
+      return (
+        <AnimatedIcon
+          name={icon ? icon : 'add'}
+          size={24}
+          color={color}
+          style={animatedStyle}
+        />
+      );
     } else {
       return React.cloneElement(icon, {
         size: icon.props.size ? icon.props.size : 24,
@@ -112,6 +131,23 @@ export class Fab extends Component {
       });
     }
   }
+
+  fabPressed = () => {
+    const { onPress } = this.props;
+    const { onPressed } = this.state;
+
+    Animated.timing(this.animatedValue, {
+      toValue: onPressed ? 0 : 1,
+      duration: 230,
+    }).start();
+
+    this.setState(prevState => {
+      onPress();
+      return {
+        onPressed: !prevState.onPressed,
+      };
+    });
+  };
 
   render() {
     const {
@@ -154,7 +190,7 @@ export class Fab extends Component {
         ]}
         testID={testID}>
         <Ripple
-          onPress={onPress}
+          onPress={this.fabPressed}
           disabled={disabled}
           rippleColor={rippleColor ? rippleColor : 'rgba(0,0,0,.8)'}
           rippleContainerBorderRadius={100}
