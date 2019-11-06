@@ -3,17 +3,27 @@ import ThemeContext from './ThemeContext';
 import mergeTheme from './mergeTheme';
 
 function withTheme(Component) {
-  return class extends React.Component {
+  class ThemeComponent extends React.Component {
     render() {
+      const { forwardedRef, ...rest } = this.props;
       return (
         <ThemeContext.Consumer>
           {theme => {
-            return <Component theme={mergeTheme(theme)} {...this.props} />;
+            return (
+              <Component
+                ref={forwardedRef}
+                theme={mergeTheme(theme)}
+                {...rest}
+              />
+            );
           }}
         </ThemeContext.Consumer>
       );
     }
-  };
+  }
+  return React.forwardRef((props, ref) => {
+    return <ThemeComponent {...props} forwardedRef={ref} />;
+  });
 }
 
 export default withTheme;
