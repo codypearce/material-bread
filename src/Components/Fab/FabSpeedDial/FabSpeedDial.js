@@ -8,6 +8,7 @@ import styles from './FabSpeedDial.styles';
 class FabSpeedDial extends Component {
   constructor(props) {
     super(props);
+    this.fab = React.createRef();
   }
   static propTypes = {
     style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
@@ -148,15 +149,24 @@ class FabSpeedDial extends Component {
     );
   }
 
+  fabPressed = () => {
+    if (this.fab.current && this.fab.current.fabPressed) {
+      this.fab.current.fabPressed();
+    }
+  };
+
   _renderFab() {
     const { fab } = this.props;
 
     if (typeof fab == 'string' || fab instanceof String || !fab) {
-      return <Fab icon={fab} onPress={() => this.animateActions()} />;
+      return (
+        <Fab ref={this.fab} icon={fab} onPress={() => this.animateActions()} />
+      );
     } else {
       return React.cloneElement(fab, {
         color: fab.props.color ? fab.props.color : 'white',
         onPress: () => this.animateActions(),
+        ref: this.fab,
       });
     }
   }
