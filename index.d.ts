@@ -891,10 +891,10 @@ export class TextField extends React.Component<TextFieldProps> {
 }
 
 export interface TextFieldHelperTextProps {
-  error: boolean
-  children: React.ReactNode
-  visible: boolean
-  style: StyleProp<any>
+  error?: boolean
+  children?: React.ReactNode
+  visible?: boolean
+  style?: StyleProp<any>
 }
 
 export class TextFieldHelperText extends React.Component<TextFieldProps> {
