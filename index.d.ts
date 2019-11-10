@@ -134,6 +134,135 @@ export interface Theme {
   }
 }
 
+export const ThemeContext: React.Context<Theme>
+
+export const defaultTheme: Theme
+
+export type WithThemeProps = {
+  theme: Theme
+}
+
+type WithTheme = <P extends object>(
+  Component: React.ElementType<P>,
+) => React.ElementType<Omit<P, keyof WithThemeProps>>
+
+export const withTheme: WithTheme
+
+export interface BreadProviderProps {
+  children: React.ReactNode
+  value?: Theme
+}
+
+export class BreadProvider extends React.Component<BreadProviderProps> {
+  render(): React.ReactElement
+}
+
+export interface AnchorProps {
+  url?: string
+  children?: React.ReactNode
+  target?: string
+  testID?: string
+}
+
+export class Anchor extends React.Component<AnchorProps> {
+  render(): React.ReactElement
+}
+
+export interface HoverableProps {
+  children?: React.ReactNode | ((...args: any[]) => any)
+  onHoverIn?: (...args: any[]) => void
+  onHoverOut?: (...args: any[]) => void
+  testID?: string
+}
+
+export class Hoverable extends React.Component<HoverableProps> {
+  render(): React.ReactElement
+}
+
+export type ShadowElevation =
+  | 0
+  | 1
+  | 2
+  | 3
+  | 4
+  | 5
+  | 6
+  | 7
+  | 8
+  | 9
+  | 10
+  | 11
+  | 12
+  | 13
+  | 14
+  | 15
+  | 16
+  | 17
+  | 18
+  | 19
+  | 20
+  | 21
+  | 22
+  | 23
+  | 24
+
+export type ShadowAndroidReturn = {
+  elevation: ShadowElevation
+}
+
+export type ShadowDefaultReturn = {
+  shadowColor: Color
+  shadowOffset: {
+    width: number
+    height: number
+  }
+  shadowOpacity: number
+  shadowRadius: number
+}
+
+export const shadow: (
+  elevation: ShadowElevation,
+) => ShadowAndroidReturn | ShadowDefaultReturn
+
+export type ColorRange = {
+  50: Color
+  100: Color
+  200: Color
+  300: Color
+  400: Color
+  500: Color
+  600: Color
+  700: Color
+  800: Color
+  900: Color
+  A100: Color
+  A200: Color
+  A400: Color
+  A700: Color
+}
+
+export const Colors: {
+  amber: ColorRange
+  blue: ColorRange
+  blueGrey: ColorRange
+  brown: ColorRange
+  cyan: ColorRange
+  deepOrange: ColorRange
+  deepPurple: ColorRange
+  green: ColorRange
+  grey: ColorRange
+  indigo: ColorRange
+  lightBlue: ColorRange
+  lightGreen: ColorRange
+  lime: ColorRange
+  orange: ColorRange
+  pink: ColorRange
+  purple: ColorRange
+  red: ColorRange
+  teal: ColorRange
+  yellow: ColorRange
+}
+
 export interface AvatarProps {
   style?: StyleProp<any>
   theme?: Theme
@@ -579,7 +708,9 @@ export class RadioButton extends React.Component<RadioButtonProps> {
   render(): React.ReactElement
 }
 
-export interface RippleProps extends ViewProps, TouchableWithoutFeedbackProps {
+export interface RippleProps
+  extends ViewProps,
+    TouchableWithoutFeedbackProps {
   rippleColor?: Color
   rippleOpacity?: number
   rippleDuration?: number
@@ -759,6 +890,17 @@ export class TextField extends React.Component<TextFieldProps> {
   render(): React.ReactElement
 }
 
+export interface TextFieldHelperTextProps {
+  error: boolean
+  children: React.ReactNode
+  visible: boolean
+  style: StyleProp<any>
+}
+
+export class TextFieldHelperText extends React.Component<TextFieldProps> {
+  render(): React.ReactElement
+}
+
 export interface ToggleButtonProps {
   style?: StyleProp<any>
   active?: boolean
@@ -781,7 +923,9 @@ export interface ToggleButtonGroupProps {
   children?: React.ReactNode
 }
 
-export class ToggleButtonGroup extends React.Component<ToggleButtonGroupProps> {
+export class ToggleButtonGroup extends React.Component<
+  ToggleButtonGroupProps
+> {
   render(): React.ReactElement
 }
 
