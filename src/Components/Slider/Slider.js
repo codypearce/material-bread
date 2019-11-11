@@ -20,6 +20,7 @@ class Slider extends Component {
     onValuesChange: PropTypes.func,
     onValuesChangeEnd: PropTypes.func,
     trackColor: PropTypes.string,
+    backgroundTrackColor: PropTypes.string,
     markerColor: PropTypes.string,
     allowOverlap: PropTypes.bool,
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
@@ -350,6 +351,7 @@ class Slider extends Component {
       sliderLength,
       values,
       trackColor,
+      backgroundTrackColor,
       disableOne,
       disableTwo,
       trackStyle,
@@ -363,6 +365,7 @@ class Slider extends Component {
         positionTwo={positionTwo}
         positionOne={positionOne}
         trackColor={trackColor}
+        backgroundTrackColor={backgroundTrackColor}
         bothDisabled={disableOne && disableTwo}
         oneDisabled={disableOne}
         trackHeight={this.finalTrackHeight}

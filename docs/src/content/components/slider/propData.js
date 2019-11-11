@@ -13,6 +13,7 @@ const propData = [
   ['step', 'Number that marker jumps to next value', 'number', '1'],
   ['style', 'Styles root element', 'object', ''],
   ['trackColor', 'Color of track', 'string', 'theme.primary.main'],
+  ['backgroundTrackColor', 'Color of background track', 'string', '#CECECE'],
   ['trackHeight', 'The height of the track', 'number', 2],
   ['trackStyle', 'Styles the track', 'object', ''],
   ['values', 'Array of starting values for each marker', 'array', ''],

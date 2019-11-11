@@ -7,6 +7,7 @@ import styles from './Track.styles';
 
 class Track extends Component {
   static propTypes = {
+    backgroundTrackColor: PropTypes.string,
     twoMarkers: PropTypes.bool,
     sliderLength: PropTypes.number,
     positionOne: PropTypes.number,
@@ -21,6 +22,7 @@ class Track extends Component {
 
   render() {
     const {
+      backgroundTrackColor,
       sliderLength,
       positionOne,
       positionTwo,
@@ -34,7 +36,9 @@ class Track extends Component {
     } = this.props;
 
     const selectedColor = trackColor ? trackColor : theme.primary.main;
-    const unselectedColor = '#CECECE';
+    const unselectedColor = backgroundTrackColor
+      ? backgroundTrackColor
+      : '#CECECE';
 
     const trackOneLength = positionOne;
     const trackThreeLength = twoMarkers ? sliderLength - positionTwo : 0;
