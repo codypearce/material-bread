@@ -25,7 +25,7 @@ exports[`Drawer Renders 1`] = `
         "borderRightWidth": 1,
         "borderStyle": "solid",
         "height": 1334,
-        "left": -245,
+        "left": -342.5,
         "position": "absolute",
         "shadowColor": "#000",
         "shadowOffset": Object {
@@ -40,7 +40,7 @@ exports[`Drawer Renders 1`] = `
             "translateX": 0,
           },
         ],
-        "width": 240,
+        "width": 337.5,
         "zIndex": 100,
       }
     }
