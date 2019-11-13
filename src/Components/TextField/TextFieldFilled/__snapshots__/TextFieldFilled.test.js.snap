@@ -88,38 +88,38 @@ exports[`TextFieldFilled Renders 1`] = `
           "width": "100%",
         },
         "drawer": Object {
+          "backgroundColor": "white",
+          "borderRightColor": "rgba(0,0,0,.12)",
+          "borderRightWidth": 1,
+          "borderStyle": "solid",
           "position": "absolute",
           "zIndex": 100,
-          "borderRightWidth": 1,
-          "borderRightColor": "rgba(0,0,0,.12)",
-          "borderStyle": "solid",
-          "backgroundColor": "white",
         },
         "drawerHeader": Object {
+          "borderBottomColor": "rgba(0,0,0,.12)",
           "borderBottomWidth": 0.5,
-          "borderBottomColor": "rgba(0,0,0,.12)"",
           "paddingHorizontal": 16,
           "paddingVertical": 18,
         },
         "drawerHeaderAvatarContainer": Object {
           "marginBottom": 20,
         },
+        "drawerHeaderSubtitle": Object {
+          "color": "rgba(0,0,0,.67)",
+          "fontSize": 12,
+          "marginTop": 4,
+        },
         "drawerHeaderTitle": Object {
+          "color": "rgba(0,0,0,.87)",
           "fontSize": 20,
           "fontWeight": "500",
-          "color": "rgba(0,0,0,.87)",
-        },
-        "drawerHeaderSubtitle": Object {
-          "marginTop": 4,
-          "fontSize": 12,
-          "color": "rgba(0,0,0,.67)",
         },
         "drawerItem": Object {
-          "flexDirection": "row",
           "alignItems": "center",
           "backgroundColor": "transparent",
-          "height": 40,
           "borderRadius": 4,
+          "flexDirection": "row",
+          "height": 40,
           "paddingHorizontal": 8,
           "zIndex": 10,
         },
@@ -127,15 +127,15 @@ exports[`TextFieldFilled Renders 1`] = `
           "backgroundColor": "rgba(30, 136, 229, .2)",
           "color": "#1e88e5",
         },
-        "drawerItemText": Object {
-          "fontSize": 14,
-          "color": "rgba(0,0,0,.87)",
-          "fontWeight": "500",
-          "zIndex": 10,
-        },
         "drawerItemIcon": Object {
           "color": "grey",
           "size": 20,
+        },
+        "drawerItemText": Object {
+          "color": "rgba(0,0,0,.87)",
+          "fontSize": 14,
+          "fontWeight": "500",
+          "zIndex": 10,
         },
         "error": Object {
           "dark": "#d32f2f",
@@ -184,6 +184,15 @@ exports[`TextFieldFilled Renders 1`] = `
           "lineHeight": 10,
           "textTransform": "uppercase",
         },
+        "paper": Object {
+          "backgroundColor": "white",
+          "borderRadius": 2,
+        },
+        "primary": Object {
+          "dark": "#005cb2",
+          "light": "#6ab7ff",
+          "main": "#1e88e5",
+        },
         "searchBar": Object {
           "alignItems": "center",
           "backgroundColor": "rgba(255,255,255,1)",
@@ -212,15 +221,6 @@ exports[`TextFieldFilled Renders 1`] = `
           },
           "shadowOpacity": 0,
           "shadowRadius": 1,
-        },
-        "paper": Object {
-          "backgroundColor": "white",
-          "borderRadius": 2,
-        },
-        "primary": Object {
-          "dark": "#005cb2",
-          "light": "#6ab7ff",
-          "main": "#1e88e5",
         },
         "secondary": Object {
           "dark": "#c51162",
