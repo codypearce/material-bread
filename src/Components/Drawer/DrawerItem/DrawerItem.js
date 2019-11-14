@@ -4,7 +4,6 @@ import { Text } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import Ripple from '../../Ripple/Ripple';
 import Icon from '../../Icon/Icon';
-// import styles from './DrawerItem.styles';
 
 class DrawerItem extends Component {
   static propTypes = {

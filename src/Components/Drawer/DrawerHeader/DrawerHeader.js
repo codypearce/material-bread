@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
-// import styles from './DrawerHeader.styles';
 
 class DrawerHeader extends Component {
   static propTypes = {
