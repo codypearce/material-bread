@@ -26,7 +26,6 @@ class ListItem extends Component {
     actionItem: PropTypes.node,
     leadingActionItem: PropTypes.node,
     textStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-    textProps: PropTypes.object,
     secondaryTextStyle: PropTypes.oneOfType([
       PropTypes.object,
       PropTypes.array,
@@ -49,7 +48,6 @@ class ListItem extends Component {
       disabled,
       textStyle,
       secondaryTextStyle,
-      textProps,
     } = this.props;
 
     return (
