@@ -6,6 +6,7 @@ import styles from './TextFieldLabel.styles';
 import {
   nonOutlinedStops,
   outlinedStops,
+  outlinedXStops,
   outlinedStopsDense,
 } from './TextFieldLabel.constants';
 
@@ -36,6 +37,13 @@ class TextFieldLabel extends Component {
         ? outlinedStops.initial
         : nonOutlinedStops.initial,
     ),
+    translateXAnimation: new Animated.Value(
+      this.props.type === 'outlined'
+        ? outlinedXStops.initial
+        : this.props.type === 'flat'
+        ? -1
+        : 12,
+    ),
     fontSizeAnimation: new Animated.Value(
       this.props.value || this.props.focused ? 1 : 0,
     ),
@@ -50,6 +58,7 @@ class TextFieldLabel extends Component {
     if (type == 'outlined' && dense) {
       this.setState({
         translateYAnimation: new Animated.Value(outlinedStopsDense.initial),
+        translateXAnimation: new Animated.Value(outlinedStopsDense.initial),
       });
     }
 
@@ -122,8 +131,9 @@ class TextFieldLabel extends Component {
   }
 
   _handleLabelOutlinedAnimation() {
-    const { focused, value, dense } = this.props;
+    const { focused, value, dense, leadingIcon } = this.props;
     const {
+      translateXAnimation,
       translateYAnimation,
       animationEasing,
       animationDuration,
@@ -132,8 +142,21 @@ class TextFieldLabel extends Component {
     } = this.state;
     if (!canAnimate) return;
 
-    let position =
-      focused || value ? outlinedStops.active : outlinedStops.initial;
+    let position = 0;
+    let xPosition = 0;
+
+    if (focused || value) {
+      position = outlinedStops.active;
+      if (leadingIcon) {
+        xPosition = outlinedXStops.active;
+      } else {
+        xPosition = outlinedXStops.initial;
+      }
+    } else {
+      position = outlinedStops.initial;
+      xPosition = outlinedXStops.initial;
+    }
+
     const fontVal = focused || value ? 1 : 0;
 
     if (dense)
@@ -145,6 +168,11 @@ class TextFieldLabel extends Component {
     Animated.parallel([
       Animated.timing(translateYAnimation, {
         toValue: position,
+        duration: animationDuration,
+        easing: animationEasing,
+      }),
+      Animated.timing(translateXAnimation, {
+        toValue: xPosition,
         duration: animationDuration,
         easing: animationEasing,
       }),
@@ -171,14 +199,11 @@ class TextFieldLabel extends Component {
       focusedLabelColor,
       onLayout,
     } = this.props;
-    const { translateYAnimation, fontSizeAnimation } = this.state;
-
-    let translateX = 12;
-    if (type === 'flat') {
-      translateX = -1;
-    } else if (type === 'outlined') {
-      translateX = 10;
-    }
+    const {
+      translateXAnimation,
+      translateYAnimation,
+      fontSizeAnimation,
+    } = this.state;
 
     if (!labelColor) labelColor = 'rgba(0, 0, 0, 0.54)';
 
@@ -227,7 +252,7 @@ class TextFieldLabel extends Component {
               paddingHorizontal: type == 'outlined' ? 4 : 0,
               transform: [
                 { translateY: translateYAnimation },
-                { translateX: translateX },
+                { translateX: translateXAnimation },
               ],
             },
             style,

@@ -3,6 +3,11 @@ export const outlinedStops = {
   active: -8,
 };
 
+export const outlinedXStops = {
+  initial: 10,
+  active: -24,
+};
+
 export const outlinedStopsDense = {
   initial: 8,
   active: -12,
