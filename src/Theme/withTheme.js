@@ -5,6 +5,7 @@ import mergeTheme from './mergeTheme';
 function withTheme(Component) {
   class ThemeComponent extends React.Component {
     render() {
+      // eslint-disable-next-line react/prop-types
       const { forwardedRef, ...rest } = this.props;
       return (
         <ThemeContext.Consumer>

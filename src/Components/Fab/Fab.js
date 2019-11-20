@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, View } from 'react-native';
+import { Animated } from 'react-native';
 
 import withTheme from '../../Theme/withTheme';
 import Icon from '../Icon/Icon.js';
@@ -153,7 +153,6 @@ export class Fab extends Component {
     const {
       style,
       backgroundColor,
-      onPress,
       disabled,
       rippleColor,
       shadow,

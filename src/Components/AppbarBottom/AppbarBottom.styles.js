@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
   fabPos: {
     zIndex: 100,
     elevation: Platform.OS === 'android' ? 10 : 0,
+    marginBottom: 29,
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
