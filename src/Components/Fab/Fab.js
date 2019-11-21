@@ -153,6 +153,8 @@ export class Fab extends Component {
     const {
       style,
       backgroundColor,
+      // eslint-disable-next-line no-unused-vars
+      onPress,
       disabled,
       rippleColor,
       shadow,
