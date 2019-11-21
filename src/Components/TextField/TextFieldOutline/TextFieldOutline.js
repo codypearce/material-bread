@@ -183,7 +183,7 @@ class TextFieldOutlined extends Component {
             styles.outlinedInput,
             platformStyles,
             {
-              borderWidth: focused ? 2 : 1,
+              borderWidth: 1,
               borderColor,
               minHeight: dense ? 40 : 56,
               height: height,
