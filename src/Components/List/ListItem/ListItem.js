@@ -220,7 +220,12 @@ class ListItem extends Component {
           {leadingActionItem ? this._renderLeadingActionItem() : null}
           {icon ? this._renderIcon() : null}
           {media ? media : null}
-          <View style={{ marginLeft: contentMargin, flexShrink: 1 }}>
+          <View
+            style={{
+              alignSelf: 'center',
+              marginLeft: contentMargin,
+              flexShrink: 1,
+            }}>
             {children ? children : this._renderText()}
           </View>
           {actionItem ? this._renderActionitem() : null}

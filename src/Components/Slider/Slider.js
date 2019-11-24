@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { PanResponder, View, I18nManager, StyleSheet } from 'react-native';
+import { PanResponder, View, StyleSheet } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import MarkerContainer from './MarkerContainer/MarkerContainer';
 import Track from './Track/Track';
@@ -20,6 +20,7 @@ class Slider extends Component {
     onValuesChange: PropTypes.func,
     onValuesChangeEnd: PropTypes.func,
     trackColor: PropTypes.string,
+    backgroundTrackColor: PropTypes.string,
     markerColor: PropTypes.string,
     allowOverlap: PropTypes.bool,
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
@@ -190,10 +191,7 @@ class Slider extends Component {
     }
 
     const accumDistance = gestureState.dx;
-
-    const unconfined = I18nManager.isRTL
-      ? pastOne - accumDistance
-      : accumDistance + pastOne;
+    const unconfined = accumDistance + pastOne;
 
     var bottom = 0;
     var trueTop = positionTwo - (allowOverlap ? 0 : this.stepLength);
@@ -238,10 +236,8 @@ class Slider extends Component {
     }
 
     const accumDistance = gestureState.dx;
+    const unconfined = accumDistance + pastTwo;
 
-    const unconfined = I18nManager.isRTL
-      ? pastTwo - accumDistance
-      : accumDistance + pastTwo;
     var bottom = positionOne + (allowOverlap ? 0 : this.stepLength);
     var top = sliderLength;
     var confined =
@@ -355,6 +351,7 @@ class Slider extends Component {
       sliderLength,
       values,
       trackColor,
+      backgroundTrackColor,
       disableOne,
       disableTwo,
       trackStyle,
@@ -368,6 +365,7 @@ class Slider extends Component {
         positionTwo={positionTwo}
         positionOne={positionOne}
         trackColor={trackColor}
+        backgroundTrackColor={backgroundTrackColor}
         bothDisabled={disableOne && disableTwo}
         oneDisabled={disableOne}
         trackHeight={this.finalTrackHeight}

@@ -10,7 +10,6 @@ exports[`AppbarBottom Renders 1`] = `
         Object {
           "opacity": 0,
         },
-        undefined,
       ]
     }
   >

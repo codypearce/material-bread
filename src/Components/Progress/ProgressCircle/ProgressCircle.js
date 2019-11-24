@@ -61,6 +61,7 @@ class ProgressCircle extends PureComponent {
         duration: animationDuration,
         easing: animationEasing,
         toValue: 1,
+        useNativeDriver: true,
       }),
 
       {
