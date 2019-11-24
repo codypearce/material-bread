@@ -49,11 +49,10 @@ class Drawer extends PureComponent {
     drawerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     scrimStyles: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     testID: PropTypes.string,
+    theme: PropTypes.object,
   };
 
   static defaultProps = {
-    widthPercentage: 0.45,
-    width: 240,
     open: false,
     animationTime: 200,
     scrimOpacity: 0.4,
@@ -85,7 +84,7 @@ class Drawer extends PureComponent {
     if (pageWidth) screenWidth = pageWidth;
     if (pageHeight) screenHeight = pageHeight;
 
-    let drawerWidth = screenWidth * widthPercentage;
+    let drawerWidth = screenWidth * (widthPercentage || 0.45);
     if (width) drawerWidth = width;
 
     this.setState({
@@ -238,6 +237,7 @@ class Drawer extends PureComponent {
       drawerStyle,
       fullHeight,
       position,
+      theme,
     } = this.props;
     const { drawerWidth, screenHeight, leftOffset, appbarHeight } = this.state;
 
@@ -251,7 +251,7 @@ class Drawer extends PureComponent {
       <Fragment>
         <Animated.View
           style={[
-            styles.drawer,
+            theme.drawer,
             {
               position: position,
               width: drawerWidth,

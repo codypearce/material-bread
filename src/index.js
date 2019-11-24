@@ -54,18 +54,12 @@ export {
 export { default as Menu, MenuItem } from './Components/Menu';
 export { default as Paper } from './Components/Paper/Paper.js';
 export { default as ProgressBar } from './Components/Progress/ProgressBar';
-export {
-  default as ProgressCircle,
-} from './Components/Progress/ProgressCircle';
+export { default as ProgressCircle } from './Components/Progress/ProgressCircle';
 export { default as RadioButton } from './Components/RadioButton';
 export { default as Ripple } from './Components/Ripple';
 export { default as Select } from './Components/Select';
-export {
-  default as Searchfield,
-} from './Components/TextField/Searchfield/Searchfield.js';
-export {
-  default as Searchbar,
-} from './Components/Appbar/Searchbar/Searchbar.js';
+export { default as Searchfield } from './Components/TextField/Searchfield/Searchfield.js';
+export { default as Searchbar } from './Components/Appbar/Searchbar/Searchbar.js';
 export { default as SheetBottom } from './Components/SheetBottom';
 export { default as SheetSide } from './Components/SheetSide';
 export { default as Slider } from './Components/Slider';

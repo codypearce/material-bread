@@ -4,7 +4,6 @@ import { Text } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import Ripple from '../../Ripple/Ripple';
 import Icon from '../../Icon/Icon';
-import styles from './DrawerItem.styles';
 
 class DrawerItem extends Component {
   static propTypes = {
@@ -14,30 +13,43 @@ class DrawerItem extends Component {
     icon: PropTypes.string,
     onPress: PropTypes.func,
     active: PropTypes.bool,
+    iconComponent: PropTypes.func,
+    theme: PropTypes.object,
   };
 
   render() {
-    const { icon, text, onPress, active } = this.props;
+    const { icon, text, onPress, active, iconComponent, theme } = this.props;
 
     return (
       <Ripple
         style={[
-          styles.drawerItem,
+          theme.drawerItem,
           {
-            backgroundColor: active ? 'rgba(30, 136, 229, .2)' : 'transparent',
+            backgroundColor: active
+              ? theme.drawerItemActive.backgroundColor
+              : theme.drawerItem.backgroundColor,
           },
         ]}
         onPress={onPress}
         rippleContainerBorderRadius={4}>
         {icon ? (
-          <Icon name={icon} size={20} color={active ? '#1e88e5' : 'grey'} />
+          <Icon
+            name={icon}
+            size={theme.drawerItemIcon.size}
+            color={
+              active ? theme.drawerItemActive.color : theme.drawerItemIcon.color
+            }
+            iconComponent={iconComponent}
+          />
         ) : null}
         <Text
           style={[
-            styles.text,
+            theme.drawerItemText,
             {
               marginLeft: icon ? 24 : 0,
-              color: active ? '#1e88e5' : 'rgba(0,0,0,.87)',
+              color: active
+                ? theme.drawerItemActive.color
+                : theme.drawerItemText.color,
             },
           ]}>
           {text}

@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import shadow from '../Utils/Shadow/shadow';
 
 export default {
   primary: {
@@ -40,10 +41,58 @@ export default {
   },
   divider: {
     width: '100%',
-
     backgroundColor: 'rgba(0,0,0,.12)',
   },
-
+  drawer: {
+    position: 'absolute',
+    zIndex: 100,
+    borderRightWidth: 1,
+    borderRightColor: 'rgba(0,0,0,.12)',
+    borderStyle: 'solid',
+    backgroundColor: 'white',
+  },
+  drawerHeader: {
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: 'rgba(0,0,0,.12)',
+    paddingHorizontal: 16,
+    paddingVertical: 18,
+  },
+  drawerHeaderAvatarContainer: {
+    marginBottom: 20,
+  },
+  drawerHeaderTitle: {
+    fontSize: 20,
+    fontWeight: '500',
+    color: 'rgba(0,0,0,.87)',
+  },
+  drawerHeaderSubtitle: {
+    marginTop: 4,
+    fontSize: 12,
+    color: 'rgba(0,0,0,.67)',
+  },
+  drawerItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+    height: 40,
+    borderRadius: 4,
+    paddingHorizontal: 8,
+    zIndex: 10,
+  },
+  drawerItemActive: {
+    backgroundColor: 'rgba(30, 136, 229, .2)',
+    color: '#1e88e5',
+  },
+  drawerItemText: {
+    fontSize: 14,
+    color: 'rgba(0,0,0,.87)',
+    fontWeight: '500',
+    zIndex: 10,
+  },
+  drawerItemIcon: {
+    color: 'grey',
+    size: 20,
+  },
   button: {
     padding: 8,
     borderRadius: 4,
@@ -114,6 +163,29 @@ export default {
     lineHeight: 10,
     letterSpacing: 1.5,
     textTransform: 'uppercase',
+  },
+  searchBar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: '100%',
+    backgroundColor: 'rgba(255,255,255,1)',
+    height: 56,
+    paddingHorizontal: 16,
+  },
+  searchBarNavigationIcon: {
+    color: 'black',
+    size: 24,
+  },
+  searchBarcloseIcon: {
+    color: 'black',
+    size: 24,
+  },
+  searchInput: {
+    fontSize: 16,
+    flex: 1,
+    marginLeft: 8,
+    height: 30,
+    ...shadow(0),
   },
   subtitleOne: {
     fontSize: 16,
