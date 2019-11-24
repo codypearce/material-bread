@@ -86,6 +86,56 @@ exports[`TextFieldFlat Renders 1`] = `
           "backgroundColor": "rgba(0,0,0,.12)",
           "width": "100%",
         },
+        "drawer": Object {
+          "backgroundColor": "white",
+          "borderRightColor": "rgba(0,0,0,.12)",
+          "borderRightWidth": 1,
+          "borderStyle": "solid",
+          "position": "absolute",
+          "zIndex": 100,
+        },
+        "drawerHeader": Object {
+          "borderBottomColor": "rgba(0,0,0,.12)",
+          "borderBottomWidth": 0.5,
+          "paddingHorizontal": 16,
+          "paddingVertical": 18,
+        },
+        "drawerHeaderAvatarContainer": Object {
+          "marginBottom": 20,
+        },
+        "drawerHeaderSubtitle": Object {
+          "color": "rgba(0,0,0,.67)",
+          "fontSize": 12,
+          "marginTop": 4,
+        },
+        "drawerHeaderTitle": Object {
+          "color": "rgba(0,0,0,.87)",
+          "fontSize": 20,
+          "fontWeight": "500",
+        },
+        "drawerItem": Object {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "borderRadius": 4,
+          "flexDirection": "row",
+          "height": 40,
+          "paddingHorizontal": 8,
+          "zIndex": 10,
+        },
+        "drawerItemActive": Object {
+          "backgroundColor": "rgba(30, 136, 229, .2)",
+          "color": "#1e88e5",
+        },
+        "drawerItemIcon": Object {
+          "color": "grey",
+          "size": 20,
+        },
+        "drawerItemText": Object {
+          "color": "rgba(0,0,0,.87)",
+          "fontSize": 14,
+          "fontWeight": "500",
+          "zIndex": 10,
+        },
         "error": Object {
           "dark": "#d32f2f",
           "light": "#e57373",
@@ -141,6 +191,35 @@ exports[`TextFieldFlat Renders 1`] = `
           "dark": "#005cb2",
           "light": "#6ab7ff",
           "main": "#1e88e5",
+        },
+        "searchBar": Object {
+          "alignItems": "center",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "flexDirection": "row",
+          "height": 56,
+          "paddingHorizontal": 16,
+          "width": "100%",
+        },
+        "searchBarNavigationIcon": Object {
+          "color": "black",
+          "size": 24,
+        },
+        "searchBarcloseIcon": Object {
+          "color": "black",
+          "size": 24,
+        },
+        "searchInput": Object {
+          "flex": 1,
+          "fontSize": 16,
+          "height": 30,
+          "marginLeft": 8,
+          "shadowColor": "#000",
+          "shadowOffset": Object {
+            "height": 0,
+            "width": 0,
+          },
+          "shadowOpacity": 0,
+          "shadowRadius": 1,
         },
         "secondary": Object {
           "dark": "#c51162",

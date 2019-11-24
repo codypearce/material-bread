@@ -22,12 +22,13 @@ class DrawerSection extends Component {
       topDivider,
       bottomDivider,
       fullWidth,
+      style,
     } = this.props;
 
     return (
       <View
         style={[
-          styles.drawerSection,
+          style,
           { paddingHorizontal: fullWidth ? 0 : 8, paddingTop: label ? 8 : 0 },
         ]}>
         {topDivider ? <Divider /> : null}

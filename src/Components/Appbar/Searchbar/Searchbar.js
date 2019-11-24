@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { View, TextInput } from 'react-native';
 import withTheme from '../../../Theme/withTheme';
 import IconButton from '../../IconButton/IconButton';
-import styles from './Searchbar.styles';
 
 class Searchbar extends Component {
   static propTypes = {
@@ -13,37 +12,69 @@ class Searchbar extends Component {
     onCloseIcon: PropTypes.func,
     onNavigation: PropTypes.func,
     placeholder: PropTypes.string,
+    navigationIcon: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+    navigationIconComponent: PropTypes.func,
+    closeIcon: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+    closeIconComponent: PropTypes.func,
+    theme: PropTypes.object,
   };
 
-  render() {
+  _renderNavigation() {
     const {
-      style,
-      onChangeText,
-      onCloseIcon,
+      navigationIcon = '',
       onNavigation,
-      value,
-      placeholder,
+      navigationIconComponent,
+      theme,
     } = this.props;
-    return (
-      <View style={[styles.container, style]}>
+
+    if (
+      typeof navigationIcon === 'string' ||
+      navigationIcon instanceof String
+    ) {
+      return (
         <IconButton
-          name="arrow-back"
-          size={24}
-          color={'black'}
+          name={navigationIcon || 'arrow-back'}
+          size={theme.searchBarNavigationIcon.size}
+          color={theme.searchBarNavigationIcon.color}
           onPress={onNavigation}
+          iconComponent={navigationIconComponent}
         />
+      );
+    } else {
+      return navigationIcon;
+    }
+  }
+
+  _renderClose() {
+    const { closeIcon, onCloseIcon, closeIconComponent, theme } = this.props;
+    // To hide close icon send closeIcon={false}
+    if (typeof closeIcon === 'string' || closeIcon instanceof String) {
+      return (
+        <IconButton
+          name={closeIcon || 'close'}
+          size={theme.searchBarcloseIcon.size}
+          color={theme.searchBarcloseIcon.color}
+          onPress={onCloseIcon}
+          iconComponent={closeIconComponent}
+        />
+      );
+    } else if (closeIcon) {
+      return closeIcon;
+    }
+  }
+
+  render() {
+    const { style, onChangeText, value, placeholder, theme } = this.props;
+    return (
+      <View style={[theme.searchBar, style]}>
+        {this._renderNavigation()}
         <TextInput
-          style={styles.searchInput}
+          style={theme.searchInput}
           placeholder={placeholder ? placeholder : 'Search'}
           onChangeText={onChangeText}
           value={value}
         />
-        <IconButton
-          name="close"
-          size={24}
-          color={'black'}
-          onPress={onCloseIcon}
-        />
+        {this._renderClose()}
       </View>
     );
   }
