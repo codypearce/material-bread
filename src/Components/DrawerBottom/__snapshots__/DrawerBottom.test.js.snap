@@ -5,6 +5,12 @@ exports[`DrawerBottom Renders 1`] = `
   animationType="none"
   hardwareAccelerated={false}
   onRequestClose={[Function]}
+  supportedOrientations={
+    Array [
+      "portrait",
+      "landscape",
+    ]
+  }
   transparent={true}
   visible={false}
 >
@@ -70,7 +76,8 @@ exports[`DrawerBottom Renders 1`] = `
         }
       }
     >
-      <View
+      <RCTSafeAreaView
+        emulateUnlessSupported={true}
         onLayout={[Function]}
       />
     </View>
