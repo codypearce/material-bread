@@ -151,13 +151,9 @@ class AppbarBottom extends Component {
     const backgroundColor = color ? color : theme.primary.main;
 
     return (
-      <View>
+      <View style={style}>
         <View
-          style={[
-            styles.contianer,
-            { opacity: appbarWidth == 0 ? 0 : 1 },
-            style,
-          ]}
+          style={[styles.contianer, { opacity: appbarWidth == 0 ? 0 : 1 }]}
           onLayout={this.measureAppbar}>
           {this._renderCutout()}
           <View

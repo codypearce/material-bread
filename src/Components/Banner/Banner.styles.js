@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
 
   content: {
     flexDirection: 'row',
-    // flexShrink: 1,
+    flex: 1,
   },
 
   buttons: {
