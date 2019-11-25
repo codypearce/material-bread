@@ -24,11 +24,16 @@ class TextFieldLabel extends Component {
     type: PropTypes.string,
     value: PropTypes.string,
     leadingIcon: PropTypes.bool,
+    leadingIconOffset: PropTypes.number,
     dense: PropTypes.bool,
     prefix: PropTypes.bool,
     theme: PropTypes.object,
     focusedLabelColor: PropTypes.string,
     onLayout: PropTypes.func,
+  };
+
+  static defaultProps = {
+    leadingIconOffset: 0,
   };
 
   state = {
@@ -39,7 +44,7 @@ class TextFieldLabel extends Component {
     ),
     translateXAnimation: new Animated.Value(
       this.props.type === 'outlined'
-        ? outlinedXStops.initial
+        ? outlinedXStops.initial + this.props.leadingIconOffset
         : this.props.type === 'flat'
         ? -1
         : 12,
@@ -131,7 +136,13 @@ class TextFieldLabel extends Component {
   }
 
   _handleLabelOutlinedAnimation() {
-    const { focused, value, dense, leadingIcon } = this.props;
+    const {
+      focused,
+      value,
+      dense,
+      leadingIcon,
+      leadingIconOffset,
+    } = this.props;
     const {
       translateXAnimation,
       translateYAnimation,
@@ -150,11 +161,11 @@ class TextFieldLabel extends Component {
       if (leadingIcon) {
         xPosition = outlinedXStops.active;
       } else {
-        xPosition = outlinedXStops.initial;
+        xPosition = outlinedXStops.initial + leadingIconOffset;
       }
     } else {
       position = outlinedStops.initial;
-      xPosition = outlinedXStops.initial;
+      xPosition = outlinedXStops.initial + leadingIconOffset;
     }
 
     const fontVal = focused || value ? 1 : 0;

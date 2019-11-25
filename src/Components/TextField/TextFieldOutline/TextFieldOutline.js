@@ -25,6 +25,7 @@ class TextFieldOutlined extends Component {
     helperVisible: PropTypes.bool,
     helperTextStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     leadingIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+    leadingIconOffset: PropTypes.number,
     trailingIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
     dense: PropTypes.bool,
     value: PropTypes.string,
@@ -123,6 +124,7 @@ class TextFieldOutlined extends Component {
       helperVisible,
       helperTextStyle,
       leadingIcon,
+      leadingIconOffset,
       trailingIcon,
       dense,
       suffix,
@@ -170,6 +172,7 @@ class TextFieldOutlined extends Component {
             labelColor={labelColor}
             style={labelStyle}
             leadingIcon={!!leadingIcon}
+            leadingIconOffset={leadingIconOffset}
             dense={dense}
             prefix={prefix}
             focusedLabelColor={focusedLabelColor}
