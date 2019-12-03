@@ -38,13 +38,19 @@ const propData = [
     'number',
     'ScreenHeight',
   ],
+  [
+    'sheetWidth',
+    'Sheetwidth on the web, no effect on widthPercentage',
+    'number',
+    '300',
+  ],
   ['side', 'Determines the side the sheet appears on', 'string', 'right'],
   ['style', 'Styles sheet element', 'object', ''],
 
   ['visible', 'Toggles Sheet animation', 'bool', ''],
   [
     'widthPercentage',
-    'Percentage of the screen the sheet should take up on mobile',
+    'Percentage of the screen the sheet should take up on mobile, no effect on web',
     'number',
     '.8',
   ],
