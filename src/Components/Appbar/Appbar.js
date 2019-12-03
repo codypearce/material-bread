@@ -20,7 +20,7 @@ class Appbar extends Component {
     navigation: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     onNavigation: PropTypes.func,
 
-    title: PropTypes.string,
+    title: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     titleStyles: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     onTitle: PropTypes.func,
     subtitle: PropTypes.string,
@@ -36,7 +36,7 @@ class Appbar extends Component {
   };
 
   _renderAppbarContent() {
-    const { barType } = this.props;
+    const { barType, title } = this.props;
 
     return (
       <Fragment>
@@ -51,7 +51,7 @@ class Appbar extends Component {
             },
           ]}>
           {this._renderNavigation()}
-          {this._renderTitle()}
+          {title && this._renderTitle()}
         </View>
         <View style={styles.right}>{this._renderActionItems()}</View>
       </Fragment>
