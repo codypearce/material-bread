@@ -8,7 +8,6 @@ import styles from './Searchfield.styles';
 class Searchfield extends Component {
   static propTypes = {
     color: PropTypes.string,
-    iconProps: PropTypes.object,
     inputRef: PropTypes.func,
     onBlur: PropTypes.func,
     onChangeText: PropTypes.func,
@@ -18,12 +17,17 @@ class Searchfield extends Component {
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     textStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     value: PropTypes.string,
+    searchIconProps: PropTypes.object,
+    closeIconProps: PropTypes.object,
+    inputProps: PropTypes.object,
   };
 
   render() {
     const {
       color,
-      iconProps,
+      searchIconProps,
+      closeIconProps,
+      inputProps,
       inputRef,
       onBlur,
       onChangeText,
@@ -33,7 +37,6 @@ class Searchfield extends Component {
       style,
       textStyle,
       value,
-      ...rest
     } = this.props;
 
     return (
@@ -43,7 +46,12 @@ class Searchfield extends Component {
           { backgroundColor: color ? color : 'rgba(255,255,255,.15)' },
           style,
         ]}>
-        <IconButton name={'search'} size={20} color={'white'} {...iconProps} />
+        <IconButton
+          name={'search'}
+          size={20}
+          color={'white'}
+          {...searchIconProps}
+        />
 
         <TextInput
           ref={inputRef}
@@ -54,16 +62,16 @@ class Searchfield extends Component {
           placeholderTextColor={'rgba(255,255,255,.57)'}
           onFocus={onFocus}
           onBlur={onBlur}
-          {...rest}
+          {...inputProps}
         />
 
         <IconButton
           name={'close'}
           size={20}
-          style={{ opacity: !value || value.length < 1 ? 0 : 1 }}
+          style={{ opacity: !value || (value && value.length < 1) ? 0 : 1 }}
           onPress={onCloseIcon}
           color={'white'}
-          {...iconProps}
+          {...closeIconProps}
         />
       </View>
     );
