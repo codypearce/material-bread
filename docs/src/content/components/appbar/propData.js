@@ -7,6 +7,12 @@ const propData = [
     '',
   ],
   [
+    'actionItemsStyle',
+    'Styles the container around the actionItems',
+    'object || array',
+    '',
+  ],
+  [
     'barType',
     `Type of appbar, other components change based on type`,
     'string: regular, prominent, dense, prominent dense',
