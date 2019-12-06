@@ -216,7 +216,7 @@ class Drawer extends PureComponent {
               flex: 1,
               width:
                 open && Platform.OS == 'web' && isPermanent
-                  ? drawerWidth
+                  ? `calc(100% - ${drawerWidth}px)`
                   : '100%',
             }}>
             {children}
