@@ -36,7 +36,7 @@ class Appbar extends Component {
   };
 
   _renderAppbarContent() {
-    const { barType, title, actionItemsStyle} = this.props;
+    const { barType, title, actionItemsStyle } = this.props;
 
     return (
       <Fragment>
