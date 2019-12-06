@@ -215,6 +215,8 @@ class SheetBottom extends Component {
             style,
 
             {
+              position: 'absolute',
+              bottom: 0,
               height: fullHeight,
               paddingVertical: cardVerticalPadding,
               transform: [{ translateY: pan.y }],
