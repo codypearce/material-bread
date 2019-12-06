@@ -72,6 +72,7 @@ export const code = `class DrawerPage extends React.Component {
         <Drawer
           open={this.state.isOpen}
           pageHeight={500}
+          scrimStyles={{position: 'absolute'}}
           drawerContent={<DrawerContent />}
           onClose={() => this.setState({ isOpen: false })}
           animationTime={250}>
