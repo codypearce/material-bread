@@ -105,6 +105,19 @@ class Appbar extends Component {
       textContainerStyles,
     } = this.props;
 
+    const titleComponent =
+      typeof title == 'string' || title instanceof String ? (
+        <Text
+          numberOfLines={
+            barType === 'prominent' || barType === 'prominent dense' ? 3 : 1
+          }
+          style={[styles.pageTitle, titleStyles]}>
+          {title}
+        </Text>
+      ) : (
+        title
+      );
+
     return (
       <View
         style={[
@@ -119,13 +132,7 @@ class Appbar extends Component {
           },
           textContainerStyles,
         ]}>
-        <Text
-          numberOfLines={
-            barType === 'prominent' || barType === 'prominent dense' ? 3 : 1
-          }
-          style={[styles.pageTitle, titleStyles]}>
-          {title}
-        </Text>
+        {titleComponent}
         {subtitle && barType !== 'dense' ? (
           <Text
             style={[
