@@ -9,7 +9,7 @@ export const code = `class Demo extends React.Component {
   }
   render() {
     return (
-      <View>
+      <View style={{position: 'relative'}}>
         <Tooltip content={"I'm a tooltip"}>
           <Button
             type="contained"
