@@ -41,13 +41,16 @@ exports[`Appbar Renders 1`] = `
   />
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "flexDirection": "row",
-        "justifyContent": "flex-end",
-        "minWidth": "auto",
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "minWidth": "auto",
+        },
+        undefined,
+      ]
     }
   />
 </View>

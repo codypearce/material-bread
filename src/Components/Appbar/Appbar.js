@@ -31,12 +31,12 @@ class Appbar extends Component {
     ]),
 
     actionItems: PropTypes.oneOfType([PropTypes.node, PropTypes.array]),
-
+    actionItemsStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     children: PropTypes.node,
   };
 
   _renderAppbarContent() {
-    const { barType, title } = this.props;
+    const { barType, title, actionItemsStyle} = this.props;
 
     return (
       <Fragment>
@@ -53,7 +53,9 @@ class Appbar extends Component {
           {this._renderNavigation()}
           {title && this._renderTitle()}
         </View>
-        <View style={styles.right}>{this._renderActionItems()}</View>
+        <View style={[styles.right, actionItemsStyle]}>
+          {this._renderActionItems()}
+        </View>
       </Fragment>
     );
   }

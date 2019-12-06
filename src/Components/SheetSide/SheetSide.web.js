@@ -35,12 +35,14 @@ class SheetSide extends Component {
     widthPercentage: PropTypes.number,
     side: PropTypes.string,
     testID: PropTypes.string,
+    sheetWidth: PropTypes.number,
   };
 
   static defaultProps = {
     duration: 200,
     widthPercentage: 0.8,
     side: 'right',
+    sheetWidth: 300,
   };
 
   state = {
@@ -99,12 +101,12 @@ class SheetSide extends Component {
   };
 
   animateSheet(visible) {
-    const { duration, widthPercentage, side } = this.props;
+    const { duration, widthPercentage, side, sheetWidth } = this.props;
     const { fullWidth, pan } = this.state;
 
     let openValue =
       Platform.OS == 'web'
-        ? fullWidth - 320
+        ? fullWidth - sheetWidth
         : fullWidth * (1 - widthPercentage);
 
     let closeValue = fullWidth;
@@ -135,18 +137,24 @@ class SheetSide extends Component {
   }
 
   createPanResponder = () => {
-    const { onSwipeLeft, onSwipeRight, widthPercentage } = this.props;
+    const {
+      onSwipeLeft,
+      onSwipeRight,
+      widthPercentage,
+      sheetWidth,
+    } = this.props;
     const { fullWidth } = this.state;
 
-    const sheetWidth = Platform.OS == 'web' ? 320 : fullWidth * widthPercentage;
+    const sheetWidthCalculated =
+      Platform.OS == 'web' ? sheetWidth : fullWidth * widthPercentage;
 
     this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
 
       onPanResponderRelease: (e, gestureState) => {
-        if (sheetWidth / 4 - gestureState.dy < 0) {
+        if (sheetWidthCalculated / 4 - gestureState.dy < 0) {
           if (onSwipeLeft) onSwipeLeft();
-        } else if (sheetWidth / 4 + gestureState.dy > 0) {
+        } else if (sheetWidthCalculated / 4 + gestureState.dy > 0) {
           if (onSwipeRight) onSwipeRight();
         }
       },
@@ -221,6 +229,7 @@ class SheetSide extends Component {
       style,
       widthPercentage,
       testID,
+      sheetWidth,
     } = this.props;
     const { pan, fullWidth } = this.state;
 
@@ -240,7 +249,8 @@ class SheetSide extends Component {
 
             {
               height: '100%',
-              width: Platform.OS == 'web' ? 320 : fullWidth * widthPercentage,
+              width:
+                Platform.OS == 'web' ? sheetWidth : fullWidth * widthPercentage,
               transform: [{ translateX: pan.x }],
             },
           ]}>
