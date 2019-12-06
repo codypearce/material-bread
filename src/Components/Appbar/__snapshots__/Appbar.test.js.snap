@@ -38,34 +38,7 @@ exports[`Appbar Renders 1`] = `
         },
       ]
     }
-  >
-    <View
-      style={
-        Array [
-          Object {
-            "alignSelf": "center",
-            "marginBottom": 0,
-            "marginLeft": 0,
-            "zIndex": 100,
-          },
-          undefined,
-        ]
-      }
-    >
-      <Text
-        numberOfLines={1}
-        style={
-          Array [
-            Object {
-              "color": "white",
-              "fontSize": 18,
-            },
-            undefined,
-          ]
-        }
-      />
-    </View>
-  </View>
+  />
   <View
     style={
       Array [

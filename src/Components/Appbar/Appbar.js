@@ -20,7 +20,7 @@ class Appbar extends Component {
     navigation: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     onNavigation: PropTypes.func,
 
-    title: PropTypes.string,
+    title: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     titleStyles: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     onTitle: PropTypes.func,
     subtitle: PropTypes.string,
@@ -36,7 +36,7 @@ class Appbar extends Component {
   };
 
   _renderAppbarContent() {
-    const { barType, actionItemsStyle } = this.props;
+    const { barType, title, actionItemsStyle} = this.props;
 
     return (
       <Fragment>
@@ -51,7 +51,7 @@ class Appbar extends Component {
             },
           ]}>
           {this._renderNavigation()}
-          {this._renderTitle()}
+          {title && this._renderTitle()}
         </View>
         <View style={[styles.right, actionItemsStyle]}>
           {this._renderActionItems()}
@@ -107,6 +107,19 @@ class Appbar extends Component {
       textContainerStyles,
     } = this.props;
 
+    const titleComponent =
+      typeof title == 'string' || title instanceof String ? (
+        <Text
+          numberOfLines={
+            barType === 'prominent' || barType === 'prominent dense' ? 3 : 1
+          }
+          style={[styles.pageTitle, titleStyles]}>
+          {title}
+        </Text>
+      ) : (
+        title
+      );
+
     return (
       <View
         style={[
@@ -121,13 +134,7 @@ class Appbar extends Component {
           },
           textContainerStyles,
         ]}>
-        <Text
-          numberOfLines={
-            barType === 'prominent' || barType === 'prominent dense' ? 3 : 1
-          }
-          style={[styles.pageTitle, titleStyles]}>
-          {title}
-        </Text>
+        {titleComponent}
         {subtitle && barType !== 'dense' ? (
           <Text
             style={[

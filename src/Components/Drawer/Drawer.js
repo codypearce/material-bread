@@ -84,7 +84,11 @@ class Drawer extends PureComponent {
     if (pageWidth) screenWidth = pageWidth;
     if (pageHeight) screenHeight = pageHeight;
 
-    let drawerWidth = screenWidth * (widthPercentage || 0.45);
+    let drawerWidth =
+      Platform.OS == 'web'
+        ? this.state.drawerWidth
+        : screenWidth * (widthPercentage || 0.45);
+
     if (width) drawerWidth = width;
 
     this.setState({
@@ -198,7 +202,7 @@ class Drawer extends PureComponent {
 
   _renderAppContent() {
     const { children, appbar, type, open, contentContainerStyle } = this.props;
-    const { leftOffset } = this.state;
+    const { leftOffset, drawerWidth } = this.state;
 
     const isPush = type == 'push';
     const isPermanent = type == 'permanent';
@@ -213,7 +217,7 @@ class Drawer extends PureComponent {
               flex: 1,
               width:
                 open && Platform.OS == 'web' && isPermanent
-                  ? 'calc(100% - 240px)'
+                  ? `calc(100% - ${drawerWidth}px)`
                   : '100%',
             }}>
             {children}
