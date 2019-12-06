@@ -101,13 +101,10 @@ class SheetSide extends Component {
   };
 
   animateSheet(visible) {
-    const { duration, widthPercentage, side, sheetWidth } = this.props;
+    const { duration, side } = this.props;
     const { fullWidth, pan } = this.state;
 
-    let openValue =
-      Platform.OS == 'web'
-        ? fullWidth - sheetWidth
-        : fullWidth * (1 - widthPercentage);
+    let openValue = 0;
 
     let closeValue = fullWidth;
 
@@ -230,6 +227,7 @@ class SheetSide extends Component {
       widthPercentage,
       testID,
       sheetWidth,
+      side,
     } = this.props;
     const { pan, fullWidth } = this.state;
 
@@ -249,6 +247,8 @@ class SheetSide extends Component {
 
             {
               height: '100%',
+              position: 'absolute',
+              right: side == 'right' ? 0 : 'auto',
               width:
                 Platform.OS == 'web' ? sheetWidth : fullWidth * widthPercentage,
               transform: [{ translateX: pan.x }],
