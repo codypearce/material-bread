@@ -59,6 +59,7 @@ class Drawer extends PureComponent {
     scrim: true,
     type: 'modal',
     position: 'absolute',
+    width: 240,
   };
 
   state = {
@@ -85,9 +86,7 @@ class Drawer extends PureComponent {
     if (pageHeight) screenHeight = pageHeight;
 
     let drawerWidth =
-      Platform.OS == 'web'
-        ? this.state.screenWidth.drawerWidth
-        : screenWidth * (widthPercentage || 0.45);
+      Platform.OS == 'web' ? width : screenWidth * (widthPercentage || 0.45);
 
     if (width) drawerWidth = width;
 
