@@ -750,16 +750,19 @@ div[role='group'][tabindex] {
   display: block;
 }
 
-.home__buttons a:nth-child(2) {
-  margin-right: 8px;
-  margin-left: 8px;
+.home__buttons a {
+  margin-right: 4px;
+  margin-left: 4px;
+}
+.home__buttons a:first-of-type {
+  margin-left: 0px;
 }
 
 @media (max-width: 500px) {
   .home__buttons {
     flex-direction: column;
   }
-  .home__buttons a:nth-child(2) {
+  .home__buttons a {
     margin: 8px 0;
   }
 }
