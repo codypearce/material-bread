@@ -56,13 +56,18 @@ class AppbarBottom extends Component {
     const { fab, fabPosition, fabCutout } = this.props;
     if (!fab) return null;
 
+    const isEnd = fabPosition === 'end';
+    const cutOutPadding = fabCutout ? 18 : 16;
+
     const fabRightStyle = {
-      right: fabCutout ? 18 : 16,
+      right: cutOutPadding,
     };
     const fabCenterStyle = {
       right: 'auto',
     };
-    const fabPosStyles = fabPosition === 'end' ? fabRightStyle : fabCenterStyle;
+    const fabPosStyles = isEnd ? fabRightStyle : fabCenterStyle;
+
+    const isFabSpeedial = fab && fab.props && fab.props.actions;
 
     return React.cloneElement(fab, {
       shadow: fabCutout ? 8 : 6,
@@ -70,6 +75,7 @@ class AppbarBottom extends Component {
       containerStyle: {
         position: 'absolute',
         width: '100%',
+        paddingRight: isFabSpeedial && isEnd ? cutOutPadding : 0,
         transform: [{ translateY: -29 }],
       },
     });

@@ -10,11 +10,13 @@ class FabSpeedDial extends Component {
     super(props);
   }
   static propTypes = {
+    containerStyle: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     onPress: PropTypes.func,
     actions: PropTypes.array,
     fab: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     testID: PropTypes.string,
+    fabProps: PropTypes.object,
   };
 
   static defaultProps = {
@@ -145,10 +147,17 @@ class FabSpeedDial extends Component {
   }
 
   _renderFab() {
-    const { fab } = this.props;
+    const { fab, style, fabProps } = this.props;
 
     if (typeof fab == 'string' || fab instanceof String || !fab) {
-      return <Fab icon={fab} onPress={() => this.animateActions()} />;
+      return (
+        <Fab
+          icon={fab}
+          onPress={() => this.animateActions()}
+          style={style}
+          {...fabProps}
+        />
+      );
     } else {
       return React.cloneElement(fab, {
         color: fab.props.color ? fab.props.color : 'white',
@@ -158,9 +167,9 @@ class FabSpeedDial extends Component {
   }
 
   render() {
-    const { style, testID } = this.props;
+    const { containerStyle, testID } = this.props;
     return (
-      <View style={[styles.container, style]} testID={testID}>
+      <View style={[styles.container, containerStyle]} testID={testID}>
         {this.renderActions()}
         {this._renderFab()}
       </View>
