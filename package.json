@@ -1,6 +1,6 @@
 {
   "name": "material-bread",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest -w 1 --forceExit",
