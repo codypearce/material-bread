@@ -45,14 +45,16 @@ class Section extends Component {
               width: width ? width : 175,
               backgroundColor,
               borderRadius: 10,
+              marginBottom: 16,
+              padding: 16,
             }}
             rippleContainerBorderRadius={10}>
             <img
               src={img}
               style={{
-                width: imgWidth ? imgWidth : 100,
+                maxHeight: 120,
+                maxWidth: '100%',
                 margin: 'auto',
-                marginTop: 16,
                 marginBottom: 8,
               }}
             />
