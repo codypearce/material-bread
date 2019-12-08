@@ -11,6 +11,7 @@ import {
 } from '@components';
 import materialBread from '../assets/material-bread-docs.png';
 import rni from '../assets/rni.png';
+import devtomaterial from '../assets/devtomaterial.png';
 
 class Index extends Component {
   componentDidMount() {
@@ -36,7 +37,7 @@ class Index extends Component {
               text={'Material Bread'}
               width={250}
               imgWidth={200}
-              height={200}
+              height={225}
               platforms={['Website']}
             />
 
@@ -46,8 +47,18 @@ class Index extends Component {
               text={'React Native Infinity'}
               width={250}
               imgWidth={200}
-              height={200}
+              height={225}
               platforms={['Website']}
+            />
+
+            <PlatformButton
+              href={'https://github.com/codypearce/devto-material'}
+              img={devtomaterial}
+              text={'Dev.To.Material'}
+              width={250}
+              imgWidth={200}
+              height={225}
+              platforms={['Web, iOS, Android, Electron']}
             />
           </View>
         </Section>
