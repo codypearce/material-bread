@@ -98,3 +98,4 @@ export { default as defaultTheme } from './Theme/defaultTheme.js';
 // ==== Core ====
 export { default as BreadProvider } from './Core/BreadProvider.js';
 export { default as Colors } from './Core/colors/index.js';
+export { default as VueMaterialBread } from './vue-native.js';
