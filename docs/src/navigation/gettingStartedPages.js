@@ -23,5 +23,9 @@ const gettingStartedPages = [
     title: 'NextJs',
     path: '/getting-started/nextjs',
   },
+  {
+    title: 'Expo',
+    path: '/getting-started/expo',
+  },
 ];
 export default gettingStartedPages;
