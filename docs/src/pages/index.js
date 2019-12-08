@@ -59,7 +59,7 @@ class Index extends Component {
                   style={{ textDecoration: 'none' }}>
                   <Button
                     type={'contained'}
-                    text="React"
+                    text="Web"
                     color="#009688"
                     style={{ width: '100%' }}
                     containerStyle={{ width: '100%' }}
@@ -116,6 +116,17 @@ class Index extends Component {
                     type={'contained'}
                     color="#40739e"
                     text="Expo"
+                    style={{ width: '100%' }}
+                    containerStyle={{ width: '100%' }}
+                  />
+                </a>
+                <a
+                  href={'/getting-started/vue-native'}
+                  style={{ textDecoration: 'none' }}>
+                  <Button
+                    type={'contained'}
+                    color="#57c292"
+                    text="Vue Native"
                     style={{ width: '100%' }}
                     containerStyle={{ width: '100%' }}
                   />

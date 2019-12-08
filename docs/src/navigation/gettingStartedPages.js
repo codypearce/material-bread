@@ -27,5 +27,9 @@ const gettingStartedPages = [
     title: 'Expo',
     path: '/getting-started/expo',
   },
+  {
+    title: 'Vue Native',
+    path: '/getting-started/vue-native',
+  },
 ];
 export default gettingStartedPages;
