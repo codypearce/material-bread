@@ -15,6 +15,38 @@
   <img width="800" src="media/cross-platform.gif" alt="adf" align="center">
 </p>
 
+<p align="center" style="margin-bottom: 0px !important;">
+  <h2 align="center" style="margin-top: 0px;">Choose a platform to get started</h2>
+</p>
+
+<p align="center" style="margin-bottom: 0px !important;">
+  <a href="https://material-bread.org/getting-started/react-native">
+    <img  src="media/buttons/mb-rn.png" alt="adf" align="center">
+  </a>
+ <a href="https://material-bread.org/getting-started/web">
+    <img  src="media/buttons/mb-web.png" alt="adf" align="center">
+  </a>
+  <a href="https://material-bread.org/getting-started/electron">
+    <img  src="media/buttons/mb-electron.png" alt="adf" align="center">
+  </a>
+   <a href="https://material-bread.org/getting-started/macos">
+    <img  src="media/buttons/mb-macos.png" alt="adf" align="center">
+  </a>
+  <a href="https://material-bread.org/getting-started/windows">
+    <img  src="media/buttons/mb-windows.png" alt="adf" align="center">
+  </a>
+  <a href="https://material-bread.org/getting-started/nextjs">
+    <img  src="media/buttons/mb-next.png" alt="adf" align="center">
+  </a>
+  <a href="https://material-bread.org/getting-started/expo">
+    <img  src="media/buttons/mb-expo.png" alt="adf" align="center">
+  </a>
+  <a href="https://material-bread.org/getting-started/vue-native">
+    <img  src="media/buttons/mb-vue-native.png" alt="adf" align="center">
+  </a>
+  
+</p>
+
 ### Features
 
 - Highly Customizable React Native Components.
