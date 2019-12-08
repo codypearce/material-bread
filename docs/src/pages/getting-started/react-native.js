@@ -89,7 +89,7 @@ class Index extends Component {
                     react-native-vector-icons{' '}
                   </Link>{' '}
                   and{' '}
-                  <Link href="https://github.com/oblador/react-native-vector-icons">
+                  <Link href="https://github.com/react-native-community/react-native-svg">
                     {' '}
                     react-native-svg{' '}
                   </Link>

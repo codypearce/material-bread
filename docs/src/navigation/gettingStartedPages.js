@@ -12,6 +12,10 @@ const gettingStartedPages = [
     path: '/getting-started/electron',
   },
   {
+    title: 'MacOS',
+    path: '/getting-started/macos',
+  },
+  {
     title: 'NextJs',
     path: '/getting-started/nextjs',
   },

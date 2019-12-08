@@ -640,6 +640,11 @@ div[role='group'][tabindex] {
   animation: 700ms slideInTop cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
+.home__half__content--left {
+  padding-right: 86px;
+  padding-left: 16px;
+}
+
 @keyframes slideIn {
   0% {
     transform: skewX(-14deg) translateX(-300px) translateY(100%) scale(0.95);
@@ -715,9 +720,10 @@ div[role='group'][tabindex] {
 }
 .home__buttons {
   display: flex;
+  flex-wrap: wrap;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1079px) {
   .home {
     flex-direction: column;
     background: #04023e;
@@ -726,6 +732,9 @@ div[role='group'][tabindex] {
   .home__half__content {
     flex-shrink: 0;
     height: auto;
+  }
+  .home__half__content--left {
+    padding-right: 16px;
   }
   .home__title,
   .home__subtitle {
@@ -752,7 +761,7 @@ div[role='group'][tabindex] {
 
 .home__buttons a {
   margin-right: 4px;
-  margin-left: 4px;
+  margin-bottom: 4px;
 }
 .home__buttons a:first-of-type {
   margin-left: 0px;

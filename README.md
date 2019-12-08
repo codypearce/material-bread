@@ -72,6 +72,8 @@ More demos for each component can be found at the component [Storybook](https://
 
 [Getting Started with Electron](http://material-bread.org/getting-started/electron)
 
+[Getting Started with MacOS](http://material-bread.org/getting-started/macos)
+
 [Getting Started with NextJS](http://material-bread.org/getting-started/nextjs)
 
 ### Example Repos
@@ -86,7 +88,9 @@ React Web: [material-bread-react-example](https://github.com/codypearce/material
 
 Electron: [material-bread-electron-example](https://github.com/codypearce/material-bread-electron-example)
 
-Electron: [material-bread-next-example](https://github.com/fortezhuo/material-bread-next-example)
+MacOS: [material-bread-macos-example](https://github.com/codypearce/material-bread-macos-example)
+
+NextJS: [material-bread-next-example](https://github.com/fortezhuo/material-bread-next-example)
 
 ### Usage
 
