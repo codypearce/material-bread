@@ -6,6 +6,12 @@ const propData = [
     'array',
     '',
   ],
+  [
+    'containerStyle',
+    'Styles containing element over fab and items',
+    'object',
+    '',
+  ],
 
   [
     'fab',
@@ -13,13 +19,16 @@ const propData = [
     'string || node',
     '',
   ],
+
+  ['fabProps', 'props to render on the fab', 'object', ''],
+
   [
     'onPress',
     'Call back on main fab, this will activate animation as well',
     'func',
     '',
   ],
-  ['style', 'Styles root element', 'object', ''],
+  ['style', 'Styles fab element', 'object', ''],
 ];
 
 export default createTableData(propData);

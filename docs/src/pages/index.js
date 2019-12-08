@@ -30,7 +30,7 @@ class Index extends Component {
           <div className="home__half" />
           <div className="home__half--right" />
           <div className="home__half__content home__half__content--left">
-            <div>
+            <div className="home__half__content__inner--left">
               <Logo
                 animated
                 width={246}

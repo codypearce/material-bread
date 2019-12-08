@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   fabPos: {
+    position: Platform.OS === 'android' ? 'relative' : 'absolute',
     zIndex: 100,
     elevation: Platform.OS === 'android' ? 10 : 0,
   },

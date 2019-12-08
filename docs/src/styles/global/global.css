@@ -640,9 +640,11 @@ div[role='group'][tabindex] {
   animation: 700ms slideInTop cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
-.home__half__content--left {
+.home__half__content__inner--left {
   padding-right: 86px;
   padding-left: 16px;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 @keyframes slideIn {
