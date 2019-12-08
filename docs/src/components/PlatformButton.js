@@ -26,7 +26,7 @@ class Section extends Component {
   }
 
   render() {
-    const { text, img, href, imgWidth, width, height } = this.props;
+    const { text, img, href, imgWidth, width, height, platforms } = this.props;
     const { backgroundColor } = this.state;
     return (
       <Hoverable
@@ -41,8 +41,8 @@ class Section extends Component {
               justifyContent: 'center',
               marginLeft: 16,
               marginRight: 16,
-              height: height ? height : 150,
-              width: width ? width : 150,
+              height: height ? height : 175,
+              width: width ? width : 175,
               backgroundColor,
               borderRadius: 10,
             }}
@@ -61,12 +61,21 @@ class Section extends Component {
                 margin: 0,
                 marginTop: 4,
                 letterSpacing: 1,
-                fontWeight: 400,
+                fontWeight: 500,
                 textAlign: 'center',
                 color: 'black',
+                fontSize: 18,
               }}>
               {text}
             </h4>
+            <p style={{ fontSize: 14 }}>
+              {platforms &&
+                platforms.map((platform, index) => (
+                  <span key={index} style={{ color: '#666666' }}>
+                    {platform}
+                  </span>
+                ))}
+            </p>
           </Ripple>
         </a>
       </Hoverable>
