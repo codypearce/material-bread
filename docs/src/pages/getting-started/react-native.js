@@ -81,9 +81,7 @@ class Index extends Component {
             <ComponentDescription
               text={
                 <div>
-                  If you're using Expo then you're all set to start using
-                  components. If you're using native then you need to install
-                  and link {'  '}
+                  Next, install and link {'  '}
                   <Link href="https://github.com/oblador/react-native-vector-icons">
                     {' '}
                     react-native-vector-icons{' '}
@@ -122,7 +120,7 @@ class Index extends Component {
           <ComponentDescription
             text={
               <div>
-                If you're confused, check out these example repos with Material
+                If you're confused, check out these example repo with Material
                 Bread set up
               </div>
             }
@@ -132,14 +130,6 @@ class Index extends Component {
               href="https://github.com/codypearce/material-bread-rn-example"
               style={{ fontSize: 18 }}>
               React Native Example
-            </Link>
-            <div style={{ fontSize: 18, marginRight: 16, marginLeft: 16 }}>
-              -
-            </div>
-            <Link
-              href="https://github.com/codypearce/material-bread-expo-example"
-              style={{ fontSize: 18 }}>
-              Expo Example
             </Link>
           </div>
         </Section>

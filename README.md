@@ -18,7 +18,7 @@
 ### Features
 
 - Highly Customizable React Native Components.
-- Cross platform support: React Native (iOS, Android), React-native-web (Browsers), Electron (Windows, Mac, Linux), react-native-windows, react-native-macos, Next.js
+- Cross platform support: React Native (iOS, Android), React-native-web (Browsers), Electron (Windows, Mac, Linux), react-native-windows, react-native-macos, Next.js, Expo
 - Support for Material Design 2.0 components.
 - Live react native demos you can edit in in your browser.
 - Typescript support
@@ -78,13 +78,13 @@ More demos for each component can be found at the component [Storybook](https://
 
 [Getting Started with NextJS](http://material-bread.org/getting-started/nextjs)
 
+[Getting Started with Expo](http://material-bread.org/getting-started/expo)
+
 ### Example Repos
 
 Boilerplate projects with minimal configuration to get started on each platform.
 
 React Native: [material-bread-rn-example](https://github.com/codypearce/material-bread-rn-example)
-
-Expo: [material-bread-expo-example](https://github.com/codypearce/material-bread-expo-example)
 
 React Web: [material-bread-react-example](https://github.com/codypearce/material-bread-react-example)
 
@@ -95,6 +95,8 @@ MacOS: [material-bread-macos-example](https://github.com/codypearce/material-bre
 Windows: [material-bread-windows-example](https://github.com/codypearce/material-bread-windows-example)
 
 NextJS: [material-bread-next-example](https://github.com/fortezhuo/material-bread-next-example)
+
+Expo: [material-bread-expo-example](https://github.com/codypearce/material-bread-expo-example)
 
 ### Usage
 

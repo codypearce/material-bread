@@ -40,7 +40,7 @@ class Index extends Component {
               <h1 className="home__title">{'  '}Material Bread</h1>
 
               <h2 className="home__subtitle">
-                React Native Components that work on six platforms
+                React Native Components that work on all platforms
               </h2>
               <div className="home__buttons">
                 <a
@@ -105,6 +105,17 @@ class Index extends Component {
                     type={'contained'}
                     color="#eb4d4b"
                     text="NextJS"
+                    style={{ width: '100%' }}
+                    containerStyle={{ width: '100%' }}
+                  />
+                </a>
+                <a
+                  href={'/getting-started/expo'}
+                  style={{ textDecoration: 'none' }}>
+                  <Button
+                    type={'contained'}
+                    color="#40739e"
+                    text="Expo"
                     style={{ width: '100%' }}
                     containerStyle={{ width: '100%' }}
                   />
