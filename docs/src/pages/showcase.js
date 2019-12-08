@@ -37,6 +37,7 @@ class Index extends Component {
               width={250}
               imgWidth={200}
               height={200}
+              platforms={['Website']}
             />
 
             <PlatformButton
@@ -46,6 +47,7 @@ class Index extends Component {
               width={250}
               imgWidth={200}
               height={200}
+              platforms={['Website']}
             />
           </View>
         </Section>
