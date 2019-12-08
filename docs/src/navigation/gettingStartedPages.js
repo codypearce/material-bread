@@ -16,6 +16,10 @@ const gettingStartedPages = [
     path: '/getting-started/macos',
   },
   {
+    title: 'Windows',
+    path: '/getting-started/windows',
+  },
+  {
     title: 'NextJs',
     path: '/getting-started/nextjs',
   },

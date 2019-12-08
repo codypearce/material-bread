@@ -88,11 +88,22 @@ class Index extends Component {
                   />
                 </a>
                 <a
-                  href={'/getting-started/nextjs'}
+                  href={'/getting-started/windows'}
                   style={{ textDecoration: 'none' }}>
                   <Button
                     type={'contained'}
                     color="#9b59b6"
+                    text="Windows"
+                    style={{ width: '100%' }}
+                    containerStyle={{ width: '100%' }}
+                  />
+                </a>
+                <a
+                  href={'/getting-started/nextjs'}
+                  style={{ textDecoration: 'none' }}>
+                  <Button
+                    type={'contained'}
+                    color="#eb4d4b"
                     text="NextJS"
                     style={{ width: '100%' }}
                     containerStyle={{ width: '100%' }}

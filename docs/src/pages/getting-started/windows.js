@@ -128,10 +128,10 @@ class Index extends Component {
   render() {
     return (
       <div style={styles.container}>
-        <Helmet title={'Get started with Material Bread and MacOS'} />
-        <PageTitle>MacOS</PageTitle>
+        <Helmet title={'Get started with Material Bread and Windows'} />
+        <PageTitle>Windows</PageTitle>
         <ComponentSubtitle
-          description={'Build macOS desktop applications using React Native.'}
+          description={'Build Windows desktop applications using React Native.'}
         />
 
         <SideScrollMenu items={sections} />
@@ -163,23 +163,30 @@ class Index extends Component {
           <ComponentDescription
             text={
               <div>
-                Since React Native macOS is just a fork of React Native the
-                setup process is easy. Go to the
+                React Naitve Windows has a particular
                 <Link
-                  href="https://github.com/ptmt/react-native-macos"
+                  href="https://github.com/microsoft/react-native-windows#system-requirements"
                   style={{ margin: '0 4px', display: 'inline' }}>
                   {' '}
-                  react-native-macos repo
+                  set of requirements
                 </Link>
                 <span>
-                  to learn more. Alternatively, you can use the{' '}
+                  and currently only supports up to `0.59.10` React Native.
+                  Learn more about setting up React Native Windows
+                  <Link
+                    href="https://github.com/microsoft/react-native-windows/blob/master/current/docs/GettingStarted.md"
+                    style={{ margin: '0 4px', display: 'inline' }}>
+                    {' '}
+                    with their getting started guide.
+                  </Link>
+                  . Alternatively, you can generate a new project with React
+                  Native Windows and Material using the{' '}
                   <Link
                     href="https://github.com/codypearce/react-native-infinity"
                     style={{ margin: '0 4px', display: 'inline' }}>
                     {' '}
                     react-native-infinty cli
                   </Link>{' '}
-                  to generate a project with Material Bread already setup.
                 </span>
               </div>
             }
@@ -189,13 +196,15 @@ class Index extends Component {
             <ComponentDescription
               text={
                 <div>
+                  After following the above getting started guide, simply run
                   <CodeBlock
-                    code={depend}
+                    code={`react-native run-windows`}
                     style={styles.code}
                     fontSize={12}
                     canCopy
                     small
                   />{' '}
+                  to set up the remaining configuration.
                 </div>
               }
             />
@@ -242,7 +251,7 @@ class Index extends Component {
         <Section
           name="Examples"
           id="examples"
-          href="/getting-started/macos#examples">
+          href="/getting-started/windows#examples">
           <ComponentDescription
             text={
               <div>
@@ -260,9 +269,9 @@ class Index extends Component {
           />
           <div className="row">
             <Link
-              href="https://github.com/codypearce/material-bread-macos-example"
+              href="https://github.com/codypearce/material-bread-windows-example"
               style={{ fontSize: 18 }}>
-              MacOS Example
+              Windows Example
             </Link>
           </div>
         </Section>

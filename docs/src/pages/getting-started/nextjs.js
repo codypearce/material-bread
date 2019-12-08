@@ -313,7 +313,7 @@ class Index extends Component {
         <Section
           name="Examples"
           id="examples"
-          href="/getting-started/react-native#examples">
+          href="/getting-started/nextjs#examples">
           <ComponentDescription
             text={
               <div>
