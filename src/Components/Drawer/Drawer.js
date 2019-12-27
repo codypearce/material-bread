@@ -13,7 +13,8 @@ import withTheme from '../../Theme/withTheme';
 import styles from './Drawer.styles';
 import shadow from '../../Utils/Shadow/shadow.js';
 
-const needsSafeAreaDefault = Platform.OS === 'ios' && parseInt(Platform.Version, 10);
+const needsSafeAreaDefault =
+  Platform.OS === 'ios' && parseInt(Platform.Version, 10);
 
 class Drawer extends PureComponent {
   constructor(props) {
