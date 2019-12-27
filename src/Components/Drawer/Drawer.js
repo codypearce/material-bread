@@ -13,7 +13,7 @@ import withTheme from '../../Theme/withTheme';
 import styles from './Drawer.styles';
 import shadow from '../../Utils/Shadow/shadow.js';
 
-const needsSafeArea = Platform.OS === 'ios' && parseInt(Platform.Version, 10);
+const needsSafeAreaDefault = Platform.OS === 'ios' && parseInt(Platform.Version, 10);
 
 class Drawer extends PureComponent {
   constructor(props) {
@@ -35,6 +35,7 @@ class Drawer extends PureComponent {
     width: PropTypes.number,
     fullHeight: PropTypes.bool,
     position: PropTypes.string,
+    needsSafeArea: PropTypes.bool,
 
     appbar: PropTypes.node,
     scrim: PropTypes.bool,
@@ -59,6 +60,7 @@ class Drawer extends PureComponent {
     scrim: true,
     type: 'modal',
     position: 'absolute',
+    needsSafeArea: needsSafeAreaDefault,
   };
 
   state = {
@@ -277,7 +279,7 @@ class Drawer extends PureComponent {
   }
 
   render() {
-    const { style, testID } = this.props;
+    const { style, testID, needsSafeArea } = this.props;
     const { screenWidth } = this.state;
 
     if (needsSafeArea) {
