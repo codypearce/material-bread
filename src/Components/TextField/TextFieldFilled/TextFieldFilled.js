@@ -171,7 +171,7 @@ class TextFieldFilled extends Component {
             label={label}
             focused={focused}
             error={error}
-            value={rest.value && rest.value.length > 0}
+            value={rest.value}
             labelColor={labelColor}
             style={labelStyle}
             leadingIcon={!!leadingIcon}
