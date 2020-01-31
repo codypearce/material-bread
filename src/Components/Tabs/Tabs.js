@@ -48,9 +48,12 @@ class Tabs extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
+    const { actionItems } = this.props;
+
     return (
-      nextProps.selectedIndex < nextProps.actionItems.length &&
-      nextProps.selectedIndex >= 0
+      actionItems.length !== nextProps.actionItems.length ||
+      (nextProps.selectedIndex < nextProps.actionItems.length &&
+        nextProps.selectedIndex >= 0)
     );
   }
 
