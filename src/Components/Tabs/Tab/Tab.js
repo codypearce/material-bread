@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { View, Text } from 'react-native';
+import { View, ViewPropTypes, Text } from 'react-native';
 import Ripple from '../../Ripple/Ripple.js';
 import Icon from '../../Icon/Icon.js';
 import withTheme from '../../../Theme/withTheme';
@@ -12,6 +12,7 @@ class Tab extends Component {
     label: PropTypes.string,
     active: PropTypes.bool,
     activeTextColor: PropTypes.string,
+    containerStyle: ViewPropTypes.style,
     inActiveTextColor: PropTypes.string,
     textStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     iconStyles: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
@@ -25,6 +26,7 @@ class Tab extends Component {
   static defaultProps = {
     inActiveTextColor: 'rgba(255, 255, 255, 0.7)',
     activeTextColor: '#fff',
+    containerStyle: {},
   };
 
   _renderIcon(color) {
@@ -54,6 +56,7 @@ class Tab extends Component {
       label,
       active,
       activeTextColor,
+      containerStyle,
       inActiveTextColor,
       icon,
     } = this.props;
@@ -61,7 +64,7 @@ class Tab extends Component {
     const color = active ? activeTextColor : inActiveTextColor;
 
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, containerStyle]}>
         {icon ? this._renderIcon(color) : null}
         {label ? this._renderText(color) : null}
       </View>

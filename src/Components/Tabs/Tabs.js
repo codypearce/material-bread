@@ -10,7 +10,9 @@ export const TabsContext = React.createContext();
 
 class Tabs extends Component {
   static propTypes = {
-    actionItems: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+    actionItems: PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.object, PropTypes.element]),
+    ),
     selectedIndex: PropTypes.number,
     backgroundColor: PropTypes.string,
     underlineColor: PropTypes.string,
@@ -46,9 +48,12 @@ class Tabs extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
+    const { actionItems } = this.props;
+
     return (
-      nextProps.selectedIndex < nextProps.actionItems.length &&
-      nextProps.selectedIndex >= 0
+      actionItems.length !== nextProps.actionItems.length ||
+      (nextProps.selectedIndex < nextProps.actionItems.length &&
+        nextProps.selectedIndex >= 0)
     );
   }
 
