@@ -11,23 +11,23 @@ class BlogPostTemplate extends React.Component {
     const post = data && data.markdownRemark;
     const siteTitle = data && data.site.siteMetadata.title;
     const { previous, next } = this.props.pageContext;
-    const thumbnail = post.frontmatter.thumbnail;
+    // const thumbnail = post.frontmatter && post.frontmatter.thumbnail;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
-          thumbnail={post.frontmatter.thumbnail}
+          // thumbnail={post.frontmatter.thumbnail}
         />
         <article style={{ maxWidth: 780, margin: '20px auto', padding: 16 }}>
           <header style={{ marginBottom: 50 }}>
-            {thumbnail ? (
+            {/* {thumbnail ? (
               <Img
                 sizes={thumbnail.childImageSharp.sizes}
                 style={{ borderRadius: 10, maxHeight: 350 }}
               />
-            ) : null}
+            ) : null} */}
             <h1
               style={{
                 marginBottom: 0,
