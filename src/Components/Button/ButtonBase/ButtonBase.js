@@ -114,7 +114,7 @@ class ButtonBase extends Component {
           marginRight: iconPosition == 'left' ? 8 : 0,
           marginLeft: iconPosition == 'right' ? 8 : 0,
         },
-        size: iconSize || dense ? 14 : 18,
+        size: iconSize || (dense ? 14 : 18),
         color: typeTextColor ? typeTextColor : 'white',
       });
     }
