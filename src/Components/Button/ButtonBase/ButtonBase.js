@@ -26,6 +26,7 @@ class ButtonBase extends Component {
 
     icon: PropTypes.node,
     iconPosition: PropTypes.string,
+    iconSize: PropTypes.number,
 
     disabled: PropTypes.bool,
     disableRipple: PropTypes.bool,
@@ -96,7 +97,14 @@ class ButtonBase extends Component {
     );
   }
   _renderIcon() {
-    const { icon, iconPosition, typeTextColor, loading, dense } = this.props;
+    const {
+      icon,
+      iconPosition,
+      iconSize,
+      typeTextColor,
+      loading,
+      dense,
+    } = this.props;
     if (loading) {
       return this._renderLoader();
     }
@@ -106,7 +114,7 @@ class ButtonBase extends Component {
           marginRight: iconPosition == 'left' ? 8 : 0,
           marginLeft: iconPosition == 'right' ? 8 : 0,
         },
-        size: dense ? 14 : 18,
+        size: iconSize || dense ? 14 : 18,
         color: typeTextColor ? typeTextColor : 'white',
       });
     }
