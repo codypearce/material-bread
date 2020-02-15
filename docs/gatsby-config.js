@@ -9,12 +9,26 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/blog`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: 'pages',
       },
     },
     {
@@ -28,6 +42,7 @@ module.exports = {
         extensions: [],
       },
     },
+
     `gatsby-plugin-react-native-web`,
     {
       resolve: `gatsby-plugin-compile-es6-packages`,
@@ -54,6 +69,8 @@ module.exports = {
         component: require.resolve(`./src/components/Layout/PageLayout`),
       },
     },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -62,6 +79,12 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               linkImagesToOriginal: false,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-normalize-paths',
+            options: {
+              pathFields: ['thumbnail'],
             },
           },
           {
@@ -76,14 +99,8 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
-    },
 
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

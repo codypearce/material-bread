@@ -157,6 +157,14 @@ export default class DrawerContent extends React.PureComponent {
           />
 
           <DrawerItem
+            label="Baking Material"
+            icon="bread-slice"
+            link="/baking-material"
+            selectItem={this.selectItem}
+            selected={itemSelected == 'baking-material'}
+          />
+
+          <DrawerItem
             label="About"
             icon="id-card"
             link="/about"
