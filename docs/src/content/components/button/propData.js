@@ -30,6 +30,7 @@ const propData = [
     '',
   ],
   ['iconPosition', 'Postion of icon in button', 'string: left, right', 'left'],
+  ['iconSize', 'Custom size for icon', 'number', '18'],
   ['loading', 'Toggles loading indicator in button', 'bool', ''],
   ['onPress', 'Callback on button', 'func', ''],
   [
