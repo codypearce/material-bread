@@ -65,9 +65,9 @@ class TextFieldLabel extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { focused, type } = this.props;
+    const { focused, type, value } = this.props;
 
-    if (focused !== prevProps.focused) {
+    if (focused !== prevProps.focused || value !== prevProps.value) {
       if (type == 'outlined') {
         this._handleLabelOutlinedAnimation();
       } else {
