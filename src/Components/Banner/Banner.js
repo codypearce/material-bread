@@ -209,6 +209,7 @@ class Banner extends Component {
 
     return (
       <Animated.View
+        useNativeDriver={false}
         style={[
           styles.container,
           {

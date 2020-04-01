@@ -20,6 +20,7 @@ class Underline extends Component {
 
     return (
       <Animated.View
+        useNativeDriver={false}
         style={[
           styles.underline,
           {

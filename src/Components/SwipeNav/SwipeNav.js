@@ -107,6 +107,7 @@ class SwipeNav extends Component {
     } = this.props;
     return (
       <Animated.ScrollView
+        useNativeDriver={false}
         scrollEventThrottle={16}
         {...scrollViewProps}
         onScroll={this.onScroll}
@@ -147,6 +148,7 @@ class SwipeNav extends Component {
 
     return (
       <Animated.View
+        useNativeDriver={false}
         style={[
           styles.headerContainer,
           headerContainerStyle,
@@ -165,6 +167,7 @@ class SwipeNav extends Component {
 
     return (
       <Animated.View
+        useNativeDriver={false}
         style={[
           styles.footerContainer,
           footerContainerStyle,

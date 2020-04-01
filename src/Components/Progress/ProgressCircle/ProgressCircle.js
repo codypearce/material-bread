@@ -178,11 +178,17 @@ class ProgressCircle extends PureComponent {
 
     return (
       <View style={style} testID={testID}>
-        <Animated.View style={layerStyle}>
-          <Animated.View style={containerStyle} collapsable={false}>
-            <Animated.View style={viewportStyle}>
-              <Animated.View style={containerStyle} collapsable={false}>
-                <Animated.View style={lineStyle} />
+        <Animated.View style={layerStyle} useNativeDriver={false}>
+          <Animated.View
+            style={containerStyle}
+            collapsable={false}
+            useNativeDriver={false}>
+            <Animated.View style={viewportStyle} useNativeDriver={false}>
+              <Animated.View
+                style={containerStyle}
+                collapsable={false}
+                useNativeDriver={false}>
+                <Animated.View style={lineStyle} useNativeDriver={false} />
               </Animated.View>
             </Animated.View>
           </Animated.View>

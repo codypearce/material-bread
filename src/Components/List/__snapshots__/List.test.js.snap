@@ -15,5 +15,6 @@ exports[`List Renders 1`] = `
       "shadowRadius": 1,
     }
   }
+  useNativeDriver={false}
 />
 `;

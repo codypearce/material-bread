@@ -15,5 +15,6 @@ exports[`Paper Renders 1`] = `
       "shadowRadius": 2.62,
     }
   }
+  useNativeDriver={false}
 />
 `;

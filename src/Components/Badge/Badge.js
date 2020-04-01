@@ -134,6 +134,7 @@ class Badge extends Component {
 
     return (
       <Animated.View
+        useNativeDriver={false}
         style={[
           {
             height: size,

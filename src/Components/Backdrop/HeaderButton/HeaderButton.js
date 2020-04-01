@@ -48,7 +48,7 @@ class HeaderButton extends Component {
     ];
 
     return (
-      <Animated.View style={style}>
+      <Animated.View style={style} useNativeDriver={false}>
         <Ripple
           rippleContainerBorderRadius={100}
           onPress={() => this._handleSpin()}

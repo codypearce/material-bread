@@ -29,7 +29,9 @@ class BackLayer extends Component {
     });
 
     return (
-      <Animated.View style={[styles.backLayer, { opacity }]}>
+      <Animated.View
+        style={[styles.backLayer, { opacity }]}
+        useNativeDriver={false}>
         {backLayerConcealed}
       </Animated.View>
     );
@@ -47,7 +49,9 @@ class BackLayer extends Component {
     });
 
     return (
-      <Animated.View style={[styles.backLayer, { opacity }]}>
+      <Animated.View
+        style={[styles.backLayer, { opacity }]}
+        useNativeDriver={false}>
         {this.renderBackElements()}
       </Animated.View>
     );
@@ -62,7 +66,7 @@ class BackLayer extends Component {
     });
 
     return (
-      <Animated.View style={{ flex: 1, opacity }}>
+      <Animated.View style={{ flex: 1, opacity }} useNativeDriver={false}>
         {backLayerRevealed}
       </Animated.View>
     );

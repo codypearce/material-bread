@@ -174,6 +174,7 @@ class Drawer extends PureComponent {
     if (scrimColor) scrimColorImplemented = scrimColor;
     return (
       <Animated.View
+        useNativeDriver={false}
         style={[
           styles.container,
           {
@@ -215,6 +216,7 @@ class Drawer extends PureComponent {
         <View style={contentContainerStyle}>
           {appbar ? this._renderAppBar() : null}
           <Animated.View
+            useNativeDriver={false}
             style={{
               transform: [{ translateX: leftOffset }],
               flex: 1,
@@ -257,6 +259,7 @@ class Drawer extends PureComponent {
     return (
       <Fragment>
         <Animated.View
+          useNativeDriver={false}
           style={[
             theme.drawer,
             {

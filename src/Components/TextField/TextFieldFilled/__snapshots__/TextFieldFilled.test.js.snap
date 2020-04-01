@@ -265,6 +265,7 @@ exports[`TextFieldFilled Renders 1`] = `
         ],
       }
     }
+    useNativeDriver={false}
   >
     <View
       style={
@@ -286,6 +287,7 @@ exports[`TextFieldFilled Renders 1`] = `
           ],
         }
       }
+      useNativeDriver={false}
     />
   </View>
   <Text

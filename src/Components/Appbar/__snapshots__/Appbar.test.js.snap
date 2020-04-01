@@ -24,6 +24,7 @@ exports[`Appbar Renders 1`] = `
       "zIndex": 2,
     }
   }
+  useNativeDriver={false}
 >
   <View
     style={

@@ -63,6 +63,7 @@ class TextFieldUnderline extends Component {
 
     return (
       <Animated.View
+        useNativeDriver={false}
         style={[
           styles.underline,
           {
@@ -71,6 +72,7 @@ class TextFieldUnderline extends Component {
           },
         ]}>
         <Animated.View
+          useNativeDriver={false}
           style={[
             styles.underline,
             {

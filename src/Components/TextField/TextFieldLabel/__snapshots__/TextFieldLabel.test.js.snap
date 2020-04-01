@@ -11,6 +11,7 @@ exports[`TextFieldLabel Renders 1`] = `
       "zIndex": 10,
     }
   }
+  useNativeDriver={false}
 >
   <Text
     style={
@@ -29,6 +30,7 @@ exports[`TextFieldLabel Renders 1`] = `
         ],
       }
     }
+    useNativeDriver={false}
   />
 </View>
 `;

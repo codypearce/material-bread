@@ -17,6 +17,7 @@ exports[`TextFieldUnderline Renders 1`] = `
       ],
     }
   }
+  useNativeDriver={false}
 >
   <View
     style={
@@ -38,6 +39,7 @@ exports[`TextFieldUnderline Renders 1`] = `
         ],
       }
     }
+    useNativeDriver={false}
   />
 </View>
 `;

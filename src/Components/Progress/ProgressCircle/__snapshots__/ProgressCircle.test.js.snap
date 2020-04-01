@@ -14,6 +14,7 @@ exports[`ProgressCircle Renders 1`] = `
         "width": 48,
       }
     }
+    useNativeDriver={false}
   >
     <View
       collapsable={false}
@@ -24,6 +25,7 @@ exports[`ProgressCircle Renders 1`] = `
           "width": 48,
         }
       }
+      useNativeDriver={false}
     >
       <View
         style={
@@ -37,6 +39,7 @@ exports[`ProgressCircle Renders 1`] = `
             "width": 48,
           }
         }
+        useNativeDriver={false}
       >
         <View
           collapsable={false}
@@ -47,6 +50,7 @@ exports[`ProgressCircle Renders 1`] = `
               "width": 48,
             }
           }
+          useNativeDriver={false}
         >
           <View
             style={
@@ -58,6 +62,7 @@ exports[`ProgressCircle Renders 1`] = `
                 "width": 48,
               }
             }
+            useNativeDriver={false}
           />
         </View>
       </View>

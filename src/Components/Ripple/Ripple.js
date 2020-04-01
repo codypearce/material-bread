@@ -247,7 +247,13 @@ export default class Ripple extends PureComponent {
         : rippleOpacity,
     };
 
-    return <Animated.View style={[styles.ripple, rippleStyle]} key={unique} />;
+    return (
+      <Animated.View
+        style={[styles.ripple, rippleStyle]}
+        key={unique}
+        useNativeDriver={false}
+      />
+    );
   }
 
   render() {
@@ -297,7 +303,7 @@ export default class Ripple extends PureComponent {
         {...touchableProps}
         {...panResponder}
         testID={testID}>
-        <Animated.View {...props}>
+        <Animated.View useNativeDriver={false} {...props}>
           {children}
           <View style={[styles.container, containerStyle]} pointerEvents="none">
             {ripples.map(this.renderRipple)}
