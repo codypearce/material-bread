@@ -260,6 +260,7 @@ export default class Modal extends Component {
     return (
       <ModalPortal visible={visible}>
         <Animated.View
+          useNativeDriver={false}
           onLayout={onLayout}
           aria-modal="true"
           style={[

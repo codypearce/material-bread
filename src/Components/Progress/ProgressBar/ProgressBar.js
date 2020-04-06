@@ -160,6 +160,7 @@ class ProgressBar extends PureComponent {
 
     return (
       <Animated.View
+        useNativeDriver={false}
         onLayout={this.onTrackLayout}
         style={[
           styles.track,
@@ -173,6 +174,7 @@ class ProgressBar extends PureComponent {
         ]}
         testID={testID}>
         <Animated.View
+          useNativeDriver={false}
           style={[
             styles.indicator,
             {

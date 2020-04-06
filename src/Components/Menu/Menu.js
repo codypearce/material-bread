@@ -236,6 +236,7 @@ class Menu extends Component {
           noBackDrop={noBackDrop}
           transparent>
           <Animated.View
+            useNativeDriver={false}
             style={[styles.menuContainer, menuContainerStyle, modalMenuStyle]}>
             <View
               style={[

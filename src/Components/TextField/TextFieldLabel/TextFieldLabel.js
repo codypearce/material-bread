@@ -210,6 +210,7 @@ class TextFieldLabel extends Component {
 
     return (
       <Animated.View
+        useNativeDriver={false}
         style={[
           styles.container,
           {
@@ -219,6 +220,7 @@ class TextFieldLabel extends Component {
         onLayout={e => onLayout && onLayout(e)}
         pointerEvents="none">
         <Animated.Text
+          useNativeDriver={false}
           style={[
             styles.label,
             {

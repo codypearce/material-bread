@@ -58,6 +58,7 @@ class TableCell extends Component {
   _renderSortingIcon() {
     return (
       <Animated.View
+        useNativeDriver={false}
         style={{
           transform: [
             {

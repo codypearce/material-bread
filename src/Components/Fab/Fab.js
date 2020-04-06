@@ -146,6 +146,7 @@ export class Fab extends Component {
 
     return (
       <Animated.View
+        useNativeDriver={false}
         style={[
           {
             transform: [{ scale: scale }],

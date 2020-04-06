@@ -75,6 +75,7 @@ exports[`DrawerBottom Renders 1`] = `
           "zIndex": 1000,
         }
       }
+      useNativeDriver={false}
     >
       <RCTSafeAreaView
         emulateUnlessSupported={true}

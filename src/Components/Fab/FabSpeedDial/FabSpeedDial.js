@@ -132,6 +132,7 @@ class FabSpeedDial extends Component {
         {actions.map((item, index) => {
           return (
             <Animated.View
+              useNativeDriver={false}
               key={index}
               style={{
                 marginTop: 16,

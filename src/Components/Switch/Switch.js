@@ -141,6 +141,7 @@ class Switch extends Component {
       <View style={[styles.container, style]} testID={testID} {...rest}>
         {labelPos == 'left' && label ? this._renderLabel() : null}
         <Animated.View
+          useNativeDriver={false}
           style={[
             styles.track,
             {
@@ -163,6 +164,7 @@ class Switch extends Component {
             ]}
             onPress={onPress}>
             <Animated.View
+              useNativeDriver={false}
               style={[
                 styles.thumb,
                 {

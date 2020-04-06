@@ -85,6 +85,7 @@ class ListExpand extends Component {
 
     return (
       <Animated.View
+        useNativeDriver={false}
         style={{
           height: menuHeight,
           overflow: 'hidden',

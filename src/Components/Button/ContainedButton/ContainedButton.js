@@ -190,6 +190,7 @@ class ContainedButton extends Component {
         style={[containerStyle]}>
         {() => (
           <Animated.View
+            useNativeDriver={false}
             style={[
               disabled ? {} : this.getShadowStyle(),
               {

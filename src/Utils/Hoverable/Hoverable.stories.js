@@ -56,6 +56,7 @@ export default storiesOf('Utils|Hoverable', module)
                 }).start();
               }}>
               <Animated.View
+                useNativeDriver={false}
                 style={{
                   width: 200,
                   height: 125,

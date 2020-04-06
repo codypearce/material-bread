@@ -116,6 +116,7 @@ class Modal extends Component {
         <View style={[styles.container, containerStyle]}>
           <TouchableWithoutFeedback onPress={onTouchOutside}>
             <Animated.View
+              useNativeDriver={false}
               style={{
                 width: deviceWidth,
                 height: deviceHeight,
@@ -127,6 +128,7 @@ class Modal extends Component {
             />
           </TouchableWithoutFeedback>
           <Animated.View
+            useNativeDriver={false}
             style={{
               opacity: opacityAnimation,
               transform: [{ scale: scaleAnimation }],

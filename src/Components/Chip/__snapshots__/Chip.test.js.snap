@@ -21,6 +21,7 @@ exports[`Chip Renders 1`] = `
       "shadowRadius": 1,
     }
   }
+  useNativeDriver={false}
 >
   <View
     accessible={true}
@@ -48,6 +49,7 @@ exports[`Chip Renders 1`] = `
       }
     }
     testID="mb-ripple"
+    useNativeDriver={false}
   >
     <View
       style={

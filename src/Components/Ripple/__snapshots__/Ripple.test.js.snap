@@ -20,6 +20,7 @@ exports[`Ripple Renders 1`] = `
   rippleSequential={false}
   rippleSize={0}
   testID="mb-ripple"
+  useNativeDriver={false}
 >
   <View
     pointerEvents="none"

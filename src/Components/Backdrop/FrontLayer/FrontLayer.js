@@ -72,6 +72,7 @@ class FrontLayer extends PureComponent {
 
     return (
       <Animated.View
+        useNativeDriver={false}
         style={[
           styles.frontLayerContainer,
           frontLayerStyle,

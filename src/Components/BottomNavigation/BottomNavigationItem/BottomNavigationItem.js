@@ -84,6 +84,7 @@ class BottomNavigationItem extends Component {
     const { label } = this.props;
     return (
       <Animated.Text
+        useNativeDriver={false}
         style={{
           color: color,
           fontSize: this.state.scaleText,

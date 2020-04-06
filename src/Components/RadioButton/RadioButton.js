@@ -82,6 +82,7 @@ class RadioButton extends Component {
           rippleCentered={true}
           disabled={disabled}>
           <Animated.View
+            useNativeDriver={false}
             style={[
               styles.radio,
               {
@@ -92,6 +93,7 @@ class RadioButton extends Component {
             ]}>
             {checked ? (
               <Animated.View
+                useNativeDriver={false}
                 style={[
                   styles.radioDot,
                   { backgroundColor: radioButtonColorApplied },

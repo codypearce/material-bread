@@ -209,6 +209,7 @@ class SheetBottom extends Component {
         />
 
         <Animated.View
+          useNativeDriver={false}
           {...this.panResponder.panHandlers}
           style={[
             styles.container,
