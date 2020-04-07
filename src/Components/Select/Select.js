@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { TouchableHighlight, View, FlatList, Platform } from 'react-native';
+import {
+  TouchableHighlight,
+  View,
+  FlatList,
+  Platform,
+  Dimensions,
+} from 'react-native';
 
 import Menu from '../Menu/Menu.js';
 import MenuItem from '../Menu/MenuItem/MenuItem.js';
@@ -9,6 +15,8 @@ import TextField from '../TextField/TextField.js';
 
 import withTheme from '../../Theme/withTheme';
 import styles from './Select.styles';
+
+const { height } = Dimensions.get('window');
 
 class Select extends Component {
   static propTypes = {
@@ -74,6 +82,10 @@ class Select extends Component {
           }
         : {};
 
+    const estimatedListHeight = menuItems.length * 48; // 48 is taken from MenuItem.styles#container
+    const menuListItemsWrapperStyle =
+      estimatedListHeight > height ? { height: 400 } : null;
+
     return (
       <Menu
         style={[styles.menu, { flex: 1 }]}
@@ -122,20 +134,21 @@ class Select extends Component {
           </TouchableHighlight>
         }
         {...menuProps}>
-        <FlatList
-          data={menuItems}
-          style={{ flex: 1 }}
-          renderItem={({ item }) => {
-            return (
-              <MenuItem
-                key={item.id}
-                text={item.name}
-                onPress={() => this.onSelect(item)}
-                style={{ flex: 1 }}
-              />
-            );
-          }}
-        />
+        <View style={menuListItemsWrapperStyle}>
+          <FlatList
+            data={menuItems}
+            renderItem={({ item }) => {
+              return (
+                <MenuItem
+                  key={item.id}
+                  text={item.name}
+                  onPress={() => this.onSelect(item)}
+                  style={{ flex: 1 }}
+                />
+              );
+            }}
+          />
+        </View>
       </Menu>
     );
   }
