@@ -31,6 +31,7 @@ const propData = [
     '',
   ],
   ['visible', 'Whether circle is visible or not', 'bool', ''],
+  ['widthOfBorder', 'The width of the track', 'number', '10'],
 ];
 
 export default createTableData(propData);
