@@ -1,0 +1,1 @@
+Object.defineProperty(exports,"__esModule",{value:true});exports.default=void 0;var _reactNative=require("react-native");var styles=_reactNative.StyleSheet.create({containerStyle:{position:'relative'},textField:{height:56,textAlignVertical:'bottom',paddingTop:16},flatInput:{}});var _default=styles;exports.default=_default;

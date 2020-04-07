@@ -1,0 +1,1 @@
+Object.defineProperty(exports,"__esModule",{value:true});exports.default=void 0;var _reactNative=require("react-native");var styles=_reactNative.StyleSheet.create({subheader:{marginTop:8,color:'rgba(0,0,0,.57)',fontSize:12}});var _default=styles;exports.default=_default;

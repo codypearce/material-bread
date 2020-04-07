@@ -1,0 +1,1 @@
+Object.defineProperty(exports,"__esModule",{value:true});exports.default=void 0;var _reactNative=require("react-native");var styles=_reactNative.StyleSheet.create({container:{alignItems:'center',justifyContent:'center',padding:12,minHeight:48,maxHeight:72},text:{fontSize:14,textAlign:'center',minWidth:'100%'}});var _default=styles;exports.default=_default;

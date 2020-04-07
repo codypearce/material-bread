@@ -1,0 +1,1 @@
+Object.defineProperty(exports,"__esModule",{value:true});exports.default=void 0;var _reactNative=require("@storybook/react-native");require("./rn-addons");(0,_reactNative.configure)(function(){require('./stories');},module);var StorybookUIRoot=(0,_reactNative.getStorybookUI)({port:7007,host:'localhost'});var _default=StorybookUIRoot;exports.default=_default;
