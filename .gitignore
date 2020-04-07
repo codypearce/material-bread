@@ -66,5 +66,3 @@ docs/public
 docs/node_modules
 docs/.cache
 gh/**/*
-jest-test-results.json
-.jest-test-results.json
