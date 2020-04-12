@@ -12,7 +12,8 @@
     "deploy-docs": "gh-pages -d gh",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
     "see-npm-package": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
-    "build-package": "babel src --out-dir dist --ignore \"**/*.test.js\" && cp src/index.d.ts dist/index.d.ts"
+    "build-package": "babel src --out-dir dist --ignore \"**/*.test.js\" && cp src/index.d.ts dist/index.d.ts",
+    "build-site": "cd docs && npm i && npm run build"
   },
   "dependencies": {
     "@babel/runtime": "^7.5.5",
