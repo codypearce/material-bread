@@ -4,6 +4,7 @@
   "description": "React and React Native Material Design Components",
   "version": "0.1.0",
   "dependencies": {
+    "@babel/plugin-transform-flow-strip-types": "^7.9.0",
     "babel-plugin-react-native-web": "^0.10.1",
     "color": "^3.1.2",
     "flexboxgrid": "^6.3.1",
@@ -20,8 +21,8 @@
     "gatsby-plugin-sharp": "^2.4.5",
     "gatsby-plugin-sitemap": "^2.2.27",
     "gatsby-remark-images": "^3.1.44",
-    "gatsby-remark-prismjs": "^3.3.31",
     "gatsby-remark-normalize-paths": "^1.0.0",
+    "gatsby-remark-prismjs": "^3.3.31",
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-transformer-remark": "^2.6.51",
     "gatsby-transformer-sharp": "^2.3.14",
