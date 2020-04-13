@@ -20,9 +20,16 @@ class Index extends Component {
         <PageTitle>About</PageTitle>
         <ComponentSubtitle
           description={
-            'This is a React Native Material Component Library that aims to provide useful components across various platforms.'
+            'Material Bread is a React Native Material Component Library that aims to provide useful components across various platforms.'
           }
         />
+
+        <div style={{ color: 'rgba(0, 0, 0, 0.67)' }}>
+          Read a more in-depth article about Material Bread{' '}
+          <a href="https://codinhood.com/series/baking-material-bread/introducing-material-bread">
+            Introducing Material Bread for React and React Native
+          </a>
+        </div>
 
         <Section
           name="All Components"

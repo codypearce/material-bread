@@ -156,13 +156,13 @@ export default class DrawerContent extends React.PureComponent {
             sectionExpanded={sectionExpanded == 'contributing'}
           />
 
-          <DrawerItem
+          {/* <DrawerItem
             label="Baking Material"
             icon="bread-slice"
             link="/baking-material"
             selectItem={this.selectItem}
             selected={itemSelected == 'baking-material'}
-          />
+          /> */}
 
           <DrawerItem
             label="About"
