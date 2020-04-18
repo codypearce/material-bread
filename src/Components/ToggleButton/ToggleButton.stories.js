@@ -162,7 +162,6 @@ export default storiesOf('Components|Toggle Button', module)
       <ToggleButtonGroup>
         <View style={{ flexDirection: 'row' }}>
           <ToggleButton
-            value={'italic'}
             activeNode={
               <View
                 style={{
@@ -186,6 +185,7 @@ export default storiesOf('Components|Toggle Button', module)
               </View>
             }
             rippleContainerBorderRadius={0}
+            value={'center'}
           />
           <ToggleButton
             value={'bold'}

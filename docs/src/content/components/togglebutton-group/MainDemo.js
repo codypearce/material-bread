@@ -27,7 +27,7 @@ export const code = `class Demo extends React.Component {
       }
     }
     return (
-      <ToggleButtonGroup>
+      <ToggleButtonGroup onPress={value => console.log(value)}>
         <View style={{ flexDirection: 'row' }}>
           <ToggleButton
             value={'italic'}
@@ -92,8 +92,9 @@ const MainDemo = pageHref => (
         <CodeInline code="ToggleButtonGroup" type="element" /> wraps all{' '}
         <CodeInline code="ToggleButton" type="element" />
         s, and only allows one to be selected at a time, it handles all of this
-        behind the scenes. Simply add a unique{' '}
-        <CodeInline code="value" type="prop" /> prop to each child.
+        behind the scenes. A unique <CodeInline code="value" type="prop" /> prop
+        is required for each child since that will be passed to to the{' '}
+        <CodeInline code="onPress" type="prop" /> callback.
       </div>
     }
     scope={{ View, ToggleButton, ToggleButtonGroup, Icon, Image }}

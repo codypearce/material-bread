@@ -18,7 +18,7 @@ class ToggleButtonGroup extends Component {
 
   updateActive = value => {
     this.setState({ active: value });
-    if (this.props.onPress) this.props.onPress();
+    if (this.props.onPress) this.props.onPress(value);
   };
 
   render() {
