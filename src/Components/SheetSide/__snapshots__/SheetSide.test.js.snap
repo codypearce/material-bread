@@ -67,7 +67,7 @@ exports[`SheetSide Renders 1`] = `
           },
         ]
       }
-      useNativeDriver={false}
+      useNativeDriver={true}
     >
       <View
         onLayout={[Function]}

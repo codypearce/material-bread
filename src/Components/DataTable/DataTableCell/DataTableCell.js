@@ -52,13 +52,14 @@ class TableCell extends Component {
     Animated.timing(this.state.roateIcon, {
       toValue: value,
       duration: 200,
+      useNativeDriver: true,
     }).start();
   }
 
   _renderSortingIcon() {
     return (
       <Animated.View
-        useNativeDriver={false}
+        useNativeDriver={true}
         style={{
           transform: [
             {

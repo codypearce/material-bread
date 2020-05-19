@@ -24,7 +24,7 @@ class FrontLayerScrim extends Component {
       <TouchableWithoutFeedback onPress={() => toggleLayout()}>
         <Animated.View
           style={[styles.scrimLayer, { opacity: animate }]}
-          useNativeDriver={false}>
+          useNativeDriver={true}>
           <Icon
             name="expand-less"
             size={24}

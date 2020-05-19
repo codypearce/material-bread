@@ -73,6 +73,7 @@ class Banner extends Component {
     Animated.parallel([
       Animated.spring(this.state.height, {
         toValue: newHeight,
+        useNativeDriver: true,
       }),
     ]).start();
   }
@@ -209,7 +210,7 @@ class Banner extends Component {
 
     return (
       <Animated.View
-        useNativeDriver={false}
+        useNativeDriver={true}
         style={[
           styles.container,
           {

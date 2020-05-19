@@ -44,7 +44,7 @@ exports[`Drawer Renders 1`] = `
         "zIndex": 100,
       }
     }
-    useNativeDriver={false}
+    useNativeDriver={true}
   />
   <View
     style={
@@ -59,7 +59,7 @@ exports[`Drawer Renders 1`] = `
         "zIndex": 0,
       }
     }
-    useNativeDriver={false}
+    useNativeDriver={true}
   >
     <View
       accessible={true}

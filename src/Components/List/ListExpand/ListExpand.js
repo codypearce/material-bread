@@ -63,6 +63,7 @@ class ListExpand extends Component {
     Animated.timing(menuHeight, {
       toValue: height,
       duration: animationDuration,
+      useNativeDriver: true,
     }).start();
 
     this.setState({
@@ -85,7 +86,7 @@ class ListExpand extends Component {
 
     return (
       <Animated.View
-        useNativeDriver={false}
+        useNativeDriver={true}
         style={{
           height: menuHeight,
           overflow: 'hidden',

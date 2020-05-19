@@ -119,10 +119,12 @@ class Drawer extends PureComponent {
       Animated.timing(leftOffset, {
         toValue: drawerWidth,
         duration: animationTime,
+        useNativeDriver: true,
       }),
       Animated.timing(backdropFade, {
         toValue: scrimOpacity,
         duration: animationTime,
+        useNativeDriver: true,
       }),
     ]).start();
   };
@@ -135,10 +137,12 @@ class Drawer extends PureComponent {
       Animated.timing(leftOffset, {
         toValue: 0,
         duration: animationTime,
+        useNativeDriver: true,
       }),
       Animated.timing(backdropFade, {
         toValue: 0,
         duration: animationTime,
+        useNativeDriver: true,
       }),
     ]).start();
   };
@@ -174,7 +178,7 @@ class Drawer extends PureComponent {
     if (scrimColor) scrimColorImplemented = scrimColor;
     return (
       <Animated.View
-        useNativeDriver={false}
+        useNativeDriver={true}
         style={[
           styles.container,
           {
@@ -216,7 +220,7 @@ class Drawer extends PureComponent {
         <View style={contentContainerStyle}>
           {appbar ? this._renderAppBar() : null}
           <Animated.View
-            useNativeDriver={false}
+            useNativeDriver={true}
             style={{
               transform: [{ translateX: leftOffset }],
               flex: 1,
@@ -259,7 +263,7 @@ class Drawer extends PureComponent {
     return (
       <Fragment>
         <Animated.View
-          useNativeDriver={false}
+          useNativeDriver={true}
           style={[
             theme.drawer,
             {

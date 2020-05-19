@@ -69,10 +69,12 @@ class ProgressBar extends PureComponent {
       Animated.timing(trackScaleY, {
         toValue: scale,
         duration: 300,
+        useNativeDriver: true,
       }),
       Animated.timing(trackOpacity, {
         toValue: opacity,
         duration: 300,
+        useNativeDriver: true,
       }),
     ]).start(() => {
       if (determinate) {
@@ -93,6 +95,7 @@ class ProgressBar extends PureComponent {
       Animated.timing(indicatorWidth, {
         toValue: trackWidth * (value / 100),
         duration: animationDuration,
+        useNativeDriver: true,
       }),
     ]).start();
   }
@@ -109,11 +112,13 @@ class ProgressBar extends PureComponent {
           toValue: trackWidth,
           duration: animationDuration,
           animationEasing,
+          useNativeDriver: true,
         }),
         Animated.timing(indicatorScaleX, {
           toValue: 2,
           duration: animationDuration / 4,
           animationEasing,
+          useNativeDriver: true,
         }),
       ]),
 
@@ -160,7 +165,7 @@ class ProgressBar extends PureComponent {
 
     return (
       <Animated.View
-        useNativeDriver={false}
+        useNativeDriver={true}
         onLayout={this.onTrackLayout}
         style={[
           styles.track,
@@ -174,7 +179,7 @@ class ProgressBar extends PureComponent {
         ]}
         testID={testID}>
         <Animated.View
-          useNativeDriver={false}
+          useNativeDriver={true}
           style={[
             styles.indicator,
             {

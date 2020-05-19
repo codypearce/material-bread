@@ -95,6 +95,7 @@ class Badge extends Component {
     Animated.spring(scale, {
       toValue: scaleValue,
       speed: 7,
+      useNativeDriver: true,
     }).start();
   }
 
@@ -134,7 +135,7 @@ class Badge extends Component {
 
     return (
       <Animated.View
-        useNativeDriver={false}
+        useNativeDriver={true}
         style={[
           {
             height: size,

@@ -251,7 +251,7 @@ export default class Ripple extends PureComponent {
       <Animated.View
         style={[styles.ripple, rippleStyle]}
         key={unique}
-        useNativeDriver={false}
+        useNativeDriver={true}
       />
     );
   }
@@ -303,7 +303,7 @@ export default class Ripple extends PureComponent {
         {...touchableProps}
         {...panResponder}
         testID={testID}>
-        <Animated.View useNativeDriver={false} {...props}>
+        <Animated.View useNativeDriver={true} {...props}>
           {children}
           <View style={[styles.container, containerStyle]} pointerEvents="none">
             {ripples.map(this.renderRipple)}

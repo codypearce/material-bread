@@ -264,7 +264,7 @@ exports[`TextFieldFlat Renders 1`] = `
         ],
       }
     }
-    useNativeDriver={false}
+    useNativeDriver={true}
   >
     <View
       style={
@@ -286,7 +286,7 @@ exports[`TextFieldFlat Renders 1`] = `
           ],
         }
       }
-      useNativeDriver={false}
+      useNativeDriver={true}
     />
   </View>
   <Text

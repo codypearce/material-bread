@@ -118,6 +118,7 @@ class SheetSide extends Component {
     if (visible) {
       this.setState({ internalVisible: true }, () => {
         Animated.timing(pan, {
+          useNativeDriver: true,
           toValue: {
             x: openValue,
             y: 0,
@@ -127,6 +128,7 @@ class SheetSide extends Component {
       });
     } else {
       Animated.timing(pan, {
+        useNativeDriver: true,
         toValue: { x: closeValue, y: 0 },
         duration: duration,
       }).start(() => {
@@ -229,7 +231,7 @@ class SheetSide extends Component {
         />
 
         <Animated.View
-          useNativeDriver={false}
+          useNativeDriver={true}
           {...this.panResponder.panHandlers}
           style={[
             styles.container,
