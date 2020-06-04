@@ -121,8 +121,9 @@ class ContainedButton extends Component {
 
   getRippleColor() {
     const { rippleColor } = this.props;
+    const bgColor = this.getBackgroundColor();
 
-    let implementedRippleColor = 'rgba(255, 255,255, 0.56)';
+    let implementedRippleColor = this.getOverlayColor(bgColor, 0.12, 0.32);
 
     return rippleColor ? rippleColor : implementedRippleColor;
   }
@@ -136,25 +137,28 @@ class ContainedButton extends Component {
     return implementedTextColor;
   }
 
+  getOverlayColor(normalColor, lightOverlay, darkOverlay) {
+    let modifiedColor;
+
+    if (color(normalColor).isDark()) {
+      modifiedColor = color(normalColor)
+        .lighten(darkOverlay)
+        .rgb()
+        .string();
+    } else {
+      modifiedColor = color(normalColor)
+        .darken(lightOverlay)
+        .rgb()
+        .string();
+    }
+    return modifiedColor;
+  }
+
   handleHover(toggle) {
     const bgColor = this.getBackgroundColor();
-    let implementedColor;
-
-    if (color(bgColor).isDark()) {
-      implementedColor = toggle
-        ? color(bgColor)
-            .lighten(0.15)
-            .rgb()
-            .string()
-        : null;
-    } else {
-      implementedColor = toggle
-        ? color(bgColor)
-            .darken(0.15)
-            .rgb()
-            .string()
-        : null;
-    }
+    let implementedColor = toggle
+      ? this.getOverlayColor(bgColor, 0.04, 0.08)
+      : null;
 
     this.setState({ stateBackgroundColor: implementedColor });
   }

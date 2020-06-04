@@ -52,8 +52,12 @@ class OutlinedButton extends Component {
 
   getRippleColor() {
     const { textColor, theme, rippleColor } = this.props;
-
     let implementedRippleColor = textColor ? textColor : theme.primary.main;
+
+    implementedRippleColor = color(implementedRippleColor)
+      .alpha(0.12)
+      .rgb()
+      .string();
 
     return rippleColor ? rippleColor : implementedRippleColor;
   }
@@ -69,7 +73,7 @@ class OutlinedButton extends Component {
   handleHover(toggle) {
     let implementedColor = toggle
       ? color(this.getTextColor())
-          .alpha(0.12)
+          .alpha(0.04)
           .rgb()
           .string()
       : null;
