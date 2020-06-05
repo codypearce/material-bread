@@ -38,10 +38,9 @@ const styles = StyleSheet.create({
 const shadowItems = [];
 for (let i = 1; i <= shadowTypeNum; i++) {
   shadowItems.push(
-    <View style={[styles.shadowItem, { ...shadow(i) }]}> {i} </View>,
+    <View style={[styles.shadowItem, { ...shadow(i) }]}>{i}</View>,
   );
 }
-
 const shadowDividedItems = [];
 for (let i = 0; i < maxItemPerRow; i++) {
   shadowDividedItems.push(
@@ -62,6 +61,6 @@ export default storiesOf('Utils|Shadows', module)
         }
       />
 
-      <View> {shadowDividedItems} </View>
+      <View>{shadowDividedItems}</View>
     </Container>
   ));
