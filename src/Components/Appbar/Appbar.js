@@ -206,7 +206,7 @@ class Appbar extends Component {
     const implementedShadow =
       elevation != undefined || elevation != null
         ? shadow(elevation)
-        : shadow(6);
+        : shadow(4);
 
     return (
       <Paper

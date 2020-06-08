@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import shadow from '../../Utils/Shadow/shadow';
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -20,6 +21,8 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     paddingVertical: 20,
     zIndex: 1000,
+
+    ...shadow(16),
   },
 });
 

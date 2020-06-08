@@ -1,4 +1,6 @@
 import { StyleSheet, Platform } from 'react-native';
+import shadow from '../../Utils/Shadow/shadow';
+
 const styles = StyleSheet.create({
   contianer: {},
   appbar: {
@@ -8,6 +10,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     position: 'relative',
     minWidth: 'auto',
+
+    ...shadow(8),
   },
 
   left: {
