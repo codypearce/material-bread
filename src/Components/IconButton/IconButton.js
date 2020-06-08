@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withTheme from '../../Theme/withTheme';
 import Icon from '../Icon/Icon';
+import Color from 'color';
 import Ripple from '../Ripple/Ripple';
 
 class IconButton extends Component {
@@ -17,6 +18,23 @@ class IconButton extends Component {
     testID: PropTypes.string,
     iconComponent: PropTypes.func,
   };
+
+  state = {
+    stateBackgroundColor: null,
+  };
+
+  getRippleColor() {
+    const { color, theme, rippleColor } = this.props;
+    let implementedRippleColor = color ? color : theme.primary.main;
+
+    implementedRippleColor = Color(color)
+      .alpha(0.12)
+      .rgb()
+      .string();
+
+    return rippleColor ? rippleColor : implementedRippleColor;
+  }
+
   render() {
     const {
       style,
@@ -24,19 +42,16 @@ class IconButton extends Component {
       color,
       size,
       onPress,
-      rippleColor,
       disabled,
       testID,
       iconComponent,
       ...rest
     } = this.props;
-    let rippleColorImplemented = color ? color : 'rgb(0, 0, 0)';
-    if (rippleColor) rippleColorImplemented = rippleColor;
 
     return (
       <Ripple
         rippleContainerBorderRadius={100}
-        rippleColor={rippleColorImplemented}
+        rippleColor={this.getRippleColor()}
         onPress={onPress}
         disabled={disabled}
         style={[
