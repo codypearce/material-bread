@@ -10,24 +10,19 @@ import {
 } from '../../../../../src/index';
 
 export const code = `class Demo extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
 
-    }
-  }
   render() {
     return (
-      <View>
-        <Heading type={1} text="h1" />
-        <Heading type={2} text="h2" />
-        <Heading type={3} text="h3" />
-        <Heading type={4} text="h4" />
-        <Heading type={5} text="h5" />
-        <Heading type={6} text="h6" />
+      <View>  
+        <Heading type={1} text="H1" />
+        <Heading type={2} text="H2" />
+        <Heading type={3} text="H3" />
+        <Heading type={4} text="H4" />
+        <Heading type={5} text="H5" />
+        <Heading type={6} text="H6" />
         <Subtitle type={1} text="Subtitle 1" />
         <Subtitle type={2} text="Subtitle 2" />
-        <BodyText type={1} text="Body 2" />
+        <BodyText type={1} text="Body 1" />
         <BodyText type={2} text="Body 2" />
         <Caption text="Caption" />
         <Overline text="Overline" />
