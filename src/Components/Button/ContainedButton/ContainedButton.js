@@ -26,7 +26,7 @@ class ContainedButton extends Component {
     elevation: new Animated.Value(6),
     animatedShadowRadius: new Animated.Value(4.65),
     animatedShadowOpacity: new Animated.Value(0.27),
-    animatedShadowHeight: new Animated.Value(2),
+    animatedShadowHeight: new Animated.Value(3),
     animatedShadowWidth: new Animated.Value(1),
   };
 
@@ -48,7 +48,7 @@ class ContainedButton extends Component {
 
       const shadowRadius = active ? 6.65 : 4.65;
       const shadowShadowOpacity = active ? 0.27 : 0.35;
-      const shadowHeight = active ? 8 : 2;
+      const shadowHeight = active ? 5 : 3;
       const shadowWidth = active ? 1.5 : 1;
 
       Animated.parallel([
