@@ -16,7 +16,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     minWidth: 112,
     zIndex: 200,
-    ...shadow(5),
+
+    ...shadow(8),
   },
 });
 

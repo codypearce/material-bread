@@ -11,6 +11,8 @@ const styles = StyleSheet.create({
   track: {
     backgroundColor: 'rgba(0,0,0,.20)',
     position: 'relative',
+
+    ...shadow(1),
   },
   thumbRipple: {
     borderRadius: 100,
@@ -19,10 +21,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   thumb: {
-    ...shadow(3),
     borderRadius: 100,
     justifyContent: 'center',
     alignItems: 'center',
+
+    ...shadow(3),
   },
 });
 

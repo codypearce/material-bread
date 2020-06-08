@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     maxHeight: Platform.OS == 'web' ? 'calc(100vh - 20px)' : '100%',
     overflow: 'hidden',
 
-    ...shadow(12),
+    ...shadow(24),
   },
   contentContainer: {
     flex: Platform.OS == 'web' ? 1 : 0,

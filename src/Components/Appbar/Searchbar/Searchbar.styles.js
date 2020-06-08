@@ -4,7 +4,7 @@ import shadow from '../../../Utils/Shadow/shadow.js';
 const styles = StyleSheet.create({
   container: {},
   searchInput: {
-    ...shadow(0),
+    ...shadow(1),
   },
 });
 

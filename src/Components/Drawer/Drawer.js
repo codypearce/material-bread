@@ -254,7 +254,7 @@ class Drawer extends PureComponent {
     const isPermanent = type == 'permanent';
 
     const offsetDrawerShadow = isPermanent || open ? 0 : 5;
-    const shadowImplemented = isPush || isPermanent ? shadow(0) : shadow(8);
+    const shadowImplemented = isPush || isPermanent ? shadow(0) : shadow(16);
 
     return (
       <Fragment>

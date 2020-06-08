@@ -171,7 +171,7 @@ export class Fab extends Component {
               paddingHorizontal: label ? 12 : 0,
               backgroundColor: backgroundColorApplied,
             },
-            shadowTool(disabled ? 0 : shadow || 10),
+            shadowTool(disabled ? 0 : shadow || 6),
             style,
           ]}
           {...props}>
