@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import withTheme from '../../Theme/withTheme';
 import Icon from '../Icon/Icon';
 import Ripple from '../Ripple/Ripple';
+import { BodyText } from '../Typography';
 
 class Avatar extends Component {
   static propTypes = {
@@ -60,7 +61,7 @@ class Avatar extends Component {
     );
   }
 
-  _renderText() {
+  _renderTypographyText() {
     const {
       content,
       contentColor,
@@ -70,7 +71,8 @@ class Avatar extends Component {
     } = this.props;
 
     return (
-      <Text
+      <BodyText
+        type={1}
         style={[
           {
             color: contentColor ? contentColor : 'white',
@@ -79,7 +81,7 @@ class Avatar extends Component {
           contentStyles,
         ]}>
         {content}
-      </Text>
+      </BodyText>
     );
   }
 
@@ -90,7 +92,7 @@ class Avatar extends Component {
     } else if (type == 'icon') {
       return this._renderIcon();
     } else if (type == 'text') {
-      return this._renderText();
+      return this._renderTypographyText();
     }
   }
 
