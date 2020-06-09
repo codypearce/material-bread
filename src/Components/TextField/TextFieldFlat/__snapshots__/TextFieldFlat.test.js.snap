@@ -64,13 +64,21 @@ exports[`TextFieldFlat Renders 1`] = `
           "lineHeight": 14,
         },
         "button": Object {
-          "borderRadius": 4,
-          "padding": 8,
+          "alignItems": "center",
+          "borderRadius": 3,
+          "display": "flex",
+          "fontSize": 14,
+          "fontWeight": "500",
+          "letterSpacing": 1.25,
+          "lineHeight": 16,
+          "paddingHorizontal": 8,
+          "paddingVertical": 10,
+          "textAlign": "center",
+          "textTransform": "uppercase",
         },
         "buttonText": Object {
           "color": "#2196f3",
-          "fontSize": 14,
-          "fontWeight": "500",
+          "fontStyle": "normal",
           "letterSpacing": 0.5,
         },
         "caption": Object {
@@ -175,6 +183,7 @@ exports[`TextFieldFlat Renders 1`] = `
         "outlinedButton": Object {
           "borderColor": "rgba(0,0,0,.29)",
           "borderWidth": 0.5,
+          "boxSizing": "border-box",
           "paddingHorizontal": 16,
         },
         "overline": Object {
