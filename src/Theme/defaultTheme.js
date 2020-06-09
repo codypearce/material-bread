@@ -94,12 +94,20 @@ export default {
     size: 20,
   },
   button: {
-    padding: 8,
-    borderRadius: 4,
-  },
-  buttonText: {
+    paddingHorizontal: 8,
+    paddingVertical: 10,
+    borderRadius: 3,
+    alignItems: 'center',
+    textAlign: 'center',
+    letterSpacing: 1.25,
+    textTransform: 'uppercase',
     fontSize: 14,
     fontWeight: '500',
+    lineHeight: 16,
+    display: 'flex',
+  },
+  buttonText: {
+    fontStyle: 'normal',
     letterSpacing: 0.5,
     color: '#2196f3',
   },
@@ -107,6 +115,7 @@ export default {
     borderColor: 'rgba(0,0,0,.29)',
     borderWidth: StyleSheet.hairlineWidth,
     paddingHorizontal: 16,
+    boxSizing: 'border-box',
   },
   containedButton: {
     paddingHorizontal: 16,
