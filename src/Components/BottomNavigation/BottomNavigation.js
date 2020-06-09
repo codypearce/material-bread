@@ -13,7 +13,8 @@ class BottomNavigation extends Component {
     children: PropTypes.node,
     style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     actionItems: PropTypes.array,
-    showLabels: PropTypes.bool,
+    showOneLabel: PropTypes.bool,
+    showAllLabels: PropTypes.bool,
     handleChange: PropTypes.func,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     horizontalWhenLandscape: PropTypes.bool,
@@ -21,7 +22,8 @@ class BottomNavigation extends Component {
   };
 
   static defaultProps = {
-    showLabels: true,
+    showOneLabel: false,
+    showAllLabels: true,
   };
 
   constructor(props) {
@@ -70,7 +72,7 @@ class BottomNavigation extends Component {
     const {
       backgroundColor,
       actionItems,
-      showLabels,
+      showAllLabels,
       horizontalWhenLandscape,
     } = this.props;
     const { isLandscape, itemMaxWidth } = this.state;
@@ -86,11 +88,11 @@ class BottomNavigation extends Component {
                 key={item.label}
                 icon={item.icon}
                 label={item.label}
-                showLabel={showLabels || item.showLabel}
+                showOneLabel={this.props.showOneLabel}
                 onPress={item.onPress}
                 handleChange={this.handleInternalChange}
                 value={index || index === 0 ? index : item.value}
-                showLabels={this.props.showLabels}
+                showAllLabels={showAllLabels}
                 active={index === this.props.value}
                 isLandscape={isLandscape}
                 maxWidth={itemMaxWidth}
@@ -104,7 +106,7 @@ class BottomNavigation extends Component {
                 ? item.props.handleChange
                 : this.handleInternalChange,
               value: item.props.value ? item.props.value : index,
-              showLabels: this.props.showLabels,
+              showAllLabels: this.props.showAllLabels,
               active: item.props.active
                 ? item.props.active
                 : index === this.props.value,
