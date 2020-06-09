@@ -27,8 +27,8 @@ export default storiesOf('Components|Fab/FabSpeedDial', module)
     <Container>
       <Header title={'Fab SpeedDial'} />
 
-      <View style={{ flex: 1, position: 'relative', paddingTop: 400 }}>
-        <FabSpeedDial actions={actions} style={{ marginTop: 400 }} />
+      <View style={{ flex: 1, position: 'relative', paddingTop: 350 }}>
+        <FabSpeedDial actions={actions} />
       </View>
     </Container>
   ))
@@ -36,11 +36,10 @@ export default storiesOf('Components|Fab/FabSpeedDial', module)
     <Container>
       <Header title={'Fab SpeedDial'} />
 
-      <View style={{ flex: 1, position: 'relative', paddingTop: 400 }}>
+      <View style={{ flex: 1, position: 'relative', paddingTop: 350 }}>
         <FabSpeedDial
           extended
           actions={actionsExtended}
-          style={{ marginTop: 400 }}
           fab={<Fab label="Open" icon="add" />}
         />
       </View>
