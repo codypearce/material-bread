@@ -25,6 +25,7 @@ class FabSpeedDial extends Component {
 
   state = {
     open: false,
+    fabIcon: 'add',
     actionAnimationsScale: [
       new Animated.Value(0),
       new Animated.Value(0),
@@ -47,6 +48,20 @@ class FabSpeedDial extends Component {
     this.setState({ open: !this.state.open });
   }
 
+  toggleFabIcon() {
+    const { fab } = this.props;
+    const { open } = this.state;
+
+    let fabIcon;
+    if (typeof fab != 'string') {
+      fabIcon = open ? 'clear' : fab.props.icon;
+    } else {
+      fabIcon = open ? 'clear' : fab;
+    }
+
+    this.setState({ fabIcon });
+  }
+
   animateActions() {
     const { onPress } = this.props;
     const { open } = this.state;
@@ -61,6 +76,7 @@ class FabSpeedDial extends Component {
       this.closeAnimation();
     }
 
+    this.toggleFabIcon();
     if (onPress) onPress();
   }
 
@@ -149,11 +165,12 @@ class FabSpeedDial extends Component {
 
   _renderFab() {
     const { fab, style, fabProps } = this.props;
+    let { fabIcon, open } = this.state;
 
     if (typeof fab == 'string' || fab instanceof String || !fab) {
       return (
         <Fab
-          icon={fab}
+          icon={fabIcon}
           onPress={() => this.animateActions()}
           style={style}
           {...fabProps}
@@ -161,6 +178,8 @@ class FabSpeedDial extends Component {
       );
     } else {
       return React.cloneElement(fab, {
+        label: open ? '' : fab.props.label,
+        icon: fabIcon,
         color: fab.props.color ? fab.props.color : 'white',
         onPress: () => this.animateActions(),
       });
