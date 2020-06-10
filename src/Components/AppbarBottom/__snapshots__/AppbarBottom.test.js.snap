@@ -23,6 +23,13 @@ exports[`AppbarBottom Renders 1`] = `
             "minWidth": "auto",
             "padding": 16,
             "position": "relative",
+            "shadowColor": "#000",
+            "shadowOffset": Object {
+              "height": 4,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 4.65,
           },
           Object {
             "backgroundColor": "#1e88e5",

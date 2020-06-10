@@ -15,11 +15,11 @@ exports[`Appbar Renders 1`] = `
       "position": "relative",
       "shadowColor": "#000",
       "shadowOffset": Object {
-        "height": 3,
+        "height": 2,
         "width": 0,
       },
-      "shadowOpacity": 0.27,
-      "shadowRadius": 4.65,
+      "shadowOpacity": 0.23,
+      "shadowRadius": 2.62,
       "width": "100%",
       "zIndex": 2,
     }
