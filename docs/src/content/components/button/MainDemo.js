@@ -9,7 +9,7 @@ export const code = `<View style={{flexDirection: 'row', alignItems: 'center', j
   <Button text={'outlined'} type="outlined" textColor={'#009688'} />
   <Button text={'text'} type="text" textColor={'#F44336'} />
   <Button text={'Archive'} type="outlined" textColor={'#673AB7'}  icon={<Icon name="archive" />} />
-  <Button text={'Loading'} type="flat" loading color={'#00BCD4'} />
+  <Button type="flat" loading color={'#00BCD4'} />
 </View>`;
 
 const MainDemo = pageHref => (

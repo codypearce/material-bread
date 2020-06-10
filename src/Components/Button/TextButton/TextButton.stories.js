@@ -200,29 +200,11 @@ export default storiesOf('Components|Buttons/Text Button', module)
           flexWrap: 'wrap',
           marginBottom: 20,
         }}>
-        <Button text={'Home'} loading />
-        <Button
-          text={'Favorite'}
-          textColor={'#E91E63'}
-          borderSize={2}
-          loading
-          icon={<Icon name="favorite" />}
-        />
-        <Button text={'Settings'} textColor={'#FF5722'} loading radius={60} />
-        <Button
-          text={'Buy'}
-          ttextColor={'#673AB7'}
-          dense
-          radius={0}
-          loading
-          icon={<Icon name="attach-money" />}
-        />
-        <Button
-          text={'Archive'}
-          textColor={'#009688'}
-          loading
-          icon={<Icon name="archive" />}
-        />
+        <Button loading />
+        <Button textColor={'#E91E63'} borderSize={2} loading />
+        <Button textColor={'#FF5722'} loading radius={60} />
+        <Button ttextColor={'#673AB7'} dense radius={0} loading />
+        <Button textColor={'#009688'} loading />
       </View>
     </Container>
   ))
@@ -239,14 +221,7 @@ export default storiesOf('Components|Buttons/Text Button', module)
           marginBottom: 20,
         }}>
         <Button text={'Home'} disabled />
-        <Button
-          text={'Favorite'}
-          textColor={'#E91E63'}
-          borderSize={2}
-          loading
-          disabled
-          icon={<Icon name="favorite" />}
-        />
+        <Button textColor={'#E91E63'} borderSize={2} loading disabled />
         <Button text={'Settings'} textColor={'#FF5722'} disabled radius={60} />
         <Button
           text={'Buy'}
@@ -285,7 +260,6 @@ export default storiesOf('Components|Buttons/Text Button', module)
       />
       <Button
         fullWidth
-        text={'Loading'}
         textColor={'#FF5722'}
         loading
         style={{ marginBottom: 8 }}

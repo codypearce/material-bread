@@ -221,38 +221,11 @@ export default storiesOf('Components|Buttons/Flat Button', module)
           flexWrap: 'wrap',
           marginBottom: 20,
         }}>
-        <Button text={'Home'} loading type="flat" />
-        <Button
-          text={'Favorite'}
-          color={'#E91E63'}
-          borderSize={2}
-          loading
-          type="flat"
-          icon={<Icon name="favorite" />}
-        />
-        <Button
-          text={'Settings'}
-          color={'#FF5722'}
-          loading
-          radius={60}
-          type="flat"
-        />
-        <Button
-          text={'Buy'}
-          tcolor={'#673AB7'}
-          dense
-          radius={0}
-          loading
-          type="flat"
-          icon={<Icon name="attach-money" />}
-        />
-        <Button
-          text={'Archive'}
-          color={'#009688'}
-          loading
-          type="flat"
-          icon={<Icon name="archive" />}
-        />
+        <Button loading type="flat" />
+        <Button color={'#E91E63'} borderSize={2} loading type="flat" />
+        <Button color={'#FF5722'} loading radius={60} type="flat" />
+        <Button tcolor={'#673AB7'} dense radius={0} loading type="flat" />
+        <Button color={'#009688'} loading type="flat" />
       </View>
     </Container>
   ))
@@ -268,16 +241,13 @@ export default storiesOf('Components|Buttons/Flat Button', module)
           flexWrap: 'wrap',
           marginBottom: 20,
         }}>
-        <Button text={'Home'} disabled type="flat" />
         <Button
-          text={'Favorite'}
-          color={'#E91E63'}
-          borderSize={2}
-          loading
+          text={'Home'}
+          icon={<Icon name="home" />}
           disabled
           type="flat"
-          icon={<Icon name="favorite" />}
         />
+        <Button color={'#E91E63'} borderSize={2} loading disabled type="flat" />
         <Button
           text={'Settings'}
           color={'#FF5722'}
@@ -327,7 +297,6 @@ export default storiesOf('Components|Buttons/Flat Button', module)
       />
       <Button
         fullWidth
-        text={'Loading'}
         color={'#FF5722'}
         type="flat"
         loading

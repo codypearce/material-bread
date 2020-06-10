@@ -8,7 +8,7 @@ export const code = `<View style={{flexDirection: 'row', alignItems: 'center', j
     <Button text={'Icon'} type="outlined" textColor={'#E91E63'} borderSize={2} icon={<Icon name="favorite" />} />
     <Button text={'Radius'} type="outlined" textColor={'#FF5722'} radius={20}  />
     <Button text={'Dense'} type="outlined" textColor={'#673AB7'} dense />
-    <Button text={'Loading'} type="outlined" textColor={'#009688'} loading />
+    <Button type="outlined" textColor={'#009688'} loading />
     <Button text={'Disabled'} type="outlined" disabled  />
 </View>
 `;
