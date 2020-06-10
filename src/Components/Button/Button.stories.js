@@ -9,7 +9,7 @@ import Container from '../../storybook/components/Container';
 export default storiesOf('Components|Buttons', module)
   .addParameters({ jest: ['Button'] })
 
-  .add('custom', () => (
+  .add('Custom', () => (
     <Container>
       <Header title={'Custom Button'} />
       <View
