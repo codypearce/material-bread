@@ -38,14 +38,20 @@ const propData = [
   ],
 
   ['onItemLayout', 'Called when each item is rendered', 'func', ''],
-
   ['onPress', 'callBack to fire when clicking item', 'func', ''],
+
+  [
+    'showOneItem',
+    'Set by BottomNavigation prop, but can be overwritten individually here',
+    'bool',
+    '',
+  ],
 
   [
     'showLabel',
     'Set by BottomNavigation prop, but can be overwritten individually here',
     'bool',
-    '',
+    'true',
   ],
 
   ['rippleProps', 'Props applied to the ripple', 'object', ''],

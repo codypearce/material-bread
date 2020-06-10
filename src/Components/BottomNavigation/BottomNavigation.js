@@ -13,8 +13,8 @@ class BottomNavigation extends Component {
     children: PropTypes.node,
     style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     actionItems: PropTypes.array,
-    showOneLabel: PropTypes.bool,
-    showAllLabels: PropTypes.bool,
+    showOneItem: PropTypes.bool,
+    showLabels: PropTypes.bool,
     handleChange: PropTypes.func,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     horizontalWhenLandscape: PropTypes.bool,
@@ -22,8 +22,8 @@ class BottomNavigation extends Component {
   };
 
   static defaultProps = {
-    showOneLabel: false,
-    showAllLabels: true,
+    showOneItem: false,
+    showLabels: true,
   };
 
   constructor(props) {
@@ -72,7 +72,7 @@ class BottomNavigation extends Component {
     const {
       backgroundColor,
       actionItems,
-      showAllLabels,
+      showLabels,
       horizontalWhenLandscape,
     } = this.props;
     const { isLandscape, itemMaxWidth } = this.state;
@@ -88,11 +88,11 @@ class BottomNavigation extends Component {
                 key={item.label}
                 icon={item.icon}
                 label={item.label}
-                showOneLabel={this.props.showOneLabel}
+                showOneItem={this.props.showOneItem}
                 onPress={item.onPress}
                 handleChange={this.handleInternalChange}
                 value={index || index === 0 ? index : item.value}
-                showAllLabels={showAllLabels}
+                showLabel={showLabels}
                 active={index === this.props.value}
                 isLandscape={isLandscape}
                 maxWidth={itemMaxWidth}
@@ -106,7 +106,7 @@ class BottomNavigation extends Component {
                 ? item.props.handleChange
                 : this.handleInternalChange,
               value: item.props.value ? item.props.value : index,
-              showAllLabels: this.props.showAllLabels,
+              showLabel: this.props.showLabels,
               active: item.props.active
                 ? item.props.active
                 : index === this.props.value,

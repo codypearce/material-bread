@@ -99,7 +99,7 @@ export default storiesOf('Components|Bottom Navigation', module)
             style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
             value={state.two}
             handleChange={value => store.set({ two: value })}
-            showAllLabels
+            showLabels
             backgroundColor={'#E91E63'}
             actionItems={[
               { icon: 'album' },
@@ -204,7 +204,7 @@ export default storiesOf('Components|Bottom Navigation', module)
             <BottomNavigation
               style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
               value={state.two}
-              showAllLabels
+              showLabels
               handleChange={value => store.set({ two: value })}
               backgroundColor={'#E91E63'}
               actionItems={[
@@ -220,7 +220,7 @@ export default storiesOf('Components|Bottom Navigation', module)
             <BottomNavigation
               style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
               value={state.showOne}
-              showOneLabel
+              showOneItem
               handleChange={value => store.set({ showOne: value })}
               backgroundColor={'#E91E63'}
               actionItems={[
@@ -237,12 +237,13 @@ export default storiesOf('Components|Bottom Navigation', module)
               style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
               value={state.one}
               handleChange={value => store.set({ one: value })}
-              showAllLabels
+              showLabels
               actionItems={[
                 { icon: 'home', label: 'Home' },
                 { icon: 'favorite', label: 'Favorite' },
                 { icon: 'info', label: 'Info' },
                 <BottomNavigationItem
+                  showLabel
                   key={4}
                   icon={'settings'}
                   label={'Settings'}
@@ -258,14 +259,14 @@ export default storiesOf('Components|Bottom Navigation', module)
               value={state.three}
               handleChange={value => store.set({ three: value })}
               backgroundColor={'#9C27B0'}
-              showOneLabel
+              showOneItem
               actionItems={[
                 { icon: 'home', label: 'Home' },
                 { icon: 'attach-money', label: 'Buy' },
                 { icon: 'favorite', label: 'Favorite' },
                 { icon: 'info', label: 'Info' },
                 <BottomNavigationItem
-                  showOneLabel
+                  showOneItem
                   key={4}
                   icon={'settings'}
                   label={'Settings'}
@@ -288,6 +289,7 @@ export default storiesOf('Components|Bottom Navigation', module)
                 { icon: 'favorite', label: 'Favorite' },
                 { icon: 'info', label: 'Info' },
                 <BottomNavigationItem
+                  showLabel
                   key={4}
                   icon={'settings'}
                   label={'Settings'}

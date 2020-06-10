@@ -14,11 +14,11 @@ class BottomNavigationItem extends Component {
     active: PropTypes.bool,
     icon: PropTypes.string,
     label: PropTypes.string,
-    showOneLabel: PropTypes.bool,
+    showOneItem: PropTypes.bool,
     onPress: PropTypes.func,
     handleChange: PropTypes.func,
     value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    showAllLabels: PropTypes.bool,
+    showLabel: PropTypes.bool,
     style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     badgeProps: PropTypes.object,
     rippleProps: PropTypes.object,
@@ -29,13 +29,17 @@ class BottomNavigationItem extends Component {
     horizontal: PropTypes.bool,
   };
 
+  static defaultProps = {
+    showLabel: true,
+  };
+
   state = {
     scaleText: new Animated.Value(0),
   };
 
   componentDidMount() {
-    const { showOneLabel, showAllLabels, active } = this.props;
-    if (showOneLabel || active || showAllLabels) {
+    const { showOneItem, showLabel, active } = this.props;
+    if (showOneItem || active || showLabel) {
       this._animateActive(true);
     }
   }
@@ -52,7 +56,7 @@ class BottomNavigationItem extends Component {
     const { scaleText } = this.state;
     let scale = show ? 12 : 0;
 
-    if (this.props.showAllLabels || this.props.showOneLabel) {
+    if (this.props.showLabel || this.props.showOneItem) {
       scale = show ? 12 : 10;
     }
 
@@ -68,14 +72,14 @@ class BottomNavigationItem extends Component {
     const {
       isLandscape,
       horizontal,
-      showOneLabel,
-      showAllLabels,
+      showOneItem,
+      showLabel,
       active,
       icon,
     } = this.props;
     const isHorizontal = isLandscape && horizontal;
-    const showOneLabelsWithoutDefault = !showOneLabel;
-    const showActiveLabel = showOneLabel && active;
+    const showOneItemsWithoutDefault = !showOneItem;
+    const showActiveLabel = showOneItem && active;
 
     let color = 'white';
     if (containerColor == 'white' || containerColor == '#fff')
@@ -83,7 +87,8 @@ class BottomNavigationItem extends Component {
 
     const { label } = this.props;
     let activeLabel = label;
-    if (!showOneLabelsWithoutDefault && !showActiveLabel) {
+
+    if (!showOneItemsWithoutDefault && !showActiveLabel) {
       activeLabel = '';
     }
 
@@ -93,7 +98,7 @@ class BottomNavigationItem extends Component {
         style={{
           color: color,
           fontSize: this.state.scaleText,
-          marginLeft: isHorizontal && showAllLabels && icon ? 12 : 0,
+          marginLeft: isHorizontal && showLabel && icon ? 12 : 0,
         }}>
         {activeLabel}
       </Animated.Text>
@@ -125,11 +130,11 @@ class BottomNavigationItem extends Component {
       isLandscape,
       maxWidth,
       horizontal,
-      showOneLabel,
+      showOneItem,
     } = this.props;
 
     const actualMaxWidth = Math.min(maxWidth, 192);
-    let opacity = showOneLabel ? 1 : 0.6;
+    let opacity = showOneItem ? 1 : 0.6;
 
     return (
       <Ripple
