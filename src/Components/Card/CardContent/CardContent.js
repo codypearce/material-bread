@@ -17,7 +17,7 @@ class CardContent extends Component {
     if (onPress) {
       return (
         <Ripple
-          style={[{ padding: 16 }, style]}
+          style={[{ padding: 40 }, style]}
           onPress={onPress}
           {...rippleProps}>
           {children}
@@ -25,7 +25,7 @@ class CardContent extends Component {
       );
     }
 
-    return <View style={[{ padding: 16 }, style]}>{children}</View>;
+    return <View style={[{ padding: 24 }, style]}>{children}</View>;
   }
 }
 

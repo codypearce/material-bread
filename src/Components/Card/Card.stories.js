@@ -491,7 +491,9 @@ export default storiesOf('Components|Card', module)
           }
           title={'Mario'}
           subtitle={'Hero. Plumber. Brother.'}
-          action={<IconButton name="more-vert" size={24} />}
+          action={
+            <IconButton name="more-vert" size={24} color={'rgba(0,0,0,.54)'} />
+          }
         />
         <CardMedia
           image={
@@ -503,9 +505,7 @@ export default storiesOf('Components|Card', module)
           }
         />
         <CardContent>
-          <Text style={{ color: 'rgba(0,0,0,.6)', fontSize: 14 }}>
-            Movember is over.
-          </Text>
+          <Text style={{ color: 'rgba(0,0,0,.6)' }}>Movember is over.</Text>
         </CardContent>
         <CardActions
           rightActionItems={[

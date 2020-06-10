@@ -56,8 +56,8 @@ class IconButton extends Component {
         disabled={disabled}
         style={[
           {
-            height: size + 8,
-            width: size + 8,
+            height: size,
+            width: size,
             justifyContent: 'center',
             alignItems: 'center',
           },
