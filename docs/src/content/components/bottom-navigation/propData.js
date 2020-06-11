@@ -14,6 +14,13 @@ const propData = [
   ],
 
   [
+    'showOneItem',
+    'Display one icon + label at a time, sets showOneItem to each BottomNavigationItem',
+    'bool',
+    'false',
+  ],
+
+  [
     'showLabels',
     'Sets showLabel true for each BottomNavigationItem',
     'bool',

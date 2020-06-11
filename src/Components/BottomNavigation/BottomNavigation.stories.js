@@ -11,6 +11,7 @@ const store = new Store({
   three: 0,
   four: 0,
   five: 0,
+  showOne: 0,
 });
 
 export default storiesOf('Components|Bottom Navigation', module)
@@ -24,7 +25,7 @@ export default storiesOf('Components|Bottom Navigation', module)
             style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
             value={state.one}
             handleChange={value => store.set({ one: value })}
-            showLabels
+            showAllLabels
             actionItems={[
               { label: 'Buy' },
               { label: 'Sell' },
@@ -39,7 +40,7 @@ export default storiesOf('Components|Bottom Navigation', module)
             style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
             value={state.two}
             handleChange={value => store.set({ two: value })}
-            showLabels
+            showAllLabels
             backgroundColor={'#E91E63'}
             actionItems={[
               { label: 'Home' },
@@ -56,7 +57,7 @@ export default storiesOf('Components|Bottom Navigation', module)
           <BottomNavigation
             style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
             value={state.three}
-            showLabels
+            showAllLabels
             handleChange={value => store.set({ three: value })}
             backgroundColor={'#9C27B0'}
             horizontalWhenLandscape
@@ -77,7 +78,7 @@ export default storiesOf('Components|Bottom Navigation', module)
             backgroundColor={'black'}
             value={state.four}
             handleChange={value => store.set({ four: value })}
-            showLabels
+            showAllLabels
             actionItems={[
               <BottomNavigationItem key={1} label={'Home'} />,
               <BottomNavigationItem key={2} label={'Favorite'} />,
@@ -96,21 +97,6 @@ export default storiesOf('Components|Bottom Navigation', module)
         {state => (
           <BottomNavigation
             style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
-            value={state.one}
-            handleChange={value => store.set({ one: value })}
-            actionItems={[
-              { icon: 'home' },
-              { icon: 'favorite' },
-              { icon: 'info' },
-              <BottomNavigationItem key={4} icon={'settings'} />,
-            ]}
-          />
-        )}
-      </State>
-      <State store={store} style={{ flex: 1 }}>
-        {state => (
-          <BottomNavigation
-            style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
             value={state.two}
             handleChange={value => store.set({ two: value })}
             showLabels
@@ -119,6 +105,21 @@ export default storiesOf('Components|Bottom Navigation', module)
               { icon: 'album' },
               { icon: 'place' },
               <BottomNavigationItem key={4} icon={'assignment'} />,
+            ]}
+          />
+        )}
+      </State>
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <BottomNavigation
+            style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
+            value={state.one}
+            handleChange={value => store.set({ one: value })}
+            actionItems={[
+              { icon: 'home' },
+              { icon: 'favorite' },
+              { icon: 'info' },
+              <BottomNavigationItem key={4} icon={'settings'} />,
             ]}
           />
         )}
@@ -202,27 +203,8 @@ export default storiesOf('Components|Bottom Navigation', module)
           {state => (
             <BottomNavigation
               style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
-              value={state.one}
-              handleChange={value => store.set({ one: value })}
-              showLabels
-              actionItems={[
-                { icon: 'home', label: 'Home' },
-                { icon: 'favorite', label: 'Favorite' },
-                { icon: 'info', label: 'Info' },
-                <BottomNavigationItem
-                  key={4}
-                  icon={'settings'}
-                  label={'Settings'}
-                />,
-              ]}
-            />
-          )}
-        </State>
-        <State store={store} style={{ flex: 1 }}>
-          {state => (
-            <BottomNavigation
-              style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
               value={state.two}
+              showLabels
               handleChange={value => store.set({ two: value })}
               backgroundColor={'#E91E63'}
               actionItems={[
@@ -237,15 +219,54 @@ export default storiesOf('Components|Bottom Navigation', module)
           {state => (
             <BottomNavigation
               style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
+              value={state.showOne}
+              showOneItem
+              handleChange={value => store.set({ showOne: value })}
+              backgroundColor={'#E91E63'}
+              actionItems={[
+                { icon: 'home', label: 'Home' },
+                { icon: 'favorite', label: 'Favorite' },
+                { icon: 'info', label: 'Info' },
+              ]}
+            />
+          )}
+        </State>
+        <State store={store} style={{ flex: 1 }}>
+          {state => (
+            <BottomNavigation
+              style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
+              value={state.one}
+              handleChange={value => store.set({ one: value })}
+              showLabels
+              actionItems={[
+                { icon: 'home', label: 'Home' },
+                { icon: 'favorite', label: 'Favorite' },
+                { icon: 'info', label: 'Info' },
+                <BottomNavigationItem
+                  showLabel
+                  key={4}
+                  icon={'settings'}
+                  label={'Settings'}
+                />,
+              ]}
+            />
+          )}
+        </State>
+        <State store={store} style={{ flex: 1 }}>
+          {state => (
+            <BottomNavigation
+              style={{ maxWidth: 672, width: '100%', marginBottom: 40 }}
               value={state.three}
               handleChange={value => store.set({ three: value })}
               backgroundColor={'#9C27B0'}
+              showOneItem
               actionItems={[
                 { icon: 'home', label: 'Home' },
                 { icon: 'attach-money', label: 'Buy' },
                 { icon: 'favorite', label: 'Favorite' },
                 { icon: 'info', label: 'Info' },
                 <BottomNavigationItem
+                  showOneItem
                   key={4}
                   icon={'settings'}
                   label={'Settings'}
@@ -268,6 +289,7 @@ export default storiesOf('Components|Bottom Navigation', module)
                 { icon: 'favorite', label: 'Favorite' },
                 { icon: 'info', label: 'Info' },
                 <BottomNavigationItem
+                  showLabel
                   key={4}
                   icon={'settings'}
                   label={'Settings'}
@@ -415,7 +437,7 @@ export default storiesOf('Components|Bottom Navigation', module)
             }}
             value={state.one}
             handleChange={value => store.set({ one: value })}
-            showLabels
+            showAllLabels
             actionItems={[
               <BottomNavigationItem
                 key={1}

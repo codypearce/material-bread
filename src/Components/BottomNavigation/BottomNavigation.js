@@ -13,6 +13,7 @@ class BottomNavigation extends Component {
     children: PropTypes.node,
     style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     actionItems: PropTypes.array,
+    showOneItem: PropTypes.bool,
     showLabels: PropTypes.bool,
     handleChange: PropTypes.func,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -21,6 +22,7 @@ class BottomNavigation extends Component {
   };
 
   static defaultProps = {
+    showOneItem: false,
     showLabels: true,
   };
 
@@ -86,11 +88,11 @@ class BottomNavigation extends Component {
                 key={item.label}
                 icon={item.icon}
                 label={item.label}
-                showLabel={showLabels || item.showLabel}
+                showOneItem={this.props.showOneItem}
                 onPress={item.onPress}
                 handleChange={this.handleInternalChange}
                 value={index || index === 0 ? index : item.value}
-                showLabels={this.props.showLabels}
+                showLabel={showLabels}
                 active={index === this.props.value}
                 isLandscape={isLandscape}
                 maxWidth={itemMaxWidth}
@@ -104,7 +106,7 @@ class BottomNavigation extends Component {
                 ? item.props.handleChange
                 : this.handleInternalChange,
               value: item.props.value ? item.props.value : index,
-              showLabels: this.props.showLabels,
+              showLabel: this.props.showLabels,
               active: item.props.active
                 ? item.props.active
                 : index === this.props.value,

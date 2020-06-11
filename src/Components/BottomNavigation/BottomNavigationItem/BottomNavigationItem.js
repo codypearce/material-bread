@@ -14,11 +14,11 @@ class BottomNavigationItem extends Component {
     active: PropTypes.bool,
     icon: PropTypes.string,
     label: PropTypes.string,
-    showLabel: PropTypes.bool,
+    showOneItem: PropTypes.bool,
     onPress: PropTypes.func,
     handleChange: PropTypes.func,
     value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    showLabels: PropTypes.bool,
+    showLabel: PropTypes.bool,
     style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     badgeProps: PropTypes.object,
     rippleProps: PropTypes.object,
@@ -29,13 +29,17 @@ class BottomNavigationItem extends Component {
     horizontal: PropTypes.bool,
   };
 
+  static defaultProps = {
+    showLabel: true,
+  };
+
   state = {
     scaleText: new Animated.Value(0),
   };
 
   componentDidMount() {
-    const { showLabel, showLabels, active } = this.props;
-    if (showLabel || active || showLabels) {
+    const { showOneItem, showLabel, active } = this.props;
+    if (showOneItem || active || showLabel) {
       this._animateActive(true);
     }
   }
@@ -50,10 +54,10 @@ class BottomNavigationItem extends Component {
 
   _animateActive(show) {
     const { scaleText } = this.state;
-    let scale = show ? 14 : 0;
+    let scale = show ? 12 : 0;
 
-    if (this.props.showLabels || this.props.showLabel) {
-      scale = show ? 14 : 12;
+    if (this.props.showLabel || this.props.showOneItem) {
+      scale = show ? 12 : 10;
     }
 
     Animated.parallel([
@@ -68,36 +72,42 @@ class BottomNavigationItem extends Component {
     const {
       isLandscape,
       horizontal,
+      showOneItem,
       showLabel,
-      showLabels,
       active,
       icon,
     } = this.props;
     const isHorizontal = isLandscape && horizontal;
-    const isLabelShown = showLabel || showLabels || active;
+    const showOneItemsWithoutDefault = !showOneItem;
+    const showActiveLabel = showOneItem && active;
 
     let color = 'white';
-
     if (containerColor == 'white' || containerColor == '#fff')
-      color = '#2196f3';
+      color = '#DADADA';
 
     const { label } = this.props;
+    let activeLabel = label;
+
+    if (!showOneItemsWithoutDefault && !showActiveLabel) {
+      activeLabel = '';
+    }
+
     return (
       <Animated.Text
         useNativeDriver={false}
         style={{
           color: color,
           fontSize: this.state.scaleText,
-          marginLeft: isHorizontal && isLabelShown && icon ? 12 : 0,
+          marginLeft: isHorizontal && showLabel && icon ? 12 : 0,
         }}>
-        {label}
+        {activeLabel}
       </Animated.Text>
     );
   }
 
   _handleIconColor(containerColor) {
     if (containerColor == 'white' || containerColor == '#fff') {
-      return '#2196f3';
+      return '#DADADA';
     } else {
       return 'white';
     }
@@ -120,15 +130,17 @@ class BottomNavigationItem extends Component {
       isLandscape,
       maxWidth,
       horizontal,
+      showOneItem,
     } = this.props;
 
-    const actualMaxWidth = Math.min(maxWidth, 168);
+    const actualMaxWidth = Math.min(maxWidth, 192);
+    let opacity = showOneItem ? 1 : 0.6;
 
     return (
       <Ripple
         style={[
           styles.bottomNavigationItem,
-          { opacity: active ? 1 : 0.6 },
+          { opacity: active ? 1 : opacity },
           isLandscape &&
             !horizontal && [
               styles.bottomNavigationItemLandscape,
@@ -164,8 +176,8 @@ class BottomNavigationItem extends Component {
           }}
           style={[
             {
-              right: badgeProps.right ? badgeProps.right : -5,
-              top: badgeProps.top ? badgeProps.top : -5,
+              right: badgeProps.right ? badgeProps.right : -4,
+              top: badgeProps.top ? badgeProps.top : -4,
             },
           ]}
           {...badgeProps}>
