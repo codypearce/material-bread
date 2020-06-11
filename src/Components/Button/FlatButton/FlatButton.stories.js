@@ -58,7 +58,6 @@ export default storiesOf('Components|Buttons/Flat Button', module)
         <Button
           text={'Buy'}
           color={'#673AB7'}
-          dense
           icon={<Icon name="attach-money" />}
           type="flat"
         />
@@ -180,7 +179,7 @@ export default storiesOf('Components|Buttons/Flat Button', module)
           text={'Favorite'}
           color={'#E91E63'}
           borderSize={2}
-          dense
+          density={20}
           type="flat"
           icon={<Icon name="favorite" />}
         />
