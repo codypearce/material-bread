@@ -9,20 +9,23 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     position: 'absolute',
-    left: 16,
-    bottom: 16,
+    left: 24,
+    bottom: 24,
   },
 
   title: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: '500',
-    lineHeight: 20,
-    color: 'rgba(255,255,255,.87)',
+    lineHeight: 24,
+    color: '#FFFFFF',
+    letterSpacing: 0.15,
+    marginBottom: 7,
   },
   subtitle: {
     fontSize: 14,
-    lineHeight: 20,
-    color: 'rgba(255,255,255,.87)',
+    lineHeight: 16,
+    color: '#FFFFFF',
+    letterSpacing: 0.25,
   },
 });
 

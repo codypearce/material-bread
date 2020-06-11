@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import withTheme from '../../../Theme/withTheme';
 import Ripple from '../../Ripple/Ripple';
+import styles from './CardContent.styles';
 
 class CardContent extends Component {
   static propTypes = {
@@ -25,7 +26,7 @@ class CardContent extends Component {
       );
     }
 
-    return <View style={[{ padding: 24 }, style]}>{children}</View>;
+    return <View style={[styles.contentContainer, style]}>{children}</View>;
   }
 }
 

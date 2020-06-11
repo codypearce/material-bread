@@ -22,7 +22,7 @@ export default storiesOf('Components|Card', module)
   .addParameters({ jest: ['Card'] })
   .add('simple', () => (
     <Container scroll>
-      <Header title={'Card'} />
+      <Header title={'Simple Card'} />
 
       <Card style={{ flex: 1, marginBottom: 20, padding: 16, maxWidth: 400 }}>
         <Text style={{ fontSize: 14, textAlign: 'center', marginBottom: 8 }}>
@@ -91,7 +91,7 @@ export default storiesOf('Components|Card', module)
   ))
   .add('full card', () => (
     <Container scroll>
-      <Header title={'Card'} />
+      <Header title={'Full Card'} />
 
       <Card style={{ maxWidth: 400, width: '100%', marginBottom: 50 }}>
         <CardHeader
@@ -123,7 +123,18 @@ export default storiesOf('Components|Card', module)
           }
         />
         <CardContent>
-          <Text style={{ color: 'rgba(0,0,0,.6)', fontSize: 14 }}>
+          <Text
+            style={{
+              fontSize: 18,
+              fontWeight: '500',
+              marginBottom: 8,
+            }}>
+            Prince of Dragonstone
+          </Text>
+          <Text style={{ fontSize: 14, marginBottom: 16 }}>
+            You&apos;ve got the North in you
+          </Text>
+          <Text style={{ fontSize: 16 }}>
             Ran out of bleach for beard, but Daenerys says it looks cool.
           </Text>
         </CardContent>
@@ -281,7 +292,7 @@ export default storiesOf('Components|Card', module)
               style={{ flex: 1, width: '100%' }}
               source={{
                 uri:
-                  'https://images.pexels.com/photos/955463/pexels-photo-955463.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=800',
+                  'https://images.pexels.com/photos/1124002/pexels-photo-1124002.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
               }}
               resizeMode="cover"
             />
@@ -505,7 +516,7 @@ export default storiesOf('Components|Card', module)
           }
         />
         <CardContent>
-          <Text style={{ color: 'rgba(0,0,0,.6)' }}>Movember is over.</Text>
+          <Text>Movember is over.</Text>
         </CardContent>
         <CardActions
           rightActionItems={[
@@ -527,7 +538,11 @@ export default storiesOf('Components|Card', module)
             paddingBottom: 0,
           }}
           action={
-            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}>
               <IconButton name="star" size={24} color={'rgba(0,0,0,.47)'} />
               <IconButton name="delete" size={24} color={'rgba(0,0,0,.47)'} />
               <IconButton
@@ -554,7 +569,7 @@ export default storiesOf('Components|Card', module)
 
         <CardContent style={{ paddingTop: 4, paddingBottom: 16 }}>
           <Text
-            style={{ color: 'rgba(0,0,0,1)', fontSize: 18, marginBottom: 4 }}>
+            style={{ color: 'rgba(0,0,0,1)', fontSize: 16, marginBottom: 4 }}>
             Where is the Princess?
           </Text>
           <Text style={{ color: 'rgba(0,0,0,.6)', fontSize: 14 }}>

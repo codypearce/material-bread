@@ -19,7 +19,7 @@ class CardHeader extends Component {
   _renderAction() {
     const { action } = this.props;
     if (!action) return null;
-    return <View style={styles.right}>{action}</View>;
+    return <View style={styles.actions}>{action}</View>;
   }
 
   _renderText() {

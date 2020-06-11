@@ -17,7 +17,7 @@ class CardMedia extends Component {
   };
 
   static defaultProps = {
-    height: 194,
+    height: 155,
   };
 
   _renderText() {
