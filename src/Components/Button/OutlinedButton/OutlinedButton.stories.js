@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { storiesOf } from '../../../storybook/helpers/storiesOf';
 
-import { Button, Icon } from '../../..';
+import { Button, Icon, BodyText } from '../../..';
 import Header from '../../../storybook/components/Header';
 import Container from '../../../storybook/components/Container';
 
@@ -58,7 +58,7 @@ export default storiesOf('Components|Buttons/Outlined Button', module)
         <Button
           text={'Buy'}
           textColor={'#673AB7'}
-          dense
+          density={-2}
           icon={<Icon name="attach-money" />}
           type="outlined"
         />
@@ -108,7 +108,7 @@ export default storiesOf('Components|Buttons/Outlined Button', module)
         <Button
           text={'Buy'}
           textColor={'#673AB7'}
-          dense
+          density={-2}
           icon={<Icon name="attach-money" />}
           type="outlined"
           iconPosition={'right'}
@@ -153,7 +153,7 @@ export default storiesOf('Components|Buttons/Outlined Button', module)
         <Button
           text={'Buy'}
           ttextColor={'#673AB7'}
-          dense
+          density={-2}
           radius={0}
           icon={<Icon name="attach-money" />}
           type="outlined"
@@ -168,38 +168,39 @@ export default storiesOf('Components|Buttons/Outlined Button', module)
       </View>
     </Container>
   ))
-  .add('dense', () => (
+  .add('density', () => (
     <Container>
-      <Header title={'Dense Outlined Button'} />
+      <Header title={'Density Outlined Button'} />
 
+      <BodyText text={'Density -1: 32px'} style={{ marginBottom: 15 }} />
       <View
         style={{
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'space-between',
           flexWrap: 'wrap',
-          marginBottom: 20,
+          marginBottom: 30,
         }}>
-        <Button text={'Home'} dense type="outlined" />
+        <Button text={'Home'} density={-1} type="outlined" />
         <Button
           text={'Favorite'}
           textColor={'#E91E63'}
           borderSize={2}
-          dense
+          density={-1}
           type="outlined"
           icon={<Icon name="favorite" />}
         />
         <Button
           text={'Settings'}
           textColor={'#FF5722'}
-          dense
+          density={-1}
           radius={60}
           type="outlined"
         />
         <Button
           text={'Buy'}
           ttextColor={'#673AB7'}
-          dense
+          density={-1}
           radius={0}
           type="outlined"
           icon={<Icon name="attach-money" />}
@@ -207,7 +208,91 @@ export default storiesOf('Components|Buttons/Outlined Button', module)
         <Button
           text={'Archive'}
           textColor={'#009688'}
-          dense
+          density={-1}
+          icon={<Icon name="archive" />}
+          type="outlined"
+        />
+      </View>
+
+      <BodyText text={'Density -2: 28px'} style={{ marginBottom: 15 }} />
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          marginBottom: 30,
+        }}>
+        <Button text={'Home'} density={-2} type="outlined" />
+        <Button
+          text={'Favorite'}
+          textColor={'#E91E63'}
+          borderSize={2}
+          density={-2}
+          type="outlined"
+          icon={<Icon name="favorite" />}
+        />
+        <Button
+          text={'Settings'}
+          textColor={'#FF5722'}
+          density={-2}
+          radius={60}
+          type="outlined"
+        />
+        <Button
+          text={'Buy'}
+          ttextColor={'#673AB7'}
+          density={-2}
+          radius={0}
+          type="outlined"
+          icon={<Icon name="attach-money" />}
+        />
+        <Button
+          text={'Archive'}
+          textColor={'#009688'}
+          density={-2}
+          icon={<Icon name="archive" />}
+          type="outlined"
+        />
+      </View>
+
+      <BodyText text={'Density -3: 24px'} style={{ marginBottom: 15 }} />
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          marginBottom: 30,
+        }}>
+        <Button text={'Home'} density={-3} type="outlined" />
+        <Button
+          text={'Favorite'}
+          textColor={'#E91E63'}
+          borderSize={2}
+          density={-3}
+          type="outlined"
+          icon={<Icon name="favorite" />}
+        />
+        <Button
+          text={'Settings'}
+          textColor={'#FF5722'}
+          density={-3}
+          radius={60}
+          type="outlined"
+        />
+        <Button
+          text={'Buy'}
+          ttextColor={'#673AB7'}
+          density={-3}
+          radius={0}
+          type="outlined"
+          icon={<Icon name="attach-money" />}
+        />
+        <Button
+          text={'Archive'}
+          textColor={'#009688'}
+          density={-3}
           icon={<Icon name="archive" />}
           type="outlined"
         />
@@ -226,17 +311,39 @@ export default storiesOf('Components|Buttons/Outlined Button', module)
           flexWrap: 'wrap',
           marginBottom: 20,
         }}>
-        <Button loading type="outlined" />
-        <Button textColor={'#E91E63'} borderSize={2} loading type="outlined" />
-        <Button textColor={'#FF5722'} loading radius={60} type="outlined" />
+        <Button text={'Home'} loading hideLabel type="outlined" />
         <Button
-          ttextColor={'#673AB7'}
-          dense
-          radius={0}
+          textColor={'#E91E63'}
+          borderSize={2}
           loading
+          hideLabel
+          text={'Favorite'}
           type="outlined"
         />
-        <Button textColor={'#009688'} loading type="outlined" />
+        <Button
+          text={'Settings'}
+          textColor={'#FF5722'}
+          loading
+          hideLabel
+          radius={60}
+          type="outlined"
+        />
+        <Button
+          text={'Buy'}
+          ttextColor={'#673AB7'}
+          density={-2}
+          radius={0}
+          loading
+          hideLabel
+          type="outlined"
+        />
+        <Button
+          text={'Archive'}
+          textColor={'#009688'}
+          loading
+          hideLabel
+          type="outlined"
+        />
       </View>
     </Container>
   ))
@@ -270,7 +377,7 @@ export default storiesOf('Components|Buttons/Outlined Button', module)
         <Button
           text={'Buy'}
           ttextColor={'#673AB7'}
-          dense
+          density={-2}
           radius={0}
           disabled
           type="outlined"
