@@ -7,7 +7,7 @@ export const code = `<View style={{flexDirection: 'row', alignItems: 'center', j
   <Button text={'Flat'} type="flat" />
   <Button text={'Icon'} type="flat" color={'#E91E63'} icon={<Icon name="favorite" />} />
   <Button text={'Radius'} type="flat" color={'#FF5722'} radius={20} />
-  <Button text={'Dense'} type="flat" color={'#673AB7'} dense />
+  <Button text={'Density'} type="flat" color={'#673AB7'} density={-1} />
   <Button text={'Loading'} type="flat" color={'#009688'} loading />
   <Button text={'Disabled'} type="flat" disabled />
 </View>

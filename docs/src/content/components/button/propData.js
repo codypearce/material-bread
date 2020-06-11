@@ -14,7 +14,7 @@ const propData = [
   ],
   ['containerStyle', 'Styles container of the button', 'object', ''],
 
-  ['dense', 'Toggle dense type, button will be smaller', 'bool', ''],
+  ['density', 'Density scale. Supported scale values (-3, -2, -1, 0).', 'number', '0'],
   ['disabled', 'Toggle disabled styles', 'bool', ''],
   ['fullWidth', 'Forces button to to take up 100% width', 'bool', ''],
   [
