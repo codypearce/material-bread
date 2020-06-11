@@ -9,7 +9,7 @@ exports[`CardHeader Renders 1`] = `
         "borderBottomWidth": 0.5,
         "flexDirection": "row",
         "justifyContent": "space-between",
-        "padding": 16,
+        "padding": 24,
       },
       undefined,
     ]

@@ -36,8 +36,8 @@ class CardActions extends Component {
             onPress={item.onPress}
             name={item.name}
             size={item.size ? item.size : 24}
-            color={item.color ? item.color : 'rgba(0,0,0,.57)'}
-            style={{ marginLeft: 8 }}
+            color={item.color ? item.color : 'rgba(0,0,0,.54)'}
+            style={{ marginLeft: 16 }}
           />
         );
       } else {

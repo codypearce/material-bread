@@ -9,8 +9,7 @@ exports[`CardActions Renders 1`] = `
         "flexDirection": "row",
         "flexWrap": "wrap",
         "justifyContent": "space-between",
-        "paddingHorizontal": 8,
-        "paddingVertical": 8,
+        "padding": 24,
       },
       undefined,
     ]

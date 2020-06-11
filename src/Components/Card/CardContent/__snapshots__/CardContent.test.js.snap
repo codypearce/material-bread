@@ -5,7 +5,11 @@ exports[`CardContent Renders 1`] = `
   style={
     Array [
       Object {
-        "padding": 16,
+        "color": "#000000",
+        "fontSize": 16,
+        "letterSpacing": 0.44,
+        "lineHeight": 24,
+        "padding": 24,
       },
       undefined,
     ]
