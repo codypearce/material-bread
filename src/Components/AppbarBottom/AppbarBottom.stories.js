@@ -34,12 +34,14 @@ export default storiesOf('Components|AppbarBottom', module)
     <Container scroll>
       <Header title={'Center Fab'} />
       <AppbarBottom
-        fab={<Fab backgroundColor={'black'} />}
+        fab={<Fab backgroundColor={'#04D5BF'} />}
+        color={'#6E2CFA'}
         style={{ marginBottom: 50 }}
       />
       <AppbarBottom
-        fab={<Fab backgroundColor={'black'} />}
+        fab={<Fab backgroundColor={'#04D5BF'} />}
         fabCutout
+        color={'#6E2CFA'}
         style={{ marginBottom: 50 }}
       />
       <AppbarBottom
@@ -127,14 +129,16 @@ export default storiesOf('Components|AppbarBottom', module)
     <Container scroll>
       <Header title={'End Fab'} />
       <AppbarBottom
-        fab={<Fab />}
+        fab={<Fab backgroundColor={'#04D5BF'} />}
         fabPosition={'end'}
+        color={'#6E2CFA'}
         style={{ marginBottom: 50 }}
       />
       <AppbarBottom
-        fab={<Fab />}
+        fab={<Fab backgroundColor={'#04D5BF'} />}
         fabCutout
         fabPosition={'end'}
+        color={'#6E2CFA'}
         style={{ marginBottom: 50 }}
       />
       <AppbarBottom
@@ -222,11 +226,11 @@ export default storiesOf('Components|AppbarBottom', module)
     <Container scroll>
       <Header title={'No Fab'} />
       <AppbarBottom
+        color={'#6E2CFA'}
         style={{ marginBottom: 50 }}
         actionItems={[
           { name: 'add' },
           { name: 'edit' },
-
           { name: 'archive' },
           { name: 'delete' },
         ]}
@@ -240,7 +244,6 @@ export default storiesOf('Components|AppbarBottom', module)
         actionItems={[
           { name: 'add' },
           { name: 'edit' },
-
           { name: 'archive' },
           { name: 'delete' },
         ]}
@@ -284,9 +287,10 @@ export default storiesOf('Components|AppbarBottom', module)
         fab={
           <FabSpeedDial
             actions={actions}
-            fab={<Fab backgroundColor={'#E91E63'} />}
+            fab={<Fab backgroundColor={'#04D5BF'} />}
           />
         }
+        color={'#6E2CFA'}
         fabCutout
         fabPosition={'end'}
         navigation={'arrow-back'}
@@ -314,7 +318,8 @@ export default storiesOf('Components|AppbarBottom', module)
             <View style={styles.body}>
               <PageContent />
               <AppbarBottom
-                fab={<Fab backgroundColor={'#E91E63'} />}
+                color={'#6E2CFA'}
+                fab={<Fab backgroundColor={'#04D5BF'} />}
                 fabCutout
                 fabPosition={'center'}
                 navigation={'menu'}
@@ -335,8 +340,9 @@ export default storiesOf('Components|AppbarBottom', module)
       {state => (
         <View style={{ height: 500, position: 'relative' }}>
           <AppbarBottom
-            fab={<Fab backgroundColor={'#E91E63'} />}
+            fab={<Fab backgroundColor={'#04D5BF'} />}
             fabCutout
+            color={'#6E2CFA'}
             fabPosition={'center'}
             navigation={'menu'}
             style={{ marginTop: 300 }}

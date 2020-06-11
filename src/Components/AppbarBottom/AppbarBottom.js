@@ -70,13 +70,13 @@ class AppbarBottom extends Component {
     const isFabSpeedial = fab && fab.props && fab.props.actions;
 
     return React.cloneElement(fab, {
-      shadow: fabCutout ? 8 : 6,
+      shadow: 12,
       style: [styles.fabPos, fabPosStyles],
       containerStyle: {
         position: 'absolute',
         width: '100%',
         paddingRight: isFabSpeedial && isEnd ? cutOutPadding : 0,
-        transform: [{ translateY: -29 }],
+        transform: [{ translateY: -28 }],
       },
     });
   }
