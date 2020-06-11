@@ -9,7 +9,7 @@ export default storiesOf('Components|Data Table', module)
   .addParameters({ jest: ['DataTable'] })
   .add('Simple', () => (
     <Container>
-      <Header title={'DataTable'} />
+      <Header title={'Simple DataTable'} />
 
       <DataTable>
         <DataTableRow>
@@ -54,7 +54,7 @@ export default storiesOf('Components|Data Table', module)
   ))
   .add('Custom', () => (
     <Container>
-      <Header title={'DataTable'} />
+      <Header title={'Custom DataTable'} />
 
       <DataTable
         style={{
