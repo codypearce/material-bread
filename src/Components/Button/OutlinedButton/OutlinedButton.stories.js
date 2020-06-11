@@ -28,9 +28,9 @@ export default storiesOf('Components|Buttons/Outlined Button', module)
       </View>
     </Container>
   ))
-  .add('with icon', () => (
+  .add('with left icon', () => (
     <Container>
-      <Header title={'Outlined Button'} />
+      <Header title={'Left Icon Outlined Button'} />
 
       <View
         style={{
@@ -71,9 +71,61 @@ export default storiesOf('Components|Buttons/Outlined Button', module)
       </View>
     </Container>
   ))
+  .add('with right icon', () => (
+    <Container>
+      <Header title={'Right Icon Outlined Button'} />
+
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          marginBottom: 20,
+        }}>
+        <Button
+          text={'Home'}
+          icon={<Icon name="home" />}
+          type="outlined"
+          iconPosition={'right'}
+        />
+        <Button
+          text={'Favorite'}
+          textColor={'#E91E63'}
+          borderSize={2}
+          type="outlined"
+          icon={<Icon name="favorite" />}
+          iconPosition={'right'}
+        />
+        <Button
+          text={'Settings'}
+          icon={<Icon name="settings" />}
+          textColor={'#FF5722'}
+          radius={20}
+          type="outlined"
+          iconPosition={'right'}
+        />
+        <Button
+          text={'Buy'}
+          textColor={'#673AB7'}
+          dense
+          icon={<Icon name="attach-money" />}
+          type="outlined"
+          iconPosition={'right'}
+        />
+        <Button
+          text={'Archive'}
+          textColor={'#009688'}
+          icon={<Icon name="archive" />}
+          type="outlined"
+          iconPosition={'right'}
+        />
+      </View>
+    </Container>
+  ))
   .add('radius', () => (
     <Container>
-      <Header title={'Outlined Button'} />
+      <Header title={'Radius Outlined Button'} />
 
       <View
         style={{
@@ -118,7 +170,7 @@ export default storiesOf('Components|Buttons/Outlined Button', module)
   ))
   .add('dense', () => (
     <Container>
-      <Header title={'Outlined Button'} />
+      <Header title={'Dense Outlined Button'} />
 
       <View
         style={{
@@ -164,7 +216,7 @@ export default storiesOf('Components|Buttons/Outlined Button', module)
   ))
   .add('loading', () => (
     <Container>
-      <Header title={'Outlined Button'} />
+      <Header title={'Loading Outlined Button'} />
 
       <View
         style={{
@@ -211,7 +263,7 @@ export default storiesOf('Components|Buttons/Outlined Button', module)
   ))
   .add('disabled', () => (
     <Container>
-      <Header title={'Outlined Button'} />
+      <Header title={'Disabled Outlined Button'} />
 
       <View
         style={{
@@ -259,7 +311,7 @@ export default storiesOf('Components|Buttons/Outlined Button', module)
   ))
   .add('full width', () => (
     <Container>
-      <Header title={'Full Width'} />
+      <Header title={'Full Width Outlined Button'} />
       <Button
         fullWidth
         text={'Outlined'}

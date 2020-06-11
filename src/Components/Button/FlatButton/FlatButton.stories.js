@@ -28,9 +28,9 @@ export default storiesOf('Components|Buttons/Flat Button', module)
       </View>
     </Container>
   ))
-  .add('with icon', () => (
+  .add('with left icon', () => (
     <Container>
-      <Header title={'Flat Button'} />
+      <Header title={'Left Icon Flat Button'} />
 
       <View
         style={{
@@ -71,9 +71,61 @@ export default storiesOf('Components|Buttons/Flat Button', module)
       </View>
     </Container>
   ))
+  .add('with right icon', () => (
+    <Container>
+      <Header title={'Right Icon Flat Button'} />
+
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          marginBottom: 20,
+        }}>
+        <Button
+          text={'Home'}
+          icon={<Icon name="home" />}
+          type="flat"
+          iconPosition={'right'}
+        />
+        <Button
+          text={'Favorite'}
+          color={'#E91E63'}
+          borderSize={2}
+          type="flat"
+          icon={<Icon name="favorite" />}
+          iconPosition={'right'}
+        />
+        <Button
+          text={'Settings'}
+          icon={<Icon name="settings" />}
+          color={'#FF5722'}
+          radius={20}
+          type="flat"
+          iconPosition={'right'}
+        />
+        <Button
+          text={'Buy'}
+          color={'#673AB7'}
+          dense
+          icon={<Icon name="attach-money" />}
+          type="flat"
+          iconPosition={'right'}
+        />
+        <Button
+          text={'Archive'}
+          color={'#009688'}
+          icon={<Icon name="archive" />}
+          type="flat"
+          iconPosition={'right'}
+        />
+      </View>
+    </Container>
+  ))
   .add('radius', () => (
     <Container>
-      <Header title={'Flat Button'} />
+      <Header title={'Radius Flat Button'} />
 
       <View
         style={{
@@ -113,7 +165,7 @@ export default storiesOf('Components|Buttons/Flat Button', module)
   ))
   .add('dense', () => (
     <Container>
-      <Header title={'Flat Button'} />
+      <Header title={'Dense Flat Button'} />
 
       <View
         style={{
@@ -159,7 +211,7 @@ export default storiesOf('Components|Buttons/Flat Button', module)
   ))
   .add('loading', () => (
     <Container>
-      <Header title={'Flat Button'} />
+      <Header title={'Loading Flat Button'} />
 
       <View
         style={{
@@ -206,7 +258,7 @@ export default storiesOf('Components|Buttons/Flat Button', module)
   ))
   .add('disabled', () => (
     <Container>
-      <Header title={'Flat Button'} />
+      <Header title={'Disabled Flat Button'} />
 
       <View
         style={{
@@ -254,7 +306,7 @@ export default storiesOf('Components|Buttons/Flat Button', module)
   ))
   .add('full width', () => (
     <Container>
-      <Header title={'Full Width'} />
+      <Header title={'Full Width Flat Button'} />
       <Button fullWidth text={'Flat'} type="flat" style={{ marginBottom: 8 }} />
 
       <Button

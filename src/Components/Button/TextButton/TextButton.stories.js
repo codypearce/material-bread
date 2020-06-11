@@ -8,7 +8,7 @@ import Container from '../../../storybook/components/Container';
 
 export default storiesOf('Components|Buttons/Text Button', module)
   .addParameters({ jest: ['Button'] })
-  .add('Simple', () => (
+  .add('simple', () => (
     <Container>
       <Header title={'Simple Text Button'} />
 
@@ -28,9 +28,9 @@ export default storiesOf('Components|Buttons/Text Button', module)
       </View>
     </Container>
   ))
-  .add('with icon', () => (
+  .add('with left icon', () => (
     <Container>
-      <Header title={'Text Button'} />
+      <Header title={'Left Icon Text Button'} />
 
       <View
         style={{
@@ -67,9 +67,56 @@ export default storiesOf('Components|Buttons/Text Button', module)
       </View>
     </Container>
   ))
+  .add('with right icon', () => (
+    <Container>
+      <Header title={'Right Icon Text Button'} />
+
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          marginBottom: 20,
+        }}>
+        <Button
+          text={'Home'}
+          icon={<Icon name="home" />}
+          iconPosition={'right'}
+        />
+        <Button
+          text={'Favorite'}
+          textColor={'#E91E63'}
+          borderSize={2}
+          icon={<Icon name="favorite" />}
+          iconPosition={'right'}
+        />
+        <Button
+          text={'Settings'}
+          icon={<Icon name="settings" />}
+          textColor={'#FF5722'}
+          radius={20}
+          iconPosition={'right'}
+        />
+        <Button
+          text={'Buy'}
+          ttextColor={'#673AB7'}
+          dense
+          icon={<Icon name="attach-money" />}
+          iconPosition={'right'}
+        />
+        <Button
+          text={'Archive'}
+          textColor={'#009688'}
+          icon={<Icon name="archive" />}
+          iconPosition={'right'}
+        />
+      </View>
+    </Container>
+  ))
   .add('radius', () => (
     <Container>
-      <Header title={'Text Button'} />
+      <Header title={'Radius Text Button'} />
 
       <View
         style={{
@@ -106,7 +153,7 @@ export default storiesOf('Components|Buttons/Text Button', module)
   ))
   .add('dense', () => (
     <Container>
-      <Header title={'Text Button'} />
+      <Header title={'Dense Text Button'} />
 
       <View
         style={{
@@ -143,7 +190,7 @@ export default storiesOf('Components|Buttons/Text Button', module)
   ))
   .add('loading', () => (
     <Container>
-      <Header title={'Text Button'} />
+      <Header title={'Loading Text Button'} />
 
       <View
         style={{
@@ -181,7 +228,7 @@ export default storiesOf('Components|Buttons/Text Button', module)
   ))
   .add('disabled', () => (
     <Container>
-      <Header title={'Text Button'} />
+      <Header title={'Disabled Text Button'} />
 
       <View
         style={{
@@ -220,7 +267,7 @@ export default storiesOf('Components|Buttons/Text Button', module)
   ))
   .add('full width', () => (
     <Container>
-      <Header title={'Text Button'} />
+      <Header title={'Full Width Text Button'} />
       <Button fullWidth text={'Text'} style={{ marginBottom: 8 }} />
       <Button
         fullWidth

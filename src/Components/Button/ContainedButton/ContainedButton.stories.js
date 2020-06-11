@@ -28,9 +28,9 @@ export default storiesOf('Components|Buttons/Contained Button', module)
       </View>
     </Container>
   ))
-  .add('with icon', () => (
+  .add('with left icon', () => (
     <Container>
-      <Header title={'Flat Button'} />
+      <Header title={'Left Icon Contained Button'} />
 
       <View
         style={{
@@ -71,9 +71,61 @@ export default storiesOf('Components|Buttons/Contained Button', module)
       </View>
     </Container>
   ))
+  .add('with right icon', () => (
+    <Container>
+      <Header title={'Right Icon Contained Button'} />
+
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          marginBottom: 20,
+        }}>
+        <Button
+          text={'Home'}
+          icon={<Icon name="home" />}
+          type="contained"
+          iconPosition={'right'}
+        />
+        <Button
+          text={'Favorite'}
+          color={'#E91E63'}
+          borderSize={2}
+          type="contained"
+          icon={<Icon name="favorite" />}
+          iconPosition={'right'}
+        />
+        <Button
+          text={'Settings'}
+          icon={<Icon name="settings" />}
+          color={'#FF5722'}
+          radius={20}
+          type="contained"
+          iconPosition={'right'}
+        />
+        <Button
+          text={'Buy'}
+          color={'#673AB7'}
+          dense
+          icon={<Icon name="attach-money" />}
+          type="contained"
+          iconPosition={'right'}
+        />
+        <Button
+          text={'Archive'}
+          color={'#009688'}
+          icon={<Icon name="archive" />}
+          type="contained"
+          iconPosition={'right'}
+        />
+      </View>
+    </Container>
+  ))
   .add('radius', () => (
     <Container>
-      <Header title={'Contained Button'} />
+      <Header title={'Radius Contained Button'} />
 
       <View
         style={{
@@ -118,7 +170,7 @@ export default storiesOf('Components|Buttons/Contained Button', module)
   ))
   .add('dense', () => (
     <Container>
-      <Header title={'Contained Button'} />
+      <Header title={'Dense Contained Button'} />
 
       <View
         style={{
@@ -164,7 +216,7 @@ export default storiesOf('Components|Buttons/Contained Button', module)
   ))
   .add('loading', () => (
     <Container>
-      <Header title={'Contained Button'} />
+      <Header title={'Loading Contained Button'} />
 
       <View
         style={{
@@ -211,7 +263,7 @@ export default storiesOf('Components|Buttons/Contained Button', module)
   ))
   .add('disabled', () => (
     <Container>
-      <Header title={'Contained Button'} />
+      <Header title={'Disabled Contained Button'} />
 
       <View
         style={{
@@ -259,7 +311,7 @@ export default storiesOf('Components|Buttons/Contained Button', module)
   ))
   .add('full width', () => (
     <Container>
-      <Header title={'Full Width'} />
+      <Header title={'Full Width Contained Button'} />
       <Button
         fullWidth
         text={'Contained'}
