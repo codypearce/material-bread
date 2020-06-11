@@ -191,7 +191,7 @@ export default storiesOf('Components|Data Table/Row', module)
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <DataTable>
-            <DataTableRow>
+            <DataTableRow checkboxOffset>
               <DataTableCell
                 text={'Desert'}
                 type={'header'}
