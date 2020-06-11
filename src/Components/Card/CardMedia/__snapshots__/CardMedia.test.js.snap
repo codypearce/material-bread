@@ -12,7 +12,7 @@ exports[`CardMedia Renders 1`] = `
         "width": "100%",
       },
       Object {
-        "height": 194,
+        "height": 155,
       },
       undefined,
     ]
@@ -21,8 +21,8 @@ exports[`CardMedia Renders 1`] = `
   <View
     style={
       Object {
-        "bottom": 16,
-        "left": 16,
+        "bottom": 24,
+        "left": 24,
         "position": "absolute",
       }
     }
