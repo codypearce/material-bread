@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 16,
+    paddingVertical: 20,
     minWidth: 'auto',
   },
   content: {
@@ -17,6 +17,9 @@ const styles = StyleSheet.create({
   left: { flexDirection: 'row', alignItems: 'center' },
   title: {
     fontSize: 20,
+    fontWeight: '500',
+    lineHeight: 24,
+    letterSpacing: 0.15,
   },
   actions: {
     flexDirection: 'row',

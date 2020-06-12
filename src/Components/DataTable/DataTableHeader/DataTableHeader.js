@@ -37,16 +37,16 @@ class DataTableHeader extends Component {
                 key={item.name}
                 name={item.name}
                 size={24}
-                color={'rgba(0,0,0,.87)'}
+                color={'rgba(33, 33, 33, 0.6)'}
                 style={{
                   marginRight:
                     index + 1 === actionItems.length || position === 'left'
                       ? 0
-                      : 16,
+                      : 8,
                   marginLeft:
                     index + 1 === actionItems.length || position === 'right'
                       ? 0
-                      : 16,
+                      : 8,
                 }}
                 onPress={item.onPress}
               />
@@ -62,7 +62,14 @@ class DataTableHeader extends Component {
   _renderContent() {
     const { rightActions, leftActions } = this.props;
     return (
-      <View style={styles.content}>
+      <View
+        style={[
+          styles.content,
+          {
+            paddingRight: rightActions ? 12 : 16,
+            paddingLeft: leftActions ? 12 : 16,
+          },
+        ]}>
         <View style={styles.left}>
           {this._renderActions(leftActions, 'left')}
           {this._renderTitle()}
