@@ -116,7 +116,7 @@ export default storiesOf('Components|Data Table/Row', module)
               onPressCheckbox={() =>
                 store.set({ checkedThree: !state.checkedThree })
               }>
-              <DataTableCell text={'Eclair'} borderRight flex={2} />
+              <DataTableCell text={'Eclair'} borderRight relativeWidth={2} />
               <DataTableCell text={'262'} right />
               <DataTableCell text={'16.0'} right />
               <DataTableCell text={'24'} right />
@@ -210,7 +210,11 @@ export default storiesOf('Components|Data Table/Row', module)
               onPressCheckbox={() =>
                 store.set({ checkedOne: !state.checkedOne })
               }>
-              <DataTableCell text={'Frozen yogurt'} borderRight flex={2} />
+              <DataTableCell
+                text={'Frozen yogurt'}
+                borderRight
+                relativeWidth={2}
+              />
               <DataTableCell text={'159'} right />
               <DataTableCell text={'6.0'} right />
               <DataTableCell text={'24'} right />
