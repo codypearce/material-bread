@@ -226,38 +226,17 @@ export default storiesOf('Components|Buttons/Outlined Button', module)
           flexWrap: 'wrap',
           marginBottom: 20,
         }}>
-        <Button text={'Home'} loading type="outlined" />
+        <Button loading type="outlined" />
+        <Button textColor={'#E91E63'} borderSize={2} loading type="outlined" />
+        <Button textColor={'#FF5722'} loading radius={60} type="outlined" />
         <Button
-          text={'Favorite'}
-          textColor={'#E91E63'}
-          borderSize={2}
-          loading
-          type="outlined"
-          icon={<Icon name="favorite" />}
-        />
-        <Button
-          text={'Settings'}
-          textColor={'#FF5722'}
-          loading
-          radius={60}
-          type="outlined"
-        />
-        <Button
-          text={'Buy'}
           ttextColor={'#673AB7'}
           dense
           radius={0}
           loading
           type="outlined"
-          icon={<Icon name="attach-money" />}
         />
-        <Button
-          text={'Archive'}
-          textColor={'#009688'}
-          loading
-          type="outlined"
-          icon={<Icon name="archive" />}
-        />
+        <Button textColor={'#009688'} loading type="outlined" />
       </View>
     </Container>
   ))
@@ -275,13 +254,11 @@ export default storiesOf('Components|Buttons/Outlined Button', module)
         }}>
         <Button text={'Home'} disabled type="outlined" />
         <Button
-          text={'Favorite'}
           textColor={'#E91E63'}
           borderSize={2}
           loading
           disabled
           type="outlined"
-          icon={<Icon name="favorite" />}
         />
         <Button
           text={'Settings'}
@@ -337,7 +314,6 @@ export default storiesOf('Components|Buttons/Outlined Button', module)
       />
       <Button
         fullWidth
-        text={'Loading'}
         textColor={'#FF5722'}
         type="outlined"
         loading

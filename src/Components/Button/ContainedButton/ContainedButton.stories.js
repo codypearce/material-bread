@@ -226,33 +226,17 @@ export default storiesOf('Components|Buttons/Contained Button', module)
           flexWrap: 'wrap',
           marginBottom: 20,
         }}>
-        <Button text={'Home'} loading type="contained" />
+        <Button loading type="contained" />
         <Button
-          text={'Favorite'}
           color={'#E91E63'}
           borderSize={2}
           loading
           type="contained"
           icon={<Icon name="favorite" />}
         />
+        <Button color={'#FF5722'} loading radius={60} type="contained" />
+        <Button tcolor={'#673AB7'} dense radius={0} loading type="contained" />
         <Button
-          text={'Settings'}
-          color={'#FF5722'}
-          loading
-          radius={60}
-          type="contained"
-        />
-        <Button
-          text={'Buy'}
-          tcolor={'#673AB7'}
-          dense
-          radius={0}
-          loading
-          type="contained"
-          icon={<Icon name="attach-money" />}
-        />
-        <Button
-          text={'Archive'}
           color={'#009688'}
           loading
           type="contained"
@@ -275,13 +259,11 @@ export default storiesOf('Components|Buttons/Contained Button', module)
         }}>
         <Button text={'Home'} disabled type="contained" />
         <Button
-          text={'Favorite'}
           color={'#E91E63'}
           borderSize={2}
           loading
           disabled
           type="contained"
-          icon={<Icon name="favorite" />}
         />
         <Button
           text={'Settings'}
@@ -337,7 +319,6 @@ export default storiesOf('Components|Buttons/Contained Button', module)
       />
       <Button
         fullWidth
-        text={'Loading'}
         color={'#FF5722'}
         type="contained"
         loading
