@@ -46,8 +46,10 @@ class DataTablePagination extends Component {
 
     return (
       <View style={styles.rowsPerPage}>
-        <Text style={styles.rowsPerPageText} numberOfLines={1}>
-          {'Rows per page:'}
+        <Text
+          style={[styles.footerFont, styles.rowsPerPageText]}
+          numberOfLines={1}>
+          {'Rows Per Page:'}
         </Text>
         <Menu
           visible={visible}
@@ -55,11 +57,11 @@ class DataTablePagination extends Component {
             <Ripple
               onPress={() => this.setState({ visible: true })}
               style={styles.menuButton}>
-              <Text style={styles.text}>{perPage}</Text>
+              <Text style={styles.footerFont}>{perPage}</Text>
               <Icon
                 name={'arrow-drop-down'}
                 size={24}
-                color={'rgba(0,0,0,.6)'}
+                color={'rgba(33, 33, 33, 0.6)'}
               />
             </Ripple>
           }>
@@ -76,9 +78,10 @@ class DataTablePagination extends Component {
 
     return (
       <Text
-        style={
-          styles.currentNumber
-        }>{`${startRange}-${endRange} of ${numberOfRows} `}</Text>
+        style={[
+          styles.footerFont,
+          styles.currentNumber,
+        ]}>{`${startRange}-${endRange} of ${numberOfRows} `}</Text>
     );
   }
 
@@ -92,7 +95,7 @@ class DataTablePagination extends Component {
           onPress={() => onChangePage(page - 1)}
           size={24}
           style={{ marginRight: 24 }}
-          color={page === 0 ? 'rgba(0,0,0,.37)' : 'rgba(0,0,0,.87)'}
+          color={page === 0 ? 'rgba(33, 33, 33, 0.3)' : 'rgba(0, 0, 0, 0.54)'}
         />
         <IconButton
           name={'chevron-right'}
@@ -100,7 +103,9 @@ class DataTablePagination extends Component {
           onPress={() => onChangePage(page + 1)}
           size={24}
           color={
-            page === numberOfPages - 1 ? 'rgba(0,0,0,.37)' : 'rgba(0,0,0,.87)'
+            page === numberOfPages - 1
+              ? 'rgba(33, 33, 33, 0.3)'
+              : 'rgba(0, 0, 0, 0.54)'
           }
         />
       </Fragment>

@@ -4,34 +4,36 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 12,
+    paddingVertical: 20,
+    paddingHorizontal: 16,
     minWidth: 'auto',
   },
 
-  currentNumber: {
+  footerFont: {
     fontSize: 12,
-    marginRight: 44 / 2,
-    color: 'rgba(0,0,0,.6)',
+    lineHeight: 14,
+    letterSpacing: 0.4,
+    color: 'rgba(0,0,0,1)',
   },
+
+  currentNumber: {
+    marginRight: 24,
+  },
+
   rowsPerPage: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginRight: 30,
+    marginRight: 32,
   },
+
   rowsPerPageText: {
-    fontSize: 12,
-    marginRight: 24,
-    color: 'rgba(0,0,0,.6)',
+    marginRight: 8,
   },
-  text: {
-    fontSize: 12,
-    color: 'rgba(0,0,0,.6)',
-  },
+
   menuButton: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
-    padding: 4,
   },
 });
 
