@@ -9,7 +9,7 @@ exports[`DataTableHeader Renders 1`] = `
         "flexDirection": "row",
         "height": 64,
         "minWidth": "auto",
-        "paddingHorizontal": 16,
+        "paddingVertical": 20,
         "width": "100%",
       },
       undefined,
@@ -18,12 +18,18 @@ exports[`DataTableHeader Renders 1`] = `
 >
   <View
     style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "width": "100%",
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "width": "100%",
+        },
+        Object {
+          "paddingLeft": 16,
+          "paddingRight": 16,
+        },
+      ]
     }
   >
     <View

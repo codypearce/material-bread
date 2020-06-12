@@ -73,6 +73,7 @@ exports[`TextFieldFilled Renders 1`] = `
           "height": 36,
           "letterSpacing": 1.25,
           "lineHeight": 16,
+          "paddingVertical": 8,
           "textAlign": "center",
           "textTransform": "uppercase",
         },
