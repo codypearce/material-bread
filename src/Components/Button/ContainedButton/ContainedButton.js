@@ -23,17 +23,17 @@ class ContainedButton extends Component {
   };
   state = {
     stateBackgroundColor: null,
-    elevation: new Animated.Value(6),
+    elevation: new Animated.Value(8),
     animatedShadowRadius: new Animated.Value(4.65),
     animatedShadowOpacity: new Animated.Value(0.27),
-    animatedShadowHeight: new Animated.Value(3),
-    animatedShadowWidth: new Animated.Value(1),
+    animatedShadowHeight: new Animated.Value(2),
+    animatedShadowWidth: new Animated.Value(-1.5),
   };
 
   animateShadow(active) {
-    const animationDuration = active ? 400 : 150;
+    const animationDuration = active ? 200 : 50;
     if (Platform.OS === 'android') {
-      const elevation = active ? 10 : 6;
+      const elevation = active ? 8 : 2;
       Animated.timing(this.state.elevation, {
         toValue: elevation,
         duration: animationDuration,
@@ -48,8 +48,8 @@ class ContainedButton extends Component {
 
       const shadowRadius = active ? 6.65 : 4.65;
       const shadowShadowOpacity = active ? 0.27 : 0.35;
-      const shadowHeight = active ? 5 : 3;
-      const shadowWidth = active ? 1.5 : 1;
+      const shadowHeight = active ? 4 : 2;
+      const shadowWidth = active ? -1.5 : -0.5;
 
       Animated.parallel([
         Animated.timing(animatedShadowRadius, {
@@ -157,7 +157,7 @@ class ContainedButton extends Component {
   handleHover(toggle) {
     const bgColor = this.getBackgroundColor();
     let implementedColor = toggle
-      ? this.getOverlayColor(bgColor, 0.04, 0.08)
+      ? this.getOverlayColor(bgColor, 0.08, 0.08)
       : null;
 
     this.setState({ stateBackgroundColor: implementedColor });

@@ -73,7 +73,7 @@ class OutlinedButton extends Component {
   handleHover(toggle) {
     let implementedColor = toggle
       ? color(this.getTextColor())
-          .alpha(0.04)
+          .alpha(0.08)
           .rgb()
           .string()
       : null;

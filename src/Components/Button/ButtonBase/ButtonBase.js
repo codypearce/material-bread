@@ -55,12 +55,11 @@ class ButtonBase extends Component {
       textStyle,
       typeTextColor,
       theme,
-      hideLabel,
       dense,
       useInputCasing,
     } = this.props;
 
-    if (hideLabel) return null;
+    let modifiedText = text || ' ';
     return (
       <Text
         numberOfLines={1}
@@ -73,7 +72,7 @@ class ButtonBase extends Component {
           },
           textStyle,
         ]}>
-        {useInputCasing ? text : text.toUpperCase()}
+        {useInputCasing ? modifiedText : modifiedText.toUpperCase()}
       </Text>
     );
   }
@@ -111,8 +110,8 @@ class ButtonBase extends Component {
     if (icon) {
       return React.cloneElement(icon, {
         style: {
-          marginRight: iconPosition == 'left' ? 8 : 0,
-          marginLeft: iconPosition == 'right' ? 8 : 0,
+          marginRight: iconPosition == 'left' ? 12 : 0,
+          marginLeft: iconPosition == 'right' ? 12 : 0,
         },
         size: iconSize || (dense ? 14 : 18),
         color: typeTextColor ? typeTextColor : 'white',
@@ -162,8 +161,8 @@ class ButtonBase extends Component {
             minWidth: dense ? 'auto' : 64,
             height: dense ? 32 : 36,
             minHeight: dense ? 32 : 36,
-            paddingLeft: iconPosition === 'left' && icon ? 12 : 16,
-            paddingRight: iconPosition === 'right' && icon ? 12 : 16,
+            paddingLeft: iconPosition === 'left' && icon ? 18 : 16,
+            paddingRight: iconPosition === 'right' && icon ? 18 : 16,
             borderRadius: radius ? radius : theme.button.borderRadius,
           },
           typeButtonStyles,

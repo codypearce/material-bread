@@ -66,6 +66,13 @@ exports[`DrawerBottom Renders 1`] = `
           "height": 1334,
           "overflow": "hidden",
           "paddingVertical": 20,
+          "shadowColor": "#000",
+          "shadowOffset": Object {
+            "height": 8,
+            "width": 0,
+          },
+          "shadowOpacity": 0.44,
+          "shadowRadius": 10.32,
           "transform": Array [
             Object {
               "translateY": 1334,

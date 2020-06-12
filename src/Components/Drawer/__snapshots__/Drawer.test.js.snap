@@ -29,11 +29,11 @@ exports[`Drawer Renders 1`] = `
         "position": "absolute",
         "shadowColor": "#000",
         "shadowOffset": Object {
-          "height": 4,
+          "height": 8,
           "width": 0,
         },
-        "shadowOpacity": 0.3,
-        "shadowRadius": 4.65,
+        "shadowOpacity": 0.44,
+        "shadowRadius": 10.32,
         "top": 0,
         "transform": Array [
           Object {

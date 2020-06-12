@@ -82,7 +82,7 @@ class FlatButton extends Component {
   handleHover(toggle) {
     const bgColor = this.getBackgroundColor();
     let implementedColor = toggle
-      ? this.getOverlayColor(bgColor, 0.04, 0.08)
+      ? this.getOverlayColor(bgColor, 0.08, 0.08)
       : null;
 
     this.setState({ stateBackgroundColor: implementedColor });
