@@ -8,7 +8,7 @@ export const code = `<View style={{flexDirection: 'row', alignItems: 'center', j
   <Button text={'Icon'} type="contained" color={'#E91E63'} icon={<Icon name="favorite" />} />
   <Button text={'Radius'} type="contained" color={'#FF5722'} radius={20} />
   <Button text={'Dense'} type="contained" color={'#673AB7'} dense />
-  <Button type="contained" color={'#009688'} loading />
+  <Button text={'Loading'} type="contained" color={'#009688'} loading />
   <Button text={'Disabled'} type="contained" disabled />
 </View>
 `;
