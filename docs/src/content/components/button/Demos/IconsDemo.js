@@ -9,7 +9,7 @@ export const code = `<View style={{flexDirection: 'row', alignItems: 'center', j
     <Button text={'Archive'} type="outlined" textColor={'#673AB7'}  icon={<Icon name="archive" />} />
     <Button text={'Add'} textColor={'#009688'} icon={<Icon name="add" />}  />
     <Button text={'Notify'} type="outlined" textColor={'#E91E63'}  icon={<Icon name="notifications" />} iconPosition="right" borderSize={2}/>
-    <Button text={'Fav'}  type="flat" icon={<Icon name="favorite" />}  color={'#00BCD4'} iconPosition="right" dense/>
+    <Button text={'Fav'}  type="flat" icon={<Icon name="favorite" />}  color={'#00BCD4'} iconPosition="right" density={-1}/>
 </View>
 `;
 
