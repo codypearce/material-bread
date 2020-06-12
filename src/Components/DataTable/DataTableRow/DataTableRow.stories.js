@@ -18,7 +18,7 @@ export default storiesOf('Components|Data Table/Row', module)
 
   .add('simple', () => (
     <Container>
-      <Header title={'DataTable Row'} />
+      <Header title={'Simple DataTable Row'} />
       <DataTable>
         <DataTableRow>
           <DataTableCell
@@ -62,7 +62,7 @@ export default storiesOf('Components|Data Table/Row', module)
   ))
   .add('with checkbox', () => (
     <Container>
-      <Header title={'DataTable Row'} />
+      <Header title={'Checkbox DataTable Row'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <DataTable>
@@ -116,7 +116,7 @@ export default storiesOf('Components|Data Table/Row', module)
               onPressCheckbox={() =>
                 store.set({ checkedThree: !state.checkedThree })
               }>
-              <DataTableCell text={'Eclair'} borderRight flex={2} />
+              <DataTableCell text={'Eclair'} borderRight relativeWidth={2} />
               <DataTableCell text={'262'} right />
               <DataTableCell text={'16.0'} right />
               <DataTableCell text={'24'} right />
@@ -129,7 +129,7 @@ export default storiesOf('Components|Data Table/Row', module)
   ))
   .add('selected', () => (
     <Container>
-      <Header title={'DataTable Row'} />
+      <Header title={'Selected DataTable Row'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <DataTable>
@@ -187,11 +187,11 @@ export default storiesOf('Components|Data Table/Row', module)
   ))
   .add('hover', () => (
     <Container>
-      <Header title={'DataTable Row'} />
+      <Header title={'Hover DataTable Row'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <DataTable>
-            <DataTableRow>
+            <DataTableRow checkboxOffset>
               <DataTableCell
                 text={'Desert'}
                 type={'header'}
@@ -210,7 +210,11 @@ export default storiesOf('Components|Data Table/Row', module)
               onPressCheckbox={() =>
                 store.set({ checkedOne: !state.checkedOne })
               }>
-              <DataTableCell text={'Frozen yogurt'} borderRight flex={2} />
+              <DataTableCell
+                text={'Frozen yogurt'}
+                borderRight
+                relativeWidth={2}
+              />
               <DataTableCell text={'159'} right />
               <DataTableCell text={'6.0'} right />
               <DataTableCell text={'24'} right />

@@ -305,7 +305,7 @@ export default storiesOf('Components|Buttons/Text Button', module)
           loading
           icon={<Icon name="archive" />}
         />
-      </View>
+
     </Container>
   ))
   .add('disabled', () => (
@@ -321,14 +321,7 @@ export default storiesOf('Components|Buttons/Text Button', module)
           marginBottom: 20,
         }}>
         <Button text={'Home'} disabled />
-        <Button
-          text={'Favorite'}
-          textColor={'#E91E63'}
-          borderSize={2}
-          loading
-          disabled
-          icon={<Icon name="favorite" />}
-        />
+        <Button textColor={'#E91E63'} borderSize={2} loading disabled />
         <Button text={'Settings'} textColor={'#FF5722'} disabled radius={60} />
         <Button
           text={'Buy'}
@@ -367,7 +360,6 @@ export default storiesOf('Components|Buttons/Text Button', module)
       />
       <Button
         fullWidth
-        text={'Loading'}
         textColor={'#FF5722'}
         loading
         style={{ marginBottom: 8 }}

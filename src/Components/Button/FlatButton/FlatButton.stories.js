@@ -353,16 +353,13 @@ export default storiesOf('Components|Buttons/Flat Button', module)
           flexWrap: 'wrap',
           marginBottom: 20,
         }}>
-        <Button text={'Home'} disabled type="flat" />
         <Button
-          text={'Favorite'}
-          color={'#E91E63'}
-          borderSize={2}
-          loading
+          text={'Home'}
+          icon={<Icon name="home" />}
           disabled
           type="flat"
-          icon={<Icon name="favorite" />}
         />
+        <Button color={'#E91E63'} borderSize={2} loading disabled type="flat" />
         <Button
           text={'Settings'}
           color={'#FF5722'}
@@ -412,7 +409,6 @@ export default storiesOf('Components|Buttons/Flat Button', module)
       />
       <Button
         fullWidth
-        text={'Loading'}
         color={'#FF5722'}
         type="flat"
         loading

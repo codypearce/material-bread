@@ -15,7 +15,7 @@ export default storiesOf('Components|Data Table/Cell', module)
 
   .add('Simple', () => (
     <Container>
-      <Header title={'DataTable Cell'} />
+      <Header title={'Simple DataTable Cell'} />
       <DataTable>
         <DataTableRow>
           <DataTableCell
@@ -59,7 +59,7 @@ export default storiesOf('Components|Data Table/Cell', module)
   ))
   .add('Sorting Icon', () => (
     <Container>
-      <Header title={'DataTable Cell'} />
+      <Header title={'Sortin Icon DataTable Cell'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <DataTable>

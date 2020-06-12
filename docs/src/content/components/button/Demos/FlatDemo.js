@@ -10,6 +10,7 @@ export const code = `<View style={{flexDirection: 'row', alignItems: 'center', j
   <Button text={'Density'} type="flat" color={'#673AB7'} density={-1} />
   <Button text={'Loading'} type="flat" color={'#009688'} loading />
   <Button text={'Disabled'} type="flat" disabled />
+  <Button text={'Loading'} type="flat" color={'#009688'} loading />
 </View>
 `;
 
