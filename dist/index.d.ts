@@ -331,7 +331,7 @@ export interface BaseButtonProps {
   radius?: number
 
   fullWidth?: boolean
-  dense?: boolean
+  density?: number
 
   disabled?: boolean
   disableRipple?: boolean

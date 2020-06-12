@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { storiesOf } from '../../../storybook/helpers/storiesOf';
 
-import { Button, Icon } from '../../..';
+import { Button, Icon, BodyText } from '../../..';
 import Header from '../../../storybook/components/Header';
 import Container from '../../../storybook/components/Container';
 
@@ -58,7 +58,7 @@ export default storiesOf('Components|Buttons/Flat Button', module)
         <Button
           text={'Buy'}
           color={'#673AB7'}
-          dense
+          density={-2}
           icon={<Icon name="attach-money" />}
           type="flat"
         />
@@ -148,7 +148,7 @@ export default storiesOf('Components|Buttons/Flat Button', module)
         <Button
           text={'Buy'}
           tcolor={'#673AB7'}
-          dense
+          density={-2}
           radius={0}
           icon={<Icon name="attach-money" />}
           type="flat"
@@ -163,38 +163,39 @@ export default storiesOf('Components|Buttons/Flat Button', module)
       </View>
     </Container>
   ))
-  .add('dense', () => (
+  .add('density', () => (
     <Container>
       <Header title={'Dense Flat Button'} />
 
+      <BodyText text={'Density -1: 32px'} style={{ marginBottom: 15 }} />
       <View
         style={{
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'space-between',
           flexWrap: 'wrap',
-          marginBottom: 20,
+          marginBottom: 30,
         }}>
-        <Button text={'Home'} dense type="flat" />
+        <Button text={'Home'} density={-1} type="flat" />
         <Button
           text={'Favorite'}
           color={'#E91E63'}
           borderSize={2}
-          dense
+          density={-1}
           type="flat"
           icon={<Icon name="favorite" />}
         />
         <Button
           text={'Settings'}
           color={'#FF5722'}
-          dense
+          density={-1}
           radius={60}
           type="flat"
         />
         <Button
           text={'Buy'}
           tcolor={'#673AB7'}
-          dense
+          density={-1}
           radius={0}
           type="flat"
           icon={<Icon name="attach-money" />}
@@ -202,7 +203,91 @@ export default storiesOf('Components|Buttons/Flat Button', module)
         <Button
           text={'Archive'}
           color={'#009688'}
-          dense
+          density={-1}
+          icon={<Icon name="archive" />}
+          type="flat"
+        />
+      </View>
+
+      <BodyText text={'Density -2: 28px'} style={{ marginBottom: 15 }} />
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          marginBottom: 30,
+        }}>
+        <Button text={'Home'} density={-2} type="flat" />
+        <Button
+          text={'Favorite'}
+          color={'#E91E63'}
+          borderSize={2}
+          density={-2}
+          type="flat"
+          icon={<Icon name="favorite" />}
+        />
+        <Button
+          text={'Settings'}
+          color={'#FF5722'}
+          density={-2}
+          radius={60}
+          type="flat"
+        />
+        <Button
+          text={'Buy'}
+          tcolor={'#673AB7'}
+          density={-2}
+          radius={0}
+          type="flat"
+          icon={<Icon name="attach-money" />}
+        />
+        <Button
+          text={'Archive'}
+          color={'#009688'}
+          density={-2}
+          icon={<Icon name="archive" />}
+          type="flat"
+        />
+      </View>
+
+      <BodyText text={'Density -3: 24px'} style={{ marginBottom: 15 }} />
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          marginBottom: 30,
+        }}>
+        <Button text={'Home'} density={-3} type="flat" />
+        <Button
+          text={'Favorite'}
+          color={'#E91E63'}
+          borderSize={2}
+          density={-3}
+          type="flat"
+          icon={<Icon name="favorite" />}
+        />
+        <Button
+          text={'Settings'}
+          color={'#FF5722'}
+          density={-3}
+          radius={60}
+          type="flat"
+        />
+        <Button
+          text={'Buy'}
+          tcolor={'#673AB7'}
+          density={-3}
+          radius={0}
+          type="flat"
+          icon={<Icon name="attach-money" />}
+        />
+        <Button
+          text={'Archive'}
+          color={'#009688'}
+          density={-3}
           icon={<Icon name="archive" />}
           type="flat"
         />
@@ -221,11 +306,38 @@ export default storiesOf('Components|Buttons/Flat Button', module)
           flexWrap: 'wrap',
           marginBottom: 20,
         }}>
-        <Button loading type="flat" />
-        <Button color={'#E91E63'} borderSize={2} loading type="flat" />
-        <Button color={'#FF5722'} loading radius={60} type="flat" />
-        <Button tcolor={'#673AB7'} dense radius={0} loading type="flat" />
-        <Button color={'#009688'} loading type="flat" />
+        <Button text={'Home'} loading type="flat" />
+        <Button
+          text={'Favorite'}
+          color={'#E91E63'}
+          borderSize={2}
+          loading
+          type="flat"
+          icon={<Icon name="favorite" />}
+        />
+        <Button
+          text={'Settings'}
+          color={'#FF5722'}
+          loading
+          radius={60}
+          type="flat"
+        />
+        <Button
+          text={'Buy'}
+          tcolor={'#673AB7'}
+          density={-2}
+          radius={0}
+          loading
+          type="flat"
+          icon={<Icon name="attach-money" />}
+        />
+        <Button
+          text={'Archive'}
+          color={'#009688'}
+          loading
+          type="flat"
+          icon={<Icon name="archive" />}
+        />
       </View>
     </Container>
   ))
@@ -258,7 +370,7 @@ export default storiesOf('Components|Buttons/Flat Button', module)
         <Button
           text={'Buy'}
           tcolor={'#673AB7'}
-          dense
+          density={-2}
           radius={0}
           disabled
           type="flat"

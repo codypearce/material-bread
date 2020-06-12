@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { storiesOf } from '../../../storybook/helpers/storiesOf';
 
-import { Button, Icon } from '../../..';
+import { Button, Icon, BodyText } from '../../..';
 import Header from '../../../storybook/components/Header';
 import Container from '../../../storybook/components/Container';
 
@@ -56,7 +56,7 @@ export default storiesOf('Components|Buttons/Text Button', module)
         <Button
           text={'Buy'}
           ttextColor={'#673AB7'}
-          dense
+          density={-2}
           icon={<Icon name="attach-money" />}
         />
         <Button
@@ -138,7 +138,7 @@ export default storiesOf('Components|Buttons/Text Button', module)
         <Button
           text={'Buy'}
           ttextColor={'#673AB7'}
-          dense
+          density={-2}
           radius={0}
           icon={<Icon name="attach-money" />}
         />
@@ -151,38 +151,120 @@ export default storiesOf('Components|Buttons/Text Button', module)
       </View>
     </Container>
   ))
-  .add('dense', () => (
+  .add('density', () => (
     <Container>
       <Header title={'Dense Text Button'} />
 
+      <BodyText text={'Density -1: 32px'} style={{ marginBottom: 15 }} />
       <View
         style={{
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'space-between',
           flexWrap: 'wrap',
-          marginBottom: 20,
+          marginBottom: 30,
         }}>
-        <Button text={'Home'} dense />
+        <Button text={'Home'} density={-1} />
         <Button
           text={'Favorite'}
           textColor={'#E91E63'}
           borderSize={2}
-          dense
+          density={-1}
           icon={<Icon name="favorite" />}
         />
-        <Button text={'Settings'} textColor={'#FF5722'} dense radius={60} />
+        <Button
+          text={'Settings'}
+          textColor={'#FF5722'}
+          density={-1}
+          radius={60}
+        />
         <Button
           text={'Buy'}
           ttextColor={'#673AB7'}
-          dense
+          density={-1}
           radius={0}
           icon={<Icon name="attach-money" />}
         />
         <Button
           text={'Archive'}
           textColor={'#009688'}
-          dense
+          density={-1}
+          icon={<Icon name="archive" />}
+        />
+      </View>
+
+      <BodyText text={'Density -2: 28px'} style={{ marginBottom: 15 }} />
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          marginBottom: 30,
+        }}>
+        <Button text={'Home'} density={-2} />
+        <Button
+          text={'Favorite'}
+          textColor={'#E91E63'}
+          borderSize={2}
+          density={-2}
+          icon={<Icon name="favorite" />}
+        />
+        <Button
+          text={'Settings'}
+          textColor={'#FF5722'}
+          density={-2}
+          radius={60}
+        />
+        <Button
+          text={'Buy'}
+          ttextColor={'#673AB7'}
+          density={-2}
+          radius={0}
+          icon={<Icon name="attach-money" />}
+        />
+        <Button
+          text={'Archive'}
+          textColor={'#009688'}
+          density={-2}
+          icon={<Icon name="archive" />}
+        />
+      </View>
+
+      <BodyText text={'Density -3: 24px'} style={{ marginBottom: 15 }} />
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          marginBottom: 30,
+        }}>
+        <Button text={'Home'} density={-3} />
+        <Button
+          text={'Favorite'}
+          textColor={'#E91E63'}
+          borderSize={2}
+          density={-3}
+          icon={<Icon name="favorite" />}
+        />
+        <Button
+          text={'Settings'}
+          textColor={'#FF5722'}
+          density={-3}
+          radius={60}
+        />
+        <Button
+          text={'Buy'}
+          ttextColor={'#673AB7'}
+          density={-3}
+          radius={0}
+          icon={<Icon name="attach-money" />}
+        />
+        <Button
+          text={'Archive'}
+          textColor={'#009688'}
+          density={-3}
           icon={<Icon name="archive" />}
         />
       </View>
@@ -200,12 +282,30 @@ export default storiesOf('Components|Buttons/Text Button', module)
           flexWrap: 'wrap',
           marginBottom: 20,
         }}>
-        <Button loading />
-        <Button textColor={'#E91E63'} borderSize={2} loading />
-        <Button textColor={'#FF5722'} loading radius={60} />
-        <Button ttextColor={'#673AB7'} dense radius={0} loading />
-        <Button textColor={'#009688'} loading />
-      </View>
+        <Button text={'Home'} loading />
+        <Button
+          text={'Favorite'}
+          textColor={'#E91E63'}
+          borderSize={2}
+          loading
+          icon={<Icon name="favorite" />}
+        />
+        <Button text={'Settings'} textColor={'#FF5722'} loading radius={60} />
+        <Button
+          text={'Buy'}
+          ttextColor={'#673AB7'}
+          density={-2}
+          radius={0}
+          loading
+          icon={<Icon name="attach-money" />}
+        />
+        <Button
+          text={'Archive'}
+          textColor={'#009688'}
+          loading
+          icon={<Icon name="archive" />}
+        />
+
     </Container>
   ))
   .add('disabled', () => (
@@ -226,7 +326,7 @@ export default storiesOf('Components|Buttons/Text Button', module)
         <Button
           text={'Buy'}
           ttextColor={'#673AB7'}
-          dense
+          density={-2}
           radius={0}
           disabled
           icon={<Icon name="attach-money" />}
