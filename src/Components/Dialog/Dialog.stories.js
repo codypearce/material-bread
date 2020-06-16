@@ -1,7 +1,15 @@
 import React from 'react';
 import { View, Image, ScrollView } from 'react-native';
 
-import { Dialog, Button, Avatar, BodyText, Ripple } from '../../';
+import {
+  Dialog,
+  Button,
+  Avatar,
+  BodyText,
+  Ripple,
+  Checkbox,
+  Icon,
+} from '../../';
 import { State, Store } from '@sambego/storybook-state';
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
@@ -9,6 +17,11 @@ import { storiesOf } from '../../storybook/helpers/storiesOf';
 
 const store = new Store({
   visible: false,
+  checkedOne: false,
+  checkedTwo: false,
+  checkedThree: false,
+  checkedFour: false,
+  checkedFive: false,
 });
 
 export default storiesOf('Components|Dialog', module)
@@ -21,6 +34,7 @@ export default storiesOf('Components|Dialog', module)
         {state => (
           <View style={{ flexDirection: 'row' }}>
             <Button
+              textColor={'#6E2CFA'}
               text={'Open'}
               onPress={() => store.set({ visible: !state.visible })}
             />
@@ -31,10 +45,12 @@ export default storiesOf('Components|Dialog', module)
               style={{ width: 280 }}
               actionItems={[
                 {
+                  textColor: '#6E2CFA',
                   text: 'Cancel',
                   onPress: () => store.set({ visible: false }),
                 },
                 {
+                  color: '#6E2CFA',
                   text: 'Discard',
                   type: 'contained',
                   onPress: () => store.set({ visible: false }),
@@ -54,6 +70,7 @@ export default storiesOf('Components|Dialog', module)
         {state => (
           <View style={{ flexDirection: 'row' }}>
             <Button
+              textColor={'#6E2CFA'}
               text={'Open'}
               onPress={() => store.set({ visible: !state.visible })}
             />
@@ -66,10 +83,12 @@ export default storiesOf('Components|Dialog', module)
               }
               actionItems={[
                 {
+                  textColor: '#6E2CFA',
                   text: 'Cancel',
                   onPress: () => store.set({ visible: false }),
                 },
                 {
+                  textColor: '#6E2CFA',
                   text: 'OK',
                   onPress: () => store.set({ visible: false }),
                 },
@@ -88,13 +107,15 @@ export default storiesOf('Components|Dialog', module)
         {state => (
           <View style={{ flexDirection: 'row' }}>
             <Button
+              textColor={'#6E2CFA'}
               text={'Open'}
               onPress={() => store.set({ visible: !state.visible })}
             />
             <Dialog
               visible={state.visible}
               onTouchOutside={() => store.set({ visible: false })}
-              title={'Set up backup account'}>
+              title={'Set up backup account'}
+              style={{ paddingRight: 24 }}>
               <Ripple
                 style={{
                   flexDirection: 'row',
@@ -191,89 +212,190 @@ export default storiesOf('Components|Dialog', module)
         {state => (
           <View style={{ flexDirection: 'row' }}>
             <Button
+              textColor={'#6E2CFA'}
               text={'Open'}
               onPress={() => store.set({ visible: !state.visible })}
             />
             <Dialog
               visible={state.visible}
               onTouchOutside={() => store.set({ visible: false })}
-              title={'Terms of Service'}
-              contentStyle={{ paddingRight: 0 }}
+              title={'Get this party started?'}
+              titleStyle={{ marginLeft: 24 }}
+              contentStyle={{ paddingLeft: 0, paddingBottom: 0, height: 360 }}
               actionItems={[
                 {
-                  text: 'Cancel',
+                  textColor: '#6E2CFA',
+                  text: 'Second',
                   onPress: () => store.set({ visible: false }),
                 },
                 {
-                  text: 'OK',
+                  textColor: '#6E2CFA',
+                  text: 'First',
                   onPress: () => store.set({ visible: false }),
                 },
               ]}>
-              <ScrollView
-                scrollEnabled
-                contentContainerStyle={{ paddingRight: 24 }}>
-                <BodyText
-                  style={{
-                    fontSize: 14,
-                    fontWeight: '400',
-                    color: 'rgba(0, 0, 0, 0.54)',
-                    marginBottom: 10,
-                  }}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
-                </BodyText>
-                <BodyText
-                  style={{
-                    fontSize: 14,
-                    fontWeight: '400',
-                    color: 'rgba(0, 0, 0, 0.54)',
-                    marginBottom: 10,
-                  }}>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque
-                  ipsa quae ab illo inventore veritatis et quasi architecto
-                  beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem
-                  quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                  consequuntur magni dolores eos qui ratione voluptatem sequi
-                  nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
-                  dolor sit amet, consectetur, adipisci velit, sed quia non
-                  numquam eius modi tempora incidunt ut labore et dolore magnam
-                  aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-                  nostrum exercitationem ullam corporis suscipit laboriosam,
-                  nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum
-                  iure reprehenderit qui in ea voluptate velit esse quam nihil
-                  molestiae consequatur, vel illum qui dolorem eum fugiat quo
-                  voluptas nulla pariatur?
-                </BodyText>
-                <BodyText
-                  style={{
-                    fontSize: 14,
-                    fontWeight: '400',
-                    color: 'rgba(0, 0, 0, 0.54)',
-                    marginBottom: 10,
-                  }}>
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis praesentium voluptatum deleniti atque corrupti quos
-                  dolores et quas molestias excepturi sint occaecati cupiditate
-                  non provident, similique sunt in culpa qui officia deserunt
-                  mollitia animi, id est laborum et dolorum fuga. Et harum
-                  quidem rerum facilis est et expedita distinctio. Nam libero
-                  tempore, cum soluta nobis est eligendi optio cumque nihil
-                  impedit quo minus id quod maxime placeat facere possimus,
-                  omnis voluptas assumenda est, omnis dolor repellendus.
-                  Temporibus autem quibusdam et aut officiis debitis aut rerum
-                  necessitatibus saepe eveniet ut et voluptates repudiandae sint
-                  et molestiae non recusandae. Itaque earum rerum hic tenetur a
-                  sapiente delectus, ut aut reiciendis voluptatibus maiores
-                  alias consequatur aut perferendis doloribus asperiores
-                  repellat.
-                </BodyText>
+              <View
+                style={{
+                  borderBottomColor: 'rgba(0, 0, 0, 0.08)',
+                  borderBottomWidth: 1,
+                }}
+              />
+              <ScrollView scrollEnabled contentContainerStyle={{ padding: 16 }}>
+                <View>
+                  <Checkbox
+                    rippleMatchesCheckbox
+                    checkboxColor={'rgba(0, 0, 0, 0.54)'}
+                    checked={state.checkedOne}
+                    style={{ paddingVertical: 16 }}
+                    label={
+                      <View
+                        style={{
+                          flex: 1,
+                          flexDirection: 'row',
+                          alignItems: 'center',
+                        }}>
+                        <Icon
+                          name="insert-chart"
+                          size={24}
+                          color={'rgba(0, 0, 0, 0.54)'}
+                        />
+                        <BodyText
+                          text="option 1"
+                          style={{ marginLeft: 32, width: 100 }}
+                        />
+                        <BodyText text={'01'} style={{ marginLeft: 160 }} />
+                      </View>
+                    }
+                    labelPos={'left'}
+                    onPress={() => store.set({ checkedOne: !state.checkedOne })}
+                  />
+                </View>
+
+                <View>
+                  <Checkbox
+                    rippleMatchesCheckbox
+                    checkboxColor={'rgba(0, 0, 0, 0.54)'}
+                    checked={state.checkedTwo}
+                    style={{ paddingVertical: 16 }}
+                    label={
+                      <View
+                        style={{
+                          flex: 1,
+                          flexDirection: 'row',
+                          alignItems: 'center',
+                        }}>
+                        <Icon
+                          name="insert-chart"
+                          size={24}
+                          color={'rgba(0, 0, 0, 0.54)'}
+                        />
+                        <BodyText
+                          text="option 2"
+                          style={{ marginLeft: 32, width: 100 }}
+                        />
+                        <BodyText text={'02'} style={{ marginLeft: 160 }} />
+                      </View>
+                    }
+                    labelPos={'left'}
+                    onPress={() => store.set({ checkedTwo: !state.checkedTwo })}
+                  />
+                </View>
+
+                <View>
+                  <Checkbox
+                    rippleMatchesCheckbox
+                    checkboxColor={'rgba(0, 0, 0, 0.54)'}
+                    checked={state.checkedThree}
+                    style={{ paddingVertical: 16 }}
+                    label={
+                      <View
+                        style={{
+                          flex: 1,
+                          flexDirection: 'row',
+                          alignItems: 'center',
+                        }}>
+                        <Icon
+                          name="insert-chart"
+                          size={24}
+                          color={'rgba(0, 0, 0, 0.54)'}
+                        />
+                        <BodyText
+                          text="option 3"
+                          style={{ marginLeft: 32, width: 100 }}
+                        />
+                        <BodyText text={'03'} style={{ marginLeft: 160 }} />
+                      </View>
+                    }
+                    labelPos={'left'}
+                    onPress={() =>
+                      store.set({ checkedThree: !state.checkedThree })
+                    }
+                  />
+                </View>
+
+                <View>
+                  <Checkbox
+                    rippleMatchesCheckbox
+                    checkboxColor={'rgba(0, 0, 0, 0.54)'}
+                    checked={state.checkedFour}
+                    style={{ paddingVertical: 16 }}
+                    label={
+                      <View
+                        style={{
+                          flex: 1,
+                          flexDirection: 'row',
+                          alignItems: 'center',
+                        }}>
+                        <Icon
+                          name="insert-chart"
+                          size={24}
+                          color={'rgba(0, 0, 0, 0.54)'}
+                        />
+                        <BodyText
+                          text="option 4"
+                          style={{ marginLeft: 32, width: 100 }}
+                        />
+                        <BodyText text={'04'} style={{ marginLeft: 160 }} />
+                      </View>
+                    }
+                    labelPos={'left'}
+                    onPress={() =>
+                      store.set({ checkedFour: !state.checkedFour })
+                    }
+                  />
+                </View>
+
+                <View>
+                  <Checkbox
+                    rippleMatchesCheckbox
+                    checkboxColor={'rgba(0, 0, 0, 0.54)'}
+                    checked={state.checkedFive}
+                    style={{ paddingTop: 16 }}
+                    label={
+                      <View
+                        style={{
+                          flex: 1,
+                          flexDirection: 'row',
+                          alignItems: 'center',
+                        }}>
+                        <Icon
+                          name="insert-chart"
+                          size={24}
+                          color={'rgba(0, 0, 0, 0.54)'}
+                        />
+                        <BodyText
+                          text="option 5"
+                          style={{ marginLeft: 32, width: 100 }}
+                        />
+                        <BodyText text={'05'} style={{ marginLeft: 160 }} />
+                      </View>
+                    }
+                    labelPos={'left'}
+                    onPress={() =>
+                      store.set({ checkedFive: !state.checkedFive })
+                    }
+                  />
+                </View>
               </ScrollView>
             </Dialog>
           </View>
