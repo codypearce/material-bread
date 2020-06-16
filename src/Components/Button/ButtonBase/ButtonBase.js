@@ -55,6 +55,7 @@ class ButtonBase extends Component {
       textStyle,
       typeTextColor,
       theme,
+      hideLabel,
       useInputCasing,
     } = this.props;
 
@@ -65,7 +66,7 @@ class ButtonBase extends Component {
         style={[
           theme.buttonText,
           {
-            color: typeTextColor,
+            color: hideLabel ? 'transparent' : typeTextColor,
             fontSize: theme.buttonText.fontSize,
             letterSpacing: theme.buttonText.letterSpacing,
           },
@@ -160,6 +161,7 @@ class ButtonBase extends Component {
             alignItems: 'center',
             justifyContent: 'center',
             flexDirection: hideLabel ? 'column' : 'row',
+            padding: hideLabel ? 18 : 0,
             width: fullWidth ? '100%' : 'auto',
             minWidth: 64,
             height: densityHeight,

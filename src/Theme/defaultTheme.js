@@ -94,7 +94,6 @@ export default {
     size: 20,
   },
   button: {
-    paddingVertical: 8,
     borderRadius: 3,
     alignItems: 'center',
     textAlign: 'center',
