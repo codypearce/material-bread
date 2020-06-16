@@ -5,14 +5,11 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-
     alignSelf: 'flex-start',
   },
   track: {
-    backgroundColor: 'rgba(0,0,0,.20)',
+    backgroundColor: 'rgba(0,0,0,.3)',
     position: 'relative',
-
-    ...shadow(1),
   },
   thumbRipple: {
     borderRadius: 100,
@@ -25,7 +22,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
 
-    ...shadow(3),
+    ...shadow(2),
   },
 });
 
