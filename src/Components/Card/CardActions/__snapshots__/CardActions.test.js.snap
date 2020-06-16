@@ -10,6 +10,7 @@ exports[`CardActions Renders 1`] = `
         "flexWrap": "wrap",
         "justifyContent": "space-between",
         "padding": 24,
+        "paddingTop": 16,
       },
       undefined,
     ]
