@@ -39,7 +39,7 @@ class Dialog extends Component {
       <View style={[styles.actionItems, actionItemsContainerStyle]}>
         {actionItems.map((item, index) => {
           if (React.isValidElement(item)) return item;
-          return <Button key={index} {...item} />;
+          return <Button key={index} density={-1} {...item} />;
         })}
       </View>
     );

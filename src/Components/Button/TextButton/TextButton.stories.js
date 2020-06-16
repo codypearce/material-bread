@@ -305,7 +305,7 @@ export default storiesOf('Components|Buttons/Text Button', module)
           loading
           icon={<Icon name="archive" />}
         />
-
+      </View>
     </Container>
   ))
   .add('disabled', () => (
