@@ -13,11 +13,22 @@ export const code = `class Demo extends React.Component {
   render() {
     return (
       <View >
-        <Button type="outlined" onPress={() => this.setState({ show: true })} text={'Open Snackbar'} />
+        <Button
+          type="outlined"
+          onPress={() => this.setState({ show: true })}
+          textColor={'#6E2CFA'}
+          text={'Open Snackbar'}
+        />
         <Snackbar
           visible={this.state.show}
-          onButtonPress={() => this.setState({ show: false })}
-          buttonLabel={'Ok'}>
+          action={
+            <Button
+              type="text"
+              onPress={() => this.setState({ show: false })}
+              text={'ok'}
+              textColor={'#6E2CFA'}
+            />
+          }>
           {'This is a snackbar component'}
         </Snackbar>
       </View>
