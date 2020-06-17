@@ -36,4 +36,24 @@ export default storiesOf('Components|Snackbar', module)
         )}
       </State>
     </Container>
+  ))
+  .add('No button snackbar', () => (
+    <Container>
+      <Header title={'No Button Snackbar'} />
+      <State store={store} style={{ flex: 1 }}>
+        {state => (
+          <View style={{ flex: 1 }}>
+            <Button
+              type="outlined"
+              onPress={() => store.set({ show: true })}
+              text={'Open Snackbar'}
+              textColor={'#6E2CFA'}
+            />
+            <Snackbar visible={state.show}>
+              {'This is a single line snackbar'}
+            </Snackbar>
+          </View>
+        )}
+      </State>
+    </Container>
   ));
