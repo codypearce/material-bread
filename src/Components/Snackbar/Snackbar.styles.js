@@ -10,10 +10,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     position: 'absolute',
   },
-
   card: {
     ...shadow(6),
     borderRadius: 3,
+    width: 342,
     backgroundColor: '#212121',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 16,
     letterSpacing: 0.25,
-    width: 212,
   },
 });
 
