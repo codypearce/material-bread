@@ -41,7 +41,7 @@ class MenuItem extends Component {
     const { icon } = this.props;
     return React.cloneElement(icon, {
       size: 24,
-      color: '#6e6e6e',
+      color: 'rgba(0, 0, 0, 0.54)',
     });
   }
 
