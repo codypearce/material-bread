@@ -87,9 +87,9 @@ class Snackbar extends Component {
       return (
         <Button
           onPress={() => onButtonPress()}
-          style={{ marginHorizontal: 8, marginVertical: 6 }}
           type="text"
           text={buttonLabel}
+          density={-1}
           textColor={buttonTextColor || null}
         />
       );
@@ -118,7 +118,7 @@ class Snackbar extends Component {
             },
             style,
           ]}>
-          <Text style={[styles.text, { marginRight: buttonLabel ? 0 : 16 }]}>
+          <Text style={[styles.text, { marginRight: buttonLabel ? 0 : 8 }]}>
             {children}
           </Text>
           {this._renderButton()}

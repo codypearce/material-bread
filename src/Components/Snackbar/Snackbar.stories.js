@@ -13,9 +13,9 @@ const store = new Store({
 
 export default storiesOf('Components|Snackbar', module)
   .addParameters({ jest: ['Snackbar'] })
-  .add('Snackbar', () => (
+  .add('Simple Snackbar', () => (
     <Container>
-      <Header title={'Snackbar'} />
+      <Header title={'Simple Snackbar'} />
       <State store={store} style={{ flex: 1 }}>
         {state => (
           <View style={{ flex: 1 }}>
@@ -23,11 +23,13 @@ export default storiesOf('Components|Snackbar', module)
               type="outlined"
               onPress={() => store.set({ show: true })}
               text={'Open Snackbar'}
+              textColor={'#6E2CFA'}
             />
             <Snackbar
               visible={state.show}
               onButtonPress={() => store.set({ show: false })}
-              buttonLabel={'Ok'}>
+              buttonLabel={'Ok'}
+              buttonTextColor={'#6E2CFA'}>
               {'This is a snackbar component'}
             </Snackbar>
           </View>
