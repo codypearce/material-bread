@@ -7,6 +7,7 @@ import { Button } from '../../../src/index';
 
 import HomeLiveEdit from '../components/HomeLiveEdit/HomeLiveEdit';
 import MediaQuery from 'react-responsive';
+import Sponsored from '../components/Sponsored';
 
 class Index extends Component {
   componentDidMount() {
@@ -167,17 +168,17 @@ class Index extends Component {
                       onClick={() => this.changePreview('ios')}
                     />
                   ) : (
-                    <Button
-                      text="iOS"
-                      textColor={'black'}
-                      textStyle={{
-                        fontWeight: preview == 'ios' ? '500' : '400',
-                        fontSize: preview == 'ios' ? 18 : 12,
-                      }}
-                      style={{ width: 120 }}
-                      onClick={() => this.changePreview('ios')}
-                    />
-                  )
+                      <Button
+                        text="iOS"
+                        textColor={'black'}
+                        textStyle={{
+                          fontWeight: preview == 'ios' ? '500' : '400',
+                          fontSize: preview == 'ios' ? 18 : 12,
+                        }}
+                        style={{ width: 120 }}
+                        onClick={() => this.changePreview('ios')}
+                      />
+                    )
                 }
               </MediaQuery>
 
@@ -195,17 +196,17 @@ class Index extends Component {
                       onClick={() => this.changePreview('android')}
                     />
                   ) : (
-                    <Button
-                      text="Android"
-                      textColor="black"
-                      textStyle={{
-                        fontWeight: preview == 'android' ? '500' : '400',
-                        fontSize: preview == 'android' ? 18 : 12,
-                      }}
-                      style={{ width: 120 }}
-                      onClick={() => this.changePreview('android')}
-                    />
-                  )
+                      <Button
+                        text="Android"
+                        textColor="black"
+                        textStyle={{
+                          fontWeight: preview == 'android' ? '500' : '400',
+                          fontSize: preview == 'android' ? 18 : 12,
+                        }}
+                        style={{ width: 120 }}
+                        onClick={() => this.changePreview('android')}
+                      />
+                    )
                 }
               </MediaQuery>
               <MediaQuery maxWidth={1000}>
@@ -222,17 +223,17 @@ class Index extends Component {
                       onClick={() => this.changePreview('web')}
                     />
                   ) : (
-                    <Button
-                      text="Web"
-                      textColor="black"
-                      textStyle={{
-                        fontWeight: preview == 'web' ? '500' : '400',
-                        fontSize: preview == 'web' ? 18 : 12,
-                      }}
-                      style={{ width: 120 }}
-                      onClick={() => this.changePreview('web')}
-                    />
-                  )
+                      <Button
+                        text="Web"
+                        textColor="black"
+                        textStyle={{
+                          fontWeight: preview == 'web' ? '500' : '400',
+                          fontSize: preview == 'web' ? 18 : 12,
+                        }}
+                        style={{ width: 120 }}
+                        onClick={() => this.changePreview('web')}
+                      />
+                    )
                 }
               </MediaQuery>
               <MediaQuery maxWidth={1000}>
@@ -249,22 +250,23 @@ class Index extends Component {
                       onClick={() => this.changePreview('desktop')}
                     />
                   ) : (
-                    <Button
-                      text="Desktop"
-                      textColor="black"
-                      textStyle={{
-                        fontWeight: preview == 'desktop' ? '500' : '400',
-                        fontSize: preview == 'desktop' ? 17 : 12,
-                      }}
-                      style={{ width: 120 }}
-                      onClick={() => this.changePreview('desktop')}
-                    />
-                  )
+                      <Button
+                        text="Desktop"
+                        textColor="black"
+                        textStyle={{
+                          fontWeight: preview == 'desktop' ? '500' : '400',
+                          fontSize: preview == 'desktop' ? 17 : 12,
+                        }}
+                        style={{ width: 120 }}
+                        onClick={() => this.changePreview('desktop')}
+                      />
+                    )
                 }
               </MediaQuery>
             </div>
             <HomeLiveEdit preview={preview} />
           </div>
+          <Sponsored />
         </div>
       </div>
     );
