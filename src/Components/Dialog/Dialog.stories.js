@@ -158,6 +158,7 @@ export default storiesOf('Components|Dialog', module)
                   flexDirection: 'row',
                   alignItems: 'center',
                   padding: 10,
+                  paddingBottom: 24,
                 }}>
                 <Avatar
                   type="icon"

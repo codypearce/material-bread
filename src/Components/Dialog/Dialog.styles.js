@@ -17,21 +17,22 @@ const styles = StyleSheet.create({
   contentContainer: {
     flex: Platform.OS == 'web' ? 1 : 0,
     paddingLeft: 24,
-    paddingRight: 24,
-    paddingBottom: 8,
   },
   title: {
     fontSize: 20,
-    lineHeight: 20,
+    lineHeight: 24,
     fontWeight: '500',
-    color: 'rgba(0, 0, 0, 0.87)',
-    marginBottom: 20,
+    color: '#212121',
+    letterSpacing: 0.15,
+    marginBottom: 24,
+    marginRight: 24,
   },
   supportingText: {
     fontSize: 16,
     fontWeight: '400',
-    color: 'rgba(0, 0, 0, 0.54)',
-    marginBottom: 16,
+    color: 'rgba(0, 0, 0, 0.6)',
+    marginRight: 24,
+    letterSpacing: 0.44,
     lineHeight: 24,
   },
   actionItems: {
@@ -39,6 +40,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     paddingHorizontal: 8,
     paddingBottom: 8,
+    marginTop: 24,
   },
 });
 
