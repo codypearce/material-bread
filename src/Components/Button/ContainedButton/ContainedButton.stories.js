@@ -108,7 +108,7 @@ export default storiesOf('Components|Buttons/Contained Button', module)
         <Button
           text={'Buy'}
           color={'#673AB7'}
-          dense
+          density={-2}
           icon={<Icon name="attach-money" />}
           type="contained"
           iconPosition={'right'}
@@ -170,7 +170,7 @@ export default storiesOf('Components|Buttons/Contained Button', module)
   ))
   .add('density', () => (
     <Container>
-      <Header title={'Dense Contained Button'} />
+      <Header title={'Density Contained Button'} />
 
       <BodyText text={'Density -1: 32px'} style={{ marginBottom: 15 }} />
       <View
@@ -311,20 +311,21 @@ export default storiesOf('Components|Buttons/Contained Button', module)
           flexWrap: 'wrap',
           marginBottom: 20,
         }}>
-        <Button loading type="contained" />
+        <Button text={'Home'} loading hideLabel type="contained" />
         <Button
+          text={'Favorite'}
           color={'#E91E63'}
           borderSize={2}
           loading
+          hideLabel
           type="contained"
           icon={<Icon name="favorite" />}
         />
-        <Button color={'#FF5722'} loading radius={60} type="contained" />
-        <Button tcolor={'#673AB7'} dense radius={0} loading type="contained" />
         <Button
           text={'Settings'}
           color={'#FF5722'}
           loading
+          hideLabel
           radius={60}
           type="contained"
         />
@@ -334,13 +335,14 @@ export default storiesOf('Components|Buttons/Contained Button', module)
           density={-2}
           radius={0}
           loading
+          hideLabel
           type="contained"
-          icon={<Icon name="attach-money" />}
         />
         <Button
           text={'Archive'}
           color={'#009688'}
           loading
+          hideLabel
           type="contained"
           icon={<Icon name="archive" />}
         />

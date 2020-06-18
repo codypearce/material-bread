@@ -306,12 +306,13 @@ export default storiesOf('Components|Buttons/Flat Button', module)
           flexWrap: 'wrap',
           marginBottom: 20,
         }}>
-        <Button text={'Home'} loading type="flat" />
+        <Button text={'Home'} loading hideLabel type="flat" />
         <Button
           text={'Favorite'}
           color={'#E91E63'}
           borderSize={2}
           loading
+          hideLabel
           type="flat"
           icon={<Icon name="favorite" />}
         />
@@ -319,6 +320,7 @@ export default storiesOf('Components|Buttons/Flat Button', module)
           text={'Settings'}
           color={'#FF5722'}
           loading
+          hideLabel
           radius={60}
           type="flat"
         />
@@ -328,6 +330,7 @@ export default storiesOf('Components|Buttons/Flat Button', module)
           density={-2}
           radius={0}
           loading
+          hideLabel
           type="flat"
           icon={<Icon name="attach-money" />}
         />
@@ -335,6 +338,7 @@ export default storiesOf('Components|Buttons/Flat Button', module)
           text={'Archive'}
           color={'#009688'}
           loading
+          hideLabel
           type="flat"
           icon={<Icon name="archive" />}
         />

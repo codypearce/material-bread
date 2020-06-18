@@ -101,7 +101,7 @@ export default storiesOf('Components|Buttons/Text Button', module)
         <Button
           text={'Buy'}
           ttextColor={'#673AB7'}
-          dense
+          density={-2}
           icon={<Icon name="attach-money" />}
           iconPosition={'right'}
         />
@@ -153,7 +153,7 @@ export default storiesOf('Components|Buttons/Text Button', module)
   ))
   .add('density', () => (
     <Container>
-      <Header title={'Dense Text Button'} />
+      <Header title={'Density Text Button'} />
 
       <BodyText text={'Density -1: 32px'} style={{ marginBottom: 15 }} />
       <View
@@ -282,30 +282,39 @@ export default storiesOf('Components|Buttons/Text Button', module)
           flexWrap: 'wrap',
           marginBottom: 20,
         }}>
-        <Button text={'Home'} loading />
+        <Button text={'Home'} loading hideLabel />
         <Button
           text={'Favorite'}
           textColor={'#E91E63'}
           borderSize={2}
           loading
+          hideLabel
           icon={<Icon name="favorite" />}
         />
-        <Button text={'Settings'} textColor={'#FF5722'} loading radius={60} />
+        <Button
+          text={'Settings'}
+          textColor={'#FF5722'}
+          loading
+          hideLabel
+          radius={60}
+        />
         <Button
           text={'Buy'}
           ttextColor={'#673AB7'}
           density={-2}
           radius={0}
           loading
+          hideLabel
           icon={<Icon name="attach-money" />}
         />
         <Button
           text={'Archive'}
           textColor={'#009688'}
           loading
+          hideLabel
           icon={<Icon name="archive" />}
         />
-
+      </View>
     </Container>
   ))
   .add('disabled', () => (
