@@ -146,7 +146,7 @@ class Switch extends Component {
             styles.track,
             {
               backgroundColor:
-                checked && !loading ? trackColor : 'rgba(0,0,0,.30)',
+                checked && !loading ? trackColor : 'rgba(0, 0, 0, 0.3)',
               ...trackDimensions,
             },
             trackStyle,

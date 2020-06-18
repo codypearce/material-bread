@@ -89,21 +89,27 @@ export default storiesOf('Components|Switch', module)
         {state => (
           <View>
             <Switch
-              label={<BodyText text={'Label'} />}
+              label={<BodyText type={2} text={'Label'} />}
               style={{ marginBottom: 16 }}
               color={'#E91E63'}
               onPress={() => store.set({ checkedOne: !state.checkedOne })}
               checked={state.checkedOne}
             />
             <Switch
-              label={<BodyText style={{ color: '#E91E63' }} text={'label'} />}
+              label={
+                <BodyText
+                  type={2}
+                  style={{ color: '#E91E63' }}
+                  text={'Label'}
+                />
+              }
               style={{ marginBottom: 16 }}
               color={'#E91E63'}
               onPress={() => store.set({ checkedTwo: !state.checkedTwo })}
               checked={state.checkedTwo}
             />
             <Switch
-              label={<BodyText text={'label'} />}
+              label={<BodyText type={2} text={'Label'} />}
               labelPos={'left'}
               color={'#9C27B0'}
               style={{ marginBottom: 16 }}
@@ -111,7 +117,7 @@ export default storiesOf('Components|Switch', module)
               checked={state.checkedThree}
             />
             <Switch
-              label={<BodyText text={'label'} />}
+              label={<BodyText type={2} text={'Label'} />}
               labelPos={'left'}
               color={'#3F51B5'}
               style={{ marginBottom: 16 }}
