@@ -102,6 +102,87 @@ export default storiesOf('Components|Card', module)
                 <Image
                   source={{
                     uri:
+                      'https://images.pexels.com/photos/2906664/pexels-photo-2906664.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                  }}
+                />
+              }
+              size={48}
+            />
+          }
+          title={'Title'}
+          subtitle={'Metadata'}
+          action={
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}>
+              <IconButton
+                name="favorite-border"
+                size={24}
+                color={'rgba(0,0,0,.47)'}
+              />
+              <IconButton
+                style={{ marginLeft: 12 }}
+                name="share"
+                size={24}
+                color={'rgba(0,0,0,.47)'}
+              />
+              <IconButton
+                style={{ marginLeft: 12 }}
+                name="more-vert"
+                size={24}
+                color={'rgba(0,0,0,.47)'}
+              />
+            </View>
+          }
+        />
+        <CardMedia
+          image={
+            <Image
+              style={{ flex: 1, width: '100%' }}
+              source={{
+                uri:
+                  'https://images.pexels.com/photos/994605/pexels-photo-994605.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+              }}
+              resizeMode="cover"
+            />
+          }
+        />
+        <CardContent>
+          <Text
+            style={{
+              fontSize: 18,
+              fontWeight: '500',
+              marginBottom: 8,
+            }}>
+            Title
+          </Text>
+          <Text style={{ fontSize: 14, marginBottom: 16 }}>Metadata</Text>
+          <Text style={{ fontSize: 16 }}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce neque
+            felis, eleifend in dolor eu, pellentesque finibus erat. Vestibulum
+            eleifend sapien et felis pulvinar cursus.
+          </Text>
+        </CardContent>
+        <CardActions
+          rightActionItems={[
+            { name: 'favorite-border' },
+            { name: 'share' },
+            { name: 'more-vert' },
+          ]}
+        />
+      </Card>
+
+      <Card style={{ maxWidth: 400, width: '100%', marginBottom: 50 }}>
+        <CardHeader
+          thumbnail={
+            <Avatar
+              type="image"
+              image={
+                <Image
+                  source={{
+                    uri:
                       'https://www.hbo.com/content/dam/hbodata/series/game-of-thrones/character/s5/john-snow-1920.jpg/_jcr_content/renditions/cq5dam.web.1200.675.jpeg',
                   }}
                 />

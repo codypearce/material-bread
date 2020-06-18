@@ -51,6 +51,7 @@ class Card extends Component {
           {
             borderWidth: outlined ? StyleSheet.hairlineWidth : 0,
             borderBottomColor: 'rgba(0,0,0,.4)',
+            maxWidth: 500,
           },
         ]}
         testID={testID}>
