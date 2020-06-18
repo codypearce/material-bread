@@ -94,7 +94,7 @@ export default {
     size: 20,
   },
   button: {
-    borderRadius: 3,
+    borderRadius: 4,
     alignItems: 'center',
     textAlign: 'center',
     letterSpacing: 1.25,
