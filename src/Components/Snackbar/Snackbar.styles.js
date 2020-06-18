@@ -10,21 +10,26 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     position: 'absolute',
   },
-
   card: {
     ...shadow(6),
-    borderRadius: 4,
-    backgroundColor: '#323232',
+    borderRadius: 3,
+    width: 342,
+    backgroundColor: '#212121',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    padding: 8,
   },
   text: {
     flex: 1,
+    fontWeight: '400',
     flexWrap: 'wrap',
     color: 'white',
-    marginLeft: 16,
-    marginVertical: 14,
+    marginLeft: 8,
+    marginVertical: 8,
+    fontSize: 14,
+    lineHeight: 16,
+    letterSpacing: 0.25,
   },
 });
 

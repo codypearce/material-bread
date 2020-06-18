@@ -6,9 +6,7 @@ const propData = [
     'number',
     '',
   ],
-  ['buttonLabel', 'Label for snackbar button', 'string', ''],
-  ['buttonTextColor', 'Color for snackbar button label', 'string', ''],
-  ['onButtonPress', 'Call back on snackbar button if provided', 'func', ''],
+  ['action', 'The action after the message, at the end of the snackbar', 'node', ''],
   ['style', 'Styles root element', 'object', ''],
   ['visible', 'Whether snackbar is visible', 'bool', 'false'],
 ];

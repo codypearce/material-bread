@@ -1511,9 +1511,7 @@ export interface SnackbarProps {
   animationDuration?: number
   children?: React.ReactNode
   style?: StyleProp<any>
-  onButtonPress?: (e: GestureResponderEvent) => void
-  buttonLabel?: string
-  buttonTextColor?: Color
+  action?: React.ReactNode
   testID?: string
 }
 

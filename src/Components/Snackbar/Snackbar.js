@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Animated, View, Text } from 'react-native';
 
-import Button from '../Button/Button';
 import Paper from '../Paper/Paper';
 import withTheme from '../../Theme/withTheme';
 import styles from './Snackbar.styles';
@@ -13,9 +12,7 @@ class Snackbar extends Component {
     animationDuration: PropTypes.number,
     children: PropTypes.node,
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-    onButtonPress: PropTypes.func,
-    buttonLabel: PropTypes.string,
-    buttonTextColor: PropTypes.string,
+    action: PropTypes.node,
     testID: PropTypes.string,
   };
 
@@ -81,24 +78,14 @@ class Snackbar extends Component {
     ]).start();
   }
 
-  _renderButton() {
-    const { buttonLabel, buttonTextColor, onButtonPress } = this.props;
-    if (buttonLabel) {
-      return (
-        <Button
-          onPress={() => onButtonPress()}
-          style={{ marginHorizontal: 8, marginVertical: 6 }}
-          type="text"
-          text={buttonLabel}
-          textColor={buttonTextColor || null}
-        />
-      );
-    }
-    return null;
+  _renderAction() {
+    const { action } = this.props;
+    if (!action) return null;
+    return <View style={styles.actions}>{action}</View>;
   }
 
   render() {
-    const { children, style, buttonLabel, visible, testID } = this.props;
+    const { children, style, visible, testID, action } = this.props;
     const { opacity, scaleAnimation } = this.state;
 
     return (
@@ -118,10 +105,10 @@ class Snackbar extends Component {
             },
             style,
           ]}>
-          <Text style={[styles.text, { marginRight: buttonLabel ? 0 : 16 }]}>
+          <Text style={[styles.text, { marginRight: action ? 0 : 8 }]}>
             {children}
           </Text>
-          {this._renderButton()}
+          {this._renderAction()}
         </Paper>
       </View>
     );
