@@ -13,7 +13,7 @@ export default storiesOf('Components|Menu/MenuItem', module)
     <Container>
       <Header title={'Menu Item'} />
 
-      <Paper radius={6} style={{ width: 200, flex: 1 }}>
+      <Paper radius={6} style={{ width: 324, flex: 1 }}>
         <MenuItem text="Menu Item 1" />
         <MenuItem text="Menu Item 2" />
         <Divider />
@@ -26,8 +26,11 @@ export default storiesOf('Components|Menu/MenuItem', module)
     <Container>
       <Header title={'Menu icons'} />
 
-      <Paper radius={6} style={{ width: 200, flex: 1 }}>
-        <MenuItem text={'Preview'} icon={<Icon name={'remove-red-eye'} />} />
+      <Paper radius={6} style={{ width: 324, flex: 1 }}>
+        <MenuItem
+          text={'Preview'}
+          icon={<Icon name={'assignment-turned-in'} />}
+        />
         <MenuItem text={'Share'} icon={<Icon name={'person-add'} />} />
         <MenuItem text={'Get Link'} icon={<Icon name={'link'} />} />
         <Divider />
@@ -40,7 +43,7 @@ export default storiesOf('Components|Menu/MenuItem', module)
     <Container>
       <Header title={'Menu keyboard commands'} />
 
-      <Paper radius={6} style={{ width: 200, flex: 1 }}>
+      <Paper radius={6} style={{ width: 324, flex: 1 }}>
         <MenuItem
           text={'Cut'}
           icon={<Icon name={'content-cut'} />}

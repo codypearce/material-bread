@@ -11,6 +11,8 @@ const store = new Store({
   visibleOne: false,
   visibleTwo: false,
   visibleThree: false,
+  visibleFour: false,
+  visibleFive: false,
 });
 
 export default storiesOf('Components|Menu', module)
@@ -23,11 +25,11 @@ export default storiesOf('Components|Menu', module)
         {state => (
           <View style={{ marginBottom: 40 }}>
             <Menu
+              menuStyle={{ width: 324 }}
               visible={state.visibleOne}
               onBackdropPress={() => {
                 store.set({ visibleOne: false });
               }}
-              sameWidth
               button={
                 <Button
                   text={'Show menu'}
@@ -62,6 +64,7 @@ export default storiesOf('Components|Menu', module)
         {state => (
           <View>
             <Menu
+              menuStyle={{ width: 324 }}
               visible={state.visibleTwo}
               onBackdropPress={() => {
                 store.set({ visibleTwo: false });
@@ -187,54 +190,53 @@ export default storiesOf('Components|Menu', module)
         {state => (
           <View style={{ marginBottom: 40 }}>
             <Menu
-              visible={state.visibleOne}
+              menuStyle={{ width: 324, maxHeight: 200 }}
+              visible={state.visibleFive}
               onBackdropPress={() => {
-                store.set({ visibleOne: false });
+                store.set({ visibleFive: false });
               }}
-              sameWidth
               button={
                 <Button
                   text={'Show menu'}
                   onPress={() => {
-                    store.set({ visibleOne: !state.visibleOne });
+                    store.set({ visibleFive: !state.visibleFive });
                   }}
                   type="contained"
                 />
-              }
-              menuStyle={{ maxHeight: 200 }}>
+              }>
               <MenuItem
                 text={'Menu Item 1'}
-                onPress={() => store.set({ visibleOne: false })}
+                onPress={() => store.set({ visibleFive: false })}
               />
               <MenuItem
                 text={'Menu Item 2'}
-                onPress={() => store.set({ visibleOne: false })}
+                onPress={() => store.set({ visibleFive: false })}
               />
               <MenuItem
                 text={'Menu Item 3'}
                 disabled
-                onPress={() => store.set({ visibleOne: false })}
+                onPress={() => store.set({ visibleFive: false })}
               />
               <MenuItem
                 text={'Menu Item 4'}
-                onPress={() => store.set({ visibleOne: false })}
+                onPress={() => store.set({ visibleFive: false })}
               />
               <MenuItem
                 text={'Menu Item 5'}
-                onPress={() => store.set({ visibleOne: false })}
+                onPress={() => store.set({ visibleFive: false })}
               />
               <MenuItem
                 text={'Menu Item 6'}
-                onPress={() => store.set({ visibleOne: false })}
+                onPress={() => store.set({ visibleFive: false })}
               />
               <MenuItem
                 text={'Menu Item 7'}
                 disabled
-                onPress={() => store.set({ visibleOne: false })}
+                onPress={() => store.set({ visibleFive: false })}
               />
               <MenuItem
                 text={'Menu Item 8'}
-                onPress={() => store.set({ visibleOne: false })}
+                onPress={() => store.set({ visibleFive: false })}
               />
             </Menu>
           </View>

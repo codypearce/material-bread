@@ -39,8 +39,9 @@ exports[`MenuItem Renders 1`] = `
         "height": 48,
         "minHeight": 32,
         "minWidth": 124,
-        "paddingHorizontal": 16,
-        "width": "100%",
+        "paddingHorizontal": 24,
+        "paddingVertical": 12,
+        "width": 324,
       }
     }
     testID="mb-ripple"
@@ -52,9 +53,11 @@ exports[`MenuItem Renders 1`] = `
       style={
         Array [
           Object {
-            "color": "#6e6e6e",
-            "fontSize": 14,
+            "color": "#000000",
+            "fontSize": 16,
             "fontWeight": "400",
+            "letterSpacing": 0.44,
+            "lineHeight": 24,
           },
           Object {
             "color": "rgba(0,0,0,.87)",
