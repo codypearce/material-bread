@@ -241,91 +241,82 @@ export default storiesOf('Components|Dialog', module)
                 }}
               />
               <ScrollView scrollEnabled contentContainerStyle={{ padding: 16 }}>
-                <View>
+                <View
+                  style={{
+                    flex: 1,
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                  }}>
+                  <Icon
+                    name="insert-chart"
+                    size={24}
+                    color={'rgba(0, 0, 0, 0.54)'}
+                  />
+                  <BodyText
+                    text="option 1"
+                    style={{ marginLeft: 32, width: 100 }}
+                  />
                   <Checkbox
                     rippleMatchesCheckbox
                     checkboxColor={'rgba(0, 0, 0, 0.54)'}
                     checked={state.checkedOne}
                     style={{ paddingVertical: 16 }}
-                    label={
-                      <View
-                        style={{
-                          flex: 1,
-                          flexDirection: 'row',
-                          alignItems: 'center',
-                        }}>
-                        <Icon
-                          name="insert-chart"
-                          size={24}
-                          color={'rgba(0, 0, 0, 0.54)'}
-                        />
-                        <BodyText
-                          text="option 1"
-                          style={{ marginLeft: 32, width: 100 }}
-                        />
-                        <BodyText text={'01'} style={{ marginLeft: 160 }} />
-                      </View>
-                    }
+                    label={'01'}
+                    labelStyle={{ marginLeft: 130 }}
                     labelPos={'left'}
                     onPress={() => store.set({ checkedOne: !state.checkedOne })}
                   />
                 </View>
 
-                <View>
+                <View
+                  style={{
+                    flex: 1,
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                  }}>
+                  <Icon
+                    name="insert-chart"
+                    size={24}
+                    color={'rgba(0, 0, 0, 0.54)'}
+                  />
+                  <BodyText
+                    text="option 2"
+                    style={{ marginLeft: 32, width: 100 }}
+                  />
                   <Checkbox
                     rippleMatchesCheckbox
                     checkboxColor={'rgba(0, 0, 0, 0.54)'}
                     checked={state.checkedTwo}
                     style={{ paddingVertical: 16 }}
-                    label={
-                      <View
-                        style={{
-                          flex: 1,
-                          flexDirection: 'row',
-                          alignItems: 'center',
-                        }}>
-                        <Icon
-                          name="insert-chart"
-                          size={24}
-                          color={'rgba(0, 0, 0, 0.54)'}
-                        />
-                        <BodyText
-                          text="option 2"
-                          style={{ marginLeft: 32, width: 100 }}
-                        />
-                        <BodyText text={'02'} style={{ marginLeft: 160 }} />
-                      </View>
-                    }
+                    label={'02'}
+                    labelStyle={{ marginLeft: 130 }}
                     labelPos={'left'}
                     onPress={() => store.set({ checkedTwo: !state.checkedTwo })}
                   />
                 </View>
 
-                <View>
+                <View
+                  style={{
+                    flex: 1,
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                  }}>
+                  <Icon
+                    name="insert-chart"
+                    size={24}
+                    color={'rgba(0, 0, 0, 0.54)'}
+                  />
+                  <BodyText
+                    text="option 3"
+                    style={{ marginLeft: 32, width: 100 }}
+                  />
                   <Checkbox
                     rippleMatchesCheckbox
                     checkboxColor={'rgba(0, 0, 0, 0.54)'}
                     checked={state.checkedThree}
                     style={{ paddingVertical: 16 }}
-                    label={
-                      <View
-                        style={{
-                          flex: 1,
-                          flexDirection: 'row',
-                          alignItems: 'center',
-                        }}>
-                        <Icon
-                          name="insert-chart"
-                          size={24}
-                          color={'rgba(0, 0, 0, 0.54)'}
-                        />
-                        <BodyText
-                          text="option 3"
-                          style={{ marginLeft: 32, width: 100 }}
-                        />
-                        <BodyText text={'03'} style={{ marginLeft: 160 }} />
-                      </View>
-                    }
+                    label={'03'}
+                    labelStyle={{ marginLeft: 130 }}
                     labelPos={'left'}
                     onPress={() =>
                       store.set({ checkedThree: !state.checkedThree })
@@ -333,31 +324,28 @@ export default storiesOf('Components|Dialog', module)
                   />
                 </View>
 
-                <View>
+                <View
+                  style={{
+                    flex: 1,
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                  }}>
+                  <Icon
+                    name="insert-chart"
+                    size={24}
+                    color={'rgba(0, 0, 0, 0.54)'}
+                  />
+                  <BodyText
+                    text="option 4"
+                    style={{ marginLeft: 32, width: 100 }}
+                  />
                   <Checkbox
                     rippleMatchesCheckbox
                     checkboxColor={'rgba(0, 0, 0, 0.54)'}
                     checked={state.checkedFour}
-                    style={{ paddingVertical: 16 }}
-                    label={
-                      <View
-                        style={{
-                          flex: 1,
-                          flexDirection: 'row',
-                          alignItems: 'center',
-                        }}>
-                        <Icon
-                          name="insert-chart"
-                          size={24}
-                          color={'rgba(0, 0, 0, 0.54)'}
-                        />
-                        <BodyText
-                          text="option 4"
-                          style={{ marginLeft: 32, width: 100 }}
-                        />
-                        <BodyText text={'04'} style={{ marginLeft: 160 }} />
-                      </View>
-                    }
+                    style={{ paddingVertical: 16, marginLeft: 0 }}
+                    label={'04'}
+                    labelStyle={{ marginLeft: 130, width: 20 }}
                     labelPos={'left'}
                     onPress={() =>
                       store.set({ checkedFour: !state.checkedFour })
@@ -365,31 +353,28 @@ export default storiesOf('Components|Dialog', module)
                   />
                 </View>
 
-                <View>
+                <View
+                  style={{
+                    flex: 1,
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                  }}>
+                  <Icon
+                    name="insert-chart"
+                    size={24}
+                    color={'rgba(0, 0, 0, 0.54)'}
+                  />
+                  <BodyText
+                    text="option 5"
+                    style={{ marginLeft: 32, width: 100 }}
+                  />
                   <Checkbox
                     rippleMatchesCheckbox
                     checkboxColor={'rgba(0, 0, 0, 0.54)'}
                     checked={state.checkedFive}
-                    style={{ paddingTop: 16 }}
-                    label={
-                      <View
-                        style={{
-                          flex: 1,
-                          flexDirection: 'row',
-                          alignItems: 'center',
-                        }}>
-                        <Icon
-                          name="insert-chart"
-                          size={24}
-                          color={'rgba(0, 0, 0, 0.54)'}
-                        />
-                        <BodyText
-                          text="option 5"
-                          style={{ marginLeft: 32, width: 100 }}
-                        />
-                        <BodyText text={'05'} style={{ marginLeft: 160 }} />
-                      </View>
-                    }
+                    style={{ paddingVertical: 16 }}
+                    label={'05'}
+                    labelStyle={{ marginLeft: 130 }}
                     labelPos={'left'}
                     onPress={() =>
                       store.set({ checkedFive: !state.checkedFive })
