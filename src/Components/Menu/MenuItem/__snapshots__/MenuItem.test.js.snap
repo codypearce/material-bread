@@ -34,9 +34,7 @@ exports[`MenuItem Renders 1`] = `
       Object {
         "alignItems": "center",
         "backgroundColor": null,
-        "flex": 1,
         "flexDirection": "row",
-        "height": 48,
         "minHeight": 32,
         "minWidth": 124,
         "paddingHorizontal": 24,

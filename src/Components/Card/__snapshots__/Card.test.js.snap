@@ -8,6 +8,7 @@ exports[`Card Renders 1`] = `
       "borderBottomColor": "rgba(0,0,0,.4)",
       "borderRadius": 4,
       "borderWidth": 0,
+      "maxWidth": 500,
       "shadowColor": "#000",
       "shadowOffset": Object {
         "height": 1,
