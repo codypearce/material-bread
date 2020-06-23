@@ -2,15 +2,13 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    height: 48,
     minHeight: 32,
     width: 324,
     minWidth: 124,
-    flex: 1,
     alignItems: 'center',
     flexDirection: 'row',
-    paddingHorizontal: 24,
     paddingVertical: 12,
+    paddingHorizontal: 24,
   },
   title: {
     fontSize: 16,

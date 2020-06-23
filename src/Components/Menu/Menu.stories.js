@@ -123,19 +123,23 @@ export default storiesOf('Components|Menu', module)
               }>
               <MenuItem
                 text={'Menu Item 1'}
+                style={{ paddingHorizontal: '12%' }}
                 onPress={() => store.set({ visibleThree: false })}
               />
               <MenuItem
                 text={'Menu Item 2'}
+                style={{ paddingHorizontal: '12%' }}
                 onPress={() => store.set({ visibleThree: false })}
               />
               <MenuItem
                 text={'Menu Item 3'}
+                style={{ paddingHorizontal: '12%' }}
                 disabled
                 onPress={() => store.set({ visibleThree: false })}
               />
               <MenuItem
                 text={'Menu Item 4'}
+                style={{ paddingHorizontal: '12%' }}
                 onPress={() => store.set({ visibleThree: false })}
               />
             </Menu>
