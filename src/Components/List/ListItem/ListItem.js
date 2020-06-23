@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { View, Platform } from 'react-native';
 
 import withTheme from '../../../Theme/withTheme';
 import BodyText from '../../Typography/BodyText/BodyText.js';
@@ -55,7 +55,7 @@ class ListItem extends Component {
         <BodyText
           style={[
             styles.listItemText,
-            { color: disabled ? 'rgba(0,0,0,0.47)' : 'rgba(0,0,0,0.87)' },
+            { color: disabled ? 'rgba(0,0,0,0.47)' : 'rgba(0,0,0,1)' },
             textStyle,
           ]}
           numberOfLines={1}
@@ -83,8 +83,8 @@ class ListItem extends Component {
   _renderIcon() {
     const { icon } = this.props;
     return React.cloneElement(icon, {
-      size: icon.props.size ? icon.props.size : 16,
-      color: icon.props.color ? icon.props.color : '#6e6e6e',
+      size: icon.props.size ? icon.props.size : 24,
+      color: icon.props.color ? icon.props.color : 'rgba(0, 0, 0, 0.54)',
     });
   }
 
@@ -206,11 +206,8 @@ class ListItem extends Component {
               backgroundColor: this.getBackgroundColor(),
               flexDirection: 'row',
               alignItems: 'center',
-              paddingHorizontal: 16,
-              paddingLeft: 16,
-              paddingRight: 16,
-              paddingVertical: 12,
-              width: '100%',
+              padding: 16,
+              width: Platform.OS === 'web' ? 416 : '100%',
               zIndex: 1,
             },
             style,

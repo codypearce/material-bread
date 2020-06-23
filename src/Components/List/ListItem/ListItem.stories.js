@@ -144,6 +144,7 @@ export default storiesOf('Components|List/ListItem', module)
               onPress={() => store.set({ checkedOne: !state.checkedOne })}
               actionItem={
                 <Checkbox
+                  checkboxColor={'rgba(0, 0, 0, 0.54)'}
                   checked={state.checkedOne}
                   onPress={() => store.set({ checkedOne: !state.checkedOne })}
                 />
@@ -163,6 +164,7 @@ export default storiesOf('Components|List/ListItem', module)
               onPress={() => store.set({ checkedTwo: !state.checkedTwo })}
               actionItem={
                 <Checkbox
+                  checkboxColor={'rgba(0, 0, 0, 0.54)'}
                   checked={state.checkedTwo}
                   onPress={() => store.set({ checkedTwo: !state.checkedTwo })}
                 />
@@ -182,6 +184,7 @@ export default storiesOf('Components|List/ListItem', module)
               onPress={() => store.set({ checkedThree: !state.checkedThree })}
               actionItem={
                 <Checkbox
+                  checkboxColor={'rgba(0, 0, 0, 0.54)'}
                   checked={state.checkedThree}
                   onPress={() =>
                     store.set({ checkedThree: !state.checkedThree })
@@ -203,6 +206,7 @@ export default storiesOf('Components|List/ListItem', module)
               onPress={() => store.set({ checkedFour: !state.checkedFour })}
               actionItem={
                 <Checkbox
+                  checkboxColor={'rgba(0, 0, 0, 0.54)'}
                   checked={state.checkedFour}
                   onPress={() => store.set({ checkedFour: !state.checkedFour })}
                 />
@@ -227,6 +231,7 @@ export default storiesOf('Components|List/ListItem', module)
               }
               leadingActionItem={
                 <Checkbox
+                  checkboxColor={'rgba(0, 0, 0, 0.54)'}
                   checked={state.checkedOne}
                   onPress={() => store.set({ checkedOne: !state.checkedOne })}
                 />
@@ -240,6 +245,7 @@ export default storiesOf('Components|List/ListItem', module)
               }
               leadingActionItem={
                 <Checkbox
+                  checkboxColor={'rgba(0, 0, 0, 0.54)'}
                   checked={state.checkedTwo}
                   onPress={() => store.set({ checkedTwo: !state.checkedTwo })}
                 />
@@ -253,6 +259,7 @@ export default storiesOf('Components|List/ListItem', module)
               }
               leadingActionItem={
                 <Checkbox
+                  checkboxColor={'rgba(0, 0, 0, 0.54)'}
                   checked={state.checkedThree}
                   onPress={() =>
                     store.set({ checkedThree: !state.checkedThree })
@@ -268,6 +275,7 @@ export default storiesOf('Components|List/ListItem', module)
               }
               leadingActionItem={
                 <Checkbox
+                  checkboxColor={'rgba(0, 0, 0, 0.54)'}
                   checked={state.checkedFour}
                   onPress={() => store.set({ checkedFour: !state.checkedFour })}
                 />
