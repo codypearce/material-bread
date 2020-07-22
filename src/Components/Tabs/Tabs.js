@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import { Animated, ScrollView, View } from 'react-native';
+import { Animated, I18nManager, ScrollView, View } from 'react-native';
 import Tab from './Tab/Tab';
 import Underline from './Underline/Underline';
 import withTheme from '../../Theme/withTheme';
@@ -100,17 +100,17 @@ class Tabs extends Component {
   }
 
   selectTab() {
+    const { indicatorPosition, scrollPosition } = this.getAnimateValues();
+
     Animated.spring(this.state.indicatorPosition, {
-      toValue: this.getAnimateValues().indicatorPosition,
+      toValue: I18nManager.isRTL ? -indicatorPosition : indicatorPosition,
       tension: 300,
       friction: 20,
       useNativeDriver: true,
     }).start();
 
     if (this.scrollView) {
-      this.scrollView.scrollTo({
-        x: this.getAnimateValues().scrollPosition,
-      });
+      this.scrollView.scrollTo({ x: scrollPosition });
     }
   }
 
