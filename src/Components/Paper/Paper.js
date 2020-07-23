@@ -33,7 +33,7 @@ class Paper extends Component {
 
     return (
       <Animated.View
-        useNativeDriver={false}
+        useNativeDriver={true}
         style={[theme.paper, shadows, { borderRadius }, style]}
         testID={testID}
         {...props}>

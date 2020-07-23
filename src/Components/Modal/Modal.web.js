@@ -67,10 +67,12 @@ class Modal extends Component {
             Animated.timing(opacityAnimation, {
               toValue: opacity,
               duration: animationDuration + 50,
+              useNativeDriver: true,
             }),
             Animated.timing(scaleAnimation, {
               toValue: scale,
               duration: animationDuration,
+              useNativeDriver: true,
             }),
           ]).start();
         },
@@ -80,10 +82,12 @@ class Modal extends Component {
         Animated.timing(opacityAnimation, {
           toValue: opacity,
           duration: animationDuration,
+          useNativeDriver: true,
         }),
         Animated.timing(scaleAnimation, {
           toValue: scale,
           duration: 400,
+          useNativeDriver: true,
         }),
       ]).start(() => {
         this.setState({
@@ -119,7 +123,7 @@ class Modal extends Component {
         <View style={[styles.container, containerStyle]}>
           <TouchableWithoutFeedback onPress={onTouchOutside}>
             <Animated.View
-              useNativeDriver={false}
+              useNativeDriver={true}
               style={{
                 width: deviceWidth,
                 height: deviceHeight,
@@ -131,7 +135,7 @@ class Modal extends Component {
             />
           </TouchableWithoutFeedback>
           <Animated.View
-            useNativeDriver={false}
+            useNativeDriver={true}
             style={{
               opacity: opacityAnimation,
               transform: [{ scale: scaleAnimation }],

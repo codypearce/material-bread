@@ -47,16 +47,18 @@ export default storiesOf('Utils|Hoverable', module)
                 Animated.timing(state.left, {
                   toValue: 1,
                   duration: 500,
+                  useNativeDriver: true,
                 }).start();
               }}
               onHoverOut={() => {
                 Animated.timing(state.left, {
                   toValue: 0,
                   duration: 500,
+                  useNativeDriver: true,
                 }).start();
               }}>
               <Animated.View
-                useNativeDriver={false}
+                useNativeDriver={true}
                 style={{
                   width: 200,
                   height: 125,

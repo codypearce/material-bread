@@ -73,10 +73,12 @@ class SwipeNav extends Component {
       Animated.timing(headerOffsetY, {
         toValue: newHeaderOffset,
         duration: 100,
+        useNativeDriver: true,
       }),
       Animated.timing(scrollPaddingTop, {
         toValue: newScrollPadding,
         duration: 100,
+        useNativeDriver: true,
       }),
     ]).start();
   }
@@ -89,10 +91,12 @@ class SwipeNav extends Component {
       Animated.timing(footerOffsetY, {
         toValue: newFooterOffset,
         duration: 100,
+        useNativeDriver: true,
       }),
       Animated.timing(scrollPaddingBottom, {
         toValue: newScrollPadding,
         duration: 100,
+        useNativeDriver: true,
       }),
     ]).start();
   }
@@ -107,7 +111,7 @@ class SwipeNav extends Component {
     } = this.props;
     return (
       <Animated.ScrollView
-        useNativeDriver={false}
+        useNativeDriver={true}
         scrollEventThrottle={16}
         {...scrollViewProps}
         onScroll={this.onScroll}
@@ -148,7 +152,7 @@ class SwipeNav extends Component {
 
     return (
       <Animated.View
-        useNativeDriver={false}
+        useNativeDriver={true}
         style={[
           styles.headerContainer,
           headerContainerStyle,
@@ -167,7 +171,7 @@ class SwipeNav extends Component {
 
     return (
       <Animated.View
-        useNativeDriver={false}
+        useNativeDriver={true}
         style={[
           styles.footerContainer,
           footerContainerStyle,

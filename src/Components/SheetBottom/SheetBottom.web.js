@@ -103,6 +103,7 @@ class SheetBottom extends Component {
           return;
         }
         Animated.spring(pan, {
+          useNativeDriver: true,
           toValue: {
             x: 0,
             y: fullHeight - initialHeight - cardVerticalPadding,
@@ -111,6 +112,7 @@ class SheetBottom extends Component {
       });
     } else {
       Animated.timing(pan, {
+        useNativeDriver: true,
         toValue: { x: 0, y: fullHeight },
         duration: duration,
       }).start(() => {
@@ -128,6 +130,7 @@ class SheetBottom extends Component {
       onPanResponderMove: (e, gestureState) => {
         if (gestureState.dy < 80 && gestureState.dy > -40) {
           Animated.timing(pan, {
+            useNativeDriver: true,
             toValue: {
               x: 0,
               y:
@@ -209,7 +212,7 @@ class SheetBottom extends Component {
         />
 
         <Animated.View
-          useNativeDriver={false}
+          useNativeDriver={true}
           {...this.panResponder.panHandlers}
           style={[
             styles.container,

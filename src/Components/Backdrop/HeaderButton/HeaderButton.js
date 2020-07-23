@@ -25,11 +25,13 @@ class HeaderButton extends Component {
       toValue: 0.5,
       duration: 94,
       easing: Easing.linear,
+      useNativeDriver: true,
     }).start(() => {
       Animated.timing(this.spinValue, {
         toValue: backConcealed ? 1 : 0,
         duration: 94,
         easing: Easing.linear,
+        useNativeDriver: true,
       }).start();
     });
   }
@@ -48,7 +50,7 @@ class HeaderButton extends Component {
     ];
 
     return (
-      <Animated.View style={style} useNativeDriver={false}>
+      <Animated.View style={style} useNativeDriver={true}>
         <Ripple
           rippleContainerBorderRadius={100}
           onPress={() => this._handleSpin()}

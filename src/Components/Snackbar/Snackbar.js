@@ -52,11 +52,13 @@ class Snackbar extends Component {
       Animated.timing(scaleAnimation, {
         toValue: 1,
         duration: animationDuration,
+        useNativeDriver: true,
       }),
 
       Animated.timing(opacity, {
         toValue: 1,
         duration: animationDuration,
+        useNativeDriver: true,
       }),
     ]).start();
   }
@@ -69,11 +71,13 @@ class Snackbar extends Component {
       Animated.timing(scaleAnimation, {
         toValue: 0.8,
         duration: animationDuration,
+        useNativeDriver: true,
       }),
 
       Animated.timing(opacity, {
         toValue: 0,
         duration: animationDuration,
+        useNativeDriver: true,
       }),
     ]).start();
   }

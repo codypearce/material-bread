@@ -112,11 +112,13 @@ class TextFieldLabel extends Component {
         toValue: position,
         duration: animationDuration,
         easing: animationEasing,
+        useNativeDriver: true,
       }),
       Animated.timing(fontSizeAnimation, {
         toValue: fontVal,
         duration: animationDuration,
         easing: animationEasing,
+        useNativeDriver: true,
       }),
     ]).start();
   }
@@ -147,11 +149,13 @@ class TextFieldLabel extends Component {
         toValue: position,
         duration: animationDuration,
         easing: animationEasing,
+        useNativeDriver: true,
       }),
       Animated.timing(fontSizeAnimation, {
         toValue: fontVal,
         duration: animationDuration,
         easing: animationEasing,
+        useNativeDriver: true,
       }),
     ]).start();
   }
@@ -210,7 +214,7 @@ class TextFieldLabel extends Component {
 
     return (
       <Animated.View
-        useNativeDriver={false}
+        useNativeDriver={true}
         style={[
           styles.container,
           {
@@ -220,7 +224,7 @@ class TextFieldLabel extends Component {
         onLayout={e => onLayout && onLayout(e)}
         pointerEvents="none">
         <Animated.Text
-          useNativeDriver={false}
+          useNativeDriver={true}
           style={[
             styles.label,
             {

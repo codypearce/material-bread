@@ -23,6 +23,7 @@ const propData = [
   ['selectedIndex', 'Index of currently active Item', 'number', ''],
   ['style', 'Styles root element', 'object', ''],
   ['underlineColor', 'Color for underline', 'string', 'theme.primary.main'],
+  ['underlineHeight', 'Height for underline', 'number', '2'],
 ];
 
 export default createTableData(propData);

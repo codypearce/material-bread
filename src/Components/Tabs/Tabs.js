@@ -16,6 +16,7 @@ class Tabs extends Component {
     selectedIndex: PropTypes.number,
     backgroundColor: PropTypes.string,
     underlineColor: PropTypes.string,
+    underlineHeight: PropTypes.number,
     scrollEnabled: PropTypes.bool,
     handleChange: PropTypes.func,
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
@@ -180,7 +181,7 @@ class Tabs extends Component {
   }
 
   _renderContent() {
-    const { scrollEnabled, underlineColor } = this.props;
+    const { scrollEnabled, underlineColor, underlineHeight } = this.props;
     const { tabWidth, indicatorPosition, barWidth } = this.state;
 
     let tabWidthImplemented = !scrollEnabled ? tabWidth : barWidth * 0.4;
@@ -191,6 +192,7 @@ class Tabs extends Component {
         <View style={styles.tabsWrapper}>{this._renderTabs()}</View>
 
         <Underline
+          underlineHeight={underlineHeight}
           color={underlineColor}
           value={indicatorPosition}
           tabWidth={tabWidthImplemented}

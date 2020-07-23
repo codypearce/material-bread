@@ -13,20 +13,26 @@ class Underline extends Component {
       PropTypes.instanceOf(Animated.Value),
     ]),
     tabWidth: PropTypes.number,
+    underlineHeight: PropTypes.number,
+  };
+
+  static defaultProps = {
+    underlineHeight: 2,
   };
 
   render() {
-    const { tabWidth, color, value } = this.props;
+    const { tabWidth, color, value, underlineHeight } = this.props;
 
     return (
       <Animated.View
-        useNativeDriver={false}
+        useNativeDriver={true}
         style={[
           styles.underline,
           {
             width: tabWidth,
             backgroundColor: color,
             transform: [{ translateX: value }],
+            height: underlineHeight,
           },
         ]}
       />

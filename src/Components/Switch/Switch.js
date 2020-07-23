@@ -81,6 +81,7 @@ class Switch extends Component {
       Animated.timing(thumbTranslateX, {
         toValue: I18nManager.isRTL ? -xValue : xValue,
         duration: 300,
+        useNativeDriver: true,
       }),
     ]).start();
   }
@@ -141,7 +142,7 @@ class Switch extends Component {
       <View style={[styles.container, style]} testID={testID} {...rest}>
         {labelPos == 'left' && label ? this._renderLabel() : null}
         <Animated.View
-          useNativeDriver={false}
+          useNativeDriver={true}
           style={[
             styles.track,
             {
@@ -164,7 +165,7 @@ class Switch extends Component {
             ]}
             onPress={onPress}>
             <Animated.View
-              useNativeDriver={false}
+              useNativeDriver={true}
               style={[
                 styles.thumb,
                 {

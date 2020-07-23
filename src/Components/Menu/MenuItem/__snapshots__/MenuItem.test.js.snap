@@ -43,7 +43,7 @@ exports[`MenuItem Renders 1`] = `
       }
     }
     testID="mb-ripple"
-    useNativeDriver={false}
+    useNativeDriver={true}
   >
     <Text
       ellipsizeMode="clip"

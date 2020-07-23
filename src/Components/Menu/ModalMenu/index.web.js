@@ -118,6 +118,7 @@ export default class Modal extends Component {
     const animationFade = Animated.timing(this.state.opacityFade, {
       toValue: 1,
       duration: 300,
+      useNativeDriver: true,
     });
 
     this.setState(
@@ -142,6 +143,7 @@ export default class Modal extends Component {
     const animationFade = Animated.timing(this.state.opacityFade, {
       toValue: 0,
       duration: 300,
+      useNativeDriver: true,
     });
 
     this.setState(
@@ -174,6 +176,7 @@ export default class Modal extends Component {
       toValue: 1,
       easing: Easing.out(Easing.poly(4)),
       duration: 300,
+      useNativeDriver: true,
     });
 
     this.setState(
@@ -199,6 +202,7 @@ export default class Modal extends Component {
       toValue: 0,
       easing: Easing.in(Easing.poly(4)),
       duration: 300,
+      useNativeDriver: true,
     });
 
     this.setState(
@@ -260,7 +264,7 @@ export default class Modal extends Component {
     return (
       <ModalPortal visible={visible}>
         <Animated.View
-          useNativeDriver={false}
+          useNativeDriver={true}
           onLayout={onLayout}
           aria-modal="true"
           style={[

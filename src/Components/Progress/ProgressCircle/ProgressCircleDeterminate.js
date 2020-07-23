@@ -118,7 +118,7 @@ class ProgressCircleDeterminate extends Component {
           { transform: [{ scaleX: isFlipped ? -1 : 1 }] },
         ]}>
         <Animated.View
-          useNativeDriver={false}
+          useNativeDriver={true}
           style={{
             width: size,
             height: size,

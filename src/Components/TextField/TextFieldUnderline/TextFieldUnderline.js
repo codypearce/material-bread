@@ -44,6 +44,7 @@ class TextFieldUnderline extends Component {
       toValue: value,
       duration: animationDuration,
       easing: animationEasing,
+      useNativeDriver: true,
     }).start();
   }
 
@@ -63,7 +64,7 @@ class TextFieldUnderline extends Component {
 
     return (
       <Animated.View
-        useNativeDriver={false}
+        useNativeDriver={true}
         style={[
           styles.underline,
           {
@@ -72,7 +73,7 @@ class TextFieldUnderline extends Component {
           },
         ]}>
         <Animated.View
-          useNativeDriver={false}
+          useNativeDriver={true}
           style={[
             styles.underline,
             {

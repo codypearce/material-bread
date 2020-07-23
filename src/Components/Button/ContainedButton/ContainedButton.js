@@ -35,6 +35,7 @@ class ContainedButton extends Component {
     if (Platform.OS === 'android') {
       const elevation = active ? 8 : 2;
       Animated.timing(this.state.elevation, {
+        useNativeDriver: true,
         toValue: elevation,
         duration: animationDuration,
       });
@@ -55,18 +56,22 @@ class ContainedButton extends Component {
         Animated.timing(animatedShadowRadius, {
           toValue: shadowRadius,
           duration: animationDuration,
+          useNativeDriver: true,
         }),
         Animated.timing(animatedShadowOpacity, {
           toValue: shadowShadowOpacity,
           duration: animationDuration,
+          useNativeDriver: true,
         }),
         Animated.timing(animatedShadowHeight, {
           toValue: shadowHeight,
           duration: animationDuration,
+          useNativeDriver: true,
         }),
         Animated.timing(animatedShadowWidth, {
           toValue: shadowWidth,
           duration: animationDuration,
+          useNativeDriver: true,
         }),
       ]).start();
     }
@@ -194,7 +199,7 @@ class ContainedButton extends Component {
         style={[containerStyle]}>
         {() => (
           <Animated.View
-            useNativeDriver={false}
+            useNativeDriver={true}
             style={[
               disabled ? {} : this.getShadowStyle(),
               {

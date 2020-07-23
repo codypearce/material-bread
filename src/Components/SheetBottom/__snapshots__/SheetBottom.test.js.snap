@@ -81,7 +81,7 @@ exports[`SheetBottom Renders 1`] = `
           },
         ]
       }
-      useNativeDriver={false}
+      useNativeDriver={true}
     >
       <SafeAreaView
         onLayout={[Function]}

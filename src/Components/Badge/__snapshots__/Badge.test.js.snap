@@ -43,7 +43,7 @@ exports[`Badge Renders 1`] = `
         "width": 16,
       }
     }
-    useNativeDriver={false}
+    useNativeDriver={true}
     visible={true}
   >
     <Text

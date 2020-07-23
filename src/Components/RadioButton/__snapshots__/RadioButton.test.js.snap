@@ -40,7 +40,7 @@ exports[`RadioButton Renders 1`] = `
       }
     }
     testID="mb-ripple"
-    useNativeDriver={false}
+    useNativeDriver={true}
   >
     <View
       style={
@@ -55,7 +55,7 @@ exports[`RadioButton Renders 1`] = `
           "width": 20,
         }
       }
-      useNativeDriver={false}
+      useNativeDriver={true}
     />
     <View
       pointerEvents="none"

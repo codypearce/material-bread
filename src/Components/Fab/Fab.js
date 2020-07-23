@@ -69,6 +69,7 @@ export class Fab extends Component {
     Animated.spring(scale, {
       toValue: scaleValue,
       speed: 7,
+      useNativeDriver: true,
     }).start();
   }
 
@@ -146,7 +147,7 @@ export class Fab extends Component {
 
     return (
       <Animated.View
-        useNativeDriver={false}
+        useNativeDriver={true}
         style={[
           {
             transform: [{ scale: scale }],

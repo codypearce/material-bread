@@ -59,6 +59,7 @@ class Backdrop extends PureComponent {
       toValue: backConcealed ? 1 : 0,
       duration: 196,
       easing: Easing.ease,
+      useNativeDriver: true,
     }).start(() => {
       if (backConcealed) {
         this.setState({ backConcealed: false });
