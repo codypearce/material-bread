@@ -64,7 +64,6 @@ class BottomNavigationItem extends Component {
       Animated.timing(scaleText, {
         toValue: scale,
         duration: 150,
-        useNativeDriver: true,
       }),
     ]).start();
   }
@@ -95,7 +94,6 @@ class BottomNavigationItem extends Component {
 
     return (
       <Animated.Text
-        useNativeDriver={true}
         style={{
           color: color,
           fontSize: this.state.scaleText,
