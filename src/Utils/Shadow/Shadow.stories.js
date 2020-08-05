@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Platform, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Platform, Dimensions } from 'react-native';
 
 import { shadow } from '../../';
 
@@ -38,13 +38,15 @@ const styles = StyleSheet.create({
 const shadowItems = [];
 for (let i = 1; i <= shadowTypeNum; i++) {
   shadowItems.push(
-    <View style={[styles.shadowItem, { ...shadow(i) }]}>{i}</View>,
+    <View key={i} style={[styles.shadowItem, { ...shadow(i) }]}>
+      <Text>{i} </Text>
+    </View>,
   );
 }
 const shadowDividedItems = [];
 for (let i = 0; i < maxItemPerRow; i++) {
   shadowDividedItems.push(
-    <View style={styles.container}>
+    <View style={styles.container} key={i}>
       {shadowItems.slice(maxItemPerRow * i, maxItemPerRow * (i + 1))}
     </View>,
   );
