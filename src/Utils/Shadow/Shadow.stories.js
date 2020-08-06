@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Platform, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Platform, Dimensions } from 'react-native';
 
 import { shadow } from '../../';
 
@@ -38,7 +38,9 @@ const styles = StyleSheet.create({
 const shadowItems = [];
 for (let i = 1; i <= shadowTypeNum; i++) {
   shadowItems.push(
-    <View style={[styles.shadowItem, { ...shadow(i) }]}>{i}</View>,
+    <View style={[styles.shadowItem, { ...shadow(i) }]}>
+      <Text>{i}</Text>
+    </View>,
   );
 }
 const shadowDividedItems = [];

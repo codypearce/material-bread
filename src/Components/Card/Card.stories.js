@@ -23,7 +23,19 @@ export default storiesOf('Components|Card', module)
   .add('simple', () => (
     <Container scroll>
       <Header title={'Simple Card'} />
-
+      <View
+        style={{
+          borderColor: 'red',
+          borderWidth: 2,
+          flex: 1,
+          alignItems: 'center',
+          justifyContent: 'space-around',
+          height: 400,
+        }}>
+        <Card onPress={() => {}}>
+          <Text>Hello</Text>
+        </Card>
+      </View>
       <Card style={{ flex: 1, marginBottom: 20, padding: 16, maxWidth: 400 }}>
         <Text style={{ fontSize: 14, textAlign: 'center', marginBottom: 8 }}>
           This is a simple card with a button
