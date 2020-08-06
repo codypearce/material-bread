@@ -66,12 +66,10 @@ class ContainedButton extends Component {
         Animated.timing(animatedShadowHeight, {
           toValue: shadowHeight,
           duration: animationDuration,
-          useNativeDriver: true,
         }),
         Animated.timing(animatedShadowWidth, {
           toValue: shadowWidth,
           duration: animationDuration,
-          useNativeDriver: true,
         }),
       ]).start();
     }
@@ -199,7 +197,6 @@ class ContainedButton extends Component {
         style={[containerStyle]}>
         {() => (
           <Animated.View
-            useNativeDriver={true}
             style={[
               disabled ? {} : this.getShadowStyle(),
               {

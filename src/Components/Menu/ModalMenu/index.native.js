@@ -52,7 +52,6 @@ class Modal extends Component {
         <View style={[styles.container, containerStyle]}>
           <TouchableWithoutFeedback onPress={onBackdropPress}>
             <Animated.View
-              useNativeDriver={true}
               style={{
                 width: deviceWidth,
                 height: deviceHeight,

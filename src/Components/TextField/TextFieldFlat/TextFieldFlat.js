@@ -45,19 +45,12 @@ class TextFieldFlat extends Component {
 
   static defaultProps = {
     helperVisible: true,
-    labelHeight: 0,
   };
 
   state = {
     height: 56,
+    labelHeight: 0,
   };
-
-  componentDidUpdate(prevProps) {
-    const { value, multiline } = this.props;
-    if (value && value.length && prevProps.value.length && multiline) {
-      this.setState({ height: 56 });
-    }
-  }
 
   _renderLeadingIcon() {
     const { leadingIcon } = this.props;
