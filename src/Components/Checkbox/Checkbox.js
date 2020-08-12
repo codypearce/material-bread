@@ -15,6 +15,7 @@ class Checkbox extends Component {
     rippleColor: PropTypes.string,
     checkboxColor: PropTypes.string,
     unCheckedColor: PropTypes.string,
+    disabledColor: PropTypes.string,
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     checkboxStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     theme: PropTypes.object,
@@ -58,14 +59,14 @@ class Checkbox extends Component {
   }
 
   _getCheckBoxColor() {
-    const { disabled, checkboxColor, theme, error } = this.props;
+    const { disabled, checkboxColor, disabledColor, theme, error } = this.props;
     let checkboxColorApplied = checkboxColor
       ? checkboxColor
       : theme.primary.main;
 
     if (error) checkboxColorApplied = theme.error.main;
 
-    if (disabled) checkboxColorApplied = 'rgba(0,0,0,.5)';
+    if (disabled) checkboxColorApplied = disabledColor || 'rgba(0,0,0,.5)';
 
     return checkboxColorApplied;
   }
@@ -133,7 +134,7 @@ class Checkbox extends Component {
       checked
     ) {
       return React.cloneElement(checkedIcon, {
-        size: icon.props.size ? icon.props.size : size,
+        size: checkedIcon.props.size ? checkedIcon.props.size : size,
         color: checkboxColor,
       });
     }
