@@ -186,7 +186,6 @@ class TextFieldLabel extends Component {
 
     if (error) {
       labelColor = 'red';
-      label = 'Error';
     }
 
     let marginLeft = leadingIcon ? 32 : 0;
@@ -216,7 +215,7 @@ class TextFieldLabel extends Component {
             marginLeft: marginLeft,
           },
         ]}
-        onLayout={e => onLayout && onLayout(e)}
+        onLayout={(e) => onLayout && onLayout(e)}
         pointerEvents="none">
         <Animated.Text
           style={[
