@@ -24,7 +24,7 @@
     "gatsby-remark-normalize-paths": "^1.0.0",
     "gatsby-remark-prismjs": "^3.3.31",
     "gatsby-source-filesystem": "^2.1.48",
-    "gatsby-transformer-remark": "^2.6.51",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.3.14",
     "prismjs": "^1.19.0",
     "prop-types": "^15.7.2",
